@@ -115,28 +115,30 @@ export default function LivePage() {
               const line = chunk.trim();
               if (!line.startsWith("data: ")) continue;
               const json = line.slice(6);
+              let parsed;
               try {
-                const parsed = JSON.parse(json);
-                if (parsed.error) {
-                  throw new Error(parsed.error);
-                }
-                if (parsed.done && parsed.result) {
-                  setRuns((prev) =>
-                    prev.map((r) =>
-                      r.model === model
-                        ? { ...r, result: parsed.result, loading: false, progress: null }
-                        : r
-                    )
-                  );
-                } else if (parsed.stage) {
-                  setRuns((prev) =>
-                    prev.map((r) =>
-                      r.model === model ? { ...r, progress: parsed } : r
-                    )
-                  );
-                }
-              } catch (e) {
-                if (e instanceof Error && e.message !== json) throw e;
+                parsed = JSON.parse(json);
+              } catch {
+                // Skip malformed SSE chunks (partial data, split packets)
+                continue;
+              }
+              if (parsed.error) {
+                throw new Error(parsed.error);
+              }
+              if (parsed.done && parsed.result) {
+                setRuns((prev) =>
+                  prev.map((r) =>
+                    r.model === model
+                      ? { ...r, result: parsed.result, loading: false, progress: null }
+                      : r
+                  )
+                );
+              } else if (parsed.stage) {
+                setRuns((prev) =>
+                  prev.map((r) =>
+                    r.model === model ? { ...r, progress: parsed } : r
+                  )
+                );
               }
             }
           }
