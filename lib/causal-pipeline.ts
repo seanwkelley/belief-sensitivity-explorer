@@ -448,19 +448,29 @@ const PROBED_FORECAST_PROMPT = `You are a superforecaster who previously estimat
 
 Respond with JSON: {"updated_probability": <0.01-0.99>, "shift_direction": "increased"|"decreased"|"unchanged", "reasoning": "brief explanation of how this changes your causal model"}`;
 
+export interface PipelineProgress {
+  stage: string;
+  current?: number;
+  total?: number;
+}
+
 export async function runFullPipeline(
   question: string,
   background: string | undefined,
   resolutionDate: string | undefined,
   model: string,
-  apiKey: string
+  apiKey: string,
+  onProgress?: (update: PipelineProgress) => void
 ): Promise<Record<string, unknown>> {
   // Step 1: Causal forecast
+  onProgress?.({ stage: "Generating causal network..." });
   const forecast = await generateCausalForecast(question, background, model, apiKey);
+  onProgress?.({ stage: `Network generated (${forecast.nodes.length} nodes, ${forecast.edges.length} edges)` });
 
   // Step 2: Network analysis (local)
   const { nodeMetrics, edgeMetrics, probeTargets, stats } =
     computeNetworkAnalysis(forecast.nodes, forecast.edges);
+  onProgress?.({ stage: "Analyzing network structure..." });
 
   // Step 3: Generate probes and get probed forecasts
   const probeResults: Array<{
@@ -482,7 +492,11 @@ export async function runFullPipeline(
     probe_category: string;
   }> = [];
 
-  for (const target of probeTargets) {
+  const probeTotal = probeTargets.length;
+  onProgress?.({ stage: "Running probes...", current: 0, total: probeTotal });
+
+  for (let probeIdx = 0; probeIdx < probeTargets.length; probeIdx++) {
+    const target = probeTargets[probeIdx];
     try {
       // Generate probe text
       const genMessages: ChatMessage[] = [
@@ -550,6 +564,7 @@ export async function runFullPipeline(
               ? "edge"
               : "structural",
       });
+      onProgress?.({ stage: "Running probes...", current: probeIdx + 1, total: probeTotal });
     } catch (err) {
       probeResults.push({
         probe_type: target.probe_type,
@@ -574,10 +589,12 @@ export async function runFullPipeline(
               ? "edge"
               : "structural",
       });
+      onProgress?.({ stage: "Running probes...", current: probeIdx + 1, total: probeTotal });
     }
   }
 
   // Compute aggregate metrics
+  onProgress?.({ stage: "Computing metrics..." });
   const successful = probeResults.filter(
     (r) => r.success && r.absolute_shift != null
   );

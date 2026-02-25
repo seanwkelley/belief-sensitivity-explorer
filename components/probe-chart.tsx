@@ -7,6 +7,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ReferenceLine,
   ResponsiveContainer,
   Cell,
   ScatterChart,
@@ -63,6 +64,7 @@ export function DeltaBarChart({
             ]}
             labelFormatter={(label: string) => label}
           />
+          <ReferenceLine y={0} stroke="#a1a1aa" strokeWidth={1} />
           <Bar dataKey="delta" radius={[2, 2, 0, 0]}>
             {data.map((entry, i) => (
               <Cell

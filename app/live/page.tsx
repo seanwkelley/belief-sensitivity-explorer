@@ -24,26 +24,31 @@ const MODELS = [
   { value: "mistralai/mistral-large-2411", label: "Mistral Large" },
 ];
 
+interface ModelProgress {
+  stage: string;
+  current?: number;
+  total?: number;
+}
+
 interface ModelRun {
   model: string;
   label: string;
   result: DetailWithMetrics | null;
   loading: boolean;
   error: string | null;
+  progress: ModelProgress | null;
 }
 
 export default function LivePage() {
   const [question, setQuestion] = useState("");
   const [background, setBackground] = useState("");
-  const [resolutionDate, setResolutionDate] = useState("");
-  const [selectedModels, setSelectedModels] = useState<string[]>([MODELS[0].value]);
+  const [selectedModels, setSelectedModels] = useState<string[]>([]);
   const [apiKey, setApiKey] = useState("");
   const [runs, setRuns] = useState<ModelRun[]>([]);
 
   function toggleModel(value: string) {
     setSelectedModels((prev) => {
       if (prev.includes(value)) {
-        if (prev.length <= 1) return prev; // keep at least one
         return prev.filter((m) => m !== value);
       }
       if (prev.length >= 4) return prev; // max 4
@@ -54,7 +59,7 @@ export default function LivePage() {
   const anyLoading = runs.some((r) => r.loading);
 
   async function handleAnalyze() {
-    if (!question.trim() || selectedModels.length === 0) return;
+    if (!question.trim() || selectedModels.length === 0 || !apiKey.trim()) return;
 
     const newRuns: ModelRun[] = selectedModels.map((m) => ({
       model: m,
@@ -62,10 +67,11 @@ export default function LivePage() {
       result: null,
       loading: true,
       error: null,
+      progress: null,
     }));
     setRuns(newRuns);
 
-    // Run all models in parallel
+    // Run all models in parallel via SSE streams
     for (let i = 0; i < selectedModels.length; i++) {
       const model = selectedModels[i];
       (async () => {
@@ -76,23 +82,64 @@ export default function LivePage() {
             body: JSON.stringify({
               question: question.trim(),
               background: background.trim() || undefined,
-              resolution_date: resolutionDate || undefined,
               model,
-              api_key: apiKey || undefined,
+              api_key: apiKey.trim(),
             }),
           });
 
           if (!res.ok) {
-            const errData = await res.json().catch(() => ({}));
-            throw new Error(errData.error || `HTTP ${res.status}`);
+            const text = await res.text();
+            let errorMsg = `HTTP ${res.status}`;
+            try {
+              const errData = JSON.parse(text);
+              if (errData.error) errorMsg = errData.error;
+            } catch { /* use default */ }
+            throw new Error(errorMsg);
           }
 
-          const data = await res.json();
-          setRuns((prev) =>
-            prev.map((r) =>
-              r.model === model ? { ...r, result: data, loading: false } : r
-            )
-          );
+          const reader = res.body?.getReader();
+          if (!reader) throw new Error("No response body");
+
+          const decoder = new TextDecoder();
+          let buffer = "";
+
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split("\n\n");
+            buffer = lines.pop() ?? "";
+
+            for (const chunk of lines) {
+              const line = chunk.trim();
+              if (!line.startsWith("data: ")) continue;
+              const json = line.slice(6);
+              try {
+                const parsed = JSON.parse(json);
+                if (parsed.error) {
+                  throw new Error(parsed.error);
+                }
+                if (parsed.done && parsed.result) {
+                  setRuns((prev) =>
+                    prev.map((r) =>
+                      r.model === model
+                        ? { ...r, result: parsed.result, loading: false, progress: null }
+                        : r
+                    )
+                  );
+                } else if (parsed.stage) {
+                  setRuns((prev) =>
+                    prev.map((r) =>
+                      r.model === model ? { ...r, progress: parsed } : r
+                    )
+                  );
+                }
+              } catch (e) {
+                if (e instanceof Error && e.message !== json) throw e;
+              }
+            }
+          }
         } catch (err) {
           setRuns((prev) =>
             prev.map((r) =>
@@ -101,6 +148,7 @@ export default function LivePage() {
                     ...r,
                     error: err instanceof Error ? err.message : "Unknown error",
                     loading: false,
+                    progress: null,
                   }
                 : r
             )
@@ -200,33 +248,18 @@ export default function LivePage() {
               className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)] resize-y"
             />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Resolution Date
-              </label>
-              <input
-                type="date"
-                value={resolutionDate}
-                onChange={(e) => setResolutionDate(e.target.value)}
-                className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                API Key{" "}
-                <span className="text-[var(--color-muted-foreground)] font-normal">
-                  (optional)
-                </span>
-              </label>
-              <input
-                type="password"
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-                placeholder="sk-or-..."
-                className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
-              />
-            </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">
+              OpenRouter API Key{" "}
+              <span className="text-[var(--color-destructive)]">*</span>
+            </label>
+            <input
+              type="password"
+              value={apiKey}
+              onChange={(e) => setApiKey(e.target.value)}
+              placeholder="sk-or-..."
+              className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
+            />
           </div>
 
           {/* Model selection */}
@@ -267,7 +300,7 @@ export default function LivePage() {
 
           <button
             onClick={handleAnalyze}
-            disabled={anyLoading || !question.trim() || selectedModels.length === 0}
+            disabled={anyLoading || !question.trim() || !apiKey.trim() || selectedModels.length === 0}
             className="inline-flex items-center gap-2 rounded-md bg-[var(--color-primary)] px-5 py-2.5 text-sm font-medium text-white hover:bg-[var(--color-primary)]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {anyLoading
@@ -282,42 +315,81 @@ export default function LivePage() {
       {/* Loading indicators */}
       {runs.some((r) => r.loading) && (
         <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4 mb-6">
-          <div className="space-y-2">
-            {runs.map((r) => (
-              <div key={r.model} className="flex items-center gap-3">
-                <div
-                  className={`h-4 w-4 rounded-full border-2 flex items-center justify-center text-[10px] ${
-                    r.result
-                      ? "border-[var(--color-positive)] text-[var(--color-positive)]"
-                      : r.error
-                        ? "border-[var(--color-destructive)] text-[var(--color-destructive)]"
-                        : "border-[var(--color-primary)] animate-pulse"
-                  }`}
-                >
-                  {r.result ? "✓" : r.error ? "✗" : ""}
-                </div>
-                <span
-                  className={`text-sm ${r.loading ? "text-[var(--color-foreground)]" : "text-[var(--color-muted-foreground)]"}`}
-                >
-                  {r.label}
+          <div className="space-y-4">
+            {runs.map((r) => {
+              const pct =
+                r.progress?.current != null && r.progress?.total
+                  ? Math.round((r.progress.current / r.progress.total) * 100)
+                  : null;
+              // Estimate percentage for non-probe stages
+              const displayPct = r.result
+                ? 100
+                : pct != null
+                  ? pct
+                  : r.progress?.stage?.includes("Computing")
+                    ? 95
+                    : r.progress?.stage?.includes("Analyzing")
+                      ? 15
+                      : r.progress?.stage?.includes("generated")
+                        ? 12
+                        : r.progress?.stage?.includes("Generating")
+                          ? 5
+                          : 0;
+
+              return (
+                <div key={r.model}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-sm font-medium">
+                      {r.result ? (
+                        <span className="text-[var(--color-positive)]">&#10003;</span>
+                      ) : r.error ? (
+                        <span className="text-[var(--color-destructive)]">&#10007;</span>
+                      ) : (
+                        <span className="text-[var(--color-muted-foreground)]">&#9676;</span>
+                      )}
+                    </span>
+                    <span
+                      className={`text-sm font-medium ${r.loading ? "text-[var(--color-foreground)]" : "text-[var(--color-muted-foreground)]"}`}
+                    >
+                      {r.label}
+                    </span>
+                    {r.result && (
+                      <span className="text-xs ml-auto font-mono" style={{ color: probToColor(r.result.initial_probability) }}>
+                        {formatProbability(r.result.initial_probability)}
+                      </span>
+                    )}
+                    {r.error && (
+                      <span className="text-xs text-[var(--color-destructive)] ml-auto">
+                        Failed
+                      </span>
+                    )}
+                    {r.loading && displayPct != null && (
+                      <span className="text-xs text-[var(--color-muted-foreground)] ml-auto font-mono">
+                        {displayPct}%
+                      </span>
+                    )}
+                  </div>
                   {r.loading && (
-                    <span className="text-xs text-[var(--color-muted-foreground)] ml-2">
-                      Running pipeline...
-                    </span>
+                    <div className="ml-6">
+                      <div className="h-1.5 w-full bg-[var(--color-secondary)] rounded-full overflow-hidden mb-1">
+                        <div
+                          className="h-full bg-[var(--color-primary)] rounded-full transition-all duration-500 ease-out"
+                          style={{ width: `${displayPct ?? 0}%` }}
+                        />
+                      </div>
+                      <p className="text-xs text-[var(--color-muted-foreground)]">
+                        {r.progress?.stage ?? "Starting pipeline..."}
+                        {r.progress?.current != null && r.progress?.total != null && (
+                          <span className="font-mono ml-1">
+                            ({r.progress.current}/{r.progress.total})
+                          </span>
+                        )}
+                      </p>
+                    </div>
                   )}
-                  {r.result && (
-                    <span className="text-xs ml-2" style={{ color: probToColor(r.result.initial_probability) }}>
-                      {formatProbability(r.result.initial_probability)}
-                    </span>
-                  )}
-                  {r.error && (
-                    <span className="text-xs text-[var(--color-destructive)] ml-2">
-                      Failed
-                    </span>
-                  )}
-                </span>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

@@ -44,6 +44,8 @@ export function CausalNetwork({
 }: CausalNetworkProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const nodeSelRef = useRef<d3.Selection<SVGCircleElement, SimNode, SVGGElement, unknown> | null>(null);
+  const onNodeClickRef = useRef(onNodeClick);
   const [dimensions, setDimensions] = useState({ width: propWidth || 700, height: propHeight || 500 });
   const [tooltip, setTooltip] = useState<{
     x: number;
@@ -79,6 +81,19 @@ export function CausalNetwork({
     ro.observe(el);
     return () => ro.disconnect();
   }, [propWidth, propHeight]);
+
+  // Keep callback ref current without triggering simulation rebuild
+  useEffect(() => {
+    onNodeClickRef.current = onNodeClick;
+  }, [onNodeClick]);
+
+  // Update selection highlight without rebuilding simulation
+  useEffect(() => {
+    if (!nodeSelRef.current) return;
+    nodeSelRef.current.attr("stroke", (d) =>
+      selectedNodeId === d.id ? "#fafafa" : "transparent"
+    );
+  }, [selectedNodeId]);
 
   useEffect(() => {
     if (!svgRef.current || nodes.length === 0) return;
@@ -190,13 +205,11 @@ export function CausalNetwork({
         }
         return importanceToColor(d.composite_importance);
       })
-      .attr("stroke", (d) =>
-        selectedNodeId === d.id ? "#fafafa" : "transparent"
-      )
+      .attr("stroke", "transparent")
       .attr("stroke-width", 2)
       .attr("cursor", "pointer")
       .on("click", (_event, d) => {
-        onNodeClick?.(d.id);
+        onNodeClickRef.current?.(d.id);
       })
       .on("mouseover", (event, d) => {
         const [x, y] = d3.pointer(event, containerRef.current);
@@ -233,11 +246,12 @@ export function CausalNetwork({
       })
       .on("end", (event, d) => {
         if (!event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
+        d.fx = d.x;
+        d.fy = d.y;
       });
 
     node.call(drag);
+    nodeSelRef.current = node;
 
     // Simulation
     const simulation = d3
@@ -252,6 +266,7 @@ export function CausalNetwork({
       .force("charge", d3.forceManyBody().strength(-300))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide<SimNode>().radius((d) => nodeRadius(d) + 5))
+      .alphaDecay(0.05)
       .on("tick", () => {
         link
           .attr("x1", (d) => (d.source as SimNode).x!)
@@ -262,12 +277,19 @@ export function CausalNetwork({
         node.attr("cx", (d) => d.x!).attr("cy", (d) => d.y!);
 
         label.attr("x", (d) => d.x!).attr("y", (d) => d.y!);
+      })
+      .on("end", () => {
+        // Pin all nodes in place after layout converges
+        simNodes.forEach((d) => {
+          d.fx = d.x;
+          d.fy = d.y;
+        });
       });
 
     return () => {
       simulation.stop();
     };
-  }, [nodes, edges, dimensions, selectedNodeId, onNodeClick, nodeSensitivity]);
+  }, [nodes, edges, dimensions, nodeSensitivity]);
 
   return (
     <div ref={containerRef} className="relative w-full" style={{ minHeight: propHeight || 500 }}>
