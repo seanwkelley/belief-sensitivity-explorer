@@ -27,7 +27,7 @@ export function DeltaBarChart({
   const data = results
     .filter((r) => r.updated_probability != null)
     .map((r) => ({
-      name: `${probeTypeLabel(r.probe_type)}\n${r.target_id}`,
+      name: `${probeTypeLabel(r.probe_type)} — ${r.target_id.replace(/_/g, " ")}`,
       shortName: r.target_id.length > 15 ? r.target_id.slice(0, 14) + "…" : r.target_id,
       delta: (r.updated_probability! - initialProbability) * 100,
       type: r.probe_category,
@@ -62,7 +62,9 @@ export function DeltaBarChart({
               `${value > 0 ? "+" : ""}${value.toFixed(1)}pp`,
               "Δ Probability",
             ]}
-            labelFormatter={(label: string) => label}
+            labelFormatter={(_label: string, payload: Array<{ payload?: { name?: string } }>) =>
+              payload?.[0]?.payload?.name ?? _label
+            }
           />
           <ReferenceLine y={0} stroke="#a1a1aa" strokeWidth={1} />
           <Bar dataKey="delta" radius={[2, 2, 0, 0]}>

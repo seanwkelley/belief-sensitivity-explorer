@@ -27,6 +27,7 @@ export function ProbeTable({
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [sortKey, setSortKey] = useState<SortKey>("absolute_shift");
   const [sortDesc, setSortDesc] = useState(true);
+  const [expandedProbeIdx, setExpandedProbeIdx] = useState<number | null>(null);
 
   const categories = useMemo(() => {
     const cats = new Set(results.map((r) => r.probe_category));
@@ -141,7 +142,10 @@ export function ProbeTable({
               return (
                 <tr
                   key={i}
-                  onClick={() => onSelectProbe?.(r.target_id)}
+                  onClick={() => {
+                    onSelectProbe?.(r.target_id);
+                    setExpandedProbeIdx(expandedProbeIdx === i ? null : i);
+                  }}
                   className={`border-b border-[var(--color-border)] hover:bg-[var(--color-secondary)]/50 cursor-pointer transition-colors ${
                     isSelected ? "bg-[var(--color-primary)]/10" : ""
                   }`}
@@ -206,11 +210,10 @@ export function ProbeTable({
       </div>
 
       {/* Expandable reasoning */}
-      {selectedTargetId && (
+      {expandedProbeIdx != null && filtered[expandedProbeIdx] && (
         <div className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
           {(() => {
-            const sel = results.find((r) => r.target_id === selectedTargetId);
-            if (!sel) return null;
+            const sel = filtered[expandedProbeIdx];
             return (
               <>
                 <p className="text-xs font-mono text-[var(--color-primary)] mb-2">
