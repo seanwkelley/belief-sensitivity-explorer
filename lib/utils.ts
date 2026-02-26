@@ -47,7 +47,7 @@ export function probeTypeLabel(type: string): string {
     edge_negate_critical: "Negate Critical Edge",
     edge_negate_peripheral: "Negate Peripheral Edge",
     edge_reverse: "Reverse Edge",
-    edge_fabricate: "Fabricate Edge",
+    edge_spurious: "Spurious Edge",
     missing_node: "Missing Node",
     irrelevant: "Irrelevant",
   };

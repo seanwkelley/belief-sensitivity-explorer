@@ -125,7 +125,7 @@ export interface AggregateMetrics {
   mean_shift_strengthen: number;
   fnar: number | null;
   n_accepted: number;
-  n_fabricated: number;
+  n_spurious: number;
   critical_path_premium: number | null;
   mean_shift_on_path: number;
   mean_shift_off_path: number;

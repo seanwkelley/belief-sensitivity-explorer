@@ -130,12 +130,12 @@ function computeMetrics(results: ProbeResult[]) {
   const asymmetry = meanStr > 0 ? meanNeg / meanStr : null;
 
   // FNAR
-  const fabricated = successful.filter(
+  const spurious = successful.filter(
     (r) =>
-      r.probe_type === "edge_fabricate" || r.probe_type === "missing_node"
+      r.probe_type === "edge_spurious" || r.probe_type === "missing_node"
   );
-  const accepted = fabricated.filter((r) => r.absolute_shift! >= 0.05);
-  const fnar = fabricated.length > 0 ? accepted.length / fabricated.length : null;
+  const accepted = spurious.filter((r) => r.absolute_shift! >= 0.05);
+  const fnar = spurious.length > 0 ? accepted.length / spurious.length : null;
 
   // Critical path premium
   const onPath = successful
@@ -189,7 +189,7 @@ function computeMetrics(results: ProbeResult[]) {
     mean_shift_strengthen: meanStr,
     fnar,
     n_accepted: accepted.length,
-    n_fabricated: fabricated.length,
+    n_spurious: spurious.length,
     critical_path_premium: premium,
     mean_shift_on_path: meanOn,
     mean_shift_off_path: meanOff,

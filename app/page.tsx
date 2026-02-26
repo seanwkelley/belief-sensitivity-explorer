@@ -122,7 +122,7 @@ export default async function Home() {
             {
               step: "3",
               title: "Probe Experiments",
-              desc: "~16 targeted probes challenge individual beliefs — negating nodes, severing edges, fabricating connections — and measure the resulting probability shift.",
+              desc: "~16 targeted probes challenge individual beliefs — negating nodes, severing edges, introducing spurious connections — and measure the resulting probability shift.",
             },
           ].map((item) => (
             <div
@@ -157,8 +157,8 @@ export default async function Home() {
               desc: "Ratio of negation shift vs strengthening shift. Values > 1 indicate the model reacts more to challenges than confirmations.",
             },
             {
-              name: "FNAR (False Negative Acceptance Rate)",
-              desc: "Fraction of fabricated/missing-node probes that cause a significant shift. High FNAR suggests the model accepts spurious evidence.",
+              name: "SAR (Spurious Acceptance Rate)",
+              desc: "Fraction of spurious/missing-node probes that cause a significant shift. High SAR suggests the model accepts spurious evidence.",
             },
             {
               name: "Critical Path Premium",

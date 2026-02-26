@@ -52,13 +52,13 @@ export function MetricsPanel({
           description={`Negate: ${(metrics.mean_shift_negate * 100).toFixed(1)}pp / Strengthen: ${(metrics.mean_shift_strengthen * 100).toFixed(1)}pp`}
         />
         <MetricCard
-          label="FNAR"
+          label="SAR"
           value={
             metrics.fnar != null
               ? (metrics.fnar * 100).toFixed(0) + "%"
               : "N/A"
           }
-          description={`${metrics.n_accepted}/${metrics.n_fabricated} fabricated probes accepted`}
+          description={`${metrics.n_accepted}/${metrics.n_spurious} spurious probes accepted`}
         />
         <MetricCard
           label="Crit. Path Premium"

@@ -6,7 +6,7 @@ Given a binary yes/no forecasting question, the tool:
 
 1. **Causal Forecast** — An LLM generates a probability estimate along with an explicit causal network (nodes = factors, directed edges = causal mechanisms).
 2. **Network Analysis** — Graph metrics (betweenness centrality, PageRank, path relevance) identify structurally important nodes and edges.
-3. **Probe Experiments** — Targeted counterfactual probes challenge individual beliefs (negating nodes, severing edges, fabricating connections) and measure the resulting probability shift.
+3. **Probe Experiments** — Targeted counterfactual probes challenge individual beliefs (negating nodes, severing edges, introducing spurious connections) and measure the resulting probability shift.
 
 ## Features
 
@@ -21,7 +21,7 @@ Given a binary yes/no forecasting question, the tool:
 |--------|-------------|
 | **SSR** (Sensitivity-to-Structure Ratio) | Ratio of mean shift from high-importance vs low-importance probes. SSR > 1 means the model is more sensitive to structurally important components. |
 | **Asymmetry Index** | Ratio of negation shift vs strengthening shift. Values > 1 indicate the model reacts more to challenges than confirmations. |
-| **FNAR** (False Negative Acceptance Rate) | Fraction of fabricated/missing-node probes causing significant shift. High FNAR suggests the model accepts spurious evidence. |
+| **SAR** (Spurious Acceptance Rate) | Fraction of spurious/missing-node probes causing significant shift. High SAR suggests the model accepts spurious evidence. |
 | **Critical Path Premium** | Extra sensitivity for nodes/edges on the shortest path to the outcome vs off-path. |
 
 ## Supported Models (Live Mode)

@@ -634,10 +634,10 @@ export async function runFullPipeline(
       ? strengthenShifts.reduce((a, b) => a + b, 0) / strengthenShifts.length
       : 0;
 
-  const fabricated = successful.filter(
-    (r) => r.probe_type === "edge_fabricate" || r.probe_type === "missing_node"
+  const spurious = successful.filter(
+    (r) => r.probe_type === "edge_spurious" || r.probe_type === "missing_node"
   );
-  const accepted = fabricated.filter((r) => r.absolute_shift! >= 0.05);
+  const accepted = spurious.filter((r) => r.absolute_shift! >= 0.05);
 
   const onPath = successful
     .filter((r) => r.target_on_critical_path)
@@ -704,9 +704,9 @@ export async function runFullPipeline(
       asymmetry_index: meanStr > 0 ? meanNeg / meanStr : null,
       mean_shift_negate: meanNeg,
       mean_shift_strengthen: meanStr,
-      fnar: fabricated.length > 0 ? accepted.length / fabricated.length : null,
+      fnar: spurious.length > 0 ? accepted.length / spurious.length : null,
       n_accepted: accepted.length,
-      n_fabricated: fabricated.length,
+      n_spurious: spurious.length,
       critical_path_premium:
         onPath.length > 0 && offPath.length > 0 ? meanOn - meanOff : null,
       mean_shift_on_path: meanOn,
