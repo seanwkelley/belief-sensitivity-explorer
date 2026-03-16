@@ -188,19 +188,34 @@ export default function QuestionDetailPage() {
         )}
       </div>
 
+      {/* Probability Estimate */}
+      <div className="mb-4 flex items-center gap-3">
+        <span className="text-sm text-[var(--color-muted-foreground)]">Probability Estimate:</span>
+        <div
+          className="flex items-center gap-1.5 text-2xl font-mono font-bold"
+          style={{ color: probToColor(data.initial_probability) }}
+        >
+          <ProbabilityBar probability={data.initial_probability} />
+          {formatProbability(data.initial_probability)}
+        </div>
+      </div>
+
+      {/* Reasoning */}
+      {data.reasoning && (
+        <div className="mb-6 rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+          <h3 className="text-sm font-semibold mb-2">Original Reasoning</h3>
+          <p className="text-sm text-[var(--color-muted-foreground)] leading-relaxed whitespace-pre-wrap">
+            {data.reasoning}
+          </p>
+        </div>
+      )}
+
       {/* Top row: network + sidebar */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 mb-6">
         {/* Causal Network */}
         <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-          <div className="flex items-center justify-between mb-3">
+          <div className="mb-3">
             <h3 className="text-sm font-semibold">Causal Network</h3>
-            <div
-              className="flex items-center gap-1.5 text-lg font-mono font-bold"
-              style={{ color: probToColor(data.initial_probability) }}
-            >
-              <ProbabilityBar probability={data.initial_probability} />
-              {formatProbability(data.initial_probability)}
-            </div>
           </div>
           <CausalNetwork
             nodes={data.network_analysis.node_metrics}
@@ -281,15 +296,6 @@ export default function QuestionDetailPage() {
         />
       </div>
 
-      {/* Reasoning */}
-      {data.reasoning && (
-        <div className="mt-6 rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-          <h3 className="text-sm font-semibold mb-2">Original Reasoning</h3>
-          <p className="text-sm text-[var(--color-muted-foreground)] leading-relaxed whitespace-pre-wrap">
-            {data.reasoning}
-          </p>
-        </div>
-      )}
     </div>
   );
 }
