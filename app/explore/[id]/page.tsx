@@ -260,7 +260,7 @@ export default function QuestionDetailPage() {
 
       {/* Chart */}
       <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-        <h3 className="text-sm font-semibold mb-3">Delta Distribution</h3>
+        <h3 className="text-sm font-semibold mb-3">Probability Shift by Probe</h3>
         <DeltaBarChart
           results={data.probe_results}
           initialProbability={data.initial_probability}
