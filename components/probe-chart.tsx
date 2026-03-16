@@ -10,9 +10,6 @@ import {
   ReferenceLine,
   ResponsiveContainer,
   Cell,
-  ScatterChart,
-  Scatter,
-  ZAxis,
 } from "recharts";
 import type { ProbeResult } from "@/lib/types";
 import { probeTypeLabel } from "@/lib/utils";
@@ -82,69 +79,3 @@ export function DeltaBarChart({
   );
 }
 
-export function ImportanceSensitivityScatter({
-  results,
-}: {
-  results: ProbeResult[];
-}) {
-  const data = results
-    .filter((r) => r.absolute_shift != null && r.target_importance > 0)
-    .map((r) => ({
-      importance: r.target_importance,
-      sensitivity: (r.absolute_shift ?? 0) * 100,
-      name: r.target_id,
-      category: r.probe_category,
-    }));
-
-  return (
-    <div className="w-full h-[300px]">
-      <ResponsiveContainer>
-        <ScatterChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
-          <XAxis
-            type="number"
-            dataKey="importance"
-            name="Importance"
-            tick={{ fontSize: 10, fill: "#a1a1aa" }}
-            label={{
-              value: "Composite Importance",
-              position: "bottom",
-              fontSize: 11,
-              fill: "#a1a1aa",
-            }}
-          />
-          <YAxis
-            type="number"
-            dataKey="sensitivity"
-            name="Sensitivity"
-            tick={{ fontSize: 10, fill: "#a1a1aa" }}
-            tickFormatter={(v: number) => `${v.toFixed(0)}pp`}
-            label={{
-              value: "|Δ| (pp)",
-              angle: -90,
-              position: "insideLeft",
-              fontSize: 11,
-              fill: "#a1a1aa",
-            }}
-          />
-          <ZAxis range={[40, 400]} />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: "#18181b",
-              border: "1px solid #27272a",
-              borderRadius: "8px",
-              fontSize: 12,
-            }}
-            formatter={(value: number, name: string) => [
-              name === "Importance"
-                ? value.toFixed(3)
-                : `${value.toFixed(1)}pp`,
-              name,
-            ]}
-          />
-          <Scatter data={data} fill="#3b82f6" fillOpacity={0.7} />
-        </ScatterChart>
-      </ResponsiveContainer>
-    </div>
-  );
-}

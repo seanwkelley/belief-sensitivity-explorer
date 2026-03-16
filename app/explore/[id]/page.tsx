@@ -6,7 +6,7 @@ import Link from "next/link";
 import type { QuestionDetail, AggregateMetrics } from "@/lib/types";
 import { CausalNetwork } from "@/components/causal-network";
 import { ProbeTable } from "@/components/probe-table";
-import { DeltaBarChart, ImportanceSensitivityScatter } from "@/components/probe-chart";
+import { DeltaBarChart } from "@/components/probe-chart";
 import { MetricsPanel } from "@/components/metrics-panel";
 import { ProbabilityBar } from "@/components/probability-bar";
 import { InteractiveProbe } from "@/components/interactive-probe";
@@ -44,7 +44,6 @@ export default function QuestionDetailPage() {
   const [switching, setSwitching] = useState(false);
   const [availableModels, setAvailableModels] = useState<string[]>([]);
   const [selectedTargetId, setSelectedTargetId] = useState<string | null>(null);
-  const [activeViz, setActiveViz] = useState<"delta" | "scatter">("delta");
 
   // Load available models for this question
   useEffect(() => {
@@ -261,36 +260,11 @@ export default function QuestionDetailPage() {
 
       {/* Chart */}
       <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <h3 className="text-sm font-semibold">
-            {activeViz === "delta"
-              ? "Delta Distribution"
-              : "Importance vs Sensitivity"}
-          </h3>
-          <div className="flex items-center gap-1 ml-auto">
-            {(["delta", "scatter"] as const).map((v) => (
-              <button
-                key={v}
-                onClick={() => setActiveViz(v)}
-                className={`px-2 py-1 text-xs rounded-md transition-colors ${
-                  activeViz === v
-                    ? "bg-[var(--color-primary)] text-white"
-                    : "bg-[var(--color-secondary)] text-[var(--color-muted-foreground)]"
-                }`}
-              >
-                {v === "delta" ? "Deltas" : "Scatter"}
-              </button>
-            ))}
-          </div>
-        </div>
-        {activeViz === "delta" ? (
-          <DeltaBarChart
-            results={data.probe_results}
-            initialProbability={data.initial_probability}
-          />
-        ) : (
-          <ImportanceSensitivityScatter results={data.probe_results} />
-        )}
+        <h3 className="text-sm font-semibold mb-3">Delta Distribution</h3>
+        <DeltaBarChart
+          results={data.probe_results}
+          initialProbability={data.initial_probability}
+        />
       </div>
 
       {/* Probe Table */}
