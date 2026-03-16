@@ -36,7 +36,13 @@ export function InteractiveProbe({
   defaultModel,
 }: InteractiveProbeProps) {
   const [probeText, setProbeText] = useState("");
-  const [apiKey, setApiKey] = useState(defaultApiKey ?? "");
+  const [apiKey, setApiKey] = useState(() => {
+    if (defaultApiKey) return defaultApiKey;
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("openrouter_api_key") ?? "";
+    }
+    return "";
+  });
   const [model, setModel] = useState(defaultModel ?? "meta-llama/llama-3.3-70b-instruct");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ProbeResponse | null>(null);
@@ -118,7 +124,10 @@ export function InteractiveProbe({
         <input
           type="password"
           value={apiKey}
-          onChange={(e) => setApiKey(e.target.value)}
+          onChange={(e) => {
+            setApiKey(e.target.value);
+            localStorage.setItem("openrouter_api_key", e.target.value);
+          }}
           placeholder="OpenRouter API key (sk-or-...)"
           className="rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
         />
