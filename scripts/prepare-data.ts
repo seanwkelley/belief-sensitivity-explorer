@@ -240,6 +240,48 @@ function computeMetrics(results: ProbeResult[]) {
 }
 
 // ------------------------------------------------------------------
+// Topic classification
+// ------------------------------------------------------------------
+
+function classifyTopic(questionText: string, source: string): string {
+  const t = questionText.toLowerCase();
+  const s = source.toLowerCase();
+
+  // Source-based shortcuts
+  if (s === "yfinance") return "Finance & Markets";
+  if (s === "fred") return "Economics";
+  if (s === "acled") return "Conflict & Security";
+  if (s === "dbnomics" && t.includes("temperature")) return "Climate & Weather";
+  if (s === "dbnomics") return "Economics";
+
+  // Keyword-based classification
+  if (/\b(nato|war|military|troops|conflict|invasion|attack|weapon|nuclear|missile|army|defense|violen|strikes?\b.*\b(?:country|nigeria|iran|syria)|invade|uprising)/i.test(t))
+    return "Conflict & Security";
+  if (/\b(protest|refugee|migration|humanitarian|human rights|sanction|khamenei|supreme leader|impeach)/i.test(t))
+    return "Conflict & Security";
+  if (/\b(election|president|congress|senate|governor|vote|poll|party|democrat|republican|parliament|minister|trump|nominate|fed chair)/i.test(t))
+    return "Politics & Governance";
+  if (/\b(fertility|birth rate|ubi|universal basic income|immigration|breakaway.*league)/i.test(t))
+    return "Politics & Governance";
+  if (/\b(stock|market|price|bitcoin|crypto|s&p|nasdaq|yield|bond|index|trading|investor|tesla|ceo|step down)/i.test(t))
+    return "Finance & Markets";
+  if (/\b(gdp|inflation|unemployment|interest rate|federal reserve|import|export|tariff|trade|econom)/i.test(t))
+    return "Economics";
+  if (/\b(temperature|climate|weather|hurricane|flood|drought|emission|carbon|solar power|renewable|energy consumption)/i.test(t))
+    return "Climate & Weather";
+  if (/\b(vaccine|virus|disease|health|medical|fda|drug|pharma|pandemic|cancer|treatment|diagnosis|dna|embryo|brain emulation|roundup|newborn)/i.test(t))
+    return "Health & Science";
+  if (/\b(ai\b|artificial intelligence|agi|machine learning|openai|google|apple|microsoft|tech|software|browser|chromium|driverless|robot|digital intelligence)/i.test(t))
+    return "Technology";
+  if (/\b(wikipedia|fide|ranking|chess|oscar|academy|award|sport|champion|tournament|world cup|olympic|nba|nascar|nfl|box office|film|movie|pokemon|agent 007|drake|colbert|embiid)/i.test(t))
+    return "Society & Culture";
+  if (/\b(research fund|ngo|non-governmental)/i.test(t))
+    return "Politics & Governance";
+
+  return "Other";
+}
+
+// ------------------------------------------------------------------
 // Main
 // ------------------------------------------------------------------
 
@@ -267,6 +309,7 @@ function main() {
       question_id: string;
       question_text: string;
       source: string;
+      category: string;
       models: string[]; // which models have data for this question
     }
   > = {};
@@ -334,6 +377,7 @@ function main() {
             question_id: q.question_id,
             question_text: q.question_text,
             source: q.source,
+            category: classifyTopic(q.question_text, q.source),
             models: [],
           };
         }

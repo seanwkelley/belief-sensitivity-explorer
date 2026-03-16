@@ -7,6 +7,7 @@ interface QuestionEntry {
   question_id: string;
   question_text: string;
   source: string;
+  category?: string;
   models?: string[];
   // Legacy fields
   initial_probability?: number;
@@ -33,10 +34,23 @@ interface SummaryData {
   questions: QuestionEntry[];
 }
 
+const CATEGORY_ORDER = [
+  "Conflict & Security",
+  "Politics & Governance",
+  "Finance & Markets",
+  "Economics",
+  "Climate & Weather",
+  "Health & Science",
+  "Technology",
+  "Society & Culture",
+  "Other",
+];
+
 export default function ExplorePage() {
   const [data, setData] = useState<SummaryData | null>(null);
   const [search, setSearch] = useState("");
   const [selectedModel, setSelectedModel] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -67,6 +81,10 @@ export default function ExplorePage() {
       list = list.filter((q) => q.models?.includes(selectedModel));
     }
 
+    if (selectedCategory !== "all") {
+      list = list.filter((q) => (q.category || "Other") === selectedCategory);
+    }
+
     if (search) {
       const q = search.toLowerCase();
       list = list.filter(
@@ -78,7 +96,45 @@ export default function ExplorePage() {
     }
 
     return list;
-  }, [data, search, selectedModel, isMultiModel]);
+  }, [data, search, selectedModel, selectedCategory, isMultiModel]);
+
+  // Group filtered questions by category
+  const grouped = useMemo(() => {
+    const groups: Record<string, QuestionEntry[]> = {};
+    for (const q of filtered) {
+      const cat = q.category || "Other";
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(q);
+    }
+    // Sort by predefined order
+    const sorted: [string, QuestionEntry[]][] = [];
+    for (const cat of CATEGORY_ORDER) {
+      if (groups[cat]) sorted.push([cat, groups[cat]]);
+    }
+    // Add any categories not in the predefined order
+    for (const cat of Object.keys(groups)) {
+      if (!CATEGORY_ORDER.includes(cat)) sorted.push([cat, groups[cat]]);
+    }
+    return sorted;
+  }, [filtered]);
+
+  // Available categories (with counts) for the filter
+  const categoryOptions = useMemo(() => {
+    if (!data) return [];
+    let list = data.questions;
+    if (isMultiModel && selectedModel) {
+      list = list.filter((q) => q.models?.includes(selectedModel));
+    }
+    const counts: Record<string, number> = {};
+    for (const q of list) {
+      const cat = q.category || "Other";
+      counts[cat] = (counts[cat] || 0) + 1;
+    }
+    return CATEGORY_ORDER.filter((cat) => counts[cat]).map((cat) => ({
+      key: cat,
+      count: counts[cat],
+    }));
+  }, [data, selectedModel, isMultiModel]);
 
   if (loading) {
     return (
@@ -128,48 +184,97 @@ export default function ExplorePage() {
       </div>
 
       {/* Controls */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
-        {/* Model selector (multi-model only) */}
-        {isMultiModel && (
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-[var(--color-muted-foreground)]">
-              Model:
-            </span>
-            <div className="flex items-center gap-1">
-              {modelKeys.map((key) => (
-                <button
-                  key={key}
-                  onClick={() => setSelectedModel(key)}
-                  className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
-                    selectedModel === key
-                      ? "bg-[var(--color-primary)] text-white"
-                      : "bg-[var(--color-secondary)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
-                  }`}
-                >
-                  {data.models![key].label}
-                </button>
+      <div className="flex flex-col gap-3 mb-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          {/* Model selector (multi-model only) */}
+          {isMultiModel && (
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-[var(--color-muted-foreground)]">
+                Model:
+              </span>
+              <div className="flex items-center gap-1">
+                {modelKeys.map((key) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelectedModel(key)}
+                    className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
+                      selectedModel === key
+                        ? "bg-[var(--color-primary)] text-white"
+                        : "bg-[var(--color-secondary)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
+                    }`}
+                  >
+                    {data.models![key].label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <input
+            type="text"
+            placeholder="Search questions..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full sm:w-64 rounded-md border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-2 text-sm placeholder:text-[var(--color-muted-foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
+          />
+        </div>
+
+        {/* Category filter */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-xs text-[var(--color-muted-foreground)]">
+            Topic:
+          </span>
+          <button
+            onClick={() => setSelectedCategory("all")}
+            className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
+              selectedCategory === "all"
+                ? "bg-[var(--color-primary)] text-white"
+                : "bg-[var(--color-secondary)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
+            }`}
+          >
+            All
+          </button>
+          {categoryOptions.map(({ key, count }) => (
+            <button
+              key={key}
+              onClick={() =>
+                setSelectedCategory(selectedCategory === key ? "all" : key)
+              }
+              className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
+                selectedCategory === key
+                  ? "bg-[var(--color-primary)] text-white"
+                  : "bg-[var(--color-secondary)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
+              }`}
+            >
+              {key} ({count})
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Results grouped by category */}
+      <div className="space-y-8">
+        {grouped.map(([category, questions]) => (
+          <div key={category}>
+            <div className="flex items-center gap-3 mb-3">
+              <h2 className="text-sm font-semibold text-[var(--color-foreground)]">
+                {category}
+              </h2>
+              <span className="text-xs text-[var(--color-muted-foreground)]">
+                {questions.length}
+              </span>
+              <div className="flex-1 h-px bg-[var(--color-border)]" />
+            </div>
+            <div className="grid grid-cols-1 gap-3">
+              {questions.map((q) => (
+                <QuestionCard
+                  key={q.question_id}
+                  q={q}
+                  model={isMultiModel ? selectedModel : undefined}
+                />
               ))}
             </div>
           </div>
-        )}
-
-        <input
-          type="text"
-          placeholder="Search questions..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full sm:w-64 rounded-md border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-2 text-sm placeholder:text-[var(--color-muted-foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
-        />
-      </div>
-
-      {/* Results */}
-      <div className="grid grid-cols-1 gap-3">
-        {filtered.map((q) => (
-          <QuestionCard
-            key={q.question_id}
-            q={q}
-            model={isMultiModel ? selectedModel : undefined}
-          />
         ))}
       </div>
 
