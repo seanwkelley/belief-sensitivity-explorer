@@ -113,6 +113,16 @@ export default function ExplorePage() {
           <p className="text-sm text-[var(--color-muted-foreground)] mt-1">
             {filtered.length} questions
             {!isMultiModel && data.model && <> &middot; {data.model}</>}
+            {" "}&middot; Sampled from{" "}
+            <a
+              href="https://forecastbench.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-primary)] hover:underline"
+            >
+              ForecastBench
+            </a>
+            , a benchmark of binary yes/no forecasting questions with known resolution dates
           </p>
         </div>
       </div>
