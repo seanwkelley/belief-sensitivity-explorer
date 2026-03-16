@@ -8,6 +8,7 @@ import { DeltaBarChart } from "@/components/probe-chart";
 import { MetricsPanel } from "@/components/metrics-panel";
 import { ProbabilityBar } from "@/components/probability-bar";
 import { InteractiveProbe } from "@/components/interactive-probe";
+import { useApiKey } from "@/lib/api-key-context";
 import { InformationPriorities } from "@/components/information-priorities";
 import { formatProbability, probToColor } from "@/lib/utils";
 
@@ -51,12 +52,7 @@ export default function LivePage() {
   const [question, setQuestion] = useState("");
   const [background, setBackground] = useState("");
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
-  const [apiKey, setApiKey] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("openrouter_api_key") ?? "";
-    }
-    return "";
-  });
+  const { apiKey } = useApiKey();
   const [runs, setRuns] = useState<ModelRun[]>([]);
 
   function toggleModel(value: string) {
@@ -263,27 +259,13 @@ export default function LivePage() {
               className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)] resize-y"
             />
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              OpenRouter API Key{" "}
-              <span className="text-[var(--color-destructive)]">*</span>
-            </label>
-            <input
-              type="password"
-              value={apiKey}
-              onChange={(e) => {
-                setApiKey(e.target.value);
-                localStorage.setItem("openrouter_api_key", e.target.value);
-              }}
-              placeholder="sk-or-..."
-              className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
-            />
-            <p className="mt-1 text-[10px] text-[var(--color-muted-foreground)]">
-              Stored locally in your browser. We recommend regenerating it on{" "}
-              <a href="https://openrouter.ai/keys" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary)] hover:underline">OpenRouter</a>{" "}
-              when you&apos;re done.
-            </p>
-          </div>
+          {!apiKey && (
+            <div className="rounded-md border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/5 p-3">
+              <p className="text-sm text-[var(--color-muted-foreground)]">
+                Set your OpenRouter API key using the key icon in the navigation bar.
+              </p>
+            </div>
+          )}
 
           {/* Model selection */}
           <div>
@@ -600,7 +582,6 @@ function LiveResultPanel({
               selectedTargetId={selectedNode}
               selectedTargetType={selectedInfo.type}
               selectedTargetDescription={selectedInfo.description}
-              defaultApiKey={apiKey}
               defaultModel={model}
             />
           </div>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ProbabilityBar } from "./probability-bar";
 import { formatProbability, formatDelta, deltaColor } from "@/lib/utils";
+import { useApiKey } from "@/lib/api-key-context";
 
 interface InteractiveProbeProps {
   questionText: string;
@@ -13,7 +14,6 @@ interface InteractiveProbeProps {
   selectedTargetId: string | null;
   selectedTargetType: "node" | "edge" | null;
   selectedTargetDescription: string | null;
-  defaultApiKey?: string;
   defaultModel?: string;
 }
 
@@ -32,17 +32,10 @@ export function InteractiveProbe({
   selectedTargetId,
   selectedTargetType,
   selectedTargetDescription,
-  defaultApiKey,
   defaultModel,
 }: InteractiveProbeProps) {
+  const { apiKey } = useApiKey();
   const [probeText, setProbeText] = useState("");
-  const [apiKey, setApiKey] = useState(() => {
-    if (defaultApiKey) return defaultApiKey;
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("openrouter_api_key") ?? "";
-    }
-    return "";
-  });
   const [model, setModel] = useState(defaultModel ?? "meta-llama/llama-3.3-70b-instruct");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ProbeResponse | null>(null);
@@ -119,34 +112,23 @@ export function InteractiveProbe({
         </p>
       )}
 
-      {/* API key (persisted in localStorage) */}
-      <p className="text-[10px] text-[var(--color-muted-foreground)]">
-        Your key is stored locally in your browser. We recommend regenerating it on{" "}
-        <a href="https://openrouter.ai/keys" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary)] hover:underline">OpenRouter</a>{" "}
-        when you&apos;re done.
-      </p>
-      <div className="grid grid-cols-[1fr_auto] gap-2">
-        <input
-          type="password"
-          value={apiKey}
-          onChange={(e) => {
-            setApiKey(e.target.value);
-            localStorage.setItem("openrouter_api_key", e.target.value);
-          }}
-          placeholder="OpenRouter API key (sk-or-...)"
-          className="rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
-        />
-        <select
-          value={model}
-          onChange={(e) => setModel(e.target.value)}
-          className="rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
-        >
-          <option value="meta-llama/llama-3.3-70b-instruct">Llama 3.3 70B</option>
-          <option value="deepseek/deepseek-chat-v3-0324">DeepSeek V3</option>
-          <option value="anthropic/claude-3.5-sonnet">Claude 3.5 Sonnet</option>
-          <option value="openai/gpt-4o">GPT-4o</option>
-        </select>
-      </div>
+      {/* Model selector */}
+      <select
+        value={model}
+        onChange={(e) => setModel(e.target.value)}
+        className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
+      >
+        <option value="meta-llama/llama-3.3-70b-instruct">Llama 3.3 70B</option>
+        <option value="deepseek/deepseek-chat-v3-0324">DeepSeek V3</option>
+        <option value="anthropic/claude-3.5-sonnet">Claude 3.5 Sonnet</option>
+        <option value="openai/gpt-4o">GPT-4o</option>
+      </select>
+
+      {!apiKey && (
+        <p className="text-[10px] text-[var(--color-muted-foreground)]">
+          Set your OpenRouter API key using the key icon in the navigation bar.
+        </p>
+      )}
 
       {/* Probe input */}
       <textarea
