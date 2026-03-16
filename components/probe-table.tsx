@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, Fragment } from "react";
 import type { ProbeResult } from "@/lib/types";
 import {
   formatProbability,
@@ -75,7 +75,10 @@ export function ProbeTable({
         {categories.map((cat) => (
           <button
             key={cat}
-            onClick={() => setActiveCategory(cat)}
+            onClick={() => {
+              setActiveCategory(cat);
+              setExpandedProbeIdx(null);
+            }}
             className={`px-3 py-1.5 text-xs rounded-md transition-colors whitespace-nowrap ${
               activeCategory === cat
                 ? "bg-[var(--color-primary)] text-white"
@@ -138,101 +141,109 @@ export function ProbeTable({
                   ? r.updated_probability - initialProbability
                   : null;
               const isSelected = selectedTargetId === r.target_id;
+              const isExpanded = expandedProbeIdx === i;
 
               return (
-                <tr
-                  key={i}
-                  onClick={() => {
-                    onSelectProbe?.(r.target_id);
-                    setExpandedProbeIdx(expandedProbeIdx === i ? null : i);
-                  }}
-                  className={`border-b border-[var(--color-border)] hover:bg-[var(--color-secondary)]/50 cursor-pointer transition-colors ${
-                    isSelected ? "bg-[var(--color-primary)]/10" : ""
-                  }`}
-                >
-                  <td className="px-3 py-2">
-                    <span className="inline-flex items-center gap-1.5">
-                      <span
-                        className={`h-2 w-2 rounded-full ${
-                          r.probe_category === "node"
-                            ? "bg-blue-500"
-                            : r.probe_category === "edge"
-                              ? "bg-purple-500"
-                              : r.probe_category === "control"
-                                ? "bg-gray-400"
-                                : "bg-orange-500"
-                        }`}
-                      />
-                      <span className="font-mono text-xs">
-                        {probeTypeLabel(r.probe_type)}
+                <Fragment key={i}>
+                  <tr
+                    onClick={() => {
+                      onSelectProbe?.(r.target_id);
+                      setExpandedProbeIdx(isExpanded ? null : i);
+                    }}
+                    className={`border-b border-[var(--color-border)] hover:bg-[var(--color-secondary)]/50 cursor-pointer transition-colors ${
+                      isSelected ? "bg-[var(--color-primary)]/10" : ""
+                    }`}
+                  >
+                    <td className="px-3 py-2">
+                      <span className="inline-flex items-center gap-1.5">
+                        <span
+                          className={`h-2 w-2 rounded-full shrink-0 ${
+                            r.probe_category === "node"
+                              ? "bg-blue-500"
+                              : r.probe_category === "edge"
+                                ? "bg-purple-500"
+                                : r.probe_category === "control"
+                                  ? "bg-gray-400"
+                                  : "bg-orange-500"
+                          }`}
+                        />
+                        <span className="font-mono text-xs">
+                          {probeTypeLabel(r.probe_type)}
+                        </span>
+                        <span className="text-[var(--color-muted-foreground)] text-xs ml-1">
+                          {isExpanded ? "▾" : "▸"}
+                        </span>
                       </span>
-                    </span>
-                  </td>
-                  <td className="px-3 py-2 text-xs text-[var(--color-muted-foreground)] max-w-[200px]">
-                    {truncate(r.target_id, 30)}
-                  </td>
-                  <td className="px-3 py-2 text-right font-mono text-xs">
-                    {formatProbability(initialProbability)}
-                  </td>
-                  <td className="px-3 py-2 text-right font-mono text-xs">
-                    {r.updated_probability != null
-                      ? formatProbability(r.updated_probability)
-                      : "—"}
-                  </td>
-                  <td className="px-3 py-2 text-right">
-                    {delta != null ? (
-                      <span className={`font-mono text-xs font-medium ${deltaColor(delta)}`}>
-                        {formatDelta(delta)}
-                      </span>
-                    ) : (
-                      "—"
-                    )}
-                  </td>
-                  <td className="px-3 py-2 text-center">
-                    {r.shift_direction === "increased" && (
-                      <span className="text-[var(--color-negative)]">↑</span>
-                    )}
-                    {r.shift_direction === "decreased" && (
-                      <span className="text-[var(--color-positive)]">↓</span>
-                    )}
-                    {r.shift_direction === "unchanged" && (
-                      <span className="text-[var(--color-neutral-shift)]">
-                        —
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-3 py-2 text-right font-mono text-xs text-[var(--color-muted-foreground)]">
-                    {r.target_importance.toFixed(3)}
-                  </td>
-                </tr>
+                    </td>
+                    <td className="px-3 py-2 text-xs text-[var(--color-muted-foreground)] max-w-[200px]">
+                      {truncate(r.target_id, 30)}
+                    </td>
+                    <td className="px-3 py-2 text-right font-mono text-xs">
+                      {formatProbability(initialProbability)}
+                    </td>
+                    <td className="px-3 py-2 text-right font-mono text-xs">
+                      {r.updated_probability != null
+                        ? formatProbability(r.updated_probability)
+                        : "—"}
+                    </td>
+                    <td className="px-3 py-2 text-right">
+                      {delta != null ? (
+                        <span className={`font-mono text-xs font-medium ${deltaColor(delta)}`}>
+                          {formatDelta(delta)}
+                        </span>
+                      ) : (
+                        "—"
+                      )}
+                    </td>
+                    <td className="px-3 py-2 text-center">
+                      {r.shift_direction === "increased" && (
+                        <span className="text-[var(--color-negative)]">↑</span>
+                      )}
+                      {r.shift_direction === "decreased" && (
+                        <span className="text-[var(--color-positive)]">↓</span>
+                      )}
+                      {r.shift_direction === "unchanged" && (
+                        <span className="text-[var(--color-neutral-shift)]">
+                          —
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-3 py-2 text-right font-mono text-xs text-[var(--color-muted-foreground)]">
+                      {r.target_importance.toFixed(3)}
+                    </td>
+                  </tr>
+                  {isExpanded && (
+                    <tr className="border-b border-[var(--color-border)]">
+                      <td colSpan={7} className="px-4 py-3 bg-[var(--color-secondary)]/30">
+                        <div className="space-y-2">
+                          <div>
+                            <span className="text-xs font-medium text-[var(--color-muted-foreground)]">
+                              Probe Text
+                            </span>
+                            <p className="text-sm text-[var(--color-foreground)] mt-0.5 italic leading-relaxed">
+                              &ldquo;{r.probe_text}&rdquo;
+                            </p>
+                          </div>
+                          {r.reasoning && (
+                            <div>
+                              <span className="text-xs font-medium text-[var(--color-muted-foreground)]">
+                                Model Reasoning
+                              </span>
+                              <p className="text-sm text-[var(--color-foreground)] mt-0.5 leading-relaxed whitespace-pre-wrap">
+                                {r.reasoning}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
               );
             })}
           </tbody>
         </table>
       </div>
-
-      {/* Expandable reasoning */}
-      {expandedProbeIdx != null && filtered[expandedProbeIdx] && (
-        <div className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-          {(() => {
-            const sel = filtered[expandedProbeIdx];
-            return (
-              <>
-                <p className="text-xs font-mono text-[var(--color-primary)] mb-2">
-                  Probe: {probeTypeLabel(sel.probe_type)} →{" "}
-                  {sel.target_id}
-                </p>
-                <p className="text-xs text-[var(--color-muted-foreground)] mb-3 italic">
-                  &ldquo;{truncate(sel.probe_text, 300)}&rdquo;
-                </p>
-                <p className="text-sm text-[var(--color-foreground)] leading-relaxed">
-                  {sel.reasoning}
-                </p>
-              </>
-            );
-          })()}
-        </div>
-      )}
     </div>
   );
 }
