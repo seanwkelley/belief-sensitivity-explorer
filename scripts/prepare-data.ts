@@ -1,13 +1,11 @@
 /**
  * Prepares pre-computed sensitivity data for the Next.js app.
  *
- * Reads per-question JSON files from the sensitivity pipeline output
- * and produces:
- *   - public/data/summary.json  (cross-question index + aggregate stats)
- *   - public/data/questions/{id}.json (per-question detail with derived metrics)
+ * Reads per-question JSON files from ALL model output directories and produces:
+ *   - public/data/summary.json  (cross-question index + per-model stats)
+ *   - public/data/questions/{model}/{id}.json (per-question detail with derived metrics)
  *
- * Usage: npx tsx scripts/prepare-data.ts [inputDir]
- *   inputDir defaults to ../outputs/sensitivity_causal_llama_one-turn/question_results
+ * Usage: npx tsx scripts/prepare-data.ts
  */
 
 import * as fs from "fs";
@@ -74,11 +72,22 @@ interface QuestionJSON {
 }
 
 // ------------------------------------------------------------------
-// Metric computation (mirrors analysis_causal.py)
+// Model directories
 // ------------------------------------------------------------------
 
-// SSR: high-importance probes vs low-importance probes
-// Matches paper definition: SSR = mean(H shifts) / mean(L shifts)
+const CAUSAL_BASE = path.resolve(__dirname, "../../outputs/sensitivity/causal");
+
+const MODELS: Record<string, { dir: string; label: string }> = {
+  "llama-8b": { dir: "llama_one_turn", label: "Llama 3.1 8B" },
+  "llama-70b": { dir: "70b_one_turn", label: "Llama 3.3 70B" },
+  "deepseek-v3": { dir: "deepseek_one_turn", label: "DeepSeek V3" },
+  "qwen-235b": { dir: "qwen_one_turn", label: "Qwen3 235B" },
+};
+
+// ------------------------------------------------------------------
+// Metric computation (matches analysis_causal.py)
+// ------------------------------------------------------------------
+
 // H and L sets for SSR (matches Python analysis_causal.py)
 const HIGH_TYPES = new Set([
   "node_negate_high",
@@ -235,161 +244,144 @@ function computeMetrics(results: ProbeResult[]) {
 // ------------------------------------------------------------------
 
 function main() {
-  const inputDir =
-    process.argv[2] ||
-    path.resolve(
-      __dirname,
-      "../../outputs/sensitivity/causal/70b_one_turn"
-    );
   const outputBase = path.resolve(__dirname, "../public/data");
-  const questionsDir = path.join(outputBase, "questions");
-
-  // Also check shared stages for additional data
-  const sharedDir = path.resolve(
-    __dirname,
-    "../../outputs/_shared_stages_causal"
-  );
-
-  console.log(`Reading from: ${inputDir}`);
-  console.log(`Shared stages: ${sharedDir}`);
   console.log(`Output to: ${outputBase}`);
 
-  // Ensure output directories exist
-  fs.mkdirSync(questionsDir, { recursive: true });
+  // Track all questions across models for the summary
+  const allQuestionIds = new Set<string>();
+  const modelSummaries: Record<
+    string,
+    {
+      label: string;
+      total_questions: number;
+      avg_ssr: number | null;
+      avg_mean_shift: number;
+      question_ids: string[];
+    }
+  > = {};
 
-  // Collect all question JSON files
-  const allFiles: string[] = [];
+  // Global question index (union across models)
+  const questionIndex: Record<
+    string,
+    {
+      question_id: string;
+      question_text: string;
+      source: string;
+      models: string[]; // which models have data for this question
+    }
+  > = {};
 
-  // Primary: per-question results (have probe_results)
-  if (fs.existsSync(inputDir)) {
+  for (const [modelKey, modelInfo] of Object.entries(MODELS)) {
+    const inputDir = path.join(
+      CAUSAL_BASE,
+      modelInfo.dir,
+      "question_results"
+    );
+
+    if (!fs.existsSync(inputDir)) {
+      console.log(`\nSkipping ${modelKey}: ${inputDir} not found`);
+      continue;
+    }
+
+    const modelQuestionsDir = path.join(outputBase, "questions", modelKey);
+    fs.mkdirSync(modelQuestionsDir, { recursive: true });
+
     const files = fs
       .readdirSync(inputDir)
       .filter((f) => f.endsWith(".json"))
       .map((f) => path.join(inputDir, f));
-    allFiles.push(...files);
-  }
 
-  // Fallback: shared stages (may only have partial data)
-  if (allFiles.length === 0 && fs.existsSync(sharedDir)) {
-    const files = fs
-      .readdirSync(sharedDir)
-      .filter((f) => f.endsWith(".json"))
-      .map((f) => path.join(sharedDir, f));
-    allFiles.push(...files);
-  }
+    console.log(`\n--- ${modelInfo.label} (${modelKey}) ---`);
+    console.log(`  Reading from: ${inputDir}`);
+    console.log(`  Found ${files.length} question files`);
 
-  console.log(`Found ${allFiles.length} question files`);
+    let totalSSR = 0;
+    let ssrCount = 0;
+    let totalMeanShift = 0;
+    let shiftCount = 0;
+    const questionIds: string[] = [];
 
-  const index: Array<{
-    question_id: string;
-    question_text: string;
-    source: string;
-    initial_probability: number;
-    n_nodes: number;
-    n_edges: number;
-    mean_absolute_shift: number | null;
-    max_absolute_shift: number | null;
-    ssr: number | null;
-  }> = [];
+    for (const file of files) {
+      try {
+        const raw = fs.readFileSync(file, "utf-8");
+        const q: QuestionJSON = JSON.parse(raw);
 
-  let totalSSR = 0;
-  let ssrCount = 0;
-  let totalMeanShift = 0;
-  let shiftCount = 0;
-  let totalNodes = 0;
-  let totalEdges = 0;
+        if (!q.probe_results || q.probe_results.length === 0) {
+          continue;
+        }
 
-  for (const file of allFiles) {
-    try {
-      const raw = fs.readFileSync(file, "utf-8");
-      const q: QuestionJSON = JSON.parse(raw);
+        const metrics = computeMetrics(q.probe_results);
 
-      // Skip if no probe results
-      if (!q.probe_results || q.probe_results.length === 0) {
-        console.log(`  Skipping ${q.question_id}: no probe results`);
-        continue;
+        const detail = {
+          ...q,
+          model: modelKey,
+          model_label: modelInfo.label,
+          aggregate_metrics: metrics,
+        };
+
+        const detailPath = path.join(
+          modelQuestionsDir,
+          `${q.question_id}.json`
+        );
+        fs.writeFileSync(detailPath, JSON.stringify(detail, null, 2));
+
+        questionIds.push(q.question_id);
+        allQuestionIds.add(q.question_id);
+
+        // Build global index
+        if (!questionIndex[q.question_id]) {
+          questionIndex[q.question_id] = {
+            question_id: q.question_id,
+            question_text: q.question_text,
+            source: q.source,
+            models: [],
+          };
+        }
+        questionIndex[q.question_id].models.push(modelKey);
+
+        if (metrics.ssr != null) {
+          totalSSR += metrics.ssr;
+          ssrCount++;
+        }
+        if (q.summary?.mean_absolute_shift != null) {
+          totalMeanShift += q.summary.mean_absolute_shift;
+          shiftCount++;
+        }
+      } catch (err) {
+        console.error(`  Error processing ${file}:`, err);
       }
-
-      // Compute derived metrics
-      const metrics = computeMetrics(q.probe_results);
-
-      // Build enriched question detail
-      const detail = {
-        ...q,
-        aggregate_metrics: metrics,
-      };
-
-      // Write per-question detail
-      const detailPath = path.join(questionsDir, `${q.question_id}.json`);
-      fs.writeFileSync(detailPath, JSON.stringify(detail, null, 2));
-
-      // Build index entry
-      const nNodes = q.network_analysis?.n_nodes ?? q.nodes.length;
-      const nEdges = q.network_analysis?.n_edges ?? q.edges.length;
-
-      index.push({
-        question_id: q.question_id,
-        question_text: q.question_text,
-        source: q.source,
-        initial_probability: q.initial_probability,
-        n_nodes: nNodes,
-        n_edges: nEdges,
-        mean_absolute_shift: q.summary?.mean_absolute_shift ?? null,
-        max_absolute_shift: q.summary?.max_absolute_shift ?? null,
-        ssr: metrics.ssr,
-      });
-
-      if (metrics.ssr != null) {
-        totalSSR += metrics.ssr;
-        ssrCount++;
-      }
-      if (q.summary?.mean_absolute_shift != null) {
-        totalMeanShift += q.summary.mean_absolute_shift;
-        shiftCount++;
-      }
-      totalNodes += nNodes;
-      totalEdges += nEdges;
-
-      console.log(
-        `  Processed: ${q.question_id} (${nNodes} nodes, SSR: ${metrics.ssr?.toFixed(2) ?? "N/A"})`
-      );
-    } catch (err) {
-      console.error(`  Error processing ${file}:`, err);
     }
-  }
 
-  // Extract model name from directory path
-  const dirName = path.basename(
-    inputDir.includes("question_results")
-      ? path.dirname(inputDir)
-      : inputDir
-  );
-  const modelMatch = dirName.match(/sensitivity_causal_(\w+)_/);
-  const model = modelMatch ? modelMatch[1] : "unknown";
-  const conditionMatch = dirName.match(/_(one-turn|multi-turn)$/);
-  const condition = conditionMatch ? conditionMatch[1] : "one-turn";
+    modelSummaries[modelKey] = {
+      label: modelInfo.label,
+      total_questions: questionIds.length,
+      avg_ssr: ssrCount > 0 ? totalSSR / ssrCount : null,
+      avg_mean_shift: shiftCount > 0 ? totalMeanShift / shiftCount : 0,
+      question_ids: questionIds,
+    };
+
+    console.log(
+      `  Processed: ${questionIds.length} questions, Avg SSR: ${modelSummaries[modelKey].avg_ssr?.toFixed(2) ?? "N/A"}`
+    );
+  }
 
   // Write summary
   const summary = {
-    total_questions: index.length,
-    model,
-    condition,
-    avg_ssr: ssrCount > 0 ? totalSSR / ssrCount : null,
-    avg_mean_shift: shiftCount > 0 ? totalMeanShift / shiftCount : 0,
-    avg_nodes: index.length > 0 ? totalNodes / index.length : 0,
-    avg_edges: index.length > 0 ? totalEdges / index.length : 0,
-    questions: index,
+    total_questions: allQuestionIds.size,
+    models: modelSummaries,
+    default_model: "llama-70b",
+    questions: Object.values(questionIndex),
   };
 
   const summaryPath = path.join(outputBase, "summary.json");
   fs.writeFileSync(summaryPath, JSON.stringify(summary, null, 2));
 
-  console.log(`\nDone! Wrote ${index.length} questions.`);
-  console.log(`  Summary: ${summaryPath}`);
-  console.log(`  Details: ${questionsDir}/`);
+  console.log(`\nDone!`);
+  console.log(`  Total unique questions: ${allQuestionIds.size}`);
   console.log(
-    `  Avg SSR: ${summary.avg_ssr?.toFixed(2) ?? "N/A"}, Avg Shift: ${(summary.avg_mean_shift * 100).toFixed(1)}pp`
+    `  Models: ${Object.keys(modelSummaries).join(", ")}`
   );
+  console.log(`  Summary: ${summaryPath}`);
 }
 
 main();

@@ -2,22 +2,39 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { QuestionCard } from "@/components/question-card";
-import type { DataSummary, QuestionIndex } from "@/lib/types";
+
+interface QuestionEntry {
+  question_id: string;
+  question_text: string;
+  source: string;
+  models: string[];
+}
+
+interface ModelInfo {
+  label: string;
+  total_questions: number;
+  avg_ssr: number | null;
+}
+
+interface SummaryData {
+  total_questions: number;
+  models: Record<string, ModelInfo>;
+  default_model: string;
+  questions: QuestionEntry[];
+}
 
 export default function ExplorePage() {
-  const [data, setData] = useState<DataSummary | null>(null);
+  const [data, setData] = useState<SummaryData | null>(null);
   const [search, setSearch] = useState("");
-  const [sortKey, setSortKey] = useState<
-    "initial_probability" | "mean_absolute_shift" | "ssr" | "n_nodes"
-  >("mean_absolute_shift");
-  const [sortDesc, setSortDesc] = useState(true);
+  const [selectedModel, setSelectedModel] = useState<string>("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/data/summary.json")
       .then((r) => r.json())
-      .then((d) => {
+      .then((d: SummaryData) => {
         setData(d);
+        setSelectedModel(d.default_model || Object.keys(d.models)[0] || "");
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -26,6 +43,11 @@ export default function ExplorePage() {
   const filtered = useMemo(() => {
     if (!data) return [];
     let list = data.questions;
+
+    // Filter to questions available for selected model
+    if (selectedModel) {
+      list = list.filter((q) => q.models.includes(selectedModel));
+    }
 
     if (search) {
       const q = search.toLowerCase();
@@ -37,14 +59,8 @@ export default function ExplorePage() {
       );
     }
 
-    list = [...list].sort((a, b) => {
-      const av = a[sortKey] ?? 0;
-      const bv = b[sortKey] ?? 0;
-      return sortDesc ? bv - av : av - bv;
-    });
-
     return list;
-  }, [data, search, sortKey, sortDesc]);
+  }, [data, search, selectedModel]);
 
   if (loading) {
     return (
@@ -59,7 +75,7 @@ export default function ExplorePage() {
   if (!data || data.questions.length === 0) {
     return (
       <div className="mx-auto max-w-5xl px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold mb-4">Explore Questions</h1>
+        <h1 className="text-2xl font-bold mb-4">Pre-Selected Questions</h1>
         <p className="text-[var(--color-muted-foreground)]">
           No pre-computed data found. Run{" "}
           <code className="font-mono bg-[var(--color-secondary)] px-1 rounded">
@@ -71,20 +87,47 @@ export default function ExplorePage() {
     );
   }
 
+  const modelKeys = Object.keys(data.models);
+  const currentModelInfo = data.models[selectedModel];
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">Explore Questions</h1>
+          <h1 className="text-2xl font-bold">Pre-Selected Questions</h1>
           <p className="text-sm text-[var(--color-muted-foreground)] mt-1">
-            {data.total_questions} questions analyzed with{" "}
-            {data.model}
+            {filtered.length} questions
+            {currentModelInfo && (
+              <> &middot; Avg SSR: {currentModelInfo.avg_ssr?.toFixed(2) ?? "N/A"}</>
+            )}
           </p>
         </div>
       </div>
 
       {/* Controls */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
+        {/* Model selector */}
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-[var(--color-muted-foreground)]">
+            Model:
+          </span>
+          <div className="flex items-center gap-1">
+            {modelKeys.map((key) => (
+              <button
+                key={key}
+                onClick={() => setSelectedModel(key)}
+                className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
+                  selectedModel === key
+                    ? "bg-[var(--color-primary)] text-white"
+                    : "bg-[var(--color-secondary)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
+                }`}
+              >
+                {data.models[key].label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <input
           type="text"
           placeholder="Search questions..."
@@ -92,44 +135,16 @@ export default function ExplorePage() {
           onChange={(e) => setSearch(e.target.value)}
           className="w-full sm:w-64 rounded-md border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-2 text-sm placeholder:text-[var(--color-muted-foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
         />
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-[var(--color-muted-foreground)]">
-            Sort:
-          </span>
-          {(
-            [
-              ["mean_absolute_shift", "Mean |Δ|"],
-              ["ssr", "SSR"],
-              ["initial_probability", "Probability"],
-              ["n_nodes", "Nodes"],
-            ] as const
-          ).map(([key, label]) => (
-            <button
-              key={key}
-              onClick={() => {
-                if (sortKey === key) setSortDesc(!sortDesc);
-                else {
-                  setSortKey(key);
-                  setSortDesc(true);
-                }
-              }}
-              className={`px-2 py-1 text-xs rounded-md transition-colors ${
-                sortKey === key
-                  ? "bg-[var(--color-primary)] text-white"
-                  : "bg-[var(--color-secondary)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
-              }`}
-            >
-              {label}
-              {sortKey === key && (sortDesc ? " ↓" : " ↑")}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* Results */}
       <div className="grid grid-cols-1 gap-3">
         {filtered.map((q) => (
-          <QuestionCard key={q.question_id} q={q} />
+          <QuestionCard
+            key={q.question_id}
+            q={q}
+            model={selectedModel}
+          />
         ))}
       </div>
 
