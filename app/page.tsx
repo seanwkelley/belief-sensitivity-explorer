@@ -1,17 +1,5 @@
 import Link from "next/link";
 
-async function getStats() {
-  try {
-    const fs = await import("fs/promises");
-    const path = await import("path");
-    const dataPath = path.join(process.cwd(), "public/data/summary.json");
-    const raw = await fs.readFile(dataPath, "utf-8");
-    return JSON.parse(raw);
-  } catch {
-    return null;
-  }
-}
-
 function StatCard({
   label,
   value,
@@ -34,8 +22,7 @@ function StatCard({
   );
 }
 
-export default async function Home() {
-  const stats = await getStats();
+export default function Home() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
@@ -73,27 +60,26 @@ export default async function Home() {
       </div>
 
       {/* Stats */}
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4">
         <StatCard
-          label="Questions Analyzed"
-          value={stats?.total_questions?.toString() ?? "—"}
-          sub={stats?.model ? `Model: ${stats.model}` : undefined}
+          label="Questions"
+          value="100"
+          sub="From ForecastBench"
         />
         <StatCard
-          label="Avg Sensitivity (SSR)"
-          value={
-            stats?.avg_ssr != null ? stats.avg_ssr.toFixed(2) + "×" : "—"
-          }
-          sub="High-importance / low-importance shift ratio"
+          label="Models"
+          value="4"
+          sub="Llama 8B, 70B, DeepSeek V3, Qwen3"
         />
         <StatCard
-          label="Avg Forecast Shift"
-          value={
-            stats?.avg_mean_shift != null
-              ? (stats.avg_mean_shift * 100).toFixed(1) + "pp"
-              : "—"
-          }
-          sub="Mean |Δ| across all probes"
+          label="Probes per Question"
+          value="~23"
+          sub="Symmetric negate + strengthen"
+        />
+        <StatCard
+          label="Total Probe Responses"
+          value="~9,200"
+          sub="Across all models and questions"
         />
       </div>
 
