@@ -44,6 +44,7 @@ export function CausalNetwork({
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const nodeSelRef = useRef<d3.Selection<SVGCircleElement, SimNode, SVGGElement, unknown> | null>(null);
+  const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null);
   const onNodeClickRef = useRef(onNodeClick);
   const [dimensions, setDimensions] = useState({ width: propWidth || 700, height: propHeight || 650 });
   const [tooltip, setTooltip] = useState<{
@@ -163,6 +164,7 @@ export function CausalNetwork({
         g.attr("transform", event.transform);
       });
     svg.call(zoom);
+    zoomRef.current = zoom;
 
     // Links
     const link = g
@@ -297,6 +299,39 @@ export function CausalNetwork({
         height={dimensions.height}
         className="w-full h-full"
       />
+      {/* Zoom controls */}
+      <div className="absolute top-2 right-2 flex flex-col gap-1 bg-[var(--color-background)]/80 backdrop-blur-sm rounded-md border border-[var(--color-border)]">
+        <button
+          onClick={() => {
+            if (!svgRef.current || !zoomRef.current) return;
+            const svg = d3.select(svgRef.current);
+            svg.transition().duration(200).call(zoomRef.current.scaleBy, 1.3);
+          }}
+          className="px-2 py-1 text-xs text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors"
+          title="Zoom in"
+        >+</button>
+        <button
+          onClick={() => {
+            if (!svgRef.current || !zoomRef.current) return;
+            const svg = d3.select(svgRef.current);
+            svg.transition().duration(200).call(zoomRef.current.scaleBy, 0.7);
+          }}
+          className="px-2 py-1 text-xs text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors border-t border-[var(--color-border)]"
+          title="Zoom out"
+        >−</button>
+        <button
+          onClick={() => {
+            if (!svgRef.current || !zoomRef.current) return;
+            const svg = d3.select(svgRef.current);
+            svg.transition().duration(300).call(
+              zoomRef.current.transform,
+              d3.zoomIdentity
+            );
+          }}
+          className="px-2 py-1 text-[10px] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors border-t border-[var(--color-border)]"
+          title="Reset zoom"
+        >Reset</button>
+      </div>
       {/* Legend */}
       <div className="absolute top-2 left-2 flex flex-col gap-1 text-[10px] text-[var(--color-muted-foreground)] bg-[var(--color-background)]/80 backdrop-blur-sm rounded-md p-2 border border-[var(--color-border)]">
         <div className="flex items-center gap-1.5">
