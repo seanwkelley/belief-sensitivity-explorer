@@ -39,26 +39,38 @@ export function MetricsPanel({
       <div className="grid grid-cols-3 gap-3">
         <MetricCard
           label="SSR"
-          value={metrics.ssr != null ? metrics.ssr.toFixed(2) + "×" : "N/A"}
-          description={`High: ${(metrics.mean_shift_high * 100).toFixed(1)}pp / Low: ${(metrics.mean_shift_low * 100).toFixed(1)}pp`}
+          value={metrics.ssr != null ? metrics.ssr.toFixed(2) + "×" : "—"}
+          description={
+            metrics.ssr != null
+              ? `High: ${(metrics.mean_shift_high * 100).toFixed(1)}pp / Low: ${(metrics.mean_shift_low * 100).toFixed(1)}pp`
+              : "Needs high and low importance probes"
+          }
         />
         <MetricCard
           label="Importance–Shift ρ"
           value={
             metrics.importance_sensitivity_correlation != null
               ? metrics.importance_sensitivity_correlation.toFixed(3)
-              : "N/A"
+              : "—"
           }
-          description="Spearman: betweenness centrality vs |shift|"
+          description={
+            metrics.importance_sensitivity_correlation != null
+              ? "Spearman: betweenness centrality vs |shift|"
+              : "Needs ≥3 nodes with varying importance"
+          }
         />
         <MetricCard
           label="Control Sensitivity"
           value={
             metrics.control_sensitivity != null
               ? (metrics.control_sensitivity * 100).toFixed(0) + "%"
-              : "N/A"
+              : "—"
           }
-          description="Frac. irrelevant probes with |shift| > 5pp"
+          description={
+            metrics.control_sensitivity != null
+              ? "Frac. irrelevant probes with |shift| > 5pp"
+              : "No irrelevant probes available"
+          }
         />
       </div>
 
