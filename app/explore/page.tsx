@@ -178,7 +178,11 @@ export default function ExplorePage() {
             >
               ForecastBench
             </a>
-            , a benchmark of binary yes/no forecasting questions with known resolution dates
+
+            . All questions are binary yes/no with a resolution date. Data-source
+            questions (stock prices, economic indicators, weather) are framed as
+            directional comparisons (e.g. &ldquo;will X be higher than Y?&rdquo;)
+            by the benchmark
           </p>
         </div>
       </div>
