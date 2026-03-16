@@ -102,6 +102,9 @@ export default function QuestionDetailPage() {
       <div className="mb-6">
         <h1 className="text-xl font-bold leading-snug">{data.question_text}</h1>
         <div className="mt-2 flex items-center gap-3 text-sm text-[var(--color-muted-foreground)]">
+          <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)]/15 text-[var(--color-primary)] px-2 py-0.5 text-xs font-medium">
+            Llama 3.3 70B
+          </span>
           <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-secondary)] px-2 py-0.5 text-xs">
             {data.source}
           </span>
@@ -159,6 +162,7 @@ export default function QuestionDetailPage() {
               selectedTargetId={selectedTargetId}
               selectedTargetType={selectedInfo.type}
               selectedTargetDescription={selectedInfo.description}
+              defaultModel="meta-llama/llama-3.3-70b-instruct"
             />
           </div>
 
