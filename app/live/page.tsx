@@ -8,6 +8,7 @@ import { DeltaBarChart } from "@/components/probe-chart";
 import { MetricsPanel } from "@/components/metrics-panel";
 import { ProbabilityBar } from "@/components/probability-bar";
 import { InteractiveProbe } from "@/components/interactive-probe";
+import { InformationPriorities } from "@/components/information-priorities";
 import { formatProbability, probToColor } from "@/lib/utils";
 
 interface DetailWithMetrics extends QuestionDetail {
@@ -588,6 +589,10 @@ function LiveResultPanel({
             metrics={result.aggregate_metrics}
             network={result.network_analysis}
           />
+
+          {result.epistemic_ratings && result.epistemic_ratings.length > 0 && (
+            <InformationPriorities ratings={result.epistemic_ratings} />
+          )}
         </div>
       </div>
 

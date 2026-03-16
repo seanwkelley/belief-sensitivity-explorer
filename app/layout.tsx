@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Belief Sensitivity Explorer",
+  title: "Causal Forecast Lab",
   description:
     "Interactive exploration of how LLM forecasts shift when causal beliefs change",
 };
@@ -37,16 +37,15 @@ export default function RootLayout({
           <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="h-6 w-6 rounded-md bg-[var(--color-primary)] flex items-center justify-center text-xs font-bold text-white">
-                BS
+                CFL
               </div>
               <span className="font-semibold text-sm hidden sm:inline">
-                Belief Sensitivity Explorer
+                Causal Forecast Lab
               </span>
             </Link>
             <div className="flex items-center gap-6">
-              <NavLink href="/explore">Explore</NavLink>
-              <NavLink href="/compare">Compare Models</NavLink>
-              <NavLink href="/live">Live Mode</NavLink>
+              <NavLink href="/explore">Pre-Selected Questions</NavLink>
+              <NavLink href="/live">Custom Question</NavLink>
             </div>
           </div>
         </nav>

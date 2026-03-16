@@ -22,7 +22,6 @@ export interface NodeMetrics {
   closeness: number;
   pagerank: number;
   path_relevance: number;
-  composite_importance: number;
 }
 
 export interface EdgeMetrics {
@@ -84,7 +83,7 @@ export interface ProbeResult {
   target_importance: number;
   target_centrality_rank: number;
   target_on_critical_path: boolean;
-  probe_category: "node" | "edge" | "structural";
+  probe_category: "node" | "edge" | "structural" | "control";
 }
 
 export interface QuestionSummary {
@@ -130,6 +129,7 @@ export interface AggregateMetrics {
   mean_shift_on_path: number;
   mean_shift_off_path: number;
   importance_sensitivity_correlation: number | null;
+  control_sensitivity: number | null;
 }
 
 export interface QuestionIndex {
@@ -160,7 +160,6 @@ export interface GraphNode extends d3.SimulationNodeDatum {
   id: string;
   description: string;
   role: string;
-  composite_importance: number;
   betweenness: number;
   pagerank: number;
   in_degree: number;

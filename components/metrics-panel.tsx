@@ -34,72 +34,54 @@ export function MetricsPanel({
   return (
     <div className="space-y-3">
       <h3 className="text-sm font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wider">
-        Aggregate Metrics
+        Sensitivity Metrics
       </h3>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         <MetricCard
           label="SSR"
           value={metrics.ssr != null ? metrics.ssr.toFixed(2) + "×" : "N/A"}
           description={`High: ${(metrics.mean_shift_high * 100).toFixed(1)}pp / Low: ${(metrics.mean_shift_low * 100).toFixed(1)}pp`}
         />
         <MetricCard
-          label="Asymmetry"
+          label="Importance–Shift ρ"
           value={
-            metrics.asymmetry_index != null
-              ? metrics.asymmetry_index.toFixed(2) + "×"
+            metrics.importance_sensitivity_correlation != null
+              ? metrics.importance_sensitivity_correlation.toFixed(3)
               : "N/A"
           }
-          description={`Negate: ${(metrics.mean_shift_negate * 100).toFixed(1)}pp / Strengthen: ${(metrics.mean_shift_strengthen * 100).toFixed(1)}pp`}
+          description="Spearman: betweenness centrality vs |shift|"
         />
         <MetricCard
-          label="SAR"
+          label="Control Sensitivity"
           value={
-            metrics.fnar != null
-              ? (metrics.fnar * 100).toFixed(0) + "%"
+            metrics.control_sensitivity != null
+              ? (metrics.control_sensitivity * 100).toFixed(0) + "%"
               : "N/A"
           }
-          description={`${metrics.n_accepted}/${metrics.n_spurious} spurious probes accepted`}
-        />
-        <MetricCard
-          label="Crit. Path Premium"
-          value={
-            metrics.critical_path_premium != null
-              ? (metrics.critical_path_premium * 100).toFixed(1) + "pp"
-              : "N/A"
-          }
-          description={`On-path: ${(metrics.mean_shift_on_path * 100).toFixed(1)}pp / Off: ${(metrics.mean_shift_off_path * 100).toFixed(1)}pp`}
+          description="Frac. irrelevant probes with |shift| > 5pp"
         />
       </div>
 
       <h3 className="text-sm font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wider mt-4">
-        Network Stats
+        Network
       </h3>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         <MetricCard
           label="Nodes"
           value={network.n_nodes.toString()}
-          description={`DAG: ${network.is_dag ? "Yes" : "No"}`}
+          description={`${network.n_nodes - 1} factors + outcome`}
         />
         <MetricCard
           label="Edges"
           value={network.n_edges.toString()}
           description={`Density: ${network.density.toFixed(3)}`}
         />
+        <MetricCard
+          label="DAG"
+          value={network.is_dag ? "Valid" : "Invalid"}
+          description={network.is_dag ? "Directed acyclic graph" : "Contains cycles"}
+        />
       </div>
-      {metrics.importance_sensitivity_correlation != null && (
-        <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-          <p className="text-xs font-mono text-[var(--color-muted-foreground)] uppercase tracking-wider">
-            Importance-Sensitivity ρ
-          </p>
-          <p className="mt-1 text-2xl font-bold tracking-tight">
-            {metrics.importance_sensitivity_correlation.toFixed(3)}
-          </p>
-          <p className="mt-1 text-xs text-[var(--color-muted-foreground)]">
-            Spearman correlation between structural importance and probe
-            sensitivity
-          </p>
-        </div>
-      )}
     </div>
   );
 }

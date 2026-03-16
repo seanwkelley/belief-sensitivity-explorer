@@ -46,10 +46,7 @@ export default async function Home() {
           Research Demo
         </div>
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
-          How Sensitive Are
-          <br />
-          <span className="text-[var(--color-primary)]">LLM Forecasts</span> to
-          Causal Assumptions?
+          Causal Forecast Lab
         </h1>
         <p className="mt-4 text-lg text-[var(--color-muted-foreground)] max-w-2xl mx-auto leading-relaxed">
           Explore how language model probability estimates shift when
@@ -67,14 +64,14 @@ export default async function Home() {
             href="/explore"
             className="inline-flex items-center gap-2 rounded-md bg-[var(--color-primary)] px-5 py-2.5 text-sm font-medium text-white hover:bg-[var(--color-primary)]/90 transition-colors"
           >
-            Explore Questions
+            Pre-Selected Questions
             <span aria-hidden>→</span>
           </Link>
           <Link
             href="/live"
             className="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-2.5 text-sm font-medium hover:bg-[var(--color-secondary)] transition-colors"
           >
-            Try Live Mode
+            Custom Question
           </Link>
         </div>
       </div>
@@ -122,7 +119,7 @@ export default async function Home() {
             {
               step: "3",
               title: "Probe Experiments",
-              desc: "~16 targeted probes challenge individual beliefs — negating nodes, severing edges, introducing spurious connections — and measure the resulting probability shift.",
+              desc: "~23 targeted probes challenge and reinforce individual beliefs — negating and strengthening nodes, severing and reinforcing edges, introducing spurious connections — and measure the resulting probability shift.",
             },
           ].map((item) => (
             <div
@@ -149,20 +146,28 @@ export default async function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             {
-              name: "SSR (Sensitivity-to-Structure Ratio)",
-              desc: "Ratio of mean shift from high-importance probes vs low-importance probes. SSR > 1 means the model is more sensitive to structurally important components.",
+              name: "SSR (Structural Sensitivity Ratio)",
+              desc: "Ratio of mean shift from real structurally-targeted probes vs irrelevant controls. SSR > 1 means the model shifts more for causally relevant challenges than noise.",
             },
             {
               name: "Asymmetry Index",
-              desc: "Ratio of negation shift vs strengthening shift. Values > 1 indicate the model reacts more to challenges than confirmations.",
+              desc: "Ratio of negation shift vs strengthening shift across matched importance levels. Values > 1 indicate the model reacts more to challenges than confirmations.",
             },
             {
-              name: "SAR (Spurious Acceptance Rate)",
-              desc: "Fraction of spurious/missing-node probes that cause a significant shift. High SAR suggests the model accepts spurious evidence.",
+              name: "Importance-Sensitivity ρ",
+              desc: "Spearman correlation between a node's betweenness centrality and the probe shift it causes. Positive ρ means structurally important nodes produce larger shifts.",
+            },
+            {
+              name: "Control Sensitivity",
+              desc: "Fraction of irrelevant probes that cause a shift > 5pp. Lower is better — indicates the model ignores causally irrelevant information.",
             },
             {
               name: "Critical Path Premium",
               desc: "Extra sensitivity for nodes/edges on the shortest path to the outcome vs those off-path.",
+            },
+            {
+              name: "SAR (Spurious Acceptance Rate)",
+              desc: "Fraction of spurious/missing-node probes that cause a significant shift. High SAR suggests the model accepts spurious evidence.",
             },
           ].map((m) => (
             <div

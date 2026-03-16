@@ -77,15 +77,37 @@ interface QuestionJSON {
 // Metric computation (mirrors analysis_causal.py)
 // ------------------------------------------------------------------
 
+// SSR: high-importance probes vs low-importance probes
+// Matches paper definition: SSR = mean(H shifts) / mean(L shifts)
+// H and L sets for SSR (matches Python analysis_causal.py)
 const HIGH_TYPES = new Set([
   "node_negate_high",
   "node_strengthen",
   "edge_negate_critical",
+  "edge_strengthen_critical",
 ]);
 const LOW_TYPES = new Set([
   "node_negate_low",
+  "node_strengthen_low",
   "edge_negate_peripheral",
+  "edge_strengthen_peripheral",
   "irrelevant",
+]);
+
+// Negate vs strengthen (matched importance levels)
+const ALL_NEGATE_TYPES = new Set([
+  "node_negate_high",
+  "node_negate_medium",
+  "node_negate_low",
+  "edge_negate_critical",
+  "edge_negate_peripheral",
+]);
+const ALL_STRENGTHEN_TYPES = new Set([
+  "node_strengthen",
+  "node_strengthen_medium",
+  "node_strengthen_low",
+  "edge_strengthen_critical",
+  "edge_strengthen_peripheral",
 ]);
 
 function computeMetrics(results: ProbeResult[]) {
@@ -93,12 +115,15 @@ function computeMetrics(results: ProbeResult[]) {
     (r) => r.success && r.absolute_shift != null
   );
 
-  // SSR
+  // SSR: high-importance vs low-importance probes (matches paper)
   const highShifts = successful
     .filter((r) => HIGH_TYPES.has(r.probe_type))
     .map((r) => r.absolute_shift!);
   const lowShifts = successful
     .filter((r) => LOW_TYPES.has(r.probe_type))
+    .map((r) => r.absolute_shift!);
+  const controlShifts = successful
+    .filter((r) => r.probe_type === "irrelevant")
     .map((r) => r.absolute_shift!);
 
   const meanHigh =
@@ -111,12 +136,12 @@ function computeMetrics(results: ProbeResult[]) {
       : 0;
   const ssr = meanLow > 0 ? meanHigh / meanLow : null;
 
-  // Asymmetry
+  // Asymmetry: all negate vs all strengthen (matched importance levels)
   const negateShifts = successful
-    .filter((r) => r.probe_type === "node_negate_high")
+    .filter((r) => ALL_NEGATE_TYPES.has(r.probe_type))
     .map((r) => r.absolute_shift!);
   const strengthenShifts = successful
-    .filter((r) => r.probe_type === "node_strengthen")
+    .filter((r) => ALL_STRENGTHEN_TYPES.has(r.probe_type))
     .map((r) => r.absolute_shift!);
 
   const meanNeg =
@@ -180,6 +205,13 @@ function computeMetrics(results: ProbeResult[]) {
     correlation = 1 - (6 * dSq) / (n * (n * n - 1));
   }
 
+  // Control sensitivity: fraction of irrelevant probes with |shift| > 0.05
+  const controlAboveThreshold = controlShifts.filter((s) => s > 0.05).length;
+  const controlSensitivity =
+    controlShifts.length > 0
+      ? controlAboveThreshold / controlShifts.length
+      : null;
+
   return {
     ssr,
     mean_shift_high: meanHigh,
@@ -194,6 +226,7 @@ function computeMetrics(results: ProbeResult[]) {
     mean_shift_on_path: meanOn,
     mean_shift_off_path: meanOff,
     importance_sensitivity_correlation: correlation,
+    control_sensitivity: controlSensitivity,
   };
 }
 
@@ -206,7 +239,7 @@ function main() {
     process.argv[2] ||
     path.resolve(
       __dirname,
-      "../../outputs/sensitivity_causal_llama_one-turn/question_results"
+      "../../outputs/sensitivity/causal/70b_one_turn"
     );
   const outputBase = path.resolve(__dirname, "../public/data");
   const questionsDir = path.join(outputBase, "questions");

@@ -36,7 +36,6 @@ interface NodeMetrics {
   closeness: number;
   pagerank: number;
   path_relevance: number;
-  composite_importance: number;
 }
 
 interface EdgeMetrics {
@@ -238,9 +237,6 @@ function computeNetworkAnalysis(
   const maxCl = Math.max(...Object.values(closeness), 1);
   for (const nd of nodes) closeness[nd.id] /= maxCl;
 
-  // Max out_degree for normalization
-  const maxOut = Math.max(...Object.values(outDeg), 1);
-
   const nodeMetrics: NodeMetrics[] = nodes.map((nd) => ({
     node_id: nd.id,
     description: nd.description,
@@ -251,11 +247,6 @@ function computeNetworkAnalysis(
     closeness: closeness[nd.id],
     pagerank: pr[nd.id],
     path_relevance: pathRelevance[nd.id],
-    composite_importance:
-      0.3 * betweenness[nd.id] +
-      0.2 * pr[nd.id] +
-      0.2 * (outDeg[nd.id] / maxOut) +
-      0.3 * pathRelevance[nd.id],
   }));
 
   // Edge metrics
@@ -280,7 +271,7 @@ function computeNetworkAnalysis(
   // Probe targets
   const sortedNodes = [...nodeMetrics]
     .filter((nm) => nm.role !== "outcome")
-    .sort((a, b) => b.composite_importance - a.composite_importance);
+    .sort((a, b) => b.betweenness - a.betweenness);
 
   const probeTargets: ProbeTarget[] = [];
 
@@ -290,7 +281,7 @@ function computeNetworkAnalysis(
       target_type: "node",
       target_id: sortedNodes[0].node_id,
       description: sortedNodes[0].description,
-      importance: sortedNodes[0].composite_importance,
+      importance: sortedNodes[0].betweenness,
       centrality_rank: 1,
       on_critical_path: pathRelevance[sortedNodes[0].node_id] > 0,
       probe_type: "node_negate_high",
@@ -301,7 +292,7 @@ function computeNetworkAnalysis(
       target_type: "node",
       target_id: sortedNodes[1].node_id,
       description: sortedNodes[1].description,
-      importance: sortedNodes[1].composite_importance,
+      importance: sortedNodes[1].betweenness,
       centrality_rank: 2,
       on_critical_path: pathRelevance[sortedNodes[1].node_id] > 0,
       probe_type: "node_negate_high",
@@ -315,7 +306,7 @@ function computeNetworkAnalysis(
       target_type: "node",
       target_id: sortedNodes[midIdx].node_id,
       description: sortedNodes[midIdx].description,
-      importance: sortedNodes[midIdx].composite_importance,
+      importance: sortedNodes[midIdx].betweenness,
       centrality_rank: midIdx + 1,
       on_critical_path: pathRelevance[sortedNodes[midIdx].node_id] > 0,
       probe_type: "node_negate_medium",
@@ -329,23 +320,51 @@ function computeNetworkAnalysis(
       target_type: "node",
       target_id: sortedNodes[lastIdx].node_id,
       description: sortedNodes[lastIdx].description,
-      importance: sortedNodes[lastIdx].composite_importance,
+      importance: sortedNodes[lastIdx].betweenness,
       centrality_rank: lastIdx + 1,
       on_critical_path: false,
       probe_type: "node_negate_low",
     });
   }
 
-  // Strengthen top nodes
+  // Strengthen top nodes (high)
   for (let i = 0; i < Math.min(2, sortedNodes.length); i++) {
     probeTargets.push({
       target_type: "node",
       target_id: sortedNodes[i].node_id,
       description: sortedNodes[i].description,
-      importance: sortedNodes[i].composite_importance,
+      importance: sortedNodes[i].betweenness,
       centrality_rank: i + 1,
       on_critical_path: pathRelevance[sortedNodes[i].node_id] > 0,
       probe_type: "node_strengthen",
+    });
+  }
+
+  // Strengthen medium importance node
+  if (sortedNodes.length >= 3) {
+    const midIdx = Math.floor(sortedNodes.length / 2);
+    probeTargets.push({
+      target_type: "node",
+      target_id: sortedNodes[midIdx].node_id,
+      description: sortedNodes[midIdx].description,
+      importance: sortedNodes[midIdx].betweenness,
+      centrality_rank: midIdx + 1,
+      on_critical_path: pathRelevance[sortedNodes[midIdx].node_id] > 0,
+      probe_type: "node_strengthen_medium",
+    });
+  }
+
+  // Strengthen low importance node
+  if (sortedNodes.length >= 2) {
+    const lastIdx = sortedNodes.length - 1;
+    probeTargets.push({
+      target_type: "node",
+      target_id: sortedNodes[lastIdx].node_id,
+      description: sortedNodes[lastIdx].description,
+      importance: sortedNodes[lastIdx].betweenness,
+      centrality_rank: lastIdx + 1,
+      on_critical_path: false,
+      probe_type: "node_strengthen_low",
     });
   }
 
@@ -377,7 +396,33 @@ function computeNetworkAnalysis(
     });
   }
 
-  // Structural probes
+  // Edge strengthen: critical edges
+  for (let i = 0; i < Math.min(2, critEdges.length); i++) {
+    probeTargets.push({
+      target_type: "edge",
+      target_id: `${critEdges[i].source}->${critEdges[i].target}`,
+      description: critEdges[i].mechanism,
+      importance: critEdges[i].edge_betweenness,
+      centrality_rank: i + 1,
+      on_critical_path: true,
+      probe_type: "edge_strengthen_critical",
+    });
+  }
+
+  // Edge strengthen: peripheral
+  if (nonCritEdges.length > 0) {
+    probeTargets.push({
+      target_type: "edge",
+      target_id: `${nonCritEdges[0].source}->${nonCritEdges[0].target}`,
+      description: nonCritEdges[0].mechanism,
+      importance: nonCritEdges[0].edge_betweenness,
+      centrality_rank: edgeMetrics.length,
+      on_critical_path: false,
+      probe_type: "edge_strengthen_peripheral",
+    });
+  }
+
+  // Structural probe
   probeTargets.push({
     target_type: "structural",
     target_id: "missing_node_1",
@@ -388,6 +433,7 @@ function computeNetworkAnalysis(
     probe_type: "missing_node",
   });
 
+  // Control probe
   probeTargets.push({
     target_type: "structural",
     target_id: "irrelevant_1",
@@ -562,7 +608,9 @@ export async function runFullPipeline(
             ? "node"
             : target.probe_type.startsWith("edge")
               ? "edge"
-              : "structural",
+              : target.probe_type === "irrelevant"
+                ? "control"
+                : "structural",
       });
       onProgress?.({ stage: "Running probes...", current: probeIdx + 1, total: probeTotal });
     } catch (err) {
@@ -587,10 +635,90 @@ export async function runFullPipeline(
             ? "node"
             : target.probe_type.startsWith("edge")
               ? "edge"
-              : "structural",
+              : target.probe_type === "irrelevant"
+                ? "control"
+                : "structural",
       });
       onProgress?.({ stage: "Running probes...", current: probeIdx + 1, total: probeTotal });
     }
+  }
+
+  // Step 4: Epistemic uncertainty rating per factor
+  onProgress?.({ stage: "Rating epistemic uncertainty..." });
+  const factorNodes = forecast.nodes.filter((n: { role: string }) => n.role !== "outcome");
+  const nodeList = factorNodes
+    .map((n: { id: string; description: string }) => `- ${n.id}: ${n.description}`)
+    .join("\n");
+  const networkDesc = forecast.edges
+    .map((e: { from: string; to: string; mechanism: string }) => `  ${e.from} -> ${e.to}: ${e.mechanism}`)
+    .join("\n");
+
+  const uncertaintyPrompt = `You previously forecasted the following question and built a causal network.
+
+Question: "${question}"
+Your probability estimate: ${forecast.probability}
+
+Your causal factors:
+${nodeList}
+
+Your causal network:
+${networkDesc}
+
+For each factor, rate your EPISTEMIC CONFIDENCE (how certain you are about the current state/value of this factor) on a scale of 1-5:
+
+1 = Very uncertain: you have little reliable information about this factor
+2 = Somewhat uncertain: limited or conflicting information available
+3 = Moderate: reasonable information but significant gaps remain
+4 = Fairly confident: good information available, minor uncertainties
+5 = Very confident: well-established, highly reliable information
+
+Respond with ONLY valid JSON: {"ratings": [{"factor_id": "...", "confidence": <1-5>, "reason": "<brief reason>"}]}`;
+
+  let epistemicRatings: Array<{
+    factor_id: string;
+    confidence: number;
+    reason: string;
+    betweenness: number;
+    value_of_information: number;
+  }> = [];
+
+  try {
+    const uncertMessages: ChatMessage[] = [
+      { role: "system", content: "You are rating your own epistemic uncertainty about causal factors. Be honest about what you don't know." },
+      { role: "user", content: uncertaintyPrompt },
+    ];
+    const uncertRaw = await callOpenRouter(uncertMessages, model, apiKey);
+    const uncertParsed = JSON.parse(
+      uncertRaw.replace(/```json?\n?/g, "").replace(/```/g, "").trim()
+    );
+
+    if (uncertParsed.ratings && Array.isArray(uncertParsed.ratings)) {
+      // Compute value of information: high importance + low confidence = high VOI
+      const maxBetweenness = Math.max(
+        ...nodeMetrics.map((n) => n.betweenness),
+        0.001
+      );
+      epistemicRatings = uncertParsed.ratings.map(
+        (r: { factor_id: string; confidence: number; reason: string }) => {
+          const node = nodeMetrics.find((n) => n.node_id === r.factor_id);
+          const betweenness = node?.betweenness ?? 0;
+          const normImportance = betweenness / maxBetweenness;
+          const uncertainty = (5 - r.confidence) / 4; // normalize to 0-1
+          const voi = normImportance * uncertainty;
+          return {
+            factor_id: r.factor_id,
+            confidence: r.confidence,
+            reason: r.reason,
+            betweenness,
+            value_of_information: Math.round(voi * 1000) / 1000,
+          };
+        }
+      );
+      // Sort by VOI descending
+      epistemicRatings.sort((a, b) => b.value_of_information - a.value_of_information);
+    }
+  } catch {
+    // Non-critical — continue without ratings
   }
 
   // Compute aggregate metrics
@@ -598,15 +726,23 @@ export async function runFullPipeline(
   const successful = probeResults.filter(
     (r) => r.success && r.absolute_shift != null
   );
+  // SSR: high-importance vs low-importance probes (matches analysis_causal.py)
   const HIGH_TYPES = new Set([
-    "node_negate_high",
-    "node_strengthen",
-    "edge_negate_critical",
+    "node_negate_high", "node_strengthen",
+    "edge_negate_critical", "edge_strengthen_critical",
   ]);
   const LOW_TYPES = new Set([
-    "node_negate_low",
-    "edge_negate_peripheral",
+    "node_negate_low", "node_strengthen_low",
+    "edge_negate_peripheral", "edge_strengthen_peripheral",
     "irrelevant",
+  ]);
+  const ALL_NEGATE = new Set([
+    "node_negate_high", "node_negate_medium", "node_negate_low",
+    "edge_negate_critical", "edge_negate_peripheral",
+  ]);
+  const ALL_STRENGTHEN = new Set([
+    "node_strengthen", "node_strengthen_medium", "node_strengthen_low",
+    "edge_strengthen_critical", "edge_strengthen_peripheral",
   ]);
 
   const highShifts = successful
@@ -616,16 +752,19 @@ export async function runFullPipeline(
     .filter((r) => LOW_TYPES.has(r.probe_type))
     .map((r) => r.absolute_shift!);
 
+  const controlShifts = successful
+    .filter((r) => r.probe_type === "irrelevant")
+    .map((r) => r.absolute_shift!);
   const meanHigh =
     highShifts.length > 0 ? highShifts.reduce((a, b) => a + b, 0) / highShifts.length : 0;
   const meanLow =
     lowShifts.length > 0 ? lowShifts.reduce((a, b) => a + b, 0) / lowShifts.length : 0;
 
   const negateShifts = successful
-    .filter((r) => r.probe_type === "node_negate_high")
+    .filter((r) => ALL_NEGATE.has(r.probe_type))
     .map((r) => r.absolute_shift!);
   const strengthenShifts = successful
-    .filter((r) => r.probe_type === "node_strengthen")
+    .filter((r) => ALL_STRENGTHEN.has(r.probe_type))
     .map((r) => r.absolute_shift!);
   const meanNeg =
     negateShifts.length > 0 ? negateShifts.reduce((a, b) => a + b, 0) / negateShifts.length : 0;
@@ -686,6 +825,7 @@ export async function runFullPipeline(
     })),
     condition: "live",
     probe_results: probeResults,
+    epistemic_ratings: epistemicRatings,
     summary: {
       question_id: `live_${Date.now()}`,
       question_text: question,
@@ -711,6 +851,10 @@ export async function runFullPipeline(
         onPath.length > 0 && offPath.length > 0 ? meanOn - meanOff : null,
       mean_shift_on_path: meanOn,
       mean_shift_off_path: meanOff,
+      control_sensitivity:
+        controlShifts.length > 0
+          ? controlShifts.filter((s) => s > 0.05).length / controlShifts.length
+          : null,
       importance_sensitivity_correlation: null, // Skip for live mode
     },
   };

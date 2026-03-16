@@ -40,16 +40,20 @@ export function truncate(str: string, maxLen: number): string {
 
 export function probeTypeLabel(type: string): string {
   const labels: Record<string, string> = {
-    node_negate_high: "Negate (High)",
-    node_negate_medium: "Negate (Med)",
-    node_negate_low: "Negate (Low)",
-    node_strengthen: "Strengthen",
-    edge_negate_critical: "Negate Critical Edge",
-    edge_negate_peripheral: "Negate Peripheral Edge",
+    node_negate_high: "Negate Node (High)",
+    node_negate_medium: "Negate Node (Med)",
+    node_negate_low: "Negate Node (Low)",
+    node_strengthen: "Strengthen Node (High)",
+    node_strengthen_medium: "Strengthen Node (Med)",
+    node_strengthen_low: "Strengthen Node (Low)",
+    edge_negate_critical: "Negate Edge (Critical)",
+    edge_negate_peripheral: "Negate Edge (Peripheral)",
+    edge_strengthen_critical: "Strengthen Edge (Critical)",
+    edge_strengthen_peripheral: "Strengthen Edge (Peripheral)",
     edge_reverse: "Reverse Edge",
     edge_spurious: "Spurious Edge",
     missing_node: "Missing Node",
-    irrelevant: "Irrelevant",
+    irrelevant: "Irrelevant (Control)",
   };
   return labels[type] || type;
 }
@@ -59,6 +63,7 @@ export function probeCategoryLabel(cat: string): string {
     node: "Node Probes",
     edge: "Edge Probes",
     structural: "Structural Probes",
+    control: "Control Probes",
   };
   return labels[cat] || cat;
 }
