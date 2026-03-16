@@ -19,7 +19,6 @@ interface SimNode extends d3.SimulationNodeDatum {
   id: string;
   description: string;
   role: string;
-  composite_importance: number;
   betweenness: number;
   pagerank: number;
   sensitivity: number;
@@ -138,7 +137,6 @@ export function CausalNetwork({
       id: n.node_id,
       description: n.description,
       role: n.role,
-      composite_importance: n.composite_importance,
       betweenness: n.betweenness,
       pagerank: n.pagerank,
       sensitivity: sens[n.node_id] ?? 0,
@@ -185,7 +183,7 @@ export function CausalNetwork({
 
     // Nodes
     const nodeRadius = (d: SimNode) =>
-      Math.max(8, d.composite_importance * 30 + 8);
+      Math.max(8, d.betweenness * 30 + 8);
 
     const node = g
       .append("g")
@@ -199,11 +197,11 @@ export function CausalNetwork({
           // Blend between importance color and red based on sensitivity
           const t = Math.min(d.sensitivity * 5, 1);
           return d3.interpolateRgb(
-            importanceToColor(d.composite_importance),
+            importanceToColor(d.betweenness),
             "#ef4444"
           )(t);
         }
-        return importanceToColor(d.composite_importance);
+        return importanceToColor(d.betweenness);
       })
       .attr("stroke", "transparent")
       .attr("stroke-width", 2)
@@ -339,7 +337,7 @@ export function CausalNetwork({
               Importance:
             </span>
             <span className="font-mono">
-              {tooltip.node.composite_importance.toFixed(3)}
+              {tooltip.node.betweenness.toFixed(3)}
             </span>
             <span className="text-[var(--color-muted-foreground)]">
               Betweenness:

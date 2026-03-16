@@ -158,7 +158,9 @@ export function ProbeTable({
                             ? "bg-blue-500"
                             : r.probe_category === "edge"
                               ? "bg-purple-500"
-                              : "bg-orange-500"
+                              : r.probe_category === "control"
+                                ? "bg-gray-400"
+                                : "bg-orange-500"
                         }`}
                       />
                       <span className="font-mono text-xs">
