@@ -47,6 +47,7 @@ export default function RootLayout({
               <NavLink href="/">Home</NavLink>
               <NavLink href="/explore">Pre-Selected Questions</NavLink>
               <NavLink href="/live">Custom Question</NavLink>
+              <NavLink href="/about">About</NavLink>
             </div>
           </div>
         </nav>
