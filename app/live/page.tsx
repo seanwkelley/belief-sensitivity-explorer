@@ -52,6 +52,8 @@ export default function LivePage() {
   const [question, setQuestion] = useState("");
   const [background, setBackground] = useState("");
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
+  const [customModel, setCustomModel] = useState("");
+  const [showCustom, setShowCustom] = useState(false);
   const { apiKey } = useApiKey();
   const [runs, setRuns] = useState<ModelRun[]>([]);
 
@@ -300,7 +302,55 @@ export default function LivePage() {
                   </button>
                 );
               })}
+              {/* Custom models already added */}
+              {selectedModels
+                .filter((m) => !MODELS.some((mod) => mod.value === m))
+                .map((m) => (
+                  <button
+                    key={m}
+                    onClick={() => toggleModel(m)}
+                    className="px-3 py-1.5 text-xs rounded-md border border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-[var(--color-primary)] font-medium"
+                  >
+                    <span className="mr-1">✓</span>
+                    {m.split("/").pop()}
+                  </button>
+                ))}
+              <button
+                onClick={() => setShowCustom(!showCustom)}
+                className={`px-3 py-1.5 text-xs rounded-md border transition-colors ${
+                  showCustom
+                    ? "border-[var(--color-primary)] bg-[var(--color-primary)]/10 text-[var(--color-primary)] font-medium"
+                    : "border-[var(--color-border)] bg-[var(--color-secondary)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:border-[var(--color-muted-foreground)]"
+                }`}
+              >
+                Other...
+              </button>
             </div>
+            {showCustom && (
+              <div className="flex items-center gap-2 mt-2">
+                <input
+                  type="text"
+                  value={customModel}
+                  onChange={(e) => setCustomModel(e.target.value)}
+                  placeholder="OpenRouter model ID (e.g. anthropic/claude-sonnet-4)"
+                  className="flex-1 rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]"
+                />
+                <button
+                  onClick={() => {
+                    const id = customModel.trim();
+                    if (id && !selectedModels.includes(id) && selectedModels.length < 4) {
+                      setSelectedModels((prev) => [...prev, id]);
+                      setCustomModel("");
+                      setShowCustom(false);
+                    }
+                  }}
+                  disabled={!customModel.trim() || selectedModels.length >= 4}
+                  className="px-3 py-1.5 text-xs rounded-md bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Add
+                </button>
+              </div>
+            )}
           </div>
 
           <button
