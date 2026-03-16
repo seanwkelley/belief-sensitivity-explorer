@@ -77,6 +77,13 @@ export function MetricsPanel({
           description={`Density: ${network.density.toFixed(3)}`}
         />
       </div>
+      {!network.is_dag && (
+        <div className="rounded-lg border border-orange-500/50 bg-orange-500/10 p-3">
+          <p className="text-xs font-medium text-orange-400">
+            Warning: Network contains cycles (not a valid DAG). Metrics may be less reliable.
+          </p>
+        </div>
+      )}
     </div>
   );
 }
