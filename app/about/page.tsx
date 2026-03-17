@@ -38,7 +38,7 @@ export default function AboutPage() {
 
         <p>
           All questions have resolution dates in late 2025, after every
-          model&apos;s training data cutoff (Dec 2023 &ndash; Jan 2025). This
+          model&apos;s training data cutoff (Dec 2023 &ndash; Mar 2025). This
           ensures the models are producing genuine forecasts rather than
           recalling known outcomes.
         </p>
