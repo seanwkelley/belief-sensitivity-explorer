@@ -203,13 +203,15 @@ export default function QuestionDetailPage() {
       <div className="mb-4">
         <div className="flex items-center gap-3">
           <span className="text-sm text-[var(--color-muted-foreground)]">Probability Estimate:</span>
-          <div
-            className="flex items-center gap-1.5 text-2xl font-mono font-bold"
+          <span
+            className="text-2xl font-mono font-bold"
             style={{ color: probToColor(data.initial_probability) }}
           >
-            <ProbabilityBar probability={data.initial_probability} />
             {formatProbability(data.initial_probability)}
-          </div>
+          </span>
+        </div>
+        <div className="mt-1.5 max-w-xs">
+          <ProbabilityBar probability={data.initial_probability} showValue={false} size="sm" />
         </div>
         {Object.keys(modelProbabilities).length > 1 && (
           <div className="mt-2 flex items-center gap-4 text-xs text-[var(--color-muted-foreground)]">
