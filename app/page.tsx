@@ -129,15 +129,18 @@ export default function Home() {
           {[
             {
               name: "SSR (Structural Sensitivity Ratio)",
-              desc: "Ratio of mean shift from high-importance probes vs low-importance probes. SSR > 1 means the model differentiates between structurally important and peripheral challenges.",
+              definition: "Ratio of mean probability shift from high-importance probes to low-importance probes.",
+              interpretation: "SSR > 1 means the model differentiates between structurally important and peripheral challenges. SSR near 1 suggests undifferentiated updating.",
             },
             {
               name: "Importance-Sensitivity ρ",
-              desc: "Spearman correlation between a node's betweenness centrality and the probe shift it causes. Positive ρ means structurally important nodes produce larger shifts.",
+              definition: "Spearman rank correlation between a node's betweenness centrality and the absolute probability shift its probe causes.",
+              interpretation: "Positive ρ means structurally central nodes produce larger belief revisions, indicating the model tracks causal importance.",
             },
             {
               name: "Control Sensitivity",
-              desc: "Fraction of irrelevant probes that cause a shift > 5pp. Lower is better — indicates the model ignores causally irrelevant information.",
+              definition: "Fraction of irrelevant (control) probes that cause a probability shift greater than 5 percentage points.",
+              interpretation: "Lower is better. A low value indicates the model resists updating on causally irrelevant information.",
             },
           ].map((m) => (
             <div
@@ -147,8 +150,11 @@ export default function Home() {
               <h3 className="text-sm font-medium font-mono text-[var(--color-primary)]">
                 {m.name}
               </h3>
+              <p className="mt-2 text-sm text-[var(--color-foreground)]">
+                {m.definition}
+              </p>
               <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">
-                {m.desc}
+                {m.interpretation}
               </p>
             </div>
           ))}
