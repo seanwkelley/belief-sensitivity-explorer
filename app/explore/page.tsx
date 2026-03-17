@@ -149,7 +149,7 @@ export default function ExplorePage() {
   if (!data || data.questions.length === 0) {
     return (
       <div className="mx-auto max-w-5xl px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold mb-4">Pre-Selected Questions</h1>
+        <h1 className="text-2xl font-bold mb-4">ForecastBench Examples</h1>
         <p className="text-[var(--color-muted-foreground)]">
           No pre-computed data found. Run{" "}
           <code className="font-mono bg-[var(--color-secondary)] px-1 rounded">
@@ -165,7 +165,7 @@ export default function ExplorePage() {
     <div className="mx-auto max-w-5xl px-4 py-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">Pre-Selected Questions</h1>
+          <h1 className="text-2xl font-bold">ForecastBench Examples</h1>
           <p className="text-sm text-[var(--color-muted-foreground)] mt-1">
             {filtered.length} questions
             {!isMultiModel && data.model && <> &middot; {data.model}</>}

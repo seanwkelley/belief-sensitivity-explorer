@@ -47,14 +47,14 @@ export default function Home() {
             href="/explore"
             className="inline-flex items-center gap-2 rounded-md bg-[var(--color-primary)] px-5 py-2.5 text-sm font-medium text-white hover:bg-[var(--color-primary)]/90 transition-colors"
           >
-            Pre-Selected Questions
+            ForecastBench Examples
             <span aria-hidden>→</span>
           </Link>
           <Link
             href="/live"
             className="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-2.5 text-sm font-medium hover:bg-[var(--color-secondary)] transition-colors"
           >
-            Custom Question
+            Ask Your Own
           </Link>
         </div>
       </div>

@@ -153,7 +153,7 @@ export default function QuestionDetailPage() {
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)] mb-4">
         <Link href="/explore" className="hover:text-[var(--color-foreground)]">
-          Pre-Selected Questions
+          ForecastBench Examples
         </Link>
         <span>/</span>
         <span className="text-[var(--color-foreground)]">{id}</span>
