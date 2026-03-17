@@ -68,8 +68,8 @@ export default function Home() {
         />
         <StatCard
           label="Models"
-          value="4"
-          sub="Llama 8B, 70B, DeepSeek V3, Qwen3"
+          value="5"
+          sub="Llama 8B, 70B, DeepSeek V3, Qwen3, Gemini Flash"
         />
         <StatCard
           label="Probes per Question"
@@ -159,6 +159,30 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Try your own */}
+      <div className="mt-16 rounded-lg border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/5 p-8 text-center">
+        <h2 className="text-xl font-semibold mb-3">Try It on Your Own Question</h2>
+        <p className="text-sm text-[var(--color-muted-foreground)] max-w-lg mx-auto mb-6">
+          Run the full pipeline live on any binary forecasting question. The model
+          generates a causal network, we analyze its structure, run ~20 probes, and
+          compute all sensitivity metrics in real time.
+        </p>
+        <Link
+          href="/live"
+          className="inline-flex items-center gap-2 rounded-md bg-[var(--color-primary)] px-6 py-2.5 text-sm font-medium text-white hover:bg-[var(--color-primary)]/90 transition-colors"
+        >
+          Ask Your Own Question
+          <span aria-hidden>→</span>
+        </Link>
+        <p className="mt-3 text-xs text-[var(--color-muted-foreground)]">
+          Requires an{" "}
+          <a href="https://openrouter.ai/keys" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary)] hover:underline">
+            OpenRouter API key
+          </a>
+          {" "}(free to create, pay-per-use)
+        </p>
       </div>
     </div>
   );
