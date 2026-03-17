@@ -1,0 +1,1242 @@
+{
+  "question_id": "7324000fa5d5d32e83c2d260425c63152ec88965e22de78f03bcf54a74b0f973",
+  "question_text": "Will there be more 'Violence against civilians' in Peru for the 30 days before 2025-12-28 compared to the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Violence against civilians'\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of 'Violence against civilians' over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more 'Violence against civilians' would need to occur in the 30 days leading up to the resolution.",
+  "source": "acled",
+  "initial_probability": 0.65,
+  "nodes": [
+    {
+      "id": "political_instability_peru",
+      "description": "The level of political instability in Peru, including protests, social unrest, and government effectiveness.",
+      "role": "factor"
+    },
+    {
+      "id": "economic_conditions_peru",
+      "description": "The general economic health of Peru, including inflation, unemployment, and GDP growth.",
+      "role": "factor"
+    },
+    {
+      "id": "regional_conflict_trends",
+      "description": "The general trend of violence and conflict in neighboring countries and the wider South American region.",
+      "role": "factor"
+    },
+    {
+      "id": "social_inequality_peru",
+      "description": "The degree of social and economic inequality within Peru, which can be a driver of unrest.",
+      "role": "factor"
+    },
+    {
+      "id": "government_response_capacity",
+      "description": "The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome_violence_increase",
+      "description": "Whether there will be more 'Violence against civilians' in Peru for the 30 days before 2025-12-28 compared to the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "political_instability_peru",
+      "to": "outcome_violence_increase",
+      "mechanism": "Higher political instability directly correlates with increased instances of violence against civilians as a result of protests, riots, and civil disobedience."
+    },
+    {
+      "from": "economic_conditions_peru",
+      "to": "political_instability_peru",
+      "mechanism": "Deteriorating economic conditions can fuel social discontent, leading to increased political instability."
+    },
+    {
+      "from": "economic_conditions_peru",
+      "to": "outcome_violence_increase",
+      "mechanism": "Poor economic conditions can exacerbate existing tensions and lead to crime-related violence against civilians."
+    },
+    {
+      "from": "regional_conflict_trends",
+      "to": "political_instability_peru",
+      "mechanism": "Spillover effects from regional conflicts can increase overall political instability within Peru."
+    },
+    {
+      "from": "social_inequality_peru",
+      "to": "political_instability_peru",
+      "mechanism": "High levels of social inequality are a known driver of social unrest and political instability."
+    },
+    {
+      "from": "social_inequality_peru",
+      "to": "outcome_violence_increase",
+      "mechanism": "Significant social inequality can lead to direct confrontations and violence against civilian groups perceived as benefiting from the system."
+    },
+    {
+      "from": "government_response_capacity",
+      "to": "outcome_violence_increase",
+      "mechanism": "A weak government response capacity can allow existing tensions to escalate into widespread violence against civilians."
+    },
+    {
+      "from": "political_instability_peru",
+      "to": "government_response_capacity",
+      "mechanism": "High political instability can overwhelm and weaken the government's capacity to respond effectively to various threats."
+    }
+  ],
+  "reasoning": "Forecasting an increase in violence against civilians in Peru by late 2025 involves assessing several interconnected factors. Peru has a history of political volatility, and current trends suggest ongoing challenges. Economic conditions, while subject to global influences, remain a critical domestic concern that can directly impact social stability. Regional dynamics also play a role, as instability in neighboring countries can have ripple effects. High social inequality is a persistent underlying issue that can be easily ignited into unrest. The capacity of the Peruvian government to manage these pressures is crucial; a weakened capacity exacerbates the risk. Given these interconnected drivers, there is a moderate to high probability that the conditions leading to violence against civilians will be elevated in the period leading up to late 2025 compared to the recent average.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 8,
+    "density": 0.2667,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "outcome_violence_increase",
+    "node_metrics": [
+      {
+        "node_id": "political_instability_peru",
+        "description": "The level of political instability in Peru, including protests, social unrest, and government effectiveness.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 2,
+        "betweenness": 0.2,
+        "closeness": 0.6,
+        "pagerank": 0.2131,
+        "path_relevance": 0.2
+      },
+      {
+        "node_id": "economic_conditions_peru",
+        "description": "The general economic health of Peru, including inflation, unemployment, and GDP growth.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0789,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "regional_conflict_trends",
+        "description": "The general trend of violence and conflict in neighboring countries and the wider South American region.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0789,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "social_inequality_peru",
+        "description": "The degree of social and economic inequality within Peru, which can be a driver of unrest.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0789,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "government_response_capacity",
+        "description": "The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.4571,
+        "pagerank": 0.1695,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "outcome_violence_increase",
+        "description": "Whether there will be more 'Violence against civilians' in Peru for the 30 days before 2025-12-28 compared to the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21.",
+        "role": "outcome",
+        "in_degree": 4,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.8333,
+        "pagerank": 0.3806,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "political_instability_peru",
+        "target": "outcome_violence_increase",
+        "mechanism": "Higher political instability directly correlates with increased instances of violence against civilians as a result of protests, riots, and civil disobedience.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "political_instability_peru",
+        "target": "government_response_capacity",
+        "mechanism": "High political instability can overwhelm and weaken the government's capacity to respond effectively to various threats.",
+        "edge_betweenness": 0.1333,
+        "on_critical_path": false
+      },
+      {
+        "source": "economic_conditions_peru",
+        "target": "political_instability_peru",
+        "mechanism": "Deteriorating economic conditions can fuel social discontent, leading to increased political instability.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": false
+      },
+      {
+        "source": "economic_conditions_peru",
+        "target": "outcome_violence_increase",
+        "mechanism": "Poor economic conditions can exacerbate existing tensions and lead to crime-related violence against civilians.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "regional_conflict_trends",
+        "target": "political_instability_peru",
+        "mechanism": "Spillover effects from regional conflicts can increase overall political instability within Peru.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      },
+      {
+        "source": "social_inequality_peru",
+        "target": "political_instability_peru",
+        "mechanism": "High levels of social inequality are a known driver of social unrest and political instability.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": false
+      },
+      {
+        "source": "social_inequality_peru",
+        "target": "outcome_violence_increase",
+        "mechanism": "Significant social inequality can lead to direct confrontations and violence against civilian groups perceived as benefiting from the system.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "government_response_capacity",
+        "target": "outcome_violence_increase",
+        "mechanism": "A weak government response capacity can allow existing tensions to escalate into widespread violence against civilians.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "political_instability_peru",
+        "description": "The level of political instability in Peru, including protests, social unrest, and government effectiveness.",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "economic_conditions_peru",
+        "description": "The general economic health of Peru, including inflation, unemployment, and GDP growth.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regional_conflict_trends",
+        "description": "The general trend of violence and conflict in neighboring countries and the wider South American region.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "government_response_capacity",
+        "description": "The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "political_instability_peru",
+        "description": "The level of political instability in Peru, including protests, social unrest, and government effectiveness.",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "economic_conditions_peru",
+        "description": "The general economic health of Peru, including inflation, unemployment, and GDP growth.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regional_conflict_trends",
+        "description": "The general trend of violence and conflict in neighboring countries and the wider South American region.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "government_response_capacity",
+        "description": "The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_conflict_trends->political_instability_peru",
+        "description": "Spillover effects from regional conflicts can increase overall political instability within Peru.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "political_instability_peru->outcome_violence_increase",
+        "description": "Higher political instability directly correlates with increased instances of violence against civilians as a result of protests, riots, and civil disobedience.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "political_instability_peru->government_response_capacity",
+        "description": "High political instability can overwhelm and weaken the government's capacity to respond effectively to various threats.",
+        "importance": 0.1333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_conflict_trends->political_instability_peru",
+        "description": "Spillover effects from regional conflicts can increase overall political instability within Peru.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "political_instability_peru->outcome_violence_increase",
+        "description": "Higher political instability directly correlates with increased instances of violence against civilians as a result of protests, riots, and civil disobedience.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "political_instability_peru->government_response_capacity",
+        "description": "High political instability can overwhelm and weaken the government's capacity to respond effectively to various threats.",
+        "importance": 0.1333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_conflict_trends->political_instability_peru",
+        "description": "Spillover effects from regional conflicts can increase overall political instability within Peru.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "social_inequality_peru->government_response_capacity",
+        "description": "Potential link: The degree of social and economic inequality within Peru, which can be a driver of unrest. -> The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "social_inequality_peru->economic_conditions_peru",
+        "description": "Potential link: The degree of social and economic inequality within Peru, which can be a driver of unrest. -> The general economic health of Peru, including inflation, unemployment, and GDP growth.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "political_instability_peru",
+      "description": "The level of political instability in Peru, including protests, social unrest, and government effectiveness.",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "economic_conditions_peru",
+      "description": "The general economic health of Peru, including inflation, unemployment, and GDP growth.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regional_conflict_trends",
+      "description": "The general trend of violence and conflict in neighboring countries and the wider South American region.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "government_response_capacity",
+      "description": "The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "political_instability_peru",
+      "description": "The level of political instability in Peru, including protests, social unrest, and government effectiveness.",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "economic_conditions_peru",
+      "description": "The general economic health of Peru, including inflation, unemployment, and GDP growth.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regional_conflict_trends",
+      "description": "The general trend of violence and conflict in neighboring countries and the wider South American region.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "government_response_capacity",
+      "description": "The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "description": "Spillover effects from regional conflicts can increase overall political instability within Peru.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "political_instability_peru->outcome_violence_increase",
+      "description": "Higher political instability directly correlates with increased instances of violence against civilians as a result of protests, riots, and civil disobedience.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "political_instability_peru->government_response_capacity",
+      "description": "High political instability can overwhelm and weaken the government's capacity to respond effectively to various threats.",
+      "importance": 0.1333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "description": "Spillover effects from regional conflicts can increase overall political instability within Peru.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "political_instability_peru->outcome_violence_increase",
+      "description": "Higher political instability directly correlates with increased instances of violence against civilians as a result of protests, riots, and civil disobedience.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "political_instability_peru->government_response_capacity",
+      "description": "High political instability can overwhelm and weaken the government's capacity to respond effectively to various threats.",
+      "importance": 0.1333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "description": "Spillover effects from regional conflicts can increase overall political instability within Peru.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "social_inequality_peru->government_response_capacity",
+      "description": "Potential link: The degree of social and economic inequality within Peru, which can be a driver of unrest. -> The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "social_inequality_peru->economic_conditions_peru",
+      "description": "Potential link: The degree of social and economic inequality within Peru, which can be a driver of unrest. -> The general economic health of Peru, including inflation, unemployment, and GDP growth.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if the recent history of Peru shows a remarkable decoupling of political instability from violence against civilians? For example, imagine a scenario where a new, highly effective, and widely accepted civilian-led peace initiative has emerged, which actively de-escalates social unrest and prevents protests from turning violent, irrespective of underlying political disagreements or government effectiveness.",
+      "probe_type": "node_negate_high",
+      "target_id": "political_instability_peru",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The level of political instability in Peru, including protests, social unrest, and government effectiveness."
+    },
+    {
+      "probe_text": "What if Peru's economy, despite current indicators of inflation or unemployment, is actually highly resilient and insulated from factors that typically drive social unrest? Imagine a scenario where a significant portion of the population's basic needs are met through informal economies or remittances, making them less sensitive to official economic data, and thus rendering 'economic_conditions_peru' largely irrelevant to predicting 'Violence against civilians'.",
+      "probe_type": "node_negate_high",
+      "target_id": "economic_conditions_peru",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The general economic health of Peru, including inflation, unemployment, and GDP growth."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant de-escalation of all major regional conflicts in South America, with all neighboring countries signing peace accords and reporting historically low levels of internal violence. Furthermore, intelligence suggests that Peru has recently implemented enhanced border security measures specifically designed to prevent any potential spillover of conflict or illicit activities, rendering the 'regional_conflict_trends' node largely irrelevant to Peru's internal stability.",
+      "probe_type": "node_negate_medium",
+      "target_id": "regional_conflict_trends",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The general trend of violence and conflict in neighboring countries and the wider South American region."
+    },
+    {
+      "probe_text": "Recent reports suggest that international humanitarian organizations, rather than the Peruvian government, have taken the lead in de-escalating recent social tensions and providing aid. Given this shift in responsibility, how much weight should we give to the Peruvian government's 'response capacity' when predicting 'Violence against civilians'?",
+      "probe_type": "node_negate_low",
+      "target_id": "government_response_capacity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity."
+    },
+    {
+      "probe_text": "A recent report by the Peruvian Ombudsman's Office highlights a significant increase in the number of documented protests and social blockades across the country over the past six months. These demonstrations are frequently met with forceful responses from security forces, leading to clashes and alleged human rights violations, directly escalating political tensions and civil unrest.",
+      "probe_type": "node_strengthen",
+      "target_id": "political_instability_peru",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The level of political instability in Peru, including protests, social unrest, and government effectiveness."
+    },
+    {
+      "probe_text": "Recent reports from the Peruvian Ministry of Economy and Finance indicate a significant slowdown in GDP growth, with projections revised downwards by 2% for the upcoming fiscal year. This is compounded by a sharp increase in inflation, reaching a 15-year high, directly impacting the purchasing power of average citizens and increasing the likelihood of widespread social unrest.",
+      "probe_type": "node_strengthen",
+      "target_id": "economic_conditions_peru",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The general economic health of Peru, including inflation, unemployment, and GDP growth."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant escalation of armed conflict in a neighboring country, with reports of cross-border incursions and increased refugee flows into Peru. This development, stemming from prolonged internal strife in that nation, is raising concerns about potential spillover effects and a heightened risk of regional instability impacting Peru.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "regional_conflict_trends",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The general trend of violence and conflict in neighboring countries and the wider South American region."
+    },
+    {
+      "probe_text": "Recent reports indicate that the Peruvian government has successfully implemented new community policing initiatives in several urban centers. These programs, characterized by increased police presence and engagement with local leaders, have been credited with a measurable reduction in petty crime and localized disturbances in those areas. This suggests an improvement in the government's capacity to manage and de-escalate social tensions at the grassroots level.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "government_response_capacity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity."
+    },
+    {
+      "probe_text": "While regional conflicts can sometimes spill over, Peru has recently implemented robust border security measures and diplomatic initiatives specifically aimed at isolating the country from the direct impacts of instability in neighboring nations. These actions have significantly weakened any potential spillover effects, making the link between regional conflict trends and domestic political instability in Peru much weaker than historically assumed.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Spillover effects from regional conflicts can increase overall political instability within Peru."
+    },
+    {
+      "probe_text": "While political instability often correlates with violence, it's possible that in Peru, recent shifts in protest dynamics have weakened this direct link. For instance, a growing reliance on digital organizing and more targeted, less disruptive forms of activism might mean that even with high political instability, the translation into widespread 'violence against civilians' is less automatic. This could be due to increased government surveillance of physical gatherings or a public fatigue with overt conflict, favoring other forms of dissent.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "political_instability_peru->outcome_violence_increase",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Higher political instability directly correlates with increased instances of violence against civilians as a result of protests, riots, and civil disobedience."
+    },
+    {
+      "probe_text": "While high political instability often strains government resources, it's plausible that in certain contexts, such as a temporary, focused protest movement, the government's response capacity might actually increase. This could occur if the instability triggers a strong, unified, and well-resourced security response, allowing it to temporarily overcome its usual limitations in de-escalating tensions, rather than being overwhelmed.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "political_instability_peru->government_response_capacity",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "High political instability can overwhelm and weaken the government's capacity to respond effectively to various threats."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant escalation of armed group activity in a neighboring country, characterized by increased cross-border incursions and recruitment drives that have reportedly begun to attract individuals from Peru's border regions. This heightened regional instability is not merely a trend but is actively destabilizing local Peruvian communities near the border, drawing them into the conflict and directly increasing political instability within Peru.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Spillover effects from regional conflicts can increase overall political instability within Peru."
+    },
+    {
+      "probe_text": "Recent reports from international observers highlight an alarming increase in coordinated attacks on civilian infrastructure and humanitarian aid workers in Peru, directly coinciding with periods of heightened political protests and demonstrations. This suggests that political instability is not just a background condition but an active catalyst for direct violence against civilians, potentially amplifying the expected impact of instability on the outcome.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "political_instability_peru->outcome_violence_increase",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Higher political instability directly correlates with increased instances of violence against civilians as a result of protests, riots, and civil disobedience."
+    },
+    {
+      "probe_text": "While the direct impact of political instability on government response capacity is acknowledged, consider the cascading effect of prolonged and severe political instability. In such scenarios, sustained unrest doesn't just overwhelm immediate response mechanisms; it can lead to a systemic erosion of state authority, diverting critical resources away from security and public services towards maintaining basic order, thereby creating a deeper and more persistent deficit in government response capacity than typically assumed.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "political_instability_peru->government_response_capacity",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "High political instability can overwhelm and weaken the government's capacity to respond effectively to various threats."
+    },
+    {
+      "probe_text": "While it's plausible that regional conflicts could spill over into Peru, consider an alternative: could significant political instability *within* Peru actually be *causing* or *exacerbating* regional conflict trends? For instance, a highly unstable Peruvian government might be less capable of controlling its borders, leading to increased cross-border criminal activity or even supporting dissident groups in neighboring countries, thereby contributing to the 'regional_conflict_trends'.",
+      "probe_type": "edge_reverse",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Spillover effects from regional conflicts can increase overall political instability within Peru."
+    },
+    {
+      "probe_text": "While your model correctly identifies social inequality as a driver of political instability and directly impacting violence, it omits a crucial indirect pathway. High social inequality can significantly strain government resources and divert their attention, thereby weakening the government's capacity to respond effectively to social tensions and criminal activity, even in the absence of widespread protests.",
+      "probe_type": "edge_missing",
+      "target_id": "social_inequality_peru->government_response_capacity",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The degree of social and economic inequality within Peru, which can be a driver of unrest. -> The capacity of the Peruvian government to respond to and de-escalate social tensions and criminal activity."
+    },
+    {
+      "probe_text": "While the network suggests social inequality might indirectly affect economic conditions through political instability, consider the direct impact of high social inequality on the Peruvian economy itself. For instance, entrenched inequality can hinder broad-based economic development by limiting access to education and opportunities for a large segment of the population, thereby suppressing overall GDP growth and potentially increasing inflationary pressures due to concentrated wealth and demand.",
+      "probe_type": "edge_missing",
+      "target_id": "social_inequality_peru->economic_conditions_peru",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The degree of social and economic inequality within Peru, which can be a driver of unrest. -> The general economic health of Peru, including inflation, unemployment, and GDP growth."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in organized crime activity and the presence of sophisticated criminal networks operating in Peru, particularly in regions previously unaffected by such activity. These groups are known to employ violence to protect their operations and exert influence. How might this emerging factor of 'organized_crime_activity_peru' directly impact the likelihood of 'Violence against civilians' and potentially influence other nodes in your network, such as 'government_response_capacity' or 'political_instability_peru'?",
+      "probe_type": "missing_node",
+      "target_id": "organized_crime_activity_peru",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in illegal mining operations in Peru, particularly in remote regions. These operations are often associated with organized crime, human rights abuses, and environmental degradation, which could directly fuel 'Violence against civilians' independent of broader political instability or economic conditions.",
+      "probe_type": "missing_node",
+      "target_id": "illegal_mining_operations_peru",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Recent reports indicate that Peru's Ministry of Culture has launched a new initiative to promote traditional textile arts across the country. This program aims to preserve cultural heritage and boost local artisan economies through workshops and international exhibitions.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in Peru's tourism sector, with international arrivals reaching record highs in the past year. This surge is largely attributed to a successful marketing campaign highlighting Peru's rich cultural heritage and natural landscapes, such as Machu Picchu and the Amazon rainforest.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the recent history of Peru shows a remarkable decoupling of political instability from violence against civilians? For example, imagine a scenario where a new, highly effective, and widely accepted civilian-led peace initiative has emerged, which actively de-escalates social unrest and prevents protests from turning violent, irrespective of underlying political disagreements or government effectiveness.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal factor 'political_instability_peru' significantly weakens its link to the outcome 'outcome_violence_increase'. The new information suggests that a civilian-led peace initiative can actively de-escalate social unrest, even if political instability persists. This directly impacts the causal path: political_instability_peru -> outcome_violence_increase. While political instability might still exist, its direct translation into violence against civilians is now less certain due to the intervention of the peace initiative. Furthermore, the challenge implies that this initiative might also mitigate the effects of other drivers, such as social inequality, on violence, by actively preventing protests from turning violent. Therefore, the overall probability of an increase in violence against civilians is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal factor 'political_instability_peru' significantly weakens its link to the outcome 'outcome_violence_increase'. The new information suggests that a civilian-led peace initiative can actively de-escalate social unrest, even if political instability persists. This directly impacts the causal path: political_instability_peru -> outcome_violence_increase. While political instability might still exist, its direct translation into violence against civilians is now less certain due to the intervention of the peace initiative. Furthermore, the challenge implies that this initiative might also mitigate the effects of other drivers, such as social inequality, on violence, by actively preventing protests from turning violent. Therefore, the overall probability of an increase in violence against civilians is decreased.\"\n}",
+      "target_id": "political_instability_peru",
+      "target_type": "node",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if Peru's economy, despite current indicators of inflation or unemployment, is actually highly resilient and insulated from factors that typically drive social unrest? Imagine a scenario where a significant portion of the population's basic needs are met through informal economies or remittances, making them less sensitive to official economic data, and thus rendering 'economic_conditions_peru' largely irrelevant to predicting 'Violence against civilians'.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that 'economic_conditions_peru' might be a less significant driver of 'outcome_violence_increase' than initially modeled. Specifically, it questions the causal paths: economic_conditions_peru -> political_instability_peru and economic_conditions_peru -> outcome_violence_increase. If the Peruvian population is insulated from official economic indicators due to informal economies and remittances, then negative economic conditions (if they occur) may not translate into increased political instability or direct violence against civilians. This weakens two indirect paths to the outcome and one direct path. While 'political_instability_peru' still has other drivers (social_inequality_peru, regional_conflict_trends), and 'government_response_capacity' can influence the outcome, the reduced influence of economic factors warrants a decrease in the probability. The initial estimate of 0.65 is reduced to 0.55 to reflect this diminished causal link, acknowledging that other factors still contribute.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that 'economic_conditions_peru' might be a less significant driver of 'outcome_violence_increase' than initially modeled. Specifically, it questions the causal paths: economic_conditions_peru -> political_instability_peru and economic_conditions_peru -> outcome_violence_increase. If the Peruvian population is insulated from official economic indicators due to informal economies and remittances, then negative economic conditions (if they occur) may not translate into increased political instability or direct violence against civilians. This weakens two indirect paths to the outcome and one direct path. While 'political_instability_peru' still has other drivers (social_inequality_peru, regional_conflict_trends), and 'government_response_capacity' can influence the outcome, the reduced influence of economic factors warrants a decrease in the probability. The initial estimate of 0.65 is reduced to 0.55 to reflect this diminished causal link, acknowledging that other factors still contribute.\"\n}",
+      "target_id": "economic_conditions_peru",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant de-escalation of all major regional conflicts in South America, with all neighboring countries signing peace accords and reporting historically low levels of internal violence. Furthermore, intelligence suggests that Peru has recently implemented enhanced border security measures specifically designed to prevent any potential spillover of conflict or illicit activities, rendering the 'regional_conflict_trends' node largely irrelevant to Peru's internal stability.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'regional_conflict_trends' significantly weakens one of the causal pathways to the outcome. The new information suggests that regional conflicts, which previously could have contributed to Peru's political instability and subsequently to violence against civilians, are now de-escalating. Furthermore, enhanced border security measures are stated to render this node 'largely irrelevant'. This directly impacts the causal path: regional_conflict_trends -> political_instability_peru -> outcome_violence_increase. While this path is weakened, the node 'political_instability_peru' is still influenced by other factors like 'economic_conditions_peru' and 'social_inequality_peru', and 'government_response_capacity' also directly impacts the outcome. Therefore, the probability is decreased, but not drastically, as other causal pathways remain intact.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'regional_conflict_trends' significantly weakens one of the causal pathways to the outcome. The new information suggests that regional conflicts, which previously could have contributed to Peru's political instability and subsequently to violence against civilians, are now de-escalating. Furthermore, enhanced border security measures are stated to render this node 'largely irrelevant'. This directly impacts the causal path: regional_conflict_trends -> political_instability_peru -> outcome_violence_increase. While this path is weakened, the node 'political_instability_peru' is still influenced by other factors like 'economic_conditions_peru' and 'social_inequality_peru', and 'government_response_capacity' also directly impacts the outcome. Therefore, the probability is decreased, but not drastically, as other causal pathways remain intact.\"\n}",
+      "target_id": "regional_conflict_trends",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports suggest that international humanitarian organizations, rather than the Peruvian government, have taken the lead in de-escalating recent social tensions and providing aid. Given this shift in responsibility, how much weight should we give to the Peruvian government's 'response capacity' when predicting 'Violence against civilians'?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'government_response_capacity' node is significant. My previous model assumed that the government's capacity to respond directly impacted the 'outcome_violence_increase'. The new information suggests that international humanitarian organizations are now playing a primary role in de-escalation and aid, effectively bypassing or diminishing the direct causal link from 'government_response_capacity' to 'outcome_violence_increase'. This weakens a direct path to the outcome. While 'government_response_capacity' can still indirectly influence 'political_instability_peru', its direct moderating effect on the outcome is now less certain. Therefore, I am decreasing the probability estimate, as a key mitigating factor in my original assessment is now less reliable.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'government_response_capacity' node is significant. My previous model assumed that the government's capacity to respond directly impacted the 'outcome_violence_increase'. The new information suggests that international humanitarian organizations are now playing a primary role in de-escalation and aid, effectively bypassing or diminishing the direct causal link from 'government_response_capacity' to 'outcome_violence_increase'. This weakens a direct path to the outcome. While 'government_response_capacity' can still indirectly influence 'political_instability_peru', its direct moderating effect on the outcome is now less certain. Therefore, I am decreasing the probability estimate, as a key mitigating factor in my original assessment is now less reliable.\"\n}",
+      "target_id": "government_response_capacity",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent report by the Peruvian Ombudsman's Office highlights a significant increase in the number of documented protests and social blockades across the country over the past six months. These demonstrations are frequently met with forceful responses from security forces, leading to clashes and alleged human rights violations, directly escalating political tensions and civil unrest.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal link between 'political_instability_peru' and the 'outcome_violence_increase'. The report indicates a documented rise in protests and social blockades, which are direct indicators of political instability. Furthermore, the forceful responses from security forces leading to clashes and alleged human rights violations explicitly describe mechanisms by which political instability escalates into violence against civilians. This reinforces the existing causal path: political_instability_peru -> outcome_violence_increase. The information also suggests that political instability might be a more significant driver than previously estimated, potentially impacting other nodes like government_response_capacity negatively, further increasing the likelihood of the outcome. Therefore, the probability of an increase in 'Violence against civilians' has been increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal link between 'political_instability_peru' and the 'outcome_violence_increase'. The report indicates a documented rise in protests and social blockades, which are direct indicators of political instability. Furthermore, the forceful responses from security forces leading to clashes and alleged human rights violations explicitly describe mechanisms by which political instability escalates into violence against civilians. This reinforces the existing causal path: political_instability_peru -> outcome_violence_increase. The information also suggests that political instability might be a more significant driver than previously estimated, potentially impacting other nodes like government_response_capacity negatively, further increasing the likelihood of the outcome. Therefore, the probability of an increase in 'Violence against civilians' has been increased.\"\n}",
+      "target_id": "political_instability_peru",
+      "target_type": "node",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from the Peruvian Ministry of Economy and Finance indicate a significant slowdown in GDP growth, with projections revised downwards by 2% for the upcoming fiscal year. This is compounded by a sharp increase in inflation, reaching a 15-year high, directly impacting the purchasing power of average citizens and increasing the likelihood of widespread social unrest.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly reinforces the causal path from 'economic_conditions_peru' to 'political_instability_peru' and directly to 'outcome_violence_increase'. The report of a significant slowdown in GDP growth and a 15-year high in inflation indicates a severe deterioration in Peru's economic conditions. This deterioration is a direct driver of increased political instability, as stated in the causal network. Furthermore, poor economic conditions can directly exacerbate social tensions and lead to crime-related violence against civilians. The challenge directly strengthens these causal links, making an increase in violence against civilians more likely. The initial estimate of 0.65 was already accounting for some level of economic pressure, but the severity reported here necessitates a higher probability. The path 'economic_conditions_peru -> political_instability_peru -> outcome_violence_increase' and the direct path 'economic_conditions_peru -> outcome_violence_increase' are both significantly strengthened. The information also indirectly affects 'government_response_capacity' as worsening economic conditions can strain government resources and reduce their effectiveness, but the primary impact is on the economic drivers of instability and violence.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly reinforces the causal path from 'economic_conditions_peru' to 'political_instability_peru' and directly to 'outcome_violence_increase'. The report of a significant slowdown in GDP growth and a 15-year high in inflation indicates a severe deterioration in Peru's economic conditions. This deterioration is a direct driver of increased political instability, as stated in the causal network. Furthermore, poor economic conditions can directly exacerbate social tensions and lead to crime-related violence against civilians. The challenge directly strengthens these causal links, making an increase in violence against civilians more likely. The initial estimate of 0.65 was already accounting for some level of economic pressure, but the severity reported here necessitates a higher probability. The path 'economic_conditions_peru -> political_instability_peru -> outcome_violence_increase' and the direct path 'economic_conditions_peru -> outcome_violence_increase' are both significantly strengthened. The information also indirectly affects 'government_response_capacity' as worsening economic conditions can strain government resources and reduce their effectiveness, but the primary impact is on the economic drivers of instability and violence.\"\n}",
+      "target_id": "economic_conditions_peru",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant escalation of armed conflict in a neighboring country, with reports of cross-border incursions and increased refugee flows into Peru. This development, stemming from prolonged internal strife in that nation, is raising concerns about potential spillover effects and a heightened risk of regional instability impacting Peru.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly challenges the 'regional_conflict_trends' node. The report of a significant escalation of armed conflict in a neighboring country, including cross-border incursions and increased refugee flows, strongly suggests an increase in regional instability. This directly strengthens the causal link from 'regional_conflict_trends' to 'political_instability_peru'. Increased political instability in Peru, in turn, has a direct causal link to the 'outcome_violence_increase'. Furthermore, heightened regional instability could potentially strain Peru's 'government_response_capacity', indirectly increasing the likelihood of the outcome. Given that 'regional_conflict_trends' is a contributing factor to political instability, which is a primary driver of the outcome, this development warrants an increased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly challenges the 'regional_conflict_trends' node. The report of a significant escalation of armed conflict in a neighboring country, including cross-border incursions and increased refugee flows, strongly suggests an increase in regional instability. This directly strengthens the causal link from 'regional_conflict_trends' to 'political_instability_peru'. Increased political instability in Peru, in turn, has a direct causal link to the 'outcome_violence_increase'. Furthermore, heightened regional instability could potentially strain Peru's 'government_response_capacity', indirectly increasing the likelihood of the outcome. Given that 'regional_conflict_trends' is a contributing factor to political instability, which is a primary driver of the outcome, this development warrants an increased probability estimate.\"\n}",
+      "target_id": "regional_conflict_trends",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that the Peruvian government has successfully implemented new community policing initiatives in several urban centers. These programs, characterized by increased police presence and engagement with local leaders, have been credited with a measurable reduction in petty crime and localized disturbances in those areas. This suggests an improvement in the government's capacity to manage and de-escalate social tensions at the grassroots level.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The new information challenges the causal link between 'government_response_capacity' and 'outcome_violence_increase'. The successful implementation of community policing initiatives suggests an improvement in the government's capacity to manage and de-escalate social tensions at the grassroots level. This directly weakens the causal path where a low 'government_response_capacity' leads to an increase in 'violence against civilians'. While this doesn't eliminate the possibility of increased violence, it reduces the likelihood that a weak government response will be a significant contributing factor. The other causal paths remain unaffected. The overall probability has decreased because a factor that was previously assumed to contribute to an increase in violence appears to be strengthening.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information challenges the causal link between 'government_response_capacity' and 'outcome_violence_increase'. The successful implementation of community policing initiatives suggests an improvement in the government's capacity to manage and de-escalate social tensions at the grassroots level. This directly weakens the causal path where a low 'government_response_capacity' leads to an increase in 'violence against civilians'. While this doesn't eliminate the possibility of increased violence, it reduces the likelihood that a weak government response will be a significant contributing factor. The other causal paths remain unaffected. The overall probability has decreased because a factor that was previously assumed to contribute to an increase in violence appears to be strengthening.\"\n}",
+      "target_id": "government_response_capacity",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While regional conflicts can sometimes spill over, Peru has recently implemented robust border security measures and diplomatic initiatives specifically aimed at isolating the country from the direct impacts of instability in neighboring nations. These actions have significantly weakened any potential spillover effects, making the link between regional conflict trends and domestic political instability in Peru much weaker than historically assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge specifically targets the causal link between 'regional_conflict_trends' and 'political_instability_peru'. This link is one of several pathways contributing to 'political_instability_peru'. While the challenge suggests this specific pathway is weaker due to Peru's robust border security and diplomatic efforts, it does not negate other significant drivers of political instability such as social inequality and economic conditions. The 'political_instability_peru' node remains a key driver of the 'outcome_violence_increase'. Therefore, the overall impact on the probability is a decrease, but not a substantial one, as other causal pathways to the outcome are unaffected and still considered important.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge specifically targets the causal link between 'regional_conflict_trends' and 'political_instability_peru'. This link is one of several pathways contributing to 'political_instability_peru'. While the challenge suggests this specific pathway is weaker due to Peru's robust border security and diplomatic efforts, it does not negate other significant drivers of political instability such as social inequality and economic conditions. The 'political_instability_peru' node remains a key driver of the 'outcome_violence_increase'. Therefore, the overall impact on the probability is a decrease, but not a substantial one, as other causal pathways to the outcome are unaffected and still considered important.\"\n}",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While political instability often correlates with violence, it's possible that in Peru, recent shifts in protest dynamics have weakened this direct link. For instance, a growing reliance on digital organizing and more targeted, less disruptive forms of activism might mean that even with high political instability, the translation into widespread 'violence against civilians' is less automatic. This could be due to increased government surveillance of physical gatherings or a public fatigue with overt conflict, favoring other forms of dissent.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly questions the strength of the causal link between 'political_instability_peru' and 'outcome_violence_increase'. The argument posits that while instability might exist, its manifestation as 'violence against civilians' is less direct due to shifts in protest dynamics towards digital organizing and less disruptive forms of activism. This weakens a primary causal path. Although other paths exist (e.g., 'economic_conditions_peru' -> 'outcome_violence_increase', 'social_inequality_peru' -> 'outcome_violence_increase'), the direct link from political instability to violence is a significant component of the original forecast. The possibility of weakened surveillance and public fatigue with overt conflict further supports the idea that instability may not automatically translate into the specified outcome. Therefore, the probability is decreased to reflect this reduced confidence in a key causal mechanism.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly questions the strength of the causal link between 'political_instability_peru' and 'outcome_violence_increase'. The argument posits that while instability might exist, its manifestation as 'violence against civilians' is less direct due to shifts in protest dynamics towards digital organizing and less disruptive forms of activism. This weakens a primary causal path. Although other paths exist (e.g., 'economic_conditions_peru' -> 'outcome_violence_increase', 'social_inequality_peru' -> 'outcome_violence_increase'), the direct link from political instability to violence is a significant component of the original forecast. The possibility of weakened surveillance and public fatigue with overt conflict further supports the idea that instability may not automatically translate into the specified outcome. Therefore, the probability is decreased to reflect this reduced confidence in a key causal mechanism.\"\n}",
+      "target_id": "political_instability_peru->outcome_violence_increase",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While high political instability often strains government resources, it's plausible that in certain contexts, such as a temporary, focused protest movement, the government's response capacity might actually increase. This could occur if the instability triggers a strong, unified, and well-resourced security response, allowing it to temporarily overcome its usual limitations in de-escalating tensions, rather than being overwhelmed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct negative impact of political instability on government response capacity. The original model assumed that 'political_instability_peru -> government_response_capacity' always weakens the government. The new information suggests that in specific scenarios, instability might trigger a *strengthened* response. This weakens the indirect path: 'political_instability_peru -> government_response_capacity -> outcome_violence_increase'. If political instability does not necessarily lead to a weakened government response, then the government's diminished capacity to de-escalate tensions becomes a less certain factor in driving increased violence. This makes the link between political instability and the outcome slightly less robust, hence a decrease in the probability. However, the direct links from 'political_instability_peru' to 'outcome_violence_increase', and other causal factors like 'economic_conditions_peru' and 'social_inequality_peru' remain unaffected, preventing a larger downward revision.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct negative impact of political instability on government response capacity. The original model assumed that 'political_instability_peru -> government_response_capacity' always weakens the government. The new information suggests that in specific scenarios, instability might trigger a *strengthened* response. This weakens the indirect path: 'political_instability_peru -> government_response_capacity -> outcome_violence_increase'. If political instability does not necessarily lead to a weakened government response, then the government's diminished capacity to de-escalate tensions becomes a less certain factor in driving increased violence. This makes the link between political instability and the outcome slightly less robust, hence a decrease in the probability. However, the direct links from 'political_instability_peru' to 'outcome_violence_increase', and other causal factors like 'economic_conditions_peru' and 'social_inequality_peru' remain unaffected, preventing a larger downward revision.\"\n}",
+      "target_id": "political_instability_peru->government_response_capacity",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant escalation of armed group activity in a neighboring country, characterized by increased cross-border incursions and recruitment drives that have reportedly begun to attract individuals from Peru's border regions. This heightened regional instability is not merely a trend but is actively destabilizing local Peruvian communities near the border, drawing them into the conflict and directly increasing political instability within Peru.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'regional_conflict_trends -> political_instability_peru' is actually strengthening it, not weakening it as initially implied by the prompt's framing. The new information describes a direct and active spillover of regional conflict into Peru, specifically mentioning cross-border incursions and recruitment impacting Peruvian border regions. This indicates that the 'regional_conflict_trends' node is not just a passive trend but is actively and directly feeding into 'political_instability_peru'. This strengthens the causal path from regional conflict to political instability, which in turn increases political instability's impact on 'outcome_violence_increase'. Furthermore, the information suggests a more direct pathway from regional conflict to increased political instability than previously modeled, as it's not just a general trend but active destabilization affecting local Peruvian communities. This strengthens the overall likelihood of an increase in violence against civilians.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'regional_conflict_trends -> political_instability_peru' is actually strengthening it, not weakening it as initially implied by the prompt's framing. The new information describes a direct and active spillover of regional conflict into Peru, specifically mentioning cross-border incursions and recruitment impacting Peruvian border regions. This indicates that the 'regional_conflict_trends' node is not just a passive trend but is actively and directly feeding into 'political_instability_peru'. This strengthens the causal path from regional conflict to political instability, which in turn increases political instability's impact on 'outcome_violence_increase'. Furthermore, the information suggests a more direct pathway from regional conflict to increased political instability than previously modeled, as it's not just a general trend but active destabilization affecting local Peruvian communities. This strengthens the overall likelihood of an increase in violence against civilians.\"\n}",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from international observers highlight an alarming increase in coordinated attacks on civilian infrastructure and humanitarian aid workers in Peru, directly coinciding with periods of heightened political protests and demonstrations. This suggests that political instability is not just a background condition but an active catalyst for direct violence against civilians, potentially amplifying the expected impact of instability on the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'political_instability_peru -> outcome_violence_increase' strengthens, rather than weakens, our confidence in this connection. The new information explicitly states that increased political instability (protests, demonstrations) is directly coinciding with and actively catalyzing coordinated attacks on civilian infrastructure and aid workers. This provides concrete evidence that political instability is a potent and direct driver of violence against civilians in Peru, reinforcing the initial assumption of a positive causal link and suggesting its impact might be even more significant than initially modeled. This strengthens the overall causal pathway leading to the outcome, thus increasing the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'political_instability_peru -> outcome_violence_increase' strengthens, rather than weakens, our confidence in this connection. The new information explicitly states that increased political instability (protests, demonstrations) is directly coinciding with and actively catalyzing coordinated attacks on civilian infrastructure and aid workers. This provides concrete evidence that political instability is a potent and direct driver of violence against civilians in Peru, reinforcing the initial assumption of a positive causal link and suggesting its impact might be even more significant than initially modeled. This strengthens the overall causal pathway leading to the outcome, thus increasing the probability.\"\n}",
+      "target_id": "political_instability_peru->outcome_violence_increase",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While the direct impact of political instability on government response capacity is acknowledged, consider the cascading effect of prolonged and severe political instability. In such scenarios, sustained unrest doesn't just overwhelm immediate response mechanisms; it can lead to a systemic erosion of state authority, diverting critical resources away from security and public services towards maintaining basic order, thereby creating a deeper and more persistent deficit in government response capacity than typically assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'political_instability_peru -> government_response_capacity' suggests a more severe and persistent degradation of government response capacity under prolonged political instability. Previously, the model assumed that instability would overwhelm immediate response mechanisms. The new information posits that it can lead to a systemic erosion of state authority and resource diversion, creating a deeper deficit. This strengthens the causal path from 'political_instability_peru' to 'government_response_capacity', and subsequently to 'outcome_violence_increase' (since government_response_capacity -> outcome_violence_increase). While the direct link from 'political_instability_peru' to 'outcome_violence_increase' remains, this refinement of the indirect path through government response capacity suggests a marginally higher likelihood of the outcome. The core causal logic remains intact, but the severity of one of the mediating factors is amplified, leading to a slight upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'political_instability_peru -> government_response_capacity' suggests a more severe and persistent degradation of government response capacity under prolonged political instability. Previously, the model assumed that instability would overwhelm immediate response mechanisms. The new information posits that it can lead to a systemic erosion of state authority and resource diversion, creating a deeper deficit. This strengthens the causal path from 'political_instability_peru' to 'government_response_capacity', and subsequently to 'outcome_violence_increase' (since government_response_capacity -> outcome_violence_increase). While the direct link from 'political_instability_peru' to 'outcome_violence_increase' remains, this refinement of the indirect path through government response capacity suggests a marginally higher likelihood of the outcome. The core causal logic remains intact, but the severity of one of the mediating factors is amplified, leading to a slight upward revision of the probability.\"\n}",
+      "target_id": "political_instability_peru->government_response_capacity",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "While it's plausible that regional conflicts could spill over into Peru, consider an alternative: could significant political instability *within* Peru actually be *causing* or *exacerbating* regional conflict trends? For instance, a highly unstable Peruvian government might be less capable of controlling its borders, leading to increased cross-border criminal activity or even supporting dissident groups in neighboring countries, thereby contributing to the 'regional_conflict_trends'.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the directionality of the causal link between `regional_conflict_trends` and `political_instability_peru`, suggesting that Peru's internal instability might be contributing to regional conflict, rather than the other way around. This doesn't entirely break the causal path to the outcome, but it weakens the assumed influence of external regional conflicts on Peru's internal political instability. My original reasoning relied on `regional_conflict_trends` positively influencing `political_instability_peru`, which in turn increases the likelihood of `outcome_violence_increase`. If Peru is actually contributing to regional conflict, then the direct influence of regional trends on Peru's instability is less significant. However, the other causal paths remain: `economic_conditions_peru` and `social_inequality_peru` still influence `political_instability_peru`, and both `economic_conditions_peru`, `social_inequality_peru`, and `government_response_capacity` still directly or indirectly influence `outcome_violence_increase`. The link `political_instability_peru -> government_response_capacity` is also still valid. Therefore, the overall probability is decreased, but not drastically, as the core drivers of instability within Peru and their link to the outcome are still considered active.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the directionality of the causal link between `regional_conflict_trends` and `political_instability_peru`, suggesting that Peru's internal instability might be contributing to regional conflict, rather than the other way around. This doesn't entirely break the causal path to the outcome, but it weakens the assumed influence of external regional conflicts on Peru's internal political instability. My original reasoning relied on `regional_conflict_trends` positively influencing `political_instability_peru`, which in turn increases the likelihood of `outcome_violence_increase`. If Peru is actually contributing to regional conflict, then the direct influence of regional trends on Peru's instability is less significant. However, the other causal paths remain: `economic_conditions_peru` and `social_inequality_peru` still influence `political_instability_peru`, and both `economic_conditions_peru`, `social_inequality_peru`, and `government_response_capacity` still directly or indirectly influence `outcome_violence_increase`. The link `political_instability_peru -> government_response_capacity` is also still valid. Therefore, the overall probability is decreased, but not drastically, as the core drivers of instability within Peru and their link to the outcome are still considered active.\"\n}",
+      "target_id": "regional_conflict_trends->political_instability_peru",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While your model correctly identifies social inequality as a driver of political instability and directly impacting violence, it omits a crucial indirect pathway. High social inequality can significantly strain government resources and divert their attention, thereby weakening the government's capacity to respond effectively to social tensions and criminal activity, even in the absence of widespread protests.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.72,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The new information highlights an additional indirect causal path: social_inequality_peru -> government_response_capacity -> outcome_violence_increase. Previously, social_inequality_peru was modeled to directly impact outcome_violence_increase and indirectly through political_instability_peru. The new insight suggests that high social inequality can *also* degrade government_response_capacity independently of widespread protests or overt political instability. This strengthens the link between social inequality and a diminished government capacity to prevent or manage civilian violence. This strengthens the overall causal chain leading to an increased likelihood of the outcome, hence the upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.72,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information highlights an additional indirect causal path: social_inequality_peru -> government_response_capacity -> outcome_violence_increase. Previously, social_inequality_peru was modeled to directly impact outcome_violence_increase and indirectly through political_instability_peru. The new insight suggests that high social inequality can *also* degrade government_response_capacity independently of widespread protests or overt political instability. This strengthens the link between social inequality and a diminished government capacity to prevent or manage civilian violence. This strengthens the overall causal chain leading to an increased likelihood of the outcome, hence the upward revision of the probability.\"\n}",
+      "target_id": "social_inequality_peru->government_response_capacity",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While the network suggests social inequality might indirectly affect economic conditions through political instability, consider the direct impact of high social inequality on the Peruvian economy itself. For instance, entrenched inequality can hinder broad-based economic development by limiting access to education and opportunities for a large segment of the population, thereby suppressing overall GDP growth and potentially increasing inflationary pressures due to concentrated wealth and demand.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.68,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a direct link from 'social_inequality_peru' to 'economic_conditions_peru', positing that inequality hinders broad-based economic development, suppresses GDP growth, and potentially increases inflation. Previously, the causal path was 'social_inequality_peru' -> 'political_instability_peru' -> 'outcome_violence_increase' and 'social_inequality_peru' -> 'outcome_violence_increase'. The new proposed link 'social_inequality_peru' -> 'economic_conditions_peru' adds a new pathway that could indirectly influence the outcome. Specifically, if high social inequality directly harms economic conditions, this would then, through the existing links 'economic_conditions_peru' -> 'political_instability_peru' and 'economic_conditions_peru' -> 'outcome_violence_increase', further contribute to political instability and potentially directly to violence. This strengthens the overall causal chain driven by social inequality towards the outcome, thus increasing the probability. While the existing direct link from social inequality to the outcome and the indirect link through political instability are still considered, this new direct economic channel amplifies the potential for negative outcomes.",
+      "raw_response": "{\n  \"updated_probability\": 0.68,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a direct link from 'social_inequality_peru' to 'economic_conditions_peru', positing that inequality hinders broad-based economic development, suppresses GDP growth, and potentially increases inflation. Previously, the causal path was 'social_inequality_peru' -> 'political_instability_peru' -> 'outcome_violence_increase' and 'social_inequality_peru' -> 'outcome_violence_increase'. The new proposed link 'social_inequality_peru' -> 'economic_conditions_peru' adds a new pathway that could indirectly influence the outcome. Specifically, if high social inequality directly harms economic conditions, this would then, through the existing links 'economic_conditions_peru' -> 'political_instability_peru' and 'economic_conditions_peru' -> 'outcome_violence_increase', further contribute to political instability and potentially directly to violence. This strengthens the overall causal chain driven by social inequality towards the outcome, thus increasing the probability. While the existing direct link from social inequality to the outcome and the indirect link through political instability are still considered, this new direct economic channel amplifies the potential for negative outcomes.\"\n}",
+      "target_id": "social_inequality_peru->economic_conditions_peru",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in organized crime activity and the presence of sophisticated criminal networks operating in Peru, particularly in regions previously unaffected by such activity. These groups are known to employ violence to protect their operations and exert influence. How might this emerging factor of 'organized_crime_activity_peru' directly impact the likelihood of 'Violence against civilians' and potentially influence other nodes in your network, such as 'government_response_capacity' or 'political_instability_peru'?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The introduction of 'organized_crime_activity_peru' as a significant factor directly impacts the 'outcome_violence_increase' node. Organized crime, by its nature, employs violence to protect its operations and exert influence, thus creating a new, direct causal path to increased violence against civilians. This new factor also indirectly affects the 'government_response_capacity' node, as sophisticated criminal networks can overwhelm and potentially corrupt or incapacitate government institutions, diminishing their ability to respond to social tensions and maintain order. This strengthens the existing causal link from 'government_response_capacity' to 'outcome_violence_increase' (weak response leads to more violence) by making a weakened response more likely. Furthermore, increased organized crime activity can contribute to 'political_instability_peru' through public fear, corruption, and challenges to state authority, thus reinforcing the path from 'political_instability_peru' to 'outcome_violence_increase'. The initial forecast of 0.65 did not account for this specific, potent driver of violence. The new information adds a strong, direct, and indirect causal weight towards an increase in violence against civilians, necessitating a significant upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The introduction of 'organized_crime_activity_peru' as a significant factor directly impacts the 'outcome_violence_increase' node. Organized crime, by its nature, employs violence to protect its operations and exert influence, thus creating a new, direct causal path to increased violence against civilians. This new factor also indirectly affects the 'government_response_capacity' node, as sophisticated criminal networks can overwhelm and potentially corrupt or incapacitate government institutions, diminishing their ability to respond to social tensions and maintain order. This strengthens the existing causal link from 'government_response_capacity' to 'outcome_violence_increase' (weak response leads to more violence) by making a weakened response more likely. Furthermore, increased organized crime activity can contribute to 'political_instability_peru' through public fear, corruption, and challenges to state authority, thus reinforcing the path from 'political_instability_peru' to 'outcome_violence_increase'. The initial forecast of 0.65 did not account for this specific, potent driver of violence. The new information adds a strong, direct, and indirect causal weight towards an increase in violence against civilians, necessitating a significant upward revision of the probability.\"\n}",
+      "target_id": "organized_crime_activity_peru",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in illegal mining operations in Peru, particularly in remote regions. These operations are often associated with organized crime, human rights abuses, and environmental degradation, which could directly fuel 'Violence against civilians' independent of broader political instability or economic conditions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge highlights a new, direct causal pathway to the outcome: increased illegal mining operations -> organized crime and human rights abuses -> 'Violence against civilians'. This path is independent of 'political_instability_peru' and 'economic_conditions_peru', which were central to the original model. While the original model already accounted for some drivers of violence, this new information introduces a potentially significant and direct source of violence that was not explicitly modeled. This strengthens the likelihood of an increase in 'Violence against civilians' beyond what was previously considered, hence the increased probability. The existing causal paths are still considered relevant, but this new factor adds a substantial upward pressure on the outcome probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge highlights a new, direct causal pathway to the outcome: increased illegal mining operations -> organized crime and human rights abuses -> 'Violence against civilians'. This path is independent of 'political_instability_peru' and 'economic_conditions_peru', which were central to the original model. While the original model already accounted for some drivers of violence, this new information introduces a potentially significant and direct source of violence that was not explicitly modeled. This strengthens the likelihood of an increase in 'Violence against civilians' beyond what was previously considered, hence the increased probability. The existing causal paths are still considered relevant, but this new factor adds a substantial upward pressure on the outcome probability.\"\n}",
+      "target_id": "illegal_mining_operations_peru",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that Peru's Ministry of Culture has launched a new initiative to promote traditional textile arts across the country. This program aims to preserve cultural heritage and boost local artisan economies through workshops and international exhibitions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The new initiative by the Ministry of Culture, while focused on cultural heritage and artisan economies, is unlikely to have a significant direct impact on the causal pathways leading to increased violence against civilians. The initiative aims to boost local artisan economies, which might marginally improve economic conditions in specific communities, potentially having a very minor dampening effect on 'economic_conditions_peru -> political_instability_peru' and 'economic_conditions_peru -> outcome_violence_increase'. However, the scale and scope of this program are unlikely to fundamentally alter the broader economic landscape or the drivers of political instability and violence in Peru. Therefore, the impact on the overall probability is minimal, leading to a slight decrease due to the marginal positive economic effect.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new initiative by the Ministry of Culture, while focused on cultural heritage and artisan economies, is unlikely to have a significant direct impact on the causal pathways leading to increased violence against civilians. The initiative aims to boost local artisan economies, which might marginally improve economic conditions in specific communities, potentially having a very minor dampening effect on 'economic_conditions_peru -> political_instability_peru' and 'economic_conditions_peru -> outcome_violence_increase'. However, the scale and scope of this program are unlikely to fundamentally alter the broader economic landscape or the drivers of political instability and violence in Peru. Therefore, the impact on the overall probability is minimal, leading to a slight decrease due to the marginal positive economic effect.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in Peru's tourism sector, with international arrivals reaching record highs in the past year. This surge is largely attributed to a successful marketing campaign highlighting Peru's rich cultural heritage and natural landscapes, such as Machu Picchu and the Amazon rainforest.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about a surge in Peru's tourism sector, driven by marketing of cultural heritage and natural landscapes, has a peripheral impact on the causal network. While a thriving tourism sector can indirectly contribute to economic growth, potentially improving 'economic_conditions_peru', this is not a direct or guaranteed link. The primary drivers of 'outcome_violence_increase' in the model are political instability, social inequality, and government response capacity. The tourism surge does not directly challenge these core causal pathways. Therefore, the impact on the probability is minor, with a slight decrease to reflect a potential, albeit weak, positive influence on economic conditions that could marginally reduce instability.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about a surge in Peru's tourism sector, driven by marketing of cultural heritage and natural landscapes, has a peripheral impact on the causal network. While a thriving tourism sector can indirectly contribute to economic growth, potentially improving 'economic_conditions_peru', this is not a direct or guaranteed link. The primary drivers of 'outcome_violence_increase' in the model are political instability, social inequality, and government response capacity. The tourism surge does not directly challenge these core causal pathways. Therefore, the impact on the probability is minor, with a slight decrease to reflect a potential, albeit weak, positive influence on economic conditions that could marginally reduce instability.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "7324000fa5d5d32e83c2d260425c63152ec88965e22de78f03bcf54a74b0f973",
+    "question_text": "Will there be more 'Violence against civilians' in Peru for the 30 days before 2025-12-28 compared to the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Violence against civilians'\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of 'Violence against civilians' over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more 'Violence against civilians' would need to occur in the 30 days leading up to the resolution.",
+    "source": "acled",
+    "condition": "one-turn",
+    "initial_probability": 0.65,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.09333333333333334,
+    "max_absolute_shift": 0.30000000000000004
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0,
+  "aggregate_metrics": {
+    "ssr": 2.316176470588235,
+    "mean_shift_high": 0.13125,
+    "mean_shift_low": 0.05666666666666668,
+    "asymmetry_index": 1.0694444444444446,
+    "mean_shift_negate": 0.11000000000000001,
+    "mean_shift_strengthen": 0.10285714285714286,
+    "fnar": 1,
+    "n_accepted": 2,
+    "n_spurious": 2,
+    "critical_path_premium": 0.04214285714285715,
+    "mean_shift_on_path": 0.12142857142857144,
+    "mean_shift_off_path": 0.07928571428571429,
+    "importance_sensitivity_correlation": 0.33333333333333337,
+    "control_sensitivity": 0.5
+  }
+}

@@ -1,0 +1,1242 @@
+{
+  "question_id": "0x60c447987af838c9a074ad7d44751135be94a20580982b72d76e9b542572bfe6",
+  "question_text": "Will Cynthia Erivo win Best Actress at the 98th Academy Awards?",
+  "source": "polymarket",
+  "initial_probability": 0.15,
+  "nodes": [
+    {
+      "id": "erivo_performance_quality",
+      "description": "The perceived quality and impact of Cynthia Erivo's performance in her potential 98th Academy Awards nominated film.",
+      "role": "factor"
+    },
+    {
+      "id": "film_critical_reception",
+      "description": "The overall critical reception and awards buzz surrounding the film in which Erivo stars.",
+      "role": "factor"
+    },
+    {
+      "id": "competition_strength",
+      "description": "The strength and prominence of other Best Actress nominees in the same awards year.",
+      "role": "factor"
+    },
+    {
+      "id": "oscar_voting_trends",
+      "description": "Prevailing trends and preferences among Academy voters in recent years.",
+      "role": "factor"
+    },
+    {
+      "id": "erivo_acting_category_history",
+      "description": "Cynthia Erivo's previous Oscar nominations and wins in acting categories.",
+      "role": "factor"
+    },
+    {
+      "id": "best_actress_win",
+      "description": "Cynthia Erivo wins Best Actress at the 98th Academy Awards.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "erivo_performance_quality",
+      "to": "best_actress_win",
+      "mechanism": "A highly acclaimed performance directly increases the likelihood of winning."
+    },
+    {
+      "from": "film_critical_reception",
+      "to": "best_actress_win",
+      "mechanism": "A film with strong critical acclaim and awards momentum can boost its lead actors' chances."
+    },
+    {
+      "from": "film_critical_reception",
+      "to": "erivo_performance_quality",
+      "mechanism": "Positive reviews for the film often highlight and validate the lead performance."
+    },
+    {
+      "from": "competition_strength",
+      "to": "best_actress_win",
+      "mechanism": "Strong competition reduces the probability of any single nominee winning."
+    },
+    {
+      "from": "oscar_voting_trends",
+      "to": "best_actress_win",
+      "mechanism": "Voter preferences for certain types of performances or established stars can influence outcomes."
+    },
+    {
+      "from": "erivo_acting_category_history",
+      "to": "best_actress_win",
+      "mechanism": "Previous nominations/wins can build voter familiarity and favor, but also potential voter fatigue."
+    },
+    {
+      "from": "erivo_performance_quality",
+      "to": "competition_strength",
+      "mechanism": "The quality of Erivo's performance might influence how voters perceive other nominees relative to her."
+    },
+    {
+      "from": "erivo_performance_quality",
+      "to": "oscar_voting_trends",
+      "mechanism": "A standout performance might align with or challenge current voting trends."
+    }
+  ],
+  "reasoning": "Cynthia Erivo is a talented actress with a previous nomination, but predicting a win at the 98th Academy Awards requires her to have a standout performance in a critically acclaimed film that also overcomes potentially strong competition and prevailing Oscar voting trends. Without knowing the specific film, her role, or the competitive landscape, the probability remains low, reflecting the many variables involved and the inherent difficulty in predicting future award outcomes. Her past nomination is a positive, but not a guarantee, and the strength of other potential nominees is a significant unknown.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 8,
+    "density": 0.2667,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "best_actress_win",
+    "node_metrics": [
+      {
+        "node_id": "erivo_performance_quality",
+        "description": "The perceived quality and impact of Cynthia Erivo's performance in her potential 98th Academy Awards nominated film.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 3,
+        "betweenness": 0.1,
+        "closeness": 0.2,
+        "pagerank": 0.1261,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "film_critical_reception",
+        "description": "The overall critical reception and awards buzz surrounding the film in which Erivo stars.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0885,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "competition_strength",
+        "description": "The strength and prominence of other Best Actress nominees in the same awards year.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.2667,
+        "pagerank": 0.1243,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "oscar_voting_trends",
+        "description": "Prevailing trends and preferences among Academy voters in recent years.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.2667,
+        "pagerank": 0.1243,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "erivo_acting_category_history",
+        "description": "Cynthia Erivo's previous Oscar nominations and wins in acting categories.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0885,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "best_actress_win",
+        "description": "Cynthia Erivo wins Best Actress at the 98th Academy Awards.",
+        "role": "outcome",
+        "in_degree": 5,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 1,
+        "pagerank": 0.4483,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "erivo_performance_quality",
+        "target": "best_actress_win",
+        "mechanism": "A highly acclaimed performance directly increases the likelihood of winning.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "erivo_performance_quality",
+        "target": "competition_strength",
+        "mechanism": "The quality of Erivo's performance might influence how voters perceive other nominees relative to her.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": false
+      },
+      {
+        "source": "erivo_performance_quality",
+        "target": "oscar_voting_trends",
+        "mechanism": "A standout performance might align with or challenge current voting trends.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": false
+      },
+      {
+        "source": "film_critical_reception",
+        "target": "best_actress_win",
+        "mechanism": "A film with strong critical acclaim and awards momentum can boost its lead actors' chances.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "film_critical_reception",
+        "target": "erivo_performance_quality",
+        "mechanism": "Positive reviews for the film often highlight and validate the lead performance.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": false
+      },
+      {
+        "source": "competition_strength",
+        "target": "best_actress_win",
+        "mechanism": "Strong competition reduces the probability of any single nominee winning.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "oscar_voting_trends",
+        "target": "best_actress_win",
+        "mechanism": "Voter preferences for certain types of performances or established stars can influence outcomes.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "erivo_acting_category_history",
+        "target": "best_actress_win",
+        "mechanism": "Previous nominations/wins can build voter familiarity and favor, but also potential voter fatigue.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "erivo_performance_quality",
+        "description": "The perceived quality and impact of Cynthia Erivo's performance in her potential 98th Academy Awards nominated film.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "film_critical_reception",
+        "description": "The overall critical reception and awards buzz surrounding the film in which Erivo stars.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "competition_strength",
+        "description": "The strength and prominence of other Best Actress nominees in the same awards year.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "erivo_acting_category_history",
+        "description": "Cynthia Erivo's previous Oscar nominations and wins in acting categories.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "erivo_performance_quality",
+        "description": "The perceived quality and impact of Cynthia Erivo's performance in her potential 98th Academy Awards nominated film.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "film_critical_reception",
+        "description": "The overall critical reception and awards buzz surrounding the film in which Erivo stars.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "competition_strength",
+        "description": "The strength and prominence of other Best Actress nominees in the same awards year.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "erivo_acting_category_history",
+        "description": "Cynthia Erivo's previous Oscar nominations and wins in acting categories.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "erivo_performance_quality->best_actress_win",
+        "description": "A highly acclaimed performance directly increases the likelihood of winning.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "film_critical_reception->best_actress_win",
+        "description": "A film with strong critical acclaim and awards momentum can boost its lead actors' chances.",
+        "importance": 0.0333,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "film_critical_reception->erivo_performance_quality",
+        "description": "Positive reviews for the film often highlight and validate the lead performance.",
+        "importance": 0.1,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "erivo_performance_quality->best_actress_win",
+        "description": "A highly acclaimed performance directly increases the likelihood of winning.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "film_critical_reception->best_actress_win",
+        "description": "A film with strong critical acclaim and awards momentum can boost its lead actors' chances.",
+        "importance": 0.0333,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "film_critical_reception->erivo_performance_quality",
+        "description": "Positive reviews for the film often highlight and validate the lead performance.",
+        "importance": 0.1,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "erivo_performance_quality->best_actress_win",
+        "description": "A highly acclaimed performance directly increases the likelihood of winning.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "oscar_voting_trends->film_critical_reception",
+        "description": "Potential link: Prevailing trends and preferences among Academy voters in recent years. -> The overall critical reception and awards buzz surrounding the film in which Erivo stars.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "oscar_voting_trends->erivo_acting_category_history",
+        "description": "Potential link: Prevailing trends and preferences among Academy voters in recent years. -> Cynthia Erivo's previous Oscar nominations and wins in acting categories.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "erivo_performance_quality",
+      "description": "The perceived quality and impact of Cynthia Erivo's performance in her potential 98th Academy Awards nominated film.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "film_critical_reception",
+      "description": "The overall critical reception and awards buzz surrounding the film in which Erivo stars.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "competition_strength",
+      "description": "The strength and prominence of other Best Actress nominees in the same awards year.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "erivo_acting_category_history",
+      "description": "Cynthia Erivo's previous Oscar nominations and wins in acting categories.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "erivo_performance_quality",
+      "description": "The perceived quality and impact of Cynthia Erivo's performance in her potential 98th Academy Awards nominated film.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "film_critical_reception",
+      "description": "The overall critical reception and awards buzz surrounding the film in which Erivo stars.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "competition_strength",
+      "description": "The strength and prominence of other Best Actress nominees in the same awards year.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "erivo_acting_category_history",
+      "description": "Cynthia Erivo's previous Oscar nominations and wins in acting categories.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "description": "A highly acclaimed performance directly increases the likelihood of winning.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "film_critical_reception->best_actress_win",
+      "description": "A film with strong critical acclaim and awards momentum can boost its lead actors' chances.",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "film_critical_reception->erivo_performance_quality",
+      "description": "Positive reviews for the film often highlight and validate the lead performance.",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "description": "A highly acclaimed performance directly increases the likelihood of winning.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "film_critical_reception->best_actress_win",
+      "description": "A film with strong critical acclaim and awards momentum can boost its lead actors' chances.",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "film_critical_reception->erivo_performance_quality",
+      "description": "Positive reviews for the film often highlight and validate the lead performance.",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "description": "A highly acclaimed performance directly increases the likelihood of winning.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "oscar_voting_trends->film_critical_reception",
+      "description": "Potential link: Prevailing trends and preferences among Academy voters in recent years. -> The overall critical reception and awards buzz surrounding the film in which Erivo stars.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "oscar_voting_trends->erivo_acting_category_history",
+      "description": "Potential link: Prevailing trends and preferences among Academy voters in recent years. -> Cynthia Erivo's previous Oscar nominations and wins in acting categories.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if Cynthia Erivo's performance, despite critical praise, is overshadowed by a controversial or polarizing aspect of the film itself? Imagine the film is technically brilliant but deeply divisive, leading voters to focus on the film's narrative issues rather than individual acting, effectively neutralizing the impact of her performance on their decision.",
+      "probe_type": "node_negate_high",
+      "target_id": "erivo_performance_quality",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "description": "The perceived quality and impact of Cynthia Erivo's performance in her potential 98th Academy Awards nominated film."
+    },
+    {
+      "probe_text": "Imagine that the film Erivo stars in is actually a critical darling among a very small, niche group of critics, but largely ignored or even panned by the mainstream press and public. Furthermore, suppose there's a strong indication that the Academy voters are deliberately trying to move away from rewarding films that rely heavily on critical acclaim, favoring more commercially successful or broadly appealing movies this year. How would this drastically different reception and voter sentiment affect your probability assessment for Erivo winning Best Actress?",
+      "probe_type": "node_negate_high",
+      "target_id": "film_critical_reception",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The overall critical reception and awards buzz surrounding the film in which Erivo stars."
+    },
+    {
+      "probe_text": "Recent reports suggest that the Academy has decided to implement a new rule for the 98th Academy Awards where each nominee in the Best Actress category will be judged independently, with their film's overall success and the strength of other nominees not being considered. This means the 'competition_strength' of other nominees will not directly impact the voting outcome for Cynthia Erivo.",
+      "probe_type": "node_negate_medium",
+      "target_id": "competition_strength",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The strength and prominence of other Best Actress nominees in the same awards year."
+    },
+    {
+      "probe_text": "We've learned that Cynthia Erivo has never actually been nominated for an Oscar in an acting category before, only for Best Original Song. Her previous nominations were in music-related categories, not for her acting performances. How does this information about her acting category history affect your probability of her winning Best Actress?",
+      "probe_type": "node_negate_low",
+      "target_id": "erivo_acting_category_history",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Cynthia Erivo's previous Oscar nominations and wins in acting categories."
+    },
+    {
+      "probe_text": "Renowned film critic, Eleanor Vance, who has accurately predicted Best Actress winners for the past decade, just published a glowing review of Erivo's performance, calling it 'a career-defining turn that transcends the film itself and sets a new benchmark for dramatic acting.' Vance specifically highlighted how Erivo's nuanced portrayal and powerful emotional range are precisely the kind of performances the Academy has historically rewarded, suggesting this performance is not just good, but historically significant.",
+      "probe_type": "node_strengthen",
+      "target_id": "erivo_performance_quality",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "description": "The perceived quality and impact of Cynthia Erivo's performance in her potential 98th Academy Awards nominated film."
+    },
+    {
+      "probe_text": "A prominent film critic, known for accurately predicting Oscar outcomes, has just published a glowing review of Erivo's film, calling it 'a masterpiece that is already generating significant pre-awards season buzz and is expected to dominate nominations.' Furthermore, the film has just won the prestigious Golden Lion at the Venice Film Festival, a strong indicator of early critical favor and potential Oscar momentum.",
+      "probe_type": "node_strengthen",
+      "target_id": "film_critical_reception",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The overall critical reception and awards buzz surrounding the film in which Erivo stars."
+    },
+    {
+      "probe_text": "Several highly acclaimed actresses, each with multiple prior Oscar nominations and at least one win, are rumored to be strong contenders for Best Actress at the 98th Academy Awards. One is a beloved Hollywood icon delivering a career-defining role, another is a critically lauded performer in a film generating significant pre-release awards buzz, and a third is a rising star who has already secured a Golden Globe for her performance this season.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "competition_strength",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The strength and prominence of other Best Actress nominees in the same awards year."
+    },
+    {
+      "probe_text": "Cynthia Erivo has a history of being nominated for Oscars in acting categories, even for roles that weren't necessarily front-runners for the win. Given her previous nominations for 'Harriet' and 'The Color Purple' (in supporting actress), it's plausible the Academy recognizes her talent and consistently considers her for nominations, which could translate into a win if the circumstances align.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "erivo_acting_category_history",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Cynthia Erivo's previous Oscar nominations and wins in acting categories."
+    },
+    {
+      "probe_text": "Recent Academy history suggests that while a strong performance is necessary, it's not always sufficient for a win, especially if the film itself is not a major contender. For example, in years where the Best Actress winner came from a film that didn't receive Best Picture or major technical nominations, the performance quality, while high, may have been overshadowed by more 'complete' cinematic packages. Therefore, the direct link between Erivo's performance quality and her win might be weaker if her film lacks broader industry support.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A highly acclaimed performance directly increases the likelihood of winning."
+    },
+    {
+      "probe_text": "Recent Academy trends suggest that while film critical reception is important, it doesn't always translate directly to lead acting wins, especially if the film itself is divisive or doesn't resonate emotionally with a broad voting base. For instance, a critically lauded film might be perceived as 'too niche' or 'too challenging' by many voters, decoupling the film's acclaim from the lead actor's chances. Could the film Erivo is in, despite critical praise, be seen as lacking the broad appeal or emotional resonance that often drives Oscar wins for acting?",
+      "probe_type": "edge_negate_critical",
+      "target_id": "film_critical_reception->best_actress_win",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "A film with strong critical acclaim and awards momentum can boost its lead actors' chances."
+    },
+    {
+      "probe_text": "While generally positive reviews can boost a lead performance, consider a scenario where the film receives rave reviews for its direction, cinematography, and screenplay, but critics are divided or lukewarm about Erivo's specific performance, perhaps finding it technically proficient but lacking emotional depth. In such a case, the film's overall critical reception might be high, yet it wouldn't necessarily validate or enhance the perception of Erivo's acting quality.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "film_critical_reception->erivo_performance_quality",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Positive reviews for the film often highlight and validate the lead performance."
+    },
+    {
+      "probe_text": "Recent analysis of acting awards over the past decade reveals a significant trend: performances that achieve a rare 'perfect' score from top-tier critics (e.g., averaging 95% or higher on Rotten Tomatoes and receiving universal 'A' grades from major film publications) have won Best Actress at the Oscars in 85% of cases, regardless of other factors. Cynthia Erivo's recent performance in 'The Crimson Song' has garnered precisely this level of critical adoration, with multiple reviews calling it 'a transformative, career-defining moment that transcends the film itself.' This suggests the direct impact of exceptional performance quality on the win is even more pronounced than typically modeled.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A highly acclaimed performance directly increases the likelihood of winning."
+    },
+    {
+      "probe_text": "Recent analysis of the last five Best Actress winners shows a strong correlation: in all cases, the winning film had already secured a Best Picture nomination and significant precursor awards like the Golden Globe for Best Motion Picture – Drama or Musical/Comedy. This suggests that a film's overall momentum and critical validation, as indicated by its own awards prospects, is not just a contributing factor but a near-prerequisite for its lead actress to win, making the 'film_critical_reception -> best_actress_win' link even more potent than typically assumed.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "film_critical_reception->best_actress_win",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "A film with strong critical acclaim and awards momentum can boost its lead actors' chances."
+    },
+    {
+      "probe_text": "Recent Oscar seasons have shown a strong tendency for the Academy to reward performances that are intrinsically linked to the overall success and critical acclaim of the film. For instance, when a film garners widespread praise for its direction, screenplay, and thematic depth, critics often find themselves highlighting the lead actor's contribution as a pivotal element that elevates the entire project. This suggests that the validation of Erivo's performance by film critics may be more directly and strongly tied to the film's critical reception than initially assumed, potentially acting as a significant amplifier.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "film_critical_reception->erivo_performance_quality",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Positive reviews for the film often highlight and validate the lead performance."
+    },
+    {
+      "probe_text": "We've been discussing how Cynthia Erivo's performance quality might influence her chances of winning Best Actress. However, consider this: what if the anticipation and perceived likelihood of her winning, perhaps due to early industry buzz or a strong campaign, actually influences how critics and audiences *perceive* the quality of her performance? Could the 'buzz' of a potential win retroactively shape the interpretation and appreciation of her acting, making it seem higher quality than it might objectively be?",
+      "probe_type": "edge_reverse",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A highly acclaimed performance directly increases the likelihood of winning."
+    },
+    {
+      "probe_text": "While it's often assumed that film critical reception drives Oscar voting trends, consider the reverse: could prevailing Academy voting trends actually *shape* critical reception and awards buzz for a film? For instance, if voters have historically favored a certain genre or style of film, critics might be more inclined to interpret and review films that align with these trends positively, thereby generating more 'awards buzz' for them.",
+      "probe_type": "edge_spurious",
+      "target_id": "oscar_voting_trends->film_critical_reception",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Prevailing trends and preferences among Academy voters in recent years. -> The overall critical reception and awards buzz surrounding the film in which Erivo stars."
+    },
+    {
+      "probe_text": "You've noted that Oscar voting trends might influence Erivo's chances, and her past nominations are also considered. However, it's plausible that the Academy's voting trends themselves have shaped the *types* of performances that historically get nominated and win, thereby influencing Erivo's own nomination and win trajectory. For example, if recent trends favored certain genres or actor archetypes, this could have made Erivo's previous performances more or less likely to be recognized, irrespective of their individual quality.",
+      "probe_type": "edge_missing",
+      "target_id": "oscar_voting_trends->erivo_acting_category_history",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Prevailing trends and preferences among Academy voters in recent years. -> Cynthia Erivo's previous Oscar nominations and wins in acting categories."
+    },
+    {
+      "probe_text": "Imagine that Cynthia Erivo's nominated film is revealed to be a major box office flop, significantly underperforming financial expectations despite critical praise. Furthermore, suppose a prominent, well-respected film critic known for their influence on Academy voters publishes a scathing review of the film's overall production value, not the acting itself. How would these two pieces of information, regarding box office performance and a specific critic's influential review of the production, affect your probability of Cynthia Erivo winning Best Actress?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that Cynthia Erivo's film is also nominated for Best Picture. How does this additional nomination, beyond just its critical reception, specifically influence her chances of winning Best Actress, independent of the film's overall critical reception?",
+      "probe_type": "missing_node",
+      "target_id": "best_picture_nomination",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Cynthia Erivo recently announced she will be taking a short break from acting to focus on her music career immediately after the awards season concludes. She has also been very vocal about her support for a particular environmental charity.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Cynthia Erivo recently starred in a critically acclaimed stage musical production. The production's success was widely celebrated, and it received numerous positive reviews specifically for her leading role. However, this musical was not a film and was not eligible for Academy Award consideration.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if Cynthia Erivo's performance, despite critical praise, is overshadowed by a controversial or polarizing aspect of the film itself? Imagine the film is technically brilliant but deeply divisive, leading voters to focus on the film's narrative issues rather than individual acting, effectively neutralizing the impact of her performance on their decision.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that while Erivo's performance might still be praised, its impact is neutralized by a controversial film. This directly weakens the causal path from 'erivo_performance_quality' to 'best_actress_win'. If voters focus on the film's divisiveness, they may overlook or downplay the acting, even if it's good. Additionally, the link from 'film_critical_reception' to 'erivo_performance_quality' might be impacted, as a polarizing film, even if technically brilliant, could lead to a less unified critical consensus that highlights individual performances. The overall effect is a significant reduction in the likelihood of a win because a key driver of the outcome is undermined.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that while Erivo's performance might still be praised, its impact is neutralized by a controversial film. This directly weakens the causal path from 'erivo_performance_quality' to 'best_actress_win'. If voters focus on the film's divisiveness, they may overlook or downplay the acting, even if it's good. Additionally, the link from 'film_critical_reception' to 'erivo_performance_quality' might be impacted, as a polarizing film, even if technically brilliant, could lead to a less unified critical consensus that highlights individual performances. The overall effect is a significant reduction in the likelihood of a win because a key driver of the outcome is undermined.\"\n}",
+      "target_id": "erivo_performance_quality",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the film Erivo stars in is actually a critical darling among a very small, niche group of critics, but largely ignored or even panned by the mainstream press and public. Furthermore, suppose there's a strong indication that the Academy voters are deliberately trying to move away from rewarding films that rely heavily on critical acclaim, favoring more commercially successful or broadly appealing movies this year. How would this drastically different reception and voter sentiment affect your probability assessment for Erivo winning Best Actress?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.05,
+      "absolute_shift": 0.09999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'film_critical_reception' node. The causal path 'film_critical_reception -> best_actress_win' is significantly weakened because the film is no longer a critical darling in the way previously assumed. While the film might still have a niche appeal, its lack of mainstream critical acclaim and awards buzz means it provides less of a boost to Erivo's chances. Furthermore, the information about Academy voters deliberately moving away from rewarding films that rely on critical acclaim, and favoring commercially successful films, directly challenges the 'film_critical_reception -> best_actress_win' link and also suggests a potential shift in 'oscar_voting_trends' that works against a critically niche film. The path 'film_critical_reception -> erivo_performance_quality' might also be weakened, as mainstream recognition often amplifies the perception of a performance's quality, even if the performance itself is strong. The overall effect is a substantial decrease in the probability of Erivo winning Best Actress.",
+      "raw_response": "{\n  \"updated_probability\": 0.05,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'film_critical_reception' node. The causal path 'film_critical_reception -> best_actress_win' is significantly weakened because the film is no longer a critical darling in the way previously assumed. While the film might still have a niche appeal, its lack of mainstream critical acclaim and awards buzz means it provides less of a boost to Erivo's chances. Furthermore, the information about Academy voters deliberately moving away from rewarding films that rely on critical acclaim, and favoring commercially successful films, directly challenges the 'film_critical_reception -> best_actress_win' link and also suggests a potential shift in 'oscar_voting_trends' that works against a critically niche film. The path 'film_critical_reception -> erivo_performance_quality' might also be weakened, as mainstream recognition often amplifies the perception of a performance's quality, even if the performance itself is strong. The overall effect is a substantial decrease in the probability of Erivo winning Best Actress.\"\n}",
+      "target_id": "film_critical_reception",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports suggest that the Academy has decided to implement a new rule for the 98th Academy Awards where each nominee in the Best Actress category will be judged independently, with their film's overall success and the strength of other nominees not being considered. This means the 'competition_strength' of other nominees will not directly impact the voting outcome for Cynthia Erivo.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0.1,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly impacts the 'competition_strength' node and its causal path to 'best_actress_win'. By removing the consideration of competition strength, a significant dampening effect on the probability of winning is eliminated. Previously, strong competition would have directly lowered Erivo's chances. With this rule change, that specific negative influence is gone. While other factors like 'erivo_performance_quality', 'film_critical_reception', and 'oscar_voting_trends' remain, the removal of competition as a direct negative factor increases the baseline probability. The causal path 'erivo_performance_quality -> competition_strength' is also rendered irrelevant in its impact on the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly impacts the 'competition_strength' node and its causal path to 'best_actress_win'. By removing the consideration of competition strength, a significant dampening effect on the probability of winning is eliminated. Previously, strong competition would have directly lowered Erivo's chances. With this rule change, that specific negative influence is gone. While other factors like 'erivo_performance_quality', 'film_critical_reception', and 'oscar_voting_trends' remain, the removal of competition as a direct negative factor increases the baseline probability. The causal path 'erivo_performance_quality -> competition_strength' is also rendered irrelevant in its impact on the outcome.\"\n}",
+      "target_id": "competition_strength",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "We've learned that Cynthia Erivo has never actually been nominated for an Oscar in an acting category before, only for Best Original Song. Her previous nominations were in music-related categories, not for her acting performances. How does this information about her acting category history affect your probability of her winning Best Actress?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'erivo_acting_category_history' is significant. My initial model assumed previous acting nominations might confer some advantage. However, the new information clarifies that Erivo's prior nominations were exclusively in music categories, not acting. This directly weakens the causal path from 'erivo_acting_category_history' to 'best_actress_win'. While not entirely eliminating the possibility, it removes a potential subtle positive influence that I had implicitly factored in. The other causal paths remain unaffected by this specific piece of information, but the removal of this potential positive factor necessitates a downward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'erivo_acting_category_history' is significant. My initial model assumed previous acting nominations might confer some advantage. However, the new information clarifies that Erivo's prior nominations were exclusively in music categories, not acting. This directly weakens the causal path from 'erivo_acting_category_history' to 'best_actress_win'. While not entirely eliminating the possibility, it removes a potential subtle positive influence that I had implicitly factored in. The other causal paths remain unaffected by this specific piece of information, but the removal of this potential positive factor necessitates a downward revision of the probability.\"\n}",
+      "target_id": "erivo_acting_category_history",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Renowned film critic, Eleanor Vance, who has accurately predicted Best Actress winners for the past decade, just published a glowing review of Erivo's performance, calling it 'a career-defining turn that transcends the film itself and sets a new benchmark for dramatic acting.' Vance specifically highlighted how Erivo's nuanced portrayal and powerful emotional range are precisely the kind of performances the Academy has historically rewarded, suggesting this performance is not just good, but historically significant.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly and strongly bolsters the 'erivo_performance_quality' node. Eleanor Vance's review, given her strong track record, provides significant evidence that Erivo's performance is perceived as exceptionally high quality and impactful. This strengthens the causal path from 'erivo_performance_quality' to 'best_actress_win'. Additionally, Vance's commentary on the performance aligning with historical Academy preferences implicitly strengthens the 'oscar_voting_trends' node in Erivo's favor, and may also elevate the perceived 'erivo_performance_quality' relative to 'competition_strength'. The initial estimate of 0.15 was low, and this new information provides a compelling reason to increase the probability, though competition and other factors still weigh heavily.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly and strongly bolsters the 'erivo_performance_quality' node. Eleanor Vance's review, given her strong track record, provides significant evidence that Erivo's performance is perceived as exceptionally high quality and impactful. This strengthens the causal path from 'erivo_performance_quality' to 'best_actress_win'. Additionally, Vance's commentary on the performance aligning with historical Academy preferences implicitly strengthens the 'oscar_voting_trends' node in Erivo's favor, and may also elevate the perceived 'erivo_performance_quality' relative to 'competition_strength'. The initial estimate of 0.15 was low, and this new information provides a compelling reason to increase the probability, though competition and other factors still weigh heavily.\"\n}",
+      "target_id": "erivo_performance_quality",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A prominent film critic, known for accurately predicting Oscar outcomes, has just published a glowing review of Erivo's film, calling it 'a masterpiece that is already generating significant pre-awards season buzz and is expected to dominate nominations.' Furthermore, the film has just won the prestigious Golden Lion at the Venice Film Festival, a strong indicator of early critical favor and potential Oscar momentum.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information significantly strengthens the 'film_critical_reception' node. The glowing review from a prominent critic and the win at the Venice Film Festival are strong indicators of positive critical reception and early awards momentum. This directly impacts the 'film_critical_reception -> best_actress_win' path, making a win more likely. Additionally, it strengthens the 'film_critical_reception -> erivo_performance_quality' path, as critical acclaim for the film often highlights the lead performance, further boosting Erivo's chances. While 'competition_strength' and 'oscar_voting_trends' are still unknown, the enhanced critical reception provides a more solid foundation for Erivo's potential nomination and subsequent win.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information significantly strengthens the 'film_critical_reception' node. The glowing review from a prominent critic and the win at the Venice Film Festival are strong indicators of positive critical reception and early awards momentum. This directly impacts the 'film_critical_reception -> best_actress_win' path, making a win more likely. Additionally, it strengthens the 'film_critical_reception -> erivo_performance_quality' path, as critical acclaim for the film often highlights the lead performance, further boosting Erivo's chances. While 'competition_strength' and 'oscar_voting_trends' are still unknown, the enhanced critical reception provides a more solid foundation for Erivo's potential nomination and subsequent win.\"\n}",
+      "target_id": "film_critical_reception",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Several highly acclaimed actresses, each with multiple prior Oscar nominations and at least one win, are rumored to be strong contenders for Best Actress at the 98th Academy Awards. One is a beloved Hollywood icon delivering a career-defining role, another is a critically lauded performer in a film generating significant pre-release awards buzz, and a third is a rising star who has already secured a Golden Globe for her performance this season.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The new information directly challenges the 'competition_strength' node. The description details multiple strong contenders for Best Actress, including a Hollywood icon in a career-defining role, a critically lauded performer with awards buzz, and a rising star with a Golden Globe win. This significantly increases the perceived strength of the competition. The causal path 'competition_strength -> best_actress_win' is therefore strengthened in its negative impact on Erivo's chances. This increased competition makes it less likely for any single nominee, including Erivo, to win. Therefore, my updated probability for Cynthia Erivo winning Best Actress has decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information directly challenges the 'competition_strength' node. The description details multiple strong contenders for Best Actress, including a Hollywood icon in a career-defining role, a critically lauded performer with awards buzz, and a rising star with a Golden Globe win. This significantly increases the perceived strength of the competition. The causal path 'competition_strength -> best_actress_win' is therefore strengthened in its negative impact on Erivo's chances. This increased competition makes it less likely for any single nominee, including Erivo, to win. Therefore, my updated probability for Cynthia Erivo winning Best Actress has decreased.\"\n}",
+      "target_id": "competition_strength",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Cynthia Erivo has a history of being nominated for Oscars in acting categories, even for roles that weren't necessarily front-runners for the win. Given her previous nominations for 'Harriet' and 'The Color Purple' (in supporting actress), it's plausible the Academy recognizes her talent and consistently considers her for nominations, which could translate into a win if the circumstances align.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.05000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'erivo_acting_category_history' suggests that while Erivo has previous nominations, these might not have been for roles with strong win potential. This weakens the 'erivo_acting_category_history -> best_actress_win' path as a predictor of a *win*, implying that past nominations might be more indicative of general recognition than a strong likelihood of future wins. However, the provided text also frames this history as potentially building 'voter familiarity and favor,' which could still positively influence the outcome. Therefore, the direct causal path from history to win is slightly re-evaluated, but the overall positive framing of her consistent nominations suggests a modest increase in the probability rather than a decrease. The core of the estimate still relies on 'erivo_performance_quality' and 'film_critical_reception', but the historical context is now seen as a slightly more positive, albeit not decisive, factor.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'erivo_acting_category_history' suggests that while Erivo has previous nominations, these might not have been for roles with strong win potential. This weakens the 'erivo_acting_category_history -> best_actress_win' path as a predictor of a *win*, implying that past nominations might be more indicative of general recognition than a strong likelihood of future wins. However, the provided text also frames this history as potentially building 'voter familiarity and favor,' which could still positively influence the outcome. Therefore, the direct causal path from history to win is slightly re-evaluated, but the overall positive framing of her consistent nominations suggests a modest increase in the probability rather than a decrease. The core of the estimate still relies on 'erivo_performance_quality' and 'film_critical_reception', but the historical context is now seen as a slightly more positive, albeit not decisive, factor.\"\n}",
+      "target_id": "erivo_acting_category_history",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent Academy history suggests that while a strong performance is necessary, it's not always sufficient for a win, especially if the film itself is not a major contender. For example, in years where the Best Actress winner came from a film that didn't receive Best Picture or major technical nominations, the performance quality, while high, may have been overshadowed by more 'complete' cinematic packages. Therefore, the direct link between Erivo's performance quality and her win might be weaker if her film lacks broader industry support.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge targets the direct link between 'erivo_performance_quality' and 'best_actress_win', suggesting that a strong performance is not sufficient on its own if the film lacks broader support. This weakens a key causal path. While the quality of her performance is still a factor, its direct impact on winning is diminished if the film isn't a major contender, as highlighted by the example of films lacking Best Picture or major technical nominations. This implies that 'film_critical_reception' and its downstream effects might become relatively more important, but the core argument is that Erivo's performance alone is less determinative than initially modeled. The update reflects a moderate decrease in probability due to this nuanced weakening of a primary causal link.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge targets the direct link between 'erivo_performance_quality' and 'best_actress_win', suggesting that a strong performance is not sufficient on its own if the film lacks broader support. This weakens a key causal path. While the quality of her performance is still a factor, its direct impact on winning is diminished if the film isn't a major contender, as highlighted by the example of films lacking Best Picture or major technical nominations. This implies that 'film_critical_reception' and its downstream effects might become relatively more important, but the core argument is that Erivo's performance alone is less determinative than initially modeled. The update reflects a moderate decrease in probability due to this nuanced weakening of a primary causal link.\"\n}",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent Academy trends suggest that while film critical reception is important, it doesn't always translate directly to lead acting wins, especially if the film itself is divisive or doesn't resonate emotionally with a broad voting base. For instance, a critically lauded film might be perceived as 'too niche' or 'too challenging' by many voters, decoupling the film's acclaim from the lead actor's chances. Could the film Erivo is in, despite critical praise, be seen as lacking the broad appeal or emotional resonance that often drives Oscar wins for acting?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causal link between 'film_critical_reception' and 'best_actress_win'. The new information suggests that strong critical reception for a film does not automatically translate into a win for its lead actor if the film lacks broad appeal or emotional resonance with the Academy voters. This weakens the path where a highly-rated film directly boosts Erivo's chances. While 'erivo_performance_quality' still directly influences 'best_actress_win', and 'film_critical_reception' still influences 'erivo_performance_quality', the direct boost from the film's overall acclaim to the acting win is now considered less reliable. This reduces the overall probability, as a significant component of the initial reasoning relied on the film's potential critical success carrying Erivo to a win.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causal link between 'film_critical_reception' and 'best_actress_win'. The new information suggests that strong critical reception for a film does not automatically translate into a win for its lead actor if the film lacks broad appeal or emotional resonance with the Academy voters. This weakens the path where a highly-rated film directly boosts Erivo's chances. While 'erivo_performance_quality' still directly influences 'best_actress_win', and 'film_critical_reception' still influences 'erivo_performance_quality', the direct boost from the film's overall acclaim to the acting win is now considered less reliable. This reduces the overall probability, as a significant component of the initial reasoning relied on the film's potential critical success carrying Erivo to a win.\"\n}",
+      "target_id": "film_critical_reception->best_actress_win",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While generally positive reviews can boost a lead performance, consider a scenario where the film receives rave reviews for its direction, cinematography, and screenplay, but critics are divided or lukewarm about Erivo's specific performance, perhaps finding it technically proficient but lacking emotional depth. In such a case, the film's overall critical reception might be high, yet it wouldn't necessarily validate or enhance the perception of Erivo's acting quality.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causal link between 'film_critical_reception' and 'erivo_performance_quality'. The new information suggests that even if the film itself is critically acclaimed for aspects other than Erivo's performance, it might not translate into a higher perception of her acting quality. This weakens a potential indirect path to the 'best_actress_win' node (film_critical_reception -> erivo_performance_quality -> best_actress_win). While 'film_critical_reception' can still directly influence 'best_actress_win', the validation of Erivo's performance by critics is now less certain, making the 'erivo_performance_quality -> best_actress_win' link potentially less robust if it relies heavily on external validation. This subtle weakening of a supporting causal path leads to a slight decrease in the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causal link between 'film_critical_reception' and 'erivo_performance_quality'. The new information suggests that even if the film itself is critically acclaimed for aspects other than Erivo's performance, it might not translate into a higher perception of her acting quality. This weakens a potential indirect path to the 'best_actress_win' node (film_critical_reception -> erivo_performance_quality -> best_actress_win). While 'film_critical_reception' can still directly influence 'best_actress_win', the validation of Erivo's performance by critics is now less certain, making the 'erivo_performance_quality -> best_actress_win' link potentially less robust if it relies heavily on external validation. This subtle weakening of a supporting causal path leads to a slight decrease in the overall probability.\"\n}",
+      "target_id": "film_critical_reception->erivo_performance_quality",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of acting awards over the past decade reveals a significant trend: performances that achieve a rare 'perfect' score from top-tier critics (e.g., averaging 95% or higher on Rotten Tomatoes and receiving universal 'A' grades from major film publications) have won Best Actress at the Oscars in 85% of cases, regardless of other factors. Cynthia Erivo's recent performance in 'The Crimson Song' has garnered precisely this level of critical adoration, with multiple reviews calling it 'a transformative, career-defining moment that transcends the film itself.' This suggests the direct impact of exceptional performance quality on the win is even more pronounced than typically modeled.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.5499999999999999,
+      "shift_direction": "increased",
+      "reasoning": "The challenge focuses on the causal link 'erivo_performance_quality -> best_actress_win'. The new information provides strong empirical evidence that exceptionally high critical acclaim for a performance (specifically, a 'perfect' score from top-tier critics leading to an 85% win rate for Best Actress) significantly boosts the probability of winning, independent of other factors. Since Cynthia Erivo's performance in 'The Crimson Song' has met this exact criterion, the direct causal impact of her performance quality on her Best Actress win is now understood to be much stronger than initially modeled. This strengthens the primary path to the outcome and justifies a substantial upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge focuses on the causal link 'erivo_performance_quality -> best_actress_win'. The new information provides strong empirical evidence that exceptionally high critical acclaim for a performance (specifically, a 'perfect' score from top-tier critics leading to an 85% win rate for Best Actress) significantly boosts the probability of winning, independent of other factors. Since Cynthia Erivo's performance in 'The Crimson Song' has met this exact criterion, the direct causal impact of her performance quality on her Best Actress win is now understood to be much stronger than initially modeled. This strengthens the primary path to the outcome and justifies a substantial upward revision of the probability.\"\n}",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of the last five Best Actress winners shows a strong correlation: in all cases, the winning film had already secured a Best Picture nomination and significant precursor awards like the Golden Globe for Best Motion Picture – Drama or Musical/Comedy. This suggests that a film's overall momentum and critical validation, as indicated by its own awards prospects, is not just a contributing factor but a near-prerequisite for its lead actress to win, making the 'film_critical_reception -> best_actress_win' link even more potent than typically assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0.1,
+      "shift_direction": "increased",
+      "reasoning": "The new information reinforces the causal link between 'film_critical_reception' and 'best_actress_win'. The analysis highlights that a film's strong critical reception and awards momentum, as evidenced by Best Picture nominations and precursor awards, is a near-prerequisite for its lead actress to win. This strengthens the importance of this path, suggesting that a strong film reception is more critical than previously modeled. While 'erivo_performance_quality' remains a primary driver, its impact is significantly amplified if the film itself is a major contender. This leads to an increase in the overall probability, as a strong film reception is now viewed as a more critical gating factor for the Best Actress win.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information reinforces the causal link between 'film_critical_reception' and 'best_actress_win'. The analysis highlights that a film's strong critical reception and awards momentum, as evidenced by Best Picture nominations and precursor awards, is a near-prerequisite for its lead actress to win. This strengthens the importance of this path, suggesting that a strong film reception is more critical than previously modeled. While 'erivo_performance_quality' remains a primary driver, its impact is significantly amplified if the film itself is a major contender. This leads to an increase in the overall probability, as a strong film reception is now viewed as a more critical gating factor for the Best Actress win.\"\n}",
+      "target_id": "film_critical_reception->best_actress_win",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent Oscar seasons have shown a strong tendency for the Academy to reward performances that are intrinsically linked to the overall success and critical acclaim of the film. For instance, when a film garners widespread praise for its direction, screenplay, and thematic depth, critics often find themselves highlighting the lead actor's contribution as a pivotal element that elevates the entire project. This suggests that the validation of Erivo's performance by film critics may be more directly and strongly tied to the film's critical reception than initially assumed, potentially acting as a significant amplifier.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.05000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'film_critical_reception -> erivo_performance_quality' link suggests a stronger, more direct amplification effect than initially modeled. The new information states that critical acclaim for the film acts as a significant amplifier for the perceived quality of Erivo's performance. This implies that if the film does well critically, it's more likely to strongly boost Erivo's performance's perceived quality, which then directly impacts the 'best_actress_win' outcome. While the core causal paths remain, the strength of the link between the film's reception and Erivo's performance quality is now understood to be more potent. This strengthens the indirect path: film_critical_reception -> erivo_performance_quality -> best_actress_win. Consequently, I've increased the probability slightly to reflect this enhanced positive feedback loop, assuming a well-received film would now more reliably elevate Erivo's performance perception.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'film_critical_reception -> erivo_performance_quality' link suggests a stronger, more direct amplification effect than initially modeled. The new information states that critical acclaim for the film acts as a significant amplifier for the perceived quality of Erivo's performance. This implies that if the film does well critically, it's more likely to strongly boost Erivo's performance's perceived quality, which then directly impacts the 'best_actress_win' outcome. While the core causal paths remain, the strength of the link between the film's reception and Erivo's performance quality is now understood to be more potent. This strengthens the indirect path: film_critical_reception -> erivo_performance_quality -> best_actress_win. Consequently, I've increased the probability slightly to reflect this enhanced positive feedback loop, assuming a well-received film would now more reliably elevate Erivo's performance perception.\"\n}",
+      "target_id": "film_critical_reception->erivo_performance_quality",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "We've been discussing how Cynthia Erivo's performance quality might influence her chances of winning Best Actress. However, consider this: what if the anticipation and perceived likelihood of her winning, perhaps due to early industry buzz or a strong campaign, actually influences how critics and audiences *perceive* the quality of her performance? Could the 'buzz' of a potential win retroactively shape the interpretation and appreciation of her acting, making it seem higher quality than it might objectively be?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.13,
+      "absolute_shift": 0.01999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the directionality of the erivo_performance_quality -> best_actress_win link, suggesting that perceived performance quality might be influenced by external factors like buzz and campaign strength, rather than being a purely objective input to the outcome. This introduces a potential reverse causality or a confounding factor where 'buzz' influences perceived quality, which then influences the win probability. While it doesn't entirely break the direct link between genuine performance quality and winning, it suggests that the 'quality' we observe might be partly an artifact of the awards race itself. This weakens the direct causal path from erivo_performance_quality to best_actress_win, as a portion of that perceived quality might not be as robust or directly attributable to Erivo's acting prowess as initially modeled. The impact is relatively small because the original link was already one of several factors, and the core idea that a strong performance (however perceived) is still beneficial remains. However, it introduces a layer of uncertainty and suggests the direct causal power of her acting itself might be slightly overestimated.",
+      "raw_response": "{\n  \"updated_probability\": 0.13,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the directionality of the erivo_performance_quality -> best_actress_win link, suggesting that perceived performance quality might be influenced by external factors like buzz and campaign strength, rather than being a purely objective input to the outcome. This introduces a potential reverse causality or a confounding factor where 'buzz' influences perceived quality, which then influences the win probability. While it doesn't entirely break the direct link between genuine performance quality and winning, it suggests that the 'quality' we observe might be partly an artifact of the awards race itself. This weakens the direct causal path from erivo_performance_quality to best_actress_win, as a portion of that perceived quality might not be as robust or directly attributable to Erivo's acting prowess as initially modeled. The impact is relatively small because the original link was already one of several factors, and the core idea that a strong performance (however perceived) is still beneficial remains. However, it introduces a layer of uncertainty and suggests the direct causal power of her acting itself might be slightly overestimated.\"\n}",
+      "target_id": "erivo_performance_quality->best_actress_win",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While it's often assumed that film critical reception drives Oscar voting trends, consider the reverse: could prevailing Academy voting trends actually *shape* critical reception and awards buzz for a film? For instance, if voters have historically favored a certain genre or style of film, critics might be more inclined to interpret and review films that align with these trends positively, thereby generating more 'awards buzz' for them.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.14,
+      "absolute_shift": 0.009999999999999981,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the causal link from 'oscar_voting_trends' to 'film_critical_reception'. My original model assumed that critical reception of a film would independently influence the chances of its lead actor winning. The new perspective suggests that Academy voting trends might *shape* critical reception, implying a feedback loop or even a reversal of influence. If voting trends are indeed shaping critical reception, then the causal path 'film_critical_reception -> best_actress_win' becomes less direct and potentially weaker, as the 'critical reception' itself might be an artifact of pre-existing voting biases rather than an independent signal of quality or potential award-worthiness. This weakens a contributing factor to the 'best_actress_win' outcome, leading to a slight decrease in the overall probability. The change is minor because the direct link from 'erivo_performance_quality' to 'best_actress_win' remains strong, and the challenge primarily affects the indirect influence of 'film_critical_reception'.",
+      "raw_response": "{\n  \"updated_probability\": 0.14,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the causal link from 'oscar_voting_trends' to 'film_critical_reception'. My original model assumed that critical reception of a film would independently influence the chances of its lead actor winning. The new perspective suggests that Academy voting trends might *shape* critical reception, implying a feedback loop or even a reversal of influence. If voting trends are indeed shaping critical reception, then the causal path 'film_critical_reception -> best_actress_win' becomes less direct and potentially weaker, as the 'critical reception' itself might be an artifact of pre-existing voting biases rather than an independent signal of quality or potential award-worthiness. This weakens a contributing factor to the 'best_actress_win' outcome, leading to a slight decrease in the overall probability. The change is minor because the direct link from 'erivo_performance_quality' to 'best_actress_win' remains strong, and the challenge primarily affects the indirect influence of 'film_critical_reception'.\"\n}",
+      "target_id": "oscar_voting_trends->film_critical_reception",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "You've noted that Oscar voting trends might influence Erivo's chances, and her past nominations are also considered. However, it's plausible that the Academy's voting trends themselves have shaped the *types* of performances that historically get nominated and win, thereby influencing Erivo's own nomination and win trajectory. For example, if recent trends favored certain genres or actor archetypes, this could have made Erivo's previous performances more or less likely to be recognized, irrespective of their individual quality.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.13,
+      "absolute_shift": 0.01999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests a bidirectional or more complex relationship between 'oscar_voting_trends' and Erivo's career trajectory, implying that trends might have shaped what performances are recognized, thus influencing her past nominations and potentially future wins. My original model had 'oscar_voting_trends' directly influencing 'best_actress_win' and indirectly via 'erivo_performance_quality'. The challenge suggests that the influence of 'oscar_voting_trends' might be less about Erivo fitting into a trend and more about the trend itself pre-selecting 'types' of performances. This reframes the direct impact of 'oscar_voting_trends' on her win probability. If trends have historically favored archetypes that Erivo doesn't fit, it could subtly decrease her chances, as voter familiarity and preference might be skewed away from her specific strengths. However, the challenge doesn't invalidate the direct link to the outcome, nor does it fundamentally break other causal paths like performance quality or competition strength. Therefore, the update is a minor decrease to reflect this potential, but not fully confirmed, negative framing of the trend's impact on her specific case.",
+      "raw_response": "{\n  \"updated_probability\": 0.13,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests a bidirectional or more complex relationship between 'oscar_voting_trends' and Erivo's career trajectory, implying that trends might have shaped what performances are recognized, thus influencing her past nominations and potentially future wins. My original model had 'oscar_voting_trends' directly influencing 'best_actress_win' and indirectly via 'erivo_performance_quality'. The challenge suggests that the influence of 'oscar_voting_trends' might be less about Erivo fitting into a trend and more about the trend itself pre-selecting 'types' of performances. This reframes the direct impact of 'oscar_voting_trends' on her win probability. If trends have historically favored archetypes that Erivo doesn't fit, it could subtly decrease her chances, as voter familiarity and preference might be skewed away from her specific strengths. However, the challenge doesn't invalidate the direct link to the outcome, nor does it fundamentally break other causal paths like performance quality or competition strength. Therefore, the update is a minor decrease to reflect this potential, but not fully confirmed, negative framing of the trend's impact on her specific case.\"\n}",
+      "target_id": "oscar_voting_trends->erivo_acting_category_history",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that Cynthia Erivo's nominated film is revealed to be a major box office flop, significantly underperforming financial expectations despite critical praise. Furthermore, suppose a prominent, well-respected film critic known for their influence on Academy voters publishes a scathing review of the film's overall production value, not the acting itself. How would these two pieces of information, regarding box office performance and a specific critic's influential review of the production, affect your probability of Cynthia Erivo winning Best Actress?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The new information negatively impacts the causal path through 'film_critical_reception' and potentially 'erivo_performance_quality'. While the acting itself might still be praised, a major box office flop and a scathing review of the film's production value by an influential critic can significantly dampen the film's overall momentum and awards buzz. This reduced 'film_critical_reception' indirectly lowers the chances of 'best_actress_win', and could even cast a shadow on the perceived quality of 'erivo_performance_quality' in the eyes of some voters if the film's overall failure is attributed to its core elements. The direct link from 'film_critical_reception' to 'best_actress_win' is weakened. The box office flop is less directly modeled, but it often correlates with a lack of broader industry and audience engagement, which can indirectly affect the 'film_critical_reception' and overall buzz. The influential critic's review, even if not targeting the acting, can poison the well for the film's broader perception, which is a component of the 'film_critical_reception' node.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information negatively impacts the causal path through 'film_critical_reception' and potentially 'erivo_performance_quality'. While the acting itself might still be praised, a major box office flop and a scathing review of the film's production value by an influential critic can significantly dampen the film's overall momentum and awards buzz. This reduced 'film_critical_reception' indirectly lowers the chances of 'best_actress_win', and could even cast a shadow on the perceived quality of 'erivo_performance_quality' in the eyes of some voters if the film's overall failure is attributed to its core elements. The direct link from 'film_critical_reception' to 'best_actress_win' is weakened. The box office flop is less directly modeled, but it often correlates with a lack of broader industry and audience engagement, which can indirectly affect the 'film_critical_reception' and overall buzz. The influential critic's review, even if not targeting the acting, can poison the well for the film's broader perception, which is a component of the 'film_critical_reception' node.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that Cynthia Erivo's film is also nominated for Best Picture. How does this additional nomination, beyond just its critical reception, specifically influence her chances of winning Best Actress, independent of the film's overall critical reception?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0.1,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that a Best Picture nomination for Erivo's film, independent of its critical reception, could positively impact her Best Actress chances. This strengthens the causal path from 'film_critical_reception' to 'best_actress_win' indirectly, as a Best Picture nomination is a strong indicator of a film's overall prestige and perceived quality, which often elevates the profile of its lead actors. While 'film_critical_reception' was already considered, a Best Picture nomination is a more concrete signal of industry favor and a potential indicator that the film, and by extension its lead, is a more significant contender. This suggests that the film's overall momentum is likely higher than just its critical reception alone might imply, which should positively influence her chances. The 'film_critical_reception -> best_actress_win' path is reinforced, as a Best Picture nomination often correlates with strong critical support and awards buzz, making the film a more attractive choice for voters in other categories. My estimate increases slightly to reflect this added positive signal.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that a Best Picture nomination for Erivo's film, independent of its critical reception, could positively impact her Best Actress chances. This strengthens the causal path from 'film_critical_reception' to 'best_actress_win' indirectly, as a Best Picture nomination is a strong indicator of a film's overall prestige and perceived quality, which often elevates the profile of its lead actors. While 'film_critical_reception' was already considered, a Best Picture nomination is a more concrete signal of industry favor and a potential indicator that the film, and by extension its lead, is a more significant contender. This suggests that the film's overall momentum is likely higher than just its critical reception alone might imply, which should positively influence her chances. The 'film_critical_reception -> best_actress_win' path is reinforced, as a Best Picture nomination often correlates with strong critical support and awards buzz, making the film a more attractive choice for voters in other categories. My estimate increases slightly to reflect this added positive signal.\"\n}",
+      "target_id": "best_picture_nomination",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Cynthia Erivo recently announced she will be taking a short break from acting to focus on her music career immediately after the awards season concludes. She has also been very vocal about her support for a particular environmental charity.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.12,
+      "absolute_shift": 0.03,
+      "shift_direction": "decreased",
+      "reasoning": "The announcement about Cynthia Erivo focusing on her music career and taking a break from acting might subtly affect the 'erivo_performance_quality' node if it's perceived as a lack of commitment to acting long-term, potentially diminishing its impact on 'best_actress_win'. However, this is a peripheral effect as the primary driver of the win is the performance itself and the film's reception. Her vocal support for an environmental charity is unlikely to have a direct causal impact on her Best Actress chances, as it doesn't directly influence the 'erivo_performance_quality', 'film_critical_reception', 'competition_strength', 'oscar_voting_trends', or 'erivo_acting_category_history' nodes in a significant way. The primary causal paths remain largely intact, but the potential for a slight decrease in perceived long-term acting commitment could marginally reduce the estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.12,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The announcement about Cynthia Erivo focusing on her music career and taking a break from acting might subtly affect the 'erivo_performance_quality' node if it's perceived as a lack of commitment to acting long-term, potentially diminishing its impact on 'best_actress_win'. However, this is a peripheral effect as the primary driver of the win is the performance itself and the film's reception. Her vocal support for an environmental charity is unlikely to have a direct causal impact on her Best Actress chances, as it doesn't directly influence the 'erivo_performance_quality', 'film_critical_reception', 'competition_strength', 'oscar_voting_trends', or 'erivo_acting_category_history' nodes in a significant way. The primary causal paths remain largely intact, but the potential for a slight decrease in perceived long-term acting commitment could marginally reduce the estimate.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Cynthia Erivo recently starred in a critically acclaimed stage musical production. The production's success was widely celebrated, and it received numerous positive reviews specifically for her leading role. However, this musical was not a film and was not eligible for Academy Award consideration.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The new information concerns Cynthia Erivo's recent success in a stage musical. While this highlights her talent and could positively influence her public perception, it does not directly impact the causal nodes that are relevant to her winning a Best Actress Oscar for a *film*. Specifically, the success of the stage musical does not contribute to 'erivo_performance_quality' *in a film eligible for the Oscars*, nor does it affect 'film_critical_reception' or 'competition_strength' for the 98th Academy Awards. The causal paths 'erivo_performance_quality -> best_actress_win' and 'film_critical_reception -> best_actress_win' are therefore not strengthened by this information as initially assumed. In fact, if we were to infer that this success might lead to a perceived 'over-familiarity' or a sense that she has already 'won' in a major artistic endeavor, it could indirectly and slightly decrease the 'erivo_acting_category_history' impact, or even slightly diminish the perceived need for her to win an Oscar soon. Therefore, the overall probability is slightly decreased because the information, while positive for her career, does not directly feed into the Oscar-winning causal pathways for film.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information concerns Cynthia Erivo's recent success in a stage musical. While this highlights her talent and could positively influence her public perception, it does not directly impact the causal nodes that are relevant to her winning a Best Actress Oscar for a *film*. Specifically, the success of the stage musical does not contribute to 'erivo_performance_quality' *in a film eligible for the Oscars*, nor does it affect 'film_critical_reception' or 'competition_strength' for the 98th Academy Awards. The causal paths 'erivo_performance_quality -> best_actress_win' and 'film_critical_reception -> best_actress_win' are therefore not strengthened by this information as initially assumed. In fact, if we were to infer that this success might lead to a perceived 'over-familiarity' or a sense that she has already 'won' in a major artistic endeavor, it could indirectly and slightly decrease the 'erivo_acting_category_history' impact, or even slightly diminish the perceived need for her to win an Oscar soon. Therefore, the overall probability is slightly decreased because the information, while positive for her career, does not directly feed into the Oscar-winning causal pathways for film.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "0x60c447987af838c9a074ad7d44751135be94a20580982b72d76e9b542572bfe6",
+    "question_text": "Will Cynthia Erivo win Best Actress at the 98th Academy Awards?",
+    "source": "polymarket",
+    "condition": "one-turn",
+    "initial_probability": 0.15,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.09476190476190476,
+    "max_absolute_shift": 0.5499999999999999
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0.021500000000000002,
+  "aggregate_metrics": {
+    "ssr": 3.535714285714285,
+    "mean_shift_high": 0.16499999999999998,
+    "mean_shift_low": 0.04666666666666667,
+    "asymmetry_index": 0.38524590163934425,
+    "mean_shift_negate": 0.06714285714285714,
+    "mean_shift_strengthen": 0.1742857142857143,
+    "fnar": 0.6666666666666666,
+    "n_accepted": 2,
+    "n_spurious": 3,
+    "critical_path_premium": 0.07774999999999996,
+    "mean_shift_on_path": 0.15399999999999997,
+    "mean_shift_off_path": 0.07625000000000001,
+    "importance_sensitivity_correlation": -0.02499999999999991,
+    "control_sensitivity": 0
+  }
+}

@@ -1,0 +1,1147 @@
+{
+  "question_id": "17408",
+  "question_text": "Will a US court fine, or order a company to pay to claimants, >=$100M because of how they used data to train a large AI model before 2026?",
+  "source": "metaculus",
+  "initial_probability": 0.15,
+  "nodes": [
+    {
+      "id": "litigation_risk_ai_data",
+      "description": "The likelihood of lawsuits being filed against companies for data usage in AI training.",
+      "role": "factor"
+    },
+    {
+      "id": "regulatory_action_ai_data",
+      "description": "The probability of government regulators taking action or imposing penalties related to AI data usage.",
+      "role": "factor"
+    },
+    {
+      "id": "judicial_precedent_ai_data",
+      "description": "The development of legal precedents in courts regarding AI data usage and its implications.",
+      "role": "factor"
+    },
+    {
+      "id": "public_awareness_data_privacy",
+      "description": "The level of public and media attention on data privacy issues related to AI.",
+      "role": "factor"
+    },
+    {
+      "id": "value_of_data_for_ai",
+      "description": "The perceived economic value and necessity of large datasets for training advanced AI models.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome",
+      "description": "A US court fines, or orders a company to pay to claimants, >=$100M because of how they used data to train a large AI model before 2026.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "litigation_risk_ai_data",
+      "to": "outcome",
+      "mechanism": "Directly leads to potential fines or payouts if lawsuits are successful."
+    },
+    {
+      "from": "regulatory_action_ai_data",
+      "to": "outcome",
+      "mechanism": "Regulatory actions can result in fines or mandated compensation."
+    },
+    {
+      "from": "judicial_precedent_ai_data",
+      "to": "litigation_risk_ai_data",
+      "mechanism": "Established precedents make it easier and more likely for future litigation to succeed."
+    },
+    {
+      "from": "public_awareness_data_privacy",
+      "to": "litigation_risk_ai_data",
+      "mechanism": "Increased public and media scrutiny can spur more lawsuits."
+    },
+    {
+      "from": "public_awareness_data_privacy",
+      "to": "regulatory_action_ai_data",
+      "mechanism": "Heightened public concern often pressures regulators to act."
+    },
+    {
+      "from": "value_of_data_for_ai",
+      "to": "litigation_risk_ai_data",
+      "mechanism": "High value and aggressive acquisition of data increases the potential for disputes over its use."
+    },
+    {
+      "from": "value_of_data_for_ai",
+      "to": "regulatory_action_ai_data",
+      "mechanism": "The critical role of data for AI development may lead to regulatory scrutiny of its acquisition and use."
+    },
+    {
+      "from": "judicial_precedent_ai_data",
+      "to": "regulatory_action_ai_data",
+      "mechanism": "Court rulings can inform and shape regulatory approaches."
+    }
+  ],
+  "reasoning": "The probability is low because while there is increasing scrutiny on AI data usage, significant legal precedents and widespread regulatory frameworks specifically targeting large AI model training data for substantial fines are still nascent. The timeline to 2026 is short for such complex legal battles to mature and result in multi-million dollar judgments. While litigation risk and public awareness are growing, the threshold for a $100M+ fine specifically for AI training data use remains high, and existing legal avenues might not yet be perfectly suited to capture such damages within this timeframe.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 8,
+    "density": 0.2667,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "outcome",
+    "node_metrics": [
+      {
+        "node_id": "litigation_risk_ai_data",
+        "description": "The likelihood of lawsuits being filed against companies for data usage in AI training.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0.075,
+        "closeness": 0.6,
+        "pagerank": 0.1832,
+        "path_relevance": 0.375
+      },
+      {
+        "node_id": "regulatory_action_ai_data",
+        "description": "The probability of government regulators taking action or imposing penalties related to AI data usage.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0.075,
+        "closeness": 0.6,
+        "pagerank": 0.1832,
+        "path_relevance": 0.375
+      },
+      {
+        "node_id": "judicial_precedent_ai_data",
+        "description": "The development of legal precedents in courts regarding AI data usage and its implications.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "public_awareness_data_privacy",
+        "description": "The level of public and media attention on data privacy issues related to AI.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "value_of_data_for_ai",
+        "description": "The perceived economic value and necessity of large datasets for training advanced AI models.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "outcome",
+        "description": "A US court fines, or orders a company to pay to claimants, >=$100M because of how they used data to train a large AI model before 2026.",
+        "role": "outcome",
+        "in_degree": 2,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.625,
+        "pagerank": 0.392,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "litigation_risk_ai_data",
+        "target": "outcome",
+        "mechanism": "Directly leads to potential fines or payouts if lawsuits are successful.",
+        "edge_betweenness": 0.0833,
+        "on_critical_path": true
+      },
+      {
+        "source": "regulatory_action_ai_data",
+        "target": "outcome",
+        "mechanism": "Regulatory actions can result in fines or mandated compensation.",
+        "edge_betweenness": 0.0833,
+        "on_critical_path": true
+      },
+      {
+        "source": "judicial_precedent_ai_data",
+        "target": "litigation_risk_ai_data",
+        "mechanism": "Established precedents make it easier and more likely for future litigation to succeed.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "judicial_precedent_ai_data",
+        "target": "regulatory_action_ai_data",
+        "mechanism": "Court rulings can inform and shape regulatory approaches.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "public_awareness_data_privacy",
+        "target": "litigation_risk_ai_data",
+        "mechanism": "Increased public and media scrutiny can spur more lawsuits.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "public_awareness_data_privacy",
+        "target": "regulatory_action_ai_data",
+        "mechanism": "Heightened public concern often pressures regulators to act.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "value_of_data_for_ai",
+        "target": "litigation_risk_ai_data",
+        "mechanism": "High value and aggressive acquisition of data increases the potential for disputes over its use.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "value_of_data_for_ai",
+        "target": "regulatory_action_ai_data",
+        "mechanism": "The critical role of data for AI development may lead to regulatory scrutiny of its acquisition and use.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "litigation_risk_ai_data",
+        "description": "The likelihood of lawsuits being filed against companies for data usage in AI training.",
+        "importance": 0.075,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regulatory_action_ai_data",
+        "description": "The probability of government regulators taking action or imposing penalties related to AI data usage.",
+        "importance": 0.075,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "judicial_precedent_ai_data",
+        "description": "The development of legal precedents in courts regarding AI data usage and its implications.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "value_of_data_for_ai",
+        "description": "The perceived economic value and necessity of large datasets for training advanced AI models.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "litigation_risk_ai_data",
+        "description": "The likelihood of lawsuits being filed against companies for data usage in AI training.",
+        "importance": 0.075,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regulatory_action_ai_data",
+        "description": "The probability of government regulators taking action or imposing penalties related to AI data usage.",
+        "importance": 0.075,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "judicial_precedent_ai_data",
+        "description": "The development of legal precedents in courts regarding AI data usage and its implications.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "value_of_data_for_ai",
+        "description": "The perceived economic value and necessity of large datasets for training advanced AI models.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "litigation_risk_ai_data->outcome",
+        "description": "Directly leads to potential fines or payouts if lawsuits are successful.",
+        "importance": 0.0833,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regulatory_action_ai_data->outcome",
+        "description": "Regulatory actions can result in fines or mandated compensation.",
+        "importance": 0.0833,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "value_of_data_for_ai->regulatory_action_ai_data",
+        "description": "The critical role of data for AI development may lead to regulatory scrutiny of its acquisition and use.",
+        "importance": 0.05,
+        "centrality_rank": 8,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "litigation_risk_ai_data->outcome",
+        "description": "Directly leads to potential fines or payouts if lawsuits are successful.",
+        "importance": 0.0833,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regulatory_action_ai_data->outcome",
+        "description": "Regulatory actions can result in fines or mandated compensation.",
+        "importance": 0.0833,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "litigation_risk_ai_data->outcome",
+        "description": "Directly leads to potential fines or payouts if lawsuits are successful.",
+        "importance": 0.0833,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "regulatory_action_ai_data->litigation_risk_ai_data",
+        "description": "Potential link: The probability of government regulators taking action or imposing penalties related to AI data usage. -> The likelihood of lawsuits being filed against companies for data usage in AI training.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "litigation_risk_ai_data",
+      "description": "The likelihood of lawsuits being filed against companies for data usage in AI training.",
+      "importance": 0.075,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regulatory_action_ai_data",
+      "description": "The probability of government regulators taking action or imposing penalties related to AI data usage.",
+      "importance": 0.075,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "judicial_precedent_ai_data",
+      "description": "The development of legal precedents in courts regarding AI data usage and its implications.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "value_of_data_for_ai",
+      "description": "The perceived economic value and necessity of large datasets for training advanced AI models.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "litigation_risk_ai_data",
+      "description": "The likelihood of lawsuits being filed against companies for data usage in AI training.",
+      "importance": 0.075,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regulatory_action_ai_data",
+      "description": "The probability of government regulators taking action or imposing penalties related to AI data usage.",
+      "importance": 0.075,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "judicial_precedent_ai_data",
+      "description": "The development of legal precedents in courts regarding AI data usage and its implications.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "value_of_data_for_ai",
+      "description": "The perceived economic value and necessity of large datasets for training advanced AI models.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "description": "Directly leads to potential fines or payouts if lawsuits are successful.",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regulatory_action_ai_data->outcome",
+      "description": "Regulatory actions can result in fines or mandated compensation.",
+      "importance": 0.0833,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "value_of_data_for_ai->regulatory_action_ai_data",
+      "description": "The critical role of data for AI development may lead to regulatory scrutiny of its acquisition and use.",
+      "importance": 0.05,
+      "centrality_rank": 8,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "description": "Directly leads to potential fines or payouts if lawsuits are successful.",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regulatory_action_ai_data->outcome",
+      "description": "Regulatory actions can result in fines or mandated compensation.",
+      "importance": 0.0833,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "description": "Directly leads to potential fines or payouts if lawsuits are successful.",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "regulatory_action_ai_data->litigation_risk_ai_data",
+      "description": "Potential link: The probability of government regulators taking action or imposing penalties related to AI data usage. -> The likelihood of lawsuits being filed against companies for data usage in AI training.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if the 'litigation_risk_ai_data' factor is completely irrelevant to the outcome? Imagine a scenario where, despite widespread public awareness and aggressive data acquisition, companies have successfully implemented ironclad arbitration clauses in their terms of service and user agreements. These clauses effectively prevent any data usage disputes from ever reaching a point where they could lead to a court fine or payout, regardless of the underlying risk.",
+      "probe_type": "node_negate_high",
+      "target_id": "litigation_risk_ai_data",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.075,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The likelihood of lawsuits being filed against companies for data usage in AI training."
+    },
+    {
+      "probe_text": "What if 'The probability of government regulators taking action or imposing penalties related to AI data usage.' is wrong?",
+      "probe_type": "node_negate_high",
+      "target_id": "regulatory_action_ai_data",
+      "generated": false,
+      "target_type": "node",
+      "importance": 0.075,
+      "centrality_rank": 2,
+      "on_critical_path": true
+    },
+    {
+      "probe_text": "Recent legal analyses suggest that current intellectual property and privacy laws are ill-suited to address the novel issues raised by AI data training. For example, the 'fair use' doctrine, a cornerstone of copyright law, is being interpreted in ways that may not directly apply to the automated ingestion of vast datasets for model training, creating ambiguity rather than precedent. Therefore, the development of clear judicial precedents in this area before 2026 is less likely than initially assumed, potentially weakening its influence on litigation risk.",
+      "probe_type": "node_negate_medium",
+      "target_id": "judicial_precedent_ai_data",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The development of legal precedents in courts regarding AI data usage and its implications."
+    },
+    {
+      "probe_text": "Recent breakthroughs in synthetic data generation and federated learning techniques are significantly reducing the reliance on massive, real-world datasets for training advanced AI models. Consequently, the perceived economic value and necessity of acquiring vast amounts of proprietary or user data for AI training may be substantially overestimated.",
+      "probe_type": "node_negate_low",
+      "target_id": "value_of_data_for_ai",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The perceived economic value and necessity of large datasets for training advanced AI models."
+    },
+    {
+      "probe_text": "A major class-action lawsuit has been filed against 'InnovateAI Corp.' by a consortium of privacy advocates and affected individuals, alleging widespread copyright infringement and violation of data privacy rights in their training data. This suit, which cites specific examples of scraped personal and copyrighted material, is being spearheaded by a prominent legal firm known for its success in large-scale data privacy litigation, significantly increasing the perceived 'litigation_risk_ai_data'.",
+      "probe_type": "node_strengthen",
+      "target_id": "litigation_risk_ai_data",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.075,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The likelihood of lawsuits being filed against companies for data usage in AI training."
+    },
+    {
+      "probe_text": "A new bipartisan bill has been introduced in Congress specifically aimed at regulating the use of personal data for AI training. This bill includes provisions for significant fines for non-compliance, and key members of both parties have publicly stated their commitment to passing it swiftly, indicating a strong likelihood of regulatory action.",
+      "probe_type": "node_strengthen",
+      "target_id": "regulatory_action_ai_data",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.075,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The probability of government regulators taking action or imposing penalties related to AI data usage."
+    },
+    {
+      "probe_text": "A recent appellate court ruling in California, *DataGuardian v. AI Innovators*, has established that companies using copyrighted material scraped from the internet to train AI models without explicit consent can be held liable for infringement. This decision explicitly states that the 'fair use' defense is not applicable in such broad data-scraping scenarios, setting a significant precedent for future data-related AI litigation.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "judicial_precedent_ai_data",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The development of legal precedents in courts regarding AI data usage and its implications."
+    },
+    {
+      "probe_text": "Recent analyses from leading AI research labs indicate that the performance of state-of-the-art large language models is directly proportional to the sheer volume and diversity of training data. These findings suggest that companies will continue to aggressively pursue and hoard vast datasets, as smaller or less comprehensive datasets are proving insufficient for achieving competitive AI capabilities, thereby increasing the perceived economic value and necessity of such data.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "value_of_data_for_ai",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The perceived economic value and necessity of large datasets for training advanced AI models."
+    },
+    {
+      "probe_text": "While increased litigation risk might seem to directly lead to large fines, recent legal interpretations and defense strategies have made it exceptionally difficult for claimants to prove direct damages exceeding $100M specifically attributable to AI training data usage. Many current lawsuits are being settled for much smaller amounts or dismissed due to the high burden of proof for financial harm directly linked to the training data itself, rather than other business practices.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Directly leads to potential fines or payouts if lawsuits are successful."
+    },
+    {
+      "probe_text": "While regulatory actions can lead to penalties, recent legislative trends suggest a focus on 'soft' regulatory measures like guidance and voluntary frameworks for AI data usage, rather than direct, large-scale financial penalties against companies for past data training practices. There's also a lack of established regulatory bodies with the explicit mandate and precedent to impose fines of $100M+ in this specific domain, making the direct causal link from 'regulatory_action_ai_data' to a fine of this magnitude before 2026 questionable.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "regulatory_action_ai_data->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0833,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Regulatory actions can result in fines or mandated compensation."
+    },
+    {
+      "probe_text": "While the value of data for AI is high, regulators might be hesitant to impose strict rules or penalties on data acquisition and usage specifically because of this high value. They may prioritize fostering AI development and innovation, believing that overly stringent regulations on data, even if ethically questionable, could stifle the industry's growth and competitiveness, leading to less direct regulatory action related to the *acquisition* of valuable data itself.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "value_of_data_for_ai->regulatory_action_ai_data",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.05,
+      "centrality_rank": 8,
+      "on_critical_path": true,
+      "description": "The critical role of data for AI development may lead to regulatory scrutiny of its acquisition and use."
+    },
+    {
+      "probe_text": "Recent class-action lawsuits, such as the one filed against [Specific Company Name] concerning the use of copyrighted material scraped from the internet to train their AI, have explicitly sought damages in the hundreds of millions of dollars, directly linking the company's data usage practices to substantial financial penalties. This case, which is currently proceeding through the courts, demonstrates that when the risk of litigation materializes, the potential financial outcome can indeed be very large, reinforcing the direct link between litigation risk and significant fines.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Directly leads to potential fines or payouts if lawsuits are successful."
+    },
+    {
+      "probe_text": "Recent legislative proposals and executive orders have explicitly granted new powers to agencies like the FTC to levy significant fines for unfair or deceptive practices related to AI data usage. This suggests that regulatory bodies are not only capable but are being empowered to impose substantial financial penalties, directly strengthening the link between regulatory action and large financial outcomes for companies.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "regulatory_action_ai_data->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0833,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Regulatory actions can result in fines or mandated compensation."
+    },
+    {
+      "probe_text": "What if significant court fines (the 'outcome') for data misuse in AI training actually spurred *increased* litigation risk? For example, a landmark $100M+ verdict could serve as a powerful signal to other potential claimants and their lawyers, highlighting lucrative legal avenues and encouraging them to initiate more lawsuits against other companies using similar data practices.",
+      "probe_type": "edge_reverse",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Directly leads to potential fines or payouts if lawsuits are successful."
+    },
+    {
+      "probe_text": "While you've indicated that regulatory action and litigation risk are separate, consider this: when regulators take significant action against a company for its data usage in AI training, such as imposing substantial fines or issuing strong warnings, doesn't that often embolden private claimants? This official scrutiny and the established findings of wrongdoing by regulators could make it easier and more compelling for individuals or groups to file their own lawsuits, effectively increasing litigation risk.",
+      "probe_type": "edge_spurious",
+      "target_id": "regulatory_action_ai_data->litigation_risk_ai_data",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The probability of government regulators taking action or imposing penalties related to AI data usage. -> The likelihood of lawsuits being filed against companies for data usage in AI training."
+    },
+    {
+      "probe_text": "Imagine that a major, high-profile AI company is successfully sued for $500M before 2025 over its data usage in training an AI model. This ruling sets a clear legal precedent that data scraping without explicit consent is illegal and entitles claimants to damages. How does this specific event change your probability assessment for the original question?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine a new, groundbreaking legal framework is established by Congress specifically addressing the ethical use of data in AI training, including clear guidelines and penalties. This framework is enacted in late 2024 and explicitly preempts some existing avenues for litigation and regulatory action, while also creating new, albeit potentially smaller, penalties. How does the emergence and specific nature of this federal legislation, which goes into effect before 2026, change your assessment of the probability of a >=$100M court fine or payout?",
+      "probe_type": "missing_node",
+      "target_id": "new_legal_framework_congress",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "A new study has found that the average temperature of server rooms used to train large AI models has increased by 2 degrees Celsius over the past year. This is reportedly due to more efficient cooling systems being implemented to reduce energy consumption.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "A recent report highlights that the majority of AI models are currently trained on publicly available datasets scraped from the internet, rather than proprietary or user-provided data. This trend is expected to continue for the next few years.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the 'litigation_risk_ai_data' factor is completely irrelevant to the outcome? Imagine a scenario where, despite widespread public awareness and aggressive data acquisition, companies have successfully implemented ironclad arbitration clauses in their terms of service and user agreements. These clauses effectively prevent any data usage disputes from ever reaching a point where they could lead to a court fine or payout, regardless of the underlying risk.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.02,
+      "absolute_shift": 0.13,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly targets the 'litigation_risk_ai_data' node and its direct link to the 'outcome'. If litigation risk is indeed irrelevant due to ironclad arbitration clauses, then the primary mechanism through which lawsuits could lead to a large fine or payout is severed. While 'regulatory_action_ai_data' and 'judicial_precedent_ai_data' could still theoretically lead to the outcome, the prompt's framing suggests a broad effectiveness of these arbitration clauses in preventing *any* data usage disputes from reaching a point of court-ordered payouts. This significantly weakens the causal chain leading to the outcome, necessitating a substantial decrease in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.02,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly targets the 'litigation_risk_ai_data' node and its direct link to the 'outcome'. If litigation risk is indeed irrelevant due to ironclad arbitration clauses, then the primary mechanism through which lawsuits could lead to a large fine or payout is severed. While 'regulatory_action_ai_data' and 'judicial_precedent_ai_data' could still theoretically lead to the outcome, the prompt's framing suggests a broad effectiveness of these arbitration clauses in preventing *any* data usage disputes from reaching a point of court-ordered payouts. This significantly weakens the causal chain leading to the outcome, necessitating a substantial decrease in the probability.\"\n}",
+      "target_id": "litigation_risk_ai_data",
+      "target_type": "node",
+      "target_importance": 0.075,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if 'The probability of government regulators taking action or imposing penalties related to AI data usage.' is wrong?",
+      "probe_generated": false,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the probability of 'regulatory_action_ai_data' leading to the outcome. This node has two direct causal paths to the outcome: 1) 'regulatory_action_ai_data -> outcome' and 2) indirectly through 'judicial_precedent_ai_data -> regulatory_action_ai_data'. If the probability of regulatory action is lower than initially assumed, then the contribution of this path to the overall probability of the outcome is reduced. While regulatory action is a potential driver, the direct path from 'litigation_risk_ai_data -> outcome' remains, and is influenced by other factors like 'public_awareness_data_privacy' and 'value_of_data_for_ai'. Therefore, the decrease is moderate, acknowledging that litigation remains a significant potential driver of the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the probability of 'regulatory_action_ai_data' leading to the outcome. This node has two direct causal paths to the outcome: 1) 'regulatory_action_ai_data -> outcome' and 2) indirectly through 'judicial_precedent_ai_data -> regulatory_action_ai_data'. If the probability of regulatory action is lower than initially assumed, then the contribution of this path to the overall probability of the outcome is reduced. While regulatory action is a potential driver, the direct path from 'litigation_risk_ai_data -> outcome' remains, and is influenced by other factors like 'public_awareness_data_privacy' and 'value_of_data_for_ai'. Therefore, the decrease is moderate, acknowledging that litigation remains a significant potential driver of the outcome.\"\n}",
+      "target_id": "regulatory_action_ai_data",
+      "target_type": "node",
+      "target_importance": 0.075,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent legal analyses suggest that current intellectual property and privacy laws are ill-suited to address the novel issues raised by AI data training. For example, the 'fair use' doctrine, a cornerstone of copyright law, is being interpreted in ways that may not directly apply to the automated ingestion of vast datasets for model training, creating ambiguity rather than precedent. Therefore, the development of clear judicial precedents in this area before 2026 is less likely than initially assumed, potentially weakening its influence on litigation risk.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'judicial_precedent_ai_data' node. The provided analysis suggests that current legal frameworks, like 'fair use', are not easily applicable to AI data training, leading to ambiguity rather than clear precedents. This weakens the causal path from 'judicial_precedent_ai_data' to 'litigation_risk_ai_data', as the absence of strong precedents makes it harder for lawsuits to succeed. Consequently, the probability of the 'outcome' is reduced because a key driver of successful litigation (and thus fines/payouts) is less likely to materialize strongly before 2026. While other paths to the outcome exist (e.g., regulatory action, direct litigation risk not dependent on precedent), the diminished likelihood of strong judicial precedent makes the overall probability decrease.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'judicial_precedent_ai_data' node. The provided analysis suggests that current legal frameworks, like 'fair use', are not easily applicable to AI data training, leading to ambiguity rather than clear precedents. This weakens the causal path from 'judicial_precedent_ai_data' to 'litigation_risk_ai_data', as the absence of strong precedents makes it harder for lawsuits to succeed. Consequently, the probability of the 'outcome' is reduced because a key driver of successful litigation (and thus fines/payouts) is less likely to materialize strongly before 2026. While other paths to the outcome exist (e.g., regulatory action, direct litigation risk not dependent on precedent), the diminished likelihood of strong judicial precedent makes the overall probability decrease.\"\n}",
+      "target_id": "judicial_precedent_ai_data",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent breakthroughs in synthetic data generation and federated learning techniques are significantly reducing the reliance on massive, real-world datasets for training advanced AI models. Consequently, the perceived economic value and necessity of acquiring vast amounts of proprietary or user data for AI training may be substantially overestimated.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'value_of_data_for_ai' suggests that the necessity of large, real-world datasets for AI training is decreasing due to advances in synthetic data and federated learning. This directly impacts two causal paths leading to the outcome: 1) 'value_of_data_for_ai -> litigation_risk_ai_data' and 2) 'value_of_data_for_ai -> regulatory_action_ai_data'. If the perceived value and necessity of these datasets diminish, companies may be less inclined to engage in aggressive data acquisition practices that could lead to litigation. Similarly, regulatory bodies might face less pressure to intervene if the controversial data acquisition practices become less prevalent. While these paths are important, they are not the sole drivers of the outcome, as 'litigation_risk_ai_data' and 'regulatory_action_ai_data' can still be influenced by other factors like public awareness and judicial precedent. Therefore, the probability is decreased, but not drastically, reflecting a weakening of a significant, but not exclusive, causal link.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'value_of_data_for_ai' suggests that the necessity of large, real-world datasets for AI training is decreasing due to advances in synthetic data and federated learning. This directly impacts two causal paths leading to the outcome: 1) 'value_of_data_for_ai -> litigation_risk_ai_data' and 2) 'value_of_data_for_ai -> regulatory_action_ai_data'. If the perceived value and necessity of these datasets diminish, companies may be less inclined to engage in aggressive data acquisition practices that could lead to litigation. Similarly, regulatory bodies might face less pressure to intervene if the controversial data acquisition practices become less prevalent. While these paths are important, they are not the sole drivers of the outcome, as 'litigation_risk_ai_data' and 'regulatory_action_ai_data' can still be influenced by other factors like public awareness and judicial precedent. Therefore, the probability is decreased, but not drastically, reflecting a weakening of a significant, but not exclusive, causal link.\"\n}",
+      "target_id": "value_of_data_for_ai",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A major class-action lawsuit has been filed against 'InnovateAI Corp.' by a consortium of privacy advocates and affected individuals, alleging widespread copyright infringement and violation of data privacy rights in their training data. This suit, which cites specific examples of scraped personal and copyrighted material, is being spearheaded by a prominent legal firm known for its success in large-scale data privacy litigation, significantly increasing the perceived 'litigation_risk_ai_data'.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly targets 'litigation_risk_ai_data', which is a primary causal path to the outcome. The filing of a major class-action lawsuit by a prominent legal firm, citing specific grievances like copyright infringement and privacy violations related to AI training data, significantly increases the probability of this node. This enhanced litigation risk makes it more likely that lawsuits will be filed and potentially succeed, directly increasing the probability of the 'outcome' node. The causal path 'litigation_risk_ai_data -> outcome' is therefore strengthened. While other paths exist, this is a direct and substantial increase in a key precursor to the desired outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly targets 'litigation_risk_ai_data', which is a primary causal path to the outcome. The filing of a major class-action lawsuit by a prominent legal firm, citing specific grievances like copyright infringement and privacy violations related to AI training data, significantly increases the probability of this node. This enhanced litigation risk makes it more likely that lawsuits will be filed and potentially succeed, directly increasing the probability of the 'outcome' node. The causal path 'litigation_risk_ai_data -> outcome' is therefore strengthened. While other paths exist, this is a direct and substantial increase in a key precursor to the desired outcome.\"\n}",
+      "target_id": "litigation_risk_ai_data",
+      "target_type": "node",
+      "target_importance": 0.075,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A new bipartisan bill has been introduced in Congress specifically aimed at regulating the use of personal data for AI training. This bill includes provisions for significant fines for non-compliance, and key members of both parties have publicly stated their commitment to passing it swiftly, indicating a strong likelihood of regulatory action.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.25,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly strengthens the 'regulatory_action_ai_data' node. The introduction of a bipartisan bill with provisions for significant fines, coupled with strong political commitment, substantially increases the likelihood of regulatory action. This, in turn, directly impacts the causal path 'regulatory_action_ai_data -> outcome'. While the initial estimate was 0.15, the increased certainty of regulatory intervention makes a substantial fine or payout due to data usage in AI training more probable, thus increasing the overall probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.4,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly strengthens the 'regulatory_action_ai_data' node. The introduction of a bipartisan bill with provisions for significant fines, coupled with strong political commitment, substantially increases the likelihood of regulatory action. This, in turn, directly impacts the causal path 'regulatory_action_ai_data -> outcome'. While the initial estimate was 0.15, the increased certainty of regulatory intervention makes a substantial fine or payout due to data usage in AI training more probable, thus increasing the overall probability estimate.\"\n}",
+      "target_id": "regulatory_action_ai_data",
+      "target_type": "node",
+      "target_importance": 0.075,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "A recent appellate court ruling in California, *DataGuardian v. AI Innovators*, has established that companies using copyrighted material scraped from the internet to train AI models without explicit consent can be held liable for infringement. This decision explicitly states that the 'fair use' defense is not applicable in such broad data-scraping scenarios, setting a significant precedent for future data-related AI litigation.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'judicial_precedent_ai_data' is significant and directly strengthens a key causal path to the outcome. The *DataGuardian v. AI Innovators* ruling establishes that using copyrighted material scraped from the internet for AI training without explicit consent can lead to liability, and importantly, rejects the 'fair use' defense in these broad scraping scenarios. This directly bolsters the 'judicial_precedent_ai_data -> litigation_risk_ai_data' link. A stronger judicial precedent makes it more likely that lawsuits will be filed and, crucially, that they will be successful. This increased likelihood of successful litigation directly increases the probability of the 'litigation_risk_ai_data -> outcome' path being realized, thus leading to a substantial increase in the overall probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'judicial_precedent_ai_data' is significant and directly strengthens a key causal path to the outcome. The *DataGuardian v. AI Innovators* ruling establishes that using copyrighted material scraped from the internet for AI training without explicit consent can lead to liability, and importantly, rejects the 'fair use' defense in these broad scraping scenarios. This directly bolsters the 'judicial_precedent_ai_data -> litigation_risk_ai_data' link. A stronger judicial precedent makes it more likely that lawsuits will be filed and, crucially, that they will be successful. This increased likelihood of successful litigation directly increases the probability of the 'litigation_risk_ai_data -> outcome' path being realized, thus leading to a substantial increase in the overall probability estimate.\"\n}",
+      "target_id": "judicial_precedent_ai_data",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses from leading AI research labs indicate that the performance of state-of-the-art large language models is directly proportional to the sheer volume and diversity of training data. These findings suggest that companies will continue to aggressively pursue and hoard vast datasets, as smaller or less comprehensive datasets are proving insufficient for achieving competitive AI capabilities, thereby increasing the perceived economic value and necessity of such data.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.05000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information reinforces the causal link between 'value_of_data_for_ai' and subsequent nodes. Specifically, the finding that SOTA LLM performance is directly proportional to data volume and diversity strengthens the argument that companies will continue to aggressively pursue and hoard vast datasets. This increased 'value_of_data_for_ai' has a positive impact on 'litigation_risk_ai_data' because aggressive data acquisition and hoarding raises the potential for disputes over data usage. It also positively impacts 'regulatory_action_ai_data' as the critical role of data for AI development will likely lead to increased regulatory scrutiny. Both increased litigation risk and regulatory action are direct precursors to the 'outcome'. Therefore, the reinforcement of this foundational element in the causal network leads to an increased probability estimate for the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information reinforces the causal link between 'value_of_data_for_ai' and subsequent nodes. Specifically, the finding that SOTA LLM performance is directly proportional to data volume and diversity strengthens the argument that companies will continue to aggressively pursue and hoard vast datasets. This increased 'value_of_data_for_ai' has a positive impact on 'litigation_risk_ai_data' because aggressive data acquisition and hoarding raises the potential for disputes over data usage. It also positively impacts 'regulatory_action_ai_data' as the critical role of data for AI development will likely lead to increased regulatory scrutiny. Both increased litigation risk and regulatory action are direct precursors to the 'outcome'. Therefore, the reinforcement of this foundational element in the causal network leads to an increased probability estimate for the outcome.\"\n}",
+      "target_id": "value_of_data_for_ai",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While increased litigation risk might seem to directly lead to large fines, recent legal interpretations and defense strategies have made it exceptionally difficult for claimants to prove direct damages exceeding $100M specifically attributable to AI training data usage. Many current lawsuits are being settled for much smaller amounts or dismissed due to the high burden of proof for financial harm directly linked to the training data itself, rather than other business practices.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly targets the causal link 'litigation_risk_ai_data -> outcome', suggesting that even with high litigation risk, the ability for claimants to prove damages exceeding $100M specifically attributable to AI training data usage is exceptionally difficult. This suggests that the path through litigation, while still present, is less likely to result in the specified outcome (fines or payouts >=$100M). The reasoning implies that many lawsuits are settled for lower amounts or dismissed, weakening the direct link between litigation risk and the high-value outcome. While other paths like 'regulatory_action_ai_data -> outcome' remain, the direct influence of 'litigation_risk_ai_data -> outcome' appears to be less potent than initially modeled. Therefore, the overall probability is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly targets the causal link 'litigation_risk_ai_data -> outcome', suggesting that even with high litigation risk, the ability for claimants to prove damages exceeding $100M specifically attributable to AI training data usage is exceptionally difficult. This suggests that the path through litigation, while still present, is less likely to result in the specified outcome (fines or payouts >=$100M). The reasoning implies that many lawsuits are settled for lower amounts or dismissed, weakening the direct link between litigation risk and the high-value outcome. While other paths like 'regulatory_action_ai_data -> outcome' remain, the direct influence of 'litigation_risk_ai_data -> outcome' appears to be less potent than initially modeled. Therefore, the overall probability is decreased.\"\n}",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0833,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While regulatory actions can lead to penalties, recent legislative trends suggest a focus on 'soft' regulatory measures like guidance and voluntary frameworks for AI data usage, rather than direct, large-scale financial penalties against companies for past data training practices. There's also a lack of established regulatory bodies with the explicit mandate and precedent to impose fines of $100M+ in this specific domain, making the direct causal link from 'regulatory_action_ai_data' to a fine of this magnitude before 2026 questionable.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct impact of regulatory actions on achieving the specific outcome of a court fine >= $100M. The reasoning suggests a shift towards 'soft' regulatory measures and a lack of established bodies with the mandate to impose such large fines for past data training practices. This weakens the causal path 'regulatory_action_ai_data -> outcome'. While regulatory actions may still occur, their direct contribution to a fine of this magnitude before 2026 is now considered less likely. The other causal paths remain unaffected, but the reduced weight of this specific path leads to a decreased overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct impact of regulatory actions on achieving the specific outcome of a court fine >= $100M. The reasoning suggests a shift towards 'soft' regulatory measures and a lack of established bodies with the mandate to impose such large fines for past data training practices. This weakens the causal path 'regulatory_action_ai_data -> outcome'. While regulatory actions may still occur, their direct contribution to a fine of this magnitude before 2026 is now considered less likely. The other causal paths remain unaffected, but the reduced weight of this specific path leads to a decreased overall probability.\"\n}",
+      "target_id": "regulatory_action_ai_data->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0833,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While the value of data for AI is high, regulators might be hesitant to impose strict rules or penalties on data acquisition and usage specifically because of this high value. They may prioritize fostering AI development and innovation, believing that overly stringent regulations on data, even if ethically questionable, could stifle the industry's growth and competitiveness, leading to less direct regulatory action related to the *acquisition* of valuable data itself.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.12,
+      "absolute_shift": 0.03,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct link between the high value of data for AI and regulatory action specifically concerning data acquisition. The original model posited that the high value of data might lead to regulatory scrutiny and action. However, the new information suggests that regulators may be hesitant to impose strict rules on data acquisition due to a desire to foster AI development. This weakens one of the indirect paths to the outcome: value_of_data_for_ai -> regulatory_action_ai_data -> outcome. While regulatory action is still a potential path to the outcome, its connection to the 'value of data' node is now less certain. The other causal paths (litigation risk, judicial precedent, public awareness) remain intact and continue to support a non-zero probability for the outcome. This particular challenge affects a secondary pathway to the outcome, hence the probability decrease is modest.",
+      "raw_response": "{\n  \"updated_probability\": 0.12,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct link between the high value of data for AI and regulatory action specifically concerning data acquisition. The original model posited that the high value of data might lead to regulatory scrutiny and action. However, the new information suggests that regulators may be hesitant to impose strict rules on data acquisition due to a desire to foster AI development. This weakens one of the indirect paths to the outcome: value_of_data_for_ai -> regulatory_action_ai_data -> outcome. While regulatory action is still a potential path to the outcome, its connection to the 'value of data' node is now less certain. The other causal paths (litigation risk, judicial precedent, public awareness) remain intact and continue to support a non-zero probability for the outcome. This particular challenge affects a secondary pathway to the outcome, hence the probability decrease is modest.\"\n}",
+      "target_id": "value_of_data_for_ai->regulatory_action_ai_data",
+      "target_type": "edge",
+      "target_importance": 0.05,
+      "target_centrality_rank": 8,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent class-action lawsuits, such as the one filed against [Specific Company Name] concerning the use of copyrighted material scraped from the internet to train their AI, have explicitly sought damages in the hundreds of millions of dollars, directly linking the company's data usage practices to substantial financial penalties. This case, which is currently proceeding through the courts, demonstrates that when the risk of litigation materializes, the potential financial outcome can indeed be very large, reinforcing the direct link between litigation risk and significant fines.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge reinforces the causal link between 'litigation_risk_ai_data' and the 'outcome'. The information provided gives a concrete example of a lawsuit explicitly seeking damages in the hundreds of millions of dollars due to AI data usage. This directly validates the path where successful litigation leads to significant financial penalties (>$100M). While the existence of lawsuits was already factored into the 'litigation_risk_ai_data' node, this new information strengthens the expectation that when these risks materialize, the potential financial outcome can be substantial, thus increasing the probability of the final outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge reinforces the causal link between 'litigation_risk_ai_data' and the 'outcome'. The information provided gives a concrete example of a lawsuit explicitly seeking damages in the hundreds of millions of dollars due to AI data usage. This directly validates the path where successful litigation leads to significant financial penalties (>$100M). While the existence of lawsuits was already factored into the 'litigation_risk_ai_data' node, this new information strengthens the expectation that when these risks materialize, the potential financial outcome can be substantial, thus increasing the probability of the final outcome.\"\n}",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0833,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent legislative proposals and executive orders have explicitly granted new powers to agencies like the FTC to levy significant fines for unfair or deceptive practices related to AI data usage. This suggests that regulatory bodies are not only capable but are being empowered to impose substantial financial penalties, directly strengthening the link between regulatory action and large financial outcomes for companies.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly strengthens the causal link between 'regulatory_action_ai_data' and the 'outcome'. Previously, the link was assumed, but the new information explicitly states that legislative proposals and executive orders are granting agencies like the FTC new powers to levy significant fines for AI data usage. This means that if regulatory action is taken ('regulatory_action_ai_data' becomes true), the probability of a substantial financial outcome (>$100M) is now much higher. This strengthens a direct path to the outcome, hence the probability increase. The other causal paths remain unchanged in their relationship to the outcome or the challenged node.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly strengthens the causal link between 'regulatory_action_ai_data' and the 'outcome'. Previously, the link was assumed, but the new information explicitly states that legislative proposals and executive orders are granting agencies like the FTC new powers to levy significant fines for AI data usage. This means that if regulatory action is taken ('regulatory_action_ai_data' becomes true), the probability of a substantial financial outcome (>$100M) is now much higher. This strengthens a direct path to the outcome, hence the probability increase. The other causal paths remain unchanged in their relationship to the outcome or the challenged node.\"\n}",
+      "target_id": "regulatory_action_ai_data->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0833,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "What if significant court fines (the 'outcome') for data misuse in AI training actually spurred *increased* litigation risk? For example, a landmark $100M+ verdict could serve as a powerful signal to other potential claimants and their lawyers, highlighting lucrative legal avenues and encouraging them to initiate more lawsuits against other companies using similar data practices.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.15,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a feedback loop where the 'outcome' itself increases 'litigation_risk_ai_data'. My original model posited 'litigation_risk_ai_data' as a direct cause of the 'outcome'. This new information implies that a successful outcome (a large fine) would not only be a result of litigation risk but would also amplify that risk by encouraging more lawsuits. This strengthens the causal path leading to the outcome, as a positive outcome becomes a catalyst for more positive outcomes. The link 'litigation_risk_ai_data -> outcome' is thus reinforced and potentially made more robust, leading to an increased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.3,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a feedback loop where the 'outcome' itself increases 'litigation_risk_ai_data'. My original model posited 'litigation_risk_ai_data' as a direct cause of the 'outcome'. This new information implies that a successful outcome (a large fine) would not only be a result of litigation risk but would also amplify that risk by encouraging more lawsuits. This strengthens the causal path leading to the outcome, as a positive outcome becomes a catalyst for more positive outcomes. The link 'litigation_risk_ai_data -> outcome' is thus reinforced and potentially made more robust, leading to an increased probability estimate.\"\n}",
+      "target_id": "litigation_risk_ai_data->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0833,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While you've indicated that regulatory action and litigation risk are separate, consider this: when regulators take significant action against a company for its data usage in AI training, such as imposing substantial fines or issuing strong warnings, doesn't that often embolden private claimants? This official scrutiny and the established findings of wrongdoing by regulators could make it easier and more compelling for individuals or groups to file their own lawsuits, effectively increasing litigation risk.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.05000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a new causal link: regulatory_action_ai_data -> litigation_risk_ai_data. This is a plausible and significant interaction that was not explicitly modeled. Previously, regulatory action and litigation risk were treated as largely independent drivers of the outcome. The new information implies that strong regulatory actions (e.g., fines, warnings) can indeed 'embolden' private claimants by providing established findings of wrongdoing and increasing public/media attention, thereby directly increasing the likelihood of successful litigation. This strengthens the overall pathway to the outcome, as regulatory action now has a dual impact: directly through fines and indirectly by boosting litigation risk. The initial probability of 0.15 is increased to 0.20 to account for this newly recognized synergistic effect between regulatory action and litigation risk, making the path to the outcome more robust.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a new causal link: regulatory_action_ai_data -> litigation_risk_ai_data. This is a plausible and significant interaction that was not explicitly modeled. Previously, regulatory action and litigation risk were treated as largely independent drivers of the outcome. The new information implies that strong regulatory actions (e.g., fines, warnings) can indeed 'embolden' private claimants by providing established findings of wrongdoing and increasing public/media attention, thereby directly increasing the likelihood of successful litigation. This strengthens the overall pathway to the outcome, as regulatory action now has a dual impact: directly through fines and indirectly by boosting litigation risk. The initial probability of 0.15 is increased to 0.20 to account for this newly recognized synergistic effect between regulatory action and litigation risk, making the path to the outcome more robust.\"\n}",
+      "target_id": "regulatory_action_ai_data->litigation_risk_ai_data",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a major, high-profile AI company is successfully sued for $500M before 2025 over its data usage in training an AI model. This ruling sets a clear legal precedent that data scraping without explicit consent is illegal and entitles claimants to damages. How does this specific event change your probability assessment for the original question?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.6,
+      "shift_direction": "increased",
+      "reasoning": "The new information describes an event that directly and significantly strengthens several key causal paths leading to the outcome. Specifically, the successful $500M lawsuit before 2025 establishes a clear judicial precedent ('judicial_precedent_ai_data'). This precedent directly increases 'litigation_risk_ai_data' by making it easier for future lawsuits to succeed and potentially increasing the size of damages sought. Furthermore, a high-profile, large payout makes it more likely that other companies will face similar litigation. This precedent also indirectly influences 'regulatory_action_ai_data' as courts often inform regulatory approaches. The fact that this precedent is set well before 2026 means the conditions for the outcome are met with higher certainty and a longer window for further similar events to occur. The original probability of 0.15 was too low given this strong new evidence.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information describes an event that directly and significantly strengthens several key causal paths leading to the outcome. Specifically, the successful $500M lawsuit before 2025 establishes a clear judicial precedent ('judicial_precedent_ai_data'). This precedent directly increases 'litigation_risk_ai_data' by making it easier for future lawsuits to succeed and potentially increasing the size of damages sought. Furthermore, a high-profile, large payout makes it more likely that other companies will face similar litigation. This precedent also indirectly influences 'regulatory_action_ai_data' as courts often inform regulatory approaches. The fact that this precedent is set well before 2026 means the conditions for the outcome are met with higher certainty and a longer window for further similar events to occur. The original probability of 0.15 was too low given this strong new evidence.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine a new, groundbreaking legal framework is established by Congress specifically addressing the ethical use of data in AI training, including clear guidelines and penalties. This framework is enacted in late 2024 and explicitly preempts some existing avenues for litigation and regulatory action, while also creating new, albeit potentially smaller, penalties. How does the emergence and specific nature of this federal legislation, which goes into effect before 2026, change your assessment of the probability of a >=$100M court fine or payout?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.05,
+      "absolute_shift": 0.09999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The introduction of a new federal legal framework specifically addressing AI data training in late 2024 significantly alters the causal pathways. This legislation preempts existing litigation and regulatory avenues, directly weakening the causal links from `litigation_risk_ai_data` and `regulatory_action_ai_data` to the `outcome`. While the legislation might create new penalties, the prompt specifies these are 'potentially smaller,' making a >=$100M fine or payout less likely. The direct causal links from `judicial_precedent_ai_data` to both `litigation_risk_ai_data` and `regulatory_action_ai_data` are also weakened, as the new framework establishes clear guidelines, reducing reliance on case law or broad regulatory interpretation. The `public_awareness_data_privacy` node's influence on `litigation_risk_ai_data` and `regulatory_action_ai_data` is similarly diminished as the legislative framework now dictates the primary response. The `value_of_data_for_ai` node's impact is also reduced as the legal landscape has been clarified and potentially constrained. Overall, the preemptive and directive nature of this new legislation fundamentally undermines the existing mechanisms that could lead to a large fine or payout, thus substantially decreasing the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.05,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The introduction of a new federal legal framework specifically addressing AI data training in late 2024 significantly alters the causal pathways. This legislation preempts existing litigation and regulatory avenues, directly weakening the causal links from `litigation_risk_ai_data` and `regulatory_action_ai_data` to the `outcome`. While the legislation might create new penalties, the prompt specifies these are 'potentially smaller,' making a >=$100M fine or payout less likely. The direct causal links from `judicial_precedent_ai_data` to both `litigation_risk_ai_data` and `regulatory_action_ai_data` are also weakened, as the new framework establishes clear guidelines, reducing reliance on case law or broad regulatory interpretation. The `public_awareness_data_privacy` node's influence on `litigation_risk_ai_data` and `regulatory_action_ai_data` is similarly diminished as the legislative framework now dictates the primary response. The `value_of_data_for_ai` node's impact is also reduced as the legal landscape has been clarified and potentially constrained. Overall, the preemptive and directive nature of this new legislation fundamentally undermines the existing mechanisms that could lead to a large fine or payout, thus substantially decreasing the probability.\"\n}",
+      "target_id": "new_legal_framework_congress",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A new study has found that the average temperature of server rooms used to train large AI models has increased by 2 degrees Celsius over the past year. This is reportedly due to more efficient cooling systems being implemented to reduce energy consumption.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0,
+      "shift_direction": "unchanged",
+      "reasoning": "The new information about server room temperatures and cooling systems is unrelated to the causal pathways leading to the specified outcome. The core factors influencing the likelihood of a large fine or payout due to AI data training practices (litigation risk, regulatory action, judicial precedent, public awareness, and the value of data) are not affected by changes in server room cooling efficiency or temperature. Therefore, the probability estimate remains unchanged.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"unchanged\",\n  \"reasoning\": \"The new information about server room temperatures and cooling systems is unrelated to the causal pathways leading to the specified outcome. The core factors influencing the likelihood of a large fine or payout due to AI data training practices (litigation risk, regulatory action, judicial precedent, public awareness, and the value of data) are not affected by changes in server room cooling efficiency or temperature. Therefore, the probability estimate remains unchanged.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent report highlights that the majority of AI models are currently trained on publicly available datasets scraped from the internet, rather than proprietary or user-provided data. This trend is expected to continue for the next few years.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that AI models are predominantly trained on publicly available datasets scraped from the internet. This weakens the causal link between 'value_of_data_for_ai' and 'litigation_risk_ai_data', and also 'regulatory_action_ai_data'. If companies are using broadly accessible data, the perceived 'value' of specific datasets in a way that leads to disputes or regulatory action is diminished compared to scenarios where proprietary or user-provided data is central to AI training. This reduces the likelihood of lawsuits and regulatory actions stemming from data acquisition and usage disputes, thereby lowering the probability of the outcome. The causal paths affected are primarily those where the *acquisition* or *proprietary nature* of data is a key driver for litigation or regulation. While scraping public data still carries risks (e.g., copyright, terms of service violations), it is generally perceived as a lower risk for large-scale fines compared to misuse of private or user data. Therefore, my probability estimate has decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that AI models are predominantly trained on publicly available datasets scraped from the internet. This weakens the causal link between 'value_of_data_for_ai' and 'litigation_risk_ai_data', and also 'regulatory_action_ai_data'. If companies are using broadly accessible data, the perceived 'value' of specific datasets in a way that leads to disputes or regulatory action is diminished compared to scenarios where proprietary or user-provided data is central to AI training. This reduces the likelihood of lawsuits and regulatory actions stemming from data acquisition and usage disputes, thereby lowering the probability of the outcome. The causal paths affected are primarily those where the *acquisition* or *proprietary nature* of data is a key driver for litigation or regulation. While scraping public data still carries risks (e.g., copyright, terms of service violations), it is generally perceived as a lower risk for large-scale fines compared to misuse of private or user data. Therefore, my probability estimate has decreased.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "17408",
+    "question_text": "Will a US court fine, or order a company to pay to claimants, >=$100M because of how they used data to train a large AI model before 2026?",
+    "source": "metaculus",
+    "condition": "one-turn",
+    "initial_probability": 0.15,
+    "n_probes": 19,
+    "n_successful": 19,
+    "mean_absolute_shift": 0.14315789473684212,
+    "max_absolute_shift": 0.6
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0.01,
+  "aggregate_metrics": {
+    "ssr": 3.551136363636363,
+    "mean_shift_high": 0.15624999999999997,
+    "mean_shift_low": 0.044000000000000004,
+    "asymmetry_index": 0.29670329670329665,
+    "mean_shift_negate": 0.06428571428571428,
+    "mean_shift_strengthen": 0.21666666666666667,
+    "fnar": 1,
+    "n_accepted": 3,
+    "n_spurious": 3,
+    "critical_path_premium": -0.00033333333333340764,
+    "mean_shift_on_path": 0.14299999999999996,
+    "mean_shift_off_path": 0.14333333333333337,
+    "importance_sensitivity_correlation": 0.12727272727272732,
+    "control_sensitivity": 0.5
+  }
+}

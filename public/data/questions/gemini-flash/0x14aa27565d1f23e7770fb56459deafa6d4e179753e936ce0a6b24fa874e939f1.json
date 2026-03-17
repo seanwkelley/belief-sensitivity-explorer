@@ -1,0 +1,1199 @@
+{
+  "question_id": "0x14aa27565d1f23e7770fb56459deafa6d4e179753e936ce0a6b24fa874e939f1",
+  "question_text": "Will Christy win Best Makeup and Hairstyling at the 98th Academy Awards?",
+  "source": "polymarket",
+  "initial_probability": 0.65,
+  "nodes": [
+    {
+      "id": "christy_past_wins",
+      "description": "Christy's previous wins in makeup/hairstyling categories",
+      "role": "factor"
+    },
+    {
+      "id": "film_genre",
+      "description": "The genre of the film Christy worked on (e.g., period drama, sci-fi)",
+      "role": "factor"
+    },
+    {
+      "id": "film_budget",
+      "description": "The budget allocated to the film's makeup and hairstyling department",
+      "role": "factor"
+    },
+    {
+      "id": "competition_strength",
+      "description": "The overall quality and impact of the makeup and hairstyling in competing films",
+      "role": "factor"
+    },
+    {
+      "id": "film_critical_reception",
+      "description": "The critical acclaim and audience reception of the film itself",
+      "role": "factor"
+    },
+    {
+      "id": "academy_tastes",
+      "description": "The Academy's historical preferences and trends in voting for this category",
+      "role": "factor"
+    },
+    {
+      "id": "christy_wins_best_makeup",
+      "description": "Christy wins Best Makeup and Hairstyling at the 98th Academy Awards",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "christy_past_wins",
+      "to": "christy_wins_best_makeup",
+      "mechanism": "Past success often correlates with current strong performance and industry recognition."
+    },
+    {
+      "from": "film_genre",
+      "to": "competition_strength",
+      "mechanism": "Certain genres (e.g., period pieces) often showcase more elaborate makeup and hairstyling, increasing their potential impact."
+    },
+    {
+      "from": "film_genre",
+      "to": "film_critical_reception",
+      "mechanism": "The genre can influence how well the film is received by critics and audiences."
+    },
+    {
+      "from": "film_budget",
+      "to": "competition_strength",
+      "mechanism": "A larger budget can allow for more detailed and transformative makeup and hairstyling work."
+    },
+    {
+      "from": "film_critical_reception",
+      "to": "christy_wins_best_makeup",
+      "mechanism": "A critically acclaimed film may bring more attention to its technical achievements, including makeup and hairstyling."
+    },
+    {
+      "from": "competition_strength",
+      "to": "christy_wins_best_makeup",
+      "mechanism": "The perceived quality of the work relative to other nominees is a primary determinant of winning."
+    },
+    {
+      "from": "academy_tastes",
+      "to": "christy_wins_best_makeup",
+      "mechanism": "The Academy's voting patterns and preferences for specific styles or levels of transformation directly influence the outcome."
+    }
+  ],
+  "reasoning": "Christy's probability of winning Best Makeup and Hairstyling at the 98th Academy Awards is estimated at 65%. This is influenced by her past successes, the nature and budget of the film she worked on, the strength of the competition, the film's critical reception, and the Academy's historical voting preferences. While past wins and a strong film reception are positive indicators, the ultimate outcome heavily relies on the perceived quality of her work compared to other nominees and the Academy's evolving tastes in this category.",
+  "network_analysis": {
+    "n_nodes": 7,
+    "n_edges": 7,
+    "density": 0.1667,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 7,
+    "outcome_node": "christy_wins_best_makeup",
+    "node_metrics": [
+      {
+        "node_id": "christy_past_wins",
+        "description": "Christy's previous wins in makeup/hairstyling categories",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0738,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "film_genre",
+        "description": "The genre of the film Christy worked on (e.g., period drama, sci-fi)",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0738,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "film_budget",
+        "description": "The budget allocated to the film's makeup and hairstyling department",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0738,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "competition_strength",
+        "description": "The overall quality and impact of the makeup and hairstyling in competing films",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 1,
+        "betweenness": 0.05,
+        "closeness": 0.3333,
+        "pagerank": 0.168,
+        "path_relevance": 0.2857
+      },
+      {
+        "node_id": "film_critical_reception",
+        "description": "The critical acclaim and audience reception of the film itself",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.0167,
+        "closeness": 0.1667,
+        "pagerank": 0.1052,
+        "path_relevance": 0.1429
+      },
+      {
+        "node_id": "academy_tastes",
+        "description": "The Academy's historical preferences and trends in voting for this category",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0738,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "christy_wins_best_makeup",
+        "description": "Christy wins Best Makeup and Hairstyling at the 98th Academy Awards",
+        "role": "outcome",
+        "in_degree": 4,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.75,
+        "pagerank": 0.4315,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "christy_past_wins",
+        "target": "christy_wins_best_makeup",
+        "mechanism": "Past success often correlates with current strong performance and industry recognition.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "film_genre",
+        "target": "competition_strength",
+        "mechanism": "Certain genres (e.g., period pieces) often showcase more elaborate makeup and hairstyling, increasing their potential impact.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "film_genre",
+        "target": "film_critical_reception",
+        "mechanism": "The genre can influence how well the film is received by critics and audiences.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "film_budget",
+        "target": "competition_strength",
+        "mechanism": "A larger budget can allow for more detailed and transformative makeup and hairstyling work.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": true
+      },
+      {
+        "source": "competition_strength",
+        "target": "christy_wins_best_makeup",
+        "mechanism": "The perceived quality of the work relative to other nominees is a primary determinant of winning.",
+        "edge_betweenness": 0.0595,
+        "on_critical_path": true
+      },
+      {
+        "source": "film_critical_reception",
+        "target": "christy_wins_best_makeup",
+        "mechanism": "A critically acclaimed film may bring more attention to its technical achievements, including makeup and hairstyling.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "academy_tastes",
+        "target": "christy_wins_best_makeup",
+        "mechanism": "The Academy's voting patterns and preferences for specific styles or levels of transformation directly influence the outcome.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "competition_strength",
+        "description": "The overall quality and impact of the makeup and hairstyling in competing films",
+        "importance": 0.05,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "film_critical_reception",
+        "description": "The critical acclaim and audience reception of the film itself",
+        "importance": 0.0167,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "film_genre",
+        "description": "The genre of the film Christy worked on (e.g., period drama, sci-fi)",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "academy_tastes",
+        "description": "The Academy's historical preferences and trends in voting for this category",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "competition_strength",
+        "description": "The overall quality and impact of the makeup and hairstyling in competing films",
+        "importance": 0.05,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "film_critical_reception",
+        "description": "The critical acclaim and audience reception of the film itself",
+        "importance": 0.0167,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "film_genre",
+        "description": "The genre of the film Christy worked on (e.g., period drama, sci-fi)",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "academy_tastes",
+        "description": "The Academy's historical preferences and trends in voting for this category",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "competition_strength->christy_wins_best_makeup",
+        "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning.",
+        "importance": 0.0595,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "film_budget->competition_strength",
+        "description": "A larger budget can allow for more detailed and transformative makeup and hairstyling work.",
+        "importance": 0.0476,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "academy_tastes->christy_wins_best_makeup",
+        "description": "The Academy's voting patterns and preferences for specific styles or levels of transformation directly influence the outcome.",
+        "importance": 0.0238,
+        "centrality_rank": 7,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "competition_strength->christy_wins_best_makeup",
+        "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning.",
+        "importance": 0.0595,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "film_budget->competition_strength",
+        "description": "A larger budget can allow for more detailed and transformative makeup and hairstyling work.",
+        "importance": 0.0476,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "competition_strength->christy_wins_best_makeup",
+        "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning.",
+        "importance": 0.0595,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "competition_strength->academy_tastes",
+        "description": "Potential link: The overall quality and impact of the makeup and hairstyling in competing films -> The Academy's historical preferences and trends in voting for this category",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "competition_strength->christy_past_wins",
+        "description": "Potential link: The overall quality and impact of the makeup and hairstyling in competing films -> Christy's previous wins in makeup/hairstyling categories",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "competition_strength",
+      "description": "The overall quality and impact of the makeup and hairstyling in competing films",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "film_critical_reception",
+      "description": "The critical acclaim and audience reception of the film itself",
+      "importance": 0.0167,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "film_genre",
+      "description": "The genre of the film Christy worked on (e.g., period drama, sci-fi)",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "academy_tastes",
+      "description": "The Academy's historical preferences and trends in voting for this category",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "competition_strength",
+      "description": "The overall quality and impact of the makeup and hairstyling in competing films",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "film_critical_reception",
+      "description": "The critical acclaim and audience reception of the film itself",
+      "importance": 0.0167,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "film_genre",
+      "description": "The genre of the film Christy worked on (e.g., period drama, sci-fi)",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "academy_tastes",
+      "description": "The Academy's historical preferences and trends in voting for this category",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning.",
+      "importance": 0.0595,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "film_budget->competition_strength",
+      "description": "A larger budget can allow for more detailed and transformative makeup and hairstyling work.",
+      "importance": 0.0476,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "academy_tastes->christy_wins_best_makeup",
+      "description": "The Academy's voting patterns and preferences for specific styles or levels of transformation directly influence the outcome.",
+      "importance": 0.0238,
+      "centrality_rank": 7,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning.",
+      "importance": 0.0595,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "film_budget->competition_strength",
+      "description": "A larger budget can allow for more detailed and transformative makeup and hairstyling work.",
+      "importance": 0.0476,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning.",
+      "importance": 0.0595,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "competition_strength->academy_tastes",
+      "description": "Potential link: The overall quality and impact of the makeup and hairstyling in competing films -> The Academy's historical preferences and trends in voting for this category",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "competition_strength->christy_past_wins",
+      "description": "Potential link: The overall quality and impact of the makeup and hairstyling in competing films -> Christy's previous wins in makeup/hairstyling categories",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Imagine that the Academy voters have recently expressed a strong preference for minimalist and 'natural' makeup and hairstyling, completely disregarding the elaborate or transformative work of previous years. In this scenario, the perceived quality and impact of the makeup and hairstyling in competing films (competition_strength) becomes irrelevant, as the voters' tastes have shifted dramatically away from what has historically been considered 'strong' competition.",
+      "probe_type": "node_negate_high",
+      "target_id": "competition_strength",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The overall quality and impact of the makeup and hairstyling in competing films"
+    },
+    {
+      "probe_text": "What if the critical acclaim and audience reception of the film itself is completely irrelevant to Christy's chances of winning Best Makeup and Hairstyling? It's possible that the Academy voters in this specific technical category are so focused on the artistry and technical execution of the makeup and hair, regardless of the film's overall quality or box office success, that the film's reception plays no role in their decision-making.",
+      "probe_type": "node_negate_high",
+      "target_id": "film_critical_reception",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0167,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The critical acclaim and audience reception of the film itself"
+    },
+    {
+      "probe_text": "While the genre of a film can sometimes influence the visibility of its makeup and hairstyling, recent Academy trends suggest that voter preferences are shifting away from genre-specific biases. For instance, in the last three years, winners in this category have come from a diverse range of genres, including comedies and thrillers, indicating that the genre itself might not be as strong a predictor of success as the sheer artistry and innovation of the work, regardless of the film's category.",
+      "probe_type": "node_negate_medium",
+      "target_id": "film_genre",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "The genre of the film Christy worked on (e.g., period drama, sci-fi)"
+    },
+    {
+      "probe_text": "Recent reports suggest that the Academy has made a concerted effort to diversify its voting base and broaden its appreciation for a wider range of cinematic achievements, moving away from historical trends. Given this shift, how much weight should we still place on 'academy_tastes' when predicting this year's winner?",
+      "probe_type": "node_negate_low",
+      "target_id": "academy_tastes",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The Academy's historical preferences and trends in voting for this category"
+    },
+    {
+      "probe_text": "A recent industry analysis by 'The Hollywood Reporter' specifically highlighted that the makeup and hairstyling teams in this year's nominated films have reached an unprecedented level of technical innovation and artistic execution. The report detailed how several competing films featured transformative prosthetics and intricate period-accurate designs that have set a new benchmark for the category, suggesting that the competition's quality is exceptionally high this year.",
+      "probe_type": "node_strengthen",
+      "target_id": "competition_strength",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The overall quality and impact of the makeup and hairstyling in competing films"
+    },
+    {
+      "probe_text": "A prominent film critic, known for their influential reviews and often aligning with Academy sentiment, has just published an editorial highlighting how the film's exceptional critical reception has elevated its entire technical team, including the makeup and hairstyling. The piece specifically praises the transformative and artistically significant makeup as a key factor in the film's widespread acclaim, suggesting it's a primary reason for the film's strong overall performance and awards buzz.",
+      "probe_type": "node_strengthen",
+      "target_id": "film_critical_reception",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0167,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The critical acclaim and audience reception of the film itself"
+    },
+    {
+      "probe_text": "Christy's nominated film is a lavish period drama set in the 18th century, a genre historically favored by the Academy for its opportunities to showcase intricate and transformative makeup and hairstyling. Furthermore, the film's director is renowned for his meticulous attention to historical accuracy, ensuring the makeup and hairstyling will be both authentic and visually striking, which often appeals to Academy voters.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "film_genre",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "The genre of the film Christy worked on (e.g., period drama, sci-fi)"
+    },
+    {
+      "probe_text": "Recent Academy voting patterns in Best Makeup and Hairstyling have shown a clear trend towards favoring films that emphasize historical accuracy and period detail, even over more avant-garde or science-fiction-based transformations. This historical preference has been particularly pronounced in the last five years, suggesting a consistent and deepening inclination within the Academy that strongly favors this aesthetic.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "academy_tastes",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The Academy's historical preferences and trends in voting for this category"
+    },
+    {
+      "probe_text": "While competition strength is often considered, recent Academy trends suggest a shift towards rewarding innovation and unique artistic vision over sheer technical complexity or perceived 'impact.' For instance, in the past few years, several underdog films with surprisingly creative makeup and hairstyling have triumphed over more conventionally elaborate entries, indicating that the 'wow factor' of competition might be less important than a distinct, memorable aesthetic that aligns with current artistic sensibilities.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0595,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning."
+    },
+    {
+      "probe_text": "While a large film budget can facilitate elaborate makeup, recent Academy trends suggest a shift towards recognizing innovative and artistic makeup/hairstyling achieved with more modest budgets, especially in independent or genre films, rather than simply the most expensive or transformative work. For instance, a film with a smaller budget that pushes creative boundaries might be favored over a blockbuster with extensive but perhaps less inspired effects.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "film_budget->competition_strength",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0476,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "A larger budget can allow for more detailed and transformative makeup and hairstyling work."
+    },
+    {
+      "probe_text": "While the Academy has historically shown preferences, recent years have seen a push towards recognizing more avant-garde and less traditional makeup and hairstyling work. This year, the Academy has publicly stated a desire to break from past trends and reward innovation, potentially diminishing the influence of 'academy tastes' in favor of recognizing groundbreaking artistic choices.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "academy_tastes->christy_wins_best_makeup",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0238,
+      "centrality_rank": 7,
+      "on_critical_path": true,
+      "description": "The Academy's voting patterns and preferences for specific styles or levels of transformation directly influence the outcome."
+    },
+    {
+      "probe_text": "Recent analysis of the last five Academy Awards for Best Makeup and Hairstyling reveals a significant trend: in all instances where a nominee's work was perceived as groundbreaking or artistically transformative, it won, irrespective of the film's overall critical reception or budget. This suggests that the sheer impact and 'wow factor' of the makeup and hairstyling – the core of 'competition_strength' – is an even more dominant factor than previously understood, potentially overshadowing other considerations.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0595,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning."
+    },
+    {
+      "probe_text": "Recent reports indicate that the film Christy worked on had an unusually large budget specifically allocated to the makeup and hairstyling department, far exceeding industry averages for its genre. This suggests that the resources available for transformative and intricate work were exceptionally high, potentially giving Christy's team a significant advantage in creating standout designs that would impress the competition.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "film_budget->competition_strength",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0476,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "A larger budget can allow for more detailed and transformative makeup and hairstyling work."
+    },
+    {
+      "probe_text": "We've been discussing how the strength of the competition influences Christy's chances of winning Best Makeup and Hairstyling. However, consider this: What if Christy's exceptional work, even if it's not the most elaborate, has a tendency to *elevate* the perceived quality of the *entire* competition? When a nominee like Christy delivers a truly standout, innovative, or emotionally resonant makeup/hairstyling achievement, it can sometimes overshadow or redefine what voters consider 'strong competition,' making other nominees appear less impactful in comparison.",
+      "probe_type": "edge_reverse",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0595,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The perceived quality of the work relative to other nominees is a primary determinant of winning."
+    },
+    {
+      "probe_text": "We've been considering how the overall quality and impact of the makeup and hairstyling in competing films might influence the outcome. However, it's also plausible that a consistently high level of innovation and artistry demonstrated by strong competing films could, over time, shape the Academy's evolving tastes and preferences for what they consider award-worthy in this category. Could the strength of the competition actually be influencing what the Academy starts to value?",
+      "probe_type": "edge_spurious",
+      "target_id": "competition_strength->academy_tastes",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The overall quality and impact of the makeup and hairstyling in competing films -> The Academy's historical preferences and trends in voting for this category"
+    },
+    {
+      "probe_text": "It's plausible that Christy's past wins weren't just a result of her individual talent, but also influenced by the general quality of the competition in those years. If the makeup and hairstyling in other nominated films were generally less impressive in the years she won, her wins might have been more about relative strength than absolute excellence. How would knowing that the competition in her winning years was historically weak change your assessment of her chances this year?",
+      "probe_type": "edge_spurious",
+      "target_id": "competition_strength->christy_past_wins",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The overall quality and impact of the makeup and hairstyling in competing films -> Christy's previous wins in makeup/hairstyling categories"
+    },
+    {
+      "probe_text": "Imagine that Christy's film is a critically acclaimed historical drama that was known for its groundbreaking and transformative makeup effects. However, a scandal emerged close to the awards ceremony, revealing that a significant portion of the makeup and hairstyling budget was secretly used to cover up the film's poor box office performance, leading to a last-minute, drastic reduction in the quality and execution of the final makeup and hairstyling work. How would this information about the budget's misallocation and its impact on the final execution affect your probability assessment for Christy winning Best Makeup and Hairstyling?",
+      "probe_type": "missing_node",
+      "target_id": "budget_misallocation_impact",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that a major scandal erupts regarding the integrity of the voting process for the Academy Awards this year, specifically concerning allegations of vote-buying. How would this information change your assessment of Christy's chances of winning Best Makeup and Hairstyling, given that the integrity of the voting process is a direct input into the outcome?",
+      "probe_type": "missing_node",
+      "target_id": "voting_process_integrity",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Christy recently completed a masterclass in advanced prosthetics application. While this demonstrates her dedication to honing her craft, the specific techniques learned in this particular masterclass are not typically featured in the types of films that are usually nominated for Best Makeup and Hairstyling at the Academy Awards.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Christy recently gave an interview where she discussed her personal passion for historical accuracy in period dramas. She mentioned that while she enjoys the artistic freedom of science fiction films, her true passion lies in recreating authentic historical looks. This passion, she feels, drives her to work harder on projects that align with her interests.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the Academy voters have recently expressed a strong preference for minimalist and 'natural' makeup and hairstyling, completely disregarding the elaborate or transformative work of previous years. In this scenario, the perceived quality and impact of the makeup and hairstyling in competing films (competition_strength) becomes irrelevant, as the voters' tastes have shifted dramatically away from what has historically been considered 'strong' competition.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'competition_strength' node and its influence on the outcome. The new information states that Academy voters now have a strong preference for minimalist and 'natural' makeup, making elaborate or transformative work irrelevant. This effectively breaks the causal path from 'competition_strength' to 'christy_wins_best_makeup'. While 'competition_strength' was previously a significant factor, its importance has been nullified by the shift in voter preference. The 'academy_tastes' node remains a direct driver of the outcome, and the new information suggests a strong leaning within 'academy_tastes' that may not favor Christy if her work is elaborate. Therefore, the probability of Christy winning is significantly decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'competition_strength' node and its influence on the outcome. The new information states that Academy voters now have a strong preference for minimalist and 'natural' makeup, making elaborate or transformative work irrelevant. This effectively breaks the causal path from 'competition_strength' to 'christy_wins_best_makeup'. While 'competition_strength' was previously a significant factor, its importance has been nullified by the shift in voter preference. The 'academy_tastes' node remains a direct driver of the outcome, and the new information suggests a strong leaning within 'academy_tastes' that may not favor Christy if her work is elaborate. Therefore, the probability of Christy winning is significantly decreased.\"\n}",
+      "target_id": "competition_strength",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the critical acclaim and audience reception of the film itself is completely irrelevant to Christy's chances of winning Best Makeup and Hairstyling? It's possible that the Academy voters in this specific technical category are so focused on the artistry and technical execution of the makeup and hair, regardless of the film's overall quality or box office success, that the film's reception plays no role in their decision-making.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge posits that 'film_critical_reception' is irrelevant to the outcome. This directly affects the causal path: film_critical_reception -> christy_wins_best_makeup. While this path was a contributing factor, it was not the sole determinant. The strength of the competition ('competition_strength') and the Academy's historical tastes ('academy_tastes') remain significant drivers. The removal of the film's critical reception as a factor slightly diminishes Christy's chances, as a well-received film can sometimes elevate the visibility of its technical achievements. However, the impact is moderate because other strong causal links to the outcome persist.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge posits that 'film_critical_reception' is irrelevant to the outcome. This directly affects the causal path: film_critical_reception -> christy_wins_best_makeup. While this path was a contributing factor, it was not the sole determinant. The strength of the competition ('competition_strength') and the Academy's historical tastes ('academy_tastes') remain significant drivers. The removal of the film's critical reception as a factor slightly diminishes Christy's chances, as a well-received film can sometimes elevate the visibility of its technical achievements. However, the impact is moderate because other strong causal links to the outcome persist.\"\n}",
+      "target_id": "film_critical_reception",
+      "target_type": "node",
+      "target_importance": 0.0167,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "While the genre of a film can sometimes influence the visibility of its makeup and hairstyling, recent Academy trends suggest that voter preferences are shifting away from genre-specific biases. For instance, in the last three years, winners in this category have come from a diverse range of genres, including comedies and thrillers, indicating that the genre itself might not be as strong a predictor of success as the sheer artistry and innovation of the work, regardless of the film's category.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'film_genre' node suggests that its influence on 'competition_strength' and 'film_critical_reception' might be weaker than initially modeled. The argument is that recent Academy trends show a move away from genre-specific biases, with winners emerging from diverse genres. This implies that the causal path 'film_genre -> competition_strength' and 'film_genre -> film_critical_reception' is less impactful. Consequently, the indirect effect of 'film_genre' on the outcome 'christy_wins_best_makeup' is reduced. While 'film_genre' is not the sole determinant, its diminished predictive power warrants a slight decrease in the overall probability. The primary drivers of the outcome remain 'competition_strength', 'academy_tastes', and 'film_critical_reception', which are not directly challenged.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'film_genre' node suggests that its influence on 'competition_strength' and 'film_critical_reception' might be weaker than initially modeled. The argument is that recent Academy trends show a move away from genre-specific biases, with winners emerging from diverse genres. This implies that the causal path 'film_genre -> competition_strength' and 'film_genre -> film_critical_reception' is less impactful. Consequently, the indirect effect of 'film_genre' on the outcome 'christy_wins_best_makeup' is reduced. While 'film_genre' is not the sole determinant, its diminished predictive power warrants a slight decrease in the overall probability. The primary drivers of the outcome remain 'competition_strength', 'academy_tastes', and 'film_critical_reception', which are not directly challenged.\"\n}",
+      "target_id": "film_genre",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports suggest that the Academy has made a concerted effort to diversify its voting base and broaden its appreciation for a wider range of cinematic achievements, moving away from historical trends. Given this shift, how much weight should we still place on 'academy_tastes' when predicting this year's winner?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'academy_tastes' suggests that historical voting patterns and preferences may be less predictive of future outcomes. This directly impacts the causal path 'academy_tastes -> christy_wins_best_makeup'. If the Academy is actively diversifying and moving away from specific trends, relying on past 'academy_tastes' becomes less reliable. While 'academy_tastes' was a contributing factor, other paths such as 'competition_strength', 'film_critical_reception', and 'christy_past_wins' remain strong predictors. The reduction in the weight of 'academy_tastes' leads to a slight decrease in the overall probability, as one of the established influencing factors is now less certain.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'academy_tastes' suggests that historical voting patterns and preferences may be less predictive of future outcomes. This directly impacts the causal path 'academy_tastes -> christy_wins_best_makeup'. If the Academy is actively diversifying and moving away from specific trends, relying on past 'academy_tastes' becomes less reliable. While 'academy_tastes' was a contributing factor, other paths such as 'competition_strength', 'film_critical_reception', and 'christy_past_wins' remain strong predictors. The reduction in the weight of 'academy_tastes' leads to a slight decrease in the overall probability, as one of the established influencing factors is now less certain.\"\n}",
+      "target_id": "academy_tastes",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent industry analysis by 'The Hollywood Reporter' specifically highlighted that the makeup and hairstyling teams in this year's nominated films have reached an unprecedented level of technical innovation and artistic execution. The report detailed how several competing films featured transformative prosthetics and intricate period-accurate designs that have set a new benchmark for the category, suggesting that the competition's quality is exceptionally high this year.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'competition_strength' node, which has a direct causal link to the outcome 'christy_wins_best_makeup'. The Hollywood Reporter analysis indicates that the competition is exceptionally high this year, with unprecedented technical innovation and artistic execution across multiple competing films. This suggests that even if Christy's work is excellent, its relative impact and perceived quality compared to the other nominees will be diminished. Therefore, the causal path 'competition_strength -> christy_wins_best_makeup' is significantly weakened in favor of Christy winning, necessitating a substantial decrease in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'competition_strength' node, which has a direct causal link to the outcome 'christy_wins_best_makeup'. The Hollywood Reporter analysis indicates that the competition is exceptionally high this year, with unprecedented technical innovation and artistic execution across multiple competing films. This suggests that even if Christy's work is excellent, its relative impact and perceived quality compared to the other nominees will be diminished. Therefore, the causal path 'competition_strength -> christy_wins_best_makeup' is significantly weakened in favor of Christy winning, necessitating a substantial decrease in the probability.\"\n}",
+      "target_id": "competition_strength",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A prominent film critic, known for their influential reviews and often aligning with Academy sentiment, has just published an editorial highlighting how the film's exceptional critical reception has elevated its entire technical team, including the makeup and hairstyling. The piece specifically praises the transformative and artistically significant makeup as a key factor in the film's widespread acclaim, suggesting it's a primary reason for the film's strong overall performance and awards buzz.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'film_critical_reception' has been significantly bolstered by the critic's editorial. This editorial directly reinforces the causal path: film_critical_reception -> christy_wins_best_makeup. The critic explicitly links the film's strong reception and awards buzz to the makeup and hairstyling's transformative and artistic significance. This strengthens the argument that the film's positive reception will draw favorable attention to Christy's work, increasing its chances of winning. The editorial also indirectly supports the link between film_critical_reception and christy_wins_best_makeup by framing the makeup as a 'key factor' in the film's overall success, which is a positive signal for the Academy.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'film_critical_reception' has been significantly bolstered by the critic's editorial. This editorial directly reinforces the causal path: film_critical_reception -> christy_wins_best_makeup. The critic explicitly links the film's strong reception and awards buzz to the makeup and hairstyling's transformative and artistic significance. This strengthens the argument that the film's positive reception will draw favorable attention to Christy's work, increasing its chances of winning. The editorial also indirectly supports the link between film_critical_reception and christy_wins_best_makeup by framing the makeup as a 'key factor' in the film's overall success, which is a positive signal for the Academy.\"\n}",
+      "target_id": "film_critical_reception",
+      "target_type": "node",
+      "target_importance": 0.0167,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Christy's nominated film is a lavish period drama set in the 18th century, a genre historically favored by the Academy for its opportunities to showcase intricate and transformative makeup and hairstyling. Furthermore, the film's director is renowned for his meticulous attention to historical accuracy, ensuring the makeup and hairstyling will be both authentic and visually striking, which often appeals to Academy voters.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.78,
+      "absolute_shift": 0.13,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly supports the causal link from 'film_genre' to 'competition_strength' and indirectly to the outcome. The description of the film as a 'lavish period drama' aligns perfectly with historical Academy preferences for this category, suggesting a higher 'competition_strength' for Christy's work. The director's focus on historical accuracy and visually striking results further bolsters the idea that the makeup and hairstyling will be highly impactful and appealing to voters. This strengthens the path: film_genre -> competition_strength -> christy_wins_best_makeup. Additionally, the emphasis on historical accuracy and visual strikingness may also positively influence 'film_critical_reception', which in turn affects the outcome. The 'academy_tastes' node is also implicitly reinforced by the genre choice. Therefore, the probability of Christy winning has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.78,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly supports the causal link from 'film_genre' to 'competition_strength' and indirectly to the outcome. The description of the film as a 'lavish period drama' aligns perfectly with historical Academy preferences for this category, suggesting a higher 'competition_strength' for Christy's work. The director's focus on historical accuracy and visually striking results further bolsters the idea that the makeup and hairstyling will be highly impactful and appealing to voters. This strengthens the path: film_genre -> competition_strength -> christy_wins_best_makeup. Additionally, the emphasis on historical accuracy and visual strikingness may also positively influence 'film_critical_reception', which in turn affects the outcome. The 'academy_tastes' node is also implicitly reinforced by the genre choice. Therefore, the probability of Christy winning has increased.\"\n}",
+      "target_id": "film_genre",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent Academy voting patterns in Best Makeup and Hairstyling have shown a clear trend towards favoring films that emphasize historical accuracy and period detail, even over more avant-garde or science-fiction-based transformations. This historical preference has been particularly pronounced in the last five years, suggesting a consistent and deepening inclination within the Academy that strongly favors this aesthetic.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly reinforces the 'academy_tastes' node. Previously, 'academy_tastes' was a factor influencing the outcome, but the new data provides specific evidence of a consistent and deepening trend. This trend directly supports the causal path 'academy_tastes -> christy_wins_best_makeup'. If Christy's film aligns with this historical accuracy/period detail aesthetic, this information significantly increases her chances. Even if we don't know Christy's film genre yet, the Academy's clear preference makes this factor more predictive than previously assumed. This strengthens the overall probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly reinforces the 'academy_tastes' node. Previously, 'academy_tastes' was a factor influencing the outcome, but the new data provides specific evidence of a consistent and deepening trend. This trend directly supports the causal path 'academy_tastes -> christy_wins_best_makeup'. If Christy's film aligns with this historical accuracy/period detail aesthetic, this information significantly increases her chances. Even if we don't know Christy's film genre yet, the Academy's clear preference makes this factor more predictive than previously assumed. This strengthens the overall probability estimate.\"\n}",
+      "target_id": "academy_tastes",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While competition strength is often considered, recent Academy trends suggest a shift towards rewarding innovation and unique artistic vision over sheer technical complexity or perceived 'impact.' For instance, in the past few years, several underdog films with surprisingly creative makeup and hairstyling have triumphed over more conventionally elaborate entries, indicating that the 'wow factor' of competition might be less important than a distinct, memorable aesthetic that aligns with current artistic sensibilities.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'competition_strength -> christy_wins_best_makeup' link suggests that the Academy's voting is less about the objective 'strength' or elaborateness of the makeup and hairstyling and more about 'innovation and unique artistic vision.' This weakens the direct causal path where strong competition, as traditionally understood (e.g., high technical complexity, transformative effects often associated with period pieces or sci-fi), would directly lead to a win. While 'competition_strength' is still a factor, its definition and impact are diminished. The reasoning implies that Christy's chances might be lower if her work is perceived as conventionally strong or technically complex rather than uniquely innovative. This reduces the weight of this particular causal path, leading to a decreased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'competition_strength -> christy_wins_best_makeup' link suggests that the Academy's voting is less about the objective 'strength' or elaborateness of the makeup and hairstyling and more about 'innovation and unique artistic vision.' This weakens the direct causal path where strong competition, as traditionally understood (e.g., high technical complexity, transformative effects often associated with period pieces or sci-fi), would directly lead to a win. While 'competition_strength' is still a factor, its definition and impact are diminished. The reasoning implies that Christy's chances might be lower if her work is perceived as conventionally strong or technically complex rather than uniquely innovative. This reduces the weight of this particular causal path, leading to a decreased probability estimate.\"\n}",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "target_type": "edge",
+      "target_importance": 0.0595,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While a large film budget can facilitate elaborate makeup, recent Academy trends suggest a shift towards recognizing innovative and artistic makeup/hairstyling achieved with more modest budgets, especially in independent or genre films, rather than simply the most expensive or transformative work. For instance, a film with a smaller budget that pushes creative boundaries might be favored over a blockbuster with extensive but perhaps less inspired effects.",
+      "probe_generated": true,
+      "success": false,
+      "updated_probability": null,
+      "absolute_shift": null,
+      "shift_direction": null,
+      "reasoning": "",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'film_budget -> competition_strength' link is significant. While a larger budget can enable more elaborate work, the new information suggests the Academy is increasingly valuing innovation and artistry, potentially irrespective of budget size. This weakens the direct causal path where a high film budget would translate to stronger competition and a higher chance of winning",
+      "target_id": "film_budget->competition_strength",
+      "target_type": "edge",
+      "target_importance": 0.0476,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While the Academy has historically shown preferences, recent years have seen a push towards recognizing more avant-garde and less traditional makeup and hairstyling work. This year, the Academy has publicly stated a desire to break from past trends and reward innovation, potentially diminishing the influence of 'academy tastes' in favor of recognizing groundbreaking artistic choices.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly targets the 'academy_tastes' node and its influence on the outcome. The assertion that the Academy is actively seeking to reward innovation and break from past trends weakens the causal path from 'academy_tastes' to 'christy_wins_best_makeup'. While 'academy_tastes' was a significant factor, its impact is now diminished. The other causal paths remain unaffected. The decrease in probability reflects this reduced influence of historical preferences, which might have previously favored Christy's work if it aligned with traditional Academy leanings. However, the specific nature of Christy's work and its potential for innovation are not detailed, so the decrease is moderate rather than drastic.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly targets the 'academy_tastes' node and its influence on the outcome. The assertion that the Academy is actively seeking to reward innovation and break from past trends weakens the causal path from 'academy_tastes' to 'christy_wins_best_makeup'. While 'academy_tastes' was a significant factor, its impact is now diminished. The other causal paths remain unaffected. The decrease in probability reflects this reduced influence of historical preferences, which might have previously favored Christy's work if it aligned with traditional Academy leanings. However, the specific nature of Christy's work and its potential for innovation are not detailed, so the decrease is moderate rather than drastic.\"\n}",
+      "target_id": "academy_tastes->christy_wins_best_makeup",
+      "target_type": "edge",
+      "target_importance": 0.0238,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of the last five Academy Awards for Best Makeup and Hairstyling reveals a significant trend: in all instances where a nominee's work was perceived as groundbreaking or artistically transformative, it won, irrespective of the film's overall critical reception or budget. This suggests that the sheer impact and 'wow factor' of the makeup and hairstyling – the core of 'competition_strength' – is an even more dominant factor than previously understood, potentially overshadowing other considerations.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'competition_strength -> christy_wins_best_makeup' link actually reinforces its importance, rather than weakening it. The new information explicitly states that 'groundbreaking or artistically transformative' work (the essence of competition_strength) has universally won in the last five years, 'irrespective of the film's overall critical reception or budget.' This strengthens the causal path by indicating it's a dominant, perhaps even overriding, factor. My previous model acknowledged this path, but the new data suggests its weight is even greater than initially estimated. Therefore, if Christy's work is perceived as having a high 'wow factor' or being transformative, her chances are significantly improved, leading to an increased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'competition_strength -> christy_wins_best_makeup' link actually reinforces its importance, rather than weakening it. The new information explicitly states that 'groundbreaking or artistically transformative' work (the essence of competition_strength) has universally won in the last five years, 'irrespective of the film's overall critical reception or budget.' This strengthens the causal path by indicating it's a dominant, perhaps even overriding, factor. My previous model acknowledged this path, but the new data suggests its weight is even greater than initially estimated. Therefore, if Christy's work is perceived as having a high 'wow factor' or being transformative, her chances are significantly improved, leading to an increased probability estimate.\"\n}",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "target_type": "edge",
+      "target_importance": 0.0595,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that the film Christy worked on had an unusually large budget specifically allocated to the makeup and hairstyling department, far exceeding industry averages for its genre. This suggests that the resources available for transformative and intricate work were exceptionally high, potentially giving Christy's team a significant advantage in creating standout designs that would impress the competition.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'film_budget->competition_strength' actually provides *support* for the strength of this link, rather than undermining it. The new information states that Christy's film had an unusually large budget specifically for makeup and hairstyling. This directly strengthens the causal path: a larger budget (input) leads to greater resources for intricate and transformative work, thereby increasing the 'competition_strength' (intermediate node), which in turn positively influences 'christy_wins_best_makeup' (outcome). This suggests Christy's work is likely to be of very high quality relative to competitors, increasing the probability of her winning.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'film_budget->competition_strength' actually provides *support* for the strength of this link, rather than undermining it. The new information states that Christy's film had an unusually large budget specifically for makeup and hairstyling. This directly strengthens the causal path: a larger budget (input) leads to greater resources for intricate and transformative work, thereby increasing the 'competition_strength' (intermediate node), which in turn positively influences 'christy_wins_best_makeup' (outcome). This suggests Christy's work is likely to be of very high quality relative to competitors, increasing the probability of her winning.\"\n}",
+      "target_id": "film_budget->competition_strength",
+      "target_type": "edge",
+      "target_importance": 0.0476,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "We've been discussing how the strength of the competition influences Christy's chances of winning Best Makeup and Hairstyling. However, consider this: What if Christy's exceptional work, even if it's not the most elaborate, has a tendency to *elevate* the perceived quality of the *entire* competition? When a nominee like Christy delivers a truly standout, innovative, or emotionally resonant makeup/hairstyling achievement, it can sometimes overshadow or redefine what voters consider 'strong competition,' making other nominees appear less impactful in comparison.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.68,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that Christy's exceptional work can *redefine* the competition, potentially making other nominees appear weaker by comparison, rather than simply being judged against a static 'competition_strength'. This implies that the 'competition_strength' node might not be a direct, independent input to 'christy_wins_best_makeup' as previously modeled. Instead, Christy's own quality (which is implicitly part of the inputs to 'competition_strength' from other nodes like 'film_genre' and 'film_budget') could have an even more direct and positive impact on her win probability by diminishing the perceived strength of others. This reframes the 'competition_strength -> christy_wins_best_makeup' link. While the core idea that relative quality matters remains, the proposed mechanism suggests Christy's work has an outsized impact by influencing the *perception* of the competition, not just being a component within it. This is a subtle but potentially important enhancement to the model's understanding of how Christy's quality interacts with the competitive landscape, leading to a slight increase in probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.68,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that Christy's exceptional work can *redefine* the competition, potentially making other nominees appear weaker by comparison, rather than simply being judged against a static 'competition_strength'. This implies that the 'competition_strength' node might not be a direct, independent input to 'christy_wins_best_makeup' as previously modeled. Instead, Christy's own quality (which is implicitly part of the inputs to 'competition_strength' from other nodes like 'film_genre' and 'film_budget') could have an even more direct and positive impact on her win probability by diminishing the perceived strength of others. This reframes the 'competition_strength -> christy_wins_best_makeup' link. While the core idea that relative quality matters remains, the proposed mechanism suggests Christy's work has an outsized impact by influencing the *perception* of the competition, not just being a component within it. This is a subtle but potentially important enhancement to the model's understanding of how Christy's quality interacts with the competitive landscape, leading to a slight increase in probability.\"\n}",
+      "target_id": "competition_strength->christy_wins_best_makeup",
+      "target_type": "edge",
+      "target_importance": 0.0595,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "We've been considering how the overall quality and impact of the makeup and hairstyling in competing films might influence the outcome. However, it's also plausible that a consistently high level of innovation and artistry demonstrated by strong competing films could, over time, shape the Academy's evolving tastes and preferences for what they consider award-worthy in this category. Could the strength of the competition actually be influencing what the Academy starts to value?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.68,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that 'competition_strength' might influence 'academy_tastes', reversing the assumed direction of causality. Previously, 'academy_tastes' was an independent factor influencing 'christy_wins_best_makeup'. Now, the suggestion is that strong competition can *shape* those tastes. This implies that if the competition is particularly innovative and high-quality, it might elevate the general standard the Academy looks for, potentially making Christy's work stand out more if it aligns with this elevated standard. However, the original link from 'competition_strength' directly to 'christy_wins_best_makeup' remains, and this new proposed feedback loop is more about how the *category's standards* evolve rather than a direct impact on Christy's win probability itself. It suggests a more dynamic relationship where excellent competition can raise the bar. This is a subtle but potentially positive shift, as it implies the category itself is healthy and evolving, which could benefit a strong contender. The direct path 'competition_strength -> christy_wins_best_makeup' is still the primary driver here, but the idea that competition influences the very 'tastes' the Academy applies adds a layer of positive reinforcement to strong showings within the category. Therefore, a slight increase in probability is warranted.",
+      "raw_response": "{\n  \"updated_probability\": 0.68,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that 'competition_strength' might influence 'academy_tastes', reversing the assumed direction of causality. Previously, 'academy_tastes' was an independent factor influencing 'christy_wins_best_makeup'. Now, the suggestion is that strong competition can *shape* those tastes. This implies that if the competition is particularly innovative and high-quality, it might elevate the general standard the Academy looks for, potentially making Christy's work stand out more if it aligns with this elevated standard. However, the original link from 'competition_strength' directly to 'christy_wins_best_makeup' remains, and this new proposed feedback loop is more about how the *category's standards* evolve rather than a direct impact on Christy's win probability itself. It suggests a more dynamic relationship where excellent competition can raise the bar. This is a subtle but potentially positive shift, as it implies the category itself is healthy and evolving, which could benefit a strong contender. The direct path 'competition_strength -> christy_wins_best_makeup' is still the primary driver here, but the idea that competition influences the very 'tastes' the Academy applies adds a layer of positive reinforcement to strong showings within the category. Therefore, a slight increase in probability is warranted.\"\n}",
+      "target_id": "competition_strength->academy_tastes",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "It's plausible that Christy's past wins weren't just a result of her individual talent, but also influenced by the general quality of the competition in those years. If the makeup and hairstyling in other nominated films were generally less impressive in the years she won, her wins might have been more about relative strength than absolute excellence. How would knowing that the competition in her winning years was historically weak change your assessment of her chances this year?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal link 'competition_strength -> christy_past_wins' is significant. The original reasoning assumed that Christy's past wins were a strong indicator of her current ability to excel and win. The new information suggests that her past wins might be more attributable to weaker competition in those years rather than solely her individual merit or the inherent quality of her work. This weakens the predictive power of 'christy_past_wins' as a direct indicator of her likelihood to win this year. While 'christy_past_wins' still has a direct link to the outcome, its indirect influence through past success being a proxy for current quality is diminished. The primary causal paths affected are those where 'christy_past_wins' implicitly suggested a high 'competition_strength' in previous years that would translate to current high performance. By undermining this assumption, the confidence in 'christy_past_wins' as a predictor is reduced, leading to a decrease in the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal link 'competition_strength -> christy_past_wins' is significant. The original reasoning assumed that Christy's past wins were a strong indicator of her current ability to excel and win. The new information suggests that her past wins might be more attributable to weaker competition in those years rather than solely her individual merit or the inherent quality of her work. This weakens the predictive power of 'christy_past_wins' as a direct indicator of her likelihood to win this year. While 'christy_past_wins' still has a direct link to the outcome, its indirect influence through past success being a proxy for current quality is diminished. The primary causal paths affected are those where 'christy_past_wins' implicitly suggested a high 'competition_strength' in previous years that would translate to current high performance. By undermining this assumption, the confidence in 'christy_past_wins' as a predictor is reduced, leading to a decrease in the overall probability.\"\n}",
+      "target_id": "competition_strength->christy_past_wins",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that Christy's film is a critically acclaimed historical drama that was known for its groundbreaking and transformative makeup effects. However, a scandal emerged close to the awards ceremony, revealing that a significant portion of the makeup and hairstyling budget was secretly used to cover up the film's poor box office performance, leading to a last-minute, drastic reduction in the quality and execution of the final makeup and hairstyling work. How would this information about the budget's misallocation and its impact on the final execution affect your probability assessment for Christy winning Best Makeup and Hairstyling?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.35000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The new information significantly challenges the causal path related to the film's budget and its impact on the final execution of the makeup and hairstyling. While the film is a critically acclaimed historical drama (which would normally boost its chances via 'film_genre' -> 'competition_strength' and 'film_critical_reception' -> 'christy_wins_best_makeup'), the revelation of budget misallocation and subsequent drastic reduction in quality is critical. The 'film_budget' node, though not directly linked to the outcome, influences 'competition_strength'. The scandal implies that the initial perception of a potentially strong 'competition_strength' due to genre and critical reception is now undermined by a severely compromised execution. The 'competition_strength' node is directly linked to the outcome, and a significant degradation in the actual quality of the makeup and hairstyling work, despite initial promise, directly lowers the likelihood of winning. The 'film_critical_reception' might still be high for the film overall, but the specific makeup and hairstyling quality, which is what the award is for, has been demonstrably harmed.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information significantly challenges the causal path related to the film's budget and its impact on the final execution of the makeup and hairstyling. While the film is a critically acclaimed historical drama (which would normally boost its chances via 'film_genre' -> 'competition_strength' and 'film_critical_reception' -> 'christy_wins_best_makeup'), the revelation of budget misallocation and subsequent drastic reduction in quality is critical. The 'film_budget' node, though not directly linked to the outcome, influences 'competition_strength'. The scandal implies that the initial perception of a potentially strong 'competition_strength' due to genre and critical reception is now undermined by a severely compromised execution. The 'competition_strength' node is directly linked to the outcome, and a significant degradation in the actual quality of the makeup and hairstyling work, despite initial promise, directly lowers the likelihood of winning. The 'film_critical_reception' might still be high for the film overall, but the specific makeup and hairstyling quality, which is what the award is for, has been demonstrably harmed.\"\n}",
+      "target_id": "budget_misallocation_impact",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a major scandal erupts regarding the integrity of the voting process for the Academy Awards this year, specifically concerning allegations of vote-buying. How would this information change your assessment of Christy's chances of winning Best Makeup and Hairstyling, given that the integrity of the voting process is a direct input into the outcome?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.5,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly attacks the integrity of the voting process, which is a critical input to the outcome node 'christy_wins_best_makeup'. The direct causal link from 'academy_tastes' to the outcome is now severely compromised, as the established preferences of the Academy might be overshadowed or manipulated by the alleged vote-buying. While other factors like 'competition_strength' and 'film_critical_reception' still play a role, the fundamental mechanism of how a winner is chosen is now suspect. This scandal introduces a high degree of uncertainty and suggests that factors other than merit or established taste could heavily influence the result. Therefore, the probability of Christy winning based on the original causal model's assumptions is drastically reduced.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly attacks the integrity of the voting process, which is a critical input to the outcome node 'christy_wins_best_makeup'. The direct causal link from 'academy_tastes' to the outcome is now severely compromised, as the established preferences of the Academy might be overshadowed or manipulated by the alleged vote-buying. While other factors like 'competition_strength' and 'film_critical_reception' still play a role, the fundamental mechanism of how a winner is chosen is now suspect. This scandal introduces a high degree of uncertainty and suggests that factors other than merit or established taste could heavily influence the result. Therefore, the probability of Christy winning based on the original causal model's assumptions is drastically reduced.\"\n}",
+      "target_id": "voting_process_integrity",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Christy recently completed a masterclass in advanced prosthetics application. While this demonstrates her dedication to honing her craft, the specific techniques learned in this particular masterclass are not typically featured in the types of films that are usually nominated for Best Makeup and Hairstyling at the Academy Awards.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The new information challenges the direct link between Christy's skills and the outcome. While the masterclass signifies Christy's dedication, it's explicitly stated that the learned skills (advanced prosthetics) are not typically relevant to films nominated in this category. This weakens the implicit assumption that her skill development directly translates to a competitive edge for this specific award. The causal path `christy_past_wins -> christy_wins_best_makeup` is indirectly affected because the masterclass might be seen as a form of skill development that *could* enhance her past wins, but its lack of relevance to the award's typical scope diminishes its impact on this specific outcome. The core drivers like `competition_strength` and `academy_tastes` remain, but the personal advantage Christy might gain from her latest training is now less significant than initially assumed. Therefore, the probability is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information challenges the direct link between Christy's skills and the outcome. While the masterclass signifies Christy's dedication, it's explicitly stated that the learned skills (advanced prosthetics) are not typically relevant to films nominated in this category. This weakens the implicit assumption that her skill development directly translates to a competitive edge for this specific award. The causal path `christy_past_wins -> christy_wins_best_makeup` is indirectly affected because the masterclass might be seen as a form of skill development that *could* enhance her past wins, but its lack of relevance to the award's typical scope diminishes its impact on this specific outcome. The core drivers like `competition_strength` and `academy_tastes` remain, but the personal advantage Christy might gain from her latest training is now less significant than initially assumed. Therefore, the probability is decreased.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Christy recently gave an interview where she discussed her personal passion for historical accuracy in period dramas. She mentioned that while she enjoys the artistic freedom of science fiction films, her true passion lies in recreating authentic historical looks. This passion, she feels, drives her to work harder on projects that align with her interests.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.72,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The new information suggests a stronger personal drive for Christy when working on projects aligned with her passion, specifically historical accuracy in period dramas. This strengthens the causal link between her personal interest and her performance/effort, which indirectly impacts 'competition_strength' if she is indeed working on a period piece. While the interview doesn't directly change the network structure, it provides a stronger prior for her motivation and dedication to specific types of projects. If her current project for the 98th Academy Awards is a period drama, this information significantly boosts the likelihood of her work being exceptionally detailed and impactful, thus increasing the probability of her winning. The causal path affected is primarily the implicit link between her passion and the quality of her work ('competition_strength'), which then directly influences the outcome ('christy_wins_best_makeup'). The initial estimate of 0.65 is updated upwards to 0.72 to reflect this enhanced likelihood of exceptional performance driven by personal passion.",
+      "raw_response": "{\n  \"updated_probability\": 0.72,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information suggests a stronger personal drive for Christy when working on projects aligned with her passion, specifically historical accuracy in period dramas. This strengthens the causal link between her personal interest and her performance/effort, which indirectly impacts 'competition_strength' if she is indeed working on a period piece. While the interview doesn't directly change the network structure, it provides a stronger prior for her motivation and dedication to specific types of projects. If her current project for the 98th Academy Awards is a period drama, this information significantly boosts the likelihood of her work being exceptionally detailed and impactful, thus increasing the probability of her winning. The causal path affected is primarily the implicit link between her passion and the quality of her work ('competition_strength'), which then directly influences the outcome ('christy_wins_best_makeup'). The initial estimate of 0.65 is updated upwards to 0.72 to reflect this enhanced likelihood of exceptional performance driven by personal passion.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "0x14aa27565d1f23e7770fb56459deafa6d4e179753e936ce0a6b24fa874e939f1",
+    "question_text": "Will Christy win Best Makeup and Hairstyling at the 98th Academy Awards?",
+    "source": "polymarket",
+    "condition": "one-turn",
+    "initial_probability": 0.65,
+    "n_probes": 20,
+    "n_successful": 19,
+    "mean_absolute_shift": 0.12789473684210528,
+    "max_absolute_shift": 0.5
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0.006500000000000001,
+  "aggregate_metrics": {
+    "ssr": 1.7760617760617765,
+    "mean_shift_high": 0.13142857142857145,
+    "mean_shift_low": 0.074,
+    "asymmetry_index": 0.753424657534247,
+    "mean_shift_negate": 0.09166666666666672,
+    "mean_shift_strengthen": 0.12166666666666666,
+    "fnar": 0.75,
+    "n_accepted": 3,
+    "n_spurious": 4,
+    "critical_path_premium": -0.03188888888888888,
+    "mean_shift_on_path": 0.11111111111111113,
+    "mean_shift_off_path": 0.14300000000000002,
+    "importance_sensitivity_correlation": 0.09999999999999998,
+    "control_sensitivity": 1
+  }
+}

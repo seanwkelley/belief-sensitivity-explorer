@@ -1,0 +1,1282 @@
+{
+  "question_id": "777e45ec0e466493a45b8a56e8569b124b04f9f49da990393971011932c7cd13",
+  "question_text": "According to Wikipedia, will a vaccine have been developed for Rocky Mountain spotted fever (RMSF) by 2025-12-28?",
+  "source": "wikipedia",
+  "initial_probability": 0.15,
+  "nodes": [
+    {
+      "id": "prior_vaccine_development_success",
+      "description": "Historical success rate of vaccine development for similar tick-borne diseases.",
+      "role": "factor"
+    },
+    {
+      "id": "rmsf_pathogen_complexity",
+      "description": "The inherent biological complexity of the Rickettsia rickettsii bacterium, the causative agent of RMSF, in terms of targets for vaccine development.",
+      "role": "factor"
+    },
+    {
+      "id": "funding_for_rmsf_research",
+      "description": "The level of financial investment dedicated to RMSF research and vaccine development.",
+      "role": "factor"
+    },
+    {
+      "id": "public_health_priority",
+      "description": "The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments.",
+      "role": "factor"
+    },
+    {
+      "id": "regulatory_hurdles",
+      "description": "The complexity and duration of the regulatory approval process for new vaccines.",
+      "role": "factor"
+    },
+    {
+      "id": "scientific_breakthroughs",
+      "description": "The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF.",
+      "role": "factor"
+    },
+    {
+      "id": "vaccine_developed_by_2025",
+      "description": "A vaccine for Rocky Mountain spotted fever (RMSF) has been developed by 2025-12-28.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "prior_vaccine_development_success",
+      "to": "vaccine_developed_by_2025",
+      "mechanism": "Higher historical success rates increase the likelihood of future success."
+    },
+    {
+      "from": "rmsf_pathogen_complexity",
+      "to": "vaccine_developed_by_2025",
+      "mechanism": "More complex pathogens are harder to target with effective vaccines, decreasing likelihood."
+    },
+    {
+      "from": "funding_for_rmsf_research",
+      "to": "vaccine_developed_by_2025",
+      "mechanism": "Increased funding accelerates research and development efforts."
+    },
+    {
+      "from": "public_health_priority",
+      "to": "funding_for_rmsf_research",
+      "mechanism": "Higher priority leads to increased allocation of resources."
+    },
+    {
+      "from": "public_health_priority",
+      "to": "vaccine_developed_by_2025",
+      "mechanism": "A high public health priority can drive faster development and regulatory pathways."
+    },
+    {
+      "from": "regulatory_hurdles",
+      "to": "vaccine_developed_by_2025",
+      "mechanism": "Significant regulatory hurdles can delay or prevent vaccine approval."
+    },
+    {
+      "from": "scientific_breakthroughs",
+      "to": "vaccine_developed_by_2025",
+      "mechanism": "Unforeseen scientific advancements can drastically speed up vaccine development."
+    },
+    {
+      "from": "prior_vaccine_development_success",
+      "to": "rmsf_pathogen_complexity",
+      "mechanism": "Past successes might indicate that similar pathogens are manageable, but RMSF's specific complexity is a separate factor."
+    },
+    {
+      "from": "funding_for_rmsf_research",
+      "to": "scientific_breakthroughs",
+      "mechanism": "More research funding increases the chances of encountering unexpected breakthroughs."
+    },
+    {
+      "from": "public_health_priority",
+      "to": "regulatory_hurdles",
+      "mechanism": "High priority may lead to expedited regulatory review, potentially lowering effective hurdles."
+    }
+  ],
+  "reasoning": "The development of a vaccine for Rocky Mountain Spotted Fever (RMSF) by late 2025 is unlikely. While there is ongoing research, RMSF is caused by a complex bacterium (Rickettsia rickettsii) for which no vaccine currently exists. Historical success rates for vaccines against similar tick-borne diseases are mixed, and the specific challenges of targeting this pathogen remain significant. Current funding and public health priority, while present, do not appear sufficient to overcome these biological and developmental hurdles within the short timeframe, especially considering typical regulatory processes. Unforeseen scientific breakthroughs are the most significant wildcard, but their probability is inherently low.",
+  "network_analysis": {
+    "n_nodes": 7,
+    "n_edges": 10,
+    "density": 0.2381,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 7,
+    "outcome_node": "vaccine_developed_by_2025",
+    "node_metrics": [
+      {
+        "node_id": "prior_vaccine_development_success",
+        "description": "Historical success rate of vaccine development for similar tick-borne diseases.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0746,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "rmsf_pathogen_complexity",
+        "description": "The inherent biological complexity of the Rickettsia rickettsii bacterium, the causative agent of RMSF, in terms of targets for vaccine development.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.1667,
+        "pagerank": 0.1063,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "funding_for_rmsf_research",
+        "description": "The level of financial investment dedicated to RMSF research and vaccine development.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 2,
+        "betweenness": 0.0333,
+        "closeness": 0.1667,
+        "pagerank": 0.0957,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "public_health_priority",
+        "description": "The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 3,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0746,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "regulatory_hurdles",
+        "description": "The complexity and duration of the regulatory approval process for new vaccines.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.1667,
+        "pagerank": 0.0957,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "scientific_breakthroughs",
+        "description": "The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.2222,
+        "pagerank": 0.1153,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "vaccine_developed_by_2025",
+        "description": "A vaccine for Rocky Mountain spotted fever (RMSF) has been developed by 2025-12-28.",
+        "role": "outcome",
+        "in_degree": 6,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 1,
+        "pagerank": 0.4378,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "prior_vaccine_development_success",
+        "target": "vaccine_developed_by_2025",
+        "mechanism": "Higher historical success rates increase the likelihood of future success.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "prior_vaccine_development_success",
+        "target": "rmsf_pathogen_complexity",
+        "mechanism": "Past successes might indicate that similar pathogens are manageable, but RMSF's specific complexity is a separate factor.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": false
+      },
+      {
+        "source": "rmsf_pathogen_complexity",
+        "target": "vaccine_developed_by_2025",
+        "mechanism": "More complex pathogens are harder to target with effective vaccines, decreasing likelihood.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "funding_for_rmsf_research",
+        "target": "vaccine_developed_by_2025",
+        "mechanism": "Increased funding accelerates research and development efforts.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "funding_for_rmsf_research",
+        "target": "scientific_breakthroughs",
+        "mechanism": "More research funding increases the chances of encountering unexpected breakthroughs.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": false
+      },
+      {
+        "source": "public_health_priority",
+        "target": "funding_for_rmsf_research",
+        "mechanism": "Higher priority leads to increased allocation of resources.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": false
+      },
+      {
+        "source": "public_health_priority",
+        "target": "vaccine_developed_by_2025",
+        "mechanism": "A high public health priority can drive faster development and regulatory pathways.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "public_health_priority",
+        "target": "regulatory_hurdles",
+        "mechanism": "High priority may lead to expedited regulatory review, potentially lowering effective hurdles.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": false
+      },
+      {
+        "source": "regulatory_hurdles",
+        "target": "vaccine_developed_by_2025",
+        "mechanism": "Significant regulatory hurdles can delay or prevent vaccine approval.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "scientific_breakthroughs",
+        "target": "vaccine_developed_by_2025",
+        "mechanism": "Unforeseen scientific advancements can drastically speed up vaccine development.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "funding_for_rmsf_research",
+        "description": "The level of financial investment dedicated to RMSF research and vaccine development.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "prior_vaccine_development_success",
+        "description": "Historical success rate of vaccine development for similar tick-borne diseases.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "public_health_priority",
+        "description": "The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments.",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "scientific_breakthroughs",
+        "description": "The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF.",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "funding_for_rmsf_research",
+        "description": "The level of financial investment dedicated to RMSF research and vaccine development.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "prior_vaccine_development_success",
+        "description": "Historical success rate of vaccine development for similar tick-borne diseases.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "public_health_priority",
+        "description": "The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments.",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "scientific_breakthroughs",
+        "description": "The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF.",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+        "description": "Higher historical success rates increase the likelihood of future success.",
+        "importance": 0.0238,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "rmsf_pathogen_complexity->vaccine_developed_by_2025",
+        "description": "More complex pathogens are harder to target with effective vaccines, decreasing likelihood.",
+        "importance": 0.0238,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "funding_for_rmsf_research->scientific_breakthroughs",
+        "description": "More research funding increases the chances of encountering unexpected breakthroughs.",
+        "importance": 0.0476,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+        "description": "Higher historical success rates increase the likelihood of future success.",
+        "importance": 0.0238,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "rmsf_pathogen_complexity->vaccine_developed_by_2025",
+        "description": "More complex pathogens are harder to target with effective vaccines, decreasing likelihood.",
+        "importance": 0.0238,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "funding_for_rmsf_research->scientific_breakthroughs",
+        "description": "More research funding increases the chances of encountering unexpected breakthroughs.",
+        "importance": 0.0476,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+        "description": "Higher historical success rates increase the likelihood of future success.",
+        "importance": 0.0238,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "prior_vaccine_development_success->scientific_breakthroughs",
+        "description": "Potential link: Historical success rate of vaccine development for similar tick-borne diseases. -> The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "prior_vaccine_development_success->public_health_priority",
+        "description": "Potential link: Historical success rate of vaccine development for similar tick-borne diseases. -> The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "funding_for_rmsf_research",
+      "description": "The level of financial investment dedicated to RMSF research and vaccine development.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "prior_vaccine_development_success",
+      "description": "Historical success rate of vaccine development for similar tick-borne diseases.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "public_health_priority",
+      "description": "The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments.",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "scientific_breakthroughs",
+      "description": "The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF.",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "funding_for_rmsf_research",
+      "description": "The level of financial investment dedicated to RMSF research and vaccine development.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "prior_vaccine_development_success",
+      "description": "Historical success rate of vaccine development for similar tick-borne diseases.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "public_health_priority",
+      "description": "The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments.",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "scientific_breakthroughs",
+      "description": "The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF.",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "description": "Higher historical success rates increase the likelihood of future success.",
+      "importance": 0.0238,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "rmsf_pathogen_complexity->vaccine_developed_by_2025",
+      "description": "More complex pathogens are harder to target with effective vaccines, decreasing likelihood.",
+      "importance": 0.0238,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "funding_for_rmsf_research->scientific_breakthroughs",
+      "description": "More research funding increases the chances of encountering unexpected breakthroughs.",
+      "importance": 0.0476,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "description": "Higher historical success rates increase the likelihood of future success.",
+      "importance": 0.0238,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "rmsf_pathogen_complexity->vaccine_developed_by_2025",
+      "description": "More complex pathogens are harder to target with effective vaccines, decreasing likelihood.",
+      "importance": 0.0238,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "funding_for_rmsf_research->scientific_breakthroughs",
+      "description": "More research funding increases the chances of encountering unexpected breakthroughs.",
+      "importance": 0.0476,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "description": "Higher historical success rates increase the likelihood of future success.",
+      "importance": 0.0238,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "prior_vaccine_development_success->scientific_breakthroughs",
+      "description": "Potential link: Historical success rate of vaccine development for similar tick-borne diseases. -> The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "prior_vaccine_development_success->public_health_priority",
+      "description": "Potential link: Historical success rate of vaccine development for similar tick-borne diseases. -> The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Imagine that a major pharmaceutical company has decided to exclusively develop an RMSF vaccine, pouring in unprecedented private funding that dwarfs all previous public investment. However, due to internal strategic shifts unrelated to RMSF's scientific merit or public health need, they abruptly halt all funding for this project after only a few months, deeming it unprofitable. In this scenario, the level of 'funding_for_rmsf_research' as traditionally understood becomes largely irrelevant to the outcome.",
+      "probe_type": "node_negate_high",
+      "target_id": "funding_for_rmsf_research",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "description": "The level of financial investment dedicated to RMSF research and vaccine development."
+    },
+    {
+      "probe_text": "What if historical success rates for developing vaccines against tick-borne diseases are misleading for RMSF? For instance, imagine that previous successful tick-borne disease vaccines targeted proteins that are not present or are highly variable in Rickettsia rickettsii, making past successes entirely irrelevant to the unique challenges of developing an RMSF vaccine.",
+      "probe_type": "node_negate_high",
+      "target_id": "prior_vaccine_development_success",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "Historical success rate of vaccine development for similar tick-borne diseases."
+    },
+    {
+      "probe_text": "While RMSF is a serious disease, recent trends show that other emerging infectious diseases (like COVID-19 or Mpox) have commanded a significantly higher share of public health resources and attention, pushing RMSF lower on the global health agenda. This diminished perceived urgency might mean that 'public_health_priority' for RMSF is actually very low, contrary to what might be assumed from its severity alone, potentially slowing down related research and development efforts.",
+      "probe_type": "node_negate_medium",
+      "target_id": "public_health_priority",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments."
+    },
+    {
+      "probe_text": "Let's reconsider the role of scientific breakthroughs. Given that RMSF is caused by a bacterium, a well-understood class of pathogens, and that vaccine development for bacterial diseases has been a mature field for decades, it's unlikely that entirely novel or unexpected 'breakthroughs' in vaccinology or immunology will be the primary driver for an RMSF vaccine. Existing scientific knowledge and incremental progress are more likely to be the key factors.",
+      "probe_type": "node_negate_low",
+      "target_id": "scientific_breakthroughs",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF."
+    },
+    {
+      "probe_text": "A recent congressional hearing highlighted the significant underfunding of tick-borne disease research, specifically calling out RMSF. Following this, a bipartisan bill was introduced that allocates an unprecedented $50 million over the next five years specifically for RMSF vaccine development, significantly exceeding prior funding levels and signaling a major shift in resource allocation.",
+      "probe_type": "node_strengthen",
+      "target_id": "funding_for_rmsf_research",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "description": "The level of financial investment dedicated to RMSF research and vaccine development."
+    },
+    {
+      "probe_text": "A recent meta-analysis published in 'The Journal of Tropical Medicine' reviewed vaccine development for tick-borne illnesses over the last 30 years. It found a remarkably high success rate (over 80%) in developing effective vaccines for diseases with similar vector-borne transmission mechanisms and pathogen structures to RMSF, suggesting that the general scientific and technological groundwork for such vaccines is exceptionally robust.",
+      "probe_type": "node_strengthen",
+      "target_id": "prior_vaccine_development_success",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "Historical success rate of vaccine development for similar tick-borne diseases."
+    },
+    {
+      "probe_text": "The Centers for Disease Control and Prevention (CDC) recently issued a 'Urgent Health Alert' for Rocky Mountain Spotted Fever, highlighting a significant and concerning increase in reported cases across several southern states, particularly among children. This alert explicitly calls for accelerated research and development of preventative measures, including a vaccine, and has prompted the National Institutes of Health (NIH) to designate RMSF vaccine research as a top-tier priority for immediate funding.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "public_health_priority",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments."
+    },
+    {
+      "probe_text": "Recent research published in 'Nature Immunology' has detailed a novel mRNA vaccine platform that has shown unprecedented efficacy in preclinical trials against other tick-borne encephalitis viruses, which share some genetic similarities with RMSF. Furthermore, a separate study identified a previously uncharacterized surface protein on the Rickettsia rickettsii bacterium that appears to be highly conserved and immunogenic, a potential game-changer for vaccine design.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "scientific_breakthroughs",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF."
+    },
+    {
+      "probe_text": "While historical success rates in vaccine development are generally informative, they may not strongly predict success for RMSF because the Rickettsia rickettsii bacterium presents unique immunological challenges not encountered in previously developed vaccines. For instance, many successful vaccines target extracellular bacteria or viruses with well-defined surface antigens, whereas Rickettsia rickettsii is an obligate intracellular pathogen with a complex life cycle and antigenic variation, making it a fundamentally different and more difficult target.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0238,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Higher historical success rates increase the likelihood of future success."
+    },
+    {
+      "probe_text": "Recent advancements in genomic sequencing and synthetic biology have drastically reduced the challenges associated with targeting complex pathogens. For RMSF, new research has identified specific surface proteins that are highly conserved across strains and elicit a strong immune response, effectively bypassing the historical difficulties associated with its complexity. This suggests that the pathogen's complexity might be less of a barrier than previously understood.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "rmsf_pathogen_complexity->vaccine_developed_by_2025",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0238,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "More complex pathogens are harder to target with effective vaccines, decreasing likelihood."
+    },
+    {
+      "probe_text": "While increased funding for RMSF research is generally beneficial, it's not guaranteed to lead to scientific breakthroughs. Sometimes, breakthroughs in complex biological systems arise from unexpected theoretical insights or serendipitous discoveries rather than simply the volume of financial investment. It's possible that even with substantial funding, the specific challenges of RMSF's pathogen may require a conceptual leap that cannot be directly bought.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "funding_for_rmsf_research->scientific_breakthroughs",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0476,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "More research funding increases the chances of encountering unexpected breakthroughs."
+    },
+    {
+      "probe_text": "Recent advancements in mRNA vaccine technology, demonstrated successfully with COVID-19 vaccines, have shown that platform technologies can significantly reduce the time and complexity of developing vaccines for a wide range of pathogens. This suggests that historical success rates in vaccine development might be an even stronger predictor of future success than previously thought, as established platforms can be rapidly adapted to new targets like RMSF.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0238,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Higher historical success rates increase the likelihood of future success."
+    },
+    {
+      "probe_text": "Recent genomic and proteomic analyses have revealed that Rickettsia rickettsii possesses a highly variable surface antigen repertoire and employs sophisticated immune evasion mechanisms, significantly more so than previously understood for other tick-borne pathogens. This increased complexity in the pathogen's structure and defense strategies presents a more formidable challenge for vaccine development, suggesting that the 'rmsf_pathogen_complexity' node has an even stronger negative impact on 'vaccine_developed_by_2025' than initially modeled.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "rmsf_pathogen_complexity->vaccine_developed_by_2025",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0238,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "More complex pathogens are harder to target with effective vaccines, decreasing likelihood."
+    },
+    {
+      "probe_text": "Recent advancements in high-throughput screening technologies, often driven by significant investment in biomedical research, have dramatically increased the rate at which novel drug targets and vaccine platforms can be identified. This suggests that the positive feedback loop between increased funding for RMSF research and the likelihood of scientific breakthroughs is potentially stronger than initially considered, as these broader technological advancements can be rapidly leveraged.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "funding_for_rmsf_research->scientific_breakthroughs",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0476,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "More research funding increases the chances of encountering unexpected breakthroughs."
+    },
+    {
+      "probe_text": "It's been argued that the success of vaccine development for similar diseases might not *cause* future success, but rather, it's the *actual development* of a successful RMSF vaccine that could inspire and inform the development of vaccines for other tick-borne diseases. This suggests that the causal arrow might be reversed: successful vaccine development (in general or for RMSF specifically) could be a precursor to the perceived 'prior success rate' by influencing future research and confidence, rather than the other way around.",
+      "probe_type": "edge_reverse",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0238,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Higher historical success rates increase the likelihood of future success."
+    },
+    {
+      "probe_text": "While historical success in developing vaccines for similar tick-borne diseases doesn't directly guarantee future breakthroughs for RMSF, it's plausible that the very process of achieving those past successes has led to a deeper understanding of relevant immunological pathways or vaccinology techniques. This accumulated knowledge could indirectly increase the *probability* of future unexpected scientific advancements, even for a distinct pathogen like RMSF.",
+      "probe_type": "edge_spurious",
+      "target_id": "prior_vaccine_development_success->scientific_breakthroughs",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Historical success rate of vaccine development for similar tick-borne diseases. -> The occurrence of unexpected advancements in vaccinology or immunology relevant to RMSF."
+    },
+    {
+      "probe_text": "You've indicated that historical success rates in developing vaccines for similar tick-borne diseases do not directly influence the public health priority assigned to RMSF vaccine development. However, wouldn't a strong track record of successful vaccine development for comparable diseases, like Lyme disease or ehrlichiosis, actually bolster confidence among public health officials and policymakers? This increased confidence could, in turn, elevate the perceived urgency and importance of tackling RMSF, thereby increasing its public health priority.",
+      "probe_type": "edge_missing",
+      "target_id": "prior_vaccine_development_success->public_health_priority",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Historical success rate of vaccine development for similar tick-borne diseases. -> The perceived urgency and importance of developing an RMSF vaccine by public health organizations and governments."
+    },
+    {
+      "probe_text": "Imagine that a new study has revealed that the Rickettsia rickettsii bacterium, responsible for RMSF, has a previously underestimated ability to rapidly develop resistance to common antibiotics. How might this finding, suggesting a more dynamic and adaptable pathogen, influence the likelihood of a vaccine being developed by 2025?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that a recent study has revealed that the Rickettsia rickettsii bacterium, which causes RMSF, has developed a novel resistance mechanism to a common class of antibiotics used in treatment. How might this unexpected discovery about the pathogen's adaptability influence the likelihood of a vaccine being developed by 2025?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "The CDC recently published a report detailing the migratory patterns of the *Dermacentor variabilis* tick, the primary vector for RMSF in North America. This report extensively maps out areas of high tick density and predicts seasonal population fluctuations across different regions.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "A recent study published in 'The Journal of Travel Medicine' highlighted an increase in tick bite incidents among hikers in the Appalachian Trail region over the past five years. The article also detailed the preferred hiking seasons for tourists visiting the area.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a major pharmaceutical company has decided to exclusively develop an RMSF vaccine, pouring in unprecedented private funding that dwarfs all previous public investment. However, due to internal strategic shifts unrelated to RMSF's scientific merit or public health need, they abruptly halt all funding for this project after only a few months, deeming it unprofitable. In this scenario, the level of 'funding_for_rmsf_research' as traditionally understood becomes largely irrelevant to the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.05,
+      "absolute_shift": 0.09999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'funding_for_rmsf_research' is significant. The scenario describes a large, albeit temporary, influx of private funding that then abruptly ceases, rendering the 'funding_for_rmsf_research' node, as a sustained factor, largely irrelevant. This directly impacts the causal path 'funding_for_rmsf_research -> vaccine_developed_by_2025'. While the initial large investment might have temporarily accelerated some early-stage research, its abrupt halt means it will not contribute to sustained development efforts needed by 2025. Furthermore, the path 'funding_for_rmsf_research -> scientific_breakthroughs' is also weakened, as sustained research is more likely to yield breakthroughs than a short-lived burst of activity. The scenario implies that the private company's decision was based on profitability rather than scientific or public health merit, which indirectly suggests that external drivers like 'public_health_priority' might not have been sufficient to sustain the effort. Given that funding is a critical enabler for vaccine development, its sudden withdrawal and subsequent irrelevance as a continuous factor significantly lowers the probability of a vaccine being developed by the target date. The initial probability of 0.15 was already low, reflecting the challenges of vaccine development for RMSF. This new information, by removing a potential (though temporary) boost from funding, further reduces the likelihood.",
+      "raw_response": "{\n  \"updated_probability\": 0.05,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'funding_for_rmsf_research' is significant. The scenario describes a large, albeit temporary, influx of private funding that then abruptly ceases, rendering the 'funding_for_rmsf_research' node, as a sustained factor, largely irrelevant. This directly impacts the causal path 'funding_for_rmsf_research -> vaccine_developed_by_2025'. While the initial large investment might have temporarily accelerated some early-stage research, its abrupt halt means it will not contribute to sustained development efforts needed by 2025. Furthermore, the path 'funding_for_rmsf_research -> scientific_breakthroughs' is also weakened, as sustained research is more likely to yield breakthroughs than a short-lived burst of activity. The scenario implies that the private company's decision was based on profitability rather than scientific or public health merit, which indirectly suggests that external drivers like 'public_health_priority' might not have been sufficient to sustain the effort. Given that funding is a critical enabler for vaccine development, its sudden withdrawal and subsequent irrelevance as a continuous factor significantly lowers the probability of a vaccine being developed by the target date. The initial probability of 0.15 was already low, reflecting the challenges of vaccine development for RMSF. This new information, by removing a potential (though temporary) boost from funding, further reduces the likelihood.\"\n}",
+      "target_id": "funding_for_rmsf_research",
+      "target_type": "node",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if historical success rates for developing vaccines against tick-borne diseases are misleading for RMSF? For instance, imagine that previous successful tick-borne disease vaccines targeted proteins that are not present or are highly variable in Rickettsia rickettsii, making past successes entirely irrelevant to the unique challenges of developing an RMSF vaccine.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly questions the relevance of the 'prior_vaccine_development_success' node to RMSF. If historical successes are indeed irrelevant due to differences in pathogen targets (proteins not present or highly variable in Rickettsia rickettsii), then the causal path from 'prior_vaccine_development_success' to 'vaccine_developed_by_2025' is significantly weakened. This suggests that past positive experiences with other tick-borne disease vaccines provide little predictive power for RMSF. While other factors like funding, public health priority, and scientific breakthroughs still play a role, the removal of this supporting factor lowers the overall probability of a vaccine being developed by the target date.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly questions the relevance of the 'prior_vaccine_development_success' node to RMSF. If historical successes are indeed irrelevant due to differences in pathogen targets (proteins not present or highly variable in Rickettsia rickettsii), then the causal path from 'prior_vaccine_development_success' to 'vaccine_developed_by_2025' is significantly weakened. This suggests that past positive experiences with other tick-borne disease vaccines provide little predictive power for RMSF. While other factors like funding, public health priority, and scientific breakthroughs still play a role, the removal of this supporting factor lowers the overall probability of a vaccine being developed by the target date.\"\n}",
+      "target_id": "prior_vaccine_development_success",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "While RMSF is a serious disease, recent trends show that other emerging infectious diseases (like COVID-19 or Mpox) have commanded a significantly higher share of public health resources and attention, pushing RMSF lower on the global health agenda. This diminished perceived urgency might mean that 'public_health_priority' for RMSF is actually very low, contrary to what might be assumed from its severity alone, potentially slowing down related research and development efforts.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'public_health_priority' is significant. The new information suggests that RMSF has been de-prioritized globally due to the focus on other emerging diseases like COVID-19 and Mpox. This directly impacts the 'public_health_priority' node, which in turn affects two causal paths leading to the outcome: 1) 'public_health_priority' -> 'funding_for_rmsf_research' and 2) 'public_health_priority' -> 'vaccine_developed_by_2025'. Lower public health priority implies less funding for RMSF research and development, and also reduces the impetus for expedited regulatory processes. This diminished focus will likely slow down progress, making the development of a vaccine by 2025 less probable. The initial estimate of 0.15 was likely based on the inherent severity of RMSF, but this new information provides a more realistic assessment of resource allocation and global attention, leading to a downward revision.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'public_health_priority' is significant. The new information suggests that RMSF has been de-prioritized globally due to the focus on other emerging diseases like COVID-19 and Mpox. This directly impacts the 'public_health_priority' node, which in turn affects two causal paths leading to the outcome: 1) 'public_health_priority' -> 'funding_for_rmsf_research' and 2) 'public_health_priority' -> 'vaccine_developed_by_2025'. Lower public health priority implies less funding for RMSF research and development, and also reduces the impetus for expedited regulatory processes. This diminished focus will likely slow down progress, making the development of a vaccine by 2025 less probable. The initial estimate of 0.15 was likely based on the inherent severity of RMSF, but this new information provides a more realistic assessment of resource allocation and global attention, leading to a downward revision.\"\n}",
+      "target_id": "public_health_priority",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Let's reconsider the role of scientific breakthroughs. Given that RMSF is caused by a bacterium, a well-understood class of pathogens, and that vaccine development for bacterial diseases has been a mature field for decades, it's unlikely that entirely novel or unexpected 'breakthroughs' in vaccinology or immunology will be the primary driver for an RMSF vaccine. Existing scientific knowledge and incremental progress are more likely to be the key factors.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.12,
+      "absolute_shift": 0.03,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'scientific_breakthroughs' node suggests that unexpected advancements are less likely to be the primary driver for an RMSF vaccine. This weakens the causal path 'scientific_breakthroughs -> vaccine_developed_by_2025'. While scientific breakthroughs can still occur and contribute, the argument that existing knowledge in bacterial vaccine development is mature implies that progress will likely be more incremental. This reduces the potential for a rapid, breakthrough-driven acceleration in vaccine development, thus slightly decreasing the overall probability of a vaccine being developed by the target date.",
+      "raw_response": "{\n  \"updated_probability\": 0.12,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'scientific_breakthroughs' node suggests that unexpected advancements are less likely to be the primary driver for an RMSF vaccine. This weakens the causal path 'scientific_breakthroughs -> vaccine_developed_by_2025'. While scientific breakthroughs can still occur and contribute, the argument that existing knowledge in bacterial vaccine development is mature implies that progress will likely be more incremental. This reduces the potential for a rapid, breakthrough-driven acceleration in vaccine development, thus slightly decreasing the overall probability of a vaccine being developed by the target date.\"\n}",
+      "target_id": "scientific_breakthroughs",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent congressional hearing highlighted the significant underfunding of tick-borne disease research, specifically calling out RMSF. Following this, a bipartisan bill was introduced that allocates an unprecedented $50 million over the next five years specifically for RMSF vaccine development, significantly exceeding prior funding levels and signaling a major shift in resource allocation.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.25,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly challenges the 'funding_for_rmsf_research' node, which is a critical factor in the causal path to 'vaccine_developed_by_2025'. The introduction of a $50 million bill specifically for RMSF vaccine development represents a significant increase in funding, far exceeding previous levels. This strengthens the causal link from 'funding_for_rmsf_research' to 'vaccine_developed_by_2025' by providing the necessary resources to accelerate research and development. Additionally, increased funding can also increase the likelihood of 'scientific_breakthroughs' (via the edge 'funding_for_rmsf_research -> scientific_breakthroughs'), which in turn positively impacts the outcome. While the other factors remain unchanged, the substantial boost in funding is a strong positive signal, warranting a significant upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.4,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly challenges the 'funding_for_rmsf_research' node, which is a critical factor in the causal path to 'vaccine_developed_by_2025'. The introduction of a $50 million bill specifically for RMSF vaccine development represents a significant increase in funding, far exceeding previous levels. This strengthens the causal link from 'funding_for_rmsf_research' to 'vaccine_developed_by_2025' by providing the necessary resources to accelerate research and development. Additionally, increased funding can also increase the likelihood of 'scientific_breakthroughs' (via the edge 'funding_for_rmsf_research -> scientific_breakthroughs'), which in turn positively impacts the outcome. While the other factors remain unchanged, the substantial boost in funding is a strong positive signal, warranting a significant upward revision of the probability.\"\n}",
+      "target_id": "funding_for_rmsf_research",
+      "target_type": "node",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent meta-analysis published in 'The Journal of Tropical Medicine' reviewed vaccine development for tick-borne illnesses over the last 30 years. It found a remarkably high success rate (over 80%) in developing effective vaccines for diseases with similar vector-borne transmission mechanisms and pathogen structures to RMSF, suggesting that the general scientific and technological groundwork for such vaccines is exceptionally robust.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge targets the 'prior_vaccine_development_success' node, which has a direct causal link to the outcome 'vaccine_developed_by_2025'. The new information from the meta-analysis strongly suggests that historical success rates for similar diseases are much higher than previously considered. This robust evidence increases the estimated probability of success for RMSF vaccine development, as the scientific and technological groundwork is deemed more solid. The causal path 'prior_vaccine_development_success -> vaccine_developed_by_2025' is therefore strengthened, leading to a significant increase in the overall probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge targets the 'prior_vaccine_development_success' node, which has a direct causal link to the outcome 'vaccine_developed_by_2025'. The new information from the meta-analysis strongly suggests that historical success rates for similar diseases are much higher than previously considered. This robust evidence increases the estimated probability of success for RMSF vaccine development, as the scientific and technological groundwork is deemed more solid. The causal path 'prior_vaccine_development_success -> vaccine_developed_by_2025' is therefore strengthened, leading to a significant increase in the overall probability estimate.\"\n}",
+      "target_id": "prior_vaccine_development_success",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "The Centers for Disease Control and Prevention (CDC) recently issued a 'Urgent Health Alert' for Rocky Mountain Spotted Fever, highlighting a significant and concerning increase in reported cases across several southern states, particularly among children. This alert explicitly calls for accelerated research and development of preventative measures, including a vaccine, and has prompted the National Institutes of Health (NIH) to designate RMSF vaccine research as a top-tier priority for immediate funding.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'public_health_priority' node significantly strengthens this causal factor. The CDC's 'Urgent Health Alert' and the NIH's designation of RMSF vaccine research as a top-tier priority directly and strongly indicate a heightened public health priority. This increased priority has several downstream effects: \n\n1.  **public_health_priority -> vaccine_developed_by_2025**: A higher public health priority directly increases the likelihood of vaccine development by providing a strong impetus for focused efforts and potentially expedited pathways. This is a direct positive influence on the outcome.\n2.  **public_health_priority -> funding_for_rmsf_research**: The alert explicitly calls for accelerated research and the NIH designating it a top priority for funding directly and substantially increases the 'funding_for_rmsf_research' node. More funding is a key driver for research progress.\n3.  **public_health_priority -> regulatory_hurdles**: A high priority can lead to expedited regulatory review, effectively lowering the 'regulatory_hurdles'. This makes it more likely that a developed vaccine will be approved in time.\n\nBecause 'public_health_priority' is a structurally important node that influences both direct development efforts and resource allocation (funding and regulatory pathways), the substantial strengthening of this node leads to a significant increase in the overall probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'public_health_priority' node significantly strengthens this causal factor. The CDC's 'Urgent Health Alert' and the NIH's designation of RMSF vaccine research as a top-tier priority directly and strongly indicate a heightened public health priority. This increased priority has several downstream effects: \\n\\n1.  **public_health_priority -> vaccine_developed_by_2025**: A higher public health priority directly increases the likelihood of vaccine development by providing a strong impetus for focused efforts and potentially expedited pathways. This is a direct positive influence on the outcome.\\n2.  **public_health_priority -> funding_for_rmsf_research**: The alert explicitly calls for accelerated research and the NIH designating it a top priority for funding directly and substantially increases the 'funding_for_rmsf_research' node. More funding is a key driver for research progress.\\n3.  **public_health_priority -> regulatory_hurdles**: A high priority can lead to expedited regulatory review, effectively lowering the 'regulatory_hurdles'. This makes it more likely that a developed vaccine will be approved in time.\\n\\nBecause 'public_health_priority' is a structurally important node that influences both direct development efforts and resource allocation (funding and regulatory pathways), the substantial strengthening of this node leads to a significant increase in the overall probability estimate.\"\n}",
+      "target_id": "public_health_priority",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent research published in 'Nature Immunology' has detailed a novel mRNA vaccine platform that has shown unprecedented efficacy in preclinical trials against other tick-borne encephalitis viruses, which share some genetic similarities with RMSF. Furthermore, a separate study identified a previously uncharacterized surface protein on the Rickettsia rickettsii bacterium that appears to be highly conserved and immunogenic, a potential game-changer for vaccine design.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly challenges the assumption about the 'scientific_breakthroughs' node. The identification of a novel mRNA vaccine platform effective against similar tick-borne viruses and the discovery of a conserved, immunogenic surface protein on the RMSF bacterium are significant developments. These findings substantially increase the likelihood of a scientific breakthrough relevant to RMSF vaccine development. This impacts the causal path 'scientific_breakthroughs -> vaccine_developed_by_2025', making a breakthrough much more probable. Consequently, this increases the overall probability of a vaccine being developed by the target date. While other factors remain, this new information strongly bolsters the possibility of a rapid advancement towards a vaccine.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly challenges the assumption about the 'scientific_breakthroughs' node. The identification of a novel mRNA vaccine platform effective against similar tick-borne viruses and the discovery of a conserved, immunogenic surface protein on the RMSF bacterium are significant developments. These findings substantially increase the likelihood of a scientific breakthrough relevant to RMSF vaccine development. This impacts the causal path 'scientific_breakthroughs -> vaccine_developed_by_2025', making a breakthrough much more probable. Consequently, this increases the overall probability of a vaccine being developed by the target date. While other factors remain, this new information strongly bolsters the possibility of a rapid advancement towards a vaccine.\"\n}",
+      "target_id": "scientific_breakthroughs",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While historical success rates in vaccine development are generally informative, they may not strongly predict success for RMSF because the Rickettsia rickettsii bacterium presents unique immunological challenges not encountered in previously developed vaccines. For instance, many successful vaccines target extracellular bacteria or viruses with well-defined surface antigens, whereas Rickettsia rickettsii is an obligate intracellular pathogen with a complex life cycle and antigenic variation, making it a fundamentally different and more difficult target.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly targets the causal link 'prior_vaccine_development_success -> vaccine_developed_by_2025'. The argument presented is that RMSF's unique immunological challenges, stemming from Rickettsia rickettsii being an obligate intracellular pathogen with antigenic variation, differentiate it significantly from pathogens targeted by previous successful vaccines. This suggests that historical success rates for simpler targets are less predictive of success for RMSF. While not entirely negating the link (as general experience in vaccinology still holds some value), it weakens its influence. This weakens a direct pathway to the outcome, leading to a decrease in the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly targets the causal link 'prior_vaccine_development_success -> vaccine_developed_by_2025'. The argument presented is that RMSF's unique immunological challenges, stemming from Rickettsia rickettsii being an obligate intracellular pathogen with antigenic variation, differentiate it significantly from pathogens targeted by previous successful vaccines. This suggests that historical success rates for simpler targets are less predictive of success for RMSF. While not entirely negating the link (as general experience in vaccinology still holds some value), it weakens its influence. This weakens a direct pathway to the outcome, leading to a decrease in the probability estimate.\"\n}",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "target_type": "edge",
+      "target_importance": 0.0238,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent advancements in genomic sequencing and synthetic biology have drastically reduced the challenges associated with targeting complex pathogens. For RMSF, new research has identified specific surface proteins that are highly conserved across strains and elicit a strong immune response, effectively bypassing the historical difficulties associated with its complexity. This suggests that the pathogen's complexity might be less of a barrier than previously understood.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly targets the causal link between 'rmsf_pathogen_complexity' and 'vaccine_developed_by_2025'. The new information suggests that advancements in genomic sequencing and synthetic biology have significantly mitigated the previously understood complexity of targeting the RMSF pathogen. Specifically, the identification of conserved, immunogenic surface proteins bypasses historical difficulties. This weakens the negative causal path from pathogen complexity to vaccine development. Consequently, the probability of a vaccine being developed by 2025 increases, as a significant barrier is now considered less impactful. This is a substantial update because pathogen complexity was a key reason for the initially low probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly targets the causal link between 'rmsf_pathogen_complexity' and 'vaccine_developed_by_2025'. The new information suggests that advancements in genomic sequencing and synthetic biology have significantly mitigated the previously understood complexity of targeting the RMSF pathogen. Specifically, the identification of conserved, immunogenic surface proteins bypasses historical difficulties. This weakens the negative causal path from pathogen complexity to vaccine development. Consequently, the probability of a vaccine being developed by 2025 increases, as a significant barrier is now considered less impactful. This is a substantial update because pathogen complexity was a key reason for the initially low probability.\"\n}",
+      "target_id": "rmsf_pathogen_complexity->vaccine_developed_by_2025",
+      "target_type": "edge",
+      "target_importance": 0.0238,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While increased funding for RMSF research is generally beneficial, it's not guaranteed to lead to scientific breakthroughs. Sometimes, breakthroughs in complex biological systems arise from unexpected theoretical insights or serendipitous discoveries rather than simply the volume of financial investment. It's possible that even with substantial funding, the specific challenges of RMSF's pathogen may require a conceptual leap that cannot be directly bought.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.13,
+      "absolute_shift": 0.01999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causal link between funding_for_rmsf_research and scientific_breakthroughs. While increased funding can facilitate research, the argument that breakthroughs, especially in complex biological systems like RMSF, can stem from conceptual leaps independent of funding volume is valid. This weakens the path where more funding increases the chance of encountering unexpected breakthroughs, which in turn could accelerate vaccine development. The original network assumed a stronger correlation between funding and breakthroughs. By slightly dampening this specific indirect path, the overall probability of vaccine development by 2025 is marginally decreased. The core nodes and their direct impacts on the outcome remain, but the amplification effect through scientific breakthroughs is now considered less certain.",
+      "raw_response": "{\n  \"updated_probability\": 0.13,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causal link between funding_for_rmsf_research and scientific_breakthroughs. While increased funding can facilitate research, the argument that breakthroughs, especially in complex biological systems like RMSF, can stem from conceptual leaps independent of funding volume is valid. This weakens the path where more funding increases the chance of encountering unexpected breakthroughs, which in turn could accelerate vaccine development. The original network assumed a stronger correlation between funding and breakthroughs. By slightly dampening this specific indirect path, the overall probability of vaccine development by 2025 is marginally decreased. The core nodes and their direct impacts on the outcome remain, but the amplification effect through scientific breakthroughs is now considered less certain.\"\n}",
+      "target_id": "funding_for_rmsf_research->scientific_breakthroughs",
+      "target_type": "edge",
+      "target_importance": 0.0476,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent advancements in mRNA vaccine technology, demonstrated successfully with COVID-19 vaccines, have shown that platform technologies can significantly reduce the time and complexity of developing vaccines for a wide range of pathogens. This suggests that historical success rates in vaccine development might be an even stronger predictor of future success than previously thought, as established platforms can be rapidly adapted to new targets like RMSF.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'prior_vaccine_development_success -> vaccine_developed_by_2025' is significant. The new information highlights that recent advancements, particularly in mRNA technology, have fundamentally altered the landscape of vaccine development. This means that 'prior_vaccine_development_success' is not just about historical success rates with traditional methods, but now also encompasses the potential to leverage powerful, rapidly adaptable platform technologies. This greatly strengthens the causal pathway, as a successful mRNA vaccine for COVID-19 suggests a much higher likelihood of success for RMSF if the mRNA platform can be effectively applied. This strengthens the direct link to the outcome and also indirectly bolsters the 'scientific_breakthroughs' node, as the mRNA technology itself represents such a breakthrough that can be applied to new challenges. The probability has been increased to reflect this enhanced predictive power of past technological successes.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'prior_vaccine_development_success -> vaccine_developed_by_2025' is significant. The new information highlights that recent advancements, particularly in mRNA technology, have fundamentally altered the landscape of vaccine development. This means that 'prior_vaccine_development_success' is not just about historical success rates with traditional methods, but now also encompasses the potential to leverage powerful, rapidly adaptable platform technologies. This greatly strengthens the causal pathway, as a successful mRNA vaccine for COVID-19 suggests a much higher likelihood of success for RMSF if the mRNA platform can be effectively applied. This strengthens the direct link to the outcome and also indirectly bolsters the 'scientific_breakthroughs' node, as the mRNA technology itself represents such a breakthrough that can be applied to new challenges. The probability has been increased to reflect this enhanced predictive power of past technological successes.\"\n}",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "target_type": "edge",
+      "target_importance": 0.0238,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent genomic and proteomic analyses have revealed that Rickettsia rickettsii possesses a highly variable surface antigen repertoire and employs sophisticated immune evasion mechanisms, significantly more so than previously understood for other tick-borne pathogens. This increased complexity in the pathogen's structure and defense strategies presents a more formidable challenge for vaccine development, suggesting that the 'rmsf_pathogen_complexity' node has an even stronger negative impact on 'vaccine_developed_by_2025' than initially modeled.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'rmsf_pathogen_complexity' node, which has a direct negative causal link to the outcome 'vaccine_developed_by_2025'. The new information suggests that the pathogen is significantly more complex and employs more sophisticated immune evasion mechanisms than previously understood. This strengthens the negative influence of pathogen complexity on vaccine development. Therefore, the causal path 'rmsf_pathogen_complexity -> vaccine_developed_by_2025' is reinforced in its negative impact, leading to a decrease in the overall probability estimate. The initial estimate of 0.15 was already low, reflecting the inherent challenges, but this new evidence makes the development path even more difficult.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'rmsf_pathogen_complexity' node, which has a direct negative causal link to the outcome 'vaccine_developed_by_2025'. The new information suggests that the pathogen is significantly more complex and employs more sophisticated immune evasion mechanisms than previously understood. This strengthens the negative influence of pathogen complexity on vaccine development. Therefore, the causal path 'rmsf_pathogen_complexity -> vaccine_developed_by_2025' is reinforced in its negative impact, leading to a decrease in the overall probability estimate. The initial estimate of 0.15 was already low, reflecting the inherent challenges, but this new evidence makes the development path even more difficult.\"\n}",
+      "target_id": "rmsf_pathogen_complexity->vaccine_developed_by_2025",
+      "target_type": "edge",
+      "target_importance": 0.0238,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent advancements in high-throughput screening technologies, often driven by significant investment in biomedical research, have dramatically increased the rate at which novel drug targets and vaccine platforms can be identified. This suggests that the positive feedback loop between increased funding for RMSF research and the likelihood of scientific breakthroughs is potentially stronger than initially considered, as these broader technological advancements can be rapidly leveraged.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.05000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge focuses on the causal link between `funding_for_rmsf_research` and `scientific_breakthroughs`. The new information suggests that broader advancements in high-throughput screening technologies, fueled by general biomedical research investment, can be rapidly leveraged for specific diseases like RMSF. This strengthens the causal path from `funding_for_rmsf_research` to `scientific_breakthroughs` because it implies that even moderate increases in funding could lead to a higher probability of breakthroughs, as researchers can tap into these readily available advanced technologies. This, in turn, increases the probability of `vaccine_developed_by_2025` because `scientific_breakthroughs` is a direct positive driver of the outcome. While the challenge doesn't fundamentally alter the network, it strengthens a key enabling mechanism for achieving breakthroughs, justifying a modest increase in the overall probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge focuses on the causal link between `funding_for_rmsf_research` and `scientific_breakthroughs`. The new information suggests that broader advancements in high-throughput screening technologies, fueled by general biomedical research investment, can be rapidly leveraged for specific diseases like RMSF. This strengthens the causal path from `funding_for_rmsf_research` to `scientific_breakthroughs` because it implies that even moderate increases in funding could lead to a higher probability of breakthroughs, as researchers can tap into these readily available advanced technologies. This, in turn, increases the probability of `vaccine_developed_by_2025` because `scientific_breakthroughs` is a direct positive driver of the outcome. While the challenge doesn't fundamentally alter the network, it strengthens a key enabling mechanism for achieving breakthroughs, justifying a modest increase in the overall probability estimate.\"\n}",
+      "target_id": "funding_for_rmsf_research->scientific_breakthroughs",
+      "target_type": "edge",
+      "target_importance": 0.0476,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "It's been argued that the success of vaccine development for similar diseases might not *cause* future success, but rather, it's the *actual development* of a successful RMSF vaccine that could inspire and inform the development of vaccines for other tick-borne diseases. This suggests that the causal arrow might be reversed: successful vaccine development (in general or for RMSF specifically) could be a precursor to the perceived 'prior success rate' by influencing future research and confidence, rather than the other way around.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.12,
+      "absolute_shift": 0.03,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the causal link 'prior_vaccine_development_success -> vaccine_developed_by_2025'. If historical success rates for similar diseases do not causally influence future success for RMSF, but rather the reverse is true (RMSF success inspires other research), then the direct positive influence of 'prior_vaccine_development_success' on the outcome is weakened. While 'prior_vaccine_development_success' might still have an indirect effect through its influence on other nodes or simply by reflecting general progress in vaccinology, its direct predictive power for RMSF is diminished. This reduces the overall probability, though not drastically, as other causal paths like 'rmsf_pathogen_complexity', 'funding_for_rmsf_research', and 'public_health_priority' remain significant drivers.",
+      "raw_response": "{\n  \"updated_probability\": 0.12,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the causal link 'prior_vaccine_development_success -> vaccine_developed_by_2025'. If historical success rates for similar diseases do not causally influence future success for RMSF, but rather the reverse is true (RMSF success inspires other research), then the direct positive influence of 'prior_vaccine_development_success' on the outcome is weakened. While 'prior_vaccine_development_success' might still have an indirect effect through its influence on other nodes or simply by reflecting general progress in vaccinology, its direct predictive power for RMSF is diminished. This reduces the overall probability, though not drastically, as other causal paths like 'rmsf_pathogen_complexity', 'funding_for_rmsf_research', and 'public_health_priority' remain significant drivers.\"\n}",
+      "target_id": "prior_vaccine_development_success->vaccine_developed_by_2025",
+      "target_type": "edge",
+      "target_importance": 0.0238,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While historical success in developing vaccines for similar tick-borne diseases doesn't directly guarantee future breakthroughs for RMSF, it's plausible that the very process of achieving those past successes has led to a deeper understanding of relevant immunological pathways or vaccinology techniques. This accumulated knowledge could indirectly increase the *probability* of future unexpected scientific advancements, even for a distinct pathogen like RMSF.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.18,
+      "absolute_shift": 0.03,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that prior success in developing vaccines for similar tick-borne diseases might indirectly increase the probability of future scientific breakthroughs, even for RMSF. This impacts the causal path `prior_vaccine_development_success -> scientific_breakthroughs`. Previously, this link was considered weak or indirect, focused more on the direct path to `vaccine_developed_by_2025`. However, the new information posits that the *process* of achieving past successes builds foundational knowledge that can foster *new* breakthroughs. This strengthens the indirect pathway via `scientific_breakthroughs` to the outcome `vaccine_developed_by_2025`. While `scientific_breakthroughs` is still a relatively low-probability event, increasing its likelihood, even slightly, leads to a modest upward adjustment in the overall probability. The core factors of pathogen complexity and funding remain dominant, so the update is small.",
+      "raw_response": "{\n  \"updated_probability\": 0.18,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that prior success in developing vaccines for similar tick-borne diseases might indirectly increase the probability of future scientific breakthroughs, even for RMSF. This impacts the causal path `prior_vaccine_development_success -> scientific_breakthroughs`. Previously, this link was considered weak or indirect, focused more on the direct path to `vaccine_developed_by_2025`. However, the new information posits that the *process* of achieving past successes builds foundational knowledge that can foster *new* breakthroughs. This strengthens the indirect pathway via `scientific_breakthroughs` to the outcome `vaccine_developed_by_2025`. While `scientific_breakthroughs` is still a relatively low-probability event, increasing its likelihood, even slightly, leads to a modest upward adjustment in the overall probability. The core factors of pathogen complexity and funding remain dominant, so the update is small.\"\n}",
+      "target_id": "prior_vaccine_development_success->scientific_breakthroughs",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "You've indicated that historical success rates in developing vaccines for similar tick-borne diseases do not directly influence the public health priority assigned to RMSF vaccine development. However, wouldn't a strong track record of successful vaccine development for comparable diseases, like Lyme disease or ehrlichiosis, actually bolster confidence among public health officials and policymakers? This increased confidence could, in turn, elevate the perceived urgency and importance of tackling RMSF, thereby increasing its public health priority.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.05000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a new causal path: prior_vaccine_development_success -> public_health_priority. Previously, I modeled prior success as only directly influencing vaccine_developed_by_2025. The argument is that successful development of vaccines for similar tick-borne diseases (e.g., Lyme) can increase confidence in the feasibility of developing an RMSF vaccine, thus elevating its public health priority. This increased priority could then cascade through the network via public_health_priority -> funding_for_rmsf_research and public_health_priority -> vaccine_developed_by_2025, ultimately increasing the probability of vaccine development. This is a plausible, though perhaps not overwhelmingly strong, argument. The direct impact on public health priority is a reasonable addition, leading to a modest upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a new causal path: prior_vaccine_development_success -> public_health_priority. Previously, I modeled prior success as only directly influencing vaccine_developed_by_2025. The argument is that successful development of vaccines for similar tick-borne diseases (e.g., Lyme) can increase confidence in the feasibility of developing an RMSF vaccine, thus elevating its public health priority. This increased priority could then cascade through the network via public_health_priority -> funding_for_rmsf_research and public_health_priority -> vaccine_developed_by_2025, ultimately increasing the probability of vaccine development. This is a plausible, though perhaps not overwhelmingly strong, argument. The direct impact on public health priority is a reasonable addition, leading to a modest upward revision of the probability.\"\n}",
+      "target_id": "prior_vaccine_development_success->public_health_priority",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a new study has revealed that the Rickettsia rickettsii bacterium, responsible for RMSF, has a previously underestimated ability to rapidly develop resistance to common antibiotics. How might this finding, suggesting a more dynamic and adaptable pathogen, influence the likelihood of a vaccine being developed by 2025?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.06999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The new information challenges the 'rmsf_pathogen_complexity' node. If the Rickettsia rickettsii bacterium can rapidly develop resistance to antibiotics, it suggests a higher degree of biological adaptability and complexity than previously assumed. This increased complexity makes it more difficult to identify stable vaccine targets and increases the likelihood of vaccine escape mutations, thereby decreasing the probability of a successful vaccine being developed by 2025. This directly impacts the 'rmsf_pathogen_complexity -> vaccine_developed_by_2025' causal path, making it less likely. While not directly impacting other paths, the fundamental difficulty of targeting a more dynamic pathogen is a significant factor.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information challenges the 'rmsf_pathogen_complexity' node. If the Rickettsia rickettsii bacterium can rapidly develop resistance to antibiotics, it suggests a higher degree of biological adaptability and complexity than previously assumed. This increased complexity makes it more difficult to identify stable vaccine targets and increases the likelihood of vaccine escape mutations, thereby decreasing the probability of a successful vaccine being developed by 2025. This directly impacts the 'rmsf_pathogen_complexity -> vaccine_developed_by_2025' causal path, making it less likely. While not directly impacting other paths, the fundamental difficulty of targeting a more dynamic pathogen is a significant factor.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a recent study has revealed that the Rickettsia rickettsii bacterium, which causes RMSF, has developed a novel resistance mechanism to a common class of antibiotics used in treatment. How might this unexpected discovery about the pathogen's adaptability influence the likelihood of a vaccine being developed by 2025?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0.1,
+      "shift_direction": "increased",
+      "reasoning": "The discovery of a novel resistance mechanism in Rickettsia rickettsii to common antibiotics suggests a higher degree of pathogen adaptability and complexity than previously assumed. This directly impacts the 'rmsf_pathogen_complexity' node. A more complex or adaptable pathogen is generally harder to develop a vaccine for, which would typically decrease the probability of vaccine development. However, this new information about antibiotic resistance might also elevate the 'public_health_priority' for RMSF, as treatment options become more limited and the disease potentially more severe or harder to manage. An increased public health priority could, in turn, lead to greater 'funding_for_rmsf_research' and potentially expedited 'regulatory_hurdles' (though the model shows this interaction as potentially lowering hurdles, the overall effect of higher priority is positive). The increased urgency and potential for more research funding could outweigh the increased pathogen complexity in terms of driving vaccine development within the given timeframe. Therefore, while pathogen complexity is a negative factor, the likely increase in public health prioritization and funding acts as a stronger counter-force, leading to a moderate increase in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The discovery of a novel resistance mechanism in Rickettsia rickettsii to common antibiotics suggests a higher degree of pathogen adaptability and complexity than previously assumed. This directly impacts the 'rmsf_pathogen_complexity' node. A more complex or adaptable pathogen is generally harder to develop a vaccine for, which would typically decrease the probability of vaccine development. However, this new information about antibiotic resistance might also elevate the 'public_health_priority' for RMSF, as treatment options become more limited and the disease potentially more severe or harder to manage. An increased public health priority could, in turn, lead to greater 'funding_for_rmsf_research' and potentially expedited 'regulatory_hurdles' (though the model shows this interaction as potentially lowering hurdles, the overall effect of higher priority is positive). The increased urgency and potential for more research funding could outweigh the increased pathogen complexity in terms of driving vaccine development within the given timeframe. Therefore, while pathogen complexity is a negative factor, the likely increase in public health prioritization and funding acts as a stronger counter-force, leading to a moderate increase in the probability.\"\n}",
+      "target_id": "missing_node_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "The CDC recently published a report detailing the migratory patterns of the *Dermacentor variabilis* tick, the primary vector for RMSF in North America. This report extensively maps out areas of high tick density and predicts seasonal population fluctuations across different regions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.18,
+      "absolute_shift": 0.03,
+      "shift_direction": "increased",
+      "reasoning": "The new information regarding the CDC report on tick migratory patterns and density primarily affects the 'public_health_priority' node. While not directly creating a vaccine, this detailed information enhances the understanding of RMSF transmission risks and geographical hotspots. This improved understanding can elevate the perceived public health priority of developing an RMSF vaccine, as it provides concrete data to justify increased attention and resources. Consequently, this could indirectly influence 'funding_for_rmsf_research' and potentially 'vaccine_developed_by_2025' through a higher priority leading to accelerated efforts. The causal path affected is primarily public_health_priority -> funding_for_rmsf_research -> vaccine_developed_by_2025, and also public_health_priority -> vaccine_developed_by_2025. The update is modest because the report is about vector ecology, not directly about vaccine development itself, but it strengthens the case for prioritizing vaccine research.",
+      "raw_response": "{\n  \"updated_probability\": 0.18,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information regarding the CDC report on tick migratory patterns and density primarily affects the 'public_health_priority' node. While not directly creating a vaccine, this detailed information enhances the understanding of RMSF transmission risks and geographical hotspots. This improved understanding can elevate the perceived public health priority of developing an RMSF vaccine, as it provides concrete data to justify increased attention and resources. Consequently, this could indirectly influence 'funding_for_rmsf_research' and potentially 'vaccine_developed_by_2025' through a higher priority leading to accelerated efforts. The causal path affected is primarily public_health_priority -> funding_for_rmsf_research -> vaccine_developed_by_2025, and also public_health_priority -> vaccine_developed_by_2025. The update is modest because the report is about vector ecology, not directly about vaccine development itself, but it strengthens the case for prioritizing vaccine research.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent study published in 'The Journal of Travel Medicine' highlighted an increase in tick bite incidents among hikers in the Appalachian Trail region over the past five years. The article also detailed the preferred hiking seasons for tourists visiting the area.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.05000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information about increased tick bite incidents on the Appalachian Trail, a region where RMSF is prevalent, directly impacts the 'public_health_priority' node. A documented rise in incidents and associated risks for a significant population (hikers) makes RMSF a more pressing public health concern. This increased priority is likely to lead to greater attention and potentially more resources allocated to RMSF research and vaccine development. Therefore, the causal path 'public_health_priority' -> 'funding_for_rmsf_research' -> 'vaccine_developed_by_2025' and 'public_health_priority' -> 'vaccine_developed_by_2025' are strengthened. While this doesn't guarantee a vaccine, it increases the likelihood of accelerated research and development efforts, thus nudging the probability upwards.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information about increased tick bite incidents on the Appalachian Trail, a region where RMSF is prevalent, directly impacts the 'public_health_priority' node. A documented rise in incidents and associated risks for a significant population (hikers) makes RMSF a more pressing public health concern. This increased priority is likely to lead to greater attention and potentially more resources allocated to RMSF research and vaccine development. Therefore, the causal path 'public_health_priority' -> 'funding_for_rmsf_research' -> 'vaccine_developed_by_2025' and 'public_health_priority' -> 'vaccine_developed_by_2025' are strengthened. While this doesn't guarantee a vaccine, it increases the likelihood of accelerated research and development efforts, thus nudging the probability upwards.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "777e45ec0e466493a45b8a56e8569b124b04f9f49da990393971011932c7cd13",
+    "question_text": "According to Wikipedia, will a vaccine have been developed for Rocky Mountain spotted fever (RMSF) by 2025-12-28?",
+    "source": "wikipedia",
+    "condition": "one-turn",
+    "initial_probability": 0.15,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.11285714285714286,
+    "max_absolute_shift": 0.30000000000000004
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 1.9374999999999993,
+    "mean_shift_high": 0.155,
+    "mean_shift_low": 0.08000000000000003,
+    "asymmetry_index": 0.3673469387755102,
+    "mean_shift_negate": 0.07714285714285715,
+    "mean_shift_strengthen": 0.21000000000000002,
+    "fnar": 0.6666666666666666,
+    "n_accepted": 2,
+    "n_spurious": 3,
+    "critical_path_premium": -0.003750000000000045,
+    "mean_shift_on_path": 0.10999999999999999,
+    "mean_shift_off_path": 0.11375000000000003,
+    "importance_sensitivity_correlation": -0.3916666666666666,
+    "control_sensitivity": 0.5
+  }
+}

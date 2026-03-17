@@ -1,0 +1,1229 @@
+{
+  "question_id": "975d02beef1ceddee5c08e950f851f87e0544a43acf3a0b2d21c2e2eac16c3c5",
+  "question_text": "According to Wikipedia, will a vaccine have been developed for Marburg hemorrhagic fever (MHF) by 2025-12-28?",
+  "source": "wikipedia",
+  "initial_probability": 0.65,
+  "nodes": [
+    {
+      "id": "current_mhf_research_progress",
+      "description": "The current state of scientific research and development for Marburg hemorrhagic fever vaccines.",
+      "role": "factor"
+    },
+    {
+      "id": "funding_for_vaccine_development",
+      "description": "The amount of financial investment and resources allocated to MHF vaccine research.",
+      "role": "factor"
+    },
+    {
+      "id": "regulatory_approval_process",
+      "description": "The speed and complexity of the regulatory pathways for approving new vaccines.",
+      "role": "factor"
+    },
+    {
+      "id": "past_outbreaks_and_threat_level",
+      "description": "The frequency and severity of past Marburg virus outbreaks, influencing perceived threat and urgency.",
+      "role": "factor"
+    },
+    {
+      "id": "availability_of_prior_vaccine_tech",
+      "description": "The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF.",
+      "role": "factor"
+    },
+    {
+      "id": "vaccine_developed_by_2025",
+      "description": "Whether a vaccine for Marburg hemorrhagic fever has been developed by December 28, 2025.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "current_mhf_research_progress",
+      "to": "vaccine_developed_by_2025",
+      "mechanism": "Directly influences the likelihood of a successful vaccine candidate."
+    },
+    {
+      "from": "funding_for_vaccine_development",
+      "to": "current_mhf_research_progress",
+      "mechanism": "Adequate funding accelerates research and development efforts."
+    },
+    {
+      "from": "past_outbreaks_and_threat_level",
+      "to": "funding_for_vaccine_development",
+      "mechanism": "Higher perceived threat or recent outbreaks often spur increased funding."
+    },
+    {
+      "from": "past_outbreaks_and_threat_level",
+      "to": "current_mhf_research_progress",
+      "mechanism": "Urgency from outbreaks can prioritize research efforts."
+    },
+    {
+      "from": "availability_of_prior_vaccine_tech",
+      "to": "current_mhf_research_progress",
+      "mechanism": "Leveraging existing technologies can speed up development."
+    },
+    {
+      "from": "current_mhf_research_progress",
+      "to": "regulatory_approval_process",
+      "mechanism": "A promising vaccine candidate is required to enter the regulatory process."
+    },
+    {
+      "from": "regulatory_approval_process",
+      "to": "vaccine_developed_by_2025",
+      "mechanism": "The speed of regulatory approval determines if a developed vaccine is officially recognized by the deadline."
+    }
+  ],
+  "reasoning": "Progress in MHF vaccine development is ongoing, with several candidates in various stages. The urgency driven by past outbreaks and the availability of adaptable vaccine technologies suggest a good chance of success. However, the timeline is tight, and the regulatory process can be a bottleneck. Given these factors, there is a moderate to good probability that a vaccine will be developed and potentially approved by late 2025.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 7,
+    "density": 0.2333,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "vaccine_developed_by_2025",
+    "node_metrics": [
+      {
+        "node_id": "current_mhf_research_progress",
+        "description": "The current state of scientific research and development for Marburg hemorrhagic fever vaccines.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 2,
+        "betweenness": 0.3,
+        "closeness": 0.6,
+        "pagerank": 0.2493,
+        "path_relevance": 0.6
+      },
+      {
+        "node_id": "funding_for_vaccine_development",
+        "description": "The amount of financial investment and resources allocated to MHF vaccine research.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.2,
+        "pagerank": 0.1019,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "regulatory_approval_process",
+        "description": "The speed and complexity of the regulatory pathways for approving new vaccines.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.4571,
+        "pagerank": 0.1775,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "past_outbreaks_and_threat_level",
+        "description": "The frequency and severity of past Marburg virus outbreaks, influencing perceived threat and urgency.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0715,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "availability_of_prior_vaccine_tech",
+        "description": "The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0715,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "vaccine_developed_by_2025",
+        "description": "Whether a vaccine for Marburg hemorrhagic fever has been developed by December 28, 2025.",
+        "role": "outcome",
+        "in_degree": 2,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.625,
+        "pagerank": 0.3283,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "current_mhf_research_progress",
+        "target": "vaccine_developed_by_2025",
+        "mechanism": "Directly influences the likelihood of a successful vaccine candidate.",
+        "edge_betweenness": 0.1333,
+        "on_critical_path": true
+      },
+      {
+        "source": "current_mhf_research_progress",
+        "target": "regulatory_approval_process",
+        "mechanism": "A promising vaccine candidate is required to enter the regulatory process.",
+        "edge_betweenness": 0.1333,
+        "on_critical_path": false
+      },
+      {
+        "source": "funding_for_vaccine_development",
+        "target": "current_mhf_research_progress",
+        "mechanism": "Adequate funding accelerates research and development efforts.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      },
+      {
+        "source": "regulatory_approval_process",
+        "target": "vaccine_developed_by_2025",
+        "mechanism": "The speed of regulatory approval determines if a developed vaccine is officially recognized by the deadline.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "past_outbreaks_and_threat_level",
+        "target": "funding_for_vaccine_development",
+        "mechanism": "Higher perceived threat or recent outbreaks often spur increased funding.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "past_outbreaks_and_threat_level",
+        "target": "current_mhf_research_progress",
+        "mechanism": "Urgency from outbreaks can prioritize research efforts.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      },
+      {
+        "source": "availability_of_prior_vaccine_tech",
+        "target": "current_mhf_research_progress",
+        "mechanism": "Leveraging existing technologies can speed up development.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "current_mhf_research_progress",
+        "description": "The current state of scientific research and development for Marburg hemorrhagic fever vaccines.",
+        "importance": 0.3,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "funding_for_vaccine_development",
+        "description": "The amount of financial investment and resources allocated to MHF vaccine research.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regulatory_approval_process",
+        "description": "The speed and complexity of the regulatory pathways for approving new vaccines.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "availability_of_prior_vaccine_tech",
+        "description": "The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "current_mhf_research_progress",
+        "description": "The current state of scientific research and development for Marburg hemorrhagic fever vaccines.",
+        "importance": 0.3,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "funding_for_vaccine_development",
+        "description": "The amount of financial investment and resources allocated to MHF vaccine research.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regulatory_approval_process",
+        "description": "The speed and complexity of the regulatory pathways for approving new vaccines.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "availability_of_prior_vaccine_tech",
+        "description": "The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+        "description": "Directly influences the likelihood of a successful vaccine candidate.",
+        "importance": 0.1333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "funding_for_vaccine_development->current_mhf_research_progress",
+        "description": "Adequate funding accelerates research and development efforts.",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "current_mhf_research_progress->regulatory_approval_process",
+        "description": "A promising vaccine candidate is required to enter the regulatory process.",
+        "importance": 0.1333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+        "description": "Directly influences the likelihood of a successful vaccine candidate.",
+        "importance": 0.1333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "funding_for_vaccine_development->current_mhf_research_progress",
+        "description": "Adequate funding accelerates research and development efforts.",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "current_mhf_research_progress->regulatory_approval_process",
+        "description": "A promising vaccine candidate is required to enter the regulatory process.",
+        "importance": 0.1333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+        "description": "Directly influences the likelihood of a successful vaccine candidate.",
+        "importance": 0.1333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "funding_for_vaccine_development->past_outbreaks_and_threat_level",
+        "description": "Potential link: The amount of financial investment and resources allocated to MHF vaccine research. -> The frequency and severity of past Marburg virus outbreaks, influencing perceived threat and urgency.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "funding_for_vaccine_development->availability_of_prior_vaccine_tech",
+        "description": "Potential link: The amount of financial investment and resources allocated to MHF vaccine research. -> The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "current_mhf_research_progress",
+      "description": "The current state of scientific research and development for Marburg hemorrhagic fever vaccines.",
+      "importance": 0.3,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "funding_for_vaccine_development",
+      "description": "The amount of financial investment and resources allocated to MHF vaccine research.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regulatory_approval_process",
+      "description": "The speed and complexity of the regulatory pathways for approving new vaccines.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "availability_of_prior_vaccine_tech",
+      "description": "The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "current_mhf_research_progress",
+      "description": "The current state of scientific research and development for Marburg hemorrhagic fever vaccines.",
+      "importance": 0.3,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "funding_for_vaccine_development",
+      "description": "The amount of financial investment and resources allocated to MHF vaccine research.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regulatory_approval_process",
+      "description": "The speed and complexity of the regulatory pathways for approving new vaccines.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "availability_of_prior_vaccine_tech",
+      "description": "The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "description": "Directly influences the likelihood of a successful vaccine candidate.",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "funding_for_vaccine_development->current_mhf_research_progress",
+      "description": "Adequate funding accelerates research and development efforts.",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "current_mhf_research_progress->regulatory_approval_process",
+      "description": "A promising vaccine candidate is required to enter the regulatory process.",
+      "importance": 0.1333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "description": "Directly influences the likelihood of a successful vaccine candidate.",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "funding_for_vaccine_development->current_mhf_research_progress",
+      "description": "Adequate funding accelerates research and development efforts.",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "current_mhf_research_progress->regulatory_approval_process",
+      "description": "A promising vaccine candidate is required to enter the regulatory process.",
+      "importance": 0.1333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "description": "Directly influences the likelihood of a successful vaccine candidate.",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "funding_for_vaccine_development->past_outbreaks_and_threat_level",
+      "description": "Potential link: The amount of financial investment and resources allocated to MHF vaccine research. -> The frequency and severity of past Marburg virus outbreaks, influencing perceived threat and urgency.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "funding_for_vaccine_development->availability_of_prior_vaccine_tech",
+      "description": "Potential link: The amount of financial investment and resources allocated to MHF vaccine research. -> The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if current MHF research progress is actually irrelevant to the development of a vaccine by 2025? Perhaps a breakthrough in a completely different, unexpected scientific field, unrelated to current MHF research trajectories, is the sole factor that will enable a vaccine's rapid development and approval by the deadline.",
+      "probe_type": "node_negate_high",
+      "target_id": "current_mhf_research_progress",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.3,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The current state of scientific research and development for Marburg hemorrhagic fever vaccines."
+    },
+    {
+      "probe_text": "Imagine that the current level of funding for MHF vaccine development is actually irrelevant. Despite current funding levels, let's assume that no significant breakthroughs are possible with existing technology and that major pharmaceutical companies have decided not to prioritize MHF research regardless of the financial incentives, perhaps due to perceived low return on investment or other internal strategic decisions. Essentially, the funding is a red herring, and the actual progress is stalled for unrelated reasons.",
+      "probe_type": "node_negate_high",
+      "target_id": "funding_for_vaccine_development",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The amount of financial investment and resources allocated to MHF vaccine research."
+    },
+    {
+      "probe_text": "While the regulatory approval process is typically a bottleneck, for novel and highly dangerous pathogens like Marburg, governments may fast-track approvals significantly, potentially bypassing standard timelines. For instance, during the COVID-19 pandemic, Operation Warp Speed demonstrated a willingness to accelerate vaccine development and approval for public health emergencies, suggesting a similar mechanism could apply to MHF if a severe outbreak were to occur.",
+      "probe_type": "node_negate_medium",
+      "target_id": "regulatory_approval_process",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The speed and complexity of the regulatory pathways for approving new vaccines."
+    },
+    {
+      "probe_text": "Recent scientific literature suggests that MHF's unique viral structure presents significant challenges, making existing vaccine technologies like mRNA or viral vectors less adaptable than previously assumed. This research indicates that developing a vaccine for MHF may require entirely novel approaches, rather than building upon prior technological advancements.",
+      "probe_type": "node_negate_low",
+      "target_id": "availability_of_prior_vaccine_tech",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF."
+    },
+    {
+      "probe_text": "A recent breakthrough in Marburg virus vector research, published in 'Nature Medicine', has demonstrated a novel viral vector platform that shows unprecedented efficacy in preclinical trials for MHF. This development significantly accelerates the timeline for a viable vaccine candidate, suggesting that current research progress is not only on track but has potentially leaped forward due to this specific technological advancement.",
+      "probe_type": "node_strengthen",
+      "target_id": "current_mhf_research_progress",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.3,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The current state of scientific research and development for Marburg hemorrhagic fever vaccines."
+    },
+    {
+      "probe_text": "A recent report from the Coalition for Epidemic Preparedness Innovations (CEPI) highlights that MHF vaccine development has been significantly hampered by insufficient and inconsistent funding over the past decade. They argue that a substantial, multi-year increase in funding, similar to that seen for other neglected tropical diseases, is the single most critical factor needed to accelerate progress and attract the necessary scientific talent to overcome existing research hurdles.",
+      "probe_type": "node_strengthen",
+      "target_id": "funding_for_vaccine_development",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The amount of financial investment and resources allocated to MHF vaccine research."
+    },
+    {
+      "probe_text": "Recent reports from the WHO indicate that regulatory bodies are implementing new, more stringent protocols for novel virus vaccines due to lessons learned from rapid COVID-19 vaccine rollouts. These enhanced safety and efficacy review processes are expected to add an average of 6-12 months to the final approval timeline for any new vaccine candidate, regardless of its scientific readiness.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "regulatory_approval_process",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The speed and complexity of the regulatory pathways for approving new vaccines."
+    },
+    {
+      "probe_text": "Recent breakthroughs in adapting mRNA vaccine technology for highly mutable viruses, similar to Marburg, have been published in leading scientific journals. These advancements suggest that existing platforms are more readily applicable to MHF than previously thought, potentially accelerating development timelines.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "availability_of_prior_vaccine_tech",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF."
+    },
+    {
+      "probe_text": "While significant research progress is often a prerequisite for vaccine development, the specific progress in MHF vaccine research might not directly translate to a *developed* vaccine by the deadline. It's possible that current research is focused on understanding the virus's mechanism or identifying initial targets, which, while crucial, doesn't guarantee a viable candidate ready for the later stages of development and approval within the given timeframe. For instance, a major scientific breakthrough could be announced, showing great promise but still being years away from a deployable vaccine.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Directly influences the likelihood of a successful vaccine candidate."
+    },
+    {
+      "probe_text": "While funding is generally important, for rare diseases like MHF, simply throwing more money at research might not accelerate development if the fundamental scientific challenges remain. For instance, the specific biological mechanisms of MHF might be poorly understood, or suitable animal models for testing may be lacking, meaning increased funding in the short term wouldn't overcome these critical scientific hurdles, thus having a negligible impact on research progress.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "funding_for_vaccine_development->current_mhf_research_progress",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Adequate funding accelerates research and development efforts."
+    },
+    {
+      "probe_text": "While a promising vaccine candidate is typically needed, sometimes regulatory bodies will engage with research teams very early in the development process for rare or high-consequence pathogens like Marburg. This 'at-risk' or 'pre-emptive' engagement can happen even before a candidate is fully solidified, especially if there's a significant unmet medical need and existing research shows strong potential. Could this early regulatory interaction, even with less than a fully 'promising' candidate, accelerate the overall timeline?",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "current_mhf_research_progress->regulatory_approval_process",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "A promising vaccine candidate is required to enter the regulatory process."
+    },
+    {
+      "probe_text": "What if 'Directly influences the likelihood of a successful vaccine candidate.' is wrong?",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "generated": false,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true
+    },
+    {
+      "probe_text": "Recent reports indicate a significant surge in private sector investment into novel infectious disease research, with venture capital flowing into biotech firms specifically targeting rare but high-consequence pathogens like Marburg. This influx of capital is enabling these firms to hire top researchers and acquire cutting-edge laboratory equipment, directly accelerating their R&D timelines far beyond what would be possible with traditional government grants alone, thereby strengthening the link between funding and research progress.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "funding_for_vaccine_development->current_mhf_research_progress",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Adequate funding accelerates research and development efforts."
+    },
+    {
+      "probe_text": "While it's true that a promising candidate is needed, the regulatory approval process for novel pathogens like Marburg virus is often designed with built-in pathways for accelerated review *even in the early stages* if the scientific data demonstrates significant promise and potential for rapid advancement. This means that even before a final candidate is selected, the *progress* itself, if exceptionally strong and well-documented, can significantly influence the initial speed and receptiveness of regulatory bodies, potentially fast-tracking subsequent steps.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "current_mhf_research_progress->regulatory_approval_process",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "A promising vaccine candidate is required to enter the regulatory process."
+    },
+    {
+      "probe_text": "What if the development of a successful Marburg vaccine by 2025 actually *drives* current research progress? For example, imagine that significant breakthroughs in vaccine development are being kept secret by a private company aiming for a patent. This 'successful development' (even if not yet public or approved) could be directing the *appearance* of research progress, or causing researchers to focus on specific, already-proven avenues, rather than the other way around.",
+      "probe_type": "edge_reverse",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Directly influences the likelihood of a successful vaccine candidate."
+    },
+    {
+      "probe_text": "While past outbreaks and threat levels certainly influence funding, couldn't the reverse also be true? For instance, a significant increase in funding for MHF vaccine development, perhaps announced by a major philanthropic organization, might lead public health bodies and researchers to perceive the threat of MHF as more immediate and thus elevate its perceived threat level and urgency, leading to further prioritization.",
+      "probe_type": "edge_spurious",
+      "target_id": "funding_for_vaccine_development->past_outbreaks_and_threat_level",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The amount of financial investment and resources allocated to MHF vaccine research. -> The frequency and severity of past Marburg virus outbreaks, influencing perceived threat and urgency."
+    },
+    {
+      "probe_text": "While you've noted that funding impacts research progress and prior vaccine tech availability also impacts research progress, consider how funding might *directly* influence the availability of prior vaccine technologies for MHF. Increased funding for MHF vaccine development could incentivize companies or research institutions to adapt their existing mRNA or viral vector platforms, thus making those technologies *more readily available* or *tailored* for Marburg, rather than just assuming their general applicability.",
+      "probe_type": "edge_spurious",
+      "target_id": "funding_for_vaccine_development->availability_of_prior_vaccine_tech",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The amount of financial investment and resources allocated to MHF vaccine research. -> The extent to which existing vaccine technologies (e.g., mRNA, viral vector) can be adapted for MHF."
+    },
+    {
+      "probe_text": "Imagine that a novel, highly effective antiviral drug for treating Marburg hemorrhagic fever is discovered and widely adopted by 2024. How might this development, independent of a vaccine, influence the urgency and resource allocation towards developing a MHF vaccine by 2025?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that a significant breakthrough in understanding Marburg virus's protein structure occurs, unrelated to current research funding or prior technological approaches. This breakthrough dramatically simplifies the target for vaccine development. How would this new information about a fundamental scientific advance affect your probability assessment for a vaccine being developed by 2025-12-28?",
+      "probe_type": "missing_node",
+      "target_id": "fundamental_scientific_breakthrough",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "The United Nations recently highlighted the importance of international collaboration in combating emerging infectious diseases. They released a report detailing the geographical distribution of past Marburg virus outbreaks, noting a concentration in certain African regions.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "The World Health Organization (WHO) has recently published guidelines on improving global health surveillance systems, including recommendations for better tracking of rare infectious diseases like Marburg. These guidelines focus on data sharing infrastructure and early warning systems, but do not directly involve or mandate specific vaccine development timelines or funding.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if current MHF research progress is actually irrelevant to the development of a vaccine by 2025? Perhaps a breakthrough in a completely different, unexpected scientific field, unrelated to current MHF research trajectories, is the sole factor that will enable a vaccine's rapid development and approval by the deadline.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.5,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the relevance of 'current_mhf_research_progress' significantly weakens the primary causal path leading to the outcome. If current research progress is irrelevant, then the direct link 'current_mhf_research_progress -> vaccine_developed_by_2025' is broken. While other factors like funding, past outbreaks, and prior vaccine tech influence research progress, if that progress itself is deemed irrelevant, these upstream factors lose their direct causal power over the outcome. The idea of a 'breakthrough in a completely different, unexpected scientific field' implies an external, unmodeled factor. Without a clear mechanism for this hypothetical breakthrough to translate into a *developed and approved vaccine by the deadline*, and given the direct challenge to the current research path, the probability must decrease substantially. The regulatory approval process is also dependent on a developed vaccine, so that path is also indirectly affected.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the relevance of 'current_mhf_research_progress' significantly weakens the primary causal path leading to the outcome. If current research progress is irrelevant, then the direct link 'current_mhf_research_progress -> vaccine_developed_by_2025' is broken. While other factors like funding, past outbreaks, and prior vaccine tech influence research progress, if that progress itself is deemed irrelevant, these upstream factors lose their direct causal power over the outcome. The idea of a 'breakthrough in a completely different, unexpected scientific field' implies an external, unmodeled factor. Without a clear mechanism for this hypothetical breakthrough to translate into a *developed and approved vaccine by the deadline*, and given the direct challenge to the current research path, the probability must decrease substantially. The regulatory approval process is also dependent on a developed vaccine, so that path is also indirectly affected.\"\n}",
+      "target_id": "current_mhf_research_progress",
+      "target_type": "node",
+      "target_importance": 0.3,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the current level of funding for MHF vaccine development is actually irrelevant. Despite current funding levels, let's assume that no significant breakthroughs are possible with existing technology and that major pharmaceutical companies have decided not to prioritize MHF research regardless of the financial incentives, perhaps due to perceived low return on investment or other internal strategic decisions. Essentially, the funding is a red herring, and the actual progress is stalled for unrelated reasons.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.5,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge states that funding for MHF vaccine development is irrelevant due to a lack of significant breakthroughs possible with existing technology and major pharmaceutical companies not prioritizing MHF research. This directly impacts the causal path: `funding_for_vaccine_development -> current_mhf_research_progress`. If funding is irrelevant, then changes in funding will not affect research progress. More critically, the reasoning implies that `current_mhf_research_progress` is severely limited by factors independent of funding (lack of technological breakthroughs and industry prioritization). This severely weakens the most direct link to the outcome: `current_mhf_research_progress -> vaccine_developed_by_2025`. Even if other factors like past outbreaks or prior technology could theoretically influence research, the statement that 'no significant breakthroughs are possible with existing technology' suggests a fundamental roadblock. Therefore, the probability of a vaccine being developed by the deadline is significantly reduced.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge states that funding for MHF vaccine development is irrelevant due to a lack of significant breakthroughs possible with existing technology and major pharmaceutical companies not prioritizing MHF research. This directly impacts the causal path: `funding_for_vaccine_development -> current_mhf_research_progress`. If funding is irrelevant, then changes in funding will not affect research progress. More critically, the reasoning implies that `current_mhf_research_progress` is severely limited by factors independent of funding (lack of technological breakthroughs and industry prioritization). This severely weakens the most direct link to the outcome: `current_mhf_research_progress -> vaccine_developed_by_2025`. Even if other factors like past outbreaks or prior technology could theoretically influence research, the statement that 'no significant breakthroughs are possible with existing technology' suggests a fundamental roadblock. Therefore, the probability of a vaccine being developed by the deadline is significantly reduced.\"\n}",
+      "target_id": "funding_for_vaccine_development",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "While the regulatory approval process is typically a bottleneck, for novel and highly dangerous pathogens like Marburg, governments may fast-track approvals significantly, potentially bypassing standard timelines. For instance, during the COVID-19 pandemic, Operation Warp Speed demonstrated a willingness to accelerate vaccine development and approval for public health emergencies, suggesting a similar mechanism could apply to MHF if a severe outbreak were to occur.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'regulatory_approval_process' node suggests that the typical bottleneck associated with this stage might be significantly reduced for a pathogen like Marburg, especially in the face of a public health emergency. The provided information about Operation Warp Speed during COVID-19 is a strong precedent for accelerated regulatory pathways under urgent circumstances. This impacts the causal path: current_mhf_research_progress -> regulatory_approval_process -> vaccine_developed_by_2025. If the regulatory process can be significantly shortened, then even if a vaccine candidate emerges closer to the deadline, there's a higher likelihood it can achieve formal approval by 2025-12-28. This strengthens the link between research progress and the final outcome, thus increasing the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'regulatory_approval_process' node suggests that the typical bottleneck associated with this stage might be significantly reduced for a pathogen like Marburg, especially in the face of a public health emergency. The provided information about Operation Warp Speed during COVID-19 is a strong precedent for accelerated regulatory pathways under urgent circumstances. This impacts the causal path: current_mhf_research_progress -> regulatory_approval_process -> vaccine_developed_by_2025. If the regulatory process can be significantly shortened, then even if a vaccine candidate emerges closer to the deadline, there's a higher likelihood it can achieve formal approval by 2025-12-28. This strengthens the link between research progress and the final outcome, thus increasing the overall probability.\"\n}",
+      "target_id": "regulatory_approval_process",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent scientific literature suggests that MHF's unique viral structure presents significant challenges, making existing vaccine technologies like mRNA or viral vectors less adaptable than previously assumed. This research indicates that developing a vaccine for MHF may require entirely novel approaches, rather than building upon prior technological advancements.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'availability_of_prior_vaccine_tech' directly impacts the 'current_mhf_research_progress' node. If existing vaccine technologies are less adaptable, it means that researchers cannot leverage prior advancements as effectively. This lengthens the research and development timeline, making it harder to achieve a developed vaccine by the deadline. The causal path 'availability_of_prior_vaccine_tech -> current_mhf_research_progress -> vaccine_developed_by_2025' is weakened. While not entirely eliminating the possibility of a vaccine, it significantly increases the difficulty and time required, necessitating more foundational research. This warrants a decrease in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'availability_of_prior_vaccine_tech' directly impacts the 'current_mhf_research_progress' node. If existing vaccine technologies are less adaptable, it means that researchers cannot leverage prior advancements as effectively. This lengthens the research and development timeline, making it harder to achieve a developed vaccine by the deadline. The causal path 'availability_of_prior_vaccine_tech -> current_mhf_research_progress -> vaccine_developed_by_2025' is weakened. While not entirely eliminating the possibility of a vaccine, it significantly increases the difficulty and time required, necessitating more foundational research. This warrants a decrease in the probability.\"\n}",
+      "target_id": "availability_of_prior_vaccine_tech",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent breakthrough in Marburg virus vector research, published in 'Nature Medicine', has demonstrated a novel viral vector platform that shows unprecedented efficacy in preclinical trials for MHF. This development significantly accelerates the timeline for a viable vaccine candidate, suggesting that current research progress is not only on track but has potentially leaped forward due to this specific technological advancement.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly challenges and strengthens the 'current_mhf_research_progress' node. The breakthrough in viral vector research, demonstrating unprecedented efficacy in preclinical trials, indicates a significant acceleration in the development of a viable vaccine candidate. This directly impacts the causal path: 'current_mhf_research_progress' -> 'vaccine_developed_by_2025'. A stronger 'current_mhf_research_progress' increases the probability that a vaccine will be developed by the deadline. Furthermore, this breakthrough could indirectly influence 'regulatory_approval_process' by providing a more robust candidate to submit, potentially smoothing the path, although the primary impact is on the research progress itself. The overall probability is increased substantially because this addresses a critical step in the causal chain.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly challenges and strengthens the 'current_mhf_research_progress' node. The breakthrough in viral vector research, demonstrating unprecedented efficacy in preclinical trials, indicates a significant acceleration in the development of a viable vaccine candidate. This directly impacts the causal path: 'current_mhf_research_progress' -> 'vaccine_developed_by_2025'. A stronger 'current_mhf_research_progress' increases the probability that a vaccine will be developed by the deadline. Furthermore, this breakthrough could indirectly influence 'regulatory_approval_process' by providing a more robust candidate to submit, potentially smoothing the path, although the primary impact is on the research progress itself. The overall probability is increased substantially because this addresses a critical step in the causal chain.\"\n}",
+      "target_id": "current_mhf_research_progress",
+      "target_type": "node",
+      "target_importance": 0.3,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent report from the Coalition for Epidemic Preparedness Innovations (CEPI) highlights that MHF vaccine development has been significantly hampered by insufficient and inconsistent funding over the past decade. They argue that a substantial, multi-year increase in funding, similar to that seen for other neglected tropical diseases, is the single most critical factor needed to accelerate progress and attract the necessary scientific talent to overcome existing research hurdles.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'funding_for_vaccine_development' node, which is a critical upstream factor for 'current_mhf_research_progress'. The report explicitly states that insufficient and inconsistent funding has significantly hampered development. This suggests that the current level of funding is a major bottleneck, and without a substantial increase (which the report implies is not currently happening), progress will continue to be slow. This weakens the causal path from 'funding_for_vaccine_development' to 'current_mhf_research_progress', and consequently, the path to 'vaccine_developed_by_2025'. While other factors like prior vaccine technology might still play a role, the emphasized funding issue suggests a more significant impediment than previously accounted for. Therefore, the probability of a vaccine being developed by the deadline is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'funding_for_vaccine_development' node, which is a critical upstream factor for 'current_mhf_research_progress'. The report explicitly states that insufficient and inconsistent funding has significantly hampered development. This suggests that the current level of funding is a major bottleneck, and without a substantial increase (which the report implies is not currently happening), progress will continue to be slow. This weakens the causal path from 'funding_for_vaccine_development' to 'current_mhf_research_progress', and consequently, the path to 'vaccine_developed_by_2025'. While other factors like prior vaccine technology might still play a role, the emphasized funding issue suggests a more significant impediment than previously accounted for. Therefore, the probability of a vaccine being developed by the deadline is decreased.\"\n}",
+      "target_id": "funding_for_vaccine_development",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from the WHO indicate that regulatory bodies are implementing new, more stringent protocols for novel virus vaccines due to lessons learned from rapid COVID-19 vaccine rollouts. These enhanced safety and efficacy review processes are expected to add an average of 6-12 months to the final approval timeline for any new vaccine candidate, regardless of its scientific readiness.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'regulatory_approval_process' node has a direct impact on the causal path leading to the outcome 'vaccine_developed_by_2025'. Specifically, the edge 'regulatory_approval_process -> vaccine_developed_by_2025' is affected. The new information suggests that the regulatory process will be slower than previously assumed, adding 6-12 months to approval timelines. This directly reduces the probability that a vaccine, even if developed, will be *officially approved* and thus considered 'developed' by the specified deadline of 2025-12-28. The causal path 'current_mhf_research_progress -> regulatory_approval_process' is also indirectly affected, as a longer approval timeline might disincentivize or delay the final stages of submission if the deadline is perceived as unachievable. This update is moderate because the core research progress is not directly challenged, but the final hurdle to 'development' (which implies approval) is made more difficult.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'regulatory_approval_process' node has a direct impact on the causal path leading to the outcome 'vaccine_developed_by_2025'. Specifically, the edge 'regulatory_approval_process -> vaccine_developed_by_2025' is affected. The new information suggests that the regulatory process will be slower than previously assumed, adding 6-12 months to approval timelines. This directly reduces the probability that a vaccine, even if developed, will be *officially approved* and thus considered 'developed' by the specified deadline of 2025-12-28. The causal path 'current_mhf_research_progress -> regulatory_approval_process' is also indirectly affected, as a longer approval timeline might disincentivize or delay the final stages of submission if the deadline is perceived as unachievable. This update is moderate because the core research progress is not directly challenged, but the final hurdle to 'development' (which implies approval) is made more difficult.\"\n}",
+      "target_id": "regulatory_approval_process",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent breakthroughs in adapting mRNA vaccine technology for highly mutable viruses, similar to Marburg, have been published in leading scientific journals. These advancements suggest that existing platforms are more readily applicable to MHF than previously thought, potentially accelerating development timelines.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal path from 'availability_of_prior_vaccine_tech' to 'current_mhf_research_progress'. Breakthroughs in adapting mRNA technology for similar viruses imply that existing platforms are more readily applicable to MHF, which should accelerate the research and development process. This improved progress in research, in turn, increases the likelihood that a vaccine will be developed ('current_mhf_research_progress' -> 'vaccine_developed_by_2025') and potentially navigate the regulatory process faster. Therefore, the probability of a vaccine being developed by the deadline is increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal path from 'availability_of_prior_vaccine_tech' to 'current_mhf_research_progress'. Breakthroughs in adapting mRNA technology for similar viruses imply that existing platforms are more readily applicable to MHF, which should accelerate the research and development process. This improved progress in research, in turn, increases the likelihood that a vaccine will be developed ('current_mhf_research_progress' -> 'vaccine_developed_by_2025') and potentially navigate the regulatory process faster. Therefore, the probability of a vaccine being developed by the deadline is increased.\"\n}",
+      "target_id": "availability_of_prior_vaccine_tech",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While significant research progress is often a prerequisite for vaccine development, the specific progress in MHF vaccine research might not directly translate to a *developed* vaccine by the deadline. It's possible that current research is focused on understanding the virus's mechanism or identifying initial targets, which, while crucial, doesn't guarantee a viable candidate ready for the later stages of development and approval within the given timeframe. For instance, a major scientific breakthrough could be announced, showing great promise but still being years away from a deployable vaccine.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct translation of 'current_mhf_research_progress' to a 'vaccine_developed_by_2025' within the specified timeframe. While research progress is necessary, it may not be sufficient if the progress is foundational (e.g., understanding mechanisms) rather than directly leading to a candidate vaccine ready for later-stage development and approval. This weakens the causal path `current_mhf_research_progress -> vaccine_developed_by_2025`. It doesn't completely break the link, as significant progress *could* still lead to a vaccine, but it introduces more uncertainty about the *stage* of progress achieved and its readiness for deployment by the deadline. Therefore, the probability has decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct translation of 'current_mhf_research_progress' to a 'vaccine_developed_by_2025' within the specified timeframe. While research progress is necessary, it may not be sufficient if the progress is foundational (e.g., understanding mechanisms) rather than directly leading to a candidate vaccine ready for later-stage development and approval. This weakens the causal path `current_mhf_research_progress -> vaccine_developed_by_2025`. It doesn't completely break the link, as significant progress *could* still lead to a vaccine, but it introduces more uncertainty about the *stage* of progress achieved and its readiness for deployment by the deadline. Therefore, the probability has decreased.\"\n}",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While funding is generally important, for rare diseases like MHF, simply throwing more money at research might not accelerate development if the fundamental scientific challenges remain. For instance, the specific biological mechanisms of MHF might be poorly understood, or suitable animal models for testing may be lacking, meaning increased funding in the short term wouldn't overcome these critical scientific hurdles, thus having a negligible impact on research progress.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct impact of increased funding on research progress for MHF, suggesting that scientific hurdles (poorly understood mechanisms, lack of animal models) are the primary bottlenecks, not the amount of money. This weakens the causal path: funding_for_vaccine_development -> current_mhf_research_progress. While funding can still play a role, its ability to *accelerate* progress is significantly diminished according to the new information. This makes the node 'current_mhf_research_progress' less sensitive to changes in 'funding_for_vaccine_development' and potentially less sensitive to 'past_outbreaks_and_threat_level' if that link primarily drives funding. Consequently, the direct link from research progress to 'vaccine_developed_by_2025' is now less likely to be strongly influenced by funding increases, leading to a decreased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct impact of increased funding on research progress for MHF, suggesting that scientific hurdles (poorly understood mechanisms, lack of animal models) are the primary bottlenecks, not the amount of money. This weakens the causal path: funding_for_vaccine_development -> current_mhf_research_progress. While funding can still play a role, its ability to *accelerate* progress is significantly diminished according to the new information. This makes the node 'current_mhf_research_progress' less sensitive to changes in 'funding_for_vaccine_development' and potentially less sensitive to 'past_outbreaks_and_threat_level' if that link primarily drives funding. Consequently, the direct link from research progress to 'vaccine_developed_by_2025' is now less likely to be strongly influenced by funding increases, leading to a decreased probability estimate.\"\n}",
+      "target_id": "funding_for_vaccine_development->current_mhf_research_progress",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While a promising vaccine candidate is typically needed, sometimes regulatory bodies will engage with research teams very early in the development process for rare or high-consequence pathogens like Marburg. This 'at-risk' or 'pre-emptive' engagement can happen even before a candidate is fully solidified, especially if there's a significant unmet medical need and existing research shows strong potential. Could this early regulatory interaction, even with less than a fully 'promising' candidate, accelerate the overall timeline?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that the regulatory approval process might begin earlier for MHF vaccines, even before a candidate is fully solidified. This impacts the causal path from `current_mhf_research_progress` to `regulatory_approval_process` and subsequently to `vaccine_developed_by_2025`. While the core requirement of having *some* research progress remains, the new information implies that the 'promising candidate' threshold might be less rigid, allowing for parallel processing or earlier engagement with regulators. This could potentially shorten the overall timeline if regulatory hurdles are addressed proactively. The original model assumed a more sequential process where regulatory engagement only starts with a near-complete candidate. This early interaction, even with less than a fully solidified candidate, could accelerate the process, thus increasing the probability, albeit not drastically, as the fundamental research progress is still the primary driver.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that the regulatory approval process might begin earlier for MHF vaccines, even before a candidate is fully solidified. This impacts the causal path from `current_mhf_research_progress` to `regulatory_approval_process` and subsequently to `vaccine_developed_by_2025`. While the core requirement of having *some* research progress remains, the new information implies that the 'promising candidate' threshold might be less rigid, allowing for parallel processing or earlier engagement with regulators. This could potentially shorten the overall timeline if regulatory hurdles are addressed proactively. The original model assumed a more sequential process where regulatory engagement only starts with a near-complete candidate. This early interaction, even with less than a fully solidified candidate, could accelerate the process, thus increasing the probability, albeit not drastically, as the fundamental research progress is still the primary driver.\"\n}",
+      "target_id": "current_mhf_research_progress->regulatory_approval_process",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "What if 'Directly influences the likelihood of a successful vaccine candidate.' is wrong?",
+      "probe_generated": false,
+      "success": true,
+      "updated_probability": 0.05,
+      "absolute_shift": 0.6,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct link between 'current_mhf_research_progress' and 'vaccine_developed_by_2025'. If research progress does not directly influence the likelihood of a successful vaccine candidate, then the entire causal chain leading to the outcome is severely broken. This implies that even with significant research, funding, and technological advancements, a vaccine might not materialize. The only remaining pathway to the outcome is through the 'regulatory_approval_process', but that process itself requires a 'vaccine_developed_by_2025' to have been created in the first place (as per the original edge 'current_mhf_research_progress -> regulatory_approval_process'). Therefore, this fundamental link being wrong necessitates a drastic reduction in the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.05,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct link between 'current_mhf_research_progress' and 'vaccine_developed_by_2025'. If research progress does not directly influence the likelihood of a successful vaccine candidate, then the entire causal chain leading to the outcome is severely broken. This implies that even with significant research, funding, and technological advancements, a vaccine might not materialize. The only remaining pathway to the outcome is through the 'regulatory_approval_process', but that process itself requires a 'vaccine_developed_by_2025' to have been created in the first place (as per the original edge 'current_mhf_research_progress -> regulatory_approval_process'). Therefore, this fundamental link being wrong necessitates a drastic reduction in the probability estimate.\"\n}",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant surge in private sector investment into novel infectious disease research, with venture capital flowing into biotech firms specifically targeting rare but high-consequence pathogens like Marburg. This influx of capital is enabling these firms to hire top researchers and acquire cutting-edge laboratory equipment, directly accelerating their R&D timelines far beyond what would be possible with traditional government grants alone, thereby strengthening the link between funding and research progress.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal link between 'funding_for_vaccine_development' and 'current_mhf_research_progress'. The report highlights a significant surge in private sector investment specifically targeting rare, high-consequence pathogens like Marburg. This influx of capital is described as enabling biotech firms to accelerate R&D timelines by hiring top researchers and acquiring advanced equipment. This directly impacts the 'current_mhf_research_progress' node, making it more likely to be in an advanced state. Since 'current_mhf_research_progress' is a primary driver of the outcome 'vaccine_developed_by_2025', and the 'funding_for_vaccine_development' node is also indirectly influenced by 'past_outbreaks_and_threat_level', this strengthening of the funding-to-research link increases the overall probability of a vaccine being developed by the deadline. The causal path affected is primarily: past_outbreaks_and_threat_level -> funding_for_vaccine_development -> current_mhf_research_progress -> vaccine_developed_by_2025. The strengthening of the middle link in this chain is the key driver of the increased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal link between 'funding_for_vaccine_development' and 'current_mhf_research_progress'. The report highlights a significant surge in private sector investment specifically targeting rare, high-consequence pathogens like Marburg. This influx of capital is described as enabling biotech firms to accelerate R&D timelines by hiring top researchers and acquiring advanced equipment. This directly impacts the 'current_mhf_research_progress' node, making it more likely to be in an advanced state. Since 'current_mhf_research_progress' is a primary driver of the outcome 'vaccine_developed_by_2025', and the 'funding_for_vaccine_development' node is also indirectly influenced by 'past_outbreaks_and_threat_level', this strengthening of the funding-to-research link increases the overall probability of a vaccine being developed by the deadline. The causal path affected is primarily: past_outbreaks_and_threat_level -> funding_for_vaccine_development -> current_mhf_research_progress -> vaccine_developed_by_2025. The strengthening of the middle link in this chain is the key driver of the increased probability.\"\n}",
+      "target_id": "funding_for_vaccine_development->current_mhf_research_progress",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While it's true that a promising candidate is needed, the regulatory approval process for novel pathogens like Marburg virus is often designed with built-in pathways for accelerated review *even in the early stages* if the scientific data demonstrates significant promise and potential for rapid advancement. This means that even before a final candidate is selected, the *progress* itself, if exceptionally strong and well-documented, can significantly influence the initial speed and receptiveness of regulatory bodies, potentially fast-tracking subsequent steps.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that the 'current_mhf_research_progress' node has a more direct and potentially accelerated influence on the 'regulatory_approval_process' than previously modeled. The original model implied a sequential dependency: research progress *leads to* a candidate, which *then enters* the regulatory process. The new information indicates that exceptionally strong research *progress itself*, even before a final candidate, can influence the *initial speed and receptiveness* of regulatory bodies, potentially fast-tracking subsequent steps. This strengthens the causal path from 'current_mhf_research_progress' to 'vaccine_developed_by_2025' by making the regulatory hurdle less of a strict gatekeeper and more of a process that can be influenced and potentially expedited by early, strong scientific advancement. This suggests a slightly higher likelihood that a vaccine could be developed and approved within the timeframe, hence the increased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that the 'current_mhf_research_progress' node has a more direct and potentially accelerated influence on the 'regulatory_approval_process' than previously modeled. The original model implied a sequential dependency: research progress *leads to* a candidate, which *then enters* the regulatory process. The new information indicates that exceptionally strong research *progress itself*, even before a final candidate, can influence the *initial speed and receptiveness* of regulatory bodies, potentially fast-tracking subsequent steps. This strengthens the causal path from 'current_mhf_research_progress' to 'vaccine_developed_by_2025' by making the regulatory hurdle less of a strict gatekeeper and more of a process that can be influenced and potentially expedited by early, strong scientific advancement. This suggests a slightly higher likelihood that a vaccine could be developed and approved within the timeframe, hence the increased probability.\"\n}",
+      "target_id": "current_mhf_research_progress->regulatory_approval_process",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "What if the development of a successful Marburg vaccine by 2025 actually *drives* current research progress? For example, imagine that significant breakthroughs in vaccine development are being kept secret by a private company aiming for a patent. This 'successful development' (even if not yet public or approved) could be directing the *appearance* of research progress, or causing researchers to focus on specific, already-proven avenues, rather than the other way around.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the directionality of the causal link between `current_mhf_research_progress` and `vaccine_developed_by_2025`. The original model assumes that progress in research *leads to* the development of a vaccine. The new information suggests that the *outcome* (a developed vaccine, even if secret) might be influencing the *appearance* of progress or directing research efforts. This creates a potential feedback loop or reverse causality that weakens the direct predictive power of current research progress as an indicator. If current progress is merely a reflection of a secretly developed vaccine, then our ability to forecast based on observable research trends is diminished. This fundamentally alters the interpretation of the `current_mhf_research_progress -> vaccine_developed_by_2025` link. While the existence of a secretly developed vaccine would still imply a high probability of eventual public development, the *current* observable progress might be a less reliable indicator than previously thought. This warrants a decrease in probability, as the strength of the primary driver for the outcome is now less certain and potentially misleading.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the directionality of the causal link between `current_mhf_research_progress` and `vaccine_developed_by_2025`. The original model assumes that progress in research *leads to* the development of a vaccine. The new information suggests that the *outcome* (a developed vaccine, even if secret) might be influencing the *appearance* of progress or directing research efforts. This creates a potential feedback loop or reverse causality that weakens the direct predictive power of current research progress as an indicator. If current progress is merely a reflection of a secretly developed vaccine, then our ability to forecast based on observable research trends is diminished. This fundamentally alters the interpretation of the `current_mhf_research_progress -> vaccine_developed_by_2025` link. While the existence of a secretly developed vaccine would still imply a high probability of eventual public development, the *current* observable progress might be a less reliable indicator than previously thought. This warrants a decrease in probability, as the strength of the primary driver for the outcome is now less certain and potentially misleading.\"\n}",
+      "target_id": "current_mhf_research_progress->vaccine_developed_by_2025",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While past outbreaks and threat levels certainly influence funding, couldn't the reverse also be true? For instance, a significant increase in funding for MHF vaccine development, perhaps announced by a major philanthropic organization, might lead public health bodies and researchers to perceive the threat of MHF as more immediate and thus elevate its perceived threat level and urgency, leading to further prioritization.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.68,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a potential reverse causality: 'funding_for_vaccine_development' could influence 'past_outbreaks_and_threat_level' by increasing perceived urgency. This creates a feedback loop where increased funding might lead to a higher perceived threat, which in turn could further boost funding and research prioritization. While this new path (funding -> perceived threat) is plausible, it doesn't fundamentally alter the primary causal chain leading to vaccine development. The direct link from 'current_mhf_research_progress' to 'vaccine_developed_by_2025' remains the most critical. The proposed feedback loop is more of a secondary amplifier rather than a structural change to the core logic. Therefore, the update reflects a slight increase in probability due to the potential for intensified focus stemming from this feedback, but not a drastic shift.",
+      "raw_response": "{\n  \"updated_probability\": 0.68,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a potential reverse causality: 'funding_for_vaccine_development' could influence 'past_outbreaks_and_threat_level' by increasing perceived urgency. This creates a feedback loop where increased funding might lead to a higher perceived threat, which in turn could further boost funding and research prioritization. While this new path (funding -> perceived threat) is plausible, it doesn't fundamentally alter the primary causal chain leading to vaccine development. The direct link from 'current_mhf_research_progress' to 'vaccine_developed_by_2025' remains the most critical. The proposed feedback loop is more of a secondary amplifier rather than a structural change to the core logic. Therefore, the update reflects a slight increase in probability due to the potential for intensified focus stemming from this feedback, but not a drastic shift.\"\n}",
+      "target_id": "funding_for_vaccine_development->past_outbreaks_and_threat_level",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While you've noted that funding impacts research progress and prior vaccine tech availability also impacts research progress, consider how funding might *directly* influence the availability of prior vaccine technologies for MHF. Increased funding for MHF vaccine development could incentivize companies or research institutions to adapt their existing mRNA or viral vector platforms, thus making those technologies *more readily available* or *tailored* for Marburg, rather than just assuming their general applicability.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a new direct causal path: funding_for_vaccine_development -> availability_of_prior_vaccine_tech. Previously, funding was assumed to influence research progress directly, and prior vaccine tech availability was also assumed to influence research progress directly. The new insight is that increased funding can actively make existing technologies more available or tailored for MHF. This strengthens the link between funding and the readiness of the research pipeline. Since increased funding is generally positive for vaccine development, and this new path provides a more direct mechanism for funding to positively impact the availability of crucial technologies, the overall probability of a vaccine being developed by the deadline increases slightly. The causal path is now: funding_for_vaccine_development -> availability_of_prior_vaccine_tech -> current_mhf_research_progress -> vaccine_developed_by_2025. This reinforces the positive influence of funding on the eventual outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a new direct causal path: funding_for_vaccine_development -> availability_of_prior_vaccine_tech. Previously, funding was assumed to influence research progress directly, and prior vaccine tech availability was also assumed to influence research progress directly. The new insight is that increased funding can actively make existing technologies more available or tailored for MHF. This strengthens the link between funding and the readiness of the research pipeline. Since increased funding is generally positive for vaccine development, and this new path provides a more direct mechanism for funding to positively impact the availability of crucial technologies, the overall probability of a vaccine being developed by the deadline increases slightly. The causal path is now: funding_for_vaccine_development -> availability_of_prior_vaccine_tech -> current_mhf_research_progress -> vaccine_developed_by_2025. This reinforces the positive influence of funding on the eventual outcome.\"\n}",
+      "target_id": "funding_for_vaccine_development->availability_of_prior_vaccine_tech",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a novel, highly effective antiviral drug for treating Marburg hemorrhagic fever is discovered and widely adopted by 2024. How might this development, independent of a vaccine, influence the urgency and resource allocation towards developing a MHF vaccine by 2025?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "decreased",
+      "reasoning": "The discovery and widespread adoption of a highly effective antiviral drug for MHF significantly impacts the perceived urgency and resource allocation for vaccine development. This challenges the causal path from 'past_outbreaks_and_threat_level' to 'funding_for_vaccine_development' and 'current_mhf_research_progress'. If MHF becomes a treatable disease with a drug, the motivation for rapid vaccine development diminishes. This reduces the likelihood that high levels of funding will be directed towards MHF vaccine research ('funding_for_vaccine_development' -> 'current_mhf_research_progress'), and also lessens the direct prioritization of MHF research due to outbreak urgency ('past_outbreaks_and_threat_level' -> 'current_mhf_research_progress'). While a vaccine might still be developed, the urgency and resource constraints are now less favorable, making it less likely to be completed and approved by the 2025 deadline. Therefore, the probability of a vaccine being developed by 2025-12-28 decreases.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The discovery and widespread adoption of a highly effective antiviral drug for MHF significantly impacts the perceived urgency and resource allocation for vaccine development. This challenges the causal path from 'past_outbreaks_and_threat_level' to 'funding_for_vaccine_development' and 'current_mhf_research_progress'. If MHF becomes a treatable disease with a drug, the motivation for rapid vaccine development diminishes. This reduces the likelihood that high levels of funding will be directed towards MHF vaccine research ('funding_for_vaccine_development' -> 'current_mhf_research_progress'), and also lessens the direct prioritization of MHF research due to outbreak urgency ('past_outbreaks_and_threat_level' -> 'current_mhf_research_progress'). While a vaccine might still be developed, the urgency and resource constraints are now less favorable, making it less likely to be completed and approved by the 2025 deadline. Therefore, the probability of a vaccine being developed by 2025-12-28 decreases.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a significant breakthrough in understanding Marburg virus's protein structure occurs, unrelated to current research funding or prior technological approaches. This breakthrough dramatically simplifies the target for vaccine development. How would this new information about a fundamental scientific advance affect your probability assessment for a vaccine being developed by 2025-12-28?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The new information describes a fundamental scientific advance that dramatically simplifies the target for vaccine development. This directly and positively impacts the 'current_mhf_research_progress' node. This simplification bypasses the need for extensive exploration of novel approaches and potentially reduces the time and effort required for initial vaccine design. The causal path affected is primarily 'current_mhf_research_progress -> vaccine_developed_by_2025'. While the breakthrough is described as unrelated to 'funding_for_vaccine_development' or 'availability_of_prior_vaccine_tech', its direct positive impact on research progress significantly increases the probability of a vaccine being developed. The speed of the regulatory process ('regulatory_approval_process') is still a factor, but a more straightforward vaccine target makes it more likely that a viable candidate will reach that stage in time. Therefore, the probability estimate is increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information describes a fundamental scientific advance that dramatically simplifies the target for vaccine development. This directly and positively impacts the 'current_mhf_research_progress' node. This simplification bypasses the need for extensive exploration of novel approaches and potentially reduces the time and effort required for initial vaccine design. The causal path affected is primarily 'current_mhf_research_progress -> vaccine_developed_by_2025'. While the breakthrough is described as unrelated to 'funding_for_vaccine_development' or 'availability_of_prior_vaccine_tech', its direct positive impact on research progress significantly increases the probability of a vaccine being developed. The speed of the regulatory process ('regulatory_approval_process') is still a factor, but a more straightforward vaccine target makes it more likely that a viable candidate will reach that stage in time. Therefore, the probability estimate is increased.\"\n}",
+      "target_id": "fundamental_scientific_breakthrough",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "The United Nations recently highlighted the importance of international collaboration in combating emerging infectious diseases. They released a report detailing the geographical distribution of past Marburg virus outbreaks, noting a concentration in certain African regions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The new information emphasizes international collaboration and highlights the geographical distribution of past Marburg virus outbreaks. This strengthens the causal link from 'past_outbreaks_and_threat_level' to 'funding_for_vaccine_development' and 'current_mhf_research_progress'. The UN report, by detailing outbreak patterns and stressing collaboration, likely increases the perceived threat and urgency, thereby potentially leading to more funding and prioritized research. This indirectly boosts the probability of 'vaccine_developed_by_2025' by improving the 'current_mhf_research_progress' node. The mention of specific regions might also implicitly suggest the need for tailored or more robust vaccine solutions, further justifying research efforts.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information emphasizes international collaboration and highlights the geographical distribution of past Marburg virus outbreaks. This strengthens the causal link from 'past_outbreaks_and_threat_level' to 'funding_for_vaccine_development' and 'current_mhf_research_progress'. The UN report, by detailing outbreak patterns and stressing collaboration, likely increases the perceived threat and urgency, thereby potentially leading to more funding and prioritized research. This indirectly boosts the probability of 'vaccine_developed_by_2025' by improving the 'current_mhf_research_progress' node. The mention of specific regions might also implicitly suggest the need for tailored or more robust vaccine solutions, further justifying research efforts.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "The World Health Organization (WHO) has recently published guidelines on improving global health surveillance systems, including recommendations for better tracking of rare infectious diseases like Marburg. These guidelines focus on data sharing infrastructure and early warning systems, but do not directly involve or mandate specific vaccine development timelines or funding.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0,
+      "shift_direction": "unchanged",
+      "reasoning": "The new information regarding WHO guidelines on global health surveillance, focusing on data sharing and early warning systems for rare infectious diseases, does not directly impact the core causal paths leading to vaccine development for Marburg hemorrhagic fever by the specified deadline. While improved surveillance could indirectly lead to earlier detection of outbreaks, which might then influence funding or research prioritization, the guidelines themselves do not directly alter the progress of research, the availability of funding, the speed of the regulatory process, or the effectiveness of existing vaccine technologies. Therefore, the structural importance of the challenged element to the existing causal network is low, and no significant update to the probability estimate is warranted.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"unchanged\",\n  \"reasoning\": \"The new information regarding WHO guidelines on global health surveillance, focusing on data sharing and early warning systems for rare infectious diseases, does not directly impact the core causal paths leading to vaccine development for Marburg hemorrhagic fever by the specified deadline. While improved surveillance could indirectly lead to earlier detection of outbreaks, which might then influence funding or research prioritization, the guidelines themselves do not directly alter the progress of research, the availability of funding, the speed of the regulatory process, or the effectiveness of existing vaccine technologies. Therefore, the structural importance of the challenged element to the existing causal network is low, and no significant update to the probability estimate is warranted.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "975d02beef1ceddee5c08e950f851f87e0544a43acf3a0b2d21c2e2eac16c3c5",
+    "question_text": "According to Wikipedia, will a vaccine have been developed for Marburg hemorrhagic fever (MHF) by 2025-12-28?",
+    "source": "wikipedia",
+    "condition": "one-turn",
+    "initial_probability": 0.65,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.1595238095238095,
+    "max_absolute_shift": 0.6
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 4.821428571428576,
+    "mean_shift_high": 0.28125000000000006,
+    "mean_shift_low": 0.05833333333333329,
+    "asymmetry_index": 1.141732283464567,
+    "mean_shift_negate": 0.20714285714285716,
+    "mean_shift_strengthen": 0.18142857142857144,
+    "fnar": 0.5,
+    "n_accepted": 2,
+    "n_spurious": 4,
+    "critical_path_premium": 0.12500000000000006,
+    "mean_shift_on_path": 0.24285714285714288,
+    "mean_shift_off_path": 0.11785714285714281,
+    "importance_sensitivity_correlation": 0.5583333333333333,
+    "control_sensitivity": 0
+  }
+}

@@ -1,0 +1,1230 @@
+{
+  "question_id": "5f437d89238ba3b30f988c3d7280f20003d242af1ef1a0fb943e486e3ebf3e0f",
+  "question_text": "Will there be more 'Strategic developments' in Andorra for the 30 days before 2025-12-28 compared to the 30-day average of 'Strategic developments' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Strategic developments'\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of 'Strategic developments' over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more 'Strategic developments' would need to occur in the 30 days leading up to the resolution.",
+  "source": "acled",
+  "initial_probability": 0.45,
+  "nodes": [
+    {
+      "id": "andorran_economic_activity",
+      "description": "Overall economic health and business activity in Andorra.",
+      "role": "factor"
+    },
+    {
+      "id": "regional_tourism_trends",
+      "description": "Trends in tourism affecting Andorra, influenced by neighboring countries and global events.",
+      "role": "factor"
+    },
+    {
+      "id": "government_initiatives",
+      "description": "Andorran government's active promotion of business and investment.",
+      "role": "factor"
+    },
+    {
+      "id": "global_economic_outlook",
+      "description": "The general state of the global economy, affecting international business and travel.",
+      "role": "factor"
+    },
+    {
+      "id": "strategic_developments_count",
+      "description": "The number of 'Strategic developments' recorded in Andorra.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome",
+      "description": "More 'Strategic developments' in Andorra in the 30 days before 2025-12-28 compared to the 30-day average of 'Strategic developments' over the 360 days preceding 2025-12-21.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "andorran_economic_activity",
+      "to": "strategic_developments_count",
+      "mechanism": "A more active economy likely leads to more strategic business moves."
+    },
+    {
+      "from": "regional_tourism_trends",
+      "to": "andorran_economic_activity",
+      "mechanism": "Strong tourism boosts the local economy."
+    },
+    {
+      "from": "regional_tourism_trends",
+      "to": "strategic_developments_count",
+      "mechanism": "Positive tourism can spur new business ventures and strategic partnerships."
+    },
+    {
+      "from": "government_initiatives",
+      "to": "strategic_developments_count",
+      "mechanism": "Proactive government policies can directly encourage strategic developments."
+    },
+    {
+      "from": "global_economic_outlook",
+      "to": "regional_tourism_trends",
+      "mechanism": "A positive global outlook generally supports increased international travel."
+    },
+    {
+      "from": "global_economic_outlook",
+      "to": "andorran_economic_activity",
+      "mechanism": "A strong global economy can indirectly benefit Andorra's economic activity."
+    },
+    {
+      "from": "strategic_developments_count",
+      "to": "outcome",
+      "mechanism": "This node directly represents the metric being compared in the outcome."
+    }
+  ],
+  "reasoning": "The probability of more strategic developments hinges on a confluence of factors. A robust global and regional economic outlook, coupled with strong tourism trends, would likely bolster Andorra's own economic activity and directly encourage new ventures. Government initiatives also play a direct role in fostering such developments. Given that the period is late 2025, a generally stable global economy might be assumed, but specific regional tourism trends and the effectiveness of Andorran government policies are less certain. The comparison to a historical average means that even a good period might not exceed a strong baseline, leading to a probability that is not overwhelmingly high.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 7,
+    "density": 0.2333,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "outcome",
+    "node_metrics": [
+      {
+        "node_id": "andorran_economic_activity",
+        "description": "Overall economic health and business activity in Andorra.",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 1,
+        "betweenness": 0.05,
+        "closeness": 0.4,
+        "pagerank": 0.1431,
+        "path_relevance": 0.1667
+      },
+      {
+        "node_id": "regional_tourism_trends",
+        "description": "Trends in tourism affecting Andorra, influenced by neighboring countries and global events.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 2,
+        "betweenness": 0.05,
+        "closeness": 0.2,
+        "pagerank": 0.1004,
+        "path_relevance": 0.1667
+      },
+      {
+        "node_id": "government_initiatives",
+        "description": "Andorran government's active promotion of business and investment.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0705,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "global_economic_outlook",
+        "description": "The general state of the global economy, affecting international business and travel.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0705,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "strategic_developments_count",
+        "description": "The number of 'Strategic developments' recorded in Andorra.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0.2,
+        "closeness": 0.64,
+        "pagerank": 0.2947,
+        "path_relevance": 0.8333
+      },
+      {
+        "node_id": "outcome",
+        "description": "More 'Strategic developments' in Andorra in the 30 days before 2025-12-28 compared to the 30-day average of 'Strategic developments' over the 360 days preceding 2025-12-21.",
+        "role": "outcome",
+        "in_degree": 1,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.5,
+        "pagerank": 0.3209,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "andorran_economic_activity",
+        "target": "strategic_developments_count",
+        "mechanism": "A more active economy likely leads to more strategic business moves.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      },
+      {
+        "source": "regional_tourism_trends",
+        "target": "andorran_economic_activity",
+        "mechanism": "Strong tourism boosts the local economy.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "regional_tourism_trends",
+        "target": "strategic_developments_count",
+        "mechanism": "Positive tourism can spur new business ventures and strategic partnerships.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      },
+      {
+        "source": "government_initiatives",
+        "target": "strategic_developments_count",
+        "mechanism": "Proactive government policies can directly encourage strategic developments.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "global_economic_outlook",
+        "target": "regional_tourism_trends",
+        "mechanism": "A positive global outlook generally supports increased international travel.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "global_economic_outlook",
+        "target": "andorran_economic_activity",
+        "mechanism": "A strong global economy can indirectly benefit Andorra's economic activity.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "strategic_developments_count",
+        "target": "outcome",
+        "mechanism": "This node directly represents the metric being compared in the outcome.",
+        "edge_betweenness": 0.1667,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "strategic_developments_count",
+        "description": "The number of 'Strategic developments' recorded in Andorra.",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "andorran_economic_activity",
+        "description": "Overall economic health and business activity in Andorra.",
+        "importance": 0.05,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regional_tourism_trends",
+        "description": "Trends in tourism affecting Andorra, influenced by neighboring countries and global events.",
+        "importance": 0.05,
+        "centrality_rank": 3,
+        "on_critical_path": true,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "global_economic_outlook",
+        "description": "The general state of the global economy, affecting international business and travel.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "strategic_developments_count",
+        "description": "The number of 'Strategic developments' recorded in Andorra.",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "andorran_economic_activity",
+        "description": "Overall economic health and business activity in Andorra.",
+        "importance": 0.05,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regional_tourism_trends",
+        "description": "Trends in tourism affecting Andorra, influenced by neighboring countries and global events.",
+        "importance": 0.05,
+        "centrality_rank": 3,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "global_economic_outlook",
+        "description": "The general state of the global economy, affecting international business and travel.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "strategic_developments_count->outcome",
+        "description": "This node directly represents the metric being compared in the outcome.",
+        "importance": 0.1667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "andorran_economic_activity->strategic_developments_count",
+        "description": "A more active economy likely leads to more strategic business moves.",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_tourism_trends->andorran_economic_activity",
+        "description": "Strong tourism boosts the local economy.",
+        "importance": 0.0333,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "strategic_developments_count->outcome",
+        "description": "This node directly represents the metric being compared in the outcome.",
+        "importance": 0.1667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "andorran_economic_activity->strategic_developments_count",
+        "description": "A more active economy likely leads to more strategic business moves.",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_tourism_trends->andorran_economic_activity",
+        "description": "Strong tourism boosts the local economy.",
+        "importance": 0.0333,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "strategic_developments_count->outcome",
+        "description": "This node directly represents the metric being compared in the outcome.",
+        "importance": 0.1667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "government_initiatives->global_economic_outlook",
+        "description": "Potential link: Andorran government's active promotion of business and investment. -> The general state of the global economy, affecting international business and travel.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "government_initiatives->andorran_economic_activity",
+        "description": "Potential link: Andorran government's active promotion of business and investment. -> Overall economic health and business activity in Andorra.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "strategic_developments_count",
+      "description": "The number of 'Strategic developments' recorded in Andorra.",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "andorran_economic_activity",
+      "description": "Overall economic health and business activity in Andorra.",
+      "importance": 0.05,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regional_tourism_trends",
+      "description": "Trends in tourism affecting Andorra, influenced by neighboring countries and global events.",
+      "importance": 0.05,
+      "centrality_rank": 3,
+      "on_critical_path": true,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "global_economic_outlook",
+      "description": "The general state of the global economy, affecting international business and travel.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "strategic_developments_count",
+      "description": "The number of 'Strategic developments' recorded in Andorra.",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "andorran_economic_activity",
+      "description": "Overall economic health and business activity in Andorra.",
+      "importance": 0.05,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regional_tourism_trends",
+      "description": "Trends in tourism affecting Andorra, influenced by neighboring countries and global events.",
+      "importance": 0.05,
+      "centrality_rank": 3,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "global_economic_outlook",
+      "description": "The general state of the global economy, affecting international business and travel.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "strategic_developments_count->outcome",
+      "description": "This node directly represents the metric being compared in the outcome.",
+      "importance": 0.1667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "andorran_economic_activity->strategic_developments_count",
+      "description": "A more active economy likely leads to more strategic business moves.",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_tourism_trends->andorran_economic_activity",
+      "description": "Strong tourism boosts the local economy.",
+      "importance": 0.0333,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "strategic_developments_count->outcome",
+      "description": "This node directly represents the metric being compared in the outcome.",
+      "importance": 0.1667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "andorran_economic_activity->strategic_developments_count",
+      "description": "A more active economy likely leads to more strategic business moves.",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_tourism_trends->andorran_economic_activity",
+      "description": "Strong tourism boosts the local economy.",
+      "importance": 0.0333,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "strategic_developments_count->outcome",
+      "description": "This node directly represents the metric being compared in the outcome.",
+      "importance": 0.1667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "government_initiatives->global_economic_outlook",
+      "description": "Potential link: Andorran government's active promotion of business and investment. -> The general state of the global economy, affecting international business and travel.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "government_initiatives->andorran_economic_activity",
+      "description": "Potential link: Andorran government's active promotion of business and investment. -> Overall economic health and business activity in Andorra.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if the count of 'Strategic developments' is a poor proxy for actual strategic activity? For example, imagine that a large number of minor, inconsequential announcements are being classified as 'Strategic developments' while truly impactful, large-scale strategic shifts are being missed or not recorded. In this scenario, the raw count might be misleading, and the underlying drivers of actual significant strategic activity could be very different from what the count suggests.",
+      "probe_type": "node_negate_high",
+      "target_id": "strategic_developments_count",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The number of 'Strategic developments' recorded in Andorra."
+    },
+    {
+      "probe_text": "Imagine that Andorra's 'strategic_developments_count' is primarily driven by highly specialized, niche international investment unrelated to the broader domestic economic health. In this scenario, even if 'andorran_economic_activity' were to decline significantly, it might have little to no impact on the number of new strategic developments occurring, as these are fueled by external factors not reflected in the general economic indicators.",
+      "probe_type": "node_negate_high",
+      "target_id": "andorran_economic_activity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Overall economic health and business activity in Andorra."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant shift in Andorran tourism, with a notable decline in visitors from traditional neighboring markets due to new border policies and a simultaneous, but smaller, influx from emerging, less economically integrated regions. This suggests that while overall tourism *numbers* might fluctuate, the *type* and *economic impact* of these tourists may not align with the expected boost to 'andorran_economic_activity' or directly spurring 'strategic_developments_count' as strongly as previously assumed.",
+      "probe_type": "node_negate_medium",
+      "target_id": "regional_tourism_trends",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 3,
+      "on_critical_path": true,
+      "description": "Trends in tourism affecting Andorra, influenced by neighboring countries and global events."
+    },
+    {
+      "probe_text": "Imagine that the global economic outlook is actually quite poor and uncertain, with major economic downturns in key regions. However, assume that Andorra has recently implemented unique, highly effective government initiatives and experienced a surge in niche tourism unrelated to the broader global trends. Given these specific Andorran factors, how would you expect them to influence the number of strategic developments, potentially overriding a negative global outlook?",
+      "probe_type": "node_negate_low",
+      "target_id": "global_economic_outlook",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The general state of the global economy, affecting international business and travel."
+    },
+    {
+      "probe_text": "A recent report from the Andorran Chamber of Commerce highlights a significant increase in the registration of new business ventures and mergers over the past year. This trend is directly attributed to a new government incentive program designed to foster innovation and attract foreign investment, which has demonstrably led to a surge in the types of activities classified as 'strategic developments.' This suggests a direct and powerful causal link between the underlying activity and the measured strategic developments.",
+      "probe_type": "node_strengthen",
+      "target_id": "strategic_developments_count",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The number of 'Strategic developments' recorded in Andorra."
+    },
+    {
+      "probe_text": "Recent reports from the Andorran Chamber of Commerce indicate a significant surge in new business registrations and an expansion of existing business footprints over the past six months, directly correlating with increased domestic investment. This sustained internal economic momentum suggests a robust and growing 'andorran_economic_activity' that is independent of external tourism or global trends.",
+      "probe_type": "node_strengthen",
+      "target_id": "andorran_economic_activity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Overall economic health and business activity in Andorra."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in flight bookings to nearby popular European destinations for the upcoming winter season, with a notable surge in interest from North American travelers. This trend is often a leading indicator for increased travel to secondary destinations like Andorra, suggesting a robust recovery and expansion in regional tourism.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "regional_tourism_trends",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 3,
+      "on_critical_path": true,
+      "description": "Trends in tourism affecting Andorra, influenced by neighboring countries and global events."
+    },
+    {
+      "probe_text": "Recent analyses from the IMF and World Bank indicate a significant upward revision for global GDP growth in the coming year, citing strong manufacturing output and increased consumer spending in major economies. This suggests a more robust international economic environment than previously anticipated, which would likely boost regional tourism and overall economic activity in Andorra.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "global_economic_outlook",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The general state of the global economy, affecting international business and travel."
+    },
+    {
+      "probe_text": "While 'strategic_developments_count' is inherently linked to the outcome by definition, the *recording* or *classification* of these developments might be subject to change. For instance, a new government policy or a shift in reporting standards could inflate or deflate the count of 'strategic developments' without a genuine change in underlying economic or business activity. This means the observed count might not accurately reflect the intended metric for comparison.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "strategic_developments_count->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "This node directly represents the metric being compared in the outcome."
+    },
+    {
+      "probe_text": "While a booming economy might intuitively suggest more strategic developments, consider that in Andorra's specific context, economic activity might be heavily driven by a few dominant sectors (like tourism or finance) that are less likely to generate *new* strategic initiatives. Instead, periods of high economic activity might simply represent the successful operation of existing business models, rather than the emergence of novel strategic moves, especially if the economic growth is largely externally driven and doesn't foster local innovation.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "andorran_economic_activity->strategic_developments_count",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "A more active economy likely leads to more strategic business moves."
+    },
+    {
+      "probe_text": "While strong tourism often correlates with economic activity, consider a scenario where Andorra's tourism is primarily seasonal or consists of day-trippers from nearby regions who do not significantly engage with local businesses or investments. In such cases, a surge in tourist numbers might not translate into a proportional increase in broader Andorran economic activity, weakening the link between regional tourism trends and the overall economic health.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "regional_tourism_trends->andorran_economic_activity",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "Strong tourism boosts the local economy."
+    },
+    {
+      "probe_text": "Recent analysis of business registration data in Andorra shows a direct and immediate correlation between the announcement of new business ventures and the subsequent tracking of 'strategic developments.' This suggests that the 'strategic_developments_count' is not just an indicator, but a primary driver, of the very metric being measured for the outcome. The data indicates that each recorded development has a high probability of being counted towards the final outcome, reinforcing the direct link.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "strategic_developments_count->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "This node directly represents the metric being compared in the outcome."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant surge in venture capital investment flowing into Andorra's tech sector, directly correlating with increased corporate restructuring and M&A activity. This suggests that robust economic activity, particularly in emerging sectors, doesn't just passively lead to more strategic developments, but actively fuels a higher *rate* and *complexity* of such developments than previously assumed.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "andorran_economic_activity->strategic_developments_count",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "A more active economy likely leads to more strategic business moves."
+    },
+    {
+      "probe_text": "Recent reports indicate that a significant portion of Andorra's service sector, particularly hospitality and retail, is heavily reliant on seasonal tourism. Furthermore, a substantial number of small and medium-sized enterprises (SMEs) in Andorra are directly linked to catering to tourist needs, suggesting that fluctuations in tourism have a more immediate and amplified impact on overall economic activity than previously considered.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "regional_tourism_trends->andorran_economic_activity",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "Strong tourism boosts the local economy."
+    },
+    {
+      "probe_text": "Imagine that the 'outcome' itself, defined as whether there are *more* strategic developments in a period compared to a historical average, is actually what influences the *recording* or *reporting* of 'strategic_developments_count'. For instance, if a period is flagged as having unusually high activity due to external reporting or a specific directive to track such events, this designation might retroactively influence how 'strategic developments' are counted or emphasized within that period, thereby creating a reverse causal flow where the observation of the outcome drives the count.",
+      "probe_type": "edge_reverse",
+      "target_id": "strategic_developments_count->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "This node directly represents the metric being compared in the outcome."
+    },
+    {
+      "probe_text": "Imagine the Andorran government actively promotes business and investment through significant incentives and a stable regulatory environment. Could such strong, visible domestic efforts not only attract foreign direct investment but also positively influence perceptions of Andorra's economic resilience and future prospects on a global scale, thereby subtly improving the global economic outlook as perceived by international investors and businesses?",
+      "probe_type": "edge_spurious",
+      "target_id": "government_initiatives->global_economic_outlook",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Andorran government's active promotion of business and investment. -> The general state of the global economy, affecting international business and travel."
+    },
+    {
+      "probe_text": "While your model shows government initiatives directly impacting strategic developments, it omits a crucial pathway: how these initiatives might bolster overall Andorran economic activity. For example, government-funded business incubators or tax breaks for new ventures could directly enhance the general health of the economy, creating a more fertile ground for all types of business activities, including strategic ones, even before specific initiatives target them.",
+      "probe_type": "edge_missing",
+      "target_id": "government_initiatives->andorran_economic_activity",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Andorran government's active promotion of business and investment. -> Overall economic health and business activity in Andorra."
+    },
+    {
+      "probe_text": "Imagine that a major new international airport is announced for a neighboring country, set to open in early 2025. This airport is expected to significantly increase accessibility to the region, including Andorra. How might this development, particularly its impact on travel accessibility and potential for increased visitor numbers, alter your assessment of 'Strategic developments' in Andorra for the period in question?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that a major international sporting event, like the Tour de France, is scheduled to pass through or near Andorra in the period leading up to 2025-12-28. How might the increased attention and logistical activities associated with such an event, independent of general tourism trends or government initiatives, influence the number of strategic developments in Andorra?",
+      "probe_type": "missing_node",
+      "target_id": "major_international_event_impact",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "A recent report indicates that the average length of stay for tourists in Andorra has increased by two days over the past year. This trend is attributed to improved local infrastructure and a wider variety of cultural activities available.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in the number of cultural festivals hosted in Andorra over the past year. These festivals attract a diverse range of international visitors, contributing to a vibrant atmosphere within the principality.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the count of 'Strategic developments' is a poor proxy for actual strategic activity? For example, imagine that a large number of minor, inconsequential announcements are being classified as 'Strategic developments' while truly impactful, large-scale strategic shifts are being missed or not recorded. In this scenario, the raw count might be misleading, and the underlying drivers of actual significant strategic activity could be very different from what the count suggests.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the reliability of 'strategic_developments_count' as a proxy for actual strategic activity. If the count is inflated by minor events or misses major ones, then the direct link from the count to the outcome is weakened. The causal paths leading to 'strategic_developments_count' (andorran_economic_activity, regional_tourism_trends, government_initiatives, global_economic_outlook) are still relevant to *potential* strategic activity, but their influence on the *measured outcome* (which relies on the count) is now less certain. The core assumption that the count accurately reflects underlying strategic shifts is undermined. This significantly reduces confidence in the forecast, leading to a decreased probability. The update is substantial because the challenged node is the direct antecedent to the outcome. However, it's not a complete collapse as the underlying drivers might still be influencing *some* form of strategic development, just not as captured by the current metric.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the reliability of 'strategic_developments_count' as a proxy for actual strategic activity. If the count is inflated by minor events or misses major ones, then the direct link from the count to the outcome is weakened. The causal paths leading to 'strategic_developments_count' (andorran_economic_activity, regional_tourism_trends, government_initiatives, global_economic_outlook) are still relevant to *potential* strategic activity, but their influence on the *measured outcome* (which relies on the count) is now less certain. The core assumption that the count accurately reflects underlying strategic shifts is undermined. This significantly reduces confidence in the forecast, leading to a decreased probability. The update is substantial because the challenged node is the direct antecedent to the outcome. However, it's not a complete collapse as the underlying drivers might still be influencing *some* form of strategic development, just not as captured by the current metric.\"\n}",
+      "target_id": "strategic_developments_count",
+      "target_type": "node",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that Andorra's 'strategic_developments_count' is primarily driven by highly specialized, niche international investment unrelated to the broader domestic economic health. In this scenario, even if 'andorran_economic_activity' were to decline significantly, it might have little to no impact on the number of new strategic developments occurring, as these are fueled by external factors not reflected in the general economic indicators.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that 'andorran_economic_activity' has a weaker causal link to 'strategic_developments_count' than initially assumed. The core argument is that specialized, niche international investment drives strategic developments, and this investment is largely decoupled from Andorra's general economic health. This weakens the causal path: andorran_economic_activity -> strategic_developments_count -> outcome. While 'regional_tourism_trends' still has a direct link to 'strategic_developments_count', and 'global_economic_outlook' influences 'regional_tourism_trends', the diminished importance of domestic economic activity means that negative shocks to that node, or positive ones that were previously factored in, will have less impact on the final outcome. The overall probability is decreased because a significant supporting causal pathway has been identified as less influential, reducing the likelihood of 'strategic_developments_count' being elevated due to general economic improvements.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that 'andorran_economic_activity' has a weaker causal link to 'strategic_developments_count' than initially assumed. The core argument is that specialized, niche international investment drives strategic developments, and this investment is largely decoupled from Andorra's general economic health. This weakens the causal path: andorran_economic_activity -> strategic_developments_count -> outcome. While 'regional_tourism_trends' still has a direct link to 'strategic_developments_count', and 'global_economic_outlook' influences 'regional_tourism_trends', the diminished importance of domestic economic activity means that negative shocks to that node, or positive ones that were previously factored in, will have less impact on the final outcome. The overall probability is decreased because a significant supporting causal pathway has been identified as less influential, reducing the likelihood of 'strategic_developments_count' being elevated due to general economic improvements.\"\n}",
+      "target_id": "andorran_economic_activity",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant shift in Andorran tourism, with a notable decline in visitors from traditional neighboring markets due to new border policies and a simultaneous, but smaller, influx from emerging, less economically integrated regions. This suggests that while overall tourism *numbers* might fluctuate, the *type* and *economic impact* of these tourists may not align with the expected boost to 'andorran_economic_activity' or directly spurring 'strategic_developments_count' as strongly as previously assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.38,
+      "absolute_shift": 0.07,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'regional_tourism_trends' has a moderate impact on the forecast. The causal path 'regional_tourism_trends -> andorran_economic_activity' is weakened because the new tourist demographics may not translate into the same level of economic boost. Additionally, the path 'regional_tourism_trends -> strategic_developments_count' is also weakened, as the new types of tourists might not be as inclined to drive or participate in strategic business developments. While the challenge acknowledges some tourism fluctuation, it directly questions the *economic impact* and the link to strategic developments, which were key assumptions. The 'global_economic_outlook -> regional_tourism_trends' path remains relevant, but its downstream effect is now less certain. The overall probability is decreased due to the diminished positive influence from regional tourism on both economic activity and direct strategic developments.",
+      "raw_response": "{\n  \"updated_probability\": 0.38,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'regional_tourism_trends' has a moderate impact on the forecast. The causal path 'regional_tourism_trends -> andorran_economic_activity' is weakened because the new tourist demographics may not translate into the same level of economic boost. Additionally, the path 'regional_tourism_trends -> strategic_developments_count' is also weakened, as the new types of tourists might not be as inclined to drive or participate in strategic business developments. While the challenge acknowledges some tourism fluctuation, it directly questions the *economic impact* and the link to strategic developments, which were key assumptions. The 'global_economic_outlook -> regional_tourism_trends' path remains relevant, but its downstream effect is now less certain. The overall probability is decreased due to the diminished positive influence from regional tourism on both economic activity and direct strategic developments.\"\n}",
+      "target_id": "regional_tourism_trends",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the global economic outlook is actually quite poor and uncertain, with major economic downturns in key regions. However, assume that Andorra has recently implemented unique, highly effective government initiatives and experienced a surge in niche tourism unrelated to the broader global trends. Given these specific Andorran factors, how would you expect them to influence the number of strategic developments, potentially overriding a negative global outlook?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.3,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'global_economic_outlook' node suggests it is negative, which would typically decrease 'regional_tourism_trends' and 'andorran_economic_activity'. However, the prompt explicitly states that 'Andorra has recently implemented unique, highly effective government initiatives and experienced a surge in niche tourism unrelated to the broader global trends.' This indicates that the direct drivers of 'strategic_developments_count' ('government_initiatives' and 'regional_tourism_trends') are strong and potentially insulated from the negative global outlook. The causal paths from 'global_economic_outlook' to 'regional_tourism_trends' and 'andorran_economic_activity' are weakened in their negative impact due to these specific Andorran factors. Crucially, the 'government_initiatives' node is described as 'highly effective,' and the 'niche tourism' surge directly boosts 'regional_tourism_trends,' bypassing the negative global influence. These strengthened direct influences on 'strategic_developments_count' override the weakened negative influence from the global economy, leading to an increased probability of the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'global_economic_outlook' node suggests it is negative, which would typically decrease 'regional_tourism_trends' and 'andorran_economic_activity'. However, the prompt explicitly states that 'Andorra has recently implemented unique, highly effective government initiatives and experienced a surge in niche tourism unrelated to the broader global trends.' This indicates that the direct drivers of 'strategic_developments_count' ('government_initiatives' and 'regional_tourism_trends') are strong and potentially insulated from the negative global outlook. The causal paths from 'global_economic_outlook' to 'regional_tourism_trends' and 'andorran_economic_activity' are weakened in their negative impact due to these specific Andorran factors. Crucially, the 'government_initiatives' node is described as 'highly effective,' and the 'niche tourism' surge directly boosts 'regional_tourism_trends,' bypassing the negative global influence. These strengthened direct influences on 'strategic_developments_count' override the weakened negative influence from the global economy, leading to an increased probability of the outcome.\"\n}",
+      "target_id": "global_economic_outlook",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent report from the Andorran Chamber of Commerce highlights a significant increase in the registration of new business ventures and mergers over the past year. This trend is directly attributed to a new government incentive program designed to foster innovation and attract foreign investment, which has demonstrably led to a surge in the types of activities classified as 'strategic developments.' This suggests a direct and powerful causal link between the underlying activity and the measured strategic developments.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.3,
+      "shift_direction": "increased",
+      "reasoning": "The challenge focuses on the direct link between underlying business activity and the measurement of 'strategic_developments_count'. The new information strongly reinforces the causal path: government_initiatives -> strategic_developments_count and also highlights that 'strategic_developments_count' is a good proxy for the actual increase in business ventures and mergers. This strengthens the connection between government actions and the outcome, and also suggests that the 'strategic_developments_count' node is a more reliable indicator than previously assumed. The original forecast of 0.45 was relatively neutral, but this new information points towards a higher likelihood of increased strategic developments. Therefore, the probability is increased, reflecting a stronger belief in the drivers leading to a higher count of strategic developments.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge focuses on the direct link between underlying business activity and the measurement of 'strategic_developments_count'. The new information strongly reinforces the causal path: government_initiatives -> strategic_developments_count and also highlights that 'strategic_developments_count' is a good proxy for the actual increase in business ventures and mergers. This strengthens the connection between government actions and the outcome, and also suggests that the 'strategic_developments_count' node is a more reliable indicator than previously assumed. The original forecast of 0.45 was relatively neutral, but this new information points towards a higher likelihood of increased strategic developments. Therefore, the probability is increased, reflecting a stronger belief in the drivers leading to a higher count of strategic developments.\"\n}",
+      "target_id": "strategic_developments_count",
+      "target_type": "node",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from the Andorran Chamber of Commerce indicate a significant surge in new business registrations and an expansion of existing business footprints over the past six months, directly correlating with increased domestic investment. This sustained internal economic momentum suggests a robust and growing 'andorran_economic_activity' that is independent of external tourism or global trends.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The challenge strengthens the causal link from 'andorran_economic_activity' to 'strategic_developments_count'. The new information indicates that 'andorran_economic_activity' is robust and growing, driven by domestic investment, and less dependent on external factors like 'regional_tourism_trends' or the 'global_economic_outlook'. This directly and positively impacts the likelihood of more 'strategic_developments_count' occurring. Since 'andorran_economic_activity' is a direct driver of 'strategic_developments_count', and the evidence strongly supports a positive state for this node, the probability of the outcome has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge strengthens the causal link from 'andorran_economic_activity' to 'strategic_developments_count'. The new information indicates that 'andorran_economic_activity' is robust and growing, driven by domestic investment, and less dependent on external factors like 'regional_tourism_trends' or the 'global_economic_outlook'. This directly and positively impacts the likelihood of more 'strategic_developments_count' occurring. Since 'andorran_economic_activity' is a direct driver of 'strategic_developments_count', and the evidence strongly supports a positive state for this node, the probability of the outcome has increased.\"\n}",
+      "target_id": "andorran_economic_activity",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in flight bookings to nearby popular European destinations for the upcoming winter season, with a notable surge in interest from North American travelers. This trend is often a leading indicator for increased travel to secondary destinations like Andorra, suggesting a robust recovery and expansion in regional tourism.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly supports an increase in 'regional_tourism_trends'. This has a positive impact on two causal paths leading to the outcome: 1) 'regional_tourism_trends' -> 'andorran_economic_activity', and 2) 'regional_tourism_trends' -> 'strategic_developments_count'. A stronger regional tourism trend suggests a more vibrant economy and directly encourages more strategic developments. Given that 'regional_tourism_trends' is a key driver in the existing causal network for 'strategic_developments_count', this positive development significantly increases the probability of the outcome. The initial probability of 0.45 is therefore increased to 0.55.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly supports an increase in 'regional_tourism_trends'. This has a positive impact on two causal paths leading to the outcome: 1) 'regional_tourism_trends' -> 'andorran_economic_activity', and 2) 'regional_tourism_trends' -> 'strategic_developments_count'. A stronger regional tourism trend suggests a more vibrant economy and directly encourages more strategic developments. Given that 'regional_tourism_trends' is a key driver in the existing causal network for 'strategic_developments_count', this positive development significantly increases the probability of the outcome. The initial probability of 0.45 is therefore increased to 0.55.\"\n}",
+      "target_id": "regional_tourism_trends",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses from the IMF and World Bank indicate a significant upward revision for global GDP growth in the coming year, citing strong manufacturing output and increased consumer spending in major economies. This suggests a more robust international economic environment than previously anticipated, which would likely boost regional tourism and overall economic activity in Andorra.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The new information provides a significant positive update to the 'global_economic_outlook' node. This directly strengthens the causal paths: global_economic_outlook -> regional_tourism_trends and global_economic_outlook -> andorran_economic_activity. A more robust global economy is expected to boost tourism and overall economic activity in Andorra. Both 'regional_tourism_trends' and 'andorran_economic_activity' are upstream causal factors for 'strategic_developments_count'. Specifically, increased 'regional_tourism_trends' can spur new business ventures and partnerships, and a more active 'andorran_economic_activity' is likely to lead to more strategic business moves. Therefore, the probability of more 'Strategic developments' occurring increases.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information provides a significant positive update to the 'global_economic_outlook' node. This directly strengthens the causal paths: global_economic_outlook -> regional_tourism_trends and global_economic_outlook -> andorran_economic_activity. A more robust global economy is expected to boost tourism and overall economic activity in Andorra. Both 'regional_tourism_trends' and 'andorran_economic_activity' are upstream causal factors for 'strategic_developments_count'. Specifically, increased 'regional_tourism_trends' can spur new business ventures and partnerships, and a more active 'andorran_economic_activity' is likely to lead to more strategic business moves. Therefore, the probability of more 'Strategic developments' occurring increases.\"\n}",
+      "target_id": "global_economic_outlook",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While 'strategic_developments_count' is inherently linked to the outcome by definition, the *recording* or *classification* of these developments might be subject to change. For instance, a new government policy or a shift in reporting standards could inflate or deflate the count of 'strategic developments' without a genuine change in underlying economic or business activity. This means the observed count might not accurately reflect the intended metric for comparison.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge targets the direct link between the observed 'strategic_developments_count' and the 'outcome'. While the count is definitionally linked, the challenge raises the possibility that the *measurement* of this count could be biased due to changes in reporting or classification. This doesn't break the causal chain entirely, as the underlying factors (economic activity, tourism, government initiatives) still influence actual developments. However, it introduces a degree of uncertainty about the reliability of the observed data for making the comparison required by the outcome. This suggests that the observed count might not perfectly reflect the true underlying strategic developments, leading to a slight decrease in confidence for the outcome. The causal paths to 'strategic_developments_count' remain intact, but the interpretation of that count in relation to the 'outcome' is weakened.",
+      "raw_response": "{\n  \"updated_probability\": 0.40,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge targets the direct link between the observed 'strategic_developments_count' and the 'outcome'. While the count is definitionally linked, the challenge raises the possibility that the *measurement* of this count could be biased due to changes in reporting or classification. This doesn't break the causal chain entirely, as the underlying factors (economic activity, tourism, government initiatives) still influence actual developments. However, it introduces a degree of uncertainty about the reliability of the observed data for making the comparison required by the outcome. This suggests that the observed count might not perfectly reflect the true underlying strategic developments, leading to a slight decrease in confidence for the outcome. The causal paths to 'strategic_developments_count' remain intact, but the interpretation of that count in relation to the 'outcome' is weakened.\"\n}",
+      "target_id": "strategic_developments_count->outcome",
+      "target_type": "edge",
+      "target_importance": 0.1667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While a booming economy might intuitively suggest more strategic developments, consider that in Andorra's specific context, economic activity might be heavily driven by a few dominant sectors (like tourism or finance) that are less likely to generate *new* strategic initiatives. Instead, periods of high economic activity might simply represent the successful operation of existing business models, rather than the emergence of novel strategic moves, especially if the economic growth is largely externally driven and doesn't foster local innovation.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.38,
+      "absolute_shift": 0.07,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the strength and nature of the causal link between 'andorran_economic_activity' and 'strategic_developments_count'. The argument suggests that high economic activity in Andorra might not translate into *new* strategic developments if it's driven by established sectors and external factors without fostering local innovation. This weakens the direct path from economic activity to strategic developments. While other paths remain, this specific link was a significant contributor to the initial forecast. Therefore, the probability of the outcome has decreased. The affected causal path is: andorran_economic_activity -> strategic_developments_count.",
+      "raw_response": "{\n  \"updated_probability\": 0.38,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the strength and nature of the causal link between 'andorran_economic_activity' and 'strategic_developments_count'. The argument suggests that high economic activity in Andorra might not translate into *new* strategic developments if it's driven by established sectors and external factors without fostering local innovation. This weakens the direct path from economic activity to strategic developments. While other paths remain, this specific link was a significant contributor to the initial forecast. Therefore, the probability of the outcome has decreased. The affected causal path is: andorran_economic_activity -> strategic_developments_count.\"\n}",
+      "target_id": "andorran_economic_activity->strategic_developments_count",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While strong tourism often correlates with economic activity, consider a scenario where Andorra's tourism is primarily seasonal or consists of day-trippers from nearby regions who do not significantly engage with local businesses or investments. In such cases, a surge in tourist numbers might not translate into a proportional increase in broader Andorran economic activity, weakening the link between regional tourism trends and the overall economic health.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the strength of the causal link between 'regional_tourism_trends' and 'andorran_economic_activity'. If tourism in Andorra is primarily seasonal or day-trip based, a surge in tourist numbers might not translate into a proportional increase in broader economic activity, weakening this specific path. This path is important because it feeds into 'andorran_economic_activity', which in turn influences 'strategic_developments_count'. A weakened link here suggests that positive regional tourism trends may have less impact on the overall economic environment that fosters strategic developments. While the direct link from 'regional_tourism_trends' to 'strategic_developments_count' is not challenged, the indirect effect through the economy is now considered less reliable. This warrants a slight decrease in the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.40,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'regional_tourism_trends' and 'andorran_economic_activity'. If tourism in Andorra is primarily seasonal or day-trip based, a surge in tourist numbers might not translate into a proportional increase in broader economic activity, weakening this specific path. This path is important because it feeds into 'andorran_economic_activity', which in turn influences 'strategic_developments_count'. A weakened link here suggests that positive regional tourism trends may have less impact on the overall economic environment that fosters strategic developments. While the direct link from 'regional_tourism_trends' to 'strategic_developments_count' is not challenged, the indirect effect through the economy is now considered less reliable. This warrants a slight decrease in the probability estimate.\"\n}",
+      "target_id": "regional_tourism_trends->andorran_economic_activity",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of business registration data in Andorra shows a direct and immediate correlation between the announcement of new business ventures and the subsequent tracking of 'strategic developments.' This suggests that the 'strategic_developments_count' is not just an indicator, but a primary driver, of the very metric being measured for the outcome. The data indicates that each recorded development has a high probability of being counted towards the final outcome, reinforcing the direct link.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.95,
+      "absolute_shift": 0.49999999999999994,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'strategic_developments_count -> outcome' link actually reinforces the directness of this relationship. The new information indicates that 'strategic_developments_count' is not merely an indicator but a primary driver, with each recorded development having a high probability of being counted towards the outcome. This strengthens the causal path leading to the outcome, making it more certain that an increase in 'strategic_developments_count' will directly translate to a positive resolution of the outcome. Therefore, the probability has increased substantially.",
+      "raw_response": "{\n  \"updated_probability\": 0.95,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'strategic_developments_count -> outcome' link actually reinforces the directness of this relationship. The new information indicates that 'strategic_developments_count' is not merely an indicator but a primary driver, with each recorded development having a high probability of being counted towards the outcome. This strengthens the causal path leading to the outcome, making it more certain that an increase in 'strategic_developments_count' will directly translate to a positive resolution of the outcome. Therefore, the probability has increased substantially.\"\n}",
+      "target_id": "strategic_developments_count->outcome",
+      "target_type": "edge",
+      "target_importance": 0.1667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant surge in venture capital investment flowing into Andorra's tech sector, directly correlating with increased corporate restructuring and M&A activity. This suggests that robust economic activity, particularly in emerging sectors, doesn't just passively lead to more strategic developments, but actively fuels a higher *rate* and *complexity* of such developments than previously assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'andorran_economic_activity -> strategic_developments_count' link suggests that the relationship is stronger and more direct than initially modeled. The new information highlights that robust economic activity, particularly in emerging sectors like tech, doesn't just lead to more strategic developments, but actively fuels a higher rate and complexity. This implies that a positive 'andorran_economic_activity' node will have an even greater impact on 'strategic_developments_count' than previously thought. Since 'andorran_economic_activity' is influenced by 'regional_tourism_trends' and 'global_economic_outlook', and directly impacts 'strategic_developments_count' which leads to the 'outcome', this strengthening of a key causal path increases the overall probability of the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'andorran_economic_activity -> strategic_developments_count' link suggests that the relationship is stronger and more direct than initially modeled. The new information highlights that robust economic activity, particularly in emerging sectors like tech, doesn't just lead to more strategic developments, but actively fuels a higher rate and complexity. This implies that a positive 'andorran_economic_activity' node will have an even greater impact on 'strategic_developments_count' than previously thought. Since 'andorran_economic_activity' is influenced by 'regional_tourism_trends' and 'global_economic_outlook', and directly impacts 'strategic_developments_count' which leads to the 'outcome', this strengthening of a key causal path increases the overall probability of the outcome.\"\n}",
+      "target_id": "andorran_economic_activity->strategic_developments_count",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that a significant portion of Andorra's service sector, particularly hospitality and retail, is heavily reliant on seasonal tourism. Furthermore, a substantial number of small and medium-sized enterprises (SMEs) in Andorra are directly linked to catering to tourist needs, suggesting that fluctuations in tourism have a more immediate and amplified impact on overall economic activity than previously considered.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'regional_tourism_trends -> andorran_economic_activity' suggests that this connection is stronger and more direct than initially modeled. The new information emphasizes the amplified impact of tourism fluctuations on Andorra's service sector and SMEs. This strengthens the overall causal path from 'regional_tourism_trends' to 'strategic_developments_count' (via 'andorran_economic_activity'), and consequently to the 'outcome'. While the direct link from 'regional_tourism_trends' to 'strategic_developments_count' remains, the enhanced influence on 'andorran_economic_activity' means that positive regional tourism trends will likely translate more powerfully into increased economic activity, thereby increasing the likelihood of more strategic developments. Therefore, my probability estimate has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'regional_tourism_trends -> andorran_economic_activity' suggests that this connection is stronger and more direct than initially modeled. The new information emphasizes the amplified impact of tourism fluctuations on Andorra's service sector and SMEs. This strengthens the overall causal path from 'regional_tourism_trends' to 'strategic_developments_count' (via 'andorran_economic_activity'), and consequently to the 'outcome'. While the direct link from 'regional_tourism_trends' to 'strategic_developments_count' remains, the enhanced influence on 'andorran_economic_activity' means that positive regional tourism trends will likely translate more powerfully into increased economic activity, thereby increasing the likelihood of more strategic developments. Therefore, my probability estimate has increased.\"\n}",
+      "target_id": "regional_tourism_trends->andorran_economic_activity",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the 'outcome' itself, defined as whether there are *more* strategic developments in a period compared to a historical average, is actually what influences the *recording* or *reporting* of 'strategic_developments_count'. For instance, if a period is flagged as having unusually high activity due to external reporting or a specific directive to track such events, this designation might retroactively influence how 'strategic developments' are counted or emphasized within that period, thereby creating a reverse causal flow where the observation of the outcome drives the count.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests a reverse causal flow where the observation of the outcome (more strategic developments) might influence the reporting or recording of 'strategic_developments_count'. This implies that the direct causal link from 'strategic_developments_count' to the 'outcome' is not as straightforward as initially modeled. If the outcome itself influences the count, it weakens the predictive power of the antecedent nodes (andorran_economic_activity, regional_tourism_trends, government_initiatives, global_economic_outlook) on the count that is then compared to itself. The original model assumed a clear, unidirectional flow where economic factors lead to more developments, and thus a higher count. The new information introduces a potential feedback loop or reporting bias. While the economic and tourism factors likely still have some influence, the direct relationship to the *comparison metric* is now questionable. This doesn't entirely invalidate the model, as underlying economic activity would still likely generate *actual* developments, but it does introduce uncertainty about how those developments are captured and compared. Therefore, the probability is slightly decreased to reflect this added complexity and potential for reporting artifacts to skew the result.",
+      "raw_response": "{\n  \"updated_probability\": 0.40,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests a reverse causal flow where the observation of the outcome (more strategic developments) might influence the reporting or recording of 'strategic_developments_count'. This implies that the direct causal link from 'strategic_developments_count' to the 'outcome' is not as straightforward as initially modeled. If the outcome itself influences the count, it weakens the predictive power of the antecedent nodes (andorran_economic_activity, regional_tourism_trends, government_initiatives, global_economic_outlook) on the count that is then compared to itself. The original model assumed a clear, unidirectional flow where economic factors lead to more developments, and thus a higher count. The new information introduces a potential feedback loop or reporting bias. While the economic and tourism factors likely still have some influence, the direct relationship to the *comparison metric* is now questionable. This doesn't entirely invalidate the model, as underlying economic activity would still likely generate *actual* developments, but it does introduce uncertainty about how those developments are captured and compared. Therefore, the probability is slightly decreased to reflect this added complexity and potential for reporting artifacts to skew the result.\"\n}",
+      "target_id": "strategic_developments_count->outcome",
+      "target_type": "edge",
+      "target_importance": 0.1667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "Imagine the Andorran government actively promotes business and investment through significant incentives and a stable regulatory environment. Could such strong, visible domestic efforts not only attract foreign direct investment but also positively influence perceptions of Andorra's economic resilience and future prospects on a global scale, thereby subtly improving the global economic outlook as perceived by international investors and businesses?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.47,
+      "absolute_shift": 0.019999999999999962,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a new causal path: government_initiatives -> improved perception of global economic outlook. Previously, the causal link was strictly global_economic_outlook -> regional_tourism_trends and global_economic_outlook -> andorran_economic_activity. The proposed link is that strong domestic government initiatives can positively influence the *perception* of Andorra's economic resilience globally, potentially improving the perceived global economic outlook. This is a subtle but potentially impactful addition. If this new path holds, it could indirectly bolster regional tourism trends and Andorran economic activity, which in turn feed into strategic_developments_count. However, the strength of this influence on the 'global economic outlook' is speculative and likely weaker than the direct influence of major global economic forces. Therefore, the probability has increased slightly, reflecting this new potential positive influence, but not dramatically as the core drivers of the outcome remain the same. The original causal path government_initiatives -> strategic_developments_count remains a direct and strong influence. This new proposed path is an indirect augmentation.",
+      "raw_response": "{\n  \"updated_probability\": 0.47,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a new causal path: government_initiatives -> improved perception of global economic outlook. Previously, the causal link was strictly global_economic_outlook -> regional_tourism_trends and global_economic_outlook -> andorran_economic_activity. The proposed link is that strong domestic government initiatives can positively influence the *perception* of Andorra's economic resilience globally, potentially improving the perceived global economic outlook. This is a subtle but potentially impactful addition. If this new path holds, it could indirectly bolster regional tourism trends and Andorran economic activity, which in turn feed into strategic_developments_count. However, the strength of this influence on the 'global economic outlook' is speculative and likely weaker than the direct influence of major global economic forces. Therefore, the probability has increased slightly, reflecting this new potential positive influence, but not dramatically as the core drivers of the outcome remain the same. The original causal path government_initiatives -> strategic_developments_count remains a direct and strong influence. This new proposed path is an indirect augmentation.\"\n}",
+      "target_id": "government_initiatives->global_economic_outlook",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While your model shows government initiatives directly impacting strategic developments, it omits a crucial pathway: how these initiatives might bolster overall Andorran economic activity. For example, government-funded business incubators or tax breaks for new ventures could directly enhance the general health of the economy, creating a more fertile ground for all types of business activities, including strategic ones, even before specific initiatives target them.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.48,
+      "absolute_shift": 0.02999999999999997,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a new causal path: government_initiatives -> andorran_economic_activity -> strategic_developments_count. Previously, government_initiatives only directly influenced strategic_developments_count. This new pathway implies that government initiatives can have a broader, indirect positive effect on the economy, which in turn would further stimulate strategic developments. This strengthens the overall positive influence of government initiatives on the outcome. While the direct link remains, the added indirect pathway enhances the potential for strategic developments. The update is moderate because the new pathway reinforces a pre-existing positive influence rather than introducing a completely novel or contradictory factor. The initial probability of 0.45 was already slightly above neutral, reflecting a general expectation of some positive drivers. This revision nudges it slightly higher to 0.48 to account for the strengthened causal chain.",
+      "raw_response": "{\n  \"updated_probability\": 0.48,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a new causal path: government_initiatives -> andorran_economic_activity -> strategic_developments_count. Previously, government_initiatives only directly influenced strategic_developments_count. This new pathway implies that government initiatives can have a broader, indirect positive effect on the economy, which in turn would further stimulate strategic developments. This strengthens the overall positive influence of government initiatives on the outcome. While the direct link remains, the added indirect pathway enhances the potential for strategic developments. The update is moderate because the new pathway reinforces a pre-existing positive influence rather than introducing a completely novel or contradictory factor. The initial probability of 0.45 was already slightly above neutral, reflecting a general expectation of some positive drivers. This revision nudges it slightly higher to 0.48 to account for the strengthened causal chain.\"\n}",
+      "target_id": "government_initiatives->andorran_economic_activity",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a major new international airport is announced for a neighboring country, set to open in early 2025. This airport is expected to significantly increase accessibility to the region, including Andorra. How might this development, particularly its impact on travel accessibility and potential for increased visitor numbers, alter your assessment of 'Strategic developments' in Andorra for the period in question?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The announcement of a major new international airport in a neighboring country, opening in early 2025, has a significant positive impact on several causal paths leading to the outcome. \n\n1.  **Global economic outlook -> regional_tourism_trends**: While the global economic outlook is a general factor, improved regional accessibility directly enhances the attractiveness and feasibility of travel to Andorra, irrespective of broader global trends. This strengthens the 'regional_tourism_trends' node.\n2.  **Regional_tourism_trends -> andorran_economic_activity**: Increased accessibility will likely lead to a surge in visitor numbers and improved tourism performance in Andorra. This directly boosts 'andorran_economic_activity'.\n3.  **Regional_tourism_trends -> strategic_developments_count**: Positive tourism trends often correlate with increased business activity, new investment opportunities, and strategic partnerships. The enhanced tourism scenario makes this link stronger.\n4.  **Andorran_economic_activity -> strategic_developments_count**: A more vibrant economy, fueled by increased tourism, is expected to generate more strategic business developments. This path is also strengthened.\n\nOverall, the new airport significantly bolsters the 'regional_tourism_trends' node and, consequently, the downstream nodes 'andorran_economic_activity' and 'strategic_developments_count'. This increased flow of potential tourists and improved economic conditions makes it more likely that there will be more 'Strategic developments' in the 30 days before 2025-12-28 compared to the recent average. The original probability of 0.45 is therefore substantially increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The announcement of a major new international airport in a neighboring country, opening in early 2025, has a significant positive impact on several causal paths leading to the outcome. \\n\\n1.  **Global economic outlook -> regional_tourism_trends**: While the global economic outlook is a general factor, improved regional accessibility directly enhances the attractiveness and feasibility of travel to Andorra, irrespective of broader global trends. This strengthens the 'regional_tourism_trends' node.\\n2.  **Regional_tourism_trends -> andorran_economic_activity**: Increased accessibility will likely lead to a surge in visitor numbers and improved tourism performance in Andorra. This directly boosts 'andorran_economic_activity'.\\n3.  **Regional_tourism_trends -> strategic_developments_count**: Positive tourism trends often correlate with increased business activity, new investment opportunities, and strategic partnerships. The enhanced tourism scenario makes this link stronger.\\n4.  **Andorran_economic_activity -> strategic_developments_count**: A more vibrant economy, fueled by increased tourism, is expected to generate more strategic business developments. This path is also strengthened.\\n\\nOverall, the new airport significantly bolsters the 'regional_tourism_trends' node and, consequently, the downstream nodes 'andorran_economic_activity' and 'strategic_developments_count'. This increased flow of potential tourists and improved economic conditions makes it more likely that there will be more 'Strategic developments' in the 30 days before 2025-12-28 compared to the recent average. The original probability of 0.45 is therefore substantially increased.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a major international sporting event, like the Tour de France, is scheduled to pass through or near Andorra in the period leading up to 2025-12-28. How might the increased attention and logistical activities associated with such an event, independent of general tourism trends or government initiatives, influence the number of strategic developments in Andorra?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.14999999999999997,
+      "shift_direction": "increased",
+      "reasoning": "The challenge introduces a new factor: a major international sporting event. This event's influence is described as independent of general tourism trends or government initiatives, but it is likely to increase attention and logistical activities, which can spur strategic developments. This suggests a new, direct causal path or an amplification of existing paths to 'strategic_developments_count'. While not explicitly modeled, the description implies an increase in economic activity and potential business opportunities due to the event's presence. This new information strengthens the likelihood of more 'Strategic developments' occurring. The causal path affected is primarily the link to 'strategic_developments_count', potentially through increased local economic activity or direct business opportunities arising from the event's logistics and attention. This strengthens the predicted outcome, leading to an increased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge introduces a new factor: a major international sporting event. This event's influence is described as independent of general tourism trends or government initiatives, but it is likely to increase attention and logistical activities, which can spur strategic developments. This suggests a new, direct causal path or an amplification of existing paths to 'strategic_developments_count'. While not explicitly modeled, the description implies an increase in economic activity and potential business opportunities due to the event's presence. This new information strengthens the likelihood of more 'Strategic developments' occurring. The causal path affected is primarily the link to 'strategic_developments_count', potentially through increased local economic activity or direct business opportunities arising from the event's logistics and attention. This strengthens the predicted outcome, leading to an increased probability estimate.\"\n}",
+      "target_id": "major_international_event_impact",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent report indicates that the average length of stay for tourists in Andorra has increased by two days over the past year. This trend is attributed to improved local infrastructure and a wider variety of cultural activities available.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal path from 'regional_tourism_trends' to 'andorran_economic_activity' and 'strategic_developments_count'. An increased average length of stay, attributed to improved infrastructure and cultural activities, suggests a more robust and attractive tourism sector. This, in turn, is likely to boost overall economic activity and directly encourage more strategic developments. The existing causal link from 'regional_tourism_trends' to 'andorran_economic_activity' is reinforced, and the link to 'strategic_developments_count' is also strengthened. This positive development makes the outcome (more strategic developments) more probable, hence the increased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal path from 'regional_tourism_trends' to 'andorran_economic_activity' and 'strategic_developments_count'. An increased average length of stay, attributed to improved infrastructure and cultural activities, suggests a more robust and attractive tourism sector. This, in turn, is likely to boost overall economic activity and directly encourage more strategic developments. The existing causal link from 'regional_tourism_trends' to 'andorran_economic_activity' is reinforced, and the link to 'strategic_developments_count' is also strengthened. This positive development makes the outcome (more strategic developments) more probable, hence the increased probability estimate.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in the number of cultural festivals hosted in Andorra over the past year. These festivals attract a diverse range of international visitors, contributing to a vibrant atmosphere within the principality.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The new information about an increase in cultural festivals directly impacts the 'regional_tourism_trends' node. These festivals attract international visitors, which is a positive indicator for tourism. This strengthens the causal path from 'regional_tourism_trends' to 'andorran_economic_activity' and also directly to 'strategic_developments_count'. A boost in tourism is likely to increase overall economic activity and directly encourage new business ventures and partnerships. Therefore, the likelihood of more 'Strategic developments' increases. The initial probability of 0.45 has been increased to 0.65 due to this strengthening of key causal pathways.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information about an increase in cultural festivals directly impacts the 'regional_tourism_trends' node. These festivals attract international visitors, which is a positive indicator for tourism. This strengthens the causal path from 'regional_tourism_trends' to 'andorran_economic_activity' and also directly to 'strategic_developments_count'. A boost in tourism is likely to increase overall economic activity and directly encourage new business ventures and partnerships. Therefore, the likelihood of more 'Strategic developments' increases. The initial probability of 0.45 has been increased to 0.65 due to this strengthening of key causal pathways.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "5f437d89238ba3b30f988c3d7280f20003d242af1ef1a0fb943e486e3ebf3e0f",
+    "question_text": "Will there be more 'Strategic developments' in Andorra for the 30 days before 2025-12-28 compared to the 30-day average of 'Strategic developments' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Strategic developments'\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of 'Strategic developments' over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more 'Strategic developments' would need to occur in the 30 days leading up to the resolution.",
+    "source": "acled",
+    "condition": "one-turn",
+    "initial_probability": 0.45,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.14714285714285713,
+    "max_absolute_shift": 0.49999999999999994
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0,
+  "aggregate_metrics": {
+    "ssr": 1.2,
+    "mean_shift_high": 0.19000000000000003,
+    "mean_shift_low": 0.15833333333333335,
+    "asymmetry_index": 0.5599999999999999,
+    "mean_shift_negate": 0.12000000000000001,
+    "mean_shift_strengthen": 0.21428571428571433,
+    "fnar": 0.6666666666666666,
+    "n_accepted": 2,
+    "n_spurious": 3,
+    "critical_path_premium": 0.02318181818181822,
+    "mean_shift_on_path": 0.15818181818181823,
+    "mean_shift_off_path": 0.135,
+    "importance_sensitivity_correlation": 0.18131868131868134,
+    "control_sensitivity": 1
+  }
+}

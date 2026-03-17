@@ -23,6 +23,7 @@ const MODEL_LABELS: Record<string, string> = {
   "llama-70b": "Llama 3.3 70B",
   "deepseek-v3": "DeepSeek V3",
   "qwen-235b": "Qwen3 235B",
+  "gemini-flash": "Gemini 2.5 Flash Lite",
 };
 
 const MODEL_IDS: Record<string, string> = {
@@ -30,6 +31,7 @@ const MODEL_IDS: Record<string, string> = {
   "llama-70b": "meta-llama/llama-3.3-70b-instruct",
   "deepseek-v3": "deepseek/deepseek-chat-v3-0324",
   "qwen-235b": "qwen/qwen3-235b-a22b-2507",
+  "gemini-flash": "google/gemini-2.5-flash-lite",
 };
 
 export default function QuestionDetailPage() {

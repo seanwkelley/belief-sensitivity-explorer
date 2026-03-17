@@ -1,0 +1,1171 @@
+{
+  "question_id": "8f2ea4ca0e1613f5ed5071b15f8c6eb0e365f00e19ec57a6311aa23ff655e644",
+  "question_text": "According to Wikipedia, will Lukas Märtens still hold the world record for 400m freestyle in long course (50 metres) swimming pools on 2025-12-28?",
+  "source": "wikipedia",
+  "initial_probability": 0.25,
+  "nodes": [
+    {
+      "id": "current_world_record_holder",
+      "description": "Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course).",
+      "role": "factor"
+    },
+    {
+      "id": "future_performance_improvement",
+      "description": "Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years.",
+      "role": "factor"
+    },
+    {
+      "id": "emergence_of_new_competitors",
+      "description": "The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record.",
+      "role": "factor"
+    },
+    {
+      "id": "longevity_of_athletic_career",
+      "description": "The general trend of how long elite swimmers maintain their world-class performance levels.",
+      "role": "factor"
+    },
+    {
+      "id": "wiki_update_frequency",
+      "description": "How often Wikipedia is updated with swimming world record changes.",
+      "role": "factor"
+    },
+    {
+      "id": "mertens_holds_wr_on_date",
+      "description": "Will Lukas Märtens still hold the world record for 400m freestyle (long course) on 2025-12-28?",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "current_world_record_holder",
+      "to": "mertens_holds_wr_on_date",
+      "mechanism": "If he is not the current holder, it's impossible for him to hold it in the future unless he breaks it. Even if he is, it doesn't guarantee future status."
+    },
+    {
+      "from": "future_performance_improvement",
+      "to": "mertens_holds_wr_on_date",
+      "mechanism": "Significant improvement could help him maintain or re-establish the record."
+    },
+    {
+      "from": "emergence_of_new_competitors",
+      "to": "mertens_holds_wr_on_date",
+      "mechanism": "New, faster swimmers would likely break the record, causing Märtens to lose it."
+    },
+    {
+      "from": "longevity_of_athletic_career",
+      "to": "future_performance_improvement",
+      "mechanism": "The typical career span influences how likely it is for a swimmer to continue improving or maintain peak performance."
+    },
+    {
+      "from": "longevity_of_athletic_career",
+      "to": "emergence_of_new_competitors",
+      "mechanism": "Longer careers for current elites might delay the emergence of new record-breakers, but also implies a pool of talent that could develop."
+    },
+    {
+      "from": "wiki_update_frequency",
+      "to": "mertens_holds_wr_on_date",
+      "mechanism": "This factor is about the information source, not the event itself. If the record is broken, Wikipedia's update speed determines how quickly the page reflects that fact. It does not influence whether Märtens *holds* the record, only the information about it."
+    }
+  ],
+  "reasoning": "Lukas Märtens is the current world record holder for the 400m freestyle. However, predicting whether he will hold it over two years in the future is highly uncertain. Factors such as his future performance improvements, the emergence of new dominant swimmers, and the general longevity of elite swimming careers all play a significant role. While Wikipedia is a reliable source, its update frequency does not influence the actual event of holding the record, only the reporting of it. Given the dynamic nature of world records in swimming, the probability of him retaining it is less than 50%.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 6,
+    "density": 0.2,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "mertens_holds_wr_on_date",
+    "node_metrics": [
+      {
+        "node_id": "current_world_record_holder",
+        "description": "Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course).",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0911,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "future_performance_improvement",
+        "description": "Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.025,
+        "closeness": 0.2,
+        "pagerank": 0.1299,
+        "path_relevance": 0.1667
+      },
+      {
+        "node_id": "emergence_of_new_competitors",
+        "description": "The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.025,
+        "closeness": 0.2,
+        "pagerank": 0.1299,
+        "path_relevance": 0.1667
+      },
+      {
+        "node_id": "longevity_of_athletic_career",
+        "description": "The general trend of how long elite swimmers maintain their world-class performance levels.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0911,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "wiki_update_frequency",
+        "description": "How often Wikipedia is updated with swimming world record changes.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0911,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "mertens_holds_wr_on_date",
+        "description": "Will Lukas Märtens still hold the world record for 400m freestyle (long course) on 2025-12-28?",
+        "role": "outcome",
+        "in_degree": 4,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.8333,
+        "pagerank": 0.4668,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "current_world_record_holder",
+        "target": "mertens_holds_wr_on_date",
+        "mechanism": "If he is not the current holder, it's impossible for him to hold it in the future unless he breaks it. Even if he is, it doesn't guarantee future status.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "future_performance_improvement",
+        "target": "mertens_holds_wr_on_date",
+        "mechanism": "Significant improvement could help him maintain or re-establish the record.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "emergence_of_new_competitors",
+        "target": "mertens_holds_wr_on_date",
+        "mechanism": "New, faster swimmers would likely break the record, causing Märtens to lose it.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "longevity_of_athletic_career",
+        "target": "future_performance_improvement",
+        "mechanism": "The typical career span influences how likely it is for a swimmer to continue improving or maintain peak performance.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "longevity_of_athletic_career",
+        "target": "emergence_of_new_competitors",
+        "mechanism": "Longer careers for current elites might delay the emergence of new record-breakers, but also implies a pool of talent that could develop.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "wiki_update_frequency",
+        "target": "mertens_holds_wr_on_date",
+        "mechanism": "This factor is about the information source, not the event itself. If the record is broken, Wikipedia's update speed determines how quickly the page reflects that fact. It does not influence whether Märtens *holds* the record, only the information about it.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "future_performance_improvement",
+        "description": "Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years.",
+        "importance": 0.025,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "emergence_of_new_competitors",
+        "description": "The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record.",
+        "importance": 0.025,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "current_world_record_holder",
+        "description": "Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course).",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "wiki_update_frequency",
+        "description": "How often Wikipedia is updated with swimming world record changes.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "future_performance_improvement",
+        "description": "Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years.",
+        "importance": 0.025,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "emergence_of_new_competitors",
+        "description": "The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record.",
+        "importance": 0.025,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "current_world_record_holder",
+        "description": "Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course).",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "wiki_update_frequency",
+        "description": "How often Wikipedia is updated with swimming world record changes.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+        "description": "Significant improvement could help him maintain or re-establish the record.",
+        "importance": 0.05,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "emergence_of_new_competitors->mertens_holds_wr_on_date",
+        "description": "New, faster swimmers would likely break the record, causing Märtens to lose it.",
+        "importance": 0.05,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "wiki_update_frequency->mertens_holds_wr_on_date",
+        "description": "This factor is about the information source, not the event itself. If the record is broken, Wikipedia's update speed determines how quickly the page reflects that fact. It does not influence whether Märtens *holds* the record, only the information about it.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+        "description": "Significant improvement could help him maintain or re-establish the record.",
+        "importance": 0.05,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "emergence_of_new_competitors->mertens_holds_wr_on_date",
+        "description": "New, faster swimmers would likely break the record, causing Märtens to lose it.",
+        "importance": 0.05,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+        "description": "Significant improvement could help him maintain or re-establish the record.",
+        "importance": 0.05,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "future_performance_improvement->current_world_record_holder",
+        "description": "Potential link: Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years. -> Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course).",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "future_performance_improvement->emergence_of_new_competitors",
+        "description": "Potential link: Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years. -> The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "future_performance_improvement",
+      "description": "Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years.",
+      "importance": 0.025,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "emergence_of_new_competitors",
+      "description": "The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record.",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "current_world_record_holder",
+      "description": "Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course).",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "wiki_update_frequency",
+      "description": "How often Wikipedia is updated with swimming world record changes.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "future_performance_improvement",
+      "description": "Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years.",
+      "importance": 0.025,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "emergence_of_new_competitors",
+      "description": "The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record.",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "current_world_record_holder",
+      "description": "Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course).",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "wiki_update_frequency",
+      "description": "How often Wikipedia is updated with swimming world record changes.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "description": "Significant improvement could help him maintain or re-establish the record.",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "emergence_of_new_competitors->mertens_holds_wr_on_date",
+      "description": "New, faster swimmers would likely break the record, causing Märtens to lose it.",
+      "importance": 0.05,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "wiki_update_frequency->mertens_holds_wr_on_date",
+      "description": "This factor is about the information source, not the event itself. If the record is broken, Wikipedia's update speed determines how quickly the page reflects that fact. It does not influence whether Märtens *holds* the record, only the information about it.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "description": "Significant improvement could help him maintain or re-establish the record.",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "emergence_of_new_competitors->mertens_holds_wr_on_date",
+      "description": "New, faster swimmers would likely break the record, causing Märtens to lose it.",
+      "importance": 0.05,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "description": "Significant improvement could help him maintain or re-establish the record.",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "future_performance_improvement->current_world_record_holder",
+      "description": "Potential link: Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years. -> Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course).",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "future_performance_improvement->emergence_of_new_competitors",
+      "description": "Potential link: Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years. -> The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if Lukas Märtens' future performance improvement potential is actually zero, meaning he has reached his absolute peak and cannot swim any faster, regardless of training or other factors? Furthermore, consider that his current world record is already at the absolute physical limit of human capability for this event, making further improvement impossible.",
+      "probe_type": "node_negate_high",
+      "target_id": "future_performance_improvement",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.025,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years."
+    },
+    {
+      "probe_text": "What if the emergence of new competitors is largely irrelevant to Märtens holding the world record by December 2025? This could be the case if the sport's development has plateaued, meaning no new swimmers are likely to emerge with the potential to break the current record within the next couple of years, or if Märtens' current record is so far ahead of the pack that it would take an unprecedented leap for anyone else to catch up.",
+      "probe_type": "node_negate_high",
+      "target_id": "emergence_of_new_competitors",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record."
+    },
+    {
+      "probe_text": "What if Lukas Märtens is *not* the current world record holder? For instance, what if the world record was actually set by someone else very recently, and Märtens' previous achievement was a different event or a lesser-known competition? If the premise of him being the *current* record holder is false, then the entire basis of the prediction changes, as he would first need to break the existing record before even having a chance to hold it on the specified date.",
+      "probe_type": "node_negate_medium",
+      "target_id": "current_world_record_holder",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course)."
+    },
+    {
+      "probe_text": "You included 'wiki_update_frequency' as a factor influencing whether Lukas Märtens holds the world record. However, Wikipedia's update speed is a reflection of reality, not a cause of it. Whether the record changes hands or not is determined by athletic performance, not by how quickly a third-party website is updated. Therefore, this factor seems irrelevant to the actual state of who holds the record.",
+      "probe_type": "node_negate_low",
+      "target_id": "wiki_update_frequency",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "How often Wikipedia is updated with swimming world record changes."
+    },
+    {
+      "probe_text": "Lukas Märtens recently announced he is working with a new renowned sports science institute known for developing personalized training regimens that have demonstrably led to significant performance breakthroughs in other endurance athletes. This collaboration is specifically focused on optimizing his physiological response to high-intensity training, a key area for potential future gains in swimming.",
+      "probe_type": "node_strengthen",
+      "target_id": "future_performance_improvement",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.025,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years."
+    },
+    {
+      "probe_text": "A recent report from FINA (the international swimming federation) highlights a surge in junior world records across multiple freestyle distances, with several teenage swimmers showing times significantly faster than current senior records. Experts are pointing to advancements in training techniques and nutrition as enabling this rapid development, suggesting a new generation of talent is emerging much earlier in their careers than previously observed.",
+      "probe_type": "node_strengthen",
+      "target_id": "emergence_of_new_competitors",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record."
+    },
+    {
+      "probe_text": "Lukas Märtens recently swam a personal best time in a lower-tier competition, and while it wasn't a world record, it has led to renewed discussion and analysis in swimming publications about his current standing and potential to break records. This suggests he is indeed the current benchmark for performance in the event.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "current_world_record_holder",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course)."
+    },
+    {
+      "probe_text": "Wikipedia's policy regarding sports records, particularly for niche events like the 400m freestyle, often involves a verification process that can take several days to a week after a new record is officially ratified by FINA. This delay is due to the need for multiple editors to confirm the record's validity and ensure all source data is accurate before updating the page.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "wiki_update_frequency",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "How often Wikipedia is updated with swimming world record changes."
+    },
+    {
+      "probe_text": "Lukas Märtens' current world record in the 400m freestyle was set in July 2024. Given that elite swimmers often peak in their early to mid-20s and Märtens is already 22, it's highly unlikely he will achieve significant further improvements in his times that would be necessary to maintain a world record against rapidly advancing competition. His current performance might represent a physiological peak that is difficult to surpass.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Significant improvement could help him maintain or re-establish the record."
+    },
+    {
+      "probe_text": "The emergence of new competitors might not significantly impact Märtens holding the world record if the sport's inherent talent pool for this specific event is currently very thin, or if the training and development pathways for emerging swimmers are underdeveloped. For instance, if Märtens is an exceptional outlier who has pushed the boundaries of human performance in this event far beyond current training methodologies, it might take a very long time for another swimmer to even approach his record, regardless of the number of 'new competitors' who are still significantly slower.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "emergence_of_new_competitors->mertens_holds_wr_on_date",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.05,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "New, faster swimmers would likely break the record, causing Märtens to lose it."
+    },
+    {
+      "probe_text": "While Wikipedia's update frequency doesn't directly change who holds the record, consider a scenario where a very recent, unverified record is claimed by another swimmer mere hours before a major competition where Märtens is also competing. If Wikipedia has a significant lag in updating, it might incorrectly list Märtens as the record holder *during* that crucial event, potentially influencing his psychological state or pre-race performance, thereby indirectly affecting his ability to hold the record.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "wiki_update_frequency->mertens_holds_wr_on_date",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": true,
+      "description": "This factor is about the information source, not the event itself. If the record is broken, Wikipedia's update speed determines how quickly the page reflects that fact. It does not influence whether Märtens *holds* the record, only the information about it."
+    },
+    {
+      "probe_text": "Lukas Märtens has recently been observed to be experimenting with significant changes to his training regimen and stroke technique, reportedly inspired by advancements in biomechanics research. This suggests a proactive approach to performance enhancement, indicating his potential for substantial future improvements beyond what might be expected from typical career longevity, thereby strengthening the link between his future performance improvement and his ability to hold the world record.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Significant improvement could help him maintain or re-establish the record."
+    },
+    {
+      "probe_text": "The recent 2024 World Aquatics Championships saw an unprecedented number of swimmers from diverse nations, particularly from Asia, achieving personal bests and challenging existing world records across multiple events. Several commentators noted that the depth of talent is increasing at a faster rate than previously anticipated, suggesting that the emergence of new, world-class competitors capable of breaking records is accelerating.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "emergence_of_new_competitors->mertens_holds_wr_on_date",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.05,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "New, faster swimmers would likely break the record, causing Märtens to lose it."
+    },
+    {
+      "probe_text": "Some experts believe that a swimmer's perceived ability to maintain or improve their performance in the future is not an independent factor, but rather a consequence of their current status and the likelihood of holding onto a world record. If Lukas Märtens anticipates holding the world record for a significant period, this very expectation might motivate him to train harder, invest in better coaching, and adopt performance-enhancing strategies, thereby increasing his future performance improvement. Conversely, if he believes his record is precarious, he might become demotivated, leading to less improvement.",
+      "probe_type": "edge_reverse",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Significant improvement could help him maintain or re-establish the record."
+    },
+    {
+      "probe_text": "You've stated that Lukas Märtens' future performance improvement is unlikely to affect whether he is the *current* world record holder. However, if a swimmer is significantly improving, wouldn't that suggest a higher probability that they have *recently* broken or are on the verge of breaking the existing record, thus making them the current holder? For instance, if Märtens has shown a consistent pattern of shaving seconds off his personal bests in recent competitions, this trend itself would increase the likelihood that he *is* the current record holder, not just that he might maintain it.",
+      "probe_type": "edge_spurious",
+      "target_id": "future_performance_improvement->current_world_record_holder",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years. -> Whether Lukas Märtens is the current world record holder for the 400m freestyle (long course)."
+    },
+    {
+      "probe_text": "While the network shows that Märtens' future performance improvement and the emergence of new competitors are both separate influences on whether he holds the record, it omits a crucial connection: how Märtens' own potential to improve might spur on or even directly lead to the emergence of new, faster talent. For instance, if Märtens' trajectory suggests he's likely to shatter the record, this might inspire a wave of younger swimmers to train specifically to beat him, or perhaps a coach develops a new training method inspired by Märtens' progress that benefits multiple athletes. Doesn't Märtens' own potential for significant improvement indirectly increase the likelihood of new competitors emerging who are *also* capable of breaking the record?",
+      "probe_type": "edge_missing",
+      "target_id": "future_performance_improvement->emergence_of_new_competitors",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Likelihood of Lukas Märtens significantly improving his 400m freestyle time in the coming years. -> The probability that a new swimmer or swimmers will emerge who are capable of breaking the current world record."
+    },
+    {
+      "probe_text": "What if Lukas Märtens suffers a significant injury in the next year that prevents him from competing at his previous level for an extended period? How would this affect your assessment of him holding the world record on 2025-12-28, considering the typical recovery times and performance impacts of such injuries in elite swimming?",
+      "probe_type": "missing_node",
+      "target_id": "missed_injury_risk",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Lukas Märtens is currently the world record holder for the 400m freestyle. However, he has recently announced that he will be focusing primarily on the 800m and 1500m freestyle events for the foreseeable future, with significantly reduced training for the 400m. How does this shift in focus affect your probability assessment?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Lukas Märtens recently participated in a series of high-profile exhibition swimming events, not sanctioned for official record-keeping. These events showcased his current form and training regimen to a global audience.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Lukas Märtens's younger sister, Lisa, has recently won a bronze medal at the European Junior Swimming Championships. While she swims a different event, the family has a strong swimming pedigree.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if Lukas Märtens' future performance improvement potential is actually zero, meaning he has reached his absolute peak and cannot swim any faster, regardless of training or other factors? Furthermore, consider that his current world record is already at the absolute physical limit of human capability for this event, making further improvement impossible.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.1,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'future_performance_improvement' node, setting its potential to zero and stating the current record is at the physical limit. This significantly weakens one of the pathways that could allow Märtens to maintain the record. The causal path 'future_performance_improvement -> mertens_holds_wr_on_date' is now effectively non-existent. While 'emergence_of_new_competitors' and 'longevity_of_athletic_career' still play a role, the inability for Märtens himself to improve or defend against future challenges by swimming faster means the probability of him holding the record decreases. The initial estimate of 0.25 already accounted for some chance of him losing the record, but removing his own potential for improvement makes it more likely that a competitor will surpass him. The current record being at the 'absolute physical limit' further reinforces that Märtens cannot improve, making the 'future_performance_improvement' node critically important and its zeroing out a substantial blow to his chances of holding the record.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'future_performance_improvement' node, setting its potential to zero and stating the current record is at the physical limit. This significantly weakens one of the pathways that could allow Märtens to maintain the record. The causal path 'future_performance_improvement -> mertens_holds_wr_on_date' is now effectively non-existent. While 'emergence_of_new_competitors' and 'longevity_of_athletic_career' still play a role, the inability for Märtens himself to improve or defend against future challenges by swimming faster means the probability of him holding the record decreases. The initial estimate of 0.25 already accounted for some chance of him losing the record, but removing his own potential for improvement makes it more likely that a competitor will surpass him. The current record being at the 'absolute physical limit' further reinforces that Märtens cannot improve, making the 'future_performance_improvement' node critically important and its zeroing out a substantial blow to his chances of holding the record.\"\n}",
+      "target_id": "future_performance_improvement",
+      "target_type": "node",
+      "target_importance": 0.025,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the emergence of new competitors is largely irrelevant to Märtens holding the world record by December 2025? This could be the case if the sport's development has plateaued, meaning no new swimmers are likely to emerge with the potential to break the current record within the next couple of years, or if Märtens' current record is so far ahead of the pack that it would take an unprecedented leap for anyone else to catch up.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'emergence_of_new_competitors' suggests that this factor might be less influential than initially assumed. If the sport has plateaued or Märtens' record is exceptionally strong, the likelihood of him losing the record to a new competitor decreases. This directly impacts the causal path from 'emergence_of_new_competitors' to 'mertens_holds_wr_on_date'.\n\nThis weakening of a key factor that would cause Märtens to lose the record means the probability of him *holding* the record increases. The initial probability of 0.25 was likely conservative, accounting for a significant chance of being overtaken. By downplaying the 'emergence_of_new_competitors' risk, the probability shifts upwards. However, other factors like 'future_performance_improvement' and the possibility of existing competitors improving still exist, preventing a complete reversal of the initial estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'emergence_of_new_competitors' suggests that this factor might be less influential than initially assumed. If the sport has plateaued or Märtens' record is exceptionally strong, the likelihood of him losing the record to a new competitor decreases. This directly impacts the causal path from 'emergence_of_new_competitors' to 'mertens_holds_wr_on_date'.\\n\\nThis weakening of a key factor that would cause Märtens to lose the record means the probability of him *holding* the record increases. The initial probability of 0.25 was likely conservative, accounting for a significant chance of being overtaken. By downplaying the 'emergence_of_new_competitors' risk, the probability shifts upwards. However, other factors like 'future_performance_improvement' and the possibility of existing competitors improving still exist, preventing a complete reversal of the initial estimate.\"\n}",
+      "target_id": "emergence_of_new_competitors",
+      "target_type": "node",
+      "target_importance": 0.025,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "What if Lukas Märtens is *not* the current world record holder? For instance, what if the world record was actually set by someone else very recently, and Märtens' previous achievement was a different event or a lesser-known competition? If the premise of him being the *current* record holder is false, then the entire basis of the prediction changes, as he would first need to break the existing record before even having a chance to hold it on the specified date.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.05,
+      "absolute_shift": 0.2,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly attacks the 'current_world_record_holder' node, which is a primary input to the outcome 'mertens_holds_wr_on_date'. If Märtens is not the current world record holder, the causal path from 'current_world_record_holder' to the outcome is broken. Instead of assessing his chances of *maintaining* the record, the question becomes whether he can break the *existing* record (set by someone else) and then hold it until 2025-12-28. This significantly lowers the probability, as it requires not only continued elite performance but also a performance leap sufficient to surpass the current, potentially even faster, record holder. The other causal paths ('future_performance_improvement', 'emergence_of_new_competitors', 'longevity_of_athletic_career', 'wiki_update_frequency') are still relevant, but the initial condition of him being the record holder is crucial for the original probability calculation. The probability is not reduced to zero because it's still possible for him to break the record, but it becomes much less likely than maintaining an existing one.",
+      "raw_response": "{\n  \"updated_probability\": 0.05,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly attacks the 'current_world_record_holder' node, which is a primary input to the outcome 'mertens_holds_wr_on_date'. If Märtens is not the current world record holder, the causal path from 'current_world_record_holder' to the outcome is broken. Instead of assessing his chances of *maintaining* the record, the question becomes whether he can break the *existing* record (set by someone else) and then hold it until 2025-12-28. This significantly lowers the probability, as it requires not only continued elite performance but also a performance leap sufficient to surpass the current, potentially even faster, record holder. The other causal paths ('future_performance_improvement', 'emergence_of_new_competitors', 'longevity_of_athletic_career', 'wiki_update_frequency') are still relevant, but the initial condition of him being the record holder is crucial for the original probability calculation. The probability is not reduced to zero because it's still possible for him to break the record, but it becomes much less likely than maintaining an existing one.\"\n}",
+      "target_id": "current_world_record_holder",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "You included 'wiki_update_frequency' as a factor influencing whether Lukas Märtens holds the world record. However, Wikipedia's update speed is a reflection of reality, not a cause of it. Whether the record changes hands or not is determined by athletic performance, not by how quickly a third-party website is updated. Therefore, this factor seems irrelevant to the actual state of who holds the record.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0,
+      "shift_direction": "unchanged",
+      "reasoning": "The challenge correctly identifies that 'wiki_update_frequency' is not a causal factor for the outcome 'mertens_holds_wr_on_date'. Wikipedia's update speed is a downstream effect of the actual record-breaking event, not a cause of it. My initial reasoning in the causal network description also stated this: 'This factor is about the information source, not the event itself.' Therefore, removing this factor from consideration does not alter the causal paths that *do* influence the outcome (current_world_record_holder, future_performance_improvement, emergence_of_new_competitors, longevity_of_athletic_career). My probability estimate remains unchanged as the core causal logic is unaffected.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"unchanged\",\n  \"reasoning\": \"The challenge correctly identifies that 'wiki_update_frequency' is not a causal factor for the outcome 'mertens_holds_wr_on_date'. Wikipedia's update speed is a downstream effect of the actual record-breaking event, not a cause of it. My initial reasoning in the causal network description also stated this: 'This factor is about the information source, not the event itself.' Therefore, removing this factor from consideration does not alter the causal paths that *do* influence the outcome (current_world_record_holder, future_performance_improvement, emergence_of_new_competitors, longevity_of_athletic_career). My probability estimate remains unchanged as the core causal logic is unaffected.\"\n}",
+      "target_id": "wiki_update_frequency",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Lukas Märtens recently announced he is working with a new renowned sports science institute known for developing personalized training regimens that have demonstrably led to significant performance breakthroughs in other endurance athletes. This collaboration is specifically focused on optimizing his physiological response to high-intensity training, a key area for potential future gains in swimming.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly impacts the 'future_performance_improvement' node. The new collaboration with a renowned sports science institute, specifically focused on optimizing training and physiological response, strongly suggests an increased likelihood of significant performance gains for Lukas Märtens. This causal path ('future_performance_improvement' -> 'mertens_holds_wr_on_date') is critical, as Märtens maintaining the world record is contingent on him either continuing to be the fastest or improving his own time to fend off challengers. While the 'emergence_of_new_competitors' remains a significant threat, the increased probability of Märtens improving his performance strengthens his chances of holding the record. The 'longevity_of_athletic_career' node is indirectly affected as this collaboration could potentially extend his peak performance window. The 'wiki_update_frequency' remains irrelevant to the outcome itself. The initial probability was low (0.25), and this new information provides a strong reason to believe Märtens has a better chance of maintaining his record, hence the probability has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly impacts the 'future_performance_improvement' node. The new collaboration with a renowned sports science institute, specifically focused on optimizing training and physiological response, strongly suggests an increased likelihood of significant performance gains for Lukas Märtens. This causal path ('future_performance_improvement' -> 'mertens_holds_wr_on_date') is critical, as Märtens maintaining the world record is contingent on him either continuing to be the fastest or improving his own time to fend off challengers. While the 'emergence_of_new_competitors' remains a significant threat, the increased probability of Märtens improving his performance strengthens his chances of holding the record. The 'longevity_of_athletic_career' node is indirectly affected as this collaboration could potentially extend his peak performance window. The 'wiki_update_frequency' remains irrelevant to the outcome itself. The initial probability was low (0.25), and this new information provides a strong reason to believe Märtens has a better chance of maintaining his record, hence the probability has increased.\"\n}",
+      "target_id": "future_performance_improvement",
+      "target_type": "node",
+      "target_importance": 0.025,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent report from FINA (the international swimming federation) highlights a surge in junior world records across multiple freestyle distances, with several teenage swimmers showing times significantly faster than current senior records. Experts are pointing to advancements in training techniques and nutrition as enabling this rapid development, suggesting a new generation of talent is emerging much earlier in their careers than previously observed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.1,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'emergence_of_new_competitors' is significant. The new information directly increases the likelihood that swimmers capable of breaking the current world record will emerge. This strengthens the causal path from 'emergence_of_new_competitors' to 'mertens_holds_wr_on_date', making it more probable that Märtens will no longer hold the record by 2025-12-28. The report suggests a broader trend of rapid development in younger swimmers, implying a higher chance of new talent surpassing existing records sooner than anticipated. This outweighs the other factors, leading to a decreased probability that Märtens will still hold the record.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'emergence_of_new_competitors' is significant. The new information directly increases the likelihood that swimmers capable of breaking the current world record will emerge. This strengthens the causal path from 'emergence_of_new_competitors' to 'mertens_holds_wr_on_date', making it more probable that Märtens will no longer hold the record by 2025-12-28. The report suggests a broader trend of rapid development in younger swimmers, implying a higher chance of new talent surpassing existing records sooner than anticipated. This outweighs the other factors, leading to a decreased probability that Märtens will still hold the record.\"\n}",
+      "target_id": "emergence_of_new_competitors",
+      "target_type": "node",
+      "target_importance": 0.025,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Lukas Märtens recently swam a personal best time in a lower-tier competition, and while it wasn't a world record, it has led to renewed discussion and analysis in swimming publications about his current standing and potential to break records. This suggests he is indeed the current benchmark for performance in the event.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'current_world_record_holder' node strengthens the initial premise that Lukas Märtens is a top contender. The information provided suggests that he is not only the current holder (or at least very close to it, acting as the benchmark) but also in good form, evidenced by a recent personal best. This directly impacts the 'current_world_record_holder -> mertens_holds_wr_on_date' causal path. If he is indeed the current benchmark and in good form, the baseline probability of him holding the record on the specified date increases. While this doesn't negate the possibility of new competitors or his own future performance decline, it reinforces the starting point of our assessment, making it more likely he *could* hold the record on that future date, assuming other factors don't intervene negatively.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'current_world_record_holder' node strengthens the initial premise that Lukas Märtens is a top contender. The information provided suggests that he is not only the current holder (or at least very close to it, acting as the benchmark) but also in good form, evidenced by a recent personal best. This directly impacts the 'current_world_record_holder -> mertens_holds_wr_on_date' causal path. If he is indeed the current benchmark and in good form, the baseline probability of him holding the record on the specified date increases. While this doesn't negate the possibility of new competitors or his own future performance decline, it reinforces the starting point of our assessment, making it more likely he *could* hold the record on that future date, assuming other factors don't intervene negatively.\"\n}",
+      "target_id": "current_world_record_holder",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Wikipedia's policy regarding sports records, particularly for niche events like the 400m freestyle, often involves a verification process that can take several days to a week after a new record is officially ratified by FINA. This delay is due to the need for multiple editors to confirm the record's validity and ensure all source data is accurate before updating the page.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0,
+      "shift_direction": "unchanged",
+      "reasoning": "The challenge to 'wiki_update_frequency' is about the speed at which Wikipedia reflects a change in the world record. However, the outcome in question is whether Lukas Märtens *holds* the world record on a specific date, not whether Wikipedia accurately reports it at any given moment. Therefore, the causal path from 'wiki_update_frequency' to 'mertens_holds_wr_on_date' is correctly identified as not influencing the event itself. Since this causal factor is peripheral to the core question of Märtens's performance and competitive landscape, and the challenge does not impact the structurally important nodes and edges (like 'emergence_of_new_competitors' or 'future_performance_improvement'), my probability estimate remains unchanged.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"unchanged\",\n  \"reasoning\": \"The challenge to 'wiki_update_frequency' is about the speed at which Wikipedia reflects a change in the world record. However, the outcome in question is whether Lukas Märtens *holds* the world record on a specific date, not whether Wikipedia accurately reports it at any given moment. Therefore, the causal path from 'wiki_update_frequency' to 'mertens_holds_wr_on_date' is correctly identified as not influencing the event itself. Since this causal factor is peripheral to the core question of Märtens's performance and competitive landscape, and the challenge does not impact the structurally important nodes and edges (like 'emergence_of_new_competitors' or 'future_performance_improvement'), my probability estimate remains unchanged.\"\n}",
+      "target_id": "wiki_update_frequency",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "Lukas Märtens' current world record in the 400m freestyle was set in July 2024. Given that elite swimmers often peak in their early to mid-20s and Märtens is already 22, it's highly unlikely he will achieve significant further improvements in his times that would be necessary to maintain a world record against rapidly advancing competition. His current performance might represent a physiological peak that is difficult to surpass.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.1,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly targets the 'future_performance_improvement' node, which has a causal link to the outcome 'mertens_holds_wr_on_date'. The argument suggests that Märtens is already near his physiological peak at age 22, making significant future improvements unlikely. This weakens the path where his own continued improvement helps him maintain the record. While other factors like the emergence of new competitors and his current status as record holder still play a role, the reduced likelihood of him improving his own performance to fend off future challenges makes it less probable that he will hold the record by the specified date. The initial probability of 0.25 already accounted for some possibility of him losing the record, and this new information strengthens the reasons why he might lose it by emphasizing the difficulty of further personal improvement in the face of advancing competition.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly targets the 'future_performance_improvement' node, which has a causal link to the outcome 'mertens_holds_wr_on_date'. The argument suggests that Märtens is already near his physiological peak at age 22, making significant future improvements unlikely. This weakens the path where his own continued improvement helps him maintain the record. While other factors like the emergence of new competitors and his current status as record holder still play a role, the reduced likelihood of him improving his own performance to fend off future challenges makes it less probable that he will hold the record by the specified date. The initial probability of 0.25 already accounted for some possibility of him losing the record, and this new information strengthens the reasons why he might lose it by emphasizing the difficulty of further personal improvement in the face of advancing competition.\"\n}",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "target_type": "edge",
+      "target_importance": 0.05,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "The emergence of new competitors might not significantly impact Märtens holding the world record if the sport's inherent talent pool for this specific event is currently very thin, or if the training and development pathways for emerging swimmers are underdeveloped. For instance, if Märtens is an exceptional outlier who has pushed the boundaries of human performance in this event far beyond current training methodologies, it might take a very long time for another swimmer to even approach his record, regardless of the number of 'new competitors' who are still significantly slower.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge questions the strength of the causal link between 'emergence_of_new_competitors' and 'mertens_holds_wr_on_date'. The argument is that if the sport's talent pool for this specific event is thin, or development pathways are poor, then the emergence of new competitors might not lead to the record being broken. This suggests that the 'emergence_of_new_competitors' node might have a weaker influence on the outcome than initially modeled. \n\nHowever, the original network already included 'future_performance_improvement' as a separate factor. The challenge implies that Märtens might be an exceptional outlier, which could strengthen the 'future_performance_improvement' path or suggest that his current record is so far ahead that it requires a similar outlier to break it. \n\nMy initial estimate of 0.25 reflected a moderate belief that Märtens would lose the record. This challenge weakens one of the primary reasons he might lose it (new competitors), suggesting he might hold it for longer. Therefore, the probability of him holding the record should increase. The 'emergence_of_new_competitors' path is a significant one, so the update is substantial but not a complete reversal, as other factors like his own future performance and the general longevity of careers still play a role. The updated probability reflects a higher likelihood of him retaining the record due to the diminished impact of new challengers.",
+      "raw_response": "{\n  \"updated_probability\": 0.40,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'emergence_of_new_competitors' and 'mertens_holds_wr_on_date'. The argument is that if the sport's talent pool for this specific event is thin, or development pathways are poor, then the emergence of new competitors might not lead to the record being broken. This suggests that the 'emergence_of_new_competitors' node might have a weaker influence on the outcome than initially modeled. \\n\\nHowever, the original network already included 'future_performance_improvement' as a separate factor. The challenge implies that Märtens might be an exceptional outlier, which could strengthen the 'future_performance_improvement' path or suggest that his current record is so far ahead that it requires a similar outlier to break it. \\n\\nMy initial estimate of 0.25 reflected a moderate belief that Märtens would lose the record. This challenge weakens one of the primary reasons he might lose it (new competitors), suggesting he might hold it for longer. Therefore, the probability of him holding the record should increase. The 'emergence_of_new_competitors' path is a significant one, so the update is substantial but not a complete reversal, as other factors like his own future performance and the general longevity of careers still play a role. The updated probability reflects a higher likelihood of him retaining the record due to the diminished impact of new challengers.\"\n}",
+      "target_id": "emergence_of_new_competitors->mertens_holds_wr_on_date",
+      "target_type": "edge",
+      "target_importance": 0.05,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While Wikipedia's update frequency doesn't directly change who holds the record, consider a scenario where a very recent, unverified record is claimed by another swimmer mere hours before a major competition where Märtens is also competing. If Wikipedia has a significant lag in updating, it might incorrectly list Märtens as the record holder *during* that crucial event, potentially influencing his psychological state or pre-race performance, thereby indirectly affecting his ability to hold the record.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0,
+      "shift_direction": "unchanged",
+      "reasoning": "The challenge to the causal link 'wiki_update_frequency -> mertens_holds_wr_on_date' introduces a novel indirect pathway. It suggests that a lag in Wikipedia's update frequency, combined with a specific scenario of a near-simultaneous record claim and Märtens' competition, could psychologically impact Märtens, thereby indirectly affecting his performance and his ability to hold the record. However, this scenario is highly specific and relies on several contingent events: a very recent, unverified record claim, a significant Wikipedia lag, Märtens competing at the same time, and a demonstrable psychological impact on his performance. The core causal links determining whether Märtens *actually* holds the record on the specified date (i.e., his future performance, the emergence of new competitors, and his career longevity) remain unaffected by this argument. The proposed indirect link through Wikipedia lag is speculative and does not fundamentally alter the primary drivers of the outcome. Therefore, the probability estimate remains unchanged.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"unchanged\",\n  \"reasoning\": \"The challenge to the causal link 'wiki_update_frequency -> mertens_holds_wr_on_date' introduces a novel indirect pathway. It suggests that a lag in Wikipedia's update frequency, combined with a specific scenario of a near-simultaneous record claim and Märtens' competition, could psychologically impact Märtens, thereby indirectly affecting his performance and his ability to hold the record. However, this scenario is highly specific and relies on several contingent events: a very recent, unverified record claim, a significant Wikipedia lag, Märtens competing at the same time, and a demonstrable psychological impact on his performance. The core causal links determining whether Märtens *actually* holds the record on the specified date (i.e., his future performance, the emergence of new competitors, and his career longevity) remain unaffected by this argument. The proposed indirect link through Wikipedia lag is speculative and does not fundamentally alter the primary drivers of the outcome. Therefore, the probability estimate remains unchanged.\"\n}",
+      "target_id": "wiki_update_frequency->mertens_holds_wr_on_date",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Lukas Märtens has recently been observed to be experimenting with significant changes to his training regimen and stroke technique, reportedly inspired by advancements in biomechanics research. This suggests a proactive approach to performance enhancement, indicating his potential for substantial future improvements beyond what might be expected from typical career longevity, thereby strengthening the link between his future performance improvement and his ability to hold the world record.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly impacts the 'future_performance_improvement' node and its causal link to the outcome 'mertens_holds_wr_on_date'. The information suggests Märtens is not just relying on natural progression but is actively seeking improvement through new training and techniques, potentially accelerating his performance gains. This strengthens the causal path where his future performance improvement could help him maintain the world record. While this increases the probability, it's not a certainty, as other factors like new competitors and the general longevity of his career still play significant roles. The initial probability of 0.25 was likely too low given this new information about proactive performance enhancement.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly impacts the 'future_performance_improvement' node and its causal link to the outcome 'mertens_holds_wr_on_date'. The information suggests Märtens is not just relying on natural progression but is actively seeking improvement through new training and techniques, potentially accelerating his performance gains. This strengthens the causal path where his future performance improvement could help him maintain the world record. While this increases the probability, it's not a certainty, as other factors like new competitors and the general longevity of his career still play significant roles. The initial probability of 0.25 was likely too low given this new information about proactive performance enhancement.\"\n}",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "target_type": "edge",
+      "target_importance": 0.05,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "The recent 2024 World Aquatics Championships saw an unprecedented number of swimmers from diverse nations, particularly from Asia, achieving personal bests and challenging existing world records across multiple events. Several commentators noted that the depth of talent is increasing at a faster rate than previously anticipated, suggesting that the emergence of new, world-class competitors capable of breaking records is accelerating.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.1,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'emergence_of_new_competitors' node, which has a strong negative causal link to the outcome 'mertens_holds_wr_on_date'. The new information suggests that the emergence of new, world-class competitors capable of breaking records is accelerating. This strengthens the likelihood that someone else will break Märtens' potential record before or by 2025-12-28, thus decreasing the probability that he will still hold the record on that date. The causal path most affected is 'emergence_of_new_competitors -> mertens_holds_wr_on_date'. While other factors like his future performance and career longevity still play a role, the increased likelihood of strong competition significantly reduces his chances of holding the record.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'emergence_of_new_competitors' node, which has a strong negative causal link to the outcome 'mertens_holds_wr_on_date'. The new information suggests that the emergence of new, world-class competitors capable of breaking records is accelerating. This strengthens the likelihood that someone else will break Märtens' potential record before or by 2025-12-28, thus decreasing the probability that he will still hold the record on that date. The causal path most affected is 'emergence_of_new_competitors -> mertens_holds_wr_on_date'. While other factors like his future performance and career longevity still play a role, the increased likelihood of strong competition significantly reduces his chances of holding the record.\"\n}",
+      "target_id": "emergence_of_new_competitors->mertens_holds_wr_on_date",
+      "target_type": "edge",
+      "target_importance": 0.05,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "Some experts believe that a swimmer's perceived ability to maintain or improve their performance in the future is not an independent factor, but rather a consequence of their current status and the likelihood of holding onto a world record. If Lukas Märtens anticipates holding the world record for a significant period, this very expectation might motivate him to train harder, invest in better coaching, and adopt performance-enhancing strategies, thereby increasing his future performance improvement. Conversely, if he believes his record is precarious, he might become demotivated, leading to less improvement.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a feedback loop where the belief in holding the world record influences future performance, rather than future performance being solely an independent factor. This strengthens the link between 'current_world_record_holder' and 'future_performance_improvement', and consequently to the outcome 'mertens_holds_wr_on_date'. My initial estimate implicitly assumed 'future_performance_improvement' was more of an independent variable. By recognizing that Märtens's current status as record holder could actively drive his future performance and motivation to maintain it, the probability that he holds the record on the specified date increases. This makes the causal path from 'current_world_record_holder' to 'mertens_holds_wr_on_date' more robust, as it now includes an indirect positive influence via his performance. The 'emergence_of_new_competitors' remains a significant counteracting force, but the newly acknowledged self-reinforcing mechanism for Märtens's performance warrants an upward adjustment.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a feedback loop where the belief in holding the world record influences future performance, rather than future performance being solely an independent factor. This strengthens the link between 'current_world_record_holder' and 'future_performance_improvement', and consequently to the outcome 'mertens_holds_wr_on_date'. My initial estimate implicitly assumed 'future_performance_improvement' was more of an independent variable. By recognizing that Märtens's current status as record holder could actively drive his future performance and motivation to maintain it, the probability that he holds the record on the specified date increases. This makes the causal path from 'current_world_record_holder' to 'mertens_holds_wr_on_date' more robust, as it now includes an indirect positive influence via his performance. The 'emergence_of_new_competitors' remains a significant counteracting force, but the newly acknowledged self-reinforcing mechanism for Märtens's performance warrants an upward adjustment.\"\n}",
+      "target_id": "future_performance_improvement->mertens_holds_wr_on_date",
+      "target_type": "edge",
+      "target_importance": 0.05,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "You've stated that Lukas Märtens' future performance improvement is unlikely to affect whether he is the *current* world record holder. However, if a swimmer is significantly improving, wouldn't that suggest a higher probability that they have *recently* broken or are on the verge of breaking the existing record, thus making them the current holder? For instance, if Märtens has shown a consistent pattern of shaving seconds off his personal bests in recent competitions, this trend itself would increase the likelihood that he *is* the current record holder, not just that he might maintain it.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge correctly points out a flaw in my previous reasoning regarding the causal link 'future_performance_improvement -> current_world_record_holder'. My initial assessment incorrectly separated 'current' status from 'future improvement'. If Märtens is significantly improving, it increases the probability that he has *recently* broken or is on the verge of breaking the world record, which directly impacts his status as the *current* world record holder. This strengthens the link between his potential for future improvement and his current standing. Therefore, the probability that he is the current world record holder, and consequently the probability of him holding it on the specified future date, is increased. The path affected is primarily the indirect influence on the outcome node: 'future_performance_improvement' now more strongly influences 'current_world_record_holder', which in turn directly impacts 'mertens_holds_wr_on_date'. This makes the overall probability of him holding the record on the future date higher.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge correctly points out a flaw in my previous reasoning regarding the causal link 'future_performance_improvement -> current_world_record_holder'. My initial assessment incorrectly separated 'current' status from 'future improvement'. If Märtens is significantly improving, it increases the probability that he has *recently* broken or is on the verge of breaking the world record, which directly impacts his status as the *current* world record holder. This strengthens the link between his potential for future improvement and his current standing. Therefore, the probability that he is the current world record holder, and consequently the probability of him holding it on the specified future date, is increased. The path affected is primarily the indirect influence on the outcome node: 'future_performance_improvement' now more strongly influences 'current_world_record_holder', which in turn directly impacts 'mertens_holds_wr_on_date'. This makes the overall probability of him holding the record on the future date higher.\"\n}",
+      "target_id": "future_performance_improvement->current_world_record_holder",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While the network shows that Märtens' future performance improvement and the emergence of new competitors are both separate influences on whether he holds the record, it omits a crucial connection: how Märtens' own potential to improve might spur on or even directly lead to the emergence of new, faster talent. For instance, if Märtens' trajectory suggests he's likely to shatter the record, this might inspire a wave of younger swimmers to train specifically to beat him, or perhaps a coach develops a new training method inspired by Märtens' progress that benefits multiple athletes. Doesn't Märtens' own potential for significant improvement indirectly increase the likelihood of new competitors emerging who are *also* capable of breaking the record?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge highlights a plausible indirect causal link: Märtens' potential for future performance improvement could indirectly spur the emergence of new, faster competitors. This means the 'future_performance_improvement' node now has a secondary, indirect negative influence on the outcome node 'mertens_holds_wr_on_date' via 'emergence_of_new_competitors'. While Märtens improving himself is a positive for him holding the record, this improved performance could also raise the bar and motivate others to surpass him. This strengthens the 'emergence_of_new_competitors' factor's potential to cause Märtens to lose the record. The original forecast already factored in the possibility of new competitors, but this new linkage makes that possibility slightly more robust. The update is minor because the direct influence of 'emergence_of_new_competitors' was already a significant consideration.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge highlights a plausible indirect causal link: Märtens' potential for future performance improvement could indirectly spur the emergence of new, faster competitors. This means the 'future_performance_improvement' node now has a secondary, indirect negative influence on the outcome node 'mertens_holds_wr_on_date' via 'emergence_of_new_competitors'. While Märtens improving himself is a positive for him holding the record, this improved performance could also raise the bar and motivate others to surpass him. This strengthens the 'emergence_of_new_competitors' factor's potential to cause Märtens to lose the record. The original forecast already factored in the possibility of new competitors, but this new linkage makes that possibility slightly more robust. The update is minor because the direct influence of 'emergence_of_new_competitors' was already a significant consideration.\"\n}",
+      "target_id": "future_performance_improvement->emergence_of_new_competitors",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "What if Lukas Märtens suffers a significant injury in the next year that prevents him from competing at his previous level for an extended period? How would this affect your assessment of him holding the world record on 2025-12-28, considering the typical recovery times and performance impacts of such injuries in elite swimming?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.05,
+      "absolute_shift": 0.2,
+      "shift_direction": "decreased",
+      "reasoning": "The introduction of a significant injury directly and severely impacts the 'future_performance_improvement' node. Elite swimming performance is highly sensitive to training and physical condition. A serious injury preventing competition for an extended period would make continued improvement, or even maintaining current elite levels, highly improbable. This weakened 'future_performance_improvement' has a strong negative causal link to 'mertens_holds_wr_on_date'. Furthermore, the 'longevity_of_athletic_career' is also negatively impacted, as recovery from such injuries often leads to a decline in peak performance or premature retirement, further reducing the chances of holding the record. The 'emergence_of_new_competitors' path remains largely unaffected, but the direct impact on Märtens' ability to perform means the likelihood of him holding the record decreases substantially.",
+      "raw_response": "{\n  \"updated_probability\": 0.05,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The introduction of a significant injury directly and severely impacts the 'future_performance_improvement' node. Elite swimming performance is highly sensitive to training and physical condition. A serious injury preventing competition for an extended period would make continued improvement, or even maintaining current elite levels, highly improbable. This weakened 'future_performance_improvement' has a strong negative causal link to 'mertens_holds_wr_on_date'. Furthermore, the 'longevity_of_athletic_career' is also negatively impacted, as recovery from such injuries often leads to a decline in peak performance or premature retirement, further reducing the chances of holding the record. The 'emergence_of_new_competitors' path remains largely unaffected, but the direct impact on Märtens' ability to perform means the likelihood of him holding the record decreases substantially.\"\n}",
+      "target_id": "missed_injury_risk",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Lukas Märtens is currently the world record holder for the 400m freestyle. However, he has recently announced that he will be focusing primarily on the 800m and 1500m freestyle events for the foreseeable future, with significantly reduced training for the 400m. How does this shift in focus affect your probability assessment?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.05,
+      "absolute_shift": 0.2,
+      "shift_direction": "decreased",
+      "reasoning": "The new information directly challenges the causal path from 'current_world_record_holder' and 'future_performance_improvement' to the outcome 'mertens_holds_wr_on_date'. Märtens is indeed the current record holder, but his stated focus shift away from the 400m freestyle implies significantly reduced training for this specific event. This drastically lowers the probability of 'future_performance_improvement' for the 400m and also makes it less likely he can maintain his current level of performance, thus weakening the link from 'current_world_record_holder' to maintaining the record. While 'emergence_of_new_competitors' remains a factor, Märtens' own reduced commitment makes it much more probable that any strong competitor will surpass his current record. The 'longevity_of_athletic_career' node is less directly impacted, as it speaks to general career trends, but Märtens' decision is a specific deviation from maintaining peak performance in the 400m. The 'wiki_update_frequency' is irrelevant to the actual event of holding the record. The updated probability reflects a strong decrease due to the direct undermining of Märtens' ability and intention to defend his 400m record.",
+      "raw_response": "{\n  \"updated_probability\": 0.05,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information directly challenges the causal path from 'current_world_record_holder' and 'future_performance_improvement' to the outcome 'mertens_holds_wr_on_date'. Märtens is indeed the current record holder, but his stated focus shift away from the 400m freestyle implies significantly reduced training for this specific event. This drastically lowers the probability of 'future_performance_improvement' for the 400m and also makes it less likely he can maintain his current level of performance, thus weakening the link from 'current_world_record_holder' to maintaining the record. While 'emergence_of_new_competitors' remains a factor, Märtens' own reduced commitment makes it much more probable that any strong competitor will surpass his current record. The 'longevity_of_athletic_career' node is less directly impacted, as it speaks to general career trends, but Märtens' decision is a specific deviation from maintaining peak performance in the 400m. The 'wiki_update_frequency' is irrelevant to the actual event of holding the record. The updated probability reflects a strong decrease due to the direct undermining of Märtens' ability and intention to defend his 400m record.\"\n}",
+      "target_id": "missing_node_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Lukas Märtens recently participated in a series of high-profile exhibition swimming events, not sanctioned for official record-keeping. These events showcased his current form and training regimen to a global audience.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0,
+      "shift_direction": "unchanged",
+      "reasoning": "The new information about Lukas Märtens participating in exhibition events does not directly impact the causal factors determining whether he holds the world record on 2025-12-28. The exhibition events, by definition, are not sanctioned for official record-keeping, so they do not change his status as current world record holder, nor do they provide direct evidence about his future performance improvements, the emergence of new competitors, or the longevity of his career. The 'wiki_update_frequency' node is correctly identified as a factor related to the information source, not the event itself. Therefore, none of the core causal paths leading to the outcome are structurally altered by this information, and the probability estimate remains unchanged.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"unchanged\",\n  \"reasoning\": \"The new information about Lukas Märtens participating in exhibition events does not directly impact the causal factors determining whether he holds the world record on 2025-12-28. The exhibition events, by definition, are not sanctioned for official record-keeping, so they do not change his status as current world record holder, nor do they provide direct evidence about his future performance improvements, the emergence of new competitors, or the longevity of his career. The 'wiki_update_frequency' node is correctly identified as a factor related to the information source, not the event itself. Therefore, none of the core causal paths leading to the outcome are structurally altered by this information, and the probability estimate remains unchanged.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Lukas Märtens's younger sister, Lisa, has recently won a bronze medal at the European Junior Swimming Championships. While she swims a different event, the family has a strong swimming pedigree.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.22,
+      "absolute_shift": 0.03,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about Lukas Märtens's younger sister, Lisa, winning a bronze medal at the European Junior Championships, while interesting, does not fundamentally alter the causal paths leading to the outcome. The primary factors influencing whether Lukas Märtens holds the world record on 2025-12-28 are his own future performance improvements, the emergence of new competitors, and the longevity of his career. Lisa's success, while indicating a swimming pedigree, is in a different event and does not directly impact Lukas's performance or the likelihood of other swimmers breaking his potential record. The 'emergence_of_new_competitors' node is the most tangentially related, as one might speculate about future talent within the family. However, this is a very weak link and highly speculative. Therefore, the impact on the overall probability is minimal, with a slight decrease reflecting the very indirect and speculative nature of this information potentially hinting at a broader talent pool that could eventually produce record-breakers, although this is not directly evidenced by Lisa's result.",
+      "raw_response": "{\n  \"updated_probability\": 0.22,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about Lukas Märtens's younger sister, Lisa, winning a bronze medal at the European Junior Championships, while interesting, does not fundamentally alter the causal paths leading to the outcome. The primary factors influencing whether Lukas Märtens holds the world record on 2025-12-28 are his own future performance improvements, the emergence of new competitors, and the longevity of his career. Lisa's success, while indicating a swimming pedigree, is in a different event and does not directly impact Lukas's performance or the likelihood of other swimmers breaking his potential record. The 'emergence_of_new_competitors' node is the most tangentially related, as one might speculate about future talent within the family. However, this is a very weak link and highly speculative. Therefore, the impact on the overall probability is minimal, with a slight decrease reflecting the very indirect and speculative nature of this information potentially hinting at a broader talent pool that could eventually produce record-breakers, although this is not directly evidenced by Lisa's result.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "8f2ea4ca0e1613f5ed5071b15f8c6eb0e365f00e19ec57a6311aa23ff655e644",
+    "question_text": "According to Wikipedia, will Lukas Märtens still hold the world record for 400m freestyle in long course (50 metres) swimming pools on 2025-12-28?",
+    "source": "wikipedia",
+    "condition": "one-turn",
+    "initial_probability": 0.25,
+    "n_probes": 20,
+    "n_successful": 20,
+    "mean_absolute_shift": 0.1065,
+    "max_absolute_shift": 0.2
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 23.958333333333336,
+    "mean_shift_high": 0.14375000000000002,
+    "mean_shift_low": 0.006,
+    "asymmetry_index": 0.9183673469387753,
+    "mean_shift_negate": 0.10714285714285714,
+    "mean_shift_strengthen": 0.11666666666666668,
+    "fnar": 1,
+    "n_accepted": 3,
+    "n_spurious": 3,
+    "critical_path_premium": 0.037000000000000005,
+    "mean_shift_on_path": 0.125,
+    "mean_shift_off_path": 0.088,
+    "importance_sensitivity_correlation": 0.024242424242424288,
+    "control_sensitivity": 0
+  }
+}

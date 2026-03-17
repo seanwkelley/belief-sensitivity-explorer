@@ -1,0 +1,1123 @@
+{
+  "question_id": "WLCFLPCL",
+  "question_text": "Will the weekly dollar amount of loans made under the primary credit lending program by the Federal Reserve have increased by 2025-12-28 as compared to its value on 2025-12-21?",
+  "source": "fred",
+  "initial_probability": 0.65,
+  "nodes": [
+    {
+      "id": "overall_economic_activity",
+      "description": "The general health and growth rate of the US economy.",
+      "role": "factor"
+    },
+    {
+      "id": "liquidity_needs_of_banks",
+      "description": "The demand from banks for short-term funding from the Federal Reserve.",
+      "role": "factor"
+    },
+    {
+      "id": "federal_reserve_monetary_policy",
+      "description": "The stance of the Federal Reserve regarding interest rates and credit availability.",
+      "role": "factor"
+    },
+    {
+      "id": "market_volatility",
+      "description": "The degree of fluctuation in financial markets, which can increase demand for safe assets and liquidity.",
+      "role": "factor"
+    },
+    {
+      "id": "loan_program_usage_trends",
+      "description": "Historical patterns and recent trends in the utilization of the primary credit lending program.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome",
+      "description": "The weekly dollar amount of loans made under the primary credit lending program by the Federal Reserve will have increased by 2025-12-28 as compared to its value on 2025-12-21.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "overall_economic_activity",
+      "to": "liquidity_needs_of_banks",
+      "mechanism": "A stronger economy may reduce immediate liquidity needs, but can also lead to increased lending activity requiring more reserves."
+    },
+    {
+      "from": "federal_reserve_monetary_policy",
+      "to": "liquidity_needs_of_banks",
+      "mechanism": "Tighter policy can increase liquidity needs as borrowing costs rise, while looser policy can reduce them."
+    },
+    {
+      "from": "federal_reserve_monetary_policy",
+      "to": "loan_program_usage_trends",
+      "mechanism": "Policy changes directly influence the attractiveness and necessity of using Fed lending facilities."
+    },
+    {
+      "from": "market_volatility",
+      "to": "liquidity_needs_of_banks",
+      "mechanism": "Increased volatility often leads banks to seek more stable funding sources, including the Fed's facilities."
+    },
+    {
+      "from": "liquidity_needs_of_banks",
+      "to": "outcome",
+      "mechanism": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility."
+    },
+    {
+      "from": "loan_program_usage_trends",
+      "to": "outcome",
+      "mechanism": "Existing trends can indicate a continuation or acceleration of borrowing patterns."
+    }
+  ],
+  "reasoning": "The probability of an increase in primary credit lending program usage hinges on several interconnected factors. A stable or slightly contracting economic environment, coupled with potentially tighter monetary policy or increased market volatility as the end of 2025 approaches, could lead banks to increase their reliance on the Federal Reserve's lending facilities for short-term liquidity. While current trends might suggest a baseline usage, unexpected economic shifts or policy adjustments could significantly alter demand. Given the uncertainty around these factors in late 2025, a slight lean towards an increase seems reasonable.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 6,
+    "density": 0.2,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "outcome",
+    "node_metrics": [
+      {
+        "node_id": "overall_economic_activity",
+        "description": "The general health and growth rate of the US economy.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "liquidity_needs_of_banks",
+        "description": "The demand from banks for short-term funding from the Federal Reserve.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0.125,
+        "closeness": 0.6,
+        "pagerank": 0.2517,
+        "path_relevance": 0.5
+      },
+      {
+        "node_id": "federal_reserve_monetary_policy",
+        "description": "The stance of the Federal Reserve regarding interest rates and credit availability.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "market_volatility",
+        "description": "The degree of fluctuation in financial markets, which can increase demand for safe assets and liquidity.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "loan_program_usage_trends",
+        "description": "Historical patterns and recent trends in the utilization of the primary credit lending program.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.025,
+        "closeness": 0.2,
+        "pagerank": 0.1148,
+        "path_relevance": 0.1667
+      },
+      {
+        "node_id": "outcome",
+        "description": "The weekly dollar amount of loans made under the primary credit lending program by the Federal Reserve will have increased by 2025-12-28 as compared to its value on 2025-12-21.",
+        "role": "outcome",
+        "in_degree": 2,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.625,
+        "pagerank": 0.392,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "overall_economic_activity",
+        "target": "liquidity_needs_of_banks",
+        "mechanism": "A stronger economy may reduce immediate liquidity needs, but can also lead to increased lending activity requiring more reserves.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "liquidity_needs_of_banks",
+        "target": "outcome",
+        "mechanism": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility.",
+        "edge_betweenness": 0.1167,
+        "on_critical_path": true
+      },
+      {
+        "source": "federal_reserve_monetary_policy",
+        "target": "liquidity_needs_of_banks",
+        "mechanism": "Tighter policy can increase liquidity needs as borrowing costs rise, while looser policy can reduce them.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "federal_reserve_monetary_policy",
+        "target": "loan_program_usage_trends",
+        "mechanism": "Policy changes directly influence the attractiveness and necessity of using Fed lending facilities.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "market_volatility",
+        "target": "liquidity_needs_of_banks",
+        "mechanism": "Increased volatility often leads banks to seek more stable funding sources, including the Fed's facilities.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "loan_program_usage_trends",
+        "target": "outcome",
+        "mechanism": "Existing trends can indicate a continuation or acceleration of borrowing patterns.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "liquidity_needs_of_banks",
+        "description": "The demand from banks for short-term funding from the Federal Reserve.",
+        "importance": 0.125,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "loan_program_usage_trends",
+        "description": "Historical patterns and recent trends in the utilization of the primary credit lending program.",
+        "importance": 0.025,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "overall_economic_activity",
+        "description": "The general health and growth rate of the US economy.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "market_volatility",
+        "description": "The degree of fluctuation in financial markets, which can increase demand for safe assets and liquidity.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "liquidity_needs_of_banks",
+        "description": "The demand from banks for short-term funding from the Federal Reserve.",
+        "importance": 0.125,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "loan_program_usage_trends",
+        "description": "Historical patterns and recent trends in the utilization of the primary credit lending program.",
+        "importance": 0.025,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "overall_economic_activity",
+        "description": "The general health and growth rate of the US economy.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "market_volatility",
+        "description": "The degree of fluctuation in financial markets, which can increase demand for safe assets and liquidity.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "liquidity_needs_of_banks->outcome",
+        "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility.",
+        "importance": 0.1167,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "overall_economic_activity->liquidity_needs_of_banks",
+        "description": "A stronger economy may reduce immediate liquidity needs, but can also lead to increased lending activity requiring more reserves.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "loan_program_usage_trends->outcome",
+        "description": "Existing trends can indicate a continuation or acceleration of borrowing patterns.",
+        "importance": 0.05,
+        "centrality_rank": 6,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "liquidity_needs_of_banks->outcome",
+        "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility.",
+        "importance": 0.1167,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "overall_economic_activity->liquidity_needs_of_banks",
+        "description": "A stronger economy may reduce immediate liquidity needs, but can also lead to increased lending activity requiring more reserves.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "liquidity_needs_of_banks->outcome",
+        "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility.",
+        "importance": 0.1167,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "loan_program_usage_trends->liquidity_needs_of_banks",
+        "description": "Potential link: Historical patterns and recent trends in the utilization of the primary credit lending program. -> The demand from banks for short-term funding from the Federal Reserve.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "liquidity_needs_of_banks",
+      "description": "The demand from banks for short-term funding from the Federal Reserve.",
+      "importance": 0.125,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "loan_program_usage_trends",
+      "description": "Historical patterns and recent trends in the utilization of the primary credit lending program.",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "overall_economic_activity",
+      "description": "The general health and growth rate of the US economy.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "market_volatility",
+      "description": "The degree of fluctuation in financial markets, which can increase demand for safe assets and liquidity.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "liquidity_needs_of_banks",
+      "description": "The demand from banks for short-term funding from the Federal Reserve.",
+      "importance": 0.125,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "loan_program_usage_trends",
+      "description": "Historical patterns and recent trends in the utilization of the primary credit lending program.",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "overall_economic_activity",
+      "description": "The general health and growth rate of the US economy.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "market_volatility",
+      "description": "The degree of fluctuation in financial markets, which can increase demand for safe assets and liquidity.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility.",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "overall_economic_activity->liquidity_needs_of_banks",
+      "description": "A stronger economy may reduce immediate liquidity needs, but can also lead to increased lending activity requiring more reserves.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "loan_program_usage_trends->outcome",
+      "description": "Existing trends can indicate a continuation or acceleration of borrowing patterns.",
+      "importance": 0.05,
+      "centrality_rank": 6,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility.",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "overall_economic_activity->liquidity_needs_of_banks",
+      "description": "A stronger economy may reduce immediate liquidity needs, but can also lead to increased lending activity requiring more reserves.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility.",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "loan_program_usage_trends->liquidity_needs_of_banks",
+      "description": "Potential link: Historical patterns and recent trends in the utilization of the primary credit lending program. -> The demand from banks for short-term funding from the Federal Reserve.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if the 'liquidity_needs_of_banks' is completely irrelevant to the outcome? Imagine a scenario where banks have ample reserves and are not actively seeking short-term funding from the Fed, regardless of their overall economic activity or Fed policy. In this case, even if liquidity needs were theoretically high, they might not translate into actual borrowing under the primary credit program, making this factor a non-driver of the outcome.",
+      "probe_type": "node_negate_high",
+      "target_id": "liquidity_needs_of_banks",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.125,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The demand from banks for short-term funding from the Federal Reserve."
+    },
+    {
+      "probe_text": "Imagine that recent trends in the utilization of the primary credit lending program are completely misleading. Specifically, what if a major new regulatory change, unrelated to economic activity or monetary policy, has just been implemented that makes banks hesitant to draw on *any* credit facilities, regardless of historical usage patterns? This change could render all past trends irrelevant to future borrowing decisions.",
+      "probe_type": "node_negate_high",
+      "target_id": "loan_program_usage_trends",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Historical patterns and recent trends in the utilization of the primary credit lending program."
+    },
+    {
+      "probe_text": "Recent reports suggest that while overall economic activity might appear stable, there's a growing disconnect between headline figures and the actual operational liquidity demands of major financial institutions. Specifically, a recent analysis by the Financial Stability Board highlighted that large banks are increasingly relying on interbank lending and other private market solutions, suggesting that their 'liquidity needs' might not be as sensitive to the broader economic picture as previously assumed, and instead are driven by more localized, institution-specific funding pressures.",
+      "probe_type": "node_negate_medium",
+      "target_id": "overall_economic_activity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The general health and growth rate of the US economy."
+    },
+    {
+      "probe_text": "Recent analyses suggest that despite some headline-grabbing events, the underlying financial markets have been unusually stable in the lead-up to late 2025. Furthermore, the primary credit lending program is typically used by banks for routine liquidity management rather than as a hedge against speculative market swings. Therefore, the level of market volatility might not be a significant driver for the usage of this specific lending program.",
+      "probe_type": "node_negate_low",
+      "target_id": "market_volatility",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The degree of fluctuation in financial markets, which can increase demand for safe assets and liquidity."
+    },
+    {
+      "probe_text": "Recent stress tests mandated by regulators have revealed that a significant number of mid-sized banks are holding insufficient liquid assets to meet potential short-term obligations under moderately adverse economic scenarios. This has led to an urgent internal push within these institutions to secure more robust lines of credit and funding sources, directly increasing their expected demand for facilities like the primary credit lending program.",
+      "probe_type": "node_strengthen",
+      "target_id": "liquidity_needs_of_banks",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.125,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The demand from banks for short-term funding from the Federal Reserve."
+    },
+    {
+      "probe_text": "Recent analysis of the Federal Reserve's primary credit lending program reveals a consistent upward trend in usage over the past two years, accelerating in the last two quarters. This trend is not explained by current economic activity or monetary policy alone, suggesting a self-reinforcing dynamic where increased reliance on the facility becomes the norm for banks seeking stable liquidity.",
+      "probe_type": "node_strengthen",
+      "target_id": "loan_program_usage_trends",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Historical patterns and recent trends in the utilization of the primary credit lending program."
+    },
+    {
+      "probe_text": "What if 'The general health and growth rate of the US economy.' is wrong?",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "overall_economic_activity",
+      "generated": false,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false
+    },
+    {
+      "probe_text": "Recent analyses by financial institutions indicate a significant uptick in short-term interest rate volatility across several key global markets. This is leading to increased hedging activities and a greater demand for central bank liquidity as a safety net. Experts suggest this trend is likely to persist in the coming months.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "market_volatility",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The degree of fluctuation in financial markets, which can increase demand for safe assets and liquidity."
+    },
+    {
+      "probe_text": "While higher liquidity needs might seem to directly imply increased borrowing from the primary credit facility, it's possible that banks have found alternative, more cost-effective sources of funding. For instance, if interbank lending rates have fallen significantly below the primary credit rate, banks might prefer to borrow from each other, bypassing the Fed's facility even when their liquidity needs rise. This would weaken the direct link between liquidity needs and the outcome.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility."
+    },
+    {
+      "probe_text": "While a strong economy can sometimes increase overall lending, it might also lead banks to hold more excess reserves and have stronger interbank lending relationships, reducing their reliance on the Fed's primary credit facility for liquidity. Therefore, even if overall economic activity is robust, the direct impact on banks' immediate liquidity needs from the Fed could be negligible or even negative.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "overall_economic_activity->liquidity_needs_of_banks",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "A stronger economy may reduce immediate liquidity needs, but can also lead to increased lending activity requiring more reserves."
+    },
+    {
+      "probe_text": "While historical trends in loan program usage might suggest a certain borrowing trajectory, it's possible that a sudden, unexpected change in the Federal Reserve's communication or a new regulatory announcement could override these existing trends. For instance, if the Fed signals a significant shift in its forward guidance regarding future monetary policy, banks might preemptively alter their liquidity management strategies, making past usage patterns less predictive of future borrowing.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "loan_program_usage_trends->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.05,
+      "centrality_rank": 6,
+      "on_critical_path": true,
+      "description": "Existing trends can indicate a continuation or acceleration of borrowing patterns."
+    },
+    {
+      "probe_text": "Recent analyses of central bank operations highlight that during periods of heightened uncertainty, even robust banks with ample capital may preemptively tap into discount window facilities like the primary credit program. This behavior is not solely driven by immediate, observable liquidity shortages, but by a strategic desire to secure funding lines and manage potential future disruptions, thereby reinforcing the direct link between perceived liquidity needs and increased borrowing from the Fed.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility."
+    },
+    {
+      "probe_text": "Recent economic data indicates a significant acceleration in credit creation and business investment, suggesting that 'overall_economic_activity' is not just growing, but experiencing a boom. This surge in lending by commercial banks, fueled by robust economic expansion, is likely to increase their demand for reserves to meet regulatory requirements and fund further lending, thereby strengthening the positive link between overall economic activity and the 'liquidity_needs_of_banks'. This suggests that the 'overall_economic_activity -> liquidity_needs_of_banks' pathway is more potent than initially considered.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "overall_economic_activity->liquidity_needs_of_banks",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "A stronger economy may reduce immediate liquidity needs, but can also lead to increased lending activity requiring more reserves."
+    },
+    {
+      "probe_text": "While it's true that banks might need more liquidity, consider that the *actual usage* of the primary credit lending program itself can influence a bank's perceived liquidity needs. If a bank has already drawn heavily on the Fed's facility, it might adjust its internal liquidity management strategies, potentially leading to a situation where their 'needs' appear higher *because* they are already borrowing, rather than the borrowing being a direct consequence of pre-existing needs.",
+      "probe_type": "edge_reverse",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Higher liquidity needs directly translate to increased borrowing from the primary credit facility."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant uptick in the usage of the primary credit lending program, even during periods of stable economic activity and predictable monetary policy. This suggests that past trends in borrowing directly influence banks' current demand for Fed liquidity, perhaps by creating expectations of availability or by signaling to banks that the program is a reliable backstop. How might these loan program usage trends dynamically shape the ongoing liquidity needs of banks, independent of broader economic or policy shifts?",
+      "probe_type": "edge_spurious",
+      "target_id": "loan_program_usage_trends->liquidity_needs_of_banks",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Historical patterns and recent trends in the utilization of the primary credit lending program. -> The demand from banks for short-term funding from the Federal Reserve."
+    },
+    {
+      "probe_text": "Suppose that in the week leading up to 2025-12-21, there was an unexpected, large-scale redemption of Treasury bonds by foreign holders. This event significantly tightened liquidity across the financial system, independent of overall economic activity or Fed policy. How would this specific event influence the Federal Reserve's primary credit lending program usage by 2025-12-28?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that the Federal Reserve announces a significant, unexpected increase in the reserve requirement ratio for all banks, effective immediately. How would this specific policy change, independent of general monetary policy stance, likely impact the usage of the primary credit lending program by the end of the week?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "The Federal Reserve is considering updating its public communication strategy regarding monetary policy decisions. This initiative aims to improve clarity and transparency for market participants and the general public regarding the rationale behind policy changes.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "The Federal Reserve has recently announced a new initiative to improve public understanding of its operations, including educational materials about the history of monetary policy tools. This initiative is part of a broader effort to increase financial literacy across the nation.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the 'liquidity_needs_of_banks' is completely irrelevant to the outcome? Imagine a scenario where banks have ample reserves and are not actively seeking short-term funding from the Fed, regardless of their overall economic activity or Fed policy. In this case, even if liquidity needs were theoretically high, they might not translate into actual borrowing under the primary credit program, making this factor a non-driver of the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.35000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge posits that 'liquidity_needs_of_banks' is irrelevant to the outcome. This directly impacts the causal path 'liquidity_needs_of_banks -> outcome'. If this link is broken, a primary driver of the outcome is removed. Furthermore, the indirect paths through 'liquidity_needs_of_banks' from 'overall_economic_activity', 'federal_reserve_monetary_policy', and 'market_volatility' are also weakened, as their influence on the outcome is mediated by bank liquidity needs. While 'loan_program_usage_trends' and 'federal_reserve_monetary_policy -> loan_program_usage_trends' still influence the outcome, the removal of a significant direct and indirect pathway necessitates a substantial downward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge posits that 'liquidity_needs_of_banks' is irrelevant to the outcome. This directly impacts the causal path 'liquidity_needs_of_banks -> outcome'. If this link is broken, a primary driver of the outcome is removed. Furthermore, the indirect paths through 'liquidity_needs_of_banks' from 'overall_economic_activity', 'federal_reserve_monetary_policy', and 'market_volatility' are also weakened, as their influence on the outcome is mediated by bank liquidity needs. While 'loan_program_usage_trends' and 'federal_reserve_monetary_policy -> loan_program_usage_trends' still influence the outcome, the removal of a significant direct and indirect pathway necessitates a substantial downward revision of the probability.\"\n}",
+      "target_id": "liquidity_needs_of_banks",
+      "target_type": "node",
+      "target_importance": 0.125,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that recent trends in the utilization of the primary credit lending program are completely misleading. Specifically, what if a major new regulatory change, unrelated to economic activity or monetary policy, has just been implemented that makes banks hesitant to draw on *any* credit facilities, regardless of historical usage patterns? This change could render all past trends irrelevant to future borrowing decisions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.25,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly attacks the 'loan_program_usage_trends' node, which has a causal link to the 'outcome'. The assertion is that recent trends are 'completely misleading' due to a new, unrelated regulatory change that makes banks hesitant to use credit facilities. This effectively neutralizes the predictive power of 'loan_program_usage_trends' for the 'outcome'. While other causal paths (e.g., 'overall_economic_activity', 'federal_reserve_monetary_policy', 'market_volatility' all feeding into 'liquidity_needs_of_banks', which then impacts the 'outcome') remain, the direct influence of established trends is now significantly diminished. This weakens the original forecast, hence the decrease in probability. The new regulatory change introduces a strong counter-force to any historical upward trend, making the outcome less likely to increase.",
+      "raw_response": "{\n  \"updated_probability\": 0.40,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly attacks the 'loan_program_usage_trends' node, which has a causal link to the 'outcome'. The assertion is that recent trends are 'completely misleading' due to a new, unrelated regulatory change that makes banks hesitant to use credit facilities. This effectively neutralizes the predictive power of 'loan_program_usage_trends' for the 'outcome'. While other causal paths (e.g., 'overall_economic_activity', 'federal_reserve_monetary_policy', 'market_volatility' all feeding into 'liquidity_needs_of_banks', which then impacts the 'outcome') remain, the direct influence of established trends is now significantly diminished. This weakens the original forecast, hence the decrease in probability. The new regulatory change introduces a strong counter-force to any historical upward trend, making the outcome less likely to increase.\"\n}",
+      "target_id": "loan_program_usage_trends",
+      "target_type": "node",
+      "target_importance": 0.025,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports suggest that while overall economic activity might appear stable, there's a growing disconnect between headline figures and the actual operational liquidity demands of major financial institutions. Specifically, a recent analysis by the Financial Stability Board highlighted that large banks are increasingly relying on interbank lending and other private market solutions, suggesting that their 'liquidity needs' might not be as sensitive to the broader economic picture as previously assumed, and instead are driven by more localized, institution-specific funding pressures.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'overall_economic_activity' suggests that its influence on 'liquidity_needs_of_banks' is weaker than initially modeled. The analysis indicates that large banks are relying more on interbank lending and private solutions, implying that their funding pressures are driven by institution-specific factors rather than the broader economy. This weakens the causal path: overall_economic_activity -> liquidity_needs_of_banks -> outcome. Since this path was a contributor to the initial probability, a reduced impact of overall economic activity on liquidity needs leads to a decrease in the probability of the outcome. However, other causal paths, such as those involving 'federal_reserve_monetary_policy' and 'market_volatility', remain intact and continue to influence 'liquidity_needs_of_banks' and the 'outcome'.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'overall_economic_activity' suggests that its influence on 'liquidity_needs_of_banks' is weaker than initially modeled. The analysis indicates that large banks are relying more on interbank lending and private solutions, implying that their funding pressures are driven by institution-specific factors rather than the broader economy. This weakens the causal path: overall_economic_activity -> liquidity_needs_of_banks -> outcome. Since this path was a contributor to the initial probability, a reduced impact of overall economic activity on liquidity needs leads to a decrease in the probability of the outcome. However, other causal paths, such as those involving 'federal_reserve_monetary_policy' and 'market_volatility', remain intact and continue to influence 'liquidity_needs_of_banks' and the 'outcome'.\"\n}",
+      "target_id": "overall_economic_activity",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses suggest that despite some headline-grabbing events, the underlying financial markets have been unusually stable in the lead-up to late 2025. Furthermore, the primary credit lending program is typically used by banks for routine liquidity management rather than as a hedge against speculative market swings. Therefore, the level of market volatility might not be a significant driver for the usage of this specific lending program.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that 'market_volatility' might not be as significant a driver for 'liquidity_needs_of_banks' as previously modeled, and also questions its direct impact on the 'outcome' by stating the primary credit program is not typically used as a hedge against market swings. This weakens the causal path: market_volatility -> liquidity_needs_of_banks -> outcome. While market volatility can still indirectly influence liquidity needs through other channels not explicitly detailed, its direct push on the outcome via increased liquidity needs is now considered less probable. The previous estimate of 0.65 is reduced to 0.60 to reflect this diminished influence, as the link between market volatility and the specific usage of the primary credit lending program is now seen as weaker.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that 'market_volatility' might not be as significant a driver for 'liquidity_needs_of_banks' as previously modeled, and also questions its direct impact on the 'outcome' by stating the primary credit program is not typically used as a hedge against market swings. This weakens the causal path: market_volatility -> liquidity_needs_of_banks -> outcome. While market volatility can still indirectly influence liquidity needs through other channels not explicitly detailed, its direct push on the outcome via increased liquidity needs is now considered less probable. The previous estimate of 0.65 is reduced to 0.60 to reflect this diminished influence, as the link between market volatility and the specific usage of the primary credit lending program is now seen as weaker.\"\n}",
+      "target_id": "market_volatility",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent stress tests mandated by regulators have revealed that a significant number of mid-sized banks are holding insufficient liquid assets to meet potential short-term obligations under moderately adverse economic scenarios. This has led to an urgent internal push within these institutions to secure more robust lines of credit and funding sources, directly increasing their expected demand for facilities like the primary credit lending program.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly impacts the 'liquidity_needs_of_banks' node, which is a critical driver of the 'outcome'. The new information from stress tests indicates a substantial and immediate increase in the demand for liquidity from mid-sized banks, driven by regulatory findings of insufficient liquid assets. This strengthens the causal link from 'liquidity_needs_of_banks' to the 'outcome' because banks will actively seek to secure funding through facilities like the primary credit lending program to meet potential short-term obligations. While 'overall_economic_activity' and 'market_volatility' can influence liquidity needs, the stress test findings represent a more direct and pressing driver for increased borrowing in the short term leading up to 2025-12-28. The 'loan_program_usage_trends' might show some baseline usage, but the stress test scenario suggests a significant deviation from those trends due to immediate risk mitigation. Therefore, the probability of an increase in the loan amount is significantly increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly impacts the 'liquidity_needs_of_banks' node, which is a critical driver of the 'outcome'. The new information from stress tests indicates a substantial and immediate increase in the demand for liquidity from mid-sized banks, driven by regulatory findings of insufficient liquid assets. This strengthens the causal link from 'liquidity_needs_of_banks' to the 'outcome' because banks will actively seek to secure funding through facilities like the primary credit lending program to meet potential short-term obligations. While 'overall_economic_activity' and 'market_volatility' can influence liquidity needs, the stress test findings represent a more direct and pressing driver for increased borrowing in the short term leading up to 2025-12-28. The 'loan_program_usage_trends' might show some baseline usage, but the stress test scenario suggests a significant deviation from those trends due to immediate risk mitigation. Therefore, the probability of an increase in the loan amount is significantly increased.\"\n}",
+      "target_id": "liquidity_needs_of_banks",
+      "target_type": "node",
+      "target_importance": 0.125,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of the Federal Reserve's primary credit lending program reveals a consistent upward trend in usage over the past two years, accelerating in the last two quarters. This trend is not explained by current economic activity or monetary policy alone, suggesting a self-reinforcing dynamic where increased reliance on the facility becomes the norm for banks seeking stable liquidity.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly reinforces the causal link from 'loan_program_usage_trends' to the 'outcome'. The observation of a consistent and accelerating upward trend in primary credit usage, independent of broader economic or monetary policy factors, suggests that this trend is a significant driver in itself. This implies that the historical and recent usage patterns are not just a passive reflection of other conditions but have become a more dominant factor, potentially due to banks adapting their liquidity management strategies. This strengthens the expectation that the trend will continue, thus increasing the probability of the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly reinforces the causal link from 'loan_program_usage_trends' to the 'outcome'. The observation of a consistent and accelerating upward trend in primary credit usage, independent of broader economic or monetary policy factors, suggests that this trend is a significant driver in itself. This implies that the historical and recent usage patterns are not just a passive reflection of other conditions but have become a more dominant factor, potentially due to banks adapting their liquidity management strategies. This strengthens the expectation that the trend will continue, thus increasing the probability of the outcome.\"\n}",
+      "target_id": "loan_program_usage_trends",
+      "target_type": "node",
+      "target_importance": 0.025,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "What if 'The general health and growth rate of the US economy.' is wrong?",
+      "probe_generated": false,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'overall_economic_activity' affects the causal path: overall_economic_activity -> liquidity_needs_of_banks -> outcome. If overall economic activity is weaker than assumed, it's less likely that banks will have increased lending activity that requires more reserves, potentially reducing their liquidity needs. This would lower the probability of increased borrowing from the primary credit facility. However, this is not a complete disruption, as other factors like 'market_volatility' and 'federal_reserve_monetary_policy' also influence 'liquidity_needs_of_banks', and 'loan_program_usage_trends' directly impacts the 'outcome'. Therefore, the impact is moderate.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'overall_economic_activity' affects the causal path: overall_economic_activity -> liquidity_needs_of_banks -> outcome. If overall economic activity is weaker than assumed, it's less likely that banks will have increased lending activity that requires more reserves, potentially reducing their liquidity needs. This would lower the probability of increased borrowing from the primary credit facility. However, this is not a complete disruption, as other factors like 'market_volatility' and 'federal_reserve_monetary_policy' also influence 'liquidity_needs_of_banks', and 'loan_program_usage_trends' directly impacts the 'outcome'. Therefore, the impact is moderate.\"\n}",
+      "target_id": "overall_economic_activity",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses by financial institutions indicate a significant uptick in short-term interest rate volatility across several key global markets. This is leading to increased hedging activities and a greater demand for central bank liquidity as a safety net. Experts suggest this trend is likely to persist in the coming months.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal link between 'market_volatility' and 'liquidity_needs_of_banks'. The challenge highlights a persistent increase in short-term interest rate volatility, leading to greater hedging and a demand for central bank liquidity as a safety net. This increased market volatility is expected to persist, implying a sustained higher demand for liquidity from banks. Since 'liquidity_needs_of_banks' is a direct driver of the 'outcome' (increased loan program usage), and 'market_volatility' is a driver of 'liquidity_needs_of_banks', this information leads to an increased probability that the loan program usage will increase. The path affected is market_volatility -> liquidity_needs_of_banks -> outcome. The initial estimate of 0.65 is increased to 0.75 due to the strengthened evidence for this causal pathway.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal link between 'market_volatility' and 'liquidity_needs_of_banks'. The challenge highlights a persistent increase in short-term interest rate volatility, leading to greater hedging and a demand for central bank liquidity as a safety net. This increased market volatility is expected to persist, implying a sustained higher demand for liquidity from banks. Since 'liquidity_needs_of_banks' is a direct driver of the 'outcome' (increased loan program usage), and 'market_volatility' is a driver of 'liquidity_needs_of_banks', this information leads to an increased probability that the loan program usage will increase. The path affected is market_volatility -> liquidity_needs_of_banks -> outcome. The initial estimate of 0.65 is increased to 0.75 due to the strengthened evidence for this causal pathway.\"\n}",
+      "target_id": "market_volatility",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While higher liquidity needs might seem to directly imply increased borrowing from the primary credit facility, it's possible that banks have found alternative, more cost-effective sources of funding. For instance, if interbank lending rates have fallen significantly below the primary credit rate, banks might prefer to borrow from each other, bypassing the Fed's facility even when their liquidity needs rise. This would weaken the direct link between liquidity needs and the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct and strong link between 'liquidity_needs_of_banks' and the 'outcome'. The original model assumed that increased liquidity needs would directly translate to increased borrowing from the primary credit facility. The new information suggests that banks may seek alternative, cheaper funding sources (like interbank lending) if those rates are lower than the primary credit rate. This weakens the causal path: 'liquidity_needs_of_banks -> outcome'. While liquidity needs are still a factor, the certainty that they will manifest as increased primary credit borrowing is reduced. The strength of this path is reduced, leading to a decrease in the overall probability. Other paths, such as those involving 'federal_reserve_monetary_policy' and 'market_volatility' which influence 'liquidity_needs_of_banks', remain intact but their impact on the 'outcome' is now less direct. The 'loan_program_usage_trends' path to the outcome is unaffected by this specific challenge, providing some continued support for the original forecast.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct and strong link between 'liquidity_needs_of_banks' and the 'outcome'. The original model assumed that increased liquidity needs would directly translate to increased borrowing from the primary credit facility. The new information suggests that banks may seek alternative, cheaper funding sources (like interbank lending) if those rates are lower than the primary credit rate. This weakens the causal path: 'liquidity_needs_of_banks -> outcome'. While liquidity needs are still a factor, the certainty that they will manifest as increased primary credit borrowing is reduced. The strength of this path is reduced, leading to a decrease in the overall probability. Other paths, such as those involving 'federal_reserve_monetary_policy' and 'market_volatility' which influence 'liquidity_needs_of_banks', remain intact but their impact on the 'outcome' is now less direct. The 'loan_program_usage_trends' path to the outcome is unaffected by this specific challenge, providing some continued support for the original forecast.\"\n}",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "target_type": "edge",
+      "target_importance": 0.1167,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While a strong economy can sometimes increase overall lending, it might also lead banks to hold more excess reserves and have stronger interbank lending relationships, reducing their reliance on the Fed's primary credit facility for liquidity. Therefore, even if overall economic activity is robust, the direct impact on banks' immediate liquidity needs from the Fed could be negligible or even negative.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct positive impact of 'overall_economic_activity' on 'liquidity_needs_of_banks'. The original model posited that a strong economy could increase liquidity needs, potentially leading to higher loan program usage. The new information suggests that a robust economy might lead banks to rely less on the Fed's primary credit facility due to increased excess reserves and stronger interbank lending. This weakens the causal path from 'overall_economic_activity' -> 'liquidity_needs_of_banks' -> 'outcome'. While this path is not entirely severed, its contribution to increased loan amounts is now considered less certain. The other causal paths remain unaffected. Given the slight weakening of a contributing factor, the probability has been marginally decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct positive impact of 'overall_economic_activity' on 'liquidity_needs_of_banks'. The original model posited that a strong economy could increase liquidity needs, potentially leading to higher loan program usage. The new information suggests that a robust economy might lead banks to rely less on the Fed's primary credit facility due to increased excess reserves and stronger interbank lending. This weakens the causal path from 'overall_economic_activity' -> 'liquidity_needs_of_banks' -> 'outcome'. While this path is not entirely severed, its contribution to increased loan amounts is now considered less certain. The other causal paths remain unaffected. Given the slight weakening of a contributing factor, the probability has been marginally decreased.\"\n}",
+      "target_id": "overall_economic_activity->liquidity_needs_of_banks",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While historical trends in loan program usage might suggest a certain borrowing trajectory, it's possible that a sudden, unexpected change in the Federal Reserve's communication or a new regulatory announcement could override these existing trends. For instance, if the Fed signals a significant shift in its forward guidance regarding future monetary policy, banks might preemptively alter their liquidity management strategies, making past usage patterns less predictive of future borrowing.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the reliability of 'loan_program_usage_trends' as a predictor of the 'outcome'. The argument is that a sudden change in Federal Reserve communication or regulatory announcements could override historical patterns. This impacts the causal path 'loan_program_usage_trends -> outcome'. While historical trends were a factor contributing to the initial probability, this new information suggests that this path might be less influential than previously assumed, especially if such communication shifts occur. However, other causal paths, such as those related to overall economic activity, market volatility, and monetary policy directly influencing liquidity needs, remain intact and continue to support a probability above 0.5. The update is therefore a slight decrease to reflect the diminished certainty in the predictive power of past trends.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the reliability of 'loan_program_usage_trends' as a predictor of the 'outcome'. The argument is that a sudden change in Federal Reserve communication or regulatory announcements could override historical patterns. This impacts the causal path 'loan_program_usage_trends -> outcome'. While historical trends were a factor contributing to the initial probability, this new information suggests that this path might be less influential than previously assumed, especially if such communication shifts occur. However, other causal paths, such as those related to overall economic activity, market volatility, and monetary policy directly influencing liquidity needs, remain intact and continue to support a probability above 0.5. The update is therefore a slight decrease to reflect the diminished certainty in the predictive power of past trends.\"\n}",
+      "target_id": "loan_program_usage_trends->outcome",
+      "target_type": "edge",
+      "target_importance": 0.05,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses of central bank operations highlight that during periods of heightened uncertainty, even robust banks with ample capital may preemptively tap into discount window facilities like the primary credit program. This behavior is not solely driven by immediate, observable liquidity shortages, but by a strategic desire to secure funding lines and manage potential future disruptions, thereby reinforcing the direct link between perceived liquidity needs and increased borrowing from the Fed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'liquidity_needs_of_banks -> outcome' link actually reinforces its importance. The new information suggests that 'liquidity needs' might be a broader concept than initially modeled, encompassing not just immediate shortages but also strategic precautionary borrowing. This means that even in scenarios where traditional liquidity metrics might appear stable, banks might still increase their borrowing from the primary credit facility if they perceive heightened uncertainty. This strengthens the causal path and increases the probability that increased liquidity needs will lead to a higher dollar amount of loans.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'liquidity_needs_of_banks -> outcome' link actually reinforces its importance. The new information suggests that 'liquidity needs' might be a broader concept than initially modeled, encompassing not just immediate shortages but also strategic precautionary borrowing. This means that even in scenarios where traditional liquidity metrics might appear stable, banks might still increase their borrowing from the primary credit facility if they perceive heightened uncertainty. This strengthens the causal path and increases the probability that increased liquidity needs will lead to a higher dollar amount of loans.\"\n}",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "target_type": "edge",
+      "target_importance": 0.1167,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent economic data indicates a significant acceleration in credit creation and business investment, suggesting that 'overall_economic_activity' is not just growing, but experiencing a boom. This surge in lending by commercial banks, fueled by robust economic expansion, is likely to increase their demand for reserves to meet regulatory requirements and fund further lending, thereby strengthening the positive link between overall economic activity and the 'liquidity_needs_of_banks'. This suggests that the 'overall_economic_activity -> liquidity_needs_of_banks' pathway is more potent than initially considered.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge strengthens the causal link between 'overall_economic_activity' and 'liquidity_needs_of_banks'. The new information suggests that a booming economy, characterized by accelerated credit creation and business investment, will lead to a greater demand for reserves by commercial banks. This increased demand for reserves directly translates to higher 'liquidity_needs_of_banks'. Since 'liquidity_needs_of_banks' is a direct driver of the 'outcome' (higher liquidity needs lead to increased primary credit lending), this strengthens the overall probability that the loan amount will increase. The path 'overall_economic_activity -> liquidity_needs_of_banks -> outcome' is now considered more potent, leading to an upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge strengthens the causal link between 'overall_economic_activity' and 'liquidity_needs_of_banks'. The new information suggests that a booming economy, characterized by accelerated credit creation and business investment, will lead to a greater demand for reserves by commercial banks. This increased demand for reserves directly translates to higher 'liquidity_needs_of_banks'. Since 'liquidity_needs_of_banks' is a direct driver of the 'outcome' (higher liquidity needs lead to increased primary credit lending), this strengthens the overall probability that the loan amount will increase. The path 'overall_economic_activity -> liquidity_needs_of_banks -> outcome' is now considered more potent, leading to an upward revision of the probability.\"\n}",
+      "target_id": "overall_economic_activity->liquidity_needs_of_banks",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "While it's true that banks might need more liquidity, consider that the *actual usage* of the primary credit lending program itself can influence a bank's perceived liquidity needs. If a bank has already drawn heavily on the Fed's facility, it might adjust its internal liquidity management strategies, potentially leading to a situation where their 'needs' appear higher *because* they are already borrowing, rather than the borrowing being a direct consequence of pre-existing needs.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causality of 'liquidity_needs_of_banks' on the 'outcome'. It suggests that observed borrowing might not solely reflect underlying needs but could also be influenced by the act of borrowing itself (e.g., banks adjusting strategies based on existing draws). This weakens the direct causal path from 'liquidity_needs_of_banks' to 'outcome'. While 'liquidity_needs_of_banks' is still a relevant factor, its direct predictive power for an *increase* in borrowing might be less straightforward than initially modeled. This leads to a slight decrease in the probability. The causal path 'overall_economic_activity -> liquidity_needs_of_banks -> outcome' and 'market_volatility -> liquidity_needs_of_banks -> outcome' are indirectly affected by this re-evaluation of the strength of the final link. The path 'federal_reserve_monetary_policy -> loan_program_usage_trends -> outcome' and the direct 'loan_program_usage_trends -> outcome' remain unaffected.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causality of 'liquidity_needs_of_banks' on the 'outcome'. It suggests that observed borrowing might not solely reflect underlying needs but could also be influenced by the act of borrowing itself (e.g., banks adjusting strategies based on existing draws). This weakens the direct causal path from 'liquidity_needs_of_banks' to 'outcome'. While 'liquidity_needs_of_banks' is still a relevant factor, its direct predictive power for an *increase* in borrowing might be less straightforward than initially modeled. This leads to a slight decrease in the probability. The causal path 'overall_economic_activity -> liquidity_needs_of_banks -> outcome' and 'market_volatility -> liquidity_needs_of_banks -> outcome' are indirectly affected by this re-evaluation of the strength of the final link. The path 'federal_reserve_monetary_policy -> loan_program_usage_trends -> outcome' and the direct 'loan_program_usage_trends -> outcome' remain unaffected.\"\n}",
+      "target_id": "liquidity_needs_of_banks->outcome",
+      "target_type": "edge",
+      "target_importance": 0.1167,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant uptick in the usage of the primary credit lending program, even during periods of stable economic activity and predictable monetary policy. This suggests that past trends in borrowing directly influence banks' current demand for Fed liquidity, perhaps by creating expectations of availability or by signaling to banks that the program is a reliable backstop. How might these loan program usage trends dynamically shape the ongoing liquidity needs of banks, independent of broader economic or policy shifts?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge questions the independence of 'loan_program_usage_trends' from 'liquidity_needs_of_banks', suggesting a more direct and dynamic feedback loop. Previously, 'loan_program_usage_trends' was seen as an independent indicator influencing the outcome directly, and also influenced by 'federal_reserve_monetary_policy'. The new information implies that 'loan_program_usage_trends' can *also* actively shape 'liquidity_needs_of_banks'. This strengthens the causal path to the outcome. If usage trends are increasing *independently* of broader economic or policy shifts, and these trends now also *drive* liquidity needs, then the likelihood of increased loan amounts by 2025-12-28 compared to 2025-12-21 is higher. The causal path 'loan_program_usage_trends -> liquidity_needs_of_banks -> outcome' is reinforced, and the existing path 'loan_program_usage_trends -> outcome' is also strengthened by this new understanding of how trends influence current needs. This suggests a greater propensity for borrowing, hence the increased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge questions the independence of 'loan_program_usage_trends' from 'liquidity_needs_of_banks', suggesting a more direct and dynamic feedback loop. Previously, 'loan_program_usage_trends' was seen as an independent indicator influencing the outcome directly, and also influenced by 'federal_reserve_monetary_policy'. The new information implies that 'loan_program_usage_trends' can *also* actively shape 'liquidity_needs_of_banks'. This strengthens the causal path to the outcome. If usage trends are increasing *independently* of broader economic or policy shifts, and these trends now also *drive* liquidity needs, then the likelihood of increased loan amounts by 2025-12-28 compared to 2025-12-21 is higher. The causal path 'loan_program_usage_trends -> liquidity_needs_of_banks -> outcome' is reinforced, and the existing path 'loan_program_usage_trends -> outcome' is also strengthened by this new understanding of how trends influence current needs. This suggests a greater propensity for borrowing, hence the increased probability.\"\n}",
+      "target_id": "loan_program_usage_trends->liquidity_needs_of_banks",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Suppose that in the week leading up to 2025-12-21, there was an unexpected, large-scale redemption of Treasury bonds by foreign holders. This event significantly tightened liquidity across the financial system, independent of overall economic activity or Fed policy. How would this specific event influence the Federal Reserve's primary credit lending program usage by 2025-12-28?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The unexpected, large-scale redemption of Treasury bonds by foreign holders introduces a significant shock to financial system liquidity. This directly impacts the 'liquidity_needs_of_banks' node. The causal path 'market_volatility -> liquidity_needs_of_banks' is strengthened, as such an event would likely be perceived as increasing market volatility and creating unexpected funding gaps. Furthermore, even though the prompt states this is 'independent of overall economic activity or Fed policy', the *result* of this event is a tightening of liquidity, which would inherently increase the demand for funds from the Federal Reserve's primary credit lending program. This directly affects the 'liquidity_needs_of_banks -> outcome' path, making an increase in loan amounts more likely. While 'loan_program_usage_trends' might not be directly altered by this single event, the immediate liquidity crunch is a strong driver for increased borrowing in the short term. Therefore, the probability of an increase in the weekly dollar amount of loans made under the primary credit lending program by 2025-12-28 compared to 2025-12-21 is increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The unexpected, large-scale redemption of Treasury bonds by foreign holders introduces a significant shock to financial system liquidity. This directly impacts the 'liquidity_needs_of_banks' node. The causal path 'market_volatility -> liquidity_needs_of_banks' is strengthened, as such an event would likely be perceived as increasing market volatility and creating unexpected funding gaps. Furthermore, even though the prompt states this is 'independent of overall economic activity or Fed policy', the *result* of this event is a tightening of liquidity, which would inherently increase the demand for funds from the Federal Reserve's primary credit lending program. This directly affects the 'liquidity_needs_of_banks -> outcome' path, making an increase in loan amounts more likely. While 'loan_program_usage_trends' might not be directly altered by this single event, the immediate liquidity crunch is a strong driver for increased borrowing in the short term. Therefore, the probability of an increase in the weekly dollar amount of loans made under the primary credit lending program by 2025-12-28 compared to 2025-12-21 is increased.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the Federal Reserve announces a significant, unexpected increase in the reserve requirement ratio for all banks, effective immediately. How would this specific policy change, independent of general monetary policy stance, likely impact the usage of the primary credit lending program by the end of the week?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The challenge introduces an unexpected and significant increase in the reserve requirement ratio. This directly impacts the 'liquidity_needs_of_banks' node. Banks will suddenly need to hold more reserves, and if they don't have sufficient reserves on hand, they will need to borrow them. This dramatically increases the demand for short-term funding, thereby increasing the 'liquidity_needs_of_banks'. This increased need for liquidity will then flow through the 'liquidity_needs_of_banks -> outcome' causal path, leading to a higher probability of increased loan amounts under the primary credit lending program. While 'federal_reserve_monetary_policy' is a broader category, an increase in reserve requirements is a powerful tool that independently drives up liquidity needs, even if other aspects of monetary policy remain unchanged. This makes the link between increased liquidity needs and the outcome much stronger and more likely.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge introduces an unexpected and significant increase in the reserve requirement ratio. This directly impacts the 'liquidity_needs_of_banks' node. Banks will suddenly need to hold more reserves, and if they don't have sufficient reserves on hand, they will need to borrow them. This dramatically increases the demand for short-term funding, thereby increasing the 'liquidity_needs_of_banks'. This increased need for liquidity will then flow through the 'liquidity_needs_of_banks -> outcome' causal path, leading to a higher probability of increased loan amounts under the primary credit lending program. While 'federal_reserve_monetary_policy' is a broader category, an increase in reserve requirements is a powerful tool that independently drives up liquidity needs, even if other aspects of monetary policy remain unchanged. This makes the link between increased liquidity needs and the outcome much stronger and more likely.\"\n}",
+      "target_id": "missing_node_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "The Federal Reserve is considering updating its public communication strategy regarding monetary policy decisions. This initiative aims to improve clarity and transparency for market participants and the general public regarding the rationale behind policy changes.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests an update to the Federal Reserve's public communication strategy. This primarily affects the 'federal_reserve_monetary_policy' node. Improved clarity and transparency in communication could lead to more predictable market reactions and potentially reduce unexpected increases in 'liquidity_needs_of_banks' driven by misinterpretation or uncertainty about policy. If policy is communicated more clearly, banks might be better positioned to manage their liquidity, leading to a slight decrease in the reliance on the primary credit lending program. This is a subtle effect, as the core drivers of liquidity needs (overall economic activity, market volatility) are not directly addressed by the communication strategy itself, but rather the *understanding* of monetary policy. Therefore, the impact on the 'outcome' is likely to be a small decrease in probability, as the path through 'federal_reserve_monetary_policy' -> 'liquidity_needs_of_banks' -> 'outcome' is slightly weakened in its potential for causing an increase.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests an update to the Federal Reserve's public communication strategy. This primarily affects the 'federal_reserve_monetary_policy' node. Improved clarity and transparency in communication could lead to more predictable market reactions and potentially reduce unexpected increases in 'liquidity_needs_of_banks' driven by misinterpretation or uncertainty about policy. If policy is communicated more clearly, banks might be better positioned to manage their liquidity, leading to a slight decrease in the reliance on the primary credit lending program. This is a subtle effect, as the core drivers of liquidity needs (overall economic activity, market volatility) are not directly addressed by the communication strategy itself, but rather the *understanding* of monetary policy. Therefore, the impact on the 'outcome' is likely to be a small decrease in probability, as the path through 'federal_reserve_monetary_policy' -> 'liquidity_needs_of_banks' -> 'outcome' is slightly weakened in its potential for causing an increase.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "The Federal Reserve has recently announced a new initiative to improve public understanding of its operations, including educational materials about the history of monetary policy tools. This initiative is part of a broader effort to increase financial literacy across the nation.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.64,
+      "absolute_shift": 0.010000000000000009,
+      "shift_direction": "decreased",
+      "reasoning": "The new initiative by the Federal Reserve to improve public understanding of its operations and increase financial literacy is unlikely to have a direct or significant impact on the weekly dollar amount of loans made under the primary credit lending program within the specified short timeframe (December 21st to December 28th, 2025). The causal paths in the model relate to economic conditions, monetary policy, market volatility, and bank liquidity needs. While a general increase in financial literacy might indirectly influence broader economic behavior over the long term, it does not directly alter the immediate determinants of primary credit facility usage. Therefore, the challenged element is peripheral to the core causal mechanisms driving the outcome, and the probability estimate is only slightly decreased to reflect a minimal potential for unforeseen indirect effects.",
+      "raw_response": "{\n  \"updated_probability\": 0.64,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new initiative by the Federal Reserve to improve public understanding of its operations and increase financial literacy is unlikely to have a direct or significant impact on the weekly dollar amount of loans made under the primary credit lending program within the specified short timeframe (December 21st to December 28th, 2025). The causal paths in the model relate to economic conditions, monetary policy, market volatility, and bank liquidity needs. While a general increase in financial literacy might indirectly influence broader economic behavior over the long term, it does not directly alter the immediate determinants of primary credit facility usage. Therefore, the challenged element is peripheral to the core causal mechanisms driving the outcome, and the probability estimate is only slightly decreased to reflect a minimal potential for unforeseen indirect effects.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "WLCFLPCL",
+    "question_text": "Will the weekly dollar amount of loans made under the primary credit lending program by the Federal Reserve have increased by 2025-12-28 as compared to its value on 2025-12-21?",
+    "source": "fred",
+    "condition": "one-turn",
+    "initial_probability": 0.65,
+    "n_probes": 19,
+    "n_successful": 19,
+    "mean_absolute_shift": 0.1131578947368421,
+    "max_absolute_shift": 0.35000000000000003
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 3.7797619047619033,
+    "mean_shift_high": 0.15875,
+    "mean_shift_low": 0.042000000000000016,
+    "asymmetry_index": 1.0653061224489802,
+    "mean_shift_negate": 0.12428571428571432,
+    "mean_shift_strengthen": 0.11666666666666664,
+    "fnar": 1,
+    "n_accepted": 3,
+    "n_spurious": 3,
+    "critical_path_premium": 0.04611111111111109,
+    "mean_shift_on_path": 0.13499999999999998,
+    "mean_shift_off_path": 0.08888888888888889,
+    "importance_sensitivity_correlation": 0.2606060606060606,
+    "control_sensitivity": 0
+  }
+}

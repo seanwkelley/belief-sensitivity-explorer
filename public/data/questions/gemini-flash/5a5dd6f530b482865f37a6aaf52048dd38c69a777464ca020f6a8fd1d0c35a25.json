@@ -1,0 +1,1251 @@
+{
+  "question_id": "5a5dd6f530b482865f37a6aaf52048dd38c69a777464ca020f6a8fd1d0c35a25",
+  "question_text": "Will there be more than ten times as many 'Violence against civilians' in Mayotte for the 30 days before 2025-12-28 compared to one plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Violence against civilians'\n2023-11-11,1\n2023-10-10,2\nto calculate one plus the 30-day average of 'Violence against civilians' over the preceding 360 days, we’d have: 1+(1+2)/12=1.25.\n\nIn this example, for the question to resolve positively, 13 (10 x 1.25) or more 'Violence against civilians' would need to occur in the 30 days leading up to the resolution.",
+  "source": "acled",
+  "initial_probability": 0.35,
+  "nodes": [
+    {
+      "id": "current_violence_trend",
+      "description": "The recent trend and absolute level of 'Violence against civilians' incidents in Mayotte.",
+      "role": "factor"
+    },
+    {
+      "id": "seasonal_factors",
+      "description": "Seasonal patterns or recurring events that might influence violence levels in Mayotte (e.g., holidays, specific local events).",
+      "role": "factor"
+    },
+    {
+      "id": "socioeconomic_conditions",
+      "description": "Underlying socioeconomic factors in Mayotte such as unemployment, poverty, and inequality.",
+      "role": "factor"
+    },
+    {
+      "id": "political_stability_and_governance",
+      "description": "The level of political stability, effectiveness of law enforcement, and government response to social unrest in Mayotte.",
+      "role": "factor"
+    },
+    {
+      "id": "external_influences",
+      "description": "Broader regional or international events or influences that could spill over into Mayotte.",
+      "role": "factor"
+    },
+    {
+      "id": "expected_future_violence",
+      "description": "The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28.",
+      "role": "factor"
+    },
+    {
+      "id": "threshold_level",
+      "description": "One plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome",
+      "description": "Will there be more than ten times as many 'Violence against civilians' in Mayotte for the 30 days before 2025-12-28 compared to one plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21?",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "current_violence_trend",
+      "to": "expected_future_violence",
+      "mechanism": "Recent trends and levels provide a strong baseline for short-term future projections."
+    },
+    {
+      "from": "seasonal_factors",
+      "to": "expected_future_violence",
+      "mechanism": "Certain times of the year or specific events can predictably increase or decrease violence."
+    },
+    {
+      "from": "socioeconomic_conditions",
+      "to": "current_violence_trend",
+      "mechanism": "Persistent socioeconomic issues can fuel ongoing or escalating violence."
+    },
+    {
+      "from": "socioeconomic_conditions",
+      "to": "expected_future_violence",
+      "mechanism": "Deteriorating socioeconomic conditions can lead to a surge in violence."
+    },
+    {
+      "from": "political_stability_and_governance",
+      "to": "current_violence_trend",
+      "mechanism": "Effective governance and law enforcement can suppress current violence."
+    },
+    {
+      "from": "political_stability_and_governance",
+      "to": "expected_future_violence",
+      "mechanism": "Instability or poor governance can create conditions for future violence."
+    },
+    {
+      "from": "external_influences",
+      "to": "expected_future_violence",
+      "mechanism": "External conflicts or crises can destabilize the region and impact Mayotte."
+    },
+    {
+      "from": "current_violence_trend",
+      "to": "threshold_level",
+      "mechanism": "The 30-day average over the preceding 360 days is directly calculated from historical violence data, which is influenced by current trends."
+    },
+    {
+      "from": "expected_future_violence",
+      "to": "outcome",
+      "mechanism": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome."
+    },
+    {
+      "from": "threshold_level",
+      "to": "outcome",
+      "mechanism": "The calculated threshold ('threshold_level') is a key component of the comparison defining the outcome."
+    }
+  ],
+  "reasoning": "The forecast leans towards the event *not* occurring (probability < 0.5). While there's a baseline level of violence, the projection for the specified 30-day period needs to be more than ten times the calculated threshold. This requires a significant surge in violence. Current trends and underlying socioeconomic or political factors suggest a moderate risk, but not a level that would typically result in such a dramatic increase. Seasonal factors and external influences are considered less likely to be exceptional drivers of extreme violence in this specific period. Therefore, the probability of the extreme condition (more than 10x the threshold) is estimated to be below 50%.",
+  "network_analysis": {
+    "n_nodes": 8,
+    "n_edges": 10,
+    "density": 0.1786,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 8,
+    "outcome_node": "outcome",
+    "node_metrics": [
+      {
+        "node_id": "current_violence_trend",
+        "description": "The recent trend and absolute level of 'Violence against civilians' incidents in Mayotte.",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 2,
+        "betweenness": 0.0476,
+        "closeness": 0.2857,
+        "pagerank": 0.1018,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "seasonal_factors",
+        "description": "Seasonal patterns or recurring events that might influence violence levels in Mayotte (e.g., holidays, specific local events).",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.055,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "socioeconomic_conditions",
+        "description": "Underlying socioeconomic factors in Mayotte such as unemployment, poverty, and inequality.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.055,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "political_stability_and_governance",
+        "description": "The level of political stability, effectiveness of law enforcement, and government response to social unrest in Mayotte.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.055,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "external_influences",
+        "description": "Broader regional or international events or influences that could spill over into Mayotte.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.055,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "expected_future_violence",
+        "description": "The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28.",
+        "role": "factor",
+        "in_degree": 5,
+        "out_degree": 1,
+        "betweenness": 0.1071,
+        "closeness": 0.7143,
+        "pagerank": 0.2386,
+        "path_relevance": 0.625
+      },
+      {
+        "node_id": "threshold_level",
+        "description": "One plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.0119,
+        "closeness": 0.2571,
+        "pagerank": 0.0983,
+        "path_relevance": 0.125
+      },
+      {
+        "node_id": "outcome",
+        "description": "Will there be more than ten times as many 'Violence against civilians' in Mayotte for the 30 days before 2025-12-28 compared to one plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21?",
+        "role": "outcome",
+        "in_degree": 2,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.5833,
+        "pagerank": 0.3413,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "current_violence_trend",
+        "target": "expected_future_violence",
+        "mechanism": "Recent trends and levels provide a strong baseline for short-term future projections.",
+        "edge_betweenness": 0.0268,
+        "on_critical_path": true
+      },
+      {
+        "source": "current_violence_trend",
+        "target": "threshold_level",
+        "mechanism": "The 30-day average over the preceding 360 days is directly calculated from historical violence data, which is influenced by current trends.",
+        "edge_betweenness": 0.0625,
+        "on_critical_path": true
+      },
+      {
+        "source": "seasonal_factors",
+        "target": "expected_future_violence",
+        "mechanism": "Certain times of the year or specific events can predictably increase or decrease violence.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "socioeconomic_conditions",
+        "target": "current_violence_trend",
+        "mechanism": "Persistent socioeconomic issues can fuel ongoing or escalating violence.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": false
+      },
+      {
+        "source": "socioeconomic_conditions",
+        "target": "expected_future_violence",
+        "mechanism": "Deteriorating socioeconomic conditions can lead to a surge in violence.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "political_stability_and_governance",
+        "target": "current_violence_trend",
+        "mechanism": "Effective governance and law enforcement can suppress current violence.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": false
+      },
+      {
+        "source": "political_stability_and_governance",
+        "target": "expected_future_violence",
+        "mechanism": "Instability or poor governance can create conditions for future violence.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "external_influences",
+        "target": "expected_future_violence",
+        "mechanism": "External conflicts or crises can destabilize the region and impact Mayotte.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "expected_future_violence",
+        "target": "outcome",
+        "mechanism": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome.",
+        "edge_betweenness": 0.0982,
+        "on_critical_path": true
+      },
+      {
+        "source": "threshold_level",
+        "target": "outcome",
+        "mechanism": "The calculated threshold ('threshold_level') is a key component of the comparison defining the outcome.",
+        "edge_betweenness": 0.0268,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "expected_future_violence",
+        "description": "The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28.",
+        "importance": 0.1071,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "current_violence_trend",
+        "description": "The recent trend and absolute level of 'Violence against civilians' incidents in Mayotte.",
+        "importance": 0.0476,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "seasonal_factors",
+        "description": "Seasonal patterns or recurring events that might influence violence levels in Mayotte (e.g., holidays, specific local events).",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "external_influences",
+        "description": "Broader regional or international events or influences that could spill over into Mayotte.",
+        "importance": 0,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "expected_future_violence",
+        "description": "The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28.",
+        "importance": 0.1071,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "current_violence_trend",
+        "description": "The recent trend and absolute level of 'Violence against civilians' incidents in Mayotte.",
+        "importance": 0.0476,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "seasonal_factors",
+        "description": "Seasonal patterns or recurring events that might influence violence levels in Mayotte (e.g., holidays, specific local events).",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "external_influences",
+        "description": "Broader regional or international events or influences that could spill over into Mayotte.",
+        "importance": 0,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "expected_future_violence->outcome",
+        "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome.",
+        "importance": 0.0982,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "current_violence_trend->threshold_level",
+        "description": "The 30-day average over the preceding 360 days is directly calculated from historical violence data, which is influenced by current trends.",
+        "importance": 0.0625,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "socioeconomic_conditions->current_violence_trend",
+        "description": "Persistent socioeconomic issues can fuel ongoing or escalating violence.",
+        "importance": 0.0357,
+        "centrality_rank": 9,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "expected_future_violence->outcome",
+        "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome.",
+        "importance": 0.0982,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "current_violence_trend->threshold_level",
+        "description": "The 30-day average over the preceding 360 days is directly calculated from historical violence data, which is influenced by current trends.",
+        "importance": 0.0625,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "socioeconomic_conditions->current_violence_trend",
+        "description": "Persistent socioeconomic issues can fuel ongoing or escalating violence.",
+        "importance": 0.0357,
+        "centrality_rank": 9,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "expected_future_violence->outcome",
+        "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome.",
+        "importance": 0.0982,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "expected_future_violence->threshold_level",
+        "description": "Potential link: The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28. -> One plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "expected_future_violence",
+      "description": "The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28.",
+      "importance": 0.1071,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "current_violence_trend",
+      "description": "The recent trend and absolute level of 'Violence against civilians' incidents in Mayotte.",
+      "importance": 0.0476,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "seasonal_factors",
+      "description": "Seasonal patterns or recurring events that might influence violence levels in Mayotte (e.g., holidays, specific local events).",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "external_influences",
+      "description": "Broader regional or international events or influences that could spill over into Mayotte.",
+      "importance": 0,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "expected_future_violence",
+      "description": "The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28.",
+      "importance": 0.1071,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "current_violence_trend",
+      "description": "The recent trend and absolute level of 'Violence against civilians' incidents in Mayotte.",
+      "importance": 0.0476,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "seasonal_factors",
+      "description": "Seasonal patterns or recurring events that might influence violence levels in Mayotte (e.g., holidays, specific local events).",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "external_influences",
+      "description": "Broader regional or international events or influences that could spill over into Mayotte.",
+      "importance": 0,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "expected_future_violence->outcome",
+      "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome.",
+      "importance": 0.0982,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "current_violence_trend->threshold_level",
+      "description": "The 30-day average over the preceding 360 days is directly calculated from historical violence data, which is influenced by current trends.",
+      "importance": 0.0625,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "socioeconomic_conditions->current_violence_trend",
+      "description": "Persistent socioeconomic issues can fuel ongoing or escalating violence.",
+      "importance": 0.0357,
+      "centrality_rank": 9,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "expected_future_violence->outcome",
+      "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome.",
+      "importance": 0.0982,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "current_violence_trend->threshold_level",
+      "description": "The 30-day average over the preceding 360 days is directly calculated from historical violence data, which is influenced by current trends.",
+      "importance": 0.0625,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "socioeconomic_conditions->current_violence_trend",
+      "description": "Persistent socioeconomic issues can fuel ongoing or escalating violence.",
+      "importance": 0.0357,
+      "centrality_rank": 9,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "expected_future_violence->outcome",
+      "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome.",
+      "importance": 0.0982,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "expected_future_violence->threshold_level",
+      "description": "Potential link: The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28. -> One plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Imagine that the forecaster's projection of 'expected_future_violence' is not just slightly off, but entirely irrelevant. What if a sudden, unprecedented event completely disrupts any predictable patterns, making all prior trends and seasonal considerations meaningless for the upcoming 30-day period? For instance, a surprise, large-scale natural disaster or a sudden, significant shift in regional political alliances could render the existing 'expected_future_violence' calculation obsolete, leading to a completely different reality on the ground.",
+      "probe_type": "node_negate_high",
+      "target_id": "expected_future_violence",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1071,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28."
+    },
+    {
+      "probe_text": "Imagine that recent reports about 'Violence against civilians' in Mayotte have been significantly flawed due to reporting errors or deliberate misinformation. If this is the case, the 'current_violence_trend' might be a completely misleading indicator. Despite what the recent data suggests, underlying factors like political stability or external influences could be the true drivers of future violence, rendering the current trend irrelevant.",
+      "probe_type": "node_negate_high",
+      "target_id": "current_violence_trend",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0476,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The recent trend and absolute level of 'Violence against civilians' incidents in Mayotte."
+    },
+    {
+      "probe_text": "Recent analysis suggests that the typical seasonal patterns of violence in Mayotte, often linked to specific holidays or local festivals, have become significantly less predictable in the past five years. This is due to the increasing prevalence of spontaneous, unorganized civil unrest unrelated to traditional seasonal triggers. Therefore, relying on historical seasonal factors to predict future violence may be misleading.",
+      "probe_type": "node_negate_medium",
+      "target_id": "seasonal_factors",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "Seasonal patterns or recurring events that might influence violence levels in Mayotte (e.g., holidays, specific local events)."
+    },
+    {
+      "probe_text": "While external influences can sometimes affect local violence, the specific context of Mayotte suggests these broader regional or international events are unlikely to have a significant impact in the short-term. Given Mayotte's geographical isolation and distinct internal dynamics, it's more probable that the violence levels will be driven by domestic factors like socioeconomic conditions and political stability, rendering external influences largely irrelevant for this forecast.",
+      "probe_type": "node_negate_low",
+      "target_id": "external_influences",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "Broader regional or international events or influences that could spill over into Mayotte."
+    },
+    {
+      "probe_text": "A recent intelligence report from a regional security analyst highlights a significant increase in recruitment and training activities by extremist groups known to operate in the vicinity of Mayotte. These groups have historically exploited periods of local instability to launch attacks, and their current heightened activity suggests a strong intent to destabilize the region in the coming months, directly impacting expected future violence levels.",
+      "probe_type": "node_strengthen",
+      "target_id": "expected_future_violence",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1071,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28."
+    },
+    {
+      "probe_text": "Recent reports from Mayotte indicate a significant and sustained increase in organized criminal activity, particularly involving youth gangs. This trend is directly observable in the types of incidents being reported, which are increasingly violent and coordinated, suggesting a fundamental shift in the 'current_violence_trend' that is likely to persist.",
+      "probe_type": "node_strengthen",
+      "target_id": "current_violence_trend",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0476,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The recent trend and absolute level of 'Violence against civilians' incidents in Mayotte."
+    },
+    {
+      "probe_text": "Reports indicate that an unusually large number of traditional festivals and community gatherings are scheduled to take place in Mayotte during the period leading up to 2025-12-28. These events, historically associated with increased social interaction and sometimes leading to localized disputes or celebrations that escalate, are expected to be particularly vibrant this year due to recent easing of certain public health restrictions.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "seasonal_factors",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "Seasonal patterns or recurring events that might influence violence levels in Mayotte (e.g., holidays, specific local events)."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant escalation of piracy and smuggling activities in the waters surrounding Mayotte, involving organized transnational criminal networks with established ties to destabilized neighboring island nations. This surge in maritime crime, previously at low levels, suggests a growing external influence that could directly impact local security and potentially spill over into increased violence within Mayotte itself.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "external_influences",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "Broader regional or international events or influences that could spill over into Mayotte."
+    },
+    {
+      "probe_text": "The causal link between 'expected_future_violence' and the 'outcome' assumes that the forecaster's projection ('expected_future_violence') is the sole determinant of the outcome, when in reality, the outcome is a ratio. A sudden, unexpected drop in the 'threshold_level' due to a temporary lull in historical violence could artificially inflate the likelihood of the outcome, even if the absolute number of future incidents remains consistent with the projection.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "expected_future_violence->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0982,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome."
+    },
+    {
+      "probe_text": "While current violence trends can influence historical averages, the calculation of the 'threshold_level' relies on a *fixed* 360-day lookback period. If there was a sudden, unprecedented surge in violence exactly 360 days ago that has since subsided, the historical average (and thus the threshold) might remain artificially high, decoupling it from the *current* violence trend. This means the historical average might not reflect the immediate past or present reality as strongly as assumed.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "current_violence_trend->threshold_level",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0625,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The 30-day average over the preceding 360 days is directly calculated from historical violence data, which is influenced by current trends."
+    },
+    {
+      "probe_text": "While socioeconomic conditions can often fuel violence, in Mayotte's specific context, there have been recent government initiatives and international aid programs specifically designed to alleviate poverty and unemployment. These targeted interventions might be effectively damping the link between underlying socioeconomic issues and immediate, observable violence trends, meaning that even if conditions are poor, they may not be translating into current violence.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "socioeconomic_conditions->current_violence_trend",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0357,
+      "centrality_rank": 9,
+      "on_critical_path": false,
+      "description": "Persistent socioeconomic issues can fuel ongoing or escalating violence."
+    },
+    {
+      "probe_text": "Recent analysis of conflict resolution mechanisms in similar island territories has revealed a consistent pattern: when projected violence levels significantly exceed a historically derived baseline (our threshold_level * 10), there's an almost deterministic trigger for heightened official responses and public awareness campaigns. These interventions, in turn, reliably amplify the public's perception of risk and the likelihood of the projected violence occurring, effectively reinforcing the direct link between projected violence and the ultimate outcome.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "expected_future_violence->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0982,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome."
+    },
+    {
+      "probe_text": "Recent reports indicate that Mayotte has experienced a sustained period of unusually high 'Violence against civilians' incidents throughout the past year, far exceeding typical historical fluctuations. This prolonged surge in violence directly impacts the 30-day rolling average that forms the basis of the 'threshold_level'. Therefore, the 'current_violence_trend' is not just influencing the average, but is strongly embedding a higher baseline into the calculation of the threshold itself, making the threshold more sensitive to the current trend than previously modeled.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "current_violence_trend->threshold_level",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0625,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The 30-day average over the preceding 360 days is directly calculated from historical violence data, which is influenced by current trends."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in youth unemployment and a widening wealth gap in Mayotte, directly linked to a decrease in tourism revenue and local business closures over the past year. This suggests that the persistent socioeconomic pressures, rather than just being a background factor, are actively and directly exacerbating the current levels of violence by creating a more desperate and volatile environment.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "socioeconomic_conditions->current_violence_trend",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0357,
+      "centrality_rank": 9,
+      "on_critical_path": false,
+      "description": "Persistent socioeconomic issues can fuel ongoing or escalating violence."
+    },
+    {
+      "probe_text": "While it's true that the projected number of future violence incidents is compared to a threshold to determine the outcome, consider this: The *imminent possibility* of the outcome itself (i.e., a high number of future violence incidents relative to the threshold) might actively influence how 'expected_future_violence' is *calculated or interpreted* in the final moments before the resolution date. If authorities or observers anticipate the outcome based on preliminary data suggesting a violation of the threshold, they might adjust their reporting or even their actions, thereby influencing the very 'expected_future_violence' figure used in the calculation.",
+      "probe_type": "edge_reverse",
+      "target_id": "expected_future_violence->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0982,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The projected number of incidents ('expected_future_violence') is directly compared to the calculated threshold ('threshold_level') multiplied by ten to determine the outcome."
+    },
+    {
+      "probe_text": "While the forecast for future violence is based on current trends and external factors, it's important to consider how the *expected* future violence might actually influence the *historical average* used to calculate the threshold. For instance, if a surge in violence is anticipated due to an upcoming event, this anticipation itself could subtly alter reporting or preventative measures, potentially influencing the data points that make up the historical 30-day average, thus affecting the threshold itself.",
+      "probe_type": "edge_spurious",
+      "target_id": "expected_future_violence->threshold_level",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The projected number of 'Violence against civilians' incidents in the 30 days before 2025-12-28. -> One plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21."
+    },
+    {
+      "probe_text": "Imagine that a significant portion of the 'Violence against civilians' in Mayotte is directly linked to specific, highly localized disputes between two distinct ethnic or social groups, and that these disputes are not well captured by broader 'socioeconomic_conditions' or 'political_stability_and_governance'. If there is credible intelligence suggesting a sudden escalation of tensions and potential for organized conflict between these specific groups in the period leading up to 2025-12-28, how would this information alter your forecast?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine a sudden, unexpected surge in tourism or a major international sporting event is announced for the period leading up to 2025-12-28. This event is expected to dramatically increase the transient population and associated economic activity, but also potentially strain local resources and social cohesion. How would this specific, unforeseen event, beyond general 'seasonal_factors' or 'external_influences', impact your forecast for 'Violence against civilians'?",
+      "probe_type": "missing_node",
+      "target_id": "event_driven_population_shift",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Reports indicate that a new ecotourism initiative focused on preserving Mayotte's coral reefs is gaining significant traction among international visitors. This initiative has led to increased patrols by marine conservationists in coastal areas, which are largely separate from the urban centers where most 'Violence against civilians' incidents have historically been recorded.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "A new study has been published detailing the migratory patterns of common seabirds in the Indian Ocean, including species that frequent the waters around Mayotte. The research highlights a significant increase in the population of a particular tern species during the late autumn months, coinciding with the forecast period.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the forecaster's projection of 'expected_future_violence' is not just slightly off, but entirely irrelevant. What if a sudden, unprecedented event completely disrupts any predictable patterns, making all prior trends and seasonal considerations meaningless for the upcoming 30-day period? For instance, a surprise, large-scale natural disaster or a sudden, significant shift in regional political alliances could render the existing 'expected_future_violence' calculation obsolete, leading to a completely different reality on the ground.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that the 'expected_future_violence' node, which is a direct input to the 'outcome' node, is rendered entirely irrelevant. This implies that the causal paths leading to 'expected_future_violence' (i.e., 'current_violence_trend', 'seasonal_factors', 'socioeconomic_conditions', 'political_stability_and_governance', and 'external_influences') are effectively bypassed or overridden by an unforeseen event. If the projection of future violence is rendered meaningless, then its comparison to the 'threshold_level' becomes unreliable. While the 'threshold_level' itself is still calculable from historical data, the crucial comparison to determine the 'outcome' is undermined if the 'expected_future_violence' is no longer a valid predictor. This significantly weakens the link between the factors influencing expected violence and the final outcome, thus decreasing the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that the 'expected_future_violence' node, which is a direct input to the 'outcome' node, is rendered entirely irrelevant. This implies that the causal paths leading to 'expected_future_violence' (i.e., 'current_violence_trend', 'seasonal_factors', 'socioeconomic_conditions', 'political_stability_and_governance', and 'external_influences') are effectively bypassed or overridden by an unforeseen event. If the projection of future violence is rendered meaningless, then its comparison to the 'threshold_level' becomes unreliable. While the 'threshold_level' itself is still calculable from historical data, the crucial comparison to determine the 'outcome' is undermined if the 'expected_future_violence' is no longer a valid predictor. This significantly weakens the link between the factors influencing expected violence and the final outcome, thus decreasing the probability.\"\n}",
+      "target_id": "expected_future_violence",
+      "target_type": "node",
+      "target_importance": 0.1071,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that recent reports about 'Violence against civilians' in Mayotte have been significantly flawed due to reporting errors or deliberate misinformation. If this is the case, the 'current_violence_trend' might be a completely misleading indicator. Despite what the recent data suggests, underlying factors like political stability or external influences could be the true drivers of future violence, rendering the current trend irrelevant.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'current_violence_trend' node is significant because this node has a direct causal link to 'expected_future_violence' and an indirect link to 'threshold_level' (via historical data). If 'current_violence_trend' is misleading due to flawed reporting, then the projection of 'expected_future_violence' based on this trend would be unreliable. Furthermore, the calculation of 'threshold_level' also relies on historical data, which could be contaminated if the reporting errors have been ongoing. The causal path 'current_violence_trend -> expected_future_violence -> outcome' is weakened. The path 'current_violence_trend -> threshold_level -> outcome' is also weakened. This implies that the projection of future violence and the baseline for comparison are both less reliable, leading to a decrease in confidence in the original forecast. The other causal factors (seasonal_factors, socioeconomic_conditions, political_stability_and_governance, external_influences) become relatively more important as potential drivers of the 'expected_future_violence', but their influence is currently unquantified in a way that allows for a precise upward revision. Therefore, the overall probability decreases due to the increased uncertainty introduced by the unreliable 'current_violence_trend' data.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'current_violence_trend' node is significant because this node has a direct causal link to 'expected_future_violence' and an indirect link to 'threshold_level' (via historical data). If 'current_violence_trend' is misleading due to flawed reporting, then the projection of 'expected_future_violence' based on this trend would be unreliable. Furthermore, the calculation of 'threshold_level' also relies on historical data, which could be contaminated if the reporting errors have been ongoing. The causal path 'current_violence_trend -> expected_future_violence -> outcome' is weakened. The path 'current_violence_trend -> threshold_level -> outcome' is also weakened. This implies that the projection of future violence and the baseline for comparison are both less reliable, leading to a decrease in confidence in the original forecast. The other causal factors (seasonal_factors, socioeconomic_conditions, political_stability_and_governance, external_influences) become relatively more important as potential drivers of the 'expected_future_violence', but their influence is currently unquantified in a way that allows for a precise upward revision. Therefore, the overall probability decreases due to the increased uncertainty introduced by the unreliable 'current_violence_trend' data.\"\n}",
+      "target_id": "current_violence_trend",
+      "target_type": "node",
+      "target_importance": 0.0476,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis suggests that the typical seasonal patterns of violence in Mayotte, often linked to specific holidays or local festivals, have become significantly less predictable in the past five years. This is due to the increasing prevalence of spontaneous, unorganized civil unrest unrelated to traditional seasonal triggers. Therefore, relying on historical seasonal factors to predict future violence may be misleading.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'seasonal_factors' node suggests that its influence on 'expected_future_violence' is diminishing and becoming less reliable. Historically, seasonal_factors had a direct causal link to expected_future_violence. The new information indicates that spontaneous unrest is replacing predictable seasonal triggers. This weakens the predictive power of the seasonal_factors node. While not entirely eliminating the possibility of seasonal influences, it reduces their certainty. This change affects the causal path: seasonal_factors -> expected_future_violence -> outcome. Because seasonal factors were a contributing component to the overall forecast, and their reliability has decreased, the probability of the outcome has been slightly reduced. The overall impact is moderate, as other causal factors like 'current_violence_trend', 'socioeconomic_conditions', and 'political_stability_and_governance' remain significant drivers.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'seasonal_factors' node suggests that its influence on 'expected_future_violence' is diminishing and becoming less reliable. Historically, seasonal_factors had a direct causal link to expected_future_violence. The new information indicates that spontaneous unrest is replacing predictable seasonal triggers. This weakens the predictive power of the seasonal_factors node. While not entirely eliminating the possibility of seasonal influences, it reduces their certainty. This change affects the causal path: seasonal_factors -> expected_future_violence -> outcome. Because seasonal factors were a contributing component to the overall forecast, and their reliability has decreased, the probability of the outcome has been slightly reduced. The overall impact is moderate, as other causal factors like 'current_violence_trend', 'socioeconomic_conditions', and 'political_stability_and_governance' remain significant drivers.\"\n}",
+      "target_id": "seasonal_factors",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "While external influences can sometimes affect local violence, the specific context of Mayotte suggests these broader regional or international events are unlikely to have a significant impact in the short-term. Given Mayotte's geographical isolation and distinct internal dynamics, it's more probable that the violence levels will be driven by domestic factors like socioeconomic conditions and political stability, rendering external influences largely irrelevant for this forecast.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.32,
+      "absolute_shift": 0.02999999999999997,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that the 'external_influences' node has a weaker causal link to 'expected_future_violence' than previously assumed. This node is not directly linked to the 'outcome', but it influences 'expected_future_violence'. By reducing the impact of this causal path, the overall probability of the 'outcome' is slightly decreased. The impact is minor because 'external_influences' is one of several factors contributing to 'expected_future_violence', and the challenge emphasizes that domestic factors ('socioeconomic_conditions', 'political_stability_and_governance') are more dominant. Therefore, the core causal pathways leading to the 'outcome' (i.e., the links from 'current_violence_trend', 'seasonal_factors', 'socioeconomic_conditions', 'political_stability_and_governance' to 'expected_future_violence', and then to 'outcome') remain largely intact and significant, leading to a small downward revision.",
+      "raw_response": "{\n  \"updated_probability\": 0.32,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that the 'external_influences' node has a weaker causal link to 'expected_future_violence' than previously assumed. This node is not directly linked to the 'outcome', but it influences 'expected_future_violence'. By reducing the impact of this causal path, the overall probability of the 'outcome' is slightly decreased. The impact is minor because 'external_influences' is one of several factors contributing to 'expected_future_violence', and the challenge emphasizes that domestic factors ('socioeconomic_conditions', 'political_stability_and_governance') are more dominant. Therefore, the core causal pathways leading to the 'outcome' (i.e., the links from 'current_violence_trend', 'seasonal_factors', 'socioeconomic_conditions', 'political_stability_and_governance' to 'expected_future_violence', and then to 'outcome') remain largely intact and significant, leading to a small downward revision.\"\n}",
+      "target_id": "external_influences",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent intelligence report from a regional security analyst highlights a significant increase in recruitment and training activities by extremist groups known to operate in the vicinity of Mayotte. These groups have historically exploited periods of local instability to launch attacks, and their current heightened activity suggests a strong intent to destabilize the region in the coming months, directly impacting expected future violence levels.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.25,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly challenges the 'expected_future_violence' node. The intelligence report indicates increased recruitment and training by extremist groups with a history of exploiting instability and launching attacks in the region. This information strongly suggests a heightened risk of future violence, as these groups have a 'strong intent to destabilize the region in the coming months'. This directly impacts the causal path from 'external_influences' to 'expected_future_violence', as these extremist groups and their activities represent a significant external influence. It also potentially reinforces the link from 'political_stability_and_governance' to 'expected_future_violence', as extremist groups often exploit periods of weak governance. Since 'expected_future_violence' is a direct precursor to the 'outcome', a significant increase in the projected level of future violence leads to a substantial upward revision of the probability. The original estimate was 0.35, and the new information makes a higher level of future violence more likely, thus increasing the probability that the outcome condition (more than ten times the threshold) is met.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly challenges the 'expected_future_violence' node. The intelligence report indicates increased recruitment and training by extremist groups with a history of exploiting instability and launching attacks in the region. This information strongly suggests a heightened risk of future violence, as these groups have a 'strong intent to destabilize the region in the coming months'. This directly impacts the causal path from 'external_influences' to 'expected_future_violence', as these extremist groups and their activities represent a significant external influence. It also potentially reinforces the link from 'political_stability_and_governance' to 'expected_future_violence', as extremist groups often exploit periods of weak governance. Since 'expected_future_violence' is a direct precursor to the 'outcome', a significant increase in the projected level of future violence leads to a substantial upward revision of the probability. The original estimate was 0.35, and the new information makes a higher level of future violence more likely, thus increasing the probability that the outcome condition (more than ten times the threshold) is met.\"\n}",
+      "target_id": "expected_future_violence",
+      "target_type": "node",
+      "target_importance": 0.1071,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from Mayotte indicate a significant and sustained increase in organized criminal activity, particularly involving youth gangs. This trend is directly observable in the types of incidents being reported, which are increasingly violent and coordinated, suggesting a fundamental shift in the 'current_violence_trend' that is likely to persist.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'current_violence_trend' is significant. The report indicates a sustained increase in organized criminal activity and youth gangs, leading to more violent and coordinated incidents. This directly impacts the 'current_violence_trend' node. A stronger current trend of violence will likely lead to a higher 'expected_future_violence' (via the edge current_violence_trend -> expected_future_violence). This also implies that the historical data used to calculate 'threshold_level' might have been influenced by this increasing trend, potentially making the 'threshold_level' itself higher, but the *persistence* of the trend suggests the future will be *even more* violent than the recent average. The core causal path to the outcome is expected_future_violence -> outcome. If 'expected_future_violence' is projected to be higher, the probability of it exceeding ten times the 'threshold_level' increases. Therefore, my probability estimate has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'current_violence_trend' is significant. The report indicates a sustained increase in organized criminal activity and youth gangs, leading to more violent and coordinated incidents. This directly impacts the 'current_violence_trend' node. A stronger current trend of violence will likely lead to a higher 'expected_future_violence' (via the edge current_violence_trend -> expected_future_violence). This also implies that the historical data used to calculate 'threshold_level' might have been influenced by this increasing trend, potentially making the 'threshold_level' itself higher, but the *persistence* of the trend suggests the future will be *even more* violent than the recent average. The core causal path to the outcome is expected_future_violence -> outcome. If 'expected_future_violence' is projected to be higher, the probability of it exceeding ten times the 'threshold_level' increases. Therefore, my probability estimate has increased.\"\n}",
+      "target_id": "current_violence_trend",
+      "target_type": "node",
+      "target_importance": 0.0476,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Reports indicate that an unusually large number of traditional festivals and community gatherings are scheduled to take place in Mayotte during the period leading up to 2025-12-28. These events, historically associated with increased social interaction and sometimes leading to localized disputes or celebrations that escalate, are expected to be particularly vibrant this year due to recent easing of certain public health restrictions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.20000000000000007,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'seasonal_factors' node is significant. The causal path affected is 'seasonal_factors -> expected_future_violence -> outcome'. The new information suggests that the upcoming period will have an unusually high number of festivals and gatherings, which are historically linked to increased social interaction and potential disputes. The recent easing of public health restrictions is likely to amplify these effects. This directly increases the likelihood of more 'Violence against civilians' incidents in the period leading up to 2025-12-28, thus increasing 'expected_future_violence'. Consequently, the probability that 'expected_future_violence' will be more than ten times the 'threshold_level' is increased. The initial estimate of 0.35 was likely too conservative given this new information about a strong seasonal driver.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'seasonal_factors' node is significant. The causal path affected is 'seasonal_factors -> expected_future_violence -> outcome'. The new information suggests that the upcoming period will have an unusually high number of festivals and gatherings, which are historically linked to increased social interaction and potential disputes. The recent easing of public health restrictions is likely to amplify these effects. This directly increases the likelihood of more 'Violence against civilians' incidents in the period leading up to 2025-12-28, thus increasing 'expected_future_violence'. Consequently, the probability that 'expected_future_violence' will be more than ten times the 'threshold_level' is increased. The initial estimate of 0.35 was likely too conservative given this new information about a strong seasonal driver.\"\n}",
+      "target_id": "seasonal_factors",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant escalation of piracy and smuggling activities in the waters surrounding Mayotte, involving organized transnational criminal networks with established ties to destabilized neighboring island nations. This surge in maritime crime, previously at low levels, suggests a growing external influence that could directly impact local security and potentially spill over into increased violence within Mayotte itself.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.20000000000000007,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'external_influences' node is significant. Previously, this node was considered to have a less direct or potentially lower impact compared to other factors like socioeconomic conditions or political stability. However, the new information details a specific and escalating threat from organized transnational criminal networks engaging in piracy and smuggling, directly linked to destabilized neighboring nations. This suggests a more potent and immediate external influence. The causal path 'external_influences -> expected_future_violence' is now strengthened. This increased external pressure, particularly if it spills over into Mayotte, could directly inflate the 'expected_future_violence'. This, in turn, makes the 'outcome' more likely. While the initial probability was 0.35, this new information points to a greater likelihood of increased violence, thus raising the probability to 0.55.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'external_influences' node is significant. Previously, this node was considered to have a less direct or potentially lower impact compared to other factors like socioeconomic conditions or political stability. However, the new information details a specific and escalating threat from organized transnational criminal networks engaging in piracy and smuggling, directly linked to destabilized neighboring nations. This suggests a more potent and immediate external influence. The causal path 'external_influences -> expected_future_violence' is now strengthened. This increased external pressure, particularly if it spills over into Mayotte, could directly inflate the 'expected_future_violence'. This, in turn, makes the 'outcome' more likely. While the initial probability was 0.35, this new information points to a greater likelihood of increased violence, thus raising the probability to 0.55.\"\n}",
+      "target_id": "external_influences",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "The causal link between 'expected_future_violence' and the 'outcome' assumes that the forecaster's projection ('expected_future_violence') is the sole determinant of the outcome, when in reality, the outcome is a ratio. A sudden, unexpected drop in the 'threshold_level' due to a temporary lull in historical violence could artificially inflate the likelihood of the outcome, even if the absolute number of future incidents remains consistent with the projection.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causality assumed between 'expected_future_violence' and the 'outcome'. The 'outcome' is defined as a ratio: 'expected_future_violence' compared to 10 * 'threshold_level'. The challenge correctly points out that a significant change in 'threshold_level', independent of 'expected_future_violence', can alter the outcome. Specifically, an unexpected drop in the historical average ('threshold_level') could make the ratio easier to meet, even if the projected future violence ('expected_future_violence') remains unchanged. This weakens the direct predictive power of 'expected_future_violence' alone on the 'outcome', as it ignores the independent variability of the 'threshold_level'. The causal path 'expected_future_violence -> outcome' is therefore re-evaluated. While 'expected_future_violence' is still a crucial input, its deterministic influence on the outcome is lessened because the 'threshold_level' also plays a significant, and potentially volatile, role. This suggests a slight decrease in confidence, as the model was perhaps overemphasizing the predictive power of the projection in isolation.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causality assumed between 'expected_future_violence' and the 'outcome'. The 'outcome' is defined as a ratio: 'expected_future_violence' compared to 10 * 'threshold_level'. The challenge correctly points out that a significant change in 'threshold_level', independent of 'expected_future_violence', can alter the outcome. Specifically, an unexpected drop in the historical average ('threshold_level') could make the ratio easier to meet, even if the projected future violence ('expected_future_violence') remains unchanged. This weakens the direct predictive power of 'expected_future_violence' alone on the 'outcome', as it ignores the independent variability of the 'threshold_level'. The causal path 'expected_future_violence -> outcome' is therefore re-evaluated. While 'expected_future_violence' is still a crucial input, its deterministic influence on the outcome is lessened because the 'threshold_level' also plays a significant, and potentially volatile, role. This suggests a slight decrease in confidence, as the model was perhaps overemphasizing the predictive power of the projection in isolation.\"\n}",
+      "target_id": "expected_future_violence->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0982,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While current violence trends can influence historical averages, the calculation of the 'threshold_level' relies on a *fixed* 360-day lookback period. If there was a sudden, unprecedented surge in violence exactly 360 days ago that has since subsided, the historical average (and thus the threshold) might remain artificially high, decoupling it from the *current* violence trend. This means the historical average might not reflect the immediate past or present reality as strongly as assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct link between 'current_violence_trend' and 'threshold_level'. While 'current_violence_trend' does influence historical averages, the 'threshold_level' is calculated using a fixed 360-day lookback. The argument is that an anomaly in the past (e.g., a surge exactly 360 days ago) could artificially inflate the historical average, making it a less reliable indicator of the *current* situation than previously assumed. This weakens the causal path 'current_violence_trend -> threshold_level' by suggesting that the historical average might not always be a good proxy for recent trends. However, the 'current_violence_trend' still directly influences 'expected_future_violence', and the 'outcome' is determined by the comparison between 'expected_future_violence' and 'threshold_level'. The challenge introduces more noise into the 'threshold_level' calculation, making it less predictable relative to current trends. This slightly decreases the probability because the historical average, as a component of the threshold, is now seen as potentially less reflective of the immediate past, which could mean the threshold is less likely to align with a future surge if the historical anomaly is the primary driver of the threshold. The overall impact is modest as 'current_violence_trend' remains a strong predictor of 'expected_future_violence', and the 'outcome' is still directly dependent on this projection.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct link between 'current_violence_trend' and 'threshold_level'. While 'current_violence_trend' does influence historical averages, the 'threshold_level' is calculated using a fixed 360-day lookback. The argument is that an anomaly in the past (e.g., a surge exactly 360 days ago) could artificially inflate the historical average, making it a less reliable indicator of the *current* situation than previously assumed. This weakens the causal path 'current_violence_trend -> threshold_level' by suggesting that the historical average might not always be a good proxy for recent trends. However, the 'current_violence_trend' still directly influences 'expected_future_violence', and the 'outcome' is determined by the comparison between 'expected_future_violence' and 'threshold_level'. The challenge introduces more noise into the 'threshold_level' calculation, making it less predictable relative to current trends. This slightly decreases the probability because the historical average, as a component of the threshold, is now seen as potentially less reflective of the immediate past, which could mean the threshold is less likely to align with a future surge if the historical anomaly is the primary driver of the threshold. The overall impact is modest as 'current_violence_trend' remains a strong predictor of 'expected_future_violence', and the 'outcome' is still directly dependent on this projection.\"\n}",
+      "target_id": "current_violence_trend->threshold_level",
+      "target_type": "edge",
+      "target_importance": 0.0625,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While socioeconomic conditions can often fuel violence, in Mayotte's specific context, there have been recent government initiatives and international aid programs specifically designed to alleviate poverty and unemployment. These targeted interventions might be effectively damping the link between underlying socioeconomic issues and immediate, observable violence trends, meaning that even if conditions are poor, they may not be translating into current violence.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.28,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge targets the causal link between 'socioeconomic_conditions' and 'current_violence_trend'. The argument is that recent government and international initiatives are mitigating the impact of poor socioeconomic conditions on immediate violence. This weakens a path that previously contributed to 'current_violence_trend', which in turn influences 'expected_future_violence' and, consequently, the 'outcome'. While 'socioeconomic_conditions' can still directly influence 'expected_future_violence' and 'threshold_level' is derived from historical data that may reflect past socioeconomic impacts, the direct transmission of current socioeconomic issues to current violence is now considered less potent. This reduces the likelihood that current violence levels will be elevated due to these factors, thus lowering the overall probability of the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.28,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge targets the causal link between 'socioeconomic_conditions' and 'current_violence_trend'. The argument is that recent government and international initiatives are mitigating the impact of poor socioeconomic conditions on immediate violence. This weakens a path that previously contributed to 'current_violence_trend', which in turn influences 'expected_future_violence' and, consequently, the 'outcome'. While 'socioeconomic_conditions' can still directly influence 'expected_future_violence' and 'threshold_level' is derived from historical data that may reflect past socioeconomic impacts, the direct transmission of current socioeconomic issues to current violence is now considered less potent. This reduces the likelihood that current violence levels will be elevated due to these factors, thus lowering the overall probability of the outcome.\"\n}",
+      "target_id": "socioeconomic_conditions->current_violence_trend",
+      "target_type": "edge",
+      "target_importance": 0.0357,
+      "target_centrality_rank": 9,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of conflict resolution mechanisms in similar island territories has revealed a consistent pattern: when projected violence levels significantly exceed a historically derived baseline (our threshold_level * 10), there's an almost deterministic trigger for heightened official responses and public awareness campaigns. These interventions, in turn, reliably amplify the public's perception of risk and the likelihood of the projected violence occurring, effectively reinforcing the direct link between projected violence and the ultimate outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.20000000000000007,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the `expected_future_violence -> outcome` link, while seemingly critical, actually reinforces the relationship in a complex way. The new analysis suggests that when projected violence levels are high relative to the threshold, this doesn't just lead to the outcome; it creates a feedback loop. Higher projected violence (our `expected_future_violence`) triggers interventions that, in turn, increase the *likelihood* of that projected violence actually occurring. This means the direct causal path from `expected_future_violence` to `outcome` is not broken, but rather strengthened and made more self-fulfilling. The interventions act as a mediator that amplifies the original projected violence. Therefore, the probability of the outcome occurring increases, as the very factors that predict high violence also seem to make it more likely to materialize. The initial estimate was 0.35, and this self-reinforcing mechanism justifies an increase to 0.55.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the `expected_future_violence -> outcome` link, while seemingly critical, actually reinforces the relationship in a complex way. The new analysis suggests that when projected violence levels are high relative to the threshold, this doesn't just lead to the outcome; it creates a feedback loop. Higher projected violence (our `expected_future_violence`) triggers interventions that, in turn, increase the *likelihood* of that projected violence actually occurring. This means the direct causal path from `expected_future_violence` to `outcome` is not broken, but rather strengthened and made more self-fulfilling. The interventions act as a mediator that amplifies the original projected violence. Therefore, the probability of the outcome occurring increases, as the very factors that predict high violence also seem to make it more likely to materialize. The initial estimate was 0.35, and this self-reinforcing mechanism justifies an increase to 0.55.\"\n}",
+      "target_id": "expected_future_violence->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0982,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that Mayotte has experienced a sustained period of unusually high 'Violence against civilians' incidents throughout the past year, far exceeding typical historical fluctuations. This prolonged surge in violence directly impacts the 30-day rolling average that forms the basis of the 'threshold_level'. Therefore, the 'current_violence_trend' is not just influencing the average, but is strongly embedding a higher baseline into the calculation of the threshold itself, making the threshold more sensitive to the current trend than previously modeled.",
+      "probe_generated": true,
+      "success": false,
+      "updated_probability": null,
+      "absolute_shift": null,
+      "shift_direction": null,
+      "reasoning": "",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'current_violence_trend -> threshold_level' highlights that the recent sustained surge in violence is not just a temporary fluctuation but is establishing a new, higher baseline. This directly increases the 'threshold_level' calculation. Since the 'outcome' is determined by comparing 'expected_future_violence' to ten times the 'threshold_level', a higher 'threshold_level' makes it *less likely* that the 'expected_future_violence' will exceed it. However, the reasoning also implies that the 'current_violence_trend' is very strong and persistent. If this strong trend continues, it will also drive up 'expected_future_violence'. The challenge implies that the 'threshold_level' is *more* sensitive to the current trend than previously modeled. This means the current high violence levels are more likely to inflate the denominator of the comparison (the threshold), thus making the condition for a positive outcome (expected_future_violence > 10 * threshold_level) harder to meet. My initial estimate was 0.35, suggesting I thought the outcome was somewhat unlikely. The challenge, by emphasizing how the current high violence directly inflates the threshold, makes the outcome even less likely *if the current trend is the primary driver of both expected future violence and the threshold*. However, the phrasing 'making the threshold more sensitive to the current trend than previously modeled' could also be interpreted as a strong indication that the *current trend itself* is very robust. If the 'current_violence_trend' is so strong that it's driving up the threshold significantly, it's also likely to drive up 'expected_future_violence'. The core of the question is the *ratio* of 'expected_future_violence' to 'threshold_level'. If both are driven up by the same strong trend, the ratio might not change as much as initially thought.\n\nUpon re-evaluation, the challenge implies that the 'threshold_level' becomes a more potent 'hurdle' due to the prolonged high violence. This makes the *ratio* comparison more difficult to satisfy. Therefore, the probability of the outcome (exceeding this higher hurdle) should decrease. However, the prompt also states 'making the threshold more sensitive to the current trend than previously modeled', which could also imply that the *expected future violence* will also be high, thus potentially counteracting the effect of the inflated threshold. The previous estimate was 0.35. The information that the threshold is more sensitive to the current trend suggests the threshold will be higher. This makes the outcome less likely. But the fact that it's sensitive to the current trend also means the current trend is strong, which could also imply high expected future violence. The nuance is key: is the *ratio* likely to increase or decrease? If the current trend is the sole driver of both, the ratio might be stable. If other factors are keeping expected future violence lower *relative* to the inflated threshold, then the outcome is less likely.\n\nLet's assume the strong 'current_violence_trend' is the primary driver for both 'expected_future_violence' and 'threshold_level'. The challenge states the threshold is *more sensitive* to this trend. This means the denominator of the comparison (10 * threshold) is increasing *more* than expected. This makes the outcome less likely. My initial estimate of 0.35 was already below 0.5. The argument that the threshold is inflated makes the outcome *even less likely*. However, the prompt asks for an update to the *probability estimate*. If the 'current_violence_trend' is unusually high and sustained, it inherently affects *both* the numerator ('expected_future_violence') and the denominator ('threshold_level'). The challenge focuses on the denominator's sensitivity. A higher denominator makes the ratio smaller. Thus, the outcome becomes less likely. However, the prompt states that the challenge is to the 'current_violence_trend -> threshold_level' link. This implies that the *strength* of the current trend is impacting the threshold *more* than previously modeled. This implies the threshold is higher. This makes the outcome less likely.\n\nUpon further consideration, the challenge emphasizes that the 'current_violence_trend' is embedding a higher baseline into the 'threshold_level'. This means the denominator of the comparison (10 * threshold_level) is becoming larger. This directly makes it harder for 'expected_future_violence' to surpass this higher threshold. Therefore, the probability of the outcome should decrease. However, my initial estimate was 0.35. The challenge, by pointing out the inflated threshold, increases the likelihood that the condition (expected_future_violence > 10 * threshold_level) will *not* be met. This should decrease the probability.\n\nLet's re-read the prompt carefully: \"making the threshold more sensitive to the current trend than previously modeled.\" This means the current high violence is inflating the *denominator* more significantly. This makes the outcome *less likely*. My initial P=0.35 was already below 0.5. The challenge argues for a *lower* probability. However, the prompt asks for a probability between 0.01 and 0.99. If the challenge makes the outcome *less likely*, the probability should decrease. But if the current violence trend is *so strong* and sustained, it might also boost 'expected_future_violence' significantly. The question is about the *ratio*. If both numerator and denominator are inflated by the same strong trend, the ratio might not change drastically.\n\nLet's consider",
+      "target_id": "current_violence_trend->threshold_level",
+      "target_type": "edge",
+      "target_importance": 0.0625,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in youth unemployment and a widening wealth gap in Mayotte, directly linked to a decrease in tourism revenue and local business closures over the past year. This suggests that the persistent socioeconomic pressures, rather than just being a background factor, are actively and directly exacerbating the current levels of violence by creating a more desperate and volatile environment.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'socioeconomic_conditions -> current_violence_trend' argues that this link is not just a background influence but an active exacerbating factor. This strengthens the connection between socioeconomic conditions and current violence, which in turn feeds into 'expected_future_violence' via the 'current_violence_trend -> expected_future_violence' link. The new information suggests that the 'current_violence_trend' node is more strongly influenced by underlying socioeconomic issues than previously modeled. This increased pressure on 'current_violence_trend' likely leads to a higher 'expected_future_violence' and thus increases the probability of the outcome. The other causal paths remain unaffected by this specific challenge.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'socioeconomic_conditions -> current_violence_trend' argues that this link is not just a background influence but an active exacerbating factor. This strengthens the connection between socioeconomic conditions and current violence, which in turn feeds into 'expected_future_violence' via the 'current_violence_trend -> expected_future_violence' link. The new information suggests that the 'current_violence_trend' node is more strongly influenced by underlying socioeconomic issues than previously modeled. This increased pressure on 'current_violence_trend' likely leads to a higher 'expected_future_violence' and thus increases the probability of the outcome. The other causal paths remain unaffected by this specific challenge.\"\n}",
+      "target_id": "socioeconomic_conditions->current_violence_trend",
+      "target_type": "edge",
+      "target_importance": 0.0357,
+      "target_centrality_rank": 9,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "While it's true that the projected number of future violence incidents is compared to a threshold to determine the outcome, consider this: The *imminent possibility* of the outcome itself (i.e., a high number of future violence incidents relative to the threshold) might actively influence how 'expected_future_violence' is *calculated or interpreted* in the final moments before the resolution date. If authorities or observers anticipate the outcome based on preliminary data suggesting a violation of the threshold, they might adjust their reporting or even their actions, thereby influencing the very 'expected_future_violence' figure used in the calculation.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.33,
+      "absolute_shift": 0.019999999999999962,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that the anticipation of the outcome might influence the calculation of 'expected_future_violence'. This introduces a feedback loop where the outcome variable is influenced by its own potential realization. Specifically, the causal link 'expected_future_violence -> outcome' is challenged by suggesting that the *imminent possibility* of the outcome (driven by 'expected_future_violence' approaching a point where the outcome is likely) could retroactively affect 'expected_future_violence' itself. This could happen if authorities adjust reporting or actions based on projections. If this feedback loop is strong, it suggests that 'expected_future_violence' might not be a purely independent predictor of the outcome, but rather influenced by the very outcome it's meant to predict. This undermines the direct predictive power of 'expected_future_violence' in the original model. However, the challenge is somewhat speculative, as it relies on the *imminent possibility* influencing calculations, which may not be a guaranteed or significant effect. It also doesn't invalidate the other causal pathways leading to 'expected_future_violence' (e.g., current trends, seasonality, socioeconomic conditions, political stability, external influences). Therefore, the probability is decreased slightly, reflecting a weakened but not broken causal link to the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.33,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that the anticipation of the outcome might influence the calculation of 'expected_future_violence'. This introduces a feedback loop where the outcome variable is influenced by its own potential realization. Specifically, the causal link 'expected_future_violence -> outcome' is challenged by suggesting that the *imminent possibility* of the outcome (driven by 'expected_future_violence' approaching a point where the outcome is likely) could retroactively affect 'expected_future_violence' itself. This could happen if authorities adjust reporting or actions based on projections. If this feedback loop is strong, it suggests that 'expected_future_violence' might not be a purely independent predictor of the outcome, but rather influenced by the very outcome it's meant to predict. This undermines the direct predictive power of 'expected_future_violence' in the original model. However, the challenge is somewhat speculative, as it relies on the *imminent possibility* influencing calculations, which may not be a guaranteed or significant effect. It also doesn't invalidate the other causal pathways leading to 'expected_future_violence' (e.g., current trends, seasonality, socioeconomic conditions, political stability, external influences). Therefore, the probability is decreased slightly, reflecting a weakened but not broken causal link to the outcome.\"\n}",
+      "target_id": "expected_future_violence->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0982,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While the forecast for future violence is based on current trends and external factors, it's important to consider how the *expected* future violence might actually influence the *historical average* used to calculate the threshold. For instance, if a surge in violence is anticipated due to an upcoming event, this anticipation itself could subtly alter reporting or preventative measures, potentially influencing the data points that make up the historical 30-day average, thus affecting the threshold itself.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.34,
+      "absolute_shift": 0.009999999999999953,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the causal link 'expected_future_violence -> threshold_level', suggesting that anticipated future violence could subtly influence the historical data used to calculate the threshold. However, this link is not directly present in the provided causal network; the 'threshold_level' is determined by historical data ('current_violence_trend' influences this) and not by 'expected_future_violence'. The provided reasoning implies a feedback loop where anticipation of future violence might alter past reporting, which is a more complex and less direct influence than the network suggests. The network posits that 'current_violence_trend' directly influences 'threshold_level' through historical data. While the challenge introduces a novel idea about how anticipation might affect historical data collection, its impact on the *calculation* of the 'threshold_level' as defined (a 30-day average over the preceding 360 days) is indirect and speculative. The primary causal paths to the outcome remain: 'current_violence_trend', 'seasonal_factors', 'socioeconomic_conditions', 'political_stability_and_governance', and 'external_influences' all feed into 'expected_future_violence', which is then compared to 'threshold_level' to determine the 'outcome'. The challenge does not invalidate the direct causal links to 'expected_future_violence' or the final comparison to 'outcome'. Therefore, the update is minor, reflecting a slight decrease in confidence due to the introduction of a potential, albeit indirect and not explicitly modeled, confounding factor.",
+      "raw_response": "{\n  \"updated_probability\": 0.34,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the causal link 'expected_future_violence -> threshold_level', suggesting that anticipated future violence could subtly influence the historical data used to calculate the threshold. However, this link is not directly present in the provided causal network; the 'threshold_level' is determined by historical data ('current_violence_trend' influences this) and not by 'expected_future_violence'. The provided reasoning implies a feedback loop where anticipation of future violence might alter past reporting, which is a more complex and less direct influence than the network suggests. The network posits that 'current_violence_trend' directly influences 'threshold_level' through historical data. While the challenge introduces a novel idea about how anticipation might affect historical data collection, its impact on the *calculation* of the 'threshold_level' as defined (a 30-day average over the preceding 360 days) is indirect and speculative. The primary causal paths to the outcome remain: 'current_violence_trend', 'seasonal_factors', 'socioeconomic_conditions', 'political_stability_and_governance', and 'external_influences' all feed into 'expected_future_violence', which is then compared to 'threshold_level' to determine the 'outcome'. The challenge does not invalidate the direct causal links to 'expected_future_violence' or the final comparison to 'outcome'. Therefore, the update is minor, reflecting a slight decrease in confidence due to the introduction of a potential, albeit indirect and not explicitly modeled, confounding factor.\"\n}",
+      "target_id": "expected_future_violence->threshold_level",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a significant portion of the 'Violence against civilians' in Mayotte is directly linked to specific, highly localized disputes between two distinct ethnic or social groups, and that these disputes are not well captured by broader 'socioeconomic_conditions' or 'political_stability_and_governance'. If there is credible intelligence suggesting a sudden escalation of tensions and potential for organized conflict between these specific groups in the period leading up to 2025-12-28, how would this information alter your forecast?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge highlights that a significant portion of 'Violence against civilians' is driven by localized inter-group disputes, which are not adequately captured by the broader 'socioeconomic_conditions' or 'political_stability_and_governance' nodes. The intelligence about a sudden escalation of tensions between specific groups directly impacts the 'expected_future_violence' node. While 'socioeconomic_conditions' and 'political_stability_and_governance' can influence violence, these localized disputes represent a more immediate and potent driver that bypasses or overrides those broader factors. This new information suggests that the 'expected_future_violence' is likely to be significantly higher than previously anticipated, as the current model might be underestimating the impact of these specific, escalating inter-group tensions. Therefore, the causal paths leading to 'expected_future_violence' from these specific group dynamics are now considered more critical. This increases the likelihood that 'expected_future_violence' will exceed ten times the 'threshold_level', leading to a higher probability of the 'outcome' resolving positively.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge highlights that a significant portion of 'Violence against civilians' is driven by localized inter-group disputes, which are not adequately captured by the broader 'socioeconomic_conditions' or 'political_stability_and_governance' nodes. The intelligence about a sudden escalation of tensions between specific groups directly impacts the 'expected_future_violence' node. While 'socioeconomic_conditions' and 'political_stability_and_governance' can influence violence, these localized disputes represent a more immediate and potent driver that bypasses or overrides those broader factors. This new information suggests that the 'expected_future_violence' is likely to be significantly higher than previously anticipated, as the current model might be underestimating the impact of these specific, escalating inter-group tensions. Therefore, the causal paths leading to 'expected_future_violence' from these specific group dynamics are now considered more critical. This increases the likelihood that 'expected_future_violence' will exceed ten times the 'threshold_level', leading to a higher probability of the 'outcome' resolving positively.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine a sudden, unexpected surge in tourism or a major international sporting event is announced for the period leading up to 2025-12-28. This event is expected to dramatically increase the transient population and associated economic activity, but also potentially strain local resources and social cohesion. How would this specific, unforeseen event, beyond general 'seasonal_factors' or 'external_influences', impact your forecast for 'Violence against civilians'?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The challenge introduces a new, specific type of event that wasn't fully captured by the existing 'seasonal_factors' or 'external_influences' nodes. This event, a surge in tourism or a major international sporting event, has the potential to significantly impact 'expected_future_violence' through multiple pathways. Firstly, increased transient population and economic activity could lead to more interactions and potential friction, increasing the likelihood of violence. This directly affects the 'expected_future_violence' node. Secondly, the strain on local resources and social cohesion could exacerbate underlying tensions, also feeding into 'expected_future_violence' and potentially influencing 'current_violence_trend' if the effects begin before the forecast period. While the 'threshold_level' is based on historical data and less directly impacted by this *future* event, the primary driver of the outcome is the comparison between 'expected_future_violence' and 'threshold_level'. Given that this event is likely to increase 'expected_future_violence', and the outcome requires 'expected_future_violence' to be more than ten times 'threshold_level', the probability of the outcome increases. The initial probability of 0.35 was relatively low, suggesting a baseline expectation of lower violence relative to the threshold. This new factor introduces a plausible scenario for increased violence, thus raising the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge introduces a new, specific type of event that wasn't fully captured by the existing 'seasonal_factors' or 'external_influences' nodes. This event, a surge in tourism or a major international sporting event, has the potential to significantly impact 'expected_future_violence' through multiple pathways. Firstly, increased transient population and economic activity could lead to more interactions and potential friction, increasing the likelihood of violence. This directly affects the 'expected_future_violence' node. Secondly, the strain on local resources and social cohesion could exacerbate underlying tensions, also feeding into 'expected_future_violence' and potentially influencing 'current_violence_trend' if the effects begin before the forecast period. While the 'threshold_level' is based on historical data and less directly impacted by this *future* event, the primary driver of the outcome is the comparison between 'expected_future_violence' and 'threshold_level'. Given that this event is likely to increase 'expected_future_violence', and the outcome requires 'expected_future_violence' to be more than ten times 'threshold_level', the probability of the outcome increases. The initial probability of 0.35 was relatively low, suggesting a baseline expectation of lower violence relative to the threshold. This new factor introduces a plausible scenario for increased violence, thus raising the probability.\"\n}",
+      "target_id": "event_driven_population_shift",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Reports indicate that a new ecotourism initiative focused on preserving Mayotte's coral reefs is gaining significant traction among international visitors. This initiative has led to increased patrols by marine conservationists in coastal areas, which are largely separate from the urban centers where most 'Violence against civilians' incidents have historically been recorded.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.33,
+      "absolute_shift": 0.019999999999999962,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about the ecotourism initiative and increased marine patrols primarily affects the 'political_stability_and_governance' node indirectly. While the initiative itself is unlikely to directly impact violence, the increased patrols in coastal areas, being separate from urban centers where violence is concentrated, suggest a potential, albeit minor, increase in the effectiveness of localized governance in those specific coastal regions. This could marginally reduce the likelihood of violence spilling into those areas. However, the core drivers of violence in Mayotte are likely rooted in socioeconomic conditions and broader political stability issues in urban centers, which are not directly addressed by this ecotourism initiative. Therefore, the impact on the causal paths leading to 'expected_future_violence' and subsequently the 'outcome' is minimal. The 'political_stability_and_governance' -> 'current_violence_trend' and 'political_stability_and_governance' -> 'expected_future_violence' paths are only very slightly strengthened in their ability to suppress violence in coastal areas, not in the historically violent urban centers. This leads to a small decrease in the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.33,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about the ecotourism initiative and increased marine patrols primarily affects the 'political_stability_and_governance' node indirectly. While the initiative itself is unlikely to directly impact violence, the increased patrols in coastal areas, being separate from urban centers where violence is concentrated, suggest a potential, albeit minor, increase in the effectiveness of localized governance in those specific coastal regions. This could marginally reduce the likelihood of violence spilling into those areas. However, the core drivers of violence in Mayotte are likely rooted in socioeconomic conditions and broader political stability issues in urban centers, which are not directly addressed by this ecotourism initiative. Therefore, the impact on the causal paths leading to 'expected_future_violence' and subsequently the 'outcome' is minimal. The 'political_stability_and_governance' -> 'current_violence_trend' and 'political_stability_and_governance' -> 'expected_future_violence' paths are only very slightly strengthened in their ability to suppress violence in coastal areas, not in the historically violent urban centers. This leads to a small decrease in the overall probability.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A new study has been published detailing the migratory patterns of common seabirds in the Indian Ocean, including species that frequent the waters around Mayotte. The research highlights a significant increase in the population of a particular tern species during the late autumn months, coinciding with the forecast period.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.34,
+      "absolute_shift": 0.009999999999999953,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about migratory seabird patterns is tangential to the core drivers of violence in Mayotte. The causal paths leading to the 'outcome' node are primarily influenced by 'current_violence_trend', 'seasonal_factors', 'socioeconomic_conditions', 'political_stability_and_governance', and 'external_influences'. The migratory patterns of seabirds do not directly or indirectly impact any of these nodes in a way that would significantly alter the projection of 'expected_future_violence' or the 'threshold_level'. Therefore, the probability estimate is only marginally decreased due to the lack of a relevant connection to the established causal network.",
+      "raw_response": "{\n  \"updated_probability\": 0.34,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about migratory seabird patterns is tangential to the core drivers of violence in Mayotte. The causal paths leading to the 'outcome' node are primarily influenced by 'current_violence_trend', 'seasonal_factors', 'socioeconomic_conditions', 'political_stability_and_governance', and 'external_influences'. The migratory patterns of seabirds do not directly or indirectly impact any of these nodes in a way that would significantly alter the projection of 'expected_future_violence' or the 'threshold_level'. Therefore, the probability estimate is only marginally decreased due to the lack of a relevant connection to the established causal network.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "5a5dd6f530b482865f37a6aaf52048dd38c69a777464ca020f6a8fd1d0c35a25",
+    "question_text": "Will there be more than ten times as many 'Violence against civilians' in Mayotte for the 30 days before 2025-12-28 compared to one plus the 30-day average of 'Violence against civilians' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Violence against civilians'\n2023-11-11,1\n2023-10-10,2\nto calculate one plus the 30-day average of 'Violence against civilians' over the preceding 360 days, we’d have: 1+(1+2)/12=1.25.\n\nIn this example, for the question to resolve positively, 13 (10 x 1.25) or more 'Violence against civilians' would need to occur in the 30 days leading up to the resolution.",
+    "source": "acled",
+    "condition": "one-turn",
+    "initial_probability": 0.35,
+    "n_probes": 20,
+    "n_successful": 19,
+    "mean_absolute_shift": 0.12421052631578947,
+    "max_absolute_shift": 0.30000000000000004
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 1,
+  "aggregate_metrics": {
+    "ssr": 2.491694352159469,
+    "mean_shift_high": 0.17857142857142858,
+    "mean_shift_low": 0.07166666666666666,
+    "asymmetry_index": 0.44571428571428545,
+    "mean_shift_negate": 0.09285714285714283,
+    "mean_shift_strengthen": 0.2083333333333334,
+    "fnar": 0.6666666666666666,
+    "n_accepted": 2,
+    "n_spurious": 3,
+    "critical_path_premium": 0.0060256410256410015,
+    "mean_shift_on_path": 0.12833333333333333,
+    "mean_shift_off_path": 0.12230769230769233,
+    "importance_sensitivity_correlation": 0.11515151515151512,
+    "control_sensitivity": 0
+  }
+}

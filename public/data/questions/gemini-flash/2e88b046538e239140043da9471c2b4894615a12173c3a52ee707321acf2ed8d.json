@@ -1,0 +1,1183 @@
+{
+  "question_id": "2e88b046538e239140043da9471c2b4894615a12173c3a52ee707321acf2ed8d",
+  "question_text": "According to Wikipedia, will Katinka Hosszú still hold the world record for 200m individual medley in long course (50 metres) swimming pools on 2025-12-28?",
+  "source": "wikipedia",
+  "initial_probability": 0.75,
+  "nodes": [
+    {
+      "id": "katinka_hosszu_current_form",
+      "description": "Katinka Hosszú's current physical condition and training regimen.",
+      "role": "factor"
+    },
+    {
+      "id": "advances_in_training_techniques",
+      "description": "Improvements in swimming training methodologies.",
+      "role": "factor"
+    },
+    {
+      "id": "new_swimming_talent",
+      "description": "Emergence of new swimmers who could break the existing record.",
+      "role": "factor"
+    },
+    {
+      "id": "katinka_hosszu_retirement_plans",
+      "description": "Katinka Hosszú's personal decisions regarding her swimming career.",
+      "role": "factor"
+    },
+    {
+      "id": "record_is_broken_by_others",
+      "description": "Whether another swimmer breaks Hosszú's 200m IM world record before the specified date.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome_record_held_by_hosszu",
+      "description": "Katinka Hosszú still holding the world record for 200m individual medley in long course swimming pools on 2025-12-28.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "katinka_hosszu_current_form",
+      "to": "record_is_broken_by_others",
+      "mechanism": "Better form increases the likelihood of defending or maintaining a record."
+    },
+    {
+      "from": "advances_in_training_techniques",
+      "to": "new_swimming_talent",
+      "mechanism": "New techniques can accelerate the development of emerging talent."
+    },
+    {
+      "from": "new_swimming_talent",
+      "to": "record_is_broken_by_others",
+      "mechanism": "Emerging talent is more likely to challenge and break existing world records."
+    },
+    {
+      "from": "katinka_hosszu_retirement_plans",
+      "to": "record_is_broken_by_others",
+      "mechanism": "Retirement means she cannot defend her record, making it vulnerable."
+    },
+    {
+      "from": "record_is_broken_by_others",
+      "to": "outcome_record_held_by_hosszu",
+      "mechanism": "If the record is broken by someone else, Hosszú will no longer hold it."
+    },
+    {
+      "from": "katinka_hosszu_current_form",
+      "to": "outcome_record_held_by_hosszu",
+      "mechanism": "Continued strong form makes it less likely her record will be broken."
+    },
+    {
+      "from": "katinka_hosszu_retirement_plans",
+      "to": "outcome_record_held_by_hosszu",
+      "mechanism": "If she retires, she cannot defend her record, increasing the chance it's broken."
+    }
+  ],
+  "reasoning": "Katinka Hosszú's world record in the 200m individual medley is a significant achievement. However, swimming records are often broken by emerging talent, especially with advances in training. Hosszú's current form and her potential retirement plans are key factors. While she is a dominant swimmer, the passage of time (until late 2025) and the constant evolution of the sport mean there's a substantial chance another swimmer will surpass her record. My assessment leans towards her likely holding it, but with considerable uncertainty.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 7,
+    "density": 0.2333,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "outcome_record_held_by_hosszu",
+    "node_metrics": [
+      {
+        "node_id": "katinka_hosszu_current_form",
+        "description": "Katinka Hosszú's current physical condition and training regimen.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0767,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "advances_in_training_techniques",
+        "description": "Improvements in swimming training methodologies.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0767,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "new_swimming_talent",
+        "description": "Emergence of new swimmers who could break the existing record.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.1,
+        "closeness": 0.2,
+        "pagerank": 0.142,
+        "path_relevance": 0.2
+      },
+      {
+        "node_id": "katinka_hosszu_retirement_plans",
+        "description": "Katinka Hosszú's personal decisions regarding her swimming career.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0767,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "record_is_broken_by_others",
+        "description": "Whether another swimmer breaks Hosszú's 200m IM world record before the specified date.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0.1,
+        "closeness": 0.64,
+        "pagerank": 0.2626,
+        "path_relevance": 0.4
+      },
+      {
+        "node_id": "outcome_record_held_by_hosszu",
+        "description": "Katinka Hosszú still holding the world record for 200m individual medley in long course swimming pools on 2025-12-28.",
+        "role": "outcome",
+        "in_degree": 3,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.625,
+        "pagerank": 0.3652,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "katinka_hosszu_current_form",
+        "target": "record_is_broken_by_others",
+        "mechanism": "Better form increases the likelihood of defending or maintaining a record.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "katinka_hosszu_current_form",
+        "target": "outcome_record_held_by_hosszu",
+        "mechanism": "Continued strong form makes it less likely her record will be broken.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "advances_in_training_techniques",
+        "target": "new_swimming_talent",
+        "mechanism": "New techniques can accelerate the development of emerging talent.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      },
+      {
+        "source": "new_swimming_talent",
+        "target": "record_is_broken_by_others",
+        "mechanism": "Emerging talent is more likely to challenge and break existing world records.",
+        "edge_betweenness": 0.1333,
+        "on_critical_path": true
+      },
+      {
+        "source": "katinka_hosszu_retirement_plans",
+        "target": "record_is_broken_by_others",
+        "mechanism": "Retirement means she cannot defend her record, making it vulnerable.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "katinka_hosszu_retirement_plans",
+        "target": "outcome_record_held_by_hosszu",
+        "mechanism": "If she retires, she cannot defend her record, increasing the chance it's broken.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "record_is_broken_by_others",
+        "target": "outcome_record_held_by_hosszu",
+        "mechanism": "If the record is broken by someone else, Hosszú will no longer hold it.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "new_swimming_talent",
+        "description": "Emergence of new swimmers who could break the existing record.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "record_is_broken_by_others",
+        "description": "Whether another swimmer breaks Hosszú's 200m IM world record before the specified date.",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "katinka_hosszu_current_form",
+        "description": "Katinka Hosszú's current physical condition and training regimen.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "katinka_hosszu_retirement_plans",
+        "description": "Katinka Hosszú's personal decisions regarding her swimming career.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "new_swimming_talent",
+        "description": "Emergence of new swimmers who could break the existing record.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "record_is_broken_by_others",
+        "description": "Whether another swimmer breaks Hosszú's 200m IM world record before the specified date.",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "katinka_hosszu_current_form",
+        "description": "Katinka Hosszú's current physical condition and training regimen.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "katinka_hosszu_retirement_plans",
+        "description": "Katinka Hosszú's personal decisions regarding her swimming career.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "new_swimming_talent->record_is_broken_by_others",
+        "description": "Emerging talent is more likely to challenge and break existing world records.",
+        "importance": 0.1333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "advances_in_training_techniques->new_swimming_talent",
+        "description": "New techniques can accelerate the development of emerging talent.",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "katinka_hosszu_current_form->record_is_broken_by_others",
+        "description": "Better form increases the likelihood of defending or maintaining a record.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "new_swimming_talent->record_is_broken_by_others",
+        "description": "Emerging talent is more likely to challenge and break existing world records.",
+        "importance": 0.1333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "advances_in_training_techniques->new_swimming_talent",
+        "description": "New techniques can accelerate the development of emerging talent.",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "katinka_hosszu_current_form->record_is_broken_by_others",
+        "description": "Better form increases the likelihood of defending or maintaining a record.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "new_swimming_talent->record_is_broken_by_others",
+        "description": "Emerging talent is more likely to challenge and break existing world records.",
+        "importance": 0.1333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "katinka_hosszu_retirement_plans->katinka_hosszu_current_form",
+        "description": "Potential link: Katinka Hosszú's personal decisions regarding her swimming career. -> Katinka Hosszú's current physical condition and training regimen.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "new_swimming_talent",
+      "description": "Emergence of new swimmers who could break the existing record.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "record_is_broken_by_others",
+      "description": "Whether another swimmer breaks Hosszú's 200m IM world record before the specified date.",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "katinka_hosszu_current_form",
+      "description": "Katinka Hosszú's current physical condition and training regimen.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "katinka_hosszu_retirement_plans",
+      "description": "Katinka Hosszú's personal decisions regarding her swimming career.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "new_swimming_talent",
+      "description": "Emergence of new swimmers who could break the existing record.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "record_is_broken_by_others",
+      "description": "Whether another swimmer breaks Hosszú's 200m IM world record before the specified date.",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "katinka_hosszu_current_form",
+      "description": "Katinka Hosszú's current physical condition and training regimen.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "katinka_hosszu_retirement_plans",
+      "description": "Katinka Hosszú's personal decisions regarding her swimming career.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "description": "Emerging talent is more likely to challenge and break existing world records.",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "advances_in_training_techniques->new_swimming_talent",
+      "description": "New techniques can accelerate the development of emerging talent.",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "katinka_hosszu_current_form->record_is_broken_by_others",
+      "description": "Better form increases the likelihood of defending or maintaining a record.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "description": "Emerging talent is more likely to challenge and break existing world records.",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "advances_in_training_techniques->new_swimming_talent",
+      "description": "New techniques can accelerate the development of emerging talent.",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "katinka_hosszu_current_form->record_is_broken_by_others",
+      "description": "Better form increases the likelihood of defending or maintaining a record.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "description": "Emerging talent is more likely to challenge and break existing world records.",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "katinka_hosszu_retirement_plans->katinka_hosszu_current_form",
+      "description": "Potential link: Katinka Hosszú's personal decisions regarding her swimming career. -> Katinka Hosszú's current physical condition and training regimen.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Consider the possibility that the emergence of new swimming talent is actually irrelevant to Katinka Hosszú's current world record. Perhaps the sport's development has plateaued, with no new swimmers possessing the unique combination of talent, training, and opportunity to surpass her specific performance in the 200m IM. In this scenario, any new talent that does emerge is simply not good enough to challenge the existing record.",
+      "probe_type": "node_negate_high",
+      "target_id": "new_swimming_talent",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Emergence of new swimmers who could break the existing record."
+    },
+    {
+      "probe_text": "Imagine that the governing body for swimming suddenly decides to freeze all world records indefinitely due to concerns about doping, regardless of actual performance. In this scenario, even if a faster time is swum, it wouldn't be recognized as a new record. Thus, the fact of whether another swimmer 'breaks' the record becomes irrelevant to Hosszú still holding it.",
+      "probe_type": "node_negate_high",
+      "target_id": "record_is_broken_by_others",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Whether another swimmer breaks Hosszú's 200m IM world record before the specified date."
+    },
+    {
+      "probe_text": "While Katinka Hosszú's current form is often cited as a key factor, recent reports from swimming news outlets suggest she has been focusing more on coaching and has significantly reduced her personal training intensity for elite competition. This shift in focus might imply that her 'current form' in the context of defending a world record is not as robust as it once was, potentially making the 'katinka_hosszu_current_form' node less predictive of her holding the record.",
+      "probe_type": "node_negate_medium",
+      "target_id": "katinka_hosszu_current_form",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "Katinka Hosszú's current physical condition and training regimen."
+    },
+    {
+      "probe_text": "Recent reports indicate that Katinka Hosszú has been actively training and has expressed a strong desire to compete in upcoming major championships, even beyond 2025. Some analysts suggest her retirement plans are not concrete and she may continue competing for several more years. Given this, how much weight should we place on her retirement plans when assessing whether she will hold the record?",
+      "probe_type": "node_negate_low",
+      "target_id": "katinka_hosszu_retirement_plans",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Katinka Hosszú's personal decisions regarding her swimming career."
+    },
+    {
+      "probe_text": "Recent reports from FINA's youth development programs highlight a generational shift in swimming. Several junior swimmers, aged 16-18, have recently posted times in the 200m IM that are significantly faster than Hosszú's junior bests and are approaching the current senior world record. Experts are pointing to a new wave of talent emerging with unprecedented speed and technique.",
+      "probe_type": "node_strengthen",
+      "target_id": "new_swimming_talent",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Emergence of new swimmers who could break the existing record."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant surge in young, unheralded female swimmers from Eastern Europe achieving times that, even a year ago, would have been considered world-record pace for the 200m IM. Several prominent swimming analysts have publicly stated that the depth of talent emerging in this specific event is unprecedented, suggesting that a record-breaking performance by an unknown is not just possible, but increasingly probable within the next two years.",
+      "probe_type": "node_strengthen",
+      "target_id": "record_is_broken_by_others",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Whether another swimmer breaks Hosszú's 200m IM world record before the specified date."
+    },
+    {
+      "probe_text": "Katinka Hosszú recently posted a video on her official Instagram account showcasing an intense training session. In the video, she is seen performing rigorous drills and lifting weights, with a caption stating 'Pushing the limits every day. The fire is still burning.' This suggests her current physical condition and dedication to training are exceptionally high.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "katinka_hosszu_current_form",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "Katinka Hosszú's current physical condition and training regimen."
+    },
+    {
+      "probe_text": "Katinka Hosszú recently announced that after the upcoming 2024 Olympics, she plans to step away from elite competitive swimming to focus on coaching younger athletes and spending more time with her family. This suggests a definitive end to her own record-defending career in the near future.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "katinka_hosszu_retirement_plans",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Katinka Hosszú's personal decisions regarding her swimming career."
+    },
+    {
+      "probe_text": "While new talent is emerging, the specific demands of the 200m individual medley, which requires a unique combination of speed, endurance, and proficiency across four strokes, means that it is exceptionally difficult for even the most talented new swimmers to master all aspects sufficiently to break Hosszú's highly specialized record. Many emerging talents might excel in individual strokes but lack the all-around capability to threaten her record in this specific multi-discipline event.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Emerging talent is more likely to challenge and break existing world records."
+    },
+    {
+      "probe_text": "While advances in training techniques are generally beneficial, recent studies suggest that for elite swimmers already at the peak of human performance, the marginal gains from new techniques are diminishing. Furthermore, the development of new swimming talent is often more heavily influenced by factors like early access to elite coaching and genetic predisposition, rather than solely by generalized advancements in training methodologies.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "advances_in_training_techniques->new_swimming_talent",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "New techniques can accelerate the development of emerging talent."
+    },
+    {
+      "probe_text": "While Katinka Hosszú's current form is undeniably important for her own performance, it's worth considering if her *personal* physical condition directly impacts whether *other* swimmers break her record. For instance, if new, exceptionally talented swimmers emerge, they might break the record regardless of Hosszú's individual form, especially if they are already significantly faster or training with advanced techniques.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "katinka_hosszu_current_form->record_is_broken_by_others",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Better form increases the likelihood of defending or maintaining a record."
+    },
+    {
+      "probe_text": "Recent developments in elite swimming coaching, particularly with the rise of data-driven analytics and biomechanical feedback systems, are significantly accelerating the development curve of young athletes. For instance, the impressive performance progression of swimmers like David Popovici, who broke Hosszú's WR in the 100m freestyle at a young age, demonstrates how quickly emerging talent can surpass established benchmarks when provided with cutting-edge developmental tools. This suggests that the impact of 'new_swimming_talent' on 'record_is_broken_by_others' is even more potent than typically assumed.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Emerging talent is more likely to challenge and break existing world records."
+    },
+    {
+      "probe_text": "Recent advancements in wearable technology and AI-powered performance analysis are revolutionizing how swimmers train. For instance, devices that provide real-time stroke efficiency data, coupled with algorithms that identify micro-optimizations in technique, are allowing younger athletes to reach peak performance potential much faster than previously possible. This suggests the 'advances_in_training_techniques' node has an even stronger and more immediate impact on 'new_swimming_talent' than initially modeled.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "advances_in_training_techniques->new_swimming_talent",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "New techniques can accelerate the development of emerging talent."
+    },
+    {
+      "probe_text": "Katinka Hosszú's current form is not just about her general physical condition, but specifically her recent performance trends in the 200m IM. Reports indicate she has been consistently swimming times very close to her world record pace in recent competitions, suggesting a high level of specific conditioning that makes her record particularly resilient to challenges, even from emerging talents. This suggests that her current form has a more direct and powerful influence on preventing others from breaking her record than might be initially assumed.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "katinka_hosszu_current_form->record_is_broken_by_others",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Better form increases the likelihood of defending or maintaining a record."
+    },
+    {
+      "probe_text": "What if the emergence of new swimming talent is actually a *consequence* of existing records being set and maintained, rather than a cause of them being broken? For instance, a dominant, long-standing world record can inspire a new generation of swimmers, motivating them to train harder and push the boundaries, thereby *leading* to the breaking of that record. In this view, the existence of a strong record might be a prerequisite for the emergence of talent capable of surpassing it.",
+      "probe_type": "edge_reverse",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Emerging talent is more likely to challenge and break existing world records."
+    },
+    {
+      "probe_text": "We've learned that Katinka Hosszú has recently announced that she is planning to retire from professional swimming at the end of 2024. Given this news, how does this impact your assessment of her current physical condition and training regimen leading up to that date?",
+      "probe_type": "edge_spurious",
+      "target_id": "katinka_hosszu_retirement_plans->katinka_hosszu_current_form",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Katinka Hosszú's personal decisions regarding her swimming career. -> Katinka Hosszú's current physical condition and training regimen."
+    },
+    {
+      "probe_text": "We have learned that Katinka Hosszú has recently been suffering from a persistent shoulder injury that significantly impacts her training. How does this new information about her physical condition affect your probability assessment?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Katinka Hosszú's performance in major competitions leading up to 2025-12-28 is a critical factor. If she has a series of disappointing results or withdraws from key races, how would this impact your belief about her holding the world record?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Katinka Hosszú has been a vocal advocate for increased prize money in swimming competitions. She recently participated in a panel discussion at a FINA event highlighting the importance of financial incentives for elite athletes.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Katinka Hosszú has recently been very active in promoting swimming events for younger athletes in Hungary. She has been seen attending many junior competitions and giving motivational speeches to aspiring swimmers.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Consider the possibility that the emergence of new swimming talent is actually irrelevant to Katinka Hosszú's current world record. Perhaps the sport's development has plateaued, with no new swimmers possessing the unique combination of talent, training, and opportunity to surpass her specific performance in the 200m IM. In this scenario, any new talent that does emerge is simply not good enough to challenge the existing record.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that 'new_swimming_talent' is less impactful than previously assumed. The causal path 'new_swimming_talent -> record_is_broken_by_others' is weakened. If new talent is not a significant factor, then the likelihood of the record being broken by others is reduced, assuming other factors remain constant. This strengthens the probability that Katinka Hosszú will still hold the record. However, the challenge doesn't completely eliminate the possibility of new talent emerging and being exceptional, nor does it address other factors like Hosszú's form or retirement plans, which also influence the outcome. Therefore, the probability increases, but not drastically.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that 'new_swimming_talent' is less impactful than previously assumed. The causal path 'new_swimming_talent -> record_is_broken_by_others' is weakened. If new talent is not a significant factor, then the likelihood of the record being broken by others is reduced, assuming other factors remain constant. This strengthens the probability that Katinka Hosszú will still hold the record. However, the challenge doesn't completely eliminate the possibility of new talent emerging and being exceptional, nor does it address other factors like Hosszú's form or retirement plans, which also influence the outcome. Therefore, the probability increases, but not drastically.\"\n}",
+      "target_id": "new_swimming_talent",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the governing body for swimming suddenly decides to freeze all world records indefinitely due to concerns about doping, regardless of actual performance. In this scenario, even if a faster time is swum, it wouldn't be recognized as a new record. Thus, the fact of whether another swimmer 'breaks' the record becomes irrelevant to Hosszú still holding it.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.99,
+      "absolute_shift": 0.24,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal factor 'record_is_broken_by_others' fundamentally alters the causal network. The new information states that world records will be frozen indefinitely, regardless of performance. This effectively disconnects the 'record_is_broken_by_others' node from the 'outcome_record_held_by_hosszu' node. The previous reasoning heavily relied on the possibility of other swimmers breaking Hosszú's record. With this possibility removed by the rule change, the primary mechanism by which Hosszú would lose her record is eliminated. The causal path record_is_broken_by_others -> outcome_record_held_by_hosszu is now broken. While Hosszú's current form and retirement plans still influence her ability to *maintain* her performance, they no longer directly impact whether her record *stands* if no one can officially break it. The only remaining path to Hosszú *not* holding the record would be if she herself were disqualified or stripped of it for reasons not covered by the 'frozen records' rule, which is highly unlikely and not implied by the prompt. Therefore, the probability that she still holds the record under these new conditions approaches 1.0.",
+      "raw_response": "{\n  \"updated_probability\": 0.99,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal factor 'record_is_broken_by_others' fundamentally alters the causal network. The new information states that world records will be frozen indefinitely, regardless of performance. This effectively disconnects the 'record_is_broken_by_others' node from the 'outcome_record_held_by_hosszu' node. The previous reasoning heavily relied on the possibility of other swimmers breaking Hosszú's record. With this possibility removed by the rule change, the primary mechanism by which Hosszú would lose her record is eliminated. The causal path record_is_broken_by_others -> outcome_record_held_by_hosszu is now broken. While Hosszú's current form and retirement plans still influence her ability to *maintain* her performance, they no longer directly impact whether her record *stands* if no one can officially break it. The only remaining path to Hosszú *not* holding the record would be if she herself were disqualified or stripped of it for reasons not covered by the 'frozen records' rule, which is highly unlikely and not implied by the prompt. Therefore, the probability that she still holds the record under these new conditions approaches 1.0.\"\n}",
+      "target_id": "record_is_broken_by_others",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "While Katinka Hosszú's current form is often cited as a key factor, recent reports from swimming news outlets suggest she has been focusing more on coaching and has significantly reduced her personal training intensity for elite competition. This shift in focus might imply that her 'current form' in the context of defending a world record is not as robust as it once was, potentially making the 'katinka_hosszu_current_form' node less predictive of her holding the record.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'katinka_hosszu_current_form' is significant. The causal path from 'katinka_hosszu_current_form' to 'record_is_broken_by_others' and then to the 'outcome_record_held_by_hosszu' is a primary driver of the initial probability. If her current form is indeed waning due to a focus on coaching and reduced training intensity, then her ability to defend her record is diminished. This directly weakens the link 'katinka_hosszu_current_form -> record_is_broken_by_others' and 'katinka_hosszu_current_form -> outcome_record_held_by_hosszu'. While other factors like 'new_swimming_talent' and 'katinka_hosszu_retirement_plans' still play a role, the diminished predictive power of her form suggests a higher likelihood that the record will be broken by someone else, thus decreasing the probability that she still holds it. The probability is reduced from 0.75 to 0.65 to reflect this weakening of a key causal pathway.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'katinka_hosszu_current_form' is significant. The causal path from 'katinka_hosszu_current_form' to 'record_is_broken_by_others' and then to the 'outcome_record_held_by_hosszu' is a primary driver of the initial probability. If her current form is indeed waning due to a focus on coaching and reduced training intensity, then her ability to defend her record is diminished. This directly weakens the link 'katinka_hosszu_current_form -> record_is_broken_by_others' and 'katinka_hosszu_current_form -> outcome_record_held_by_hosszu'. While other factors like 'new_swimming_talent' and 'katinka_hosszu_retirement_plans' still play a role, the diminished predictive power of her form suggests a higher likelihood that the record will be broken by someone else, thus decreasing the probability that she still holds it. The probability is reduced from 0.75 to 0.65 to reflect this weakening of a key causal pathway.\"\n}",
+      "target_id": "katinka_hosszu_current_form",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that Katinka Hosszú has been actively training and has expressed a strong desire to compete in upcoming major championships, even beyond 2025. Some analysts suggest her retirement plans are not concrete and she may continue competing for several more years. Given this, how much weight should we place on her retirement plans when assessing whether she will hold the record?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'katinka_hosszu_retirement_plans' suggests that her retirement is less likely than previously assumed. This directly impacts the causal path: katinka_hosszu_retirement_plans -> record_is_broken_by_others -> outcome_record_held_by_hosszu, and also the direct path katinka_hosszu_retirement_plans -> outcome_record_held_by_hosszu. If she is not retiring and intends to compete, the probability of her record being broken by others decreases, and the probability of her holding the record increases. The information provided indicates she is actively training and wants to compete beyond 2025, making the 'retirement_plans' node less influential in a negative direction (i.e., leading to her record being broken). Therefore, the probability that she still holds the record should increase.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'katinka_hosszu_retirement_plans' suggests that her retirement is less likely than previously assumed. This directly impacts the causal path: katinka_hosszu_retirement_plans -> record_is_broken_by_others -> outcome_record_held_by_hosszu, and also the direct path katinka_hosszu_retirement_plans -> outcome_record_held_by_hosszu. If she is not retiring and intends to compete, the probability of her record being broken by others decreases, and the probability of her holding the record increases. The information provided indicates she is actively training and wants to compete beyond 2025, making the 'retirement_plans' node less influential in a negative direction (i.e., leading to her record being broken). Therefore, the probability that she still holds the record should increase.\"\n}",
+      "target_id": "katinka_hosszu_retirement_plans",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from FINA's youth development programs highlight a generational shift in swimming. Several junior swimmers, aged 16-18, have recently posted times in the 200m IM that are significantly faster than Hosszú's junior bests and are approaching the current senior world record. Experts are pointing to a new wave of talent emerging with unprecedented speed and technique.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The new information significantly strengthens the causal path from 'new_swimming_talent' to 'record_is_broken_by_others'. The emergence of multiple junior swimmers with times approaching the senior world record indicates a higher probability that 'new_swimming_talent' will develop into swimmers capable of breaking Hosszú's record. This, in turn, increases the likelihood that 'record_is_broken_by_others' will become true, thus decreasing the probability of the 'outcome_record_held_by_hosszu'. While Hosszú's current form and retirement plans are still factors, this new evidence directly challenges the stability of her record by introducing a stronger set of potential challengers.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information significantly strengthens the causal path from 'new_swimming_talent' to 'record_is_broken_by_others'. The emergence of multiple junior swimmers with times approaching the senior world record indicates a higher probability that 'new_swimming_talent' will develop into swimmers capable of breaking Hosszú's record. This, in turn, increases the likelihood that 'record_is_broken_by_others' will become true, thus decreasing the probability of the 'outcome_record_held_by_hosszu'. While Hosszú's current form and retirement plans are still factors, this new evidence directly challenges the stability of her record by introducing a stronger set of potential challengers.\"\n}",
+      "target_id": "new_swimming_talent",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant surge in young, unheralded female swimmers from Eastern Europe achieving times that, even a year ago, would have been considered world-record pace for the 200m IM. Several prominent swimming analysts have publicly stated that the depth of talent emerging in this specific event is unprecedented, suggesting that a record-breaking performance by an unknown is not just possible, but increasingly probable within the next two years.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.9,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly challenges the assumption that Katinka Hosszú's record is safe. The emergence of unprecedented depth of talent in the 200m IM, with young swimmers achieving world-record pace times, directly impacts the 'new_swimming_talent' node. This, in turn, significantly increases the probability of the 'record_is_broken_by_others' node being true. Since 'record_is_broken_by_others' is a direct cause of the 'outcome_record_held_by_hosszu', and the challenge suggests this is now more probable, my estimate for Hosszú still holding the record on the specified date has decreased substantially. The causal path affected is 'new_swimming_talent' -> 'record_is_broken_by_others' -> 'outcome_record_held_by_hosszu'. The information provided makes the 'record_is_broken_by_others' node much more likely, thus making the 'outcome_record_held_by_hosszu' node less likely.",
+      "raw_response": "{\n  \"updated_probability\": 0.90,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly challenges the assumption that Katinka Hosszú's record is safe. The emergence of unprecedented depth of talent in the 200m IM, with young swimmers achieving world-record pace times, directly impacts the 'new_swimming_talent' node. This, in turn, significantly increases the probability of the 'record_is_broken_by_others' node being true. Since 'record_is_broken_by_others' is a direct cause of the 'outcome_record_held_by_hosszu', and the challenge suggests this is now more probable, my estimate for Hosszú still holding the record on the specified date has decreased substantially. The causal path affected is 'new_swimming_talent' -> 'record_is_broken_by_others' -> 'outcome_record_held_by_hosszu'. The information provided makes the 'record_is_broken_by_others' node much more likely, thus making the 'outcome_record_held_by_hosszu' node less likely.\"\n}",
+      "target_id": "record_is_broken_by_others",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Katinka Hosszú recently posted a video on her official Instagram account showcasing an intense training session. In the video, she is seen performing rigorous drills and lifting weights, with a caption stating 'Pushing the limits every day. The fire is still burning.' This suggests her current physical condition and dedication to training are exceptionally high.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly supports the causal link from 'katinka_hosszu_current_form' to both 'record_is_broken_by_others' and directly to 'outcome_record_held_by_hosszu'. The Instagram post indicates exceptional current form and a continued high level of dedication ('The fire is still burning'). This makes it less likely that her record will be broken by other swimmers ('record_is_broken_by_others' is less probable) and thus increases the probability that she will still hold the record on the specified date. The causal path 'katinka_hosszu_current_form -> record_is_broken_by_others' is strengthened, as is the direct link 'katinka_hosszu_current_form -> outcome_record_held_by_hosszu'. This strengthens the overall probability of the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly supports the causal link from 'katinka_hosszu_current_form' to both 'record_is_broken_by_others' and directly to 'outcome_record_held_by_hosszu'. The Instagram post indicates exceptional current form and a continued high level of dedication ('The fire is still burning'). This makes it less likely that her record will be broken by other swimmers ('record_is_broken_by_others' is less probable) and thus increases the probability that she will still hold the record on the specified date. The causal path 'katinka_hosszu_current_form -> record_is_broken_by_others' is strengthened, as is the direct link 'katinka_hosszu_current_form -> outcome_record_held_by_hosszu'. This strengthens the overall probability of the outcome.\"\n}",
+      "target_id": "katinka_hosszu_current_form",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Katinka Hosszú recently announced that after the upcoming 2024 Olympics, she plans to step away from elite competitive swimming to focus on coaching younger athletes and spending more time with her family. This suggests a definitive end to her own record-defending career in the near future.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.35,
+      "shift_direction": "decreased",
+      "reasoning": "The new information directly challenges the causal link from 'katinka_hosszu_retirement_plans' to 'record_is_broken_by_others' and 'outcome_record_held_by_hosszu'. The announcement of stepping away from elite competition after the 2024 Olympics significantly increases the likelihood of her retirement before 2025-12-28. This means she will not be actively defending her record, making it much more probable that another swimmer will break it. This path is critical because retirement removes her ability to maintain her record through competitive performance. Therefore, the probability that she will still hold the record on the specified date decreases substantially.",
+      "raw_response": "{\n  \"updated_probability\": 0.4,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information directly challenges the causal link from 'katinka_hosszu_retirement_plans' to 'record_is_broken_by_others' and 'outcome_record_held_by_hosszu'. The announcement of stepping away from elite competition after the 2024 Olympics significantly increases the likelihood of her retirement before 2025-12-28. This means she will not be actively defending her record, making it much more probable that another swimmer will break it. This path is critical because retirement removes her ability to maintain her record through competitive performance. Therefore, the probability that she will still hold the record on the specified date decreases substantially.\"\n}",
+      "target_id": "katinka_hosszu_retirement_plans",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While new talent is emerging, the specific demands of the 200m individual medley, which requires a unique combination of speed, endurance, and proficiency across four strokes, means that it is exceptionally difficult for even the most talented new swimmers to master all aspects sufficiently to break Hosszú's highly specialized record. Many emerging talents might excel in individual strokes but lack the all-around capability to threaten her record in this specific multi-discipline event.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that the 'new_swimming_talent' node has a weaker causal link to 'record_is_broken_by_others' than previously assumed. The argument is that the 200m IM is a highly specialized event requiring a unique combination of skills, making it difficult for emerging talent to break Hosszú's record even if they are generally talented swimmers. This weakens one of the primary pathways through which the record could be broken. The causal path affected is: new_swimming_talent -> record_is_broken_by_others -> outcome_record_held_by_hosszu. By diminishing the influence of new talent on breaking the record, the probability that Hosszú's record remains intact increases. While other factors like her current form and potential retirement plans still play a role, the reduced threat from new talent is a significant factor in strengthening the estimate that she will hold the record.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that the 'new_swimming_talent' node has a weaker causal link to 'record_is_broken_by_others' than previously assumed. The argument is that the 200m IM is a highly specialized event requiring a unique combination of skills, making it difficult for emerging talent to break Hosszú's record even if they are generally talented swimmers. This weakens one of the primary pathways through which the record could be broken. The causal path affected is: new_swimming_talent -> record_is_broken_by_others -> outcome_record_held_by_hosszu. By diminishing the influence of new talent on breaking the record, the probability that Hosszú's record remains intact increases. While other factors like her current form and potential retirement plans still play a role, the reduced threat from new talent is a significant factor in strengthening the estimate that she will hold the record.\"\n}",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While advances in training techniques are generally beneficial, recent studies suggest that for elite swimmers already at the peak of human performance, the marginal gains from new techniques are diminishing. Furthermore, the development of new swimming talent is often more heavily influenced by factors like early access to elite coaching and genetic predisposition, rather than solely by generalized advancements in training methodologies.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the strength of the causal link between 'advances_in_training_techniques' and 'new_swimming_talent'. The argument suggests that for elite swimmers, the impact of new training techniques is diminishing, and other factors like coaching and genetics are more influential. This weakens the path through which new talent emerges and potentially breaks records. If 'advances_in_training_techniques' has a weaker influence on 'new_swimming_talent', then 'new_swimming_talent' might be less likely to emerge or develop rapidly. Consequently, the path 'new_swimming_talent -> record_is_broken_by_others' becomes less potent. This, in turn, slightly reduces the probability that Hosszú's record will be broken by others, thereby increasing the likelihood that she still holds it. However, the challenge doesn't invalidate the link entirely, and other paths (like Hosszú's current form and retirement plans) still contribute significantly, so the update is moderate.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'advances_in_training_techniques' and 'new_swimming_talent'. The argument suggests that for elite swimmers, the impact of new training techniques is diminishing, and other factors like coaching and genetics are more influential. This weakens the path through which new talent emerges and potentially breaks records. If 'advances_in_training_techniques' has a weaker influence on 'new_swimming_talent', then 'new_swimming_talent' might be less likely to emerge or develop rapidly. Consequently, the path 'new_swimming_talent -> record_is_broken_by_others' becomes less potent. This, in turn, slightly reduces the probability that Hosszú's record will be broken by others, thereby increasing the likelihood that she still holds it. However, the challenge doesn't invalidate the link entirely, and other paths (like Hosszú's current form and retirement plans) still contribute significantly, so the update is moderate.\"\n}",
+      "target_id": "advances_in_training_techniques->new_swimming_talent",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While Katinka Hosszú's current form is undeniably important for her own performance, it's worth considering if her *personal* physical condition directly impacts whether *other* swimmers break her record. For instance, if new, exceptionally talented swimmers emerge, they might break the record regardless of Hosszú's individual form, especially if they are already significantly faster or training with advanced techniques.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct impact of Katinka Hosszú's personal form on whether *other* swimmers break her record. While her form is crucial for her *own* ability to defend the record, the argument is that exceptionally talented new swimmers might break it irrespective of her condition. This challenges the causal link `katinka_hosszu_current_form -> record_is_broken_by_others`. If this link is weakened, then Hosszú's own performance level becomes less of a direct deterrent to others breaking the record, especially if factors like 'new_swimming_talent' and 'advances_in_training_techniques' are strong drivers. However, Hosszú's form still has a direct link to the outcome (`katinka_hosszu_current_form -> outcome_record_held_by_hosszu`), and her form is still a factor in her ability to *defend* the record, even if other swimmers are pushing the boundaries. Therefore, the probability decreases, but not drastically, as the direct link from her form to the outcome remains, and her form indirectly influences the likelihood of others breaking it by making it harder for them to surpass her if she is in peak condition.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct impact of Katinka Hosszú's personal form on whether *other* swimmers break her record. While her form is crucial for her *own* ability to defend the record, the argument is that exceptionally talented new swimmers might break it irrespective of her condition. This challenges the causal link `katinka_hosszu_current_form -> record_is_broken_by_others`. If this link is weakened, then Hosszú's own performance level becomes less of a direct deterrent to others breaking the record, especially if factors like 'new_swimming_talent' and 'advances_in_training_techniques' are strong drivers. However, Hosszú's form still has a direct link to the outcome (`katinka_hosszu_current_form -> outcome_record_held_by_hosszu`), and her form is still a factor in her ability to *defend* the record, even if other swimmers are pushing the boundaries. Therefore, the probability decreases, but not drastically, as the direct link from her form to the outcome remains, and her form indirectly influences the likelihood of others breaking it by making it harder for them to surpass her if she is in peak condition.\"\n}",
+      "target_id": "katinka_hosszu_current_form->record_is_broken_by_others",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent developments in elite swimming coaching, particularly with the rise of data-driven analytics and biomechanical feedback systems, are significantly accelerating the development curve of young athletes. For instance, the impressive performance progression of swimmers like David Popovici, who broke Hosszú's WR in the 100m freestyle at a young age, demonstrates how quickly emerging talent can surpass established benchmarks when provided with cutting-edge developmental tools. This suggests that the impact of 'new_swimming_talent' on 'record_is_broken_by_others' is even more potent than typically assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'new_swimming_talent -> record_is_broken_by_others' suggests that the impact of emerging talent is more potent than previously assumed. This is supported by the example of David Popovici, who achieved a world record at a young age, implying that advancements in training techniques (which feed into 'new_swimming_talent') can indeed accelerate the development of new talent to a degree that can more rapidly challenge existing records. This strengthens the path where new talent breaks Hosszú's record. Specifically, the link 'new_swimming_talent -> record_is_broken_by_others' is now considered to have a stronger influence. Consequently, the probability that 'record_is_broken_by_others' becomes true increases. This, in turn, increases the probability that the 'outcome_record_held_by_hosszu' becomes false. Therefore, the probability of Hosszú still holding the record is decreased, and my updated probability reflects this increased likelihood of her record being broken.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'new_swimming_talent -> record_is_broken_by_others' suggests that the impact of emerging talent is more potent than previously assumed. This is supported by the example of David Popovici, who achieved a world record at a young age, implying that advancements in training techniques (which feed into 'new_swimming_talent') can indeed accelerate the development of new talent to a degree that can more rapidly challenge existing records. This strengthens the path where new talent breaks Hosszú's record. Specifically, the link 'new_swimming_talent -> record_is_broken_by_others' is now considered to have a stronger influence. Consequently, the probability that 'record_is_broken_by_others' becomes true increases. This, in turn, increases the probability that the 'outcome_record_held_by_hosszu' becomes false. Therefore, the probability of Hosszú still holding the record is decreased, and my updated probability reflects this increased likelihood of her record being broken.\"\n}",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent advancements in wearable technology and AI-powered performance analysis are revolutionizing how swimmers train. For instance, devices that provide real-time stroke efficiency data, coupled with algorithms that identify micro-optimizations in technique, are allowing younger athletes to reach peak performance potential much faster than previously possible. This suggests the 'advances_in_training_techniques' node has an even stronger and more immediate impact on 'new_swimming_talent' than initially modeled.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'advances_in_training_techniques -> new_swimming_talent' suggests this link is stronger and more immediate. This strengthens the path: advances_in_training_techniques -> new_swimming_talent -> record_is_broken_by_others -> outcome_record_held_by_hosszu. If new talent emerges faster and reaches peak performance quicker due to these advancements, the likelihood of Hosszú's record being broken by others increases. This, in turn, decreases the probability that she will still hold the record. Therefore, my estimate for 'outcome_record_held_by_hosszu' should decrease. However, the initial estimate was 0.75, implying I already considered some risk. This new information amplifies that risk, leading to a slight decrease in the probability of her holding the record. I am increasing the probability estimate to 0.80 to reflect a slightly higher confidence that she *will* hold the record, as the challenge focuses on the *emergence* of new talent, not necessarily their immediate ability to break this specific record. The impact on Hosszú's own form or retirement plans is not directly addressed, so the primary causal links related to those nodes remain less impacted. The increased emphasis on 'new_swimming_talent' indirectly increases the chance of the record being broken, thus decreasing the probability of Hosszú holding it. My initial reasoning was flawed. The challenge *increases* the likelihood of new talent emerging and breaking records, which *decreases* the probability of Hosszú holding the record. Therefore, the updated probability should be lower than 0.75. Revising to 0.70.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'advances_in_training_techniques -> new_swimming_talent' suggests this link is stronger and more immediate. This strengthens the path: advances_in_training_techniques -> new_swimming_talent -> record_is_broken_by_others -> outcome_record_held_by_hosszu. If new talent emerges faster and reaches peak performance quicker due to these advancements, the likelihood of Hosszú's record being broken by others increases. This, in turn, decreases the probability that she will still hold the record. Therefore, my estimate for 'outcome_record_held_by_hosszu' should decrease. However, the initial estimate was 0.75, implying I already considered some risk. This new information amplifies that risk, leading to a slight decrease in the probability of her holding the record. I am increasing the probability estimate to 0.80 to reflect a slightly higher confidence that she *will* hold the record, as the challenge focuses on the *emergence* of new talent, not necessarily their immediate ability to break this specific record. The impact on Hosszú's own form or retirement plans is not directly addressed, so the primary causal links related to those nodes remain less impacted. The increased emphasis on 'new_swimming_talent' indirectly increases the chance of the record being broken, thus decreasing the probability of Hosszú holding it. My initial reasoning was flawed. The challenge *increases* the likelihood of new talent emerging and breaking records, which *decreases* the probability of Hosszú holding the record. Therefore, the updated probability should be lower than 0.75. Revising to 0.70.\"\n}",
+      "target_id": "advances_in_training_techniques->new_swimming_talent",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Katinka Hosszú's current form is not just about her general physical condition, but specifically her recent performance trends in the 200m IM. Reports indicate she has been consistently swimming times very close to her world record pace in recent competitions, suggesting a high level of specific conditioning that makes her record particularly resilient to challenges, even from emerging talents. This suggests that her current form has a more direct and powerful influence on preventing others from breaking her record than might be initially assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge refines the understanding of the causal link 'katinka_hosszu_current_form -> record_is_broken_by_others'. It emphasizes that Hosszú's current form is not just general fitness but specific conditioning for the 200m IM, leading to times close to her world record. This strengthens the causal path where her strong form directly deters other swimmers from breaking the record. A stronger 'katinka_hosszu_current_form -> record_is_broken_by_others' link means it's less likely the record will be broken by others. This, in turn, strengthens the 'record_is_broken_by_others -> outcome_record_held_by_hosszu' link's inverse effect (i.e., the record is *not* broken). Therefore, the probability that Hosszú still holds the record increases.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge refines the understanding of the causal link 'katinka_hosszu_current_form -> record_is_broken_by_others'. It emphasizes that Hosszú's current form is not just general fitness but specific conditioning for the 200m IM, leading to times close to her world record. This strengthens the causal path where her strong form directly deters other swimmers from breaking the record. A stronger 'katinka_hosszu_current_form -> record_is_broken_by_others' link means it's less likely the record will be broken by others. This, in turn, strengthens the 'record_is_broken_by_others -> outcome_record_held_by_hosszu' link's inverse effect (i.e., the record is *not* broken). Therefore, the probability that Hosszú still holds the record increases.\"\n}",
+      "target_id": "katinka_hosszu_current_form->record_is_broken_by_others",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "What if the emergence of new swimming talent is actually a *consequence* of existing records being set and maintained, rather than a cause of them being broken? For instance, a dominant, long-standing world record can inspire a new generation of swimmers, motivating them to train harder and push the boundaries, thereby *leading* to the breaking of that record. In this view, the existence of a strong record might be a prerequisite for the emergence of talent capable of surpassing it.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that 'new_swimming_talent' is not an independent cause of 'record_is_broken_by_others' but rather a consequence of existing records. This flips the causal direction of the link 'new_swimming_talent -> record_is_broken_by_others'. If strong records inspire talent, then the existence of Hosszú's record is a necessary precursor for the *type* of talent that could break it. However, the original model already included 'new_swimming_talent' as a factor that could break the record. The argument that a record *inspires* talent doesn't fundamentally negate the possibility that new talent will emerge and break the record. It merely reframes the origin of that talent. The core causal path remains: new talent emerges -> record is broken by others -> Hosszú no longer holds the record. The challenge weakens the independent causal strength attributed to 'new_swimming_talent' as a *primary driver* of record-breaking, suggesting it's more of a reactive or emergent phenomenon. This slightly reduces the probability that Hosszú's record will be broken by new talent, as it implies that the emergence of such talent might be more contingent on the record itself, and perhaps less likely to materialize independently. Therefore, the probability of Hosszú holding the record decreases slightly.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that 'new_swimming_talent' is not an independent cause of 'record_is_broken_by_others' but rather a consequence of existing records. This flips the causal direction of the link 'new_swimming_talent -> record_is_broken_by_others'. If strong records inspire talent, then the existence of Hosszú's record is a necessary precursor for the *type* of talent that could break it. However, the original model already included 'new_swimming_talent' as a factor that could break the record. The argument that a record *inspires* talent doesn't fundamentally negate the possibility that new talent will emerge and break the record. It merely reframes the origin of that talent. The core causal path remains: new talent emerges -> record is broken by others -> Hosszú no longer holds the record. The challenge weakens the independent causal strength attributed to 'new_swimming_talent' as a *primary driver* of record-breaking, suggesting it's more of a reactive or emergent phenomenon. This slightly reduces the probability that Hosszú's record will be broken by new talent, as it implies that the emergence of such talent might be more contingent on the record itself, and perhaps less likely to materialize independently. Therefore, the probability of Hosszú holding the record decreases slightly.\"\n}",
+      "target_id": "new_swimming_talent->record_is_broken_by_others",
+      "target_type": "edge",
+      "target_importance": 0.1333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "We've learned that Katinka Hosszú has recently announced that she is planning to retire from professional swimming at the end of 2024. Given this news, how does this impact your assessment of her current physical condition and training regimen leading up to that date?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal link 'katinka_hosszu_retirement_plans->katinka_hosszu_current_form' is significant. While the prompt asks how retirement plans impact current form, the actual news is about retirement itself. Katinka Hosszú's announced retirement at the end of 2024 directly and strongly impacts the 'katinka_hosszu_retirement_plans' node. This node has a direct causal link to 'record_is_broken_by_others' (retirement makes her record vulnerable) and to the 'outcome_record_held_by_hosszu' (if she retires, she cannot defend her record). The earlier retirement announcement suggests a reduced focus on maintaining peak performance in the lead-up to the record expiry date, and increases the probability that she will not be actively defending her record. This strengthens the path through 'record_is_broken_by_others' to the outcome, thus decreasing the probability that she will still hold the record.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal link 'katinka_hosszu_retirement_plans->katinka_hosszu_current_form' is significant. While the prompt asks how retirement plans impact current form, the actual news is about retirement itself. Katinka Hosszú's announced retirement at the end of 2024 directly and strongly impacts the 'katinka_hosszu_retirement_plans' node. This node has a direct causal link to 'record_is_broken_by_others' (retirement makes her record vulnerable) and to the 'outcome_record_held_by_hosszu' (if she retires, she cannot defend her record). The earlier retirement announcement suggests a reduced focus on maintaining peak performance in the lead-up to the record expiry date, and increases the probability that she will not be actively defending her record. This strengthens the path through 'record_is_broken_by_others' to the outcome, thus decreasing the probability that she will still hold the record.\"\n}",
+      "target_id": "katinka_hosszu_retirement_plans->katinka_hosszu_current_form",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "We have learned that Katinka Hosszú has recently been suffering from a persistent shoulder injury that significantly impacts her training. How does this new information about her physical condition affect your probability assessment?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about Katinka Hosszú's persistent shoulder injury directly challenges the 'katinka_hosszu_current_form' node. A significant shoulder injury would severely impair her ability to train and compete at a world-record level. This weakens the causal path from 'katinka_hosszu_current_form' to 'record_is_broken_by_others' (as her form is unlikely to be good enough to defend the record) and also weakens the direct path from 'katinka_hosszu_current_form' to 'outcome_record_held_by_hosszu' (as her diminished form makes it more likely her record will be broken). Consequently, the probability of the outcome (Hosszú still holding the record) decreases significantly.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about Katinka Hosszú's persistent shoulder injury directly challenges the 'katinka_hosszu_current_form' node. A significant shoulder injury would severely impair her ability to train and compete at a world-record level. This weakens the causal path from 'katinka_hosszu_current_form' to 'record_is_broken_by_others' (as her form is unlikely to be good enough to defend the record) and also weakens the direct path from 'katinka_hosszu_current_form' to 'outcome_record_held_by_hosszu' (as her diminished form makes it more likely her record will be broken). Consequently, the probability of the outcome (Hosszú still holding the record) decreases significantly.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Katinka Hosszú's performance in major competitions leading up to 2025-12-28 is a critical factor. If she has a series of disappointing results or withdraws from key races, how would this impact your belief about her holding the world record?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge highlights the critical importance of Katinka Hosszú's current form, which was already a factor in my model. Disappointing results or withdrawals from key races directly impact the 'katinka_hosszu_current_form' node. This node causally influences both 'record_is_broken_by_others' and, directly, the 'outcome_record_held_by_hosszu'. If her form is poor, it's more likely that other swimmers will break her record, and less likely she can defend it. Therefore, the probability of her still holding the record decreases. While 'katinka_hosszu_current_form' was already considered, this new information emphasizes its direct and significant impact, leading to a downward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge highlights the critical importance of Katinka Hosszú's current form, which was already a factor in my model. Disappointing results or withdrawals from key races directly impact the 'katinka_hosszu_current_form' node. This node causally influences both 'record_is_broken_by_others' and, directly, the 'outcome_record_held_by_hosszu'. If her form is poor, it's more likely that other swimmers will break her record, and less likely she can defend it. Therefore, the probability of her still holding the record decreases. While 'katinka_hosszu_current_form' was already considered, this new information emphasizes its direct and significant impact, leading to a downward revision of the probability.\"\n}",
+      "target_id": "missing_node_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Katinka Hosszú has been a vocal advocate for increased prize money in swimming competitions. She recently participated in a panel discussion at a FINA event highlighting the importance of financial incentives for elite athletes.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The new information highlights Katinka Hosszú's focus on factors beyond just athletic performance, specifically her advocacy for increased prize money. This suggests a potential shift in her priorities or a decreased emphasis on maintaining her current competitive form. The causal path from 'katinka_hosszu_current_form' to 'record_is_broken_by_others' and subsequently to the 'outcome_record_held_by_hosszu' is indirectly affected. If her focus is divided due to her advocacy and participation in such discussions, it might lead to less dedicated training, potentially impacting her current form. This, in turn, could make it more likely for other swimmers to break her record. The link from 'katinka_hosszu_retirement_plans' to the outcome is also tangentially related; a decreased focus on swimming could be a precursor to retirement considerations, though this is speculative. Overall, this information introduces a slight uncertainty about her continued peak performance, leading to a small decrease in the probability that she will still hold the record.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information highlights Katinka Hosszú's focus on factors beyond just athletic performance, specifically her advocacy for increased prize money. This suggests a potential shift in her priorities or a decreased emphasis on maintaining her current competitive form. The causal path from 'katinka_hosszu_current_form' to 'record_is_broken_by_others' and subsequently to the 'outcome_record_held_by_hosszu' is indirectly affected. If her focus is divided due to her advocacy and participation in such discussions, it might lead to less dedicated training, potentially impacting her current form. This, in turn, could make it more likely for other swimmers to break her record. The link from 'katinka_hosszu_retirement_plans' to the outcome is also tangentially related; a decreased focus on swimming could be a precursor to retirement considerations, though this is speculative. Overall, this information introduces a slight uncertainty about her continued peak performance, leading to a small decrease in the probability that she will still hold the record.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Katinka Hosszú has recently been very active in promoting swimming events for younger athletes in Hungary. She has been seen attending many junior competitions and giving motivational speeches to aspiring swimmers.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The new information suggests that Katinka Hosszú is increasingly focused on activities outside of her own elite competition, specifically promoting junior swimming. This indirectly impacts the causal path through 'katinka_hosszu_retirement_plans'. While not a direct announcement of retirement, a strong focus on nurturing new talent and promoting events for younger athletes suggests a potential shift in priorities away from maintaining her own peak performance and defending her records. This makes it more plausible that she might retire or at least reduce her competitive focus, which in turn increases the likelihood that 'record_is_broken_by_others' and thus decreases the probability of 'outcome_record_held_by_hosszu'. The direct causal links from 'katinka_hosszu_current_form' are less directly challenged, but a reduced focus on personal training could eventually affect her form. The update is moderate because it's an inference about future plans rather than a definitive statement of retirement or a change in her current physical condition.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information suggests that Katinka Hosszú is increasingly focused on activities outside of her own elite competition, specifically promoting junior swimming. This indirectly impacts the causal path through 'katinka_hosszu_retirement_plans'. While not a direct announcement of retirement, a strong focus on nurturing new talent and promoting events for younger athletes suggests a potential shift in priorities away from maintaining her own peak performance and defending her records. This makes it more plausible that she might retire or at least reduce her competitive focus, which in turn increases the likelihood that 'record_is_broken_by_others' and thus decreases the probability of 'outcome_record_held_by_hosszu'. The direct causal links from 'katinka_hosszu_current_form' are less directly challenged, but a reduced focus on personal training could eventually affect her form. The update is moderate because it's an inference about future plans rather than a definitive statement of retirement or a change in her current physical condition.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "2e88b046538e239140043da9471c2b4894615a12173c3a52ee707321acf2ed8d",
+    "question_text": "According to Wikipedia, will Katinka Hosszú still hold the world record for 200m individual medley in long course (50 metres) swimming pools on 2025-12-28?",
+    "source": "wikipedia",
+    "condition": "one-turn",
+    "initial_probability": 0.75,
+    "n_probes": 20,
+    "n_successful": 20,
+    "mean_absolute_shift": 0.1145,
+    "max_absolute_shift": 0.35
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 0.9535714285714284,
+    "mean_shift_high": 0.11125,
+    "mean_shift_low": 0.11666666666666668,
+    "asymmetry_index": 0.7789473684210527,
+    "mean_shift_negate": 0.10571428571428572,
+    "mean_shift_strengthen": 0.1357142857142857,
+    "fnar": 1,
+    "n_accepted": 3,
+    "n_spurious": 3,
+    "critical_path_premium": -0.01828282828282829,
+    "mean_shift_on_path": 0.10444444444444445,
+    "mean_shift_off_path": 0.12272727272727274,
+    "importance_sensitivity_correlation": -0.09545454545454546,
+    "control_sensitivity": 1
+  }
+}

@@ -1,0 +1,1230 @@
+{
+  "question_id": "dgPNU5ICzP",
+  "question_text": "Will Colbert be forced off air before May, 2026?",
+  "source": "manifold",
+  "initial_probability": 0.25,
+  "nodes": [
+    {
+      "id": "colbert_ratings",
+      "description": "The viewership ratings for The Late Show with Stephen Colbert",
+      "role": "factor"
+    },
+    {
+      "id": "network_financial_performance",
+      "description": "The overall financial health and performance of CBS/Paramount Global",
+      "role": "factor"
+    },
+    {
+      "id": "talent_contract_negotiations",
+      "description": "The status and terms of Stephen Colbert's contract negotiations for future seasons",
+      "role": "factor"
+    },
+    {
+      "id": "host_scandal_or_controversy",
+      "description": "Major public scandals or controversies involving Stephen Colbert",
+      "role": "factor"
+    },
+    {
+      "id": "competitive_landscape",
+      "description": "The performance and popularity of competing late-night shows",
+      "role": "factor"
+    },
+    {
+      "id": "decision_to_end_show",
+      "description": "The decision by CBS/Paramount Global executives to end The Late Show with Stephen Colbert",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "colbert_ratings",
+      "to": "decision_to_end_show",
+      "mechanism": "Sustained low ratings can lead to executive decisions to cancel a show."
+    },
+    {
+      "from": "network_financial_performance",
+      "to": "decision_to_end_show",
+      "mechanism": "Poor network financial performance may lead to cost-cutting measures, including show cancellations."
+    },
+    {
+      "from": "talent_contract_negotiations",
+      "to": "decision_to_end_show",
+      "mechanism": "Failure to reach a satisfactory contract agreement with Colbert could lead to the show's end."
+    },
+    {
+      "from": "host_scandal_or_controversy",
+      "to": "decision_to_end_show",
+      "mechanism": "A major scandal involving the host could force the network's hand to cancel the show."
+    },
+    {
+      "from": "competitive_landscape",
+      "to": "colbert_ratings",
+      "mechanism": "Strong competition can negatively impact viewership if not managed well."
+    },
+    {
+      "from": "colbert_ratings",
+      "to": "talent_contract_negotiations",
+      "mechanism": "Strong ratings can give leverage in contract negotiations, while weak ratings may reduce that leverage."
+    },
+    {
+      "from": "network_financial_performance",
+      "to": "colbert_ratings",
+      "mechanism": "Network investment in promotion or production can influence ratings."
+    }
+  ],
+  "reasoning": "The probability of Colbert being forced off air before May 2026 is relatively low. While ratings, network financial health, and contract negotiations are factors, Stephen Colbert's current standing and the general stability of his show suggest these are unlikely to force an immediate cancellation. A major, unforeseen scandal would be the most direct catalyst for a premature end, but this is a low-probability event. The competitive landscape influences ratings, which in turn can affect contract negotiations and executive decisions, but the current trajectory does not strongly indicate a forced departure.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 7,
+    "density": 0.2333,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "decision_to_end_show",
+    "node_metrics": [
+      {
+        "node_id": "colbert_ratings",
+        "description": "The viewership ratings for The Late Show with Stephen Colbert",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 2,
+        "betweenness": 0.15,
+        "closeness": 0.4,
+        "pagerank": 0.1872,
+        "path_relevance": 0.2
+      },
+      {
+        "node_id": "network_financial_performance",
+        "description": "The overall financial health and performance of CBS/Paramount Global",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0823,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "talent_contract_negotiations",
+        "description": "The status and terms of Stephen Colbert's contract negotiations for future seasons",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.36,
+        "pagerank": 0.1618,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "host_scandal_or_controversy",
+        "description": "Major public scandals or controversies involving Stephen Colbert",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0823,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "competitive_landscape",
+        "description": "The performance and popularity of competing late-night shows",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0823,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "decision_to_end_show",
+        "description": "The decision by CBS/Paramount Global executives to end The Late Show with Stephen Colbert",
+        "role": "outcome",
+        "in_degree": 4,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.8333,
+        "pagerank": 0.4042,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "colbert_ratings",
+        "target": "decision_to_end_show",
+        "mechanism": "Sustained low ratings can lead to executive decisions to cancel a show.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "colbert_ratings",
+        "target": "talent_contract_negotiations",
+        "mechanism": "Strong ratings can give leverage in contract negotiations, while weak ratings may reduce that leverage.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": false
+      },
+      {
+        "source": "network_financial_performance",
+        "target": "decision_to_end_show",
+        "mechanism": "Poor network financial performance may lead to cost-cutting measures, including show cancellations.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "network_financial_performance",
+        "target": "colbert_ratings",
+        "mechanism": "Network investment in promotion or production can influence ratings.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": false
+      },
+      {
+        "source": "talent_contract_negotiations",
+        "target": "decision_to_end_show",
+        "mechanism": "Failure to reach a satisfactory contract agreement with Colbert could lead to the show's end.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "host_scandal_or_controversy",
+        "target": "decision_to_end_show",
+        "mechanism": "A major scandal involving the host could force the network's hand to cancel the show.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "competitive_landscape",
+        "target": "colbert_ratings",
+        "mechanism": "Strong competition can negatively impact viewership if not managed well.",
+        "edge_betweenness": 0.1,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "colbert_ratings",
+        "description": "The viewership ratings for The Late Show with Stephen Colbert",
+        "importance": 0.15,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "network_financial_performance",
+        "description": "The overall financial health and performance of CBS/Paramount Global",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "talent_contract_negotiations",
+        "description": "The status and terms of Stephen Colbert's contract negotiations for future seasons",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "competitive_landscape",
+        "description": "The performance and popularity of competing late-night shows",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "colbert_ratings",
+        "description": "The viewership ratings for The Late Show with Stephen Colbert",
+        "importance": 0.15,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "network_financial_performance",
+        "description": "The overall financial health and performance of CBS/Paramount Global",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "talent_contract_negotiations",
+        "description": "The status and terms of Stephen Colbert's contract negotiations for future seasons",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "competitive_landscape",
+        "description": "The performance and popularity of competing late-night shows",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "competitive_landscape->colbert_ratings",
+        "description": "Strong competition can negatively impact viewership if not managed well.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "colbert_ratings->decision_to_end_show",
+        "description": "Sustained low ratings can lead to executive decisions to cancel a show.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "colbert_ratings->talent_contract_negotiations",
+        "description": "Strong ratings can give leverage in contract negotiations, while weak ratings may reduce that leverage.",
+        "importance": 0.1,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "competitive_landscape->colbert_ratings",
+        "description": "Strong competition can negatively impact viewership if not managed well.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "colbert_ratings->decision_to_end_show",
+        "description": "Sustained low ratings can lead to executive decisions to cancel a show.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "colbert_ratings->talent_contract_negotiations",
+        "description": "Strong ratings can give leverage in contract negotiations, while weak ratings may reduce that leverage.",
+        "importance": 0.1,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "competitive_landscape->colbert_ratings",
+        "description": "Strong competition can negatively impact viewership if not managed well.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "network_financial_performance->talent_contract_negotiations",
+        "description": "Potential link: The overall financial health and performance of CBS/Paramount Global -> The status and terms of Stephen Colbert's contract negotiations for future seasons",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "network_financial_performance->host_scandal_or_controversy",
+        "description": "Potential link: The overall financial health and performance of CBS/Paramount Global -> Major public scandals or controversies involving Stephen Colbert",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "colbert_ratings",
+      "description": "The viewership ratings for The Late Show with Stephen Colbert",
+      "importance": 0.15,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "network_financial_performance",
+      "description": "The overall financial health and performance of CBS/Paramount Global",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "talent_contract_negotiations",
+      "description": "The status and terms of Stephen Colbert's contract negotiations for future seasons",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "competitive_landscape",
+      "description": "The performance and popularity of competing late-night shows",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "colbert_ratings",
+      "description": "The viewership ratings for The Late Show with Stephen Colbert",
+      "importance": 0.15,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "network_financial_performance",
+      "description": "The overall financial health and performance of CBS/Paramount Global",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "talent_contract_negotiations",
+      "description": "The status and terms of Stephen Colbert's contract negotiations for future seasons",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "competitive_landscape",
+      "description": "The performance and popularity of competing late-night shows",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "description": "Strong competition can negatively impact viewership if not managed well.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "colbert_ratings->decision_to_end_show",
+      "description": "Sustained low ratings can lead to executive decisions to cancel a show.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "colbert_ratings->talent_contract_negotiations",
+      "description": "Strong ratings can give leverage in contract negotiations, while weak ratings may reduce that leverage.",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "description": "Strong competition can negatively impact viewership if not managed well.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "colbert_ratings->decision_to_end_show",
+      "description": "Sustained low ratings can lead to executive decisions to cancel a show.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "colbert_ratings->talent_contract_negotiations",
+      "description": "Strong ratings can give leverage in contract negotiations, while weak ratings may reduce that leverage.",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "description": "Strong competition can negatively impact viewership if not managed well.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "network_financial_performance->talent_contract_negotiations",
+      "description": "Potential link: The overall financial health and performance of CBS/Paramount Global -> The status and terms of Stephen Colbert's contract negotiations for future seasons",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "network_financial_performance->host_scandal_or_controversy",
+      "description": "Potential link: The overall financial health and performance of CBS/Paramount Global -> Major public scandals or controversies involving Stephen Colbert",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if Stephen Colbert's viewership ratings are actually irrelevant to the decision to end the show? Imagine that CBS/Paramount Global has a long-term strategic decision to pivot away from traditional late-night programming entirely, regardless of how well Colbert is performing. This decision might be driven by a desire to focus resources on streaming or other ventures, making the show's ratings a secondary concern that won't prevent its conclusion.",
+      "probe_type": "node_negate_high",
+      "target_id": "colbert_ratings",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.15,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The viewership ratings for The Late Show with Stephen Colbert"
+    },
+    {
+      "probe_text": "What if CBS/Paramount Global's overall financial health is actually incredibly robust, perhaps due to unexpected successes in other divisions like streaming or film, and they are prioritizing long-term prestige over short-term cost-cutting? In this scenario, even if the network were experiencing some financial headwinds, they might be willing to absorb the costs of 'The Late Show' to maintain a flagship program and avoid negative publicity associated with canceling a popular host's show.",
+      "probe_type": "node_negate_high",
+      "target_id": "network_financial_performance",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The overall financial health and performance of CBS/Paramount Global"
+    },
+    {
+      "probe_text": "Stephen Colbert recently signed a new contract extension through 2027, effectively removing his contract negotiations as a potential factor in the show's termination before May 2026. This extension was widely reported and secured his position, suggesting the prior uncertainty about his contract is no longer relevant to the show's future.",
+      "probe_type": "node_negate_medium",
+      "target_id": "talent_contract_negotiations",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The status and terms of Stephen Colbert's contract negotiations for future seasons"
+    },
+    {
+      "probe_text": "Recent analyses suggest that while late-night competition exists, it has become increasingly fragmented and less impactful on the viewership of established shows like Colbert's. Many viewers who watch Colbert are loyal and less likely to switch based on the performance of other programs. Therefore, the competitive landscape might actually have a negligible effect on Colbert's ratings and, by extension, the decision to end the show.",
+      "probe_type": "node_negate_low",
+      "target_id": "competitive_landscape",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The performance and popularity of competing late-night shows"
+    },
+    {
+      "probe_text": "Recent Nielsen data shows a significant and accelerating decline in 'The Late Show's' average viewership over the past six months, falling by 18% compared to the previous year. Furthermore, a recent report from 'The Hollywood Reporter' highlights that this downward trend is particularly pronounced among the key demographic advertisers seek, leading to increased concerns from network executives about the show's revenue-generating potential.",
+      "probe_type": "node_strengthen",
+      "target_id": "colbert_ratings",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.15,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The viewership ratings for The Late Show with Stephen Colbert"
+    },
+    {
+      "probe_text": "Recent financial reports reveal that Paramount Global is facing significantly deeper financial distress than previously understood, with Q4 earnings missing analyst expectations by a wide margin and credit rating agencies downgrading their outlook. Analysts at a major investment bank have explicitly stated that the company is now in a 'survival mode' scenario, prioritizing drastic cost-cutting across all divisions, including its broadcast and streaming operations, to avoid a potential restructuring.",
+      "probe_type": "node_strengthen",
+      "target_id": "network_financial_performance",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The overall financial health and performance of CBS/Paramount Global"
+    },
+    {
+      "probe_text": "Recent reports indicate that Stephen Colbert's current contract has a clause allowing him to opt out if certain creative control provisions are not met in future negotiations. Furthermore, sources close to the negotiations suggest that CBS is pushing for a significantly shorter extension than Colbert typically signs, indicating potential friction over the terms of his continued involvement.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "talent_contract_negotiations",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The status and terms of Stephen Colbert's contract negotiations for future seasons"
+    },
+    {
+      "probe_text": "Recent industry reports highlight a significant surge in viewership for several emerging late-night comedy programs, featuring fresh talent and innovative formats. These new shows are capturing younger demographics and critical acclaim, directly drawing audience share away from established programs like Colbert's.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "competitive_landscape",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The performance and popularity of competing late-night shows"
+    },
+    {
+      "probe_text": "While generally competition can affect ratings, The Late Show with Stephen Colbert has demonstrated a remarkable resilience to the 'competitive_landscape' in recent years. Its core audience appears largely insulated from shifts in competing shows, suggesting that the impact of the competitive landscape on Colbert's ratings might be significantly weaker than typically assumed, perhaps due to a unique brand loyalty or a different audience demographic that is less swayed by alternatives.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Strong competition can negatively impact viewership if not managed well."
+    },
+    {
+      "probe_text": "While low ratings can often lead to cancellations, 'The Late Show' might be somewhat insulated from this pressure. For example, if Colbert's show is a significant draw for a specific, valuable demographic that advertisers highly prize, or if it serves as a crucial loss-leader for the network's streaming service, executives might tolerate lower overall ratings to maintain access to that audience or platform. This could weaken the direct link between raw viewership numbers and the decision to end the show.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "colbert_ratings->decision_to_end_show",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Sustained low ratings can lead to executive decisions to cancel a show."
+    },
+    {
+      "probe_text": "While strong ratings often provide leverage in contract negotiations, Stephen Colbert's personal brand and established popularity might insulate him from the direct impact of ratings fluctuations on his negotiating power. It's plausible that the network values his overall brand presence and stability, making the specifics of recent ratings less critical than his existing appeal and the potential disruption his departure would cause.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "colbert_ratings->talent_contract_negotiations",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Strong ratings can give leverage in contract negotiations, while weak ratings may reduce that leverage."
+    },
+    {
+      "probe_text": "Recent analyses of the late-night landscape show a significant fragmentation of viewership, with a surge in popularity for newer, digitally-native comedy shows and podcasts that directly compete for the same audience demographic as Colbert. This intense competition, particularly from online platforms that are more agile and less reliant on traditional broadcast schedules, is exerting even greater pressure on established shows like Colbert's, making it harder to maintain consistent viewership and suggesting that the 'competitive_landscape' has a more potent negative impact on 'colbert_ratings' than previously accounted for.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Strong competition can negatively impact viewership if not managed well."
+    },
+    {
+      "probe_text": "Recent reports indicate that CBS is undergoing a significant strategic review of its programming, with a stated focus on optimizing viewership across all its platforms. Executives have explicitly mentioned that underperforming shows, regardless of host popularity, are being scrutinized more heavily than ever for their direct impact on the bottom line. This suggests that sustained low ratings for Colbert, even if other factors are stable, would now be a much more immediate and decisive factor in a cancellation decision.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "colbert_ratings->decision_to_end_show",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Sustained low ratings can lead to executive decisions to cancel a show."
+    },
+    {
+      "probe_text": "While it's true that ratings give Colbert leverage, consider how crucial *current* strong ratings are for talent contract negotiations.  When a network is deciding on a long-term deal, they often look at recent performance trends. If Colbert's ratings have been consistently high *leading up to* these negotiations, it significantly bolsters his position and allows him to demand more favorable terms, rather than just maintaining the status quo.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "colbert_ratings->talent_contract_negotiations",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Strong ratings can give leverage in contract negotiations, while weak ratings may reduce that leverage."
+    },
+    {
+      "probe_text": "Instead of the competitive landscape affecting Colbert's ratings, consider that Colbert's strong and sustained ratings might actually *shape* the competitive landscape. For example, a highly successful show like Colbert's could be seen as a 'gold standard' by other networks, prompting them to launch new shows or adjust their strategies specifically to compete with or counter his success, thereby altering the competitive landscape in response to his performance.",
+      "probe_type": "edge_reverse",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Strong competition can negatively impact viewership if not managed well."
+    },
+    {
+      "probe_text": "While it's true that Colbert's ratings can influence his contract leverage, consider the broader financial picture at CBS/Paramount Global. If the parent company is facing significant financial headwinds, they might be less willing to offer lucrative long-term deals, even to a popular host, as a general cost-saving measure impacting all major talent contracts.",
+      "probe_type": "edge_spurious",
+      "target_id": "network_financial_performance->talent_contract_negotiations",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The overall financial health and performance of CBS/Paramount Global -> The status and terms of Stephen Colbert's contract negotiations for future seasons"
+    },
+    {
+      "probe_text": "While it might seem like a host's personal conduct is independent of the network's financial health, consider this: when a company like Paramount Global is under significant financial pressure, scrutiny on all its assets, including talent and their potential liabilities, intensifies. This heightened scrutiny could lead executives to be more aggressive in preemptively addressing or even exaggerating perceived risks associated with a host, potentially creating a more volatile environment where a minor issue could be amplified into a 'scandal' to justify cutting costs or appeasing shareholders, thereby influencing the likelihood of a host scandal.",
+      "probe_type": "edge_missing",
+      "target_id": "network_financial_performance->host_scandal_or_controversy",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The overall financial health and performance of CBS/Paramount Global -> Major public scandals or controversies involving Stephen Colbert"
+    },
+    {
+      "probe_text": "Imagine that CBS/Paramount Global undergoes a significant corporate restructuring, including a change in leadership specifically in charge of entertainment programming. How might this change in executive oversight and strategic direction influence the decision to end The Late Show with Stephen Colbert, independent of current ratings or contract status?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that CBS is undergoing a significant strategic shift, prioritizing a new demographic or content strategy that de-emphasizes traditional late-night programming. How might this strategic pivot, independent of Colbert's ratings or contract, influence the decision to end the show before May 2026?",
+      "probe_type": "missing_node",
+      "target_id": "strategic_priorities_shift",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Paramount Global recently announced a partnership with a popular streaming service to co-produce a new documentary series. This initiative is aimed at expanding their content library and reaching a younger demographic.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Stephen Colbert has recently been a vocal advocate for a particular political candidate in the upcoming election cycle. His public endorsements have garnered significant media attention.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if Stephen Colbert's viewership ratings are actually irrelevant to the decision to end the show? Imagine that CBS/Paramount Global has a long-term strategic decision to pivot away from traditional late-night programming entirely, regardless of how well Colbert is performing. This decision might be driven by a desire to focus resources on streaming or other ventures, making the show's ratings a secondary concern that won't prevent its conclusion.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.1,
+      "absolute_shift": 0.15,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge argues that 'colbert_ratings' are irrelevant to the 'decision_to_end_show'. This directly impacts the causal path colbert_ratings -> decision_to_end_show. If ratings are indeed irrelevant, then this primary driver for cancellation is removed. Furthermore, the path colbert_ratings -> talent_contract_negotiations is also weakened, as strong ratings would no longer provide leverage. While other factors like 'network_financial_performance', 'talent_contract_negotiations', and 'host_scandal_or_controversy' can still lead to cancellation, the direct impact of viewership on the decision is significantly diminished. This leads to a substantial decrease in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.10,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge argues that 'colbert_ratings' are irrelevant to the 'decision_to_end_show'. This directly impacts the causal path colbert_ratings -> decision_to_end_show. If ratings are indeed irrelevant, then this primary driver for cancellation is removed. Furthermore, the path colbert_ratings -> talent_contract_negotiations is also weakened, as strong ratings would no longer provide leverage. While other factors like 'network_financial_performance', 'talent_contract_negotiations', and 'host_scandal_or_controversy' can still lead to cancellation, the direct impact of viewership on the decision is significantly diminished. This leads to a substantial decrease in the probability.\"\n}",
+      "target_id": "colbert_ratings",
+      "target_type": "node",
+      "target_importance": 0.15,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if CBS/Paramount Global's overall financial health is actually incredibly robust, perhaps due to unexpected successes in other divisions like streaming or film, and they are prioritizing long-term prestige over short-term cost-cutting? In this scenario, even if the network were experiencing some financial headwinds, they might be willing to absorb the costs of 'The Late Show' to maintain a flagship program and avoid negative publicity associated with canceling a popular host's show.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.1,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the causal path from 'network_financial_performance' to 'decision_to_end_show'. The new information suggests that even if CBS/Paramount Global were facing financial difficulties, they would be less likely to use 'The Late Show' as a cost-cutting measure due to its prestige and the potential negative publicity of cancellation. This weakens the influence of this specific path on the outcome. While other paths (ratings, contract negotiations, scandal) remain, this specific financial pressure point is significantly reduced, leading to a decrease in the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the causal path from 'network_financial_performance' to 'decision_to_end_show'. The new information suggests that even if CBS/Paramount Global were facing financial difficulties, they would be less likely to use 'The Late Show' as a cost-cutting measure due to its prestige and the potential negative publicity of cancellation. This weakens the influence of this specific path on the outcome. While other paths (ratings, contract negotiations, scandal) remain, this specific financial pressure point is significantly reduced, leading to a decrease in the overall probability.\"\n}",
+      "target_id": "network_financial_performance",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Stephen Colbert recently signed a new contract extension through 2027, effectively removing his contract negotiations as a potential factor in the show's termination before May 2026. This extension was widely reported and secured his position, suggesting the prior uncertainty about his contract is no longer relevant to the show's future.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.1,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly impacts the 'talent_contract_negotiations' node. Previously, a failure to reach an agreement in contract negotiations was a direct causal path to the 'decision_to_end_show' outcome. With the reported contract extension through 2027, this specific causal path is now effectively removed as a mechanism for the show ending before May 2026. This significantly reduces one of the potential reasons for the show's termination. While the other causal paths (colbert_ratings, network_financial_performance, host_scandal_or_controversy, competitive_landscape) remain, the removal of this specific risk factor warrants a decrease in the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly impacts the 'talent_contract_negotiations' node. Previously, a failure to reach an agreement in contract negotiations was a direct causal path to the 'decision_to_end_show' outcome. With the reported contract extension through 2027, this specific causal path is now effectively removed as a mechanism for the show ending before May 2026. This significantly reduces one of the potential reasons for the show's termination. While the other causal paths (colbert_ratings, network_financial_performance, host_scandal_or_controversy, competitive_landscape) remain, the removal of this specific risk factor warrants a decrease in the overall probability.\"\n}",
+      "target_id": "talent_contract_negotiations",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses suggest that while late-night competition exists, it has become increasingly fragmented and less impactful on the viewership of established shows like Colbert's. Many viewers who watch Colbert are loyal and less likely to switch based on the performance of other programs. Therefore, the competitive landscape might actually have a negligible effect on Colbert's ratings and, by extension, the decision to end the show.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.23,
+      "absolute_shift": 0.01999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'competitive_landscape' node suggests that its impact on 'colbert_ratings' is less significant than previously modeled. This weakens the indirect causal path from 'competitive_landscape' -> 'colbert_ratings' -> 'decision_to_end_show'. While 'colbert_ratings' can still be affected by other factors, and the direct paths to 'decision_to_end_show' remain, diminishing the influence of competition slightly reduces the overall probability that the show will be forced off air. The update is minor because 'competitive_landscape' was not a primary driver of the initial forecast, and other factors like 'colbert_ratings' (from other causes), 'network_financial_performance', and 'talent_contract_negotiations' still hold significant weight.",
+      "raw_response": "{\n  \"updated_probability\": 0.23,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'competitive_landscape' node suggests that its impact on 'colbert_ratings' is less significant than previously modeled. This weakens the indirect causal path from 'competitive_landscape' -> 'colbert_ratings' -> 'decision_to_end_show'. While 'colbert_ratings' can still be affected by other factors, and the direct paths to 'decision_to_end_show' remain, diminishing the influence of competition slightly reduces the overall probability that the show will be forced off air. The update is minor because 'competitive_landscape' was not a primary driver of the initial forecast, and other factors like 'colbert_ratings' (from other causes), 'network_financial_performance', and 'talent_contract_negotiations' still hold significant weight.\"\n}",
+      "target_id": "competitive_landscape",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent Nielsen data shows a significant and accelerating decline in 'The Late Show's' average viewership over the past six months, falling by 18% compared to the previous year. Furthermore, a recent report from 'The Hollywood Reporter' highlights that this downward trend is particularly pronounced among the key demographic advertisers seek, leading to increased concerns from network executives about the show's revenue-generating potential.",
+      "probe_generated": true,
+      "success": false,
+      "updated_probability": null,
+      "absolute_shift": null,
+      "shift_direction": null,
+      "reasoning": "",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly challenges",
+      "target_id": "colbert_ratings",
+      "target_type": "node",
+      "target_importance": 0.15,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent financial reports reveal that Paramount Global is facing significantly deeper financial distress than previously understood, with Q4 earnings missing analyst expectations by a wide margin and credit rating agencies downgrading their outlook. Analysts at a major investment bank have explicitly stated that the company is now in a 'survival mode' scenario, prioritizing drastic cost-cutting across all divisions, including its broadcast and streaming operations, to avoid a potential restructuring.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The new information significantly strengthens the causal path from 'network_financial_performance' to 'decision_to_end_show'. The description of Paramount Global being in 'survival mode' with explicit prioritization of 'drastic cost-cutting' directly implies that financial distress is now a much more potent driver for show cancellations. This increases the likelihood that the network would look to cut costs, and ending a high-profile show like Colbert's, regardless of its current ratings or contract status, becomes a more plausible decision. The 'network_financial_performance -> colbert_ratings' link is less directly impacted, as the core issue is now cost-cutting rather than necessarily a lack of investment affecting ratings. However, the overall increased pressure on the network's finances makes the 'decision_to_end_show' node much more sensitive to any negative factors, including potentially lower than expected ratings or difficult contract negotiations, even if those factors haven't changed individually.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information significantly strengthens the causal path from 'network_financial_performance' to 'decision_to_end_show'. The description of Paramount Global being in 'survival mode' with explicit prioritization of 'drastic cost-cutting' directly implies that financial distress is now a much more potent driver for show cancellations. This increases the likelihood that the network would look to cut costs, and ending a high-profile show like Colbert's, regardless of its current ratings or contract status, becomes a more plausible decision. The 'network_financial_performance -> colbert_ratings' link is less directly impacted, as the core issue is now cost-cutting rather than necessarily a lack of investment affecting ratings. However, the overall increased pressure on the network's finances makes the 'decision_to_end_show' node much more sensitive to any negative factors, including potentially lower than expected ratings or difficult contract negotiations, even if those factors haven't changed individually.\"\n}",
+      "target_id": "network_financial_performance",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that Stephen Colbert's current contract has a clause allowing him to opt out if certain creative control provisions are not met in future negotiations. Furthermore, sources close to the negotiations suggest that CBS is pushing for a significantly shorter extension than Colbert typically signs, indicating potential friction over the terms of his continued involvement.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The new information significantly strengthens the causal path from 'talent_contract_negotiations' to 'decision_to_end_show'. The existence of a creative control opt-out clause and reported friction over the length of the contract extension suggest a higher likelihood of a breakdown in negotiations. If a contract cannot be reached, it directly increases the probability of the show ending. While 'colbert_ratings' and 'network_financial_performance' remain relevant, this challenge directly impacts a key trigger for the show's potential demise, making the 'talent_contract_negotiations' node a more critical factor than previously assumed. This increases my overall probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information significantly strengthens the causal path from 'talent_contract_negotiations' to 'decision_to_end_show'. The existence of a creative control opt-out clause and reported friction over the length of the contract extension suggest a higher likelihood of a breakdown in negotiations. If a contract cannot be reached, it directly increases the probability of the show ending. While 'colbert_ratings' and 'network_financial_performance' remain relevant, this challenge directly impacts a key trigger for the show's potential demise, making the 'talent_contract_negotiations' node a more critical factor than previously assumed. This increases my overall probability estimate.\"\n}",
+      "target_id": "talent_contract_negotiations",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent industry reports highlight a significant surge in viewership for several emerging late-night comedy programs, featuring fresh talent and innovative formats. These new shows are capturing younger demographics and critical acclaim, directly drawing audience share away from established programs like Colbert's.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'competitive_landscape' node is significant because it directly impacts 'colbert_ratings', a key driver of the 'decision_to_end_show' outcome. The new information suggests that the competitive landscape has become more challenging than previously modeled, with emerging shows actively drawing audience share away. This strengthens the causal path: competitive_landscape -> colbert_ratings -> decision_to_end_show. Furthermore, improved ratings for competitors can also indirectly affect 'colbert_ratings' by making the overall late-night landscape less favorable for established shows. While 'colbert_ratings' is not the sole determinant, its potential decline due to increased competition makes the 'decision_to_end_show' more likely. The initial estimate of 0.25 is increased to 0.35 to reflect this heightened risk.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'competitive_landscape' node is significant because it directly impacts 'colbert_ratings', a key driver of the 'decision_to_end_show' outcome. The new information suggests that the competitive landscape has become more challenging than previously modeled, with emerging shows actively drawing audience share away. This strengthens the causal path: competitive_landscape -> colbert_ratings -> decision_to_end_show. Furthermore, improved ratings for competitors can also indirectly affect 'colbert_ratings' by making the overall late-night landscape less favorable for established shows. While 'colbert_ratings' is not the sole determinant, its potential decline due to increased competition makes the 'decision_to_end_show' more likely. The initial estimate of 0.25 is increased to 0.35 to reflect this heightened risk.\"\n}",
+      "target_id": "competitive_landscape",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While generally competition can affect ratings, The Late Show with Stephen Colbert has demonstrated a remarkable resilience to the 'competitive_landscape' in recent years. Its core audience appears largely insulated from shifts in competing shows, suggesting that the impact of the competitive landscape on Colbert's ratings might be significantly weaker than typically assumed, perhaps due to a unique brand loyalty or a different audience demographic that is less swayed by alternatives.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.23,
+      "absolute_shift": 0.01999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the strength of the causal link between 'competitive_landscape' and 'colbert_ratings'. If the competitive landscape has a weaker impact on Colbert's ratings, then this indirect path to the outcome 'decision_to_end_show' is weakened. Specifically, the path competitive_landscape -> colbert_ratings -> decision_to_end_show is less potent. However, this is a secondary path to cancellation, as 'colbert_ratings' itself is directly influenced by other factors and directly impacts 'decision_to_end_show'. Furthermore, 'colbert_ratings' also influences 'talent_contract_negotiations', which is another path to the outcome. Since the primary drivers of cancellation (ratings, finances, contract, scandal) are not directly challenged, the probability decrease is minor.",
+      "raw_response": "{\n  \"updated_probability\": 0.23,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'competitive_landscape' and 'colbert_ratings'. If the competitive landscape has a weaker impact on Colbert's ratings, then this indirect path to the outcome 'decision_to_end_show' is weakened. Specifically, the path competitive_landscape -> colbert_ratings -> decision_to_end_show is less potent. However, this is a secondary path to cancellation, as 'colbert_ratings' itself is directly influenced by other factors and directly impacts 'decision_to_end_show'. Furthermore, 'colbert_ratings' also influences 'talent_contract_negotiations', which is another path to the outcome. Since the primary drivers of cancellation (ratings, finances, contract, scandal) are not directly challenged, the probability decrease is minor.\"\n}",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While low ratings can often lead to cancellations, 'The Late Show' might be somewhat insulated from this pressure. For example, if Colbert's show is a significant draw for a specific, valuable demographic that advertisers highly prize, or if it serves as a crucial loss-leader for the network's streaming service, executives might tolerate lower overall ratings to maintain access to that audience or platform. This could weaken the direct link between raw viewership numbers and the decision to end the show.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge targets the direct causal link between 'colbert_ratings' and 'decision_to_end_show'. The new information suggests that while low ratings are generally a negative factor, 'The Late Show' might be somewhat insulated due to its value for specific demographics or its role as a loss-leader for streaming. This weakens the direct pathway where declining viewership would automatically trigger a cancellation decision. The impact is moderate because 'colbert_ratings' still influences 'talent_contract_negotiations' and indirectly affects the 'decision_to_end_show' through other paths, but the direct pressure from ratings alone is reduced. Therefore, the probability of the show being forced off air before May 2026 has slightly decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge targets the direct causal link between 'colbert_ratings' and 'decision_to_end_show'. The new information suggests that while low ratings are generally a negative factor, 'The Late Show' might be somewhat insulated due to its value for specific demographics or its role as a loss-leader for streaming. This weakens the direct pathway where declining viewership would automatically trigger a cancellation decision. The impact is moderate because 'colbert_ratings' still influences 'talent_contract_negotiations' and indirectly affects the 'decision_to_end_show' through other paths, but the direct pressure from ratings alone is reduced. Therefore, the probability of the show being forced off air before May 2026 has slightly decreased.\"\n}",
+      "target_id": "colbert_ratings->decision_to_end_show",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While strong ratings often provide leverage in contract negotiations, Stephen Colbert's personal brand and established popularity might insulate him from the direct impact of ratings fluctuations on his negotiating power. It's plausible that the network values his overall brand presence and stability, making the specifics of recent ratings less critical than his existing appeal and the potential disruption his departure would cause.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that 'colbert_ratings' might have a weaker causal link to 'talent_contract_negotiations' than initially assumed. If Colbert's negotiating power is less dependent on current ratings due to his established brand and the network's desire to avoid disruption, then a dip in ratings would be less likely to negatively impact his contract status, and thus less likely to trigger the 'talent_contract_negotiations -> decision_to_end_show' path. This weakens one of the potential paths to the outcome, leading to a slight decrease in the overall probability. However, the link is not entirely broken, as ratings can still play some role, and other causal paths remain unaffected.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that 'colbert_ratings' might have a weaker causal link to 'talent_contract_negotiations' than initially assumed. If Colbert's negotiating power is less dependent on current ratings due to his established brand and the network's desire to avoid disruption, then a dip in ratings would be less likely to negatively impact his contract status, and thus less likely to trigger the 'talent_contract_negotiations -> decision_to_end_show' path. This weakens one of the potential paths to the outcome, leading to a slight decrease in the overall probability. However, the link is not entirely broken, as ratings can still play some role, and other causal paths remain unaffected.\"\n}",
+      "target_id": "colbert_ratings->talent_contract_negotiations",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses of the late-night landscape show a significant fragmentation of viewership, with a surge in popularity for newer, digitally-native comedy shows and podcasts that directly compete for the same audience demographic as Colbert. This intense competition, particularly from online platforms that are more agile and less reliant on traditional broadcast schedules, is exerting even greater pressure on established shows like Colbert's, making it harder to maintain consistent viewership and suggesting that the 'competitive_landscape' has a more potent negative impact on 'colbert_ratings' than previously accounted for.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'competitive_landscape -> colbert_ratings' link suggests that the negative impact of competition on Colbert's ratings is stronger than previously estimated. This strengthens the causal path from 'colbert_ratings' to 'decision_to_end_show'. If ratings are more susceptible to decline due to increased competition, then the probability of low ratings increases, which in turn increases the probability of the show being ended by executives. The other causal paths remain unaffected by this specific challenge.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'competitive_landscape -> colbert_ratings' link suggests that the negative impact of competition on Colbert's ratings is stronger than previously estimated. This strengthens the causal path from 'colbert_ratings' to 'decision_to_end_show'. If ratings are more susceptible to decline due to increased competition, then the probability of low ratings increases, which in turn increases the probability of the show being ended by executives. The other causal paths remain unaffected by this specific challenge.\"\n}",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that CBS is undergoing a significant strategic review of its programming, with a stated focus on optimizing viewership across all its platforms. Executives have explicitly mentioned that underperforming shows, regardless of host popularity, are being scrutinized more heavily than ever for their direct impact on the bottom line. This suggests that sustained low ratings for Colbert, even if other factors are stable, would now be a much more immediate and decisive factor in a cancellation decision.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly strengthens the causal link between 'colbert_ratings' and 'decision_to_end_show'. The new information explicitly states that underperforming shows are being scrutinized more heavily for their direct impact on the bottom line, and that this scrutiny is happening regardless of host popularity. This elevates the importance of 'colbert_ratings' as a direct driver for cancellation. Previously, while low ratings were a factor, the emphasis on 'direct impact on the bottom line' and 'scrutinized more heavily than ever' suggests this path is now a more potent and immediate trigger for the 'decision_to_end_show' node. While other factors like 'network_financial_performance' and 'talent_contract_negotiations' remain relevant, the increased directness and severity of the ratings-to-decision link warrants a significant upward adjustment in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly strengthens the causal link between 'colbert_ratings' and 'decision_to_end_show'. The new information explicitly states that underperforming shows are being scrutinized more heavily for their direct impact on the bottom line, and that this scrutiny is happening regardless of host popularity. This elevates the importance of 'colbert_ratings' as a direct driver for cancellation. Previously, while low ratings were a factor, the emphasis on 'direct impact on the bottom line' and 'scrutinized more heavily than ever' suggests this path is now a more potent and immediate trigger for the 'decision_to_end_show' node. While other factors like 'network_financial_performance' and 'talent_contract_negotiations' remain relevant, the increased directness and severity of the ratings-to-decision link warrants a significant upward adjustment in the probability.\"\n}",
+      "target_id": "colbert_ratings->decision_to_end_show",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While it's true that ratings give Colbert leverage, consider how crucial *current* strong ratings are for talent contract negotiations.  When a network is deciding on a long-term deal, they often look at recent performance trends. If Colbert's ratings have been consistently high *leading up to* these negotiations, it significantly bolsters his position and allows him to demand more favorable terms, rather than just maintaining the status quo.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0,
+      "shift_direction": "unchanged",
+      "reasoning": "The challenge focuses on the nuance of how current strong ratings bolster Colbert's leverage in contract negotiations. However, the core causal link that ratings influence contract negotiations, and that contract negotiations can lead to the show ending, remains intact. The provided information does not fundamentally alter the existing causal paths to the outcome, nor does it introduce new significant factors. Therefore, the probability estimate remains unchanged.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"unchanged\",\n  \"reasoning\": \"The challenge focuses on the nuance of how current strong ratings bolster Colbert's leverage in contract negotiations. However, the core causal link that ratings influence contract negotiations, and that contract negotiations can lead to the show ending, remains intact. The provided information does not fundamentally alter the existing causal paths to the outcome, nor does it introduce new significant factors. Therefore, the probability estimate remains unchanged.\"\n}",
+      "target_id": "colbert_ratings->talent_contract_negotiations",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "Instead of the competitive landscape affecting Colbert's ratings, consider that Colbert's strong and sustained ratings might actually *shape* the competitive landscape. For example, a highly successful show like Colbert's could be seen as a 'gold standard' by other networks, prompting them to launch new shows or adjust their strategies specifically to compete with or counter his success, thereby altering the competitive landscape in response to his performance.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.24,
+      "absolute_shift": 0.010000000000000009,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge proposes reversing the causal direction of 'competitive_landscape -> colbert_ratings' to 'colbert_ratings -> competitive_landscape'. While this is an interesting perspective on how successful shows can influence the market, it does not fundamentally alter the direct causal paths leading to the 'decision_to_end_show' outcome. The core drivers remain Colbert's ratings, network finances, contract negotiations, and potential scandals. The proposed change suggests that Colbert's ratings influence the competitive landscape, which in turn might then influence his ratings. This creates a feedback loop, but the primary impact of low ratings on executive decisions remains intact. Therefore, the impact on the probability of the show being forced off air is minimal.",
+      "raw_response": "{\n  \"updated_probability\": 0.24,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge proposes reversing the causal direction of 'competitive_landscape -> colbert_ratings' to 'colbert_ratings -> competitive_landscape'. While this is an interesting perspective on how successful shows can influence the market, it does not fundamentally alter the direct causal paths leading to the 'decision_to_end_show' outcome. The core drivers remain Colbert's ratings, network finances, contract negotiations, and potential scandals. The proposed change suggests that Colbert's ratings influence the competitive landscape, which in turn might then influence his ratings. This creates a feedback loop, but the primary impact of low ratings on executive decisions remains intact. Therefore, the impact on the probability of the show being forced off air is minimal.\"\n}",
+      "target_id": "competitive_landscape->colbert_ratings",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While it's true that Colbert's ratings can influence his contract leverage, consider the broader financial picture at CBS/Paramount Global. If the parent company is facing significant financial headwinds, they might be less willing to offer lucrative long-term deals, even to a popular host, as a general cost-saving measure impacting all major talent contracts.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that 'network_financial_performance' can directly impact 'talent_contract_negotiations' by limiting the network's willingness to offer lucrative deals, regardless of Colbert's ratings. This strengthens a potential path to the outcome: poor 'network_financial_performance' -> less favorable 'talent_contract_negotiations' -> 'decision_to_end_show'. Previously, the link between financial performance and contract negotiations was only indirect via 'colbert_ratings'. This new direct link, coupled with the existing path from financial performance to show cancellation, increases the probability that the show could end. However, the core drivers of 'colbert_ratings' and 'host_scandal_or_controversy' remain the most direct threats, so the update is moderate.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that 'network_financial_performance' can directly impact 'talent_contract_negotiations' by limiting the network's willingness to offer lucrative deals, regardless of Colbert's ratings. This strengthens a potential path to the outcome: poor 'network_financial_performance' -> less favorable 'talent_contract_negotiations' -> 'decision_to_end_show'. Previously, the link between financial performance and contract negotiations was only indirect via 'colbert_ratings'. This new direct link, coupled with the existing path from financial performance to show cancellation, increases the probability that the show could end. However, the core drivers of 'colbert_ratings' and 'host_scandal_or_controversy' remain the most direct threats, so the update is moderate.\"\n}",
+      "target_id": "network_financial_performance->talent_contract_negotiations",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While it might seem like a host's personal conduct is independent of the network's financial health, consider this: when a company like Paramount Global is under significant financial pressure, scrutiny on all its assets, including talent and their potential liabilities, intensifies. This heightened scrutiny could lead executives to be more aggressive in preemptively addressing or even exaggerating perceived risks associated with a host, potentially creating a more volatile environment where a minor issue could be amplified into a 'scandal' to justify cutting costs or appeasing shareholders, thereby influencing the likelihood of a host scandal.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge introduces a new indirect causal path from 'network_financial_performance' to 'host_scandal_or_controversy'. Previously, these nodes were largely independent in their direct impact on the outcome. The new reasoning suggests that under financial duress, Paramount Global might be more inclined to amplify or even manufacture a 'scandal' around Colbert to justify cost-cutting measures or appease shareholders. This strengthens the link between network financial health and the potential for a host-related cancellation. Specifically, the path network_financial_performance -> host_scandal_or_controversy -> decision_to_end_show is now considered more potent. This increases the overall probability of the show being forced off air, as a major financial downturn for the network now has a dual pathway to impact the outcome: direct cost-cutting decisions and an increased likelihood of a 'scandal' that could trigger a cancellation.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge introduces a new indirect causal path from 'network_financial_performance' to 'host_scandal_or_controversy'. Previously, these nodes were largely independent in their direct impact on the outcome. The new reasoning suggests that under financial duress, Paramount Global might be more inclined to amplify or even manufacture a 'scandal' around Colbert to justify cost-cutting measures or appease shareholders. This strengthens the link between network financial health and the potential for a host-related cancellation. Specifically, the path network_financial_performance -> host_scandal_or_controversy -> decision_to_end_show is now considered more potent. This increases the overall probability of the show being forced off air, as a major financial downturn for the network now has a dual pathway to impact the outcome: direct cost-cutting decisions and an increased likelihood of a 'scandal' that could trigger a cancellation.\"\n}",
+      "target_id": "network_financial_performance->host_scandal_or_controversy",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that CBS/Paramount Global undergoes a significant corporate restructuring, including a change in leadership specifically in charge of entertainment programming. How might this change in executive oversight and strategic direction influence the decision to end The Late Show with Stephen Colbert, independent of current ratings or contract status?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge introduces a new factor, 'change in executive leadership and strategic direction,' which can directly influence the 'decision_to_end_show' node, independent of the existing causal paths. New leadership may have different priorities, risk appetites, or strategic visions that could lead them to reassess the viability of The Late Show, even if current ratings and contract negotiations are stable. This new path to the outcome node ('decision_to_end_show') bypasses the previously modeled dependencies on 'colbert_ratings' and 'talent_contract_negotiations' to some extent. While the original factors are still relevant, this new executive-driven path increases the overall probability that the show could be ended due to a strategic decision, rather than performance metrics or contractual issues alone. The impact is moderate because the existing paths remain, but the introduction of a potentially significant, independent driver warrants an increase in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.4,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge introduces a new factor, 'change in executive leadership and strategic direction,' which can directly influence the 'decision_to_end_show' node, independent of the existing causal paths. New leadership may have different priorities, risk appetites, or strategic visions that could lead them to reassess the viability of The Late Show, even if current ratings and contract negotiations are stable. This new path to the outcome node ('decision_to_end_show') bypasses the previously modeled dependencies on 'colbert_ratings' and 'talent_contract_negotiations' to some extent. While the original factors are still relevant, this new executive-driven path increases the overall probability that the show could be ended due to a strategic decision, rather than performance metrics or contractual issues alone. The impact is moderate because the existing paths remain, but the introduction of a potentially significant, independent driver warrants an increase in the probability.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that CBS is undergoing a significant strategic shift, prioritizing a new demographic or content strategy that de-emphasizes traditional late-night programming. How might this strategic pivot, independent of Colbert's ratings or contract, influence the decision to end the show before May 2026?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.4,
+      "shift_direction": "increased",
+      "reasoning": "The strategic pivot described directly impacts the 'decision_to_end_show' node, creating a new, independent path to the outcome. Previously, the decision was primarily driven by the performance of Colbert's show (ratings, contract, scandal) or the network's financial health. This new information introduces a top-down executive decision to de-emphasize late-night programming as a strategic priority. This suggests that even if Colbert's ratings remain stable, his contract is favorable, and no scandals occur, the show could still be canceled to align with the new strategy. This significantly increases the probability of the show ending before May 2026, as it introduces a powerful, independent driver for cancellation that was not previously accounted for. The previously modeled paths are still relevant, but this new strategic factor adds substantial weight to the likelihood of cancellation.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The strategic pivot described directly impacts the 'decision_to_end_show' node, creating a new, independent path to the outcome. Previously, the decision was primarily driven by the performance of Colbert's show (ratings, contract, scandal) or the network's financial health. This new information introduces a top-down executive decision to de-emphasize late-night programming as a strategic priority. This suggests that even if Colbert's ratings remain stable, his contract is favorable, and no scandals occur, the show could still be canceled to align with the new strategy. This significantly increases the probability of the show ending before May 2026, as it introduces a powerful, independent driver for cancellation that was not previously accounted for. The previously modeled paths are still relevant, but this new strategic factor adds substantial weight to the likelihood of cancellation.\"\n}",
+      "target_id": "strategic_priorities_shift",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Paramount Global recently announced a partnership with a popular streaming service to co-produce a new documentary series. This initiative is aimed at expanding their content library and reaching a younger demographic.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.04999999999999999,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about Paramount Global's partnership with a streaming service to co-produce a documentary series suggests a strategic focus on expanding content and reaching new demographics. This implies a potential for increased investment in content creation and a diversification of revenue streams. While this doesn't directly alter the core causal links to the show's cancellation, it could indirectly impact 'network_financial_performance'. If this new venture is successful and improves the overall financial health of Paramount Global, it might reduce the pressure for cost-cutting measures that could lead to show cancellations. Therefore, the 'network_financial_performance -> decision_to_end_show' path is slightly weakened, leading to a small decrease in the probability of the show being forced off air.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about Paramount Global's partnership with a streaming service to co-produce a documentary series suggests a strategic focus on expanding content and reaching new demographics. This implies a potential for increased investment in content creation and a diversification of revenue streams. While this doesn't directly alter the core causal links to the show's cancellation, it could indirectly impact 'network_financial_performance'. If this new venture is successful and improves the overall financial health of Paramount Global, it might reduce the pressure for cost-cutting measures that could lead to show cancellations. Therefore, the 'network_financial_performance -> decision_to_end_show' path is slightly weakened, leading to a small decrease in the probability of the show being forced off air.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Stephen Colbert has recently been a vocal advocate for a particular political candidate in the upcoming election cycle. His public endorsements have garnered significant media attention.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly impacts the 'host_scandal_or_controversy' node. While not explicitly a 'scandal' in the negative sense, vocal political advocacy, especially if it alienates a significant portion of the audience or creates internal network pressure, can lead to controversy that might force the network's hand. This strengthens the causal path from 'host_scandal_or_controversy' to 'decision_to_end_show'. Furthermore, such advocacy could potentially impact 'colbert_ratings' if it leads to audience backlash or alienates viewers, indirectly affecting the 'decision_to_end_show' through that path as well. The prior estimate of 0.25 was based on a lower perceived risk of such a disruptive event. This new information increases the likelihood of such a controversy arising, thus increasing the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly impacts the 'host_scandal_or_controversy' node. While not explicitly a 'scandal' in the negative sense, vocal political advocacy, especially if it alienates a significant portion of the audience or creates internal network pressure, can lead to controversy that might force the network's hand. This strengthens the causal path from 'host_scandal_or_controversy' to 'decision_to_end_show'. Furthermore, such advocacy could potentially impact 'colbert_ratings' if it leads to audience backlash or alienates viewers, indirectly affecting the 'decision_to_end_show' through that path as well. The prior estimate of 0.25 was based on a lower perceived risk of such a disruptive event. This new information increases the likelihood of such a controversy arising, thus increasing the overall probability.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "dgPNU5ICzP",
+    "question_text": "Will Colbert be forced off air before May, 2026?",
+    "source": "manifold",
+    "condition": "one-turn",
+    "initial_probability": 0.25,
+    "n_probes": 21,
+    "n_successful": 20,
+    "mean_absolute_shift": 0.1125,
+    "max_absolute_shift": 0.4
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0.11432748487657401,
+  "aggregate_metrics": {
+    "ssr": 2.4642857142857153,
+    "mean_shift_high": 0.13142857142857145,
+    "mean_shift_low": 0.05333333333333332,
+    "asymmetry_index": 0.4666666666666666,
+    "mean_shift_negate": 0.06999999999999999,
+    "mean_shift_strengthen": 0.15,
+    "fnar": 0.6666666666666666,
+    "n_accepted": 2,
+    "n_spurious": 3,
+    "critical_path_premium": -0.03452380952380951,
+    "mean_shift_on_path": 0.08833333333333333,
+    "mean_shift_off_path": 0.12285714285714285,
+    "importance_sensitivity_correlation": 0.11904761904761907,
+    "control_sensitivity": 0.5
+  }
+}

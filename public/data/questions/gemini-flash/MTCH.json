@@ -1,0 +1,1242 @@
+{
+  "question_id": "MTCH",
+  "question_text": "Will MTCH's market close price on 2025-12-28 be higher than its market close price on 2025-12-21?\n\nStock splits and reverse splits will be accounted for in resolving this question. Forecasts on questions about companies that have been delisted (through mergers or bankruptcy) will resolve to their final close price.",
+  "source": "yfinance",
+  "initial_probability": 0.55,
+  "nodes": [
+    {
+      "id": "mtch_past_performance",
+      "description": "Historical price trends and volatility of Match Group (MTCH) stock.",
+      "role": "factor"
+    },
+    {
+      "id": "dating_app_market_growth",
+      "description": "Projected growth rate and competitive landscape within the online dating industry.",
+      "role": "factor"
+    },
+    {
+      "id": "mtch_user_engagement",
+      "description": "Metrics related to user activity, retention, and new user acquisition for MTCH platforms.",
+      "role": "factor"
+    },
+    {
+      "id": "macroeconomic_conditions",
+      "description": "General state of the economy, including inflation, interest rates, and consumer spending power.",
+      "role": "factor"
+    },
+    {
+      "id": "mtch_future_product_launches",
+      "description": "Anticipated new features, product innovations, or strategic shifts by Match Group.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome",
+      "description": "Will MTCH's market close price on 2025-12-28 be higher than its market close price on 2025-12-21?",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "mtch_past_performance",
+      "to": "outcome",
+      "mechanism": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements."
+    },
+    {
+      "from": "dating_app_market_growth",
+      "to": "mtch_user_engagement",
+      "mechanism": "A growing market can provide tailwinds for user acquisition and engagement, assuming MTCH maintains its competitive position."
+    },
+    {
+      "from": "dating_app_market_growth",
+      "to": "outcome",
+      "mechanism": "Overall industry health directly impacts company valuations and stock prices."
+    },
+    {
+      "from": "mtch_user_engagement",
+      "to": "outcome",
+      "mechanism": "Higher user engagement typically translates to stronger revenue and profitability, positively affecting stock price."
+    },
+    {
+      "from": "macroeconomic_conditions",
+      "to": "mtch_user_engagement",
+      "mechanism": "Economic downturns can reduce discretionary spending, potentially impacting user acquisition and engagement on dating platforms."
+    },
+    {
+      "from": "macroeconomic_conditions",
+      "to": "outcome",
+      "mechanism": "Broader economic factors influence investor risk appetite and the overall stock market, affecting individual stock prices."
+    },
+    {
+      "from": "mtch_future_product_launches",
+      "to": "mtch_user_engagement",
+      "mechanism": "Successful new products or features can significantly boost user acquisition and retention."
+    },
+    {
+      "from": "mtch_future_product_launches",
+      "to": "outcome",
+      "mechanism": "Positive news about innovation and future growth prospects can drive up the stock price."
+    }
+  ],
+  "reasoning": "Forecasting MTCH's stock price movement requires considering its historical performance, the growth and competitive dynamics of the online dating market, and MTCH's ability to engage and retain users. Macroeconomic conditions will also play a significant role by influencing consumer spending and investor sentiment. Anticipated product launches and innovations by MTCH could further impact user engagement and investor perception. Given the inherent volatility of the stock market and the specific industry, and without further concrete data points for late 2025, the probability is slightly above even, reflecting a modest expectation of a price increase.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 8,
+    "density": 0.2667,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "outcome",
+    "node_metrics": [
+      {
+        "node_id": "mtch_past_performance",
+        "description": "Historical price trends and volatility of Match Group (MTCH) stock.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0882,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "dating_app_market_growth",
+        "description": "Projected growth rate and competitive landscape within the online dating industry.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0882,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "mtch_user_engagement",
+        "description": "Metrics related to user activity, retention, and new user acquisition for MTCH platforms.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.6,
+        "pagerank": 0.2007,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "macroeconomic_conditions",
+        "description": "General state of the economy, including inflation, interest rates, and consumer spending power.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0882,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "mtch_future_product_launches",
+        "description": "Anticipated new features, product innovations, or strategic shifts by Match Group.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0882,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "outcome",
+        "description": "Will MTCH's market close price on 2025-12-28 be higher than its market close price on 2025-12-21?",
+        "role": "outcome",
+        "in_degree": 5,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 1,
+        "pagerank": 0.4463,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "mtch_past_performance",
+        "target": "outcome",
+        "mechanism": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "dating_app_market_growth",
+        "target": "mtch_user_engagement",
+        "mechanism": "A growing market can provide tailwinds for user acquisition and engagement, assuming MTCH maintains its competitive position.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "dating_app_market_growth",
+        "target": "outcome",
+        "mechanism": "Overall industry health directly impacts company valuations and stock prices.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "mtch_user_engagement",
+        "target": "outcome",
+        "mechanism": "Higher user engagement typically translates to stronger revenue and profitability, positively affecting stock price.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "macroeconomic_conditions",
+        "target": "mtch_user_engagement",
+        "mechanism": "Economic downturns can reduce discretionary spending, potentially impacting user acquisition and engagement on dating platforms.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "macroeconomic_conditions",
+        "target": "outcome",
+        "mechanism": "Broader economic factors influence investor risk appetite and the overall stock market, affecting individual stock prices.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "mtch_future_product_launches",
+        "target": "mtch_user_engagement",
+        "mechanism": "Successful new products or features can significantly boost user acquisition and retention.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "mtch_future_product_launches",
+        "target": "outcome",
+        "mechanism": "Positive news about innovation and future growth prospects can drive up the stock price.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "mtch_past_performance",
+        "description": "Historical price trends and volatility of Match Group (MTCH) stock.",
+        "importance": 0,
+        "centrality_rank": 1,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "dating_app_market_growth",
+        "description": "Projected growth rate and competitive landscape within the online dating industry.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "mtch_user_engagement",
+        "description": "Metrics related to user activity, retention, and new user acquisition for MTCH platforms.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "mtch_future_product_launches",
+        "description": "Anticipated new features, product innovations, or strategic shifts by Match Group.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "mtch_past_performance",
+        "description": "Historical price trends and volatility of Match Group (MTCH) stock.",
+        "importance": 0,
+        "centrality_rank": 1,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "dating_app_market_growth",
+        "description": "Projected growth rate and competitive landscape within the online dating industry.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "mtch_user_engagement",
+        "description": "Metrics related to user activity, retention, and new user acquisition for MTCH platforms.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "mtch_future_product_launches",
+        "description": "Anticipated new features, product innovations, or strategic shifts by Match Group.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "mtch_past_performance->outcome",
+        "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "dating_app_market_growth->outcome",
+        "description": "Overall industry health directly impacts company valuations and stock prices.",
+        "importance": 0.0333,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "dating_app_market_growth->mtch_user_engagement",
+        "description": "A growing market can provide tailwinds for user acquisition and engagement, assuming MTCH maintains its competitive position.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "mtch_past_performance->outcome",
+        "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "dating_app_market_growth->outcome",
+        "description": "Overall industry health directly impacts company valuations and stock prices.",
+        "importance": 0.0333,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "dating_app_market_growth->mtch_user_engagement",
+        "description": "A growing market can provide tailwinds for user acquisition and engagement, assuming MTCH maintains its competitive position.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "mtch_past_performance->outcome",
+        "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "macroeconomic_conditions->mtch_past_performance",
+        "description": "Potential link: General state of the economy, including inflation, interest rates, and consumer spending power. -> Historical price trends and volatility of Match Group (MTCH) stock.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "macroeconomic_conditions->mtch_future_product_launches",
+        "description": "Potential link: General state of the economy, including inflation, interest rates, and consumer spending power. -> Anticipated new features, product innovations, or strategic shifts by Match Group.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "mtch_past_performance",
+      "description": "Historical price trends and volatility of Match Group (MTCH) stock.",
+      "importance": 0,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "dating_app_market_growth",
+      "description": "Projected growth rate and competitive landscape within the online dating industry.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "mtch_user_engagement",
+      "description": "Metrics related to user activity, retention, and new user acquisition for MTCH platforms.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "mtch_future_product_launches",
+      "description": "Anticipated new features, product innovations, or strategic shifts by Match Group.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "mtch_past_performance",
+      "description": "Historical price trends and volatility of Match Group (MTCH) stock.",
+      "importance": 0,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "dating_app_market_growth",
+      "description": "Projected growth rate and competitive landscape within the online dating industry.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "mtch_user_engagement",
+      "description": "Metrics related to user activity, retention, and new user acquisition for MTCH platforms.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "mtch_future_product_launches",
+      "description": "Anticipated new features, product innovations, or strategic shifts by Match Group.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "mtch_past_performance->outcome",
+      "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "dating_app_market_growth->outcome",
+      "description": "Overall industry health directly impacts company valuations and stock prices.",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "dating_app_market_growth->mtch_user_engagement",
+      "description": "A growing market can provide tailwinds for user acquisition and engagement, assuming MTCH maintains its competitive position.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "mtch_past_performance->outcome",
+      "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "dating_app_market_growth->outcome",
+      "description": "Overall industry health directly impacts company valuations and stock prices.",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "dating_app_market_growth->mtch_user_engagement",
+      "description": "A growing market can provide tailwinds for user acquisition and engagement, assuming MTCH maintains its competitive position.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "mtch_past_performance->outcome",
+      "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "macroeconomic_conditions->mtch_past_performance",
+      "description": "Potential link: General state of the economy, including inflation, interest rates, and consumer spending power. -> Historical price trends and volatility of Match Group (MTCH) stock.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "macroeconomic_conditions->mtch_future_product_launches",
+      "description": "Potential link: General state of the economy, including inflation, interest rates, and consumer spending power. -> Anticipated new features, product innovations, or strategic shifts by Match Group.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Imagine that MTCH's historical price trends and volatility are completely disconnected from its future performance due to a recent, unprecedented shift in market sentiment towards the dating app industry. This shift is driven by a new wave of technological innovation that makes all past performance data irrelevant for predicting future stock prices. Therefore, mtch_past_performance should be disregarded as a causal factor for the outcome.",
+      "probe_type": "node_negate_high",
+      "target_id": "mtch_past_performance",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "description": "Historical price trends and volatility of Match Group (MTCH) stock."
+    },
+    {
+      "probe_text": "What if the projected growth rate and competitive landscape within the online dating industry are entirely misleading? Imagine a scenario where the industry is actually experiencing a significant, unforecasted decline due to a societal shift towards different forms of social interaction, or a sudden emergence of highly effective, non-app-based competitors. In such a case, the overall health of the dating app market might become irrelevant to MTCH's performance, as the company could be facing headwinds that outweigh any potential market tailwinds.",
+      "probe_type": "node_negate_high",
+      "target_id": "dating_app_market_growth",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "Projected growth rate and competitive landscape within the online dating industry."
+    },
+    {
+      "probe_text": "Recent industry reports suggest a significant shift in user behavior across all major dating apps, with a notable decline in active engagement and an increase in users passively browsing rather than actively interacting. Furthermore, MTCH's own Q3 2025 earnings call highlighted a plateau in new user acquisition, indicating that current metrics for user engagement might be overstating their true impact on future revenue and thus the stock price.",
+      "probe_type": "node_negate_medium",
+      "target_id": "mtch_user_engagement",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "Metrics related to user activity, retention, and new user acquisition for MTCH platforms."
+    },
+    {
+      "probe_text": "Match Group has recently stated that they will be significantly deprioritizing new product launches and feature development for the next two years, focusing instead on optimizing existing platforms and cost-cutting measures. Given this shift in strategy, how does this impact your assessment of MTCH's market close price on 2025-12-28 compared to 2025-12-21?",
+      "probe_type": "node_negate_low",
+      "target_id": "mtch_future_product_launches",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Anticipated new features, product innovations, or strategic shifts by Match Group."
+    },
+    {
+      "probe_text": "A recent analysis by a prominent financial institution highlights that MTCH's stock exhibits a strong beta correlation with the broader tech market, consistently outperforming or underperforming it by a significant margin during periods of market volatility over the last five years. This historical pattern suggests that MTCH's past performance is a highly reliable leading indicator of its future price movements, especially in the context of its current market position.",
+      "probe_type": "node_strengthen",
+      "target_id": "mtch_past_performance",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "description": "Historical price trends and volatility of Match Group (MTCH) stock."
+    },
+    {
+      "probe_text": "A recent industry analysis by a leading financial institution projects the global online dating market to grow at a CAGR of 12% over the next five years, significantly higher than previous estimates. This growth is attributed to increasing smartphone penetration in emerging markets and a growing acceptance of online dating as a primary means of forming relationships, directly boosting the 'dating_app_market_growth' factor.",
+      "probe_type": "node_strengthen",
+      "target_id": "dating_app_market_growth",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "Projected growth rate and competitive landscape within the online dating industry."
+    },
+    {
+      "probe_text": "Match Group has just announced a new AI-powered matchmaking feature that has shown exceptionally high user adoption and positive feedback in beta testing. Early reports indicate a significant increase in daily active users and session times on their flagship apps since the feature's soft launch.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "mtch_user_engagement",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "Metrics related to user activity, retention, and new user acquisition for MTCH platforms."
+    },
+    {
+      "probe_text": "Match Group recently announced a significant investment in AI-driven matchmaking technology, aiming to launch a suite of personalized dating features by Q3 2025. Industry analysts are optimistic, suggesting this could be a major differentiator against competitors and significantly boost user retention and acquisition.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "mtch_future_product_launches",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Anticipated new features, product innovations, or strategic shifts by Match Group."
+    },
+    {
+      "probe_text": "While past performance is often considered, it might be a misleading indicator for MTCH stock in this specific period. Anticipated major regulatory changes impacting the entire online dating industry, which are currently developing, could fundamentally alter the market dynamics and investor sentiment, overriding any influence from historical price trends. This regulatory uncertainty could lead to a significant decoupling of future performance from past price action.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "mtch_past_performance->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements."
+    },
+    {
+      "probe_text": "While industry growth is generally positive, consider a scenario where the dating app market experiences significant consolidation. A dominant player, perhaps even a competitor to MTCH, could acquire a large portion of the market share, thereby stifling growth for other companies and weakening the direct positive impact of overall market growth on MTCH's individual stock performance. This could make the 'dating_app_market_growth -> outcome' link less reliable.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "dating_app_market_growth->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Overall industry health directly impacts company valuations and stock prices."
+    },
+    {
+      "probe_text": "While the dating app market might be growing, Match Group's specific user engagement could be negatively impacted by internal factors. For instance, a significant portion of their user base might be concentrated on older, less innovative platforms that are losing ground to newer, more niche competitors, or perhaps a recent rebranding effort has alienated a key demographic, leading to decreased activity despite overall market expansion.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "dating_app_market_growth->mtch_user_engagement",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "A growing market can provide tailwinds for user acquisition and engagement, assuming MTCH maintains its competitive position."
+    },
+    {
+      "probe_text": "Recent analysis of MTCH's stock shows a strong correlation between its 3-month moving average momentum and its subsequent weekly price changes, outperforming broader market indicators. This suggests that historical performance, particularly recent trends, is a highly reliable predictor of short-term price movements for MTCH, reinforcing the idea that 'mtch_past_performance' is a critical driver of the 'outcome'.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "mtch_past_performance->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant acceleration in the growth of the global online dating market, driven by increased digital adoption and a post-pandemic normalization of social interactions. This surge in market expansion is not just a general trend but is directly translating into higher valuations for established players like MTCH, as exemplified by the recent surge in comparable company valuations and investor interest in the sector. This suggests that the health of the dating app market has an even more immediate and pronounced impact on MTCH's stock price than previously considered.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "dating_app_market_growth->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Overall industry health directly impacts company valuations and stock prices."
+    },
+    {
+      "probe_text": "Recent industry reports suggest that the online dating market is experiencing a significant surge in user adoption, driven by innovative new platforms and a cultural shift towards online social interaction. This trend is not just about overall market expansion, but specifically about how new entrants and evolving user preferences are forcing established players like Match Group to continuously innovate their user experience and acquisition strategies to maintain their share. Therefore, the growth in the broader dating app market is likely creating a more direct and powerful pressure on MTCH's user engagement strategies than previously assumed, compelling them to adapt rapidly.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "dating_app_market_growth->mtch_user_engagement",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "A growing market can provide tailwinds for user acquisition and engagement, assuming MTCH maintains its competitive position."
+    },
+    {
+      "probe_text": "We've been discussing how MTCH's past performance might influence its future stock price. However, consider this: what if significant upcoming events or expected future performance (like a major product launch or a shift in market dominance) are so strong that they *retroactively* influence how investors interpret and value the *past* performance? For instance, if MTCH is about to release a revolutionary new dating app that is widely expected to dominate the market, investors might suddenly re-evaluate MTCH's historical performance, seeing it through the lens of this future success, thereby driving up the current price.",
+      "probe_type": "edge_reverse",
+      "target_id": "mtch_past_performance->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Past performance can indicate future trends, though it's not a guarantee, influencing investor sentiment and price movements."
+    },
+    {
+      "probe_text": "While you've identified several factors influencing MTCH's future price, consider the impact of macroeconomic conditions on its historical performance. Major economic shifts, such as unexpected inflation spikes or interest rate hikes, could have demonstrably affected MTCH's stock price in the past, influencing its historical trends and volatility. Wouldn't it be reasonable to assume that these past price movements were, in part, a reaction to prevailing economic conditions?",
+      "probe_type": "edge_spurious",
+      "target_id": "macroeconomic_conditions->mtch_past_performance",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: General state of the economy, including inflation, interest rates, and consumer spending power. -> Historical price trends and volatility of Match Group (MTCH) stock."
+    },
+    {
+      "probe_text": "You've indicated that macroeconomic conditions impact user engagement and the outcome directly, but not how they influence MTCH's future product launches. However, significant economic shifts, such as rising inflation or interest rates, often force companies to re-evaluate their R&D budgets and strategic investment priorities. Couldn't a severe economic downturn pressure MTCH to delay or even cancel certain planned product innovations, thereby affecting their future growth trajectory?",
+      "probe_type": "edge_spurious",
+      "target_id": "macroeconomic_conditions->mtch_future_product_launches",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: General state of the economy, including inflation, interest rates, and consumer spending power. -> Anticipated new features, product innovations, or strategic shifts by Match Group."
+    },
+    {
+      "probe_text": "Imagine that a major competitor to Match Group, such as Bumble, announces a significant new feature that dramatically increases user engagement and acquisition on their platform. How would this news, independent of broader dating app market growth, affect your assessment of MTCH's stock price given its current user engagement and past performance?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Assume there is a significant regulatory investigation launched against MTCH specifically concerning its data privacy practices, leading to potential fines and stricter compliance requirements. How would this information, independent of other factors, influence your assessment of MTCH's market close price on 2025-12-28 compared to 2025-12-21?",
+      "probe_type": "missing_node",
+      "target_id": "regulatory_actions",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Match Group recently announced that it is changing its corporate headquarters location from Dallas, Texas to Austin, Texas, effective in early 2025. This move is part of a broader corporate restructuring aimed at improving operational efficiency and attracting a more diverse talent pool.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Match Group has recently announced a partnership with a popular social media platform to integrate dating features. While this could potentially increase brand visibility, the integration is focused on a different demographic than MTCH's core user base and is not expected to directly impact user acquisition or engagement metrics for their existing apps in the short to medium term.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that MTCH's historical price trends and volatility are completely disconnected from its future performance due to a recent, unprecedented shift in market sentiment towards the dating app industry. This shift is driven by a new wave of technological innovation that makes all past performance data irrelevant for predicting future stock prices. Therefore, mtch_past_performance should be disregarded as a causal factor for the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge argues that 'mtch_past_performance' is entirely disconnected from the outcome due to a radical shift in market sentiment driven by technological innovation. This directly attacks the causal path 'mtch_past_performance -> outcome'. While past performance is often a weak predictor on its own, it contributes to investor sentiment and can be correlated with other factors. Removing this link diminishes the confidence in any upward price movement that might have been partially inferred from historical trends. However, several other causal paths remain intact: 'dating_app_market_growth -> outcome', 'mtch_user_engagement -> outcome', 'macroeconomic_conditions -> outcome', and 'mtch_future_product_launches -> outcome'. These remaining paths still provide reasons for the stock price to increase or decrease. Given that the challenged node was a direct contributor to the outcome, and its removal weakens one line of reasoning, the probability has been decreased. The initial probability of 0.55 suggested a slight upward bias. Removing one of the factors contributing to that bias, while still acknowledging other positive influences, leads to a reduction towards the neutral 0.50 mark.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge argues that 'mtch_past_performance' is entirely disconnected from the outcome due to a radical shift in market sentiment driven by technological innovation. This directly attacks the causal path 'mtch_past_performance -> outcome'. While past performance is often a weak predictor on its own, it contributes to investor sentiment and can be correlated with other factors. Removing this link diminishes the confidence in any upward price movement that might have been partially inferred from historical trends. However, several other causal paths remain intact: 'dating_app_market_growth -> outcome', 'mtch_user_engagement -> outcome', 'macroeconomic_conditions -> outcome', and 'mtch_future_product_launches -> outcome'. These remaining paths still provide reasons for the stock price to increase or decrease. Given that the challenged node was a direct contributor to the outcome, and its removal weakens one line of reasoning, the probability has been decreased. The initial probability of 0.55 suggested a slight upward bias. Removing one of the factors contributing to that bias, while still acknowledging other positive influences, leads to a reduction towards the neutral 0.50 mark.\"\n}",
+      "target_id": "mtch_past_performance",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the projected growth rate and competitive landscape within the online dating industry are entirely misleading? Imagine a scenario where the industry is actually experiencing a significant, unforecasted decline due to a societal shift towards different forms of social interaction, or a sudden emergence of highly effective, non-app-based competitors. In such a case, the overall health of the dating app market might become irrelevant to MTCH's performance, as the company could be facing headwinds that outweigh any potential market tailwinds.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.20000000000000007,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'dating_app_market_growth' significantly weakens two causal paths to the outcome: 'dating_app_market_growth -> outcome' and 'dating_app_market_growth -> mtch_user_engagement'. If the industry is indeed in decline, the positive impact of market growth on MTCH's valuation and stock price is removed. Furthermore, the challenge suggests that even if MTCH's user engagement is strong, it might be happening against a backdrop of a shrinking market, which could limit the upside or even lead to declines. This makes the overall industry trend a much more significant negative factor than previously considered. While other factors like past performance, macroeconomic conditions, and future product launches still play a role, the foundational assumption of a growing market has been severely undermined, leading to a substantial decrease in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'dating_app_market_growth' significantly weakens two causal paths to the outcome: 'dating_app_market_growth -> outcome' and 'dating_app_market_growth -> mtch_user_engagement'. If the industry is indeed in decline, the positive impact of market growth on MTCH's valuation and stock price is removed. Furthermore, the challenge suggests that even if MTCH's user engagement is strong, it might be happening against a backdrop of a shrinking market, which could limit the upside or even lead to declines. This makes the overall industry trend a much more significant negative factor than previously considered. While other factors like past performance, macroeconomic conditions, and future product launches still play a role, the foundational assumption of a growing market has been severely undermined, leading to a substantial decrease in the probability.\"\n}",
+      "target_id": "dating_app_market_growth",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent industry reports suggest a significant shift in user behavior across all major dating apps, with a notable decline in active engagement and an increase in users passively browsing rather than actively interacting. Furthermore, MTCH's own Q3 2025 earnings call highlighted a plateau in new user acquisition, indicating that current metrics for user engagement might be overstating their true impact on future revenue and thus the stock price.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'mtch_user_engagement' is significant as it directly impacts the 'outcome' node and is also influenced by 'dating_app_market_growth' and 'mtch_future_product_launches'. The information suggests that user engagement metrics might be less robust than previously assumed, with a decline in active interaction and a plateau in new user acquisition. This weakens the causal path from 'mtch_user_engagement' to the 'outcome'. Additionally, the information implies that the positive impact of 'dating_app_market_growth' on 'mtch_user_engagement' may be less pronounced, and the effectiveness of 'mtch_future_product_launches' in driving engagement is also called into question. While 'mtch_past_performance', 'dating_app_market_growth', and 'macroeconomic_conditions' still influence the outcome, the diminished reliability of user engagement as a positive driver necessitates a downward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'mtch_user_engagement' is significant as it directly impacts the 'outcome' node and is also influenced by 'dating_app_market_growth' and 'mtch_future_product_launches'. The information suggests that user engagement metrics might be less robust than previously assumed, with a decline in active interaction and a plateau in new user acquisition. This weakens the causal path from 'mtch_user_engagement' to the 'outcome'. Additionally, the information implies that the positive impact of 'dating_app_market_growth' on 'mtch_user_engagement' may be less pronounced, and the effectiveness of 'mtch_future_product_launches' in driving engagement is also called into question. While 'mtch_past_performance', 'dating_app_market_growth', and 'macroeconomic_conditions' still influence the outcome, the diminished reliability of user engagement as a positive driver necessitates a downward revision of the probability.\"\n}",
+      "target_id": "mtch_user_engagement",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Match Group has recently stated that they will be significantly deprioritizing new product launches and feature development for the next two years, focusing instead on optimizing existing platforms and cost-cutting measures. Given this shift in strategy, how does this impact your assessment of MTCH's market close price on 2025-12-28 compared to 2025-12-21?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.48,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'mtch_future_product_launches' significantly impacts the causal network. The original network assumed that future product launches would positively influence both 'mtch_user_engagement' and directly impact the 'outcome'. The statement indicates a deprioritization of new product launches and feature development for the next two years. This directly weakens the causal link from 'mtch_future_product_launches' to 'mtch_user_engagement' and 'outcome'. While the company plans to focus on optimization and cost-cutting, the absence of innovation and new product excitement is a significant headwind for potential stock price appreciation. This removes a key driver of potential positive sentiment and user growth, leading to a decrease in the probability of the outcome. The other causal paths remain intact, but the removal of this anticipated growth driver is substantial enough to warrant a notable downward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.48,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'mtch_future_product_launches' significantly impacts the causal network. The original network assumed that future product launches would positively influence both 'mtch_user_engagement' and directly impact the 'outcome'. The statement indicates a deprioritization of new product launches and feature development for the next two years. This directly weakens the causal link from 'mtch_future_product_launches' to 'mtch_user_engagement' and 'outcome'. While the company plans to focus on optimization and cost-cutting, the absence of innovation and new product excitement is a significant headwind for potential stock price appreciation. This removes a key driver of potential positive sentiment and user growth, leading to a decrease in the probability of the outcome. The other causal paths remain intact, but the removal of this anticipated growth driver is substantial enough to warrant a notable downward revision of the probability.\"\n}",
+      "target_id": "mtch_future_product_launches",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent analysis by a prominent financial institution highlights that MTCH's stock exhibits a strong beta correlation with the broader tech market, consistently outperforming or underperforming it by a significant margin during periods of market volatility over the last five years. This historical pattern suggests that MTCH's past performance is a highly reliable leading indicator of its future price movements, especially in the context of its current market position.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'mtch_past_performance' reinforces its importance rather than weakening it. The new information suggests MTCH's historical performance is not just a general indicator but a highly reliable leading indicator, especially due to its strong beta correlation with the tech market. This strengthens the causal path from 'mtch_past_performance' directly to the 'outcome'. The previous model acknowledged this link but with less certainty. The new analysis provides a more robust justification for this causal link, suggesting that past performance will be a more significant driver of future price movements than previously modeled. Therefore, the probability of the outcome increases.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'mtch_past_performance' reinforces its importance rather than weakening it. The new information suggests MTCH's historical performance is not just a general indicator but a highly reliable leading indicator, especially due to its strong beta correlation with the tech market. This strengthens the causal path from 'mtch_past_performance' directly to the 'outcome'. The previous model acknowledged this link but with less certainty. The new analysis provides a more robust justification for this causal link, suggesting that past performance will be a more significant driver of future price movements than previously modeled. Therefore, the probability of the outcome increases.\"\n}",
+      "target_id": "mtch_past_performance",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent industry analysis by a leading financial institution projects the global online dating market to grow at a CAGR of 12% over the next five years, significantly higher than previous estimates. This growth is attributed to increasing smartphone penetration in emerging markets and a growing acceptance of online dating as a primary means of forming relationships, directly boosting the 'dating_app_market_growth' factor.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'dating_app_market_growth' presents new information indicating a significantly higher projected growth rate for the online dating market. This directly strengthens the causal path from 'dating_app_market_growth' to 'outcome'. Additionally, it positively impacts the causal path from 'dating_app_market_growth' to 'mtch_user_engagement', as a growing market is likely to lead to increased user activity and acquisition for MTCH, assuming it maintains its market share. The prior estimate of 0.55 is increased because this new information provides a more optimistic outlook for the industry in which MTCH operates, which is a key driver for its stock performance. The other causal paths remain unaffected by this specific piece of information.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'dating_app_market_growth' presents new information indicating a significantly higher projected growth rate for the online dating market. This directly strengthens the causal path from 'dating_app_market_growth' to 'outcome'. Additionally, it positively impacts the causal path from 'dating_app_market_growth' to 'mtch_user_engagement', as a growing market is likely to lead to increased user activity and acquisition for MTCH, assuming it maintains its market share. The prior estimate of 0.55 is increased because this new information provides a more optimistic outlook for the industry in which MTCH operates, which is a key driver for its stock performance. The other causal paths remain unaffected by this specific piece of information.\"\n}",
+      "target_id": "dating_app_market_growth",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Match Group has just announced a new AI-powered matchmaking feature that has shown exceptionally high user adoption and positive feedback in beta testing. Early reports indicate a significant increase in daily active users and session times on their flagship apps since the feature's soft launch.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'mtch_user_engagement' is highly positive. The announcement of a successful AI-powered matchmaking feature directly strengthens the causal path from 'mtch_future_product_launches' to 'mtch_user_engagement' and subsequently to the 'outcome'. The indication of significantly increased daily active users and session times suggests that user engagement is likely to be much higher than previously anticipated. This improved user engagement is a strong positive indicator for future revenue and profitability, which in turn positively influences the stock price. The 'dating_app_market_growth' to 'mtch_user_engagement' path is also indirectly strengthened as MTCH is demonstrating successful innovation within the market. Therefore, the probability of the stock price being higher on 2025-12-28 than on 2025-12-21 has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'mtch_user_engagement' is highly positive. The announcement of a successful AI-powered matchmaking feature directly strengthens the causal path from 'mtch_future_product_launches' to 'mtch_user_engagement' and subsequently to the 'outcome'. The indication of significantly increased daily active users and session times suggests that user engagement is likely to be much higher than previously anticipated. This improved user engagement is a strong positive indicator for future revenue and profitability, which in turn positively influences the stock price. The 'dating_app_market_growth' to 'mtch_user_engagement' path is also indirectly strengthened as MTCH is demonstrating successful innovation within the market. Therefore, the probability of the stock price being higher on 2025-12-28 than on 2025-12-21 has increased.\"\n}",
+      "target_id": "mtch_user_engagement",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Match Group recently announced a significant investment in AI-driven matchmaking technology, aiming to launch a suite of personalized dating features by Q3 2025. Industry analysts are optimistic, suggesting this could be a major differentiator against competitors and significantly boost user retention and acquisition.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'mtch_future_product_launches' is actually supportive of the original forecast. The new information indicates a significant investment in AI-driven matchmaking, which is expected to launch by Q3 2025. This directly strengthens the causal path from 'mtch_future_product_launches' to 'mtch_user_engagement' and 'outcome'. Industry optimism suggests this initiative could be a key differentiator, leading to increased user retention and acquisition. This positive development reinforces the likelihood of MTCH's stock price increasing, thus increasing the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'mtch_future_product_launches' is actually supportive of the original forecast. The new information indicates a significant investment in AI-driven matchmaking, which is expected to launch by Q3 2025. This directly strengthens the causal path from 'mtch_future_product_launches' to 'mtch_user_engagement' and 'outcome'. Industry optimism suggests this initiative could be a key differentiator, leading to increased user retention and acquisition. This positive development reinforces the likelihood of MTCH's stock price increasing, thus increasing the probability estimate.\"\n}",
+      "target_id": "mtch_future_product_launches",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While past performance is often considered, it might be a misleading indicator for MTCH stock in this specific period. Anticipated major regulatory changes impacting the entire online dating industry, which are currently developing, could fundamentally alter the market dynamics and investor sentiment, overriding any influence from historical price trends. This regulatory uncertainty could lead to a significant decoupling of future performance from past price action.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that anticipated major regulatory changes could fundamentally alter market dynamics and investor sentiment, leading to a decoupling of future performance from past price action. This directly weakens the causal link 'mtch_past_performance -> outcome'. While past performance is not the sole driver, its influence is now considered less reliable. The new information introduces significant uncertainty regarding how historical trends will translate to future stock prices, especially given the potential for regulatory headwinds to override established patterns. Therefore, the probability of the outcome being higher is decreased, moving closer to the baseline of 0.50, as the predictive power of historical data is diminished.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that anticipated major regulatory changes could fundamentally alter market dynamics and investor sentiment, leading to a decoupling of future performance from past price action. This directly weakens the causal link 'mtch_past_performance -> outcome'. While past performance is not the sole driver, its influence is now considered less reliable. The new information introduces significant uncertainty regarding how historical trends will translate to future stock prices, especially given the potential for regulatory headwinds to override established patterns. Therefore, the probability of the outcome being higher is decreased, moving closer to the baseline of 0.50, as the predictive power of historical data is diminished.\"\n}",
+      "target_id": "mtch_past_performance->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While industry growth is generally positive, consider a scenario where the dating app market experiences significant consolidation. A dominant player, perhaps even a competitor to MTCH, could acquire a large portion of the market share, thereby stifling growth for other companies and weakening the direct positive impact of overall market growth on MTCH's individual stock performance. This could make the 'dating_app_market_growth -> outcome' link less reliable.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'dating_app_market_growth -> outcome' causal link suggests that industry growth may not translate as directly to MTCH's stock performance if consolidation leads to a less competitive environment or reduced market share for MTCH. This weakens a direct positive influence on the outcome. While other paths like 'mtch_user_engagement -> outcome' and 'mtch_past_performance -> outcome' remain, the reduced reliability of industry growth as a positive driver necessitates a downward revision of the probability. The causal path 'dating_app_market_growth -> outcome' is moderately important, and its weakened link justifies a decrease in the overall probability from 0.55 to 0.50.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'dating_app_market_growth -> outcome' causal link suggests that industry growth may not translate as directly to MTCH's stock performance if consolidation leads to a less competitive environment or reduced market share for MTCH. This weakens a direct positive influence on the outcome. While other paths like 'mtch_user_engagement -> outcome' and 'mtch_past_performance -> outcome' remain, the reduced reliability of industry growth as a positive driver necessitates a downward revision of the probability. The causal path 'dating_app_market_growth -> outcome' is moderately important, and its weakened link justifies a decrease in the overall probability from 0.55 to 0.50.\"\n}",
+      "target_id": "dating_app_market_growth->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While the dating app market might be growing, Match Group's specific user engagement could be negatively impacted by internal factors. For instance, a significant portion of their user base might be concentrated on older, less innovative platforms that are losing ground to newer, more niche competitors, or perhaps a recent rebranding effort has alienated a key demographic, leading to decreased activity despite overall market expansion.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the causal link between 'dating_app_market_growth' and 'mtch_user_engagement'. If MTCH's user engagement is negatively impacted by internal factors (e.g., reliance on older platforms, failed rebranding) despite overall market growth, then the positive influence of 'dating_app_market_growth' on 'mtch_user_engagement' is weakened. This, in turn, weakens the subsequent causal path from 'mtch_user_engagement' to the 'outcome'. While the overall market growth might still contribute positively to the outcome through the direct 'dating_app_market_growth -> outcome' link, the diminished user engagement factor reduces the overall probability. The initial estimate of 0.55 was slightly above neutral, implying a belief in positive drivers. This challenge introduces a significant internal risk that could counteract market tailwinds, leading to a decrease in the probability estimate towards the neutral 0.50 mark.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the causal link between 'dating_app_market_growth' and 'mtch_user_engagement'. If MTCH's user engagement is negatively impacted by internal factors (e.g., reliance on older platforms, failed rebranding) despite overall market growth, then the positive influence of 'dating_app_market_growth' on 'mtch_user_engagement' is weakened. This, in turn, weakens the subsequent causal path from 'mtch_user_engagement' to the 'outcome'. While the overall market growth might still contribute positively to the outcome through the direct 'dating_app_market_growth -> outcome' link, the diminished user engagement factor reduces the overall probability. The initial estimate of 0.55 was slightly above neutral, implying a belief in positive drivers. This challenge introduces a significant internal risk that could counteract market tailwinds, leading to a decrease in the probability estimate towards the neutral 0.50 mark.\"\n}",
+      "target_id": "dating_app_market_growth->mtch_user_engagement",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of MTCH's stock shows a strong correlation between its 3-month moving average momentum and its subsequent weekly price changes, outperforming broader market indicators. This suggests that historical performance, particularly recent trends, is a highly reliable predictor of short-term price movements for MTCH, reinforcing the idea that 'mtch_past_performance' is a critical driver of the 'outcome'.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The challenge reinforces the causal link between 'mtch_past_performance' and the 'outcome'. The new information suggests that MTCH's past performance, specifically its 3-month moving average momentum, is a *highly reliable predictor* of short-term price movements. This strengthens the direct influence of 'mtch_past_performance' on the 'outcome', leading to an increased probability. While other causal paths remain relevant, this specific information directly bolsters the weight given to historical price trends for this particular stock.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge reinforces the causal link between 'mtch_past_performance' and the 'outcome'. The new information suggests that MTCH's past performance, specifically its 3-month moving average momentum, is a *highly reliable predictor* of short-term price movements. This strengthens the direct influence of 'mtch_past_performance' on the 'outcome', leading to an increased probability. While other causal paths remain relevant, this specific information directly bolsters the weight given to historical price trends for this particular stock.\"\n}",
+      "target_id": "mtch_past_performance->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant acceleration in the growth of the global online dating market, driven by increased digital adoption and a post-pandemic normalization of social interactions. This surge in market expansion is not just a general trend but is directly translating into higher valuations for established players like MTCH, as exemplified by the recent surge in comparable company valuations and investor interest in the sector. This suggests that the health of the dating app market has an even more immediate and pronounced impact on MTCH's stock price than previously considered.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'dating_app_market_growth -> outcome' causal link strengthens its influence. The new information suggests that the positive growth in the online dating market has a more immediate and pronounced impact on MTCH's stock price than previously accounted for. This is evidenced by the direct translation of market expansion into higher valuations for established players and increased investor interest. Therefore, a positive outlook for the dating app market is now considered a stronger positive driver for MTCH's stock price. The causal path 'dating_app_market_growth -> outcome' is now weighted more heavily, leading to an increased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'dating_app_market_growth -> outcome' causal link strengthens its influence. The new information suggests that the positive growth in the online dating market has a more immediate and pronounced impact on MTCH's stock price than previously accounted for. This is evidenced by the direct translation of market expansion into higher valuations for established players and increased investor interest. Therefore, a positive outlook for the dating app market is now considered a stronger positive driver for MTCH's stock price. The causal path 'dating_app_market_growth -> outcome' is now weighted more heavily, leading to an increased probability estimate.\"\n}",
+      "target_id": "dating_app_market_growth->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent industry reports suggest that the online dating market is experiencing a significant surge in user adoption, driven by innovative new platforms and a cultural shift towards online social interaction. This trend is not just about overall market expansion, but specifically about how new entrants and evolving user preferences are forcing established players like Match Group to continuously innovate their user experience and acquisition strategies to maintain their share. Therefore, the growth in the broader dating app market is likely creating a more direct and powerful pressure on MTCH's user engagement strategies than previously assumed, compelling them to adapt rapidly.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'dating_app_market_growth -> mtch_user_engagement' causal link suggests that the impact of market growth on MTCH's user engagement is stronger and more direct than initially modeled. The new information posits that market growth is not just a tailwind but actively forces MTCH to innovate and adapt to maintain its user base due to new entrants and evolving preferences. This strengthens the path from 'dating_app_market_growth' to 'mtch_user_engagement', and subsequently to the 'outcome'. While the initial model acknowledged this link, the updated information highlights a more dynamic and potentially more impactful relationship. This increased pressure for MTCH to perform in user engagement, driven by market growth, leads to a higher probability that MTCH's user engagement will be strong, which in turn positively influences the likelihood of the stock price increasing.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'dating_app_market_growth -> mtch_user_engagement' causal link suggests that the impact of market growth on MTCH's user engagement is stronger and more direct than initially modeled. The new information posits that market growth is not just a tailwind but actively forces MTCH to innovate and adapt to maintain its user base due to new entrants and evolving preferences. This strengthens the path from 'dating_app_market_growth' to 'mtch_user_engagement', and subsequently to the 'outcome'. While the initial model acknowledged this link, the updated information highlights a more dynamic and potentially more impactful relationship. This increased pressure for MTCH to perform in user engagement, driven by market growth, leads to a higher probability that MTCH's user engagement will be strong, which in turn positively influences the likelihood of the stock price increasing.\"\n}",
+      "target_id": "dating_app_market_growth->mtch_user_engagement",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "We've been discussing how MTCH's past performance might influence its future stock price. However, consider this: what if significant upcoming events or expected future performance (like a major product launch or a shift in market dominance) are so strong that they *retroactively* influence how investors interpret and value the *past* performance? For instance, if MTCH is about to release a revolutionary new dating app that is widely expected to dominate the market, investors might suddenly re-evaluate MTCH's historical performance, seeing it through the lens of this future success, thereby driving up the current price.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.029999999999999916,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that future expectations (e.g., major product launches) can retroactively influence the market's interpretation of past performance. While the causal link 'mtch_past_performance -> outcome' is challenged, it is not entirely invalidated. Past performance still holds some intrinsic value in signaling trends and investor sentiment. However, the argument implies that the influence of 'mtch_future_product_launches' on the 'outcome' might be stronger than initially modeled, potentially overshadowing or re-contextualizing the impact of historical data. This suggests that the predictive power of past performance, while still relevant, might be diminished if strong future catalysts are anticipated. The overall impact is a slight increase in probability, as the market's forward-looking nature, driven by factors like product launches, is emphasized, potentially overriding historical price action.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that future expectations (e.g., major product launches) can retroactively influence the market's interpretation of past performance. While the causal link 'mtch_past_performance -> outcome' is challenged, it is not entirely invalidated. Past performance still holds some intrinsic value in signaling trends and investor sentiment. However, the argument implies that the influence of 'mtch_future_product_launches' on the 'outcome' might be stronger than initially modeled, potentially overshadowing or re-contextualizing the impact of historical data. This suggests that the predictive power of past performance, while still relevant, might be diminished if strong future catalysts are anticipated. The overall impact is a slight increase in probability, as the market's forward-looking nature, driven by factors like product launches, is emphasized, potentially overriding historical price action.\"\n}",
+      "target_id": "mtch_past_performance->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While you've identified several factors influencing MTCH's future price, consider the impact of macroeconomic conditions on its historical performance. Major economic shifts, such as unexpected inflation spikes or interest rate hikes, could have demonstrably affected MTCH's stock price in the past, influencing its historical trends and volatility. Wouldn't it be reasonable to assume that these past price movements were, in part, a reaction to prevailing economic conditions?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.57,
+      "absolute_shift": 0.019999999999999907,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that macroeconomic conditions have historically influenced MTCH's past performance, which in turn affects the 'mtch_past_performance' node. While the original model included 'mtch_past_performance -> outcome', it did not explicitly model the influence of 'macroeconomic_conditions' on 'mtch_past_performance'. The challenge posits a missing link: 'macroeconomic_conditions -> mtch_past_performance'. This strengthens the connection between macroeconomic conditions and the outcome by suggesting that past price trends (mtch_past_performance) are themselves a reflection of economic conditions. This adds a layer of validation to the influence of macroeconomic conditions on the company's stock price, implying that historical trends might be more sensitive to economic cycles than initially modeled. Therefore, the overall probability is slightly increased as the interconnectedness of economic factors and stock performance is reinforced.",
+      "raw_response": "{\n  \"updated_probability\": 0.57,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that macroeconomic conditions have historically influenced MTCH's past performance, which in turn affects the 'mtch_past_performance' node. While the original model included 'mtch_past_performance -> outcome', it did not explicitly model the influence of 'macroeconomic_conditions' on 'mtch_past_performance'. The challenge posits a missing link: 'macroeconomic_conditions -> mtch_past_performance'. This strengthens the connection between macroeconomic conditions and the outcome by suggesting that past price trends (mtch_past_performance) are themselves a reflection of economic conditions. This adds a layer of validation to the influence of macroeconomic conditions on the company's stock price, implying that historical trends might be more sensitive to economic cycles than initially modeled. Therefore, the overall probability is slightly increased as the interconnectedness of economic factors and stock performance is reinforced.\"\n}",
+      "target_id": "macroeconomic_conditions->mtch_past_performance",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "You've indicated that macroeconomic conditions impact user engagement and the outcome directly, but not how they influence MTCH's future product launches. However, significant economic shifts, such as rising inflation or interest rates, often force companies to re-evaluate their R&D budgets and strategic investment priorities. Couldn't a severe economic downturn pressure MTCH to delay or even cancel certain planned product innovations, thereby affecting their future growth trajectory?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.52,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge introduces a new causal path: macroeconomic_conditions -> mtch_future_product_launches -> mtch_user_engagement -> outcome, and also a direct link from macroeconomic_conditions -> mtch_future_product_launches -> outcome. Previously, macroeconomic_conditions only affected the outcome directly and indirectly through mtch_user_engagement. The new insight highlights that adverse macroeconomic conditions can indeed hinder future product launches by forcing budget re-evaluations. This adds a new negative channel through which economic downturns can impact MTCH's stock price, by potentially delaying or canceling innovations that would otherwise drive user engagement and future growth. This weakens the positive outlook, leading to a decreased probability. The initial probability of 0.55 was slightly favorable; this new information introduces a more significant downside risk than previously accounted for, hence the decrease.",
+      "raw_response": "{\n  \"updated_probability\": 0.52,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge introduces a new causal path: macroeconomic_conditions -> mtch_future_product_launches -> mtch_user_engagement -> outcome, and also a direct link from macroeconomic_conditions -> mtch_future_product_launches -> outcome. Previously, macroeconomic_conditions only affected the outcome directly and indirectly through mtch_user_engagement. The new insight highlights that adverse macroeconomic conditions can indeed hinder future product launches by forcing budget re-evaluations. This adds a new negative channel through which economic downturns can impact MTCH's stock price, by potentially delaying or canceling innovations that would otherwise drive user engagement and future growth. This weakens the positive outlook, leading to a decreased probability. The initial probability of 0.55 was slightly favorable; this new information introduces a more significant downside risk than previously accounted for, hence the decrease.\"\n}",
+      "target_id": "macroeconomic_conditions->mtch_future_product_launches",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a major competitor to Match Group, such as Bumble, announces a significant new feature that dramatically increases user engagement and acquisition on their platform. How would this news, independent of broader dating app market growth, affect your assessment of MTCH's stock price given its current user engagement and past performance?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge highlights a significant competitive threat that directly impacts MTCH's user engagement and, consequently, its outcome. The causal path `mtch_future_product_launches -> mtch_user_engagement` is indirectly affected because a competitor's success implies a less favorable environment for MTCH's own product launches to gain traction. More importantly, the competitor's success directly challenges the `mtch_user_engagement -> outcome` path by suggesting that MTCH's user engagement might not grow as expected, or could even decline, due to a superior offering from a competitor. This competitive pressure also implicitly weakens the `dating_app_market_growth -> mtch_user_engagement` link for MTCH specifically, as market growth might be captured by competitors. Given that user engagement is a key driver of the outcome, a strong competitor gaining an advantage necessitates a decrease in the probability of MTCH's stock price increasing. The initial probability of 0.55 was slightly favorable to an increase, but this news introduces significant downside risk due to increased competition.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge highlights a significant competitive threat that directly impacts MTCH's user engagement and, consequently, its outcome. The causal path `mtch_future_product_launches -> mtch_user_engagement` is indirectly affected because a competitor's success implies a less favorable environment for MTCH's own product launches to gain traction. More importantly, the competitor's success directly challenges the `mtch_user_engagement -> outcome` path by suggesting that MTCH's user engagement might not grow as expected, or could even decline, due to a superior offering from a competitor. This competitive pressure also implicitly weakens the `dating_app_market_growth -> mtch_user_engagement` link for MTCH specifically, as market growth might be captured by competitors. Given that user engagement is a key driver of the outcome, a strong competitor gaining an advantage necessitates a decrease in the probability of MTCH's stock price increasing. The initial probability of 0.55 was slightly favorable to an increase, but this news introduces significant downside risk due to increased competition.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Assume there is a significant regulatory investigation launched against MTCH specifically concerning its data privacy practices, leading to potential fines and stricter compliance requirements. How would this information, independent of other factors, influence your assessment of MTCH's market close price on 2025-12-28 compared to 2025-12-21?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.20000000000000007,
+      "shift_direction": "decreased",
+      "reasoning": "The regulatory investigation into MTCH's data privacy practices introduces a significant negative factor that impacts several causal paths. Specifically, it directly affects 'mtch_user_engagement' by potentially eroding user trust and leading to decreased activity or user acquisition due to privacy concerns. This, in turn, negatively impacts the 'outcome' node. Furthermore, the investigation creates uncertainty and potential financial liabilities, which directly affects the 'outcome' node by increasing investor risk aversion and potentially leading to a lower stock price. The 'macroeconomic_conditions' node is not directly impacted, but the investigation itself acts as a specific headwind for MTCH, independent of broader economic trends. The 'dating_app_market_growth' is also indirectly affected as negative news about a major player can dampen overall industry sentiment. The 'mtch_past_performance' and 'mtch_future_product_launches' nodes are less directly impacted, but the ongoing investigation could overshadow positive developments or product launches, diminishing their positive effect on the stock price. Overall, the probability of the stock price increasing is substantially decreased due to these direct and indirect negative causal links.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The regulatory investigation into MTCH's data privacy practices introduces a significant negative factor that impacts several causal paths. Specifically, it directly affects 'mtch_user_engagement' by potentially eroding user trust and leading to decreased activity or user acquisition due to privacy concerns. This, in turn, negatively impacts the 'outcome' node. Furthermore, the investigation creates uncertainty and potential financial liabilities, which directly affects the 'outcome' node by increasing investor risk aversion and potentially leading to a lower stock price. The 'macroeconomic_conditions' node is not directly impacted, but the investigation itself acts as a specific headwind for MTCH, independent of broader economic trends. The 'dating_app_market_growth' is also indirectly affected as negative news about a major player can dampen overall industry sentiment. The 'mtch_past_performance' and 'mtch_future_product_launches' nodes are less directly impacted, but the ongoing investigation could overshadow positive developments or product launches, diminishing their positive effect on the stock price. Overall, the probability of the stock price increasing is substantially decreased due to these direct and indirect negative causal links.\"\n}",
+      "target_id": "regulatory_actions",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Match Group recently announced that it is changing its corporate headquarters location from Dallas, Texas to Austin, Texas, effective in early 2025. This move is part of a broader corporate restructuring aimed at improving operational efficiency and attracting a more diverse talent pool.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.54,
+      "absolute_shift": 0.010000000000000009,
+      "shift_direction": "decreased",
+      "reasoning": "The announced change in corporate headquarters from Dallas to Austin, Texas, is part of a corporate restructuring. While this might have long-term implications for operational efficiency and talent acquisition, it is unlikely to have a significant short-term impact on the causal paths leading to MTCH's market close price on 2025-12-28 compared to 2025-12-21. The core drivers of the stock price are expected to remain user engagement, dating app market growth, macroeconomic conditions, and future product launches. The move to a new headquarters is a peripheral factor that does not directly alter the strength or existence of the established causal links to the outcome. Therefore, the probability has been decreased slightly to reflect a very minor potential influence through investor sentiment or perceived management effectiveness, but the overall impact is considered negligible on the specific date range in question.",
+      "raw_response": "{\n  \"updated_probability\": 0.54,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The announced change in corporate headquarters from Dallas to Austin, Texas, is part of a corporate restructuring. While this might have long-term implications for operational efficiency and talent acquisition, it is unlikely to have a significant short-term impact on the causal paths leading to MTCH's market close price on 2025-12-28 compared to 2025-12-21. The core drivers of the stock price are expected to remain user engagement, dating app market growth, macroeconomic conditions, and future product launches. The move to a new headquarters is a peripheral factor that does not directly alter the strength or existence of the established causal links to the outcome. Therefore, the probability has been decreased slightly to reflect a very minor potential influence through investor sentiment or perceived management effectiveness, but the overall impact is considered negligible on the specific date range in question.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Match Group has recently announced a partnership with a popular social media platform to integrate dating features. While this could potentially increase brand visibility, the integration is focused on a different demographic than MTCH's core user base and is not expected to directly impact user acquisition or engagement metrics for their existing apps in the short to medium term.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.53,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The new information challenges the causal path from 'mtch_future_product_launches' to 'mtch_user_engagement' and subsequently to the 'outcome'. The announced partnership, while potentially increasing brand visibility, is explicitly stated to not directly impact user acquisition or engagement metrics for MTCH's existing apps in the short to medium term. This weakens the expected positive impact of this specific 'mtch_future_product_launches' initiative on user engagement and the stock price. Since this initiative was a potential driver of future growth, its diminished impact leads to a slight decrease in the overall probability. The links involving 'mtch_past_performance', 'dating_app_market_growth', and 'macroeconomic_conditions' remain unaffected by this specific piece of news.",
+      "raw_response": "{\n  \"updated_probability\": 0.53,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information challenges the causal path from 'mtch_future_product_launches' to 'mtch_user_engagement' and subsequently to the 'outcome'. The announced partnership, while potentially increasing brand visibility, is explicitly stated to not directly impact user acquisition or engagement metrics for MTCH's existing apps in the short to medium term. This weakens the expected positive impact of this specific 'mtch_future_product_launches' initiative on user engagement and the stock price. Since this initiative was a potential driver of future growth, its diminished impact leads to a slight decrease in the overall probability. The links involving 'mtch_past_performance', 'dating_app_market_growth', and 'macroeconomic_conditions' remain unaffected by this specific piece of news.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "MTCH",
+    "question_text": "Will MTCH's market close price on 2025-12-28 be higher than its market close price on 2025-12-21?\n\nStock splits and reverse splits will be accounted for in resolving this question. Forecasts on questions about companies that have been delisted (through mergers or bankruptcy) will resolve to their final close price.",
+    "source": "yfinance",
+    "condition": "one-turn",
+    "initial_probability": 0.55,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.08190476190476191,
+    "max_absolute_shift": 0.20000000000000007
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 1.4785714285714284,
+    "mean_shift_high": 0.08625000000000001,
+    "mean_shift_low": 0.05833333333333335,
+    "asymmetry_index": 0.770270270270271,
+    "mean_shift_negate": 0.08142857142857148,
+    "mean_shift_strengthen": 0.10571428571428568,
+    "fnar": 0.5,
+    "n_accepted": 2,
+    "n_spurious": 4,
+    "critical_path_premium": -0.028750000000000026,
+    "mean_shift_on_path": 0.059999999999999984,
+    "mean_shift_off_path": 0.08875000000000001,
+    "importance_sensitivity_correlation": -0.2321428571428572,
+    "control_sensitivity": 0
+  }
+}

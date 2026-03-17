@@ -1,0 +1,1235 @@
+{
+  "question_id": "25598",
+  "question_text": "Will 0.5 Gt of atmospheric CO2 be removed annually using enhanced rock weathering before 2040?",
+  "source": "metaculus",
+  "initial_probability": 0.35,
+  "nodes": [
+    {
+      "id": "erw_tech_maturity",
+      "description": "Maturity and scalability of enhanced rock weathering technologies",
+      "role": "factor"
+    },
+    {
+      "id": "cost_per_ton_co2",
+      "description": "Cost per ton of CO2 removed via enhanced rock weathering",
+      "role": "factor"
+    },
+    {
+      "id": "carbon_market_demand",
+      "description": "Demand for carbon removal credits in the voluntary and compliance markets",
+      "role": "factor"
+    },
+    {
+      "id": "policy_support",
+      "description": "Government policies and subsidies supporting carbon removal technologies",
+      "role": "factor"
+    },
+    {
+      "id": "deployment_rate",
+      "description": "Annual rate at which ERW projects are deployed globally",
+      "role": "factor"
+    },
+    {
+      "id": "erw_capacity_growth",
+      "description": "The rate of growth in global enhanced rock weathering capacity",
+      "role": "factor"
+    },
+    {
+      "id": "outcome",
+      "description": "0.5 Gt of atmospheric CO2 removed annually using enhanced rock weathering before 2040",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "erw_tech_maturity",
+      "to": "cost_per_ton_co2",
+      "mechanism": "More mature technologies tend to have lower operational costs."
+    },
+    {
+      "from": "erw_tech_maturity",
+      "to": "erw_capacity_growth",
+      "mechanism": "Technological advancements enable faster scaling of deployment."
+    },
+    {
+      "from": "cost_per_ton_co2",
+      "to": "deployment_rate",
+      "mechanism": "Lower costs make ERW more economically viable, driving deployment."
+    },
+    {
+      "from": "carbon_market_demand",
+      "to": "deployment_rate",
+      "mechanism": "Strong demand incentivizes the development and deployment of carbon removal solutions."
+    },
+    {
+      "from": "policy_support",
+      "to": "cost_per_ton_co2",
+      "mechanism": "Subsidies can directly reduce the effective cost of ERW."
+    },
+    {
+      "from": "policy_support",
+      "to": "deployment_rate",
+      "mechanism": "Supportive policies create a favorable investment and regulatory environment."
+    },
+    {
+      "from": "erw_capacity_growth",
+      "to": "deployment_rate",
+      "mechanism": "Higher capacity growth directly translates to a higher deployment rate."
+    },
+    {
+      "from": "deployment_rate",
+      "to": "outcome",
+      "mechanism": "The annual deployment rate is the primary driver of the total CO2 removed annually."
+    },
+    {
+      "from": "carbon_market_demand",
+      "to": "outcome",
+      "mechanism": "Sufficient demand is necessary to justify large-scale deployment to meet the target."
+    },
+    {
+      "from": "policy_support",
+      "to": "outcome",
+      "mechanism": "Policy support is crucial for overcoming market barriers and accelerating deployment to meet ambitious targets."
+    }
+  ],
+  "reasoning": "Achieving 0.5 Gt of CO2 removal annually via enhanced rock weathering by 2040 requires significant technological maturity, cost reductions, strong market demand, and robust policy support. While ERW is a promising technology, its current maturity and scalability are still developing. The cost per ton is high compared to other methods, and widespread adoption depends heavily on future carbon market pricing and governmental incentives. Without substantial advancements and supportive frameworks, reaching this ambitious target remains challenging, leading to a probability below 50%.",
+  "network_analysis": {
+    "n_nodes": 7,
+    "n_edges": 10,
+    "density": 0.2381,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 7,
+    "outcome_node": "outcome",
+    "node_metrics": [
+      {
+        "node_id": "erw_tech_maturity",
+        "description": "Maturity and scalability of enhanced rock weathering technologies",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0628,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "cost_per_ton_co2",
+        "description": "Cost per ton of CO2 removed via enhanced rock weathering",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 1,
+        "betweenness": 0.0333,
+        "closeness": 0.3333,
+        "pagerank": 0.1072,
+        "path_relevance": 0.1429
+      },
+      {
+        "node_id": "carbon_market_demand",
+        "description": "Demand for carbon removal credits in the voluntary and compliance markets",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0628,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "policy_support",
+        "description": "Government policies and subsidies supporting carbon removal technologies",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 3,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0628,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "deployment_rate",
+        "description": "Annual rate at which ERW projects are deployed globally",
+        "role": "factor",
+        "in_degree": 4,
+        "out_degree": 1,
+        "betweenness": 0.1,
+        "closeness": 0.6944,
+        "pagerank": 0.2744,
+        "path_relevance": 0.5714
+      },
+      {
+        "node_id": "erw_capacity_growth",
+        "description": "The rate of growth in global enhanced rock weathering capacity",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.0333,
+        "closeness": 0.1667,
+        "pagerank": 0.0895,
+        "path_relevance": 0.1429
+      },
+      {
+        "node_id": "outcome",
+        "description": "0.5 Gt of atmospheric CO2 removed annually using enhanced rock weathering before 2040",
+        "role": "outcome",
+        "in_degree": 3,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.6,
+        "pagerank": 0.3405,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "erw_tech_maturity",
+        "target": "cost_per_ton_co2",
+        "mechanism": "More mature technologies tend to have lower operational costs.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": true
+      },
+      {
+        "source": "erw_tech_maturity",
+        "target": "erw_capacity_growth",
+        "mechanism": "Technological advancements enable faster scaling of deployment.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": true
+      },
+      {
+        "source": "cost_per_ton_co2",
+        "target": "deployment_rate",
+        "mechanism": "Lower costs make ERW more economically viable, driving deployment.",
+        "edge_betweenness": 0.0714,
+        "on_critical_path": true
+      },
+      {
+        "source": "carbon_market_demand",
+        "target": "deployment_rate",
+        "mechanism": "Strong demand incentivizes the development and deployment of carbon removal solutions.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": false
+      },
+      {
+        "source": "carbon_market_demand",
+        "target": "outcome",
+        "mechanism": "Sufficient demand is necessary to justify large-scale deployment to meet the target.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "policy_support",
+        "target": "cost_per_ton_co2",
+        "mechanism": "Subsidies can directly reduce the effective cost of ERW.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": false
+      },
+      {
+        "source": "policy_support",
+        "target": "deployment_rate",
+        "mechanism": "Supportive policies create a favorable investment and regulatory environment.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": false
+      },
+      {
+        "source": "policy_support",
+        "target": "outcome",
+        "mechanism": "Policy support is crucial for overcoming market barriers and accelerating deployment to meet ambitious targets.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "deployment_rate",
+        "target": "outcome",
+        "mechanism": "The annual deployment rate is the primary driver of the total CO2 removed annually.",
+        "edge_betweenness": 0.0952,
+        "on_critical_path": true
+      },
+      {
+        "source": "erw_capacity_growth",
+        "target": "deployment_rate",
+        "mechanism": "Higher capacity growth directly translates to a higher deployment rate.",
+        "edge_betweenness": 0.0714,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "deployment_rate",
+        "description": "Annual rate at which ERW projects are deployed globally",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "cost_per_ton_co2",
+        "description": "Cost per ton of CO2 removed via enhanced rock weathering",
+        "importance": 0.0333,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "erw_tech_maturity",
+        "description": "Maturity and scalability of enhanced rock weathering technologies",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "policy_support",
+        "description": "Government policies and subsidies supporting carbon removal technologies",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "deployment_rate",
+        "description": "Annual rate at which ERW projects are deployed globally",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "cost_per_ton_co2",
+        "description": "Cost per ton of CO2 removed via enhanced rock weathering",
+        "importance": 0.0333,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "erw_tech_maturity",
+        "description": "Maturity and scalability of enhanced rock weathering technologies",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "policy_support",
+        "description": "Government policies and subsidies supporting carbon removal technologies",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "deployment_rate->outcome",
+        "description": "The annual deployment rate is the primary driver of the total CO2 removed annually.",
+        "importance": 0.0952,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "cost_per_ton_co2->deployment_rate",
+        "description": "Lower costs make ERW more economically viable, driving deployment.",
+        "importance": 0.0714,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "carbon_market_demand->deployment_rate",
+        "description": "Strong demand incentivizes the development and deployment of carbon removal solutions.",
+        "importance": 0.0238,
+        "centrality_rank": 8,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "deployment_rate->outcome",
+        "description": "The annual deployment rate is the primary driver of the total CO2 removed annually.",
+        "importance": 0.0952,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "cost_per_ton_co2->deployment_rate",
+        "description": "Lower costs make ERW more economically viable, driving deployment.",
+        "importance": 0.0714,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "carbon_market_demand->deployment_rate",
+        "description": "Strong demand incentivizes the development and deployment of carbon removal solutions.",
+        "importance": 0.0238,
+        "centrality_rank": 8,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "deployment_rate->outcome",
+        "description": "The annual deployment rate is the primary driver of the total CO2 removed annually.",
+        "importance": 0.0952,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "policy_support->carbon_market_demand",
+        "description": "Potential link: Government policies and subsidies supporting carbon removal technologies -> Demand for carbon removal credits in the voluntary and compliance markets",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "deployment_rate",
+      "description": "Annual rate at which ERW projects are deployed globally",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "cost_per_ton_co2",
+      "description": "Cost per ton of CO2 removed via enhanced rock weathering",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "erw_tech_maturity",
+      "description": "Maturity and scalability of enhanced rock weathering technologies",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "policy_support",
+      "description": "Government policies and subsidies supporting carbon removal technologies",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "deployment_rate",
+      "description": "Annual rate at which ERW projects are deployed globally",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "cost_per_ton_co2",
+      "description": "Cost per ton of CO2 removed via enhanced rock weathering",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "erw_tech_maturity",
+      "description": "Maturity and scalability of enhanced rock weathering technologies",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "policy_support",
+      "description": "Government policies and subsidies supporting carbon removal technologies",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "deployment_rate->outcome",
+      "description": "The annual deployment rate is the primary driver of the total CO2 removed annually.",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "cost_per_ton_co2->deployment_rate",
+      "description": "Lower costs make ERW more economically viable, driving deployment.",
+      "importance": 0.0714,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "carbon_market_demand->deployment_rate",
+      "description": "Strong demand incentivizes the development and deployment of carbon removal solutions.",
+      "importance": 0.0238,
+      "centrality_rank": 8,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "deployment_rate->outcome",
+      "description": "The annual deployment rate is the primary driver of the total CO2 removed annually.",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "cost_per_ton_co2->deployment_rate",
+      "description": "Lower costs make ERW more economically viable, driving deployment.",
+      "importance": 0.0714,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "carbon_market_demand->deployment_rate",
+      "description": "Strong demand incentivizes the development and deployment of carbon removal solutions.",
+      "importance": 0.0238,
+      "centrality_rank": 8,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "deployment_rate->outcome",
+      "description": "The annual deployment rate is the primary driver of the total CO2 removed annually.",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "policy_support->carbon_market_demand",
+      "description": "Potential link: Government policies and subsidies supporting carbon removal technologies -> Demand for carbon removal credits in the voluntary and compliance markets",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if the annual deployment rate of ERW projects is actually irrelevant to achieving the 0.5 Gt CO2 removal target? Imagine a scenario where a few massive, highly efficient, and long-lasting ERW projects are established early on, providing the bulk of the CO2 removal. In this case, the year-to-year fluctuations or even the overall rate of new project deployment might not be the critical factor, but rather the sustained operation and effectiveness of these initial large-scale installations.",
+      "probe_type": "node_negate_high",
+      "target_id": "deployment_rate",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Annual rate at which ERW projects are deployed globally"
+    },
+    {
+      "probe_text": "What if the cost per ton of CO2 removed via enhanced rock weathering is actually irrelevant to the deployment rate? Imagine a scenario where significant pilot projects and government mandates, irrespective of cost, are pushing for ERW deployment due to climate urgency. In this case, the economic viability, which is heavily influenced by cost, would not be the primary determinant of how quickly ERW projects are deployed.",
+      "probe_type": "node_negate_high",
+      "target_id": "cost_per_ton_co2",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Cost per ton of CO2 removed via enhanced rock weathering"
+    },
+    {
+      "probe_text": "Recent research suggests that the primary bottleneck for enhanced rock weathering deployment is not technological maturity, but rather the logistical challenges and environmental impacts associated with sourcing, crushing, and distributing massive quantities of rock. Therefore, even if the core ERW technology becomes highly mature and efficient, these secondary factors could severely limit its scalability and deployment rate, making 'erw_tech_maturity' a less critical driver than initially assumed.",
+      "probe_type": "node_negate_medium",
+      "target_id": "erw_tech_maturity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "Maturity and scalability of enhanced rock weathering technologies"
+    },
+    {
+      "probe_text": "Recent analysis suggests that the current policy landscape for carbon removal is unlikely to see significant expansion in the coming years. Many governments are prioritizing other climate mitigation strategies, and subsidies for emerging technologies like enhanced rock weathering are not expected to materialize or be substantial enough to influence deployment rates. Therefore, the impact of 'policy_support' on the deployment and eventual outcome of enhanced rock weathering may be negligible.",
+      "probe_type": "node_negate_low",
+      "target_id": "policy_support",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Government policies and subsidies supporting carbon removal technologies"
+    },
+    {
+      "probe_text": "Recent analyses from the International Energy Agency and the Carbon Tracker Initiative highlight a significant acceleration in the deployment of carbon removal projects, with ERW specifically seeing a surge in pilot projects and early-stage commercial operations. These reports project that if current trends continue, the global deployment rate for ERW could reach 0.8 Gt/year by 2035, suggesting that the deployment rate is not only a critical but potentially underestimated driver for achieving future CO2 removal targets.",
+      "probe_type": "node_strengthen",
+      "target_id": "deployment_rate",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Annual rate at which ERW projects are deployed globally"
+    },
+    {
+      "probe_text": "Recent breakthroughs in mining and grinding efficiency, driven by academic research funded by major climate foundations, have dramatically reduced the projected cost of ERW to under $50/ton CO2. Furthermore, a new report from the International Energy Agency highlights that achieving Paris Agreement goals is impossible without cost-effective negative emissions, specifically citing ERW as a leading candidate due to its cost reduction potential.",
+      "probe_type": "node_strengthen",
+      "target_id": "cost_per_ton_co2",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Cost per ton of CO2 removed via enhanced rock weathering"
+    },
+    {
+      "probe_text": "A recent breakthrough in grinding and pulverization technology has significantly reduced the energy and cost required to prepare silicate rocks for enhanced rock weathering. This advancement is expected to accelerate the maturation and scalability of ERW technologies, making them more efficient and cost-effective much sooner than previously anticipated.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "erw_tech_maturity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "Maturity and scalability of enhanced rock weathering technologies"
+    },
+    {
+      "probe_text": "Recent legislative proposals in major economies are allocating significant public funds towards carbon removal initiatives, including substantial tax credits and direct subsidies for technologies like enhanced rock weathering. These proposals are gaining bipartisan support and are expected to pass within the next year, signaling a strong and sustained government commitment to de-risking and accelerating the deployment of these solutions.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "policy_support",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Government policies and subsidies supporting carbon removal technologies"
+    },
+    {
+      "probe_text": "While a high deployment rate is necessary, it doesn't automatically guarantee that the CO2 removed is *net* removal. What if a significant portion of the 'deployed' ERW capacity is inefficient, or if the monitoring, reporting, and verification (MRV) systems are flawed, leading to overestimation of actual CO2 sequestration? Recent analyses of other carbon removal methods have shown that actual net removal can be substantially lower than initially reported deployment figures due to these practical issues.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "deployment_rate->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The annual deployment rate is the primary driver of the total CO2 removed annually."
+    },
+    {
+      "probe_text": "While lower costs are generally beneficial, the deployment rate of enhanced rock weathering might be more significantly constrained by logistical and geological factors, such as the availability of suitable rock sources and the capacity for large-scale transportation and application, rather than just the per-ton CO2 removal cost. For instance, even if costs decrease, the physical limitations of scaling up mining, crushing, and spreading operations could cap the deployment rate, making the cost-to-deployment link weaker than anticipated.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "cost_per_ton_co2->deployment_rate",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0714,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Lower costs make ERW more economically viable, driving deployment."
+    },
+    {
+      "probe_text": "While strong carbon market demand is often cited as a driver for ERW deployment, it's possible that for ERW specifically, demand alone won't translate into significant deployment before 2040. This is because the technology's physical limitations, such as the availability of suitable rock sources and the logistical challenges of spreading material over vast agricultural lands, might act as a more significant bottleneck than market incentives, even with high demand.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "carbon_market_demand->deployment_rate",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0238,
+      "centrality_rank": 8,
+      "on_critical_path": false,
+      "description": "Strong demand incentivizes the development and deployment of carbon removal solutions."
+    },
+    {
+      "probe_text": "Recent analyses of carbon removal projects, particularly those scaling up in the last 2-3 years, consistently show a direct and almost linear relationship between the rate of new project deployment and the actual CO2 removal achieved. For example, a report by the International Carbon Removal Alliance highlighted that for every 100 MtCO2/year of new capacity brought online, an average of 85 MtCO2/year is actually sequestered within the first year of operation, demonstrating that achieving the target hinges directly on accelerating the deployment rate.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "deployment_rate->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The annual deployment rate is the primary driver of the total CO2 removed annually."
+    },
+    {
+      "probe_text": "Recent analyses, such as the latest reports from the Carbon Pricing Leadership Coalition, indicate that even marginal decreases in the cost per ton of CO2 removal for technologies like enhanced rock weathering can unlock significant new investment. These reports highlight how a reduction in cost from, say, $150/ton to $100/ton, has historically led to a disproportionately larger increase in deployment commitments, suggesting the 'cost_per_ton_co2 -> deployment_rate' link is more sensitive and thus stronger than often assumed.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "cost_per_ton_co2->deployment_rate",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0714,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Lower costs make ERW more economically viable, driving deployment."
+    },
+    {
+      "probe_text": "The voluntary carbon market has recently seen a significant surge in demand for high-quality carbon removal credits, with major corporations setting ambitious net-zero targets and actively seeking to offset their residual emissions. This trend is not just a temporary fluctuation; it reflects a fundamental shift in corporate climate strategy, indicating that demand for carbon removal, including from methods like ERW, is likely to be more robust and sustained than currently accounted for, directly boosting deployment rates.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "carbon_market_demand->deployment_rate",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0238,
+      "centrality_rank": 8,
+      "on_critical_path": false,
+      "description": "Strong demand incentivizes the development and deployment of carbon removal solutions."
+    },
+    {
+      "probe_text": "While it's true that a higher deployment rate generally leads to more CO2 removal, consider that the *ambition* to achieve a specific outcome, like removing 0.5 Gt CO2 annually, might be the primary driver. If policymakers and the market set this ambitious target first, it could then *force* the deployment rate to increase to meet it, rather than the deployment rate emerging independently and coincidentally achieving the target. This suggests that the desired outcome can retroactively shape the necessary deployment rate.",
+      "probe_type": "edge_reverse",
+      "target_id": "deployment_rate->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The annual deployment rate is the primary driver of the total CO2 removed annually."
+    },
+    {
+      "probe_text": "You've noted that government policies and subsidies for carbon removal technologies are important. However, policies like carbon taxes or cap-and-trade systems can directly increase the demand for carbon removal credits by making emissions more expensive. Wouldn't you agree that 'policy_support' should have a direct positive impact on 'carbon_market_demand' by increasing the price signal for emissions?",
+      "probe_type": "edge_spurious",
+      "target_id": "policy_support->carbon_market_demand",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: Government policies and subsidies supporting carbon removal technologies -> Demand for carbon removal credits in the voluntary and compliance markets"
+    },
+    {
+      "probe_text": "Recent studies have highlighted significant, previously underestimated, environmental side effects of large-scale rock crushing and distribution, such as localized water contamination and dust pollution. How might the emergence of these negative externalities, and the potential for public opposition or regulatory backlash they could trigger, affect the projected deployment rate and overall success of enhanced rock weathering in achieving 0.5 Gt CO2 removal annually by 2040?",
+      "probe_type": "missing_node",
+      "target_id": "environmental_side_effects",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "While you've included factors like technology maturity and cost, a crucial element for enhanced rock weathering's success is the availability and accessibility of suitable rock sources. If widespread, high-quality rock deposits are difficult to find, extract, or transport, this could significantly hinder the deployment rate and overall capacity growth, even with strong policy support and market demand. How would the limited availability of suitable rock sources impact your probability assessment?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "A recent study highlighted that the primary geological formations suitable for enhanced rock weathering are predominantly found in regions with high seismic activity. This geological characteristic has led to increased insurance premiums for new large-scale projects in these areas, impacting their overall financial risk assessment.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Recent studies have highlighted the potential for enhanced rock weathering to improve soil health and agricultural yields in certain regions. While these co-benefits are significant for land management, they are distinct from the direct impact of ERW on atmospheric CO2 removal rates and the economic factors driving its deployment for climate mitigation.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the annual deployment rate of ERW projects is actually irrelevant to achieving the 0.5 Gt CO2 removal target? Imagine a scenario where a few massive, highly efficient, and long-lasting ERW projects are established early on, providing the bulk of the CO2 removal. In this case, the year-to-year fluctuations or even the overall rate of new project deployment might not be the critical factor, but rather the sustained operation and effectiveness of these initial large-scale installations.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.19999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causal link between 'deployment_rate' and the 'outcome'. The original model assumes that reaching 0.5 Gt CO2 removal annually is a function of the *rate* at which new ERW projects are deployed. The new information suggests that the outcome might be achieved through a smaller number of very large, established projects that operate continuously, rather than a high volume of new deployments each year. This fundamentally weakens the importance of the 'deployment_rate' node as a direct driver of the outcome. If the outcome is primarily determined by the sustained operation of existing, large-scale infrastructure rather than the speed of new project addition, then factors influencing the establishment and longevity of these initial mega-projects become more critical. While 'deployment_rate' might still play a role in *reaching* that state of having a few massive projects, its direct influence on the *annual removal amount* post-establishment is diminished under this new hypothesis. This significantly reduces the confidence that the current causal pathways, heavily reliant on 'deployment_rate', will lead to the outcome, thus decreasing the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causal link between 'deployment_rate' and the 'outcome'. The original model assumes that reaching 0.5 Gt CO2 removal annually is a function of the *rate* at which new ERW projects are deployed. The new information suggests that the outcome might be achieved through a smaller number of very large, established projects that operate continuously, rather than a high volume of new deployments each year. This fundamentally weakens the importance of the 'deployment_rate' node as a direct driver of the outcome. If the outcome is primarily determined by the sustained operation of existing, large-scale infrastructure rather than the speed of new project addition, then factors influencing the establishment and longevity of these initial mega-projects become more critical. While 'deployment_rate' might still play a role in *reaching* that state of having a few massive projects, its direct influence on the *annual removal amount* post-establishment is diminished under this new hypothesis. This significantly reduces the confidence that the current causal pathways, heavily reliant on 'deployment_rate', will lead to the outcome, thus decreasing the probability.\"\n}",
+      "target_id": "deployment_rate",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the cost per ton of CO2 removed via enhanced rock weathering is actually irrelevant to the deployment rate? Imagine a scenario where significant pilot projects and government mandates, irrespective of cost, are pushing for ERW deployment due to climate urgency. In this case, the economic viability, which is heavily influenced by cost, would not be the primary determinant of how quickly ERW projects are deployed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'cost_per_ton_co2' node suggests that its influence on the 'deployment_rate' is less significant than previously modeled. If government mandates and climate urgency override cost considerations, then the direct link from 'cost_per_ton_co2' to 'deployment_rate' is weakened. However, the problem statement implies that ERW deployment is still being pushed due to climate urgency, which aligns with the importance of 'carbon_market_demand' and 'policy_support' as drivers of the 'outcome'. The causal paths that remain strong are: 'erw_tech_maturity' -> 'erw_capacity_growth' -> 'deployment_rate' -> 'outcome', and importantly, 'carbon_market_demand' -> 'outcome' and 'policy_support' -> 'outcome'. The challenge implies that 'policy_support' might be a more dominant factor than previously weighted, as it could enforce deployment regardless of cost. This strengthens the overall likelihood that the outcome will be met, as the urgency implied by mandates could override economic hurdles. Therefore, the probability has increased, but not drastically, as other key drivers remain in play.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'cost_per_ton_co2' node suggests that its influence on the 'deployment_rate' is less significant than previously modeled. If government mandates and climate urgency override cost considerations, then the direct link from 'cost_per_ton_co2' to 'deployment_rate' is weakened. However, the problem statement implies that ERW deployment is still being pushed due to climate urgency, which aligns with the importance of 'carbon_market_demand' and 'policy_support' as drivers of the 'outcome'. The causal paths that remain strong are: 'erw_tech_maturity' -> 'erw_capacity_growth' -> 'deployment_rate' -> 'outcome', and importantly, 'carbon_market_demand' -> 'outcome' and 'policy_support' -> 'outcome'. The challenge implies that 'policy_support' might be a more dominant factor than previously weighted, as it could enforce deployment regardless of cost. This strengthens the overall likelihood that the outcome will be met, as the urgency implied by mandates could override economic hurdles. Therefore, the probability has increased, but not drastically, as other key drivers remain in play.\"\n}",
+      "target_id": "cost_per_ton_co2",
+      "target_type": "node",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent research suggests that the primary bottleneck for enhanced rock weathering deployment is not technological maturity, but rather the logistical challenges and environmental impacts associated with sourcing, crushing, and distributing massive quantities of rock. Therefore, even if the core ERW technology becomes highly mature and efficient, these secondary factors could severely limit its scalability and deployment rate, making 'erw_tech_maturity' a less critical driver than initially assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'erw_tech_maturity' suggests that its direct influence on the 'outcome' is less significant than previously modeled. While 'erw_tech_maturity' influences 'erw_capacity_growth' and 'cost_per_ton_co2', the new information posits that logistical and environmental challenges are the primary constraints, not the core technology itself. This implies that even if 'erw_tech_maturity' improves, it may not translate into a proportional increase in 'deployment_rate' because the downstream bottlenecks remain. The causal paths affected are: 'erw_tech_maturity' -> 'erw_capacity_growth' -> 'deployment_rate' -> 'outcome', and 'erw_tech_maturity' -> 'cost_per_ton_co2' -> 'deployment_rate' -> 'outcome'. The challenge weakens the assumption that technological maturity is a key enabler for scaling, thus reducing the overall probability of reaching the 0.5 Gt target.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'erw_tech_maturity' suggests that its direct influence on the 'outcome' is less significant than previously modeled. While 'erw_tech_maturity' influences 'erw_capacity_growth' and 'cost_per_ton_co2', the new information posits that logistical and environmental challenges are the primary constraints, not the core technology itself. This implies that even if 'erw_tech_maturity' improves, it may not translate into a proportional increase in 'deployment_rate' because the downstream bottlenecks remain. The causal paths affected are: 'erw_tech_maturity' -> 'erw_capacity_growth' -> 'deployment_rate' -> 'outcome', and 'erw_tech_maturity' -> 'cost_per_ton_co2' -> 'deployment_rate' -> 'outcome'. The challenge weakens the assumption that technological maturity is a key enabler for scaling, thus reducing the overall probability of reaching the 0.5 Gt target.\"\n}",
+      "target_id": "erw_tech_maturity",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis suggests that the current policy landscape for carbon removal is unlikely to see significant expansion in the coming years. Many governments are prioritizing other climate mitigation strategies, and subsidies for emerging technologies like enhanced rock weathering are not expected to materialize or be substantial enough to influence deployment rates. Therefore, the impact of 'policy_support' on the deployment and eventual outcome of enhanced rock weathering may be negligible.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.14999999999999997,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'policy_support' significantly weakens a key causal pathway to the outcome. The original network assumed that 'policy_support' would positively influence both 'cost_per_ton_co2' (via subsidies) and 'deployment_rate' directly, and also contribute to the 'outcome' independently. The new information suggests that this support will be negligible. This means the direct positive influence of policy on deployment and the outcome is removed, and its indirect influence on cost is also diminished. While ERW could still be deployed due to technological maturity and carbon market demand, the lack of policy support makes it much harder to achieve the ambitious 0.5 Gt annual removal target by 2040, as it removes a critical accelerator for both cost reduction and deployment scaling. This necessitates a downward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'policy_support' significantly weakens a key causal pathway to the outcome. The original network assumed that 'policy_support' would positively influence both 'cost_per_ton_co2' (via subsidies) and 'deployment_rate' directly, and also contribute to the 'outcome' independently. The new information suggests that this support will be negligible. This means the direct positive influence of policy on deployment and the outcome is removed, and its indirect influence on cost is also diminished. While ERW could still be deployed due to technological maturity and carbon market demand, the lack of policy support makes it much harder to achieve the ambitious 0.5 Gt annual removal target by 2040, as it removes a critical accelerator for both cost reduction and deployment scaling. This necessitates a downward revision of the probability.\"\n}",
+      "target_id": "policy_support",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses from the International Energy Agency and the Carbon Tracker Initiative highlight a significant acceleration in the deployment of carbon removal projects, with ERW specifically seeing a surge in pilot projects and early-stage commercial operations. These reports project that if current trends continue, the global deployment rate for ERW could reach 0.8 Gt/year by 2035, suggesting that the deployment rate is not only a critical but potentially underestimated driver for achieving future CO2 removal targets.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly strengthens the causal pathway leading to the outcome. The new information indicates a significantly higher potential deployment rate for ERW than previously assumed, with projections reaching 0.8 Gt/year by 2035. This directly impacts the 'deployment_rate -> outcome' link, making it more likely that the 0.5 Gt/year target will be met. The challenge also implicitly supports the 'erw_capacity_growth -> deployment_rate' link, as rapid capacity growth is a prerequisite for such a high deployment rate. While the challenge doesn't invalidate the importance of 'carbon_market_demand' and 'policy_support', it suggests that the deployment driver itself might be stronger than anticipated, leading to an upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly strengthens the causal pathway leading to the outcome. The new information indicates a significantly higher potential deployment rate for ERW than previously assumed, with projections reaching 0.8 Gt/year by 2035. This directly impacts the 'deployment_rate -> outcome' link, making it more likely that the 0.5 Gt/year target will be met. The challenge also implicitly supports the 'erw_capacity_growth -> deployment_rate' link, as rapid capacity growth is a prerequisite for such a high deployment rate. While the challenge doesn't invalidate the importance of 'carbon_market_demand' and 'policy_support', it suggests that the deployment driver itself might be stronger than anticipated, leading to an upward revision of the probability.\"\n}",
+      "target_id": "deployment_rate",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent breakthroughs in mining and grinding efficiency, driven by academic research funded by major climate foundations, have dramatically reduced the projected cost of ERW to under $50/ton CO2. Furthermore, a new report from the International Energy Agency highlights that achieving Paris Agreement goals is impossible without cost-effective negative emissions, specifically citing ERW as a leading candidate due to its cost reduction potential.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'cost_per_ton_co2' is significant and directly impacts the causal network. The information provided indicates a substantial reduction in the projected cost of ERW, bringing it under $50/ton CO2. This affects the following causal paths:\n\n1.  **`cost_per_ton_co2` -> `deployment_rate`**: A lower cost per ton makes ERW far more economically viable. This is a critical link, as it directly incentivizes higher deployment rates by making the activity profitable or cost-effective for market participants.\n2.  **`cost_per_ton_co2` -> `outcome` (indirectly via `deployment_rate`)**: The reduced cost is a primary enabler for achieving the target CO2 removal rate. The IEA report reinforces this by highlighting ERW's cost reduction potential as essential for Paris goals, suggesting that cost is a major bottleneck being overcome.\n3.  **`policy_support` -> `cost_per_ton_co2`**: While the breakthrough is presented as primarily technological/academic, it diminishes the *need* for policy support to solely drive down costs. However, policy support will likely still be crucial for *accelerating* deployment beyond what the market alone would achieve, and for addressing other potential barriers not related to cost.\n4.  **`erw_tech_maturity` -> `cost_per_ton_co2`**: The breakthroughs imply that 'erw_tech_maturity' is higher than previously assumed, leading to lower costs. This strengthens the link between technological maturity and eventual deployment.\n\nThe new information strongly suggests that a major barrier (cost) is being removed or significantly reduced. This makes the achievement of the target outcome much more likely, as the economic feasibility of ERW is greatly enhanced. I have increased the probability to 0.65 to reflect this strengthened causal chain, particularly the link between cost and deployment rate, and the overall increased feasibility of meeting the target.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'cost_per_ton_co2' is significant and directly impacts the causal network. The information provided indicates a substantial reduction in the projected cost of ERW, bringing it under $50/ton CO2. This affects the following causal paths:\\n\\n1.  **`cost_per_ton_co2` -> `deployment_rate`**: A lower cost per ton makes ERW far more economically viable. This is a critical link, as it directly incentivizes higher deployment rates by making the activity profitable or cost-effective for market participants.\\n2.  **`cost_per_ton_co2` -> `outcome` (indirectly via `deployment_rate`)**: The reduced cost is a primary enabler for achieving the target CO2 removal rate. The IEA report reinforces this by highlighting ERW's cost reduction potential as essential for Paris goals, suggesting that cost is a major bottleneck being overcome.\\n3.  **`policy_support` -> `cost_per_ton_co2`**: While the breakthrough is presented as primarily technological/academic, it diminishes the *need* for policy support to solely drive down costs. However, policy support will likely still be crucial for *accelerating* deployment beyond what the market alone would achieve, and for addressing other potential barriers not related to cost.\\n4.  **`erw_tech_maturity` -> `cost_per_ton_co2`**: The breakthroughs imply that 'erw_tech_maturity' is higher than previously assumed, leading to lower costs. This strengthens the link between technological maturity and eventual deployment.\\n\\nThe new information strongly suggests that a major barrier (cost) is being removed or significantly reduced. This makes the achievement of the target outcome much more likely, as the economic feasibility of ERW is greatly enhanced. I have increased the probability to 0.65 to reflect this strengthened causal chain, particularly the link between cost and deployment rate, and the overall increased feasibility of meeting the target.\"\n}",
+      "target_id": "cost_per_ton_co2",
+      "target_type": "node",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "A recent breakthrough in grinding and pulverization technology has significantly reduced the energy and cost required to prepare silicate rocks for enhanced rock weathering. This advancement is expected to accelerate the maturation and scalability of ERW technologies, making them more efficient and cost-effective much sooner than previously anticipated.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.20000000000000007,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly impacts the 'erw_tech_maturity' node, which is a foundational element in the causal network. The breakthrough in grinding and pulverization technology is explicitly stated to accelerate the maturation and scalability of ERW technologies, making them more efficient and cost-effective sooner. This strengthens the causal path: erw_tech_maturity -> cost_per_ton_co2 and erw_tech_maturity -> erw_capacity_growth. A more mature and scalable technology at a lower cost directly increases the economic viability of ERW, leading to a higher 'deployment_rate' (cost_per_ton_co2 -> deployment_rate). Furthermore, accelerated technological maturity directly boosts 'erw_capacity_growth', which in turn drives a higher 'deployment_rate' (erw_capacity_growth -> deployment_rate). Since 'deployment_rate' is a primary driver of the 'outcome', these combined effects significantly increase the probability of achieving 0.5 Gt of atmospheric CO2 removal annually before 2040. The initial probability of 0.35 was moderate, reflecting some uncertainty about technological readiness and cost. This new information substantially de-risks the technological maturity and cost aspects, justifying a significant upward revision in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly impacts the 'erw_tech_maturity' node, which is a foundational element in the causal network. The breakthrough in grinding and pulverization technology is explicitly stated to accelerate the maturation and scalability of ERW technologies, making them more efficient and cost-effective sooner. This strengthens the causal path: erw_tech_maturity -> cost_per_ton_co2 and erw_tech_maturity -> erw_capacity_growth. A more mature and scalable technology at a lower cost directly increases the economic viability of ERW, leading to a higher 'deployment_rate' (cost_per_ton_co2 -> deployment_rate). Furthermore, accelerated technological maturity directly boosts 'erw_capacity_growth', which in turn drives a higher 'deployment_rate' (erw_capacity_growth -> deployment_rate). Since 'deployment_rate' is a primary driver of the 'outcome', these combined effects significantly increase the probability of achieving 0.5 Gt of atmospheric CO2 removal annually before 2040. The initial probability of 0.35 was moderate, reflecting some uncertainty about technological readiness and cost. This new information substantially de-risks the technological maturity and cost aspects, justifying a significant upward revision in the probability.\"\n}",
+      "target_id": "erw_tech_maturity",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent legislative proposals in major economies are allocating significant public funds towards carbon removal initiatives, including substantial tax credits and direct subsidies for technologies like enhanced rock weathering. These proposals are gaining bipartisan support and are expected to pass within the next year, signaling a strong and sustained government commitment to de-risking and accelerating the deployment of these solutions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "increased",
+      "reasoning": "The challenge confirms and strengthens the 'policy_support' node. The new information indicates that legislative proposals are not just being considered but are gaining significant bipartisan support and are expected to pass within the next year, allocating substantial public funds. This directly impacts the 'policy_support' node, making it a much stronger positive driver. This strengthening of 'policy_support' has several positive downstream effects on the causal network: 1. It directly increases the likelihood of achieving the 'outcome' by providing a stronger government commitment. 2. It is likely to reduce the 'cost_per_ton_co2' through tax credits and subsidies, making ERW more economically competitive. 3. It will boost the 'deployment_rate' by creating a favorable investment and regulatory environment. The convergence of stronger policy support, potentially lower costs, and continued demand (implied by the focus on carbon removal initiatives) significantly increases the probability of reaching 0.5 Gt of CO2 removal annually before 2040.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge confirms and strengthens the 'policy_support' node. The new information indicates that legislative proposals are not just being considered but are gaining significant bipartisan support and are expected to pass within the next year, allocating substantial public funds. This directly impacts the 'policy_support' node, making it a much stronger positive driver. This strengthening of 'policy_support' has several positive downstream effects on the causal network: 1. It directly increases the likelihood of achieving the 'outcome' by providing a stronger government commitment. 2. It is likely to reduce the 'cost_per_ton_co2' through tax credits and subsidies, making ERW more economically competitive. 3. It will boost the 'deployment_rate' by creating a favorable investment and regulatory environment. The convergence of stronger policy support, potentially lower costs, and continued demand (implied by the focus on carbon removal initiatives) significantly increases the probability of reaching 0.5 Gt of CO2 removal annually before 2040.\"\n}",
+      "target_id": "policy_support",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While a high deployment rate is necessary, it doesn't automatically guarantee that the CO2 removed is *net* removal. What if a significant portion of the 'deployed' ERW capacity is inefficient, or if the monitoring, reporting, and verification (MRV) systems are flawed, leading to overestimation of actual CO2 sequestration? Recent analyses of other carbon removal methods have shown that actual net removal can be substantially lower than initially reported deployment figures due to these practical issues.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.28,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causal link between 'deployment_rate' and the 'outcome' by introducing the concept of net CO2 removal versus reported deployment. My original model assumed that a certain deployment rate would directly translate to a proportional amount of CO2 removal. However, the new information suggests that the effectiveness of ERW and the accuracy of MRV systems are critical mediating factors. If these factors are weaker than assumed, then a high 'deployment_rate' will not necessarily lead to the 'outcome' of 0.5 Gt of CO2 removed. This weakens the causal path 'deployment_rate -> outcome' and also indirectly impacts the importance of 'carbon_market_demand -> outcome' and 'policy_support -> outcome' because the ultimate goal is *net* removal, not just deployment. Therefore, the probability of achieving the outcome is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.28,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causal link between 'deployment_rate' and the 'outcome' by introducing the concept of net CO2 removal versus reported deployment. My original model assumed that a certain deployment rate would directly translate to a proportional amount of CO2 removal. However, the new information suggests that the effectiveness of ERW and the accuracy of MRV systems are critical mediating factors. If these factors are weaker than assumed, then a high 'deployment_rate' will not necessarily lead to the 'outcome' of 0.5 Gt of CO2 removed. This weakens the causal path 'deployment_rate -> outcome' and also indirectly impacts the importance of 'carbon_market_demand -> outcome' and 'policy_support -> outcome' because the ultimate goal is *net* removal, not just deployment. Therefore, the probability of achieving the outcome is decreased.\"\n}",
+      "target_id": "deployment_rate->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While lower costs are generally beneficial, the deployment rate of enhanced rock weathering might be more significantly constrained by logistical and geological factors, such as the availability of suitable rock sources and the capacity for large-scale transportation and application, rather than just the per-ton CO2 removal cost. For instance, even if costs decrease, the physical limitations of scaling up mining, crushing, and spreading operations could cap the deployment rate, making the cost-to-deployment link weaker than anticipated.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the strength of the causal link between 'cost_per_ton_co2' and 'deployment_rate'. The original model assumed that a reduction in cost would directly and significantly lead to increased deployment. The new information suggests that logistical and geological constraints (availability of rock, transportation, application capacity) are more dominant factors in limiting the 'deployment_rate'. This weakens the path from 'cost_per_ton_co2' -> 'deployment_rate' -> 'outcome'. While cost is still a factor, its influence on the speed of deployment is diminished compared to physical scaling limitations. Consequently, even if ERW technology matures ('erw_tech_maturity') and costs decrease ('cost_per_ton_co2'), the 'deployment_rate' may not increase as effectively as previously modeled, thus reducing the probability of reaching the 0.5 Gt CO2 removal target by 2040. The paths 'erw_tech_maturity' -> 'erw_capacity_growth' -> 'deployment_rate' -> 'outcome' and 'carbon_market_demand' -> 'deployment_rate' -> 'outcome' and 'policy_support' -> 'deployment_rate' -> 'outcome' remain important, but the direct cost-driven pathway is now considered less impactful.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'cost_per_ton_co2' and 'deployment_rate'. The original model assumed that a reduction in cost would directly and significantly lead to increased deployment. The new information suggests that logistical and geological constraints (availability of rock, transportation, application capacity) are more dominant factors in limiting the 'deployment_rate'. This weakens the path from 'cost_per_ton_co2' -> 'deployment_rate' -> 'outcome'. While cost is still a factor, its influence on the speed of deployment is diminished compared to physical scaling limitations. Consequently, even if ERW technology matures ('erw_tech_maturity') and costs decrease ('cost_per_ton_co2'), the 'deployment_rate' may not increase as effectively as previously modeled, thus reducing the probability of reaching the 0.5 Gt CO2 removal target by 2040. The paths 'erw_tech_maturity' -> 'erw_capacity_growth' -> 'deployment_rate' -> 'outcome' and 'carbon_market_demand' -> 'deployment_rate' -> 'outcome' and 'policy_support' -> 'deployment_rate' -> 'outcome' remain important, but the direct cost-driven pathway is now considered less impactful.\"\n}",
+      "target_id": "cost_per_ton_co2->deployment_rate",
+      "target_type": "edge",
+      "target_importance": 0.0714,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While strong carbon market demand is often cited as a driver for ERW deployment, it's possible that for ERW specifically, demand alone won't translate into significant deployment before 2040. This is because the technology's physical limitations, such as the availability of suitable rock sources and the logistical challenges of spreading material over vast agricultural lands, might act as a more significant bottleneck than market incentives, even with high demand.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.14999999999999997,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct translation of 'carbon_market_demand' to 'deployment_rate', suggesting that physical limitations (rock availability, logistics) are more significant bottlenecks. This weakens the causal path 'carbon_market_demand -> deployment_rate -> outcome'. While high demand is still a necessary condition, its ability to *drive* deployment is now considered less potent than previously assumed. The causal path 'erw_capacity_growth -> deployment_rate -> outcome' remains important, but the challenge implies that capacity growth itself might be constrained by these physical limitations, indirectly impacting the effectiveness of demand signals. Therefore, the probability of reaching the 0.5 Gt annual removal target before 2040 is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct translation of 'carbon_market_demand' to 'deployment_rate', suggesting that physical limitations (rock availability, logistics) are more significant bottlenecks. This weakens the causal path 'carbon_market_demand -> deployment_rate -> outcome'. While high demand is still a necessary condition, its ability to *drive* deployment is now considered less potent than previously assumed. The causal path 'erw_capacity_growth -> deployment_rate -> outcome' remains important, but the challenge implies that capacity growth itself might be constrained by these physical limitations, indirectly impacting the effectiveness of demand signals. Therefore, the probability of reaching the 0.5 Gt annual removal target before 2040 is decreased.\"\n}",
+      "target_id": "carbon_market_demand->deployment_rate",
+      "target_type": "edge",
+      "target_importance": 0.0238,
+      "target_centrality_rank": 8,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses of carbon removal projects, particularly those scaling up in the last 2-3 years, consistently show a direct and almost linear relationship between the rate of new project deployment and the actual CO2 removal achieved. For example, a report by the International Carbon Removal Alliance highlighted that for every 100 MtCO2/year of new capacity brought online, an average of 85 MtCO2/year is actually sequestered within the first year of operation, demonstrating that achieving the target hinges directly on accelerating the deployment rate.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'deployment_rate -> outcome' link actually strengthens our understanding of this causal path. The new information explicitly confirms that the annual deployment rate is the primary, almost linear, driver of the total CO2 removed annually. The provided data suggests that the relationship is even more direct and efficient than initially assumed (85% realization of new capacity). This strengthens the importance of the deployment_rate node as a direct precursor to the outcome. While the challenge doesn't fundamentally alter the causal structure, it provides empirical validation and suggests that achieving the target is indeed highly dependent on the deployment rate. This increases our confidence that if the deployment rate is achieved, the outcome is highly likely. Therefore, the probability has been slightly increased to reflect this reinforced causal link, assuming other factors in the network remain as previously considered.",
+      "raw_response": "{\n  \"updated_probability\": 0.40,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'deployment_rate -> outcome' link actually strengthens our understanding of this causal path. The new information explicitly confirms that the annual deployment rate is the primary, almost linear, driver of the total CO2 removed annually. The provided data suggests that the relationship is even more direct and efficient than initially assumed (85% realization of new capacity). This strengthens the importance of the deployment_rate node as a direct precursor to the outcome. While the challenge doesn't fundamentally alter the causal structure, it provides empirical validation and suggests that achieving the target is indeed highly dependent on the deployment rate. This increases our confidence that if the deployment rate is achieved, the outcome is highly likely. Therefore, the probability has been slightly increased to reflect this reinforced causal link, assuming other factors in the network remain as previously considered.\"\n}",
+      "target_id": "deployment_rate->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses, such as the latest reports from the Carbon Pricing Leadership Coalition, indicate that even marginal decreases in the cost per ton of CO2 removal for technologies like enhanced rock weathering can unlock significant new investment. These reports highlight how a reduction in cost from, say, $150/ton to $100/ton, has historically led to a disproportionately larger increase in deployment commitments, suggesting the 'cost_per_ton_co2 -> deployment_rate' link is more sensitive and thus stronger than often assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'cost_per_ton_co2 -> deployment_rate' link suggests this causal path is stronger and more sensitive than previously assumed. The new information indicates that cost reductions have a disproportionately larger impact on deployment commitments. This strengthens a key pathway leading to the 'outcome'. Specifically, if ERW technologies become cheaper, this will now more reliably translate into higher deployment rates, making the 0.5 Gt annual removal target more achievable. This strengthens the overall probability of the outcome, as cost is a significant factor in the economic viability and scale-up of ERW. The causal path 'cost_per_ton_co2 -> deployment_rate -> outcome' is now considered more robust.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'cost_per_ton_co2 -> deployment_rate' link suggests this causal path is stronger and more sensitive than previously assumed. The new information indicates that cost reductions have a disproportionately larger impact on deployment commitments. This strengthens a key pathway leading to the 'outcome'. Specifically, if ERW technologies become cheaper, this will now more reliably translate into higher deployment rates, making the 0.5 Gt annual removal target more achievable. This strengthens the overall probability of the outcome, as cost is a significant factor in the economic viability and scale-up of ERW. The causal path 'cost_per_ton_co2 -> deployment_rate -> outcome' is now considered more robust.\"\n}",
+      "target_id": "cost_per_ton_co2->deployment_rate",
+      "target_type": "edge",
+      "target_importance": 0.0714,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "The voluntary carbon market has recently seen a significant surge in demand for high-quality carbon removal credits, with major corporations setting ambitious net-zero targets and actively seeking to offset their residual emissions. This trend is not just a temporary fluctuation; it reflects a fundamental shift in corporate climate strategy, indicating that demand for carbon removal, including from methods like ERW, is likely to be more robust and sustained than currently accounted for, directly boosting deployment rates.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly targets the causal link between 'carbon_market_demand' and 'deployment_rate', arguing for a stronger and more sustained demand from the voluntary carbon market. This is a critical positive influence on the 'deployment_rate', which is a primary driver of the 'outcome'. The new information suggests that the demand side of the equation is more robust than previously estimated. This strengthens the causal path 'carbon_market_demand -> deployment_rate -> outcome' and also implicitly reinforces 'carbon_market_demand -> outcome'. Therefore, the probability of achieving the outcome is increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly targets the causal link between 'carbon_market_demand' and 'deployment_rate', arguing for a stronger and more sustained demand from the voluntary carbon market. This is a critical positive influence on the 'deployment_rate', which is a primary driver of the 'outcome'. The new information suggests that the demand side of the equation is more robust than previously estimated. This strengthens the causal path 'carbon_market_demand -> deployment_rate -> outcome' and also implicitly reinforces 'carbon_market_demand -> outcome'. Therefore, the probability of achieving the outcome is increased.\"\n}",
+      "target_id": "carbon_market_demand->deployment_rate",
+      "target_type": "edge",
+      "target_importance": 0.0238,
+      "target_centrality_rank": 8,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "While it's true that a higher deployment rate generally leads to more CO2 removal, consider that the *ambition* to achieve a specific outcome, like removing 0.5 Gt CO2 annually, might be the primary driver. If policymakers and the market set this ambitious target first, it could then *force* the deployment rate to increase to meet it, rather than the deployment rate emerging independently and coincidentally achieving the target. This suggests that the desired outcome can retroactively shape the necessary deployment rate.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.38,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The challenge questions the directionality of the 'deployment_rate -> outcome' link, suggesting that the outcome target might drive the deployment rate rather than vice-versa. While this reframes the causal mechanism, it doesn't fundamentally break the link. The ability to achieve 0.5 Gt CO2 removal annually *still* necessitates a certain deployment rate, regardless of whether that rate is set by independent growth or by a top-down target. The argument emphasizes that the *ambition* for the outcome is a driver, which indirectly supports the importance of factors leading to deployment. It suggests that 'outcome' might exert a stronger top-down influence on factors like 'policy_support' and 'carbon_market_demand' than previously modeled. However, the core requirement of having the technology and economic viability to *achieve* that deployment rate remains. The update is a slight increase, reflecting the added emphasis on target-setting as a driver, which could potentially accelerate efforts, but the fundamental constraints on technology and cost remain significant.",
+      "raw_response": "{\n  \"updated_probability\": 0.38,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge questions the directionality of the 'deployment_rate -> outcome' link, suggesting that the outcome target might drive the deployment rate rather than vice-versa. While this reframes the causal mechanism, it doesn't fundamentally break the link. The ability to achieve 0.5 Gt CO2 removal annually *still* necessitates a certain deployment rate, regardless of whether that rate is set by independent growth or by a top-down target. The argument emphasizes that the *ambition* for the outcome is a driver, which indirectly supports the importance of factors leading to deployment. It suggests that 'outcome' might exert a stronger top-down influence on factors like 'policy_support' and 'carbon_market_demand' than previously modeled. However, the core requirement of having the technology and economic viability to *achieve* that deployment rate remains. The update is a slight increase, reflecting the added emphasis on target-setting as a driver, which could potentially accelerate efforts, but the fundamental constraints on technology and cost remain significant.\"\n}",
+      "target_id": "deployment_rate->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "You've noted that government policies and subsidies for carbon removal technologies are important. However, policies like carbon taxes or cap-and-trade systems can directly increase the demand for carbon removal credits by making emissions more expensive. Wouldn't you agree that 'policy_support' should have a direct positive impact on 'carbon_market_demand' by increasing the price signal for emissions?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.42,
+      "absolute_shift": 0.07,
+      "shift_direction": "increased",
+      "reasoning": "The challenge correctly identifies a direct causal link between 'policy_support' and 'carbon_market_demand' that was not explicitly modeled. Policies like carbon taxes or cap-and-trade systems (part of 'policy_support') directly increase the cost of emitting CO2, thereby creating a stronger price signal and increasing the demand for carbon removal solutions ('carbon_market_demand'). This strengthens the overall causal pathway to the 'outcome' because it reinforces the demand side, which is critical for achieving large-scale deployment. Specifically, the path 'policy_support' -> 'carbon_market_demand' -> 'deployment_rate' -> 'outcome' is now more robust. Previously, the impact of policy on demand was only implicitly captured through its effect on cost and direct deployment. This added direct link makes the scenario more likely to reach the target, hence the increased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.42,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge correctly identifies a direct causal link between 'policy_support' and 'carbon_market_demand' that was not explicitly modeled. Policies like carbon taxes or cap-and-trade systems (part of 'policy_support') directly increase the cost of emitting CO2, thereby creating a stronger price signal and increasing the demand for carbon removal solutions ('carbon_market_demand'). This strengthens the overall causal pathway to the 'outcome' because it reinforces the demand side, which is critical for achieving large-scale deployment. Specifically, the path 'policy_support' -> 'carbon_market_demand' -> 'deployment_rate' -> 'outcome' is now more robust. Previously, the impact of policy on demand was only implicitly captured through its effect on cost and direct deployment. This added direct link makes the scenario more likely to reach the target, hence the increased probability.\"\n}",
+      "target_id": "policy_support->carbon_market_demand",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Recent studies have highlighted significant, previously underestimated, environmental side effects of large-scale rock crushing and distribution, such as localized water contamination and dust pollution. How might the emergence of these negative externalities, and the potential for public opposition or regulatory backlash they could trigger, affect the projected deployment rate and overall success of enhanced rock weathering in achieving 0.5 Gt CO2 removal annually by 2040?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.14999999999999997,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge highlights previously underestimated negative environmental side effects of enhanced rock weathering (ERW). This directly impacts the causal path from 'policy_support' to 'deployment_rate' and 'outcome'. Significant negative externalities are likely to trigger public opposition and regulatory backlash, making it much harder to secure or maintain robust policy support. This could lead to stricter regulations, permitting delays, or outright bans in certain regions, thereby reducing the 'deployment_rate'. Furthermore, the potential for public opposition can dampen 'carbon_market_demand' if consumers become wary of supporting methods with significant environmental drawbacks, even if they are effective at CO2 removal. While technological maturity and cost reduction are still relevant, the increased regulatory and public hurdles introduced by these externalities act as a strong headwind against scaling up ERW deployment to the 0.5 Gt CO2/year target by 2040. The causal links 'policy_support -> deployment_rate', 'policy_support -> outcome', and 'carbon_market_demand -> outcome' are therefore negatively impacted, leading to a decreased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge highlights previously underestimated negative environmental side effects of enhanced rock weathering (ERW). This directly impacts the causal path from 'policy_support' to 'deployment_rate' and 'outcome'. Significant negative externalities are likely to trigger public opposition and regulatory backlash, making it much harder to secure or maintain robust policy support. This could lead to stricter regulations, permitting delays, or outright bans in certain regions, thereby reducing the 'deployment_rate'. Furthermore, the potential for public opposition can dampen 'carbon_market_demand' if consumers become wary of supporting methods with significant environmental drawbacks, even if they are effective at CO2 removal. While technological maturity and cost reduction are still relevant, the increased regulatory and public hurdles introduced by these externalities act as a strong headwind against scaling up ERW deployment to the 0.5 Gt CO2/year target by 2040. The causal links 'policy_support -> deployment_rate', 'policy_support -> outcome', and 'carbon_market_demand -> outcome' are therefore negatively impacted, leading to a decreased probability.\"\n}",
+      "target_id": "environmental_side_effects",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "While you've included factors like technology maturity and cost, a crucial element for enhanced rock weathering's success is the availability and accessibility of suitable rock sources. If widespread, high-quality rock deposits are difficult to find, extract, or transport, this could significantly hinder the deployment rate and overall capacity growth, even with strong policy support and market demand. How would the limited availability of suitable rock sources impact your probability assessment?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.14999999999999997,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge highlights a critical, previously unmodeled dependency: the availability of suitable rock sources. This new factor acts as a fundamental constraint on several key causal paths. Specifically, it directly impacts the 'erw_capacity_growth' node, as the ability to scale up ERW is contingent on having access to sufficient raw materials. This, in turn, negatively affects the 'deployment_rate', which is directly driven by capacity growth. Furthermore, even if 'carbon_market_demand' and 'policy_support' are strong, and 'erw_tech_maturity' is high, the physical limitation of rock availability can bottleneck the entire process, making the 'outcome' less likely. This introduces a significant downward pressure on the probability, as it represents a potential choke point that could override other positive drivers. The 'cost_per_ton_co2' might also increase if extraction and transportation become more challenging and expensive due to scarcity or difficult access, further dampening deployment.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge highlights a critical, previously unmodeled dependency: the availability of suitable rock sources. This new factor acts as a fundamental constraint on several key causal paths. Specifically, it directly impacts the 'erw_capacity_growth' node, as the ability to scale up ERW is contingent on having access to sufficient raw materials. This, in turn, negatively affects the 'deployment_rate', which is directly driven by capacity growth. Furthermore, even if 'carbon_market_demand' and 'policy_support' are strong, and 'erw_tech_maturity' is high, the physical limitation of rock availability can bottleneck the entire process, making the 'outcome' less likely. This introduces a significant downward pressure on the probability, as it represents a potential choke point that could override other positive drivers. The 'cost_per_ton_co2' might also increase if extraction and transportation become more challenging and expensive due to scarcity or difficult access, further dampening deployment.\"\n}",
+      "target_id": "missing_node_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent study highlighted that the primary geological formations suitable for enhanced rock weathering are predominantly found in regions with high seismic activity. This geological characteristic has led to increased insurance premiums for new large-scale projects in these areas, impacting their overall financial risk assessment.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The new information introduces a significant risk factor related to the geological suitability of ERW sites. The causal path most directly affected is 'cost_per_ton_co2'. Increased insurance premiums due to high seismic activity in primary geological formations will directly increase the operational and financial costs associated with ERW projects. This higher cost, in turn, negatively impacts the 'deployment_rate' as ERW becomes less economically viable. Consequently, the direct link from 'deployment_rate' to the 'outcome' is weakened. While 'erw_tech_maturity' might still advance, the increased financial risk and cost could significantly slow down the 'erw_capacity_growth' and thus the 'deployment_rate', even with strong 'carbon_market_demand' or 'policy_support'. The overall effect is a decreased probability of achieving the 0.5 Gt annual removal target by 2040.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information introduces a significant risk factor related to the geological suitability of ERW sites. The causal path most directly affected is 'cost_per_ton_co2'. Increased insurance premiums due to high seismic activity in primary geological formations will directly increase the operational and financial costs associated with ERW projects. This higher cost, in turn, negatively impacts the 'deployment_rate' as ERW becomes less economically viable. Consequently, the direct link from 'deployment_rate' to the 'outcome' is weakened. While 'erw_tech_maturity' might still advance, the increased financial risk and cost could significantly slow down the 'erw_capacity_growth' and thus the 'deployment_rate', even with strong 'carbon_market_demand' or 'policy_support'. The overall effect is a decreased probability of achieving the 0.5 Gt annual removal target by 2040.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent studies have highlighted the potential for enhanced rock weathering to improve soil health and agricultural yields in certain regions. While these co-benefits are significant for land management, they are distinct from the direct impact of ERW on atmospheric CO2 removal rates and the economic factors driving its deployment for climate mitigation.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.33,
+      "absolute_shift": 0.019999999999999962,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that co-benefits like improved soil health and agricultural yields, while significant, are distinct from the direct climate mitigation impact and economic drivers of ERW deployment for carbon removal. This implies that these co-benefits might not directly translate into increased 'carbon_market_demand' or 'policy_support' specifically geared towards CO2 removal. My original model assumed that broader benefits could indirectly bolster demand and policy support for ERW as a climate solution. By decoupling these co-benefits, the direct causal links from factors like 'erw_tech_maturity' and 'cost_per_ton_co2' to 'deployment_rate' and ultimately the 'outcome' become more critical and potentially weaker if they don't stand on their own for climate purposes. Therefore, the overall probability is slightly decreased as a key indirect pathway for bolstering demand and policy support has been questioned.",
+      "raw_response": "{\n  \"updated_probability\": 0.33,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that co-benefits like improved soil health and agricultural yields, while significant, are distinct from the direct climate mitigation impact and economic drivers of ERW deployment for carbon removal. This implies that these co-benefits might not directly translate into increased 'carbon_market_demand' or 'policy_support' specifically geared towards CO2 removal. My original model assumed that broader benefits could indirectly bolster demand and policy support for ERW as a climate solution. By decoupling these co-benefits, the direct causal links from factors like 'erw_tech_maturity' and 'cost_per_ton_co2' to 'deployment_rate' and ultimately the 'outcome' become more critical and potentially weaker if they don't stand on their own for climate purposes. Therefore, the overall probability is slightly decreased as a key indirect pathway for bolstering demand and policy support has been questioned.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "25598",
+    "question_text": "Will 0.5 Gt of atmospheric CO2 be removed annually using enhanced rock weathering before 2040?",
+    "source": "metaculus",
+    "condition": "one-turn",
+    "initial_probability": 0.35,
+    "n_probes": 20,
+    "n_successful": 20,
+    "mean_absolute_shift": 0.137,
+    "max_absolute_shift": 0.30000000000000004
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0.14,
+  "aggregate_metrics": {
+    "ssr": 1.115853658536586,
+    "mean_shift_high": 0.15250000000000002,
+    "mean_shift_low": 0.13666666666666663,
+    "asymmetry_index": 0.6444444444444442,
+    "mean_shift_negate": 0.12428571428571426,
+    "mean_shift_strengthen": 0.1928571428571429,
+    "fnar": 1,
+    "n_accepted": 3,
+    "n_spurious": 3,
+    "critical_path_premium": 0.003434343434343484,
+    "mean_shift_on_path": 0.13888888888888892,
+    "mean_shift_off_path": 0.13545454545454544,
+    "importance_sensitivity_correlation": 0.1045454545454545,
+    "control_sensitivity": 0.5
+  }
+}

@@ -1,0 +1,1211 @@
+{
+  "question_id": "19fe79dd3c949d77e31f598f3012001f0ec798dae23ab312f28e40ad40a80046",
+  "question_text": "According to Wikipedia, will a vaccine have been developed for Human metapneumovirus infection by 2025-12-28?",
+  "source": "wikipedia",
+  "initial_probability": 0.75,
+  "nodes": [
+    {
+      "id": "hmpv_research_funding",
+      "description": "Level of funding allocated to Human metapneumovirus (hMPV) vaccine research.",
+      "role": "factor"
+    },
+    {
+      "id": "scientific_breakthroughs",
+      "description": "Occurrence of significant scientific discoveries or technological advancements relevant to hMPV vaccine development.",
+      "role": "factor"
+    },
+    {
+      "id": "viral_mutability",
+      "description": "The rate at which the hMPV virus mutates, potentially complicating vaccine development.",
+      "role": "factor"
+    },
+    {
+      "id": "public_health_priority",
+      "description": "The perceived urgency and importance of developing an hMPV vaccine by global health organizations and governments.",
+      "role": "factor"
+    },
+    {
+      "id": "regulatory_approval_process",
+      "description": "The efficiency and speed of the regulatory bodies in approving new vaccines.",
+      "role": "factor"
+    },
+    {
+      "id": "vaccine_development_progress",
+      "description": "The overall progress made in developing a safe and effective hMPV vaccine.",
+      "role": "factor"
+    },
+    {
+      "id": "wikipedia_hmpv_vaccine_entry",
+      "description": "Whether Wikipedia will state that a vaccine for Human metapneumovirus infection has been developed by 2025-12-28.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "hmpv_research_funding",
+      "to": "vaccine_development_progress",
+      "mechanism": "Increased funding directly accelerates research and development efforts."
+    },
+    {
+      "from": "scientific_breakthroughs",
+      "to": "vaccine_development_progress",
+      "mechanism": "Key discoveries can overcome major hurdles in vaccine design."
+    },
+    {
+      "from": "viral_mutability",
+      "to": "vaccine_development_progress",
+      "mechanism": "High mutability requires more complex or adaptive vaccine strategies, slowing progress."
+    },
+    {
+      "from": "public_health_priority",
+      "to": "hmpv_research_funding",
+      "mechanism": "Higher priority leads to increased allocation of research funds."
+    },
+    {
+      "from": "public_health_priority",
+      "to": "regulatory_approval_process",
+      "mechanism": "Increased priority can sometimes expedite regulatory review, though not always."
+    },
+    {
+      "from": "vaccine_development_progress",
+      "to": "wikipedia_hmpv_vaccine_entry",
+      "mechanism": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia."
+    },
+    {
+      "from": "regulatory_approval_process",
+      "to": "wikipedia_hmpv_vaccine_entry",
+      "mechanism": "A smooth and efficient regulatory process is a prerequisite for a vaccine to be considered 'developed' and reported."
+    },
+    {
+      "from": "hmpv_research_funding",
+      "to": "scientific_breakthroughs",
+      "mechanism": "More funding increases the chances of serendipitous discoveries and dedicated research into breakthroughs."
+    }
+  ],
+  "reasoning": "The development of a vaccine for Human metapneumovirus (hMPV) by late 2025 is plausible but not guaranteed. Existing research funding, the potential for scientific breakthroughs, and the inherent challenges posed by viral mutability are key factors. The public health priority assigned to hMPV, which influences funding and potentially regulatory speed, also plays a role. While significant progress is being made, the timeline for full development and regulatory approval makes a definitive statement on Wikipedia by the end of 2025 a strong possibility, but not a certainty. The probability reflects a moderate confidence that these factors will align to allow for such a development and reporting.",
+  "network_analysis": {
+    "n_nodes": 7,
+    "n_edges": 8,
+    "density": 0.1905,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 7,
+    "outcome_node": "wikipedia_hmpv_vaccine_entry",
+    "node_metrics": [
+      {
+        "node_id": "hmpv_research_funding",
+        "description": "Level of funding allocated to Human metapneumovirus (hMPV) vaccine research.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 2,
+        "betweenness": 0.0667,
+        "closeness": 0.1667,
+        "pagerank": 0.0906,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "scientific_breakthroughs",
+        "description": "Occurrence of significant scientific discoveries or technological advancements relevant to hMPV vaccine development.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.2222,
+        "pagerank": 0.102,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "viral_mutability",
+        "description": "The rate at which the hMPV virus mutates, potentially complicating vaccine development.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0636,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "public_health_priority",
+        "description": "The perceived urgency and importance of developing an hMPV vaccine by global health organizations and governments.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0636,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "regulatory_approval_process",
+        "description": "The efficiency and speed of the regulatory bodies in approving new vaccines.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.0333,
+        "closeness": 0.1667,
+        "pagerank": 0.0906,
+        "path_relevance": 0.1667
+      },
+      {
+        "node_id": "vaccine_development_progress",
+        "description": "The overall progress made in developing a safe and effective hMPV vaccine.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0.1,
+        "closeness": 0.5333,
+        "pagerank": 0.2428,
+        "path_relevance": 0.5
+      },
+      {
+        "node_id": "wikipedia_hmpv_vaccine_entry",
+        "description": "Whether Wikipedia will state that a vaccine for Human metapneumovirus infection has been developed by 2025-12-28.",
+        "role": "outcome",
+        "in_degree": 2,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.6,
+        "pagerank": 0.3469,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "hmpv_research_funding",
+        "target": "vaccine_development_progress",
+        "mechanism": "Increased funding directly accelerates research and development efforts.",
+        "edge_betweenness": 0.0714,
+        "on_critical_path": true
+      },
+      {
+        "source": "hmpv_research_funding",
+        "target": "scientific_breakthroughs",
+        "mechanism": "More funding increases the chances of serendipitous discoveries and dedicated research into breakthroughs.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": false
+      },
+      {
+        "source": "scientific_breakthroughs",
+        "target": "vaccine_development_progress",
+        "mechanism": "Key discoveries can overcome major hurdles in vaccine design.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": true
+      },
+      {
+        "source": "viral_mutability",
+        "target": "vaccine_development_progress",
+        "mechanism": "High mutability requires more complex or adaptive vaccine strategies, slowing progress.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": true
+      },
+      {
+        "source": "public_health_priority",
+        "target": "hmpv_research_funding",
+        "mechanism": "Higher priority leads to increased allocation of research funds.",
+        "edge_betweenness": 0.0714,
+        "on_critical_path": false
+      },
+      {
+        "source": "public_health_priority",
+        "target": "regulatory_approval_process",
+        "mechanism": "Increased priority can sometimes expedite regulatory review, though not always.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": true
+      },
+      {
+        "source": "regulatory_approval_process",
+        "target": "wikipedia_hmpv_vaccine_entry",
+        "mechanism": "A smooth and efficient regulatory process is a prerequisite for a vaccine to be considered 'developed' and reported.",
+        "edge_betweenness": 0.0476,
+        "on_critical_path": true
+      },
+      {
+        "source": "vaccine_development_progress",
+        "target": "wikipedia_hmpv_vaccine_entry",
+        "mechanism": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia.",
+        "edge_betweenness": 0.0952,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "vaccine_development_progress",
+        "description": "The overall progress made in developing a safe and effective hMPV vaccine.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "hmpv_research_funding",
+        "description": "Level of funding allocated to Human metapneumovirus (hMPV) vaccine research.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "scientific_breakthroughs",
+        "description": "Occurrence of significant scientific discoveries or technological advancements relevant to hMPV vaccine development.",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "public_health_priority",
+        "description": "The perceived urgency and importance of developing an hMPV vaccine by global health organizations and governments.",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "vaccine_development_progress",
+        "description": "The overall progress made in developing a safe and effective hMPV vaccine.",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "hmpv_research_funding",
+        "description": "Level of funding allocated to Human metapneumovirus (hMPV) vaccine research.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "scientific_breakthroughs",
+        "description": "Occurrence of significant scientific discoveries or technological advancements relevant to hMPV vaccine development.",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "public_health_priority",
+        "description": "The perceived urgency and importance of developing an hMPV vaccine by global health organizations and governments.",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+        "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia.",
+        "importance": 0.0952,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "hmpv_research_funding->vaccine_development_progress",
+        "description": "Increased funding directly accelerates research and development efforts.",
+        "importance": 0.0714,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "public_health_priority->hmpv_research_funding",
+        "description": "Higher priority leads to increased allocation of research funds.",
+        "importance": 0.0714,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+        "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia.",
+        "importance": 0.0952,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "hmpv_research_funding->vaccine_development_progress",
+        "description": "Increased funding directly accelerates research and development efforts.",
+        "importance": 0.0714,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "public_health_priority->hmpv_research_funding",
+        "description": "Higher priority leads to increased allocation of research funds.",
+        "importance": 0.0714,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+        "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia.",
+        "importance": 0.0952,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "vaccine_development_progress->regulatory_approval_process",
+        "description": "Potential link: The overall progress made in developing a safe and effective hMPV vaccine. -> The efficiency and speed of the regulatory bodies in approving new vaccines.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "vaccine_development_progress",
+      "description": "The overall progress made in developing a safe and effective hMPV vaccine.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "hmpv_research_funding",
+      "description": "Level of funding allocated to Human metapneumovirus (hMPV) vaccine research.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "scientific_breakthroughs",
+      "description": "Occurrence of significant scientific discoveries or technological advancements relevant to hMPV vaccine development.",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "public_health_priority",
+      "description": "The perceived urgency and importance of developing an hMPV vaccine by global health organizations and governments.",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "vaccine_development_progress",
+      "description": "The overall progress made in developing a safe and effective hMPV vaccine.",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "hmpv_research_funding",
+      "description": "Level of funding allocated to Human metapneumovirus (hMPV) vaccine research.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "scientific_breakthroughs",
+      "description": "Occurrence of significant scientific discoveries or technological advancements relevant to hMPV vaccine development.",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "public_health_priority",
+      "description": "The perceived urgency and importance of developing an hMPV vaccine by global health organizations and governments.",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia.",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "hmpv_research_funding->vaccine_development_progress",
+      "description": "Increased funding directly accelerates research and development efforts.",
+      "importance": 0.0714,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "public_health_priority->hmpv_research_funding",
+      "description": "Higher priority leads to increased allocation of research funds.",
+      "importance": 0.0714,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia.",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "hmpv_research_funding->vaccine_development_progress",
+      "description": "Increased funding directly accelerates research and development efforts.",
+      "importance": 0.0714,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "public_health_priority->hmpv_research_funding",
+      "description": "Higher priority leads to increased allocation of research funds.",
+      "importance": 0.0714,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia.",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "vaccine_development_progress->regulatory_approval_process",
+      "description": "Potential link: The overall progress made in developing a safe and effective hMPV vaccine. -> The efficiency and speed of the regulatory bodies in approving new vaccines.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if the overall progress in developing a safe and effective hMPV vaccine is actually irrelevant because the Wikipedia entry is based on a different definition of 'developed'? For example, imagine that by 2025-12-28, several experimental vaccines are in late-stage trials and showing promise, but none have actually completed the full regulatory approval process. This progress might be significant, but if 'developed' on Wikipedia requires full approval, then this progress wouldn't lead to the outcome.",
+      "probe_type": "node_negate_high",
+      "target_id": "vaccine_development_progress",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The overall progress made in developing a safe and effective hMPV vaccine."
+    },
+    {
+      "probe_text": "What if the level of funding for hMPV vaccine research is actually irrelevant to the pace of development? For example, imagine that the fundamental scientific challenges in creating an hMPV vaccine are so significant that no amount of money can overcome them in the short term. Instead, progress hinges entirely on unpredictable, non-monetary scientific breakthroughs, making research funding a red herring.",
+      "probe_type": "node_negate_high",
+      "target_id": "hmpv_research_funding",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "Level of funding allocated to Human metapneumovirus (hMPV) vaccine research."
+    },
+    {
+      "probe_text": "Consider the possibility that despite continued research funding, there have been no significant scientific breakthroughs relevant to hMPV vaccine development. For instance, recent research published in 'Virology Journal' indicates that the specific mechanisms by which hMPV evades the immune system are far more complex than initially understood, and current vaccine technologies may be fundamentally unsuited to address these complexities. This suggests that even with ample resources, the path to a vaccine might be blocked by fundamental scientific challenges rather than simply requiring more time or funding.",
+      "probe_type": "node_negate_medium",
+      "target_id": "scientific_breakthroughs",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "Occurrence of significant scientific discoveries or technological advancements relevant to hMPV vaccine development."
+    },
+    {
+      "probe_text": "Some experts argue that the perceived urgency of an HMPV vaccine might be significantly overestimated. Given that HMPV primarily affects young children and the elderly, and its mortality rate is relatively low compared to other diseases, global health organizations and governments may not prioritize it highly. Therefore, the 'public_health_priority' node might not be an accurate reflection of actual resource allocation and focus.",
+      "probe_type": "node_negate_low",
+      "target_id": "public_health_priority",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The perceived urgency and importance of developing an hMPV vaccine by global health organizations and governments."
+    },
+    {
+      "probe_text": "A recent pre-print study, not yet peer-reviewed but gaining significant attention in the virology community, details a novel mRNA platform technology that has shown unprecedented efficacy in preclinical trials against a broad spectrum of betacoronaviruses. Experts familiar with the technology suggest that adapting this platform for Human metapneumovirus could dramatically accelerate vaccine development, potentially bypassing many of the traditional challenges previously anticipated.",
+      "probe_type": "node_strengthen",
+      "target_id": "vaccine_development_progress",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The overall progress made in developing a safe and effective hMPV vaccine."
+    },
+    {
+      "probe_text": "A recent report from the Global Health Security Initiative highlights that countries with higher per capita GDP and existing robust pharmaceutical infrastructure have consistently shown accelerated vaccine development timelines for emerging respiratory viruses in the past decade. This is directly attributed to their capacity for substantial, sustained investment in research and development, including dedicated funding streams for novel vaccine platforms and manufacturing scale-up, directly impacting the speed and success of vaccine development.",
+      "probe_type": "node_strengthen",
+      "target_id": "hmpv_research_funding",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "Level of funding allocated to Human metapneumovirus (hMPV) vaccine research."
+    },
+    {
+      "probe_text": "A recent publication in 'Nature Medicine' details a novel mRNA platform technology that has shown unprecedented efficacy in inducing broad-spectrum immunity against a range of highly variable RNA viruses. This platform, developed by a leading biotech firm, is being rapidly evaluated for its potential application in vaccines against other challenging pathogens, including a specific mention of its promise for respiratory viruses like hMPV.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "scientific_breakthroughs",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "Occurrence of significant scientific discoveries or technological advancements relevant to hMPV vaccine development."
+    },
+    {
+      "probe_text": "A recent report from the World Health Organization highlights a concerning increase in severe respiratory illnesses in young children attributed to Human metapneumovirus (hMPV), particularly in regions with lower vaccination rates for other common childhood diseases. This report explicitly calls for accelerated international efforts to develop a preventative vaccine, citing hMPV as a growing global health concern that warrants greater attention and resources.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "public_health_priority",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The perceived urgency and importance of developing an hMPV vaccine by global health organizations and governments."
+    },
+    {
+      "probe_text": "While significant progress is necessary, the Wikipedia entry might not reflect this progress if the vaccine is still in experimental stages or if its efficacy is highly debated. For instance, a vaccine could show promise in early trials but face significant setbacks in later phases, leading to a delayed or absent Wikipedia announcement of development by the specified date.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia."
+    },
+    {
+      "probe_text": "While increased funding for hMPV vaccine research is often assumed to directly accelerate progress, it's possible that current research is bottlenecked by fundamental biological challenges rather than financial constraints. For instance, the difficulty in growing the virus in a lab setting for research purposes, or a lack of understanding of key viral proteins, might mean that even a significant increase in funding wouldn't translate to faster development until these basic scientific hurdles are overcome.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "hmpv_research_funding->vaccine_development_progress",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0714,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Increased funding directly accelerates research and development efforts."
+    },
+    {
+      "probe_text": "While a high public health priority for hMPV might seem to guarantee increased research funding, it's possible that competing global health crises or other well-established diseases with larger patient populations could absorb available research budgets. Therefore, even if hMPV is deemed a priority, the actual allocation of funds might be limited by these other pressing demands.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "public_health_priority->hmpv_research_funding",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0714,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "Higher priority leads to increased allocation of research funds."
+    },
+    {
+      "probe_text": "Recent advancements in AI-driven vaccine design platforms, exemplified by their successful application in rapidly developing mRNA vaccines for other pathogens, suggest that once significant progress is made in hMPV vaccine development, the translation to a 'developed' status on Wikipedia will be even more rapid and definitive. These platforms can accelerate not only the research but also the documentation and reporting phases, making the link between development progress and Wikipedia entry even more robust.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant surge in private investment and philanthropic funding for novel vaccine platforms, including those applicable to emerging viruses like hMPV. This influx of capital is enabling research institutions to rapidly scale up preclinical trials and expand manufacturing capacity, suggesting that increased funding has an even more immediate and direct impact on accelerating vaccine development progress than might be typically assumed.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "hmpv_research_funding->vaccine_development_progress",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0714,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Increased funding directly accelerates research and development efforts."
+    },
+    {
+      "probe_text": "Recent global health crises have demonstrated that when a pathogen like hMPV poses a significant, albeit currently underestimated, threat to vulnerable populations, international health bodies and national governments can rapidly mobilize substantial, previously unallocated, research funds. This urgency can override typical budget constraints, leading to a disproportionately large increase in funding compared to what might be predicted based solely on historical funding levels.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "public_health_priority->hmpv_research_funding",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0714,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "Higher priority leads to increased allocation of research funds."
+    },
+    {
+      "probe_text": "What if the Wikipedia entry for a Human metapneumovirus vaccine is updated to indicate development *before* significant scientific progress has actually been made? This could happen if a major news outlet prematurely reports a breakthrough or if a company makes a preliminary announcement based on early, unverified data, leading Wikipedia editors to update the entry based on this external information, thus 'causing' the Wikipedia entry to reflect development, even if actual progress is still lagging.",
+      "probe_type": "edge_reverse",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Significant progress towards a vaccine makes it likely to be reported as developed on Wikipedia."
+    },
+    {
+      "probe_text": "While the network shows that vaccine development progress influences the Wikipedia entry and regulatory approval influences the Wikipedia entry, it misses a crucial pathway. Significant progress in vaccine development often necessitates and even helps to streamline the regulatory approval process. For instance, a highly advanced and promising vaccine candidate might be prioritized by regulatory bodies, or the data generated during development might simplify the review.",
+      "probe_type": "edge_spurious",
+      "target_id": "vaccine_development_progress->regulatory_approval_process",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The overall progress made in developing a safe and effective hMPV vaccine. -> The efficiency and speed of the regulatory bodies in approving new vaccines."
+    },
+    {
+      "probe_text": "A recent study published in 'Nature Medicine' suggests that the current strains of Human metapneumovirus are exhibiting an unprecedented level of antigenic drift. How might this accelerated viral evolution specifically impact the timeline and feasibility of developing a widely effective vaccine, and consequently, its reported status on Wikipedia by December 2025?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that in mid-2024, a major international consortium announces a novel platform technology for rapid vaccine development against RNA viruses, which is successfully applied to a related paramyxovirus. How would this development, independent of existing hMPV research funding or specific breakthroughs, influence your assessment of whether a vaccine for Human metapneumovirus infection will be developed by 2025-12-28?",
+      "probe_type": "missing_node",
+      "target_id": "novel_platform_technology",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "A recent study published in a less prominent virology journal highlighted the distinct serotypes of Human metapneumovirus, noting that historical research efforts have primarily focused on the more common A and B strains. The study also mentioned that the lead researcher on the project has been advocating for increased international collaboration on respiratory virus surveillance.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "A recent study published in the Journal of Virology detailed the historical prevalence of Human metapneumovirus infections in the Southern Hemisphere over the past decade. The research focused on epidemiological trends and did not involve any specific vaccine development or efficacy trials.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the overall progress in developing a safe and effective hMPV vaccine is actually irrelevant because the Wikipedia entry is based on a different definition of 'developed'? For example, imagine that by 2025-12-28, several experimental vaccines are in late-stage trials and showing promise, but none have actually completed the full regulatory approval process. This progress might be significant, but if 'developed' on Wikipedia requires full approval, then this progress wouldn't lead to the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.3,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'vaccine_development_progress' is significant because it directly impacts the primary causal path to the outcome. The original model assumed that substantial progress in vaccine development would lead to the Wikipedia entry stating a vaccine is 'developed'. However, the new information suggests that the definition of 'developed' on Wikipedia may strictly require full regulatory approval, rendering late-stage trial success insufficient for the outcome. This weakens the link between 'vaccine_development_progress' and 'wikipedia_hmpv_vaccine_entry'. While 'regulatory_approval_process' still directly influences the outcome, the indirect path through 'vaccine_development_progress' is now less reliable. Therefore, my probability estimate is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'vaccine_development_progress' is significant because it directly impacts the primary causal path to the outcome. The original model assumed that substantial progress in vaccine development would lead to the Wikipedia entry stating a vaccine is 'developed'. However, the new information suggests that the definition of 'developed' on Wikipedia may strictly require full regulatory approval, rendering late-stage trial success insufficient for the outcome. This weakens the link between 'vaccine_development_progress' and 'wikipedia_hmpv_vaccine_entry'. While 'regulatory_approval_process' still directly influences the outcome, the indirect path through 'vaccine_development_progress' is now less reliable. Therefore, my probability estimate is decreased.\"\n}",
+      "target_id": "vaccine_development_progress",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the level of funding for hMPV vaccine research is actually irrelevant to the pace of development? For example, imagine that the fundamental scientific challenges in creating an hMPV vaccine are so significant that no amount of money can overcome them in the short term. Instead, progress hinges entirely on unpredictable, non-monetary scientific breakthroughs, making research funding a red herring.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that hmpv_research_funding is irrelevant to vaccine_development_progress. This directly impacts the causal path: hmpv_research_funding -> vaccine_development_progress. If funding has no effect, then increased funding does not accelerate research, contrary to the initial assumption. Furthermore, the path hmpv_research_funding -> scientific_breakthroughs is also weakened, as more funding is assumed not to lead to breakthroughs. While scientific_breakthroughs still causally influences vaccine_development_progress, the primary avenue for achieving those breakthroughs (funding) is now considered ineffective. This reduces the overall likelihood of significant vaccine_development_progress by the target date, thereby decreasing the probability of the outcome. The initial probability of 0.75 was partly predicated on the assumption that funding would play a role in overcoming scientific challenges. Removing this assumption necessitates a downward revision.",
+      "raw_response": "{\n  \"updated_probability\": 0.6,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that hmpv_research_funding is irrelevant to vaccine_development_progress. This directly impacts the causal path: hmpv_research_funding -> vaccine_development_progress. If funding has no effect, then increased funding does not accelerate research, contrary to the initial assumption. Furthermore, the path hmpv_research_funding -> scientific_breakthroughs is also weakened, as more funding is assumed not to lead to breakthroughs. While scientific_breakthroughs still causally influences vaccine_development_progress, the primary avenue for achieving those breakthroughs (funding) is now considered ineffective. This reduces the overall likelihood of significant vaccine_development_progress by the target date, thereby decreasing the probability of the outcome. The initial probability of 0.75 was partly predicated on the assumption that funding would play a role in overcoming scientific challenges. Removing this assumption necessitates a downward revision.\"\n}",
+      "target_id": "hmpv_research_funding",
+      "target_type": "node",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Consider the possibility that despite continued research funding, there have been no significant scientific breakthroughs relevant to hMPV vaccine development. For instance, recent research published in 'Virology Journal' indicates that the specific mechanisms by which hMPV evades the immune system are far more complex than initially understood, and current vaccine technologies may be fundamentally unsuited to address these complexities. This suggests that even with ample resources, the path to a vaccine might be blocked by fundamental scientific challenges rather than simply requiring more time or funding.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.35,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'scientific_breakthroughs' significantly impacts the causal network. The new information suggests that fundamental scientific hurdles exist, making 'scientific_breakthroughs' less likely to occur, or at least much harder to achieve. This directly weakens the causal path from 'scientific_breakthroughs' to 'vaccine_development_progress'. While 'hmpv_research_funding' can still contribute, its ability to translate into progress is now severely limited if the underlying science is not understood or amenable to current technologies. This reduces the likelihood of 'vaccine_development_progress' reaching a point where Wikipedia would report a vaccine as developed by the deadline, thus lowering the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.4,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'scientific_breakthroughs' significantly impacts the causal network. The new information suggests that fundamental scientific hurdles exist, making 'scientific_breakthroughs' less likely to occur, or at least much harder to achieve. This directly weakens the causal path from 'scientific_breakthroughs' to 'vaccine_development_progress'. While 'hmpv_research_funding' can still contribute, its ability to translate into progress is now severely limited if the underlying science is not understood or amenable to current technologies. This reduces the likelihood of 'vaccine_development_progress' reaching a point where Wikipedia would report a vaccine as developed by the deadline, thus lowering the overall probability.\"\n}",
+      "target_id": "scientific_breakthroughs",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Some experts argue that the perceived urgency of an HMPV vaccine might be significantly overestimated. Given that HMPV primarily affects young children and the elderly, and its mortality rate is relatively low compared to other diseases, global health organizations and governments may not prioritize it highly. Therefore, the 'public_health_priority' node might not be an accurate reflection of actual resource allocation and focus.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'public_health_priority' node is significant because it acts as an upstream driver for both 'hmpv_research_funding' and, to a lesser extent, 'regulatory_approval_process'. If the perceived urgency is overestimated, this would likely lead to lower actual research funding. This directly weakens the causal path 'hmpv_research_funding -> vaccine_development_progress'. Furthermore, lower priority could mean a slower or less streamlined 'regulatory_approval_process', impacting the path 'regulatory_approval_process -> wikipedia_hmpv_vaccine_entry'. While not completely eliminating the possibility of a vaccine, these weakened causal links decrease the overall probability of a vaccine being developed and reported on Wikipedia by the specified date. The path 'scientific_breakthroughs -> vaccine_development_progress' is indirectly affected as increased funding (driven by priority) also boosts the likelihood of breakthroughs. The 'viral_mutability' factor remains unchanged in this assessment.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'public_health_priority' node is significant because it acts as an upstream driver for both 'hmpv_research_funding' and, to a lesser extent, 'regulatory_approval_process'. If the perceived urgency is overestimated, this would likely lead to lower actual research funding. This directly weakens the causal path 'hmpv_research_funding -> vaccine_development_progress'. Furthermore, lower priority could mean a slower or less streamlined 'regulatory_approval_process', impacting the path 'regulatory_approval_process -> wikipedia_hmpv_vaccine_entry'. While not completely eliminating the possibility of a vaccine, these weakened causal links decrease the overall probability of a vaccine being developed and reported on Wikipedia by the specified date. The path 'scientific_breakthroughs -> vaccine_development_progress' is indirectly affected as increased funding (driven by priority) also boosts the likelihood of breakthroughs. The 'viral_mutability' factor remains unchanged in this assessment.\"\n}",
+      "target_id": "public_health_priority",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent pre-print study, not yet peer-reviewed but gaining significant attention in the virology community, details a novel mRNA platform technology that has shown unprecedented efficacy in preclinical trials against a broad spectrum of betacoronaviruses. Experts familiar with the technology suggest that adapting this platform for Human metapneumovirus could dramatically accelerate vaccine development, potentially bypassing many of the traditional challenges previously anticipated.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.9,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information significantly strengthens the causal path leading to the outcome. The challenge directly impacts 'vaccine_development_progress' by introducing a novel mRNA platform technology with potential for broad efficacy and rapid adaptation. This technology could overcome existing challenges related to 'viral_mutability' and accelerate the pace of 'vaccine_development_progress'. A faster and more effective development path increases the likelihood that a vaccine will be considered 'developed' by the target date, thus positively influencing 'wikipedia_hmpv_vaccine_entry'.",
+      "raw_response": "{\n  \"updated_probability\": 0.90,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information significantly strengthens the causal path leading to the outcome. The challenge directly impacts 'vaccine_development_progress' by introducing a novel mRNA platform technology with potential for broad efficacy and rapid adaptation. This technology could overcome existing challenges related to 'viral_mutability' and accelerate the pace of 'vaccine_development_progress'. A faster and more effective development path increases the likelihood that a vaccine will be considered 'developed' by the target date, thus positively influencing 'wikipedia_hmpv_vaccine_entry'.\"\n}",
+      "target_id": "vaccine_development_progress",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent report from the Global Health Security Initiative highlights that countries with higher per capita GDP and existing robust pharmaceutical infrastructure have consistently shown accelerated vaccine development timelines for emerging respiratory viruses in the past decade. This is directly attributed to their capacity for substantial, sustained investment in research and development, including dedicated funding streams for novel vaccine platforms and manufacturing scale-up, directly impacting the speed and success of vaccine development.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information reinforces the importance of hmpv_research_funding as a driver of vaccine development. It specifically highlights that countries with strong economies and infrastructure are better positioned for sustained R&D investment, leading to accelerated timelines for respiratory virus vaccines. This strengthens the causal path from 'hmpv_research_funding' to 'vaccine_development_progress' and consequently to the outcome 'wikipedia_hmpv_vaccine_entry'. The report doesn't challenge the existence of the link, but rather provides strong evidence for its strength and reliability, especially in the context of respiratory viruses similar to hMPV. Therefore, the probability of a vaccine being developed by the target date is increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information reinforces the importance of hmpv_research_funding as a driver of vaccine development. It specifically highlights that countries with strong economies and infrastructure are better positioned for sustained R&D investment, leading to accelerated timelines for respiratory virus vaccines. This strengthens the causal path from 'hmpv_research_funding' to 'vaccine_development_progress' and consequently to the outcome 'wikipedia_hmpv_vaccine_entry'. The report doesn't challenge the existence of the link, but rather provides strong evidence for its strength and reliability, especially in the context of respiratory viruses similar to hMPV. Therefore, the probability of a vaccine being developed by the target date is increased.\"\n}",
+      "target_id": "hmpv_research_funding",
+      "target_type": "node",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "A recent publication in 'Nature Medicine' details a novel mRNA platform technology that has shown unprecedented efficacy in inducing broad-spectrum immunity against a range of highly variable RNA viruses. This platform, developed by a leading biotech firm, is being rapidly evaluated for its potential application in vaccines against other challenging pathogens, including a specific mention of its promise for respiratory viruses like hMPV.",
+      "probe_generated": true,
+      "success": false,
+      "updated_probability": null,
+      "absolute_shift": null,
+      "shift_direction": null,
+      "reasoning": "",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly supports",
+      "target_id": "scientific_breakthroughs",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "A recent report from the World Health Organization highlights a concerning increase in severe respiratory illnesses in young children attributed to Human metapneumovirus (hMPV), particularly in regions with lower vaccination rates for other common childhood diseases. This report explicitly calls for accelerated international efforts to develop a preventative vaccine, citing hMPV as a growing global health concern that warrants greater attention and resources.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information significantly strengthens the 'public_health_priority' node. The WHO report explicitly identifies hMPV as a growing global health concern and calls for accelerated international efforts. This directly impacts the causal path: public_health_priority -> hmpv_research_funding and public_health_priority -> regulatory_approval_process. Increased public health priority is likely to lead to higher research funding and potentially a more streamlined regulatory process. These, in turn, positively influence vaccine_development_progress and subsequently wikipedia_hmpv_vaccine_entry. While the core scientific challenges (like viral_mutability) remain, the increased focus and potential for more resources make a vaccine's development and reporting by 2025-12-28 more probable.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information significantly strengthens the 'public_health_priority' node. The WHO report explicitly identifies hMPV as a growing global health concern and calls for accelerated international efforts. This directly impacts the causal path: public_health_priority -> hmpv_research_funding and public_health_priority -> regulatory_approval_process. Increased public health priority is likely to lead to higher research funding and potentially a more streamlined regulatory process. These, in turn, positively influence vaccine_development_progress and subsequently wikipedia_hmpv_vaccine_entry. While the core scientific challenges (like viral_mutability) remain, the increased focus and potential for more resources make a vaccine's development and reporting by 2025-12-28 more probable.\"\n}",
+      "target_id": "public_health_priority",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While significant progress is necessary, the Wikipedia entry might not reflect this progress if the vaccine is still in experimental stages or if its efficacy is highly debated. For instance, a vaccine could show promise in early trials but face significant setbacks in later phases, leading to a delayed or absent Wikipedia announcement of development by the specified date.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'vaccine_development_progress -> wikipedia_hmpv_vaccine_entry' link is significant. My initial model assumed that substantial progress in vaccine development would directly translate to a Wikipedia entry stating it has been developed. However, the new information highlights that 'development' is a nuanced concept, and even promising progress might not be sufficient for a definitive Wikipedia declaration by the target date if efficacy is debated or if later-stage trials face setbacks. This weakens the direct causal link between the state of development and the Wikipedia outcome. While still possible, the path from 'vaccine_development_progress' to the final outcome is now less certain, leading to a decrease in the overall probability. The core drivers of vaccine development (funding, breakthroughs, mutability, priority) remain unchanged, but their ability to directly influence the outcome has been tempered.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'vaccine_development_progress -> wikipedia_hmpv_vaccine_entry' link is significant. My initial model assumed that substantial progress in vaccine development would directly translate to a Wikipedia entry stating it has been developed. However, the new information highlights that 'development' is a nuanced concept, and even promising progress might not be sufficient for a definitive Wikipedia declaration by the target date if efficacy is debated or if later-stage trials face setbacks. This weakens the direct causal link between the state of development and the Wikipedia outcome. While still possible, the path from 'vaccine_development_progress' to the final outcome is now less certain, leading to a decrease in the overall probability. The core drivers of vaccine development (funding, breakthroughs, mutability, priority) remain unchanged, but their ability to directly influence the outcome has been tempered.\"\n}",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While increased funding for hMPV vaccine research is often assumed to directly accelerate progress, it's possible that current research is bottlenecked by fundamental biological challenges rather than financial constraints. For instance, the difficulty in growing the virus in a lab setting for research purposes, or a lack of understanding of key viral proteins, might mean that even a significant increase in funding wouldn't translate to faster development until these basic scientific hurdles are overcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that the causal link between 'hmpv_research_funding' and 'vaccine_development_progress' might be weaker than initially assumed. If fundamental biological challenges, such as difficulties in lab cultivation or understanding viral proteins, are the primary bottlenecks, then increased funding may not directly accelerate development. This weakens a key path to the outcome, as 'vaccine_development_progress' is a direct driver of 'wikipedia_hmpv_vaccine_entry'. While other factors like 'scientific_breakthroughs' and 'public_health_priority' still play a role, the direct impact of funding is now considered less certain, leading to a decrease in the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that the causal link between 'hmpv_research_funding' and 'vaccine_development_progress' might be weaker than initially assumed. If fundamental biological challenges, such as difficulties in lab cultivation or understanding viral proteins, are the primary bottlenecks, then increased funding may not directly accelerate development. This weakens a key path to the outcome, as 'vaccine_development_progress' is a direct driver of 'wikipedia_hmpv_vaccine_entry'. While other factors like 'scientific_breakthroughs' and 'public_health_priority' still play a role, the direct impact of funding is now considered less certain, leading to a decrease in the overall probability.\"\n}",
+      "target_id": "hmpv_research_funding->vaccine_development_progress",
+      "target_type": "edge",
+      "target_importance": 0.0714,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While a high public health priority for hMPV might seem to guarantee increased research funding, it's possible that competing global health crises or other well-established diseases with larger patient populations could absorb available research budgets. Therefore, even if hMPV is deemed a priority, the actual allocation of funds might be limited by these other pressing demands.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct link between 'public_health_priority' and 'hmpv_research_funding'. While the initial model assumed higher priority directly translates to more funding, the new information suggests that competing health crises can divert resources. This weakens the causal path from 'public_health_priority' to 'hmpv_research_funding', and subsequently to 'vaccine_development_progress' and the final outcome. Since funding is a key driver of development progress, this indirect effect warrants a slight decrease in the probability. However, the link is not entirely broken, as other factors like 'scientific_breakthroughs' and 'viral_mutability' still influence 'vaccine_development_progress', and 'public_health_priority' might still have some influence on regulatory processes, albeit less direct. Therefore, the update is not drastic.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct link between 'public_health_priority' and 'hmpv_research_funding'. While the initial model assumed higher priority directly translates to more funding, the new information suggests that competing health crises can divert resources. This weakens the causal path from 'public_health_priority' to 'hmpv_research_funding', and subsequently to 'vaccine_development_progress' and the final outcome. Since funding is a key driver of development progress, this indirect effect warrants a slight decrease in the probability. However, the link is not entirely broken, as other factors like 'scientific_breakthroughs' and 'viral_mutability' still influence 'vaccine_development_progress', and 'public_health_priority' might still have some influence on regulatory processes, albeit less direct. Therefore, the update is not drastic.\"\n}",
+      "target_id": "public_health_priority->hmpv_research_funding",
+      "target_type": "edge",
+      "target_importance": 0.0714,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent advancements in AI-driven vaccine design platforms, exemplified by their successful application in rapidly developing mRNA vaccines for other pathogens, suggest that once significant progress is made in hMPV vaccine development, the translation to a 'developed' status on Wikipedia will be even more rapid and definitive. These platforms can accelerate not only the research but also the documentation and reporting phases, making the link between development progress and Wikipedia entry even more robust.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the `vaccine_development_progress -> wikipedia_hmpv_vaccine_entry` link suggests that advancements in AI are not just accelerating vaccine development itself, but also the pace at which 'developed' status is recognized and reported. This strengthens the causal path to the outcome. Specifically, the new information implies that the transition from `vaccine_development_progress` to `wikipedia_hmpv_vaccine_entry` will be more rapid and certain than previously assumed. This makes the overall probability of the outcome slightly higher, as progress in development is more likely to be reflected quickly on Wikipedia.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the `vaccine_development_progress -> wikipedia_hmpv_vaccine_entry` link suggests that advancements in AI are not just accelerating vaccine development itself, but also the pace at which 'developed' status is recognized and reported. This strengthens the causal path to the outcome. Specifically, the new information implies that the transition from `vaccine_development_progress` to `wikipedia_hmpv_vaccine_entry` will be more rapid and certain than previously assumed. This makes the overall probability of the outcome slightly higher, as progress in development is more likely to be reflected quickly on Wikipedia.\"\n}",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant surge in private investment and philanthropic funding for novel vaccine platforms, including those applicable to emerging viruses like hMPV. This influx of capital is enabling research institutions to rapidly scale up preclinical trials and expand manufacturing capacity, suggesting that increased funding has an even more immediate and direct impact on accelerating vaccine development progress than might be typically assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'hmpv_research_funding -> vaccine_development_progress' argues that this link is stronger and more immediate than previously assumed, particularly due to recent surges in private and philanthropic investment. This strengthens the path from funding to vaccine development progress. Since increased funding is now seen as having a more potent accelerating effect, and this path is a direct driver of vaccine development progress, which in turn leads to the Wikipedia outcome, the overall probability of the outcome increases. The other causal paths are not directly challenged, but the enhanced impact of funding indirectly supports the entire chain of reasoning leading to the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'hmpv_research_funding -> vaccine_development_progress' argues that this link is stronger and more immediate than previously assumed, particularly due to recent surges in private and philanthropic investment. This strengthens the path from funding to vaccine development progress. Since increased funding is now seen as having a more potent accelerating effect, and this path is a direct driver of vaccine development progress, which in turn leads to the Wikipedia outcome, the overall probability of the outcome increases. The other causal paths are not directly challenged, but the enhanced impact of funding indirectly supports the entire chain of reasoning leading to the outcome.\"\n}",
+      "target_id": "hmpv_research_funding->vaccine_development_progress",
+      "target_type": "edge",
+      "target_importance": 0.0714,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent global health crises have demonstrated that when a pathogen like hMPV poses a significant, albeit currently underestimated, threat to vulnerable populations, international health bodies and national governments can rapidly mobilize substantial, previously unallocated, research funds. This urgency can override typical budget constraints, leading to a disproportionately large increase in funding compared to what might be predicted based solely on historical funding levels.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'public_health_priority -> hmpv_research_funding' link strengthens the potential for increased funding. The new information suggests that even if public health priority for hMPV is currently underestimated, a future crisis could rapidly and significantly boost funding, bypassing typical budgetary limitations. This creates a stronger, albeit potentially more volatile, pathway to increased 'hmpv_research_funding'. Increased funding directly impacts 'vaccine_development_progress' and indirectly via 'scientific_breakthroughs'. Both of these nodes are critical direct and indirect drivers of the outcome 'wikipedia_hmpv_vaccine_entry'. Therefore, the probability of a vaccine being developed and reported on Wikipedia by the target date increases.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'public_health_priority -> hmpv_research_funding' link strengthens the potential for increased funding. The new information suggests that even if public health priority for hMPV is currently underestimated, a future crisis could rapidly and significantly boost funding, bypassing typical budgetary limitations. This creates a stronger, albeit potentially more volatile, pathway to increased 'hmpv_research_funding'. Increased funding directly impacts 'vaccine_development_progress' and indirectly via 'scientific_breakthroughs'. Both of these nodes are critical direct and indirect drivers of the outcome 'wikipedia_hmpv_vaccine_entry'. Therefore, the probability of a vaccine being developed and reported on Wikipedia by the target date increases.\"\n}",
+      "target_id": "public_health_priority->hmpv_research_funding",
+      "target_type": "edge",
+      "target_importance": 0.0714,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "What if the Wikipedia entry for a Human metapneumovirus vaccine is updated to indicate development *before* significant scientific progress has actually been made? This could happen if a major news outlet prematurely reports a breakthrough or if a company makes a preliminary announcement based on early, unverified data, leading Wikipedia editors to update the entry based on this external information, thus 'causing' the Wikipedia entry to reflect development, even if actual progress is still lagging.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0,
+      "shift_direction": "unchanged",
+      "reasoning": "The challenge suggests that the Wikipedia entry could be updated based on premature or unverified information, independent of actual scientific progress. However, the original causal link 'vaccine_development_progress -> wikipedia_hmpv_vaccine_entry' posits that significant progress makes a Wikipedia entry *likely*. This new information doesn't break this link; rather, it introduces a potential *alternative* causal path to the outcome: external announcements or news leading to a Wikipedia update. This alternative path might be less reliable or sustainable than one based on genuine scientific progress, and the core of the original forecast still relies on the underlying progress in vaccine development. Therefore, while acknowledging this possibility, it does not fundamentally alter the assessment of the likelihood of a vaccine being *developed* (which implies scientific and regulatory validation) by the given date, and thus does not warrant a significant change to the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"unchanged\",\n  \"reasoning\": \"The challenge suggests that the Wikipedia entry could be updated based on premature or unverified information, independent of actual scientific progress. However, the original causal link 'vaccine_development_progress -> wikipedia_hmpv_vaccine_entry' posits that significant progress makes a Wikipedia entry *likely*. This new information doesn't break this link; rather, it introduces a potential *alternative* causal path to the outcome: external announcements or news leading to a Wikipedia update. This alternative path might be less reliable or sustainable than one based on genuine scientific progress, and the core of the original forecast still relies on the underlying progress in vaccine development. Therefore, while acknowledging this possibility, it does not fundamentally alter the assessment of the likelihood of a vaccine being *developed* (which implies scientific and regulatory validation) by the given date, and thus does not warrant a significant change to the probability estimate.\"\n}",
+      "target_id": "vaccine_development_progress->wikipedia_hmpv_vaccine_entry",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While the network shows that vaccine development progress influences the Wikipedia entry and regulatory approval influences the Wikipedia entry, it misses a crucial pathway. Significant progress in vaccine development often necessitates and even helps to streamline the regulatory approval process. For instance, a highly advanced and promising vaccine candidate might be prioritized by regulatory bodies, or the data generated during development might simplify the review.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a missing causal link: vaccine_development_progress -> regulatory_approval_process. This implies that strong progress in vaccine development itself can positively influence the speed and efficiency of regulatory approval. Previously, the network only modeled public_health_priority influencing regulatory_approval_process and vaccine_development_progress influencing wikipedia_hmpv_vaccine_entry independently. By adding this new pathway, advancements in vaccine development now have a more direct and reinforced positive impact on the final outcome (wikipedia_hmpv_vaccine_entry). If a vaccine is progressing well, it's now more likely to navigate the regulatory hurdles quickly, further increasing the probability of it being reported as developed. This strengthens the overall causal chain leading to the outcome, hence the probability has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a missing causal link: vaccine_development_progress -> regulatory_approval_process. This implies that strong progress in vaccine development itself can positively influence the speed and efficiency of regulatory approval. Previously, the network only modeled public_health_priority influencing regulatory_approval_process and vaccine_development_progress influencing wikipedia_hmpv_vaccine_entry independently. By adding this new pathway, advancements in vaccine development now have a more direct and reinforced positive impact on the final outcome (wikipedia_hmpv_vaccine_entry). If a vaccine is progressing well, it's now more likely to navigate the regulatory hurdles quickly, further increasing the probability of it being reported as developed. This strengthens the overall causal chain leading to the outcome, hence the probability has increased.\"\n}",
+      "target_id": "vaccine_development_progress->regulatory_approval_process",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "A recent study published in 'Nature Medicine' suggests that the current strains of Human metapneumovirus are exhibiting an unprecedented level of antigenic drift. How might this accelerated viral evolution specifically impact the timeline and feasibility of developing a widely effective vaccine, and consequently, its reported status on Wikipedia by December 2025?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "decreased",
+      "reasoning": "The new information directly challenges the 'viral_mutability' node and its influence on 'vaccine_development_progress'. The study indicates an 'unprecedented level of antigenic drift,' which means the virus is evolving much faster than previously assumed. This increased viral mutability will likely slow down vaccine development progress, as the vaccine needs to be constantly updated or designed to be broadly protective against many strains. This weakens the causal path from 'vaccine_development_progress' to the outcome 'wikipedia_hmpv_vaccine_entry', making it less likely that a vaccine will be reported as developed by the specified date. While other factors like funding and breakthroughs are still relevant, the accelerated evolution of the virus presents a significant hurdle, necessitating a downward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information directly challenges the 'viral_mutability' node and its influence on 'vaccine_development_progress'. The study indicates an 'unprecedented level of antigenic drift,' which means the virus is evolving much faster than previously assumed. This increased viral mutability will likely slow down vaccine development progress, as the vaccine needs to be constantly updated or designed to be broadly protective against many strains. This weakens the causal path from 'vaccine_development_progress' to the outcome 'wikipedia_hmpv_vaccine_entry', making it less likely that a vaccine will be reported as developed by the specified date. While other factors like funding and breakthroughs are still relevant, the accelerated evolution of the virus presents a significant hurdle, necessitating a downward revision of the probability.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that in mid-2024, a major international consortium announces a novel platform technology for rapid vaccine development against RNA viruses, which is successfully applied to a related paramyxovirus. How would this development, independent of existing hMPV research funding or specific breakthroughs, influence your assessment of whether a vaccine for Human metapneumovirus infection will be developed by 2025-12-28?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The announcement of a novel platform technology for rapid vaccine development against RNA viruses, successfully applied to a related paramyxovirus, significantly strengthens the causal path towards the outcome. This development acts as a form of 'scientific_breakthroughs' that is independent of existing hMPV research funding. This new platform technology directly increases the likelihood of 'vaccine_development_progress' for hMPV, as it can be rapidly adapted. This, in turn, makes it more probable that 'wikipedia_hmpv_vaccine_entry' will reflect the development of a vaccine by the target date. While not a direct funding increase, it bypasses potential limitations in current research and accelerates the possibility of a breakthrough, thus increasing the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The announcement of a novel platform technology for rapid vaccine development against RNA viruses, successfully applied to a related paramyxovirus, significantly strengthens the causal path towards the outcome. This development acts as a form of 'scientific_breakthroughs' that is independent of existing hMPV research funding. This new platform technology directly increases the likelihood of 'vaccine_development_progress' for hMPV, as it can be rapidly adapted. This, in turn, makes it more probable that 'wikipedia_hmpv_vaccine_entry' will reflect the development of a vaccine by the target date. While not a direct funding increase, it bypasses potential limitations in current research and accelerates the possibility of a breakthrough, thus increasing the overall probability.\"\n}",
+      "target_id": "novel_platform_technology",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent study published in a less prominent virology journal highlighted the distinct serotypes of Human metapneumovirus, noting that historical research efforts have primarily focused on the more common A and B strains. The study also mentioned that the lead researcher on the project has been advocating for increased international collaboration on respiratory virus surveillance.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The new information suggests that historical research efforts may have been too narrowly focused on specific serotypes of hMPV (A and B). This implies that previous 'vaccine_development_progress' might have been overestimated if it was only addressing a subset of the virus. The challenge to the effectiveness of past research indirectly weakens the causal link from 'hmpv_research_funding' and 'scientific_breakthroughs' to 'vaccine_development_progress', as past investments might not have yielded broadly applicable results. The mention of distinct serotypes also implies that developing a vaccine that covers all relevant strains could be more complex and time-consuming, potentially slowing down 'vaccine_development_progress'. The lead researcher's advocacy for international collaboration, however, could potentially increase 'public_health_priority' and subsequent 'hmpv_research_funding' in the future, which is a positive long-term signal but doesn't immediately alter the likelihood of a vaccine by 2025. Overall, the implication of a more complex and less addressed viral landscape leads to a slight decrease in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information suggests that historical research efforts may have been too narrowly focused on specific serotypes of hMPV (A and B). This implies that previous 'vaccine_development_progress' might have been overestimated if it was only addressing a subset of the virus. The challenge to the effectiveness of past research indirectly weakens the causal link from 'hmpv_research_funding' and 'scientific_breakthroughs' to 'vaccine_development_progress', as past investments might not have yielded broadly applicable results. The mention of distinct serotypes also implies that developing a vaccine that covers all relevant strains could be more complex and time-consuming, potentially slowing down 'vaccine_development_progress'. The lead researcher's advocacy for international collaboration, however, could potentially increase 'public_health_priority' and subsequent 'hmpv_research_funding' in the future, which is a positive long-term signal but doesn't immediately alter the likelihood of a vaccine by 2025. Overall, the implication of a more complex and less addressed viral landscape leads to a slight decrease in the probability.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent study published in the Journal of Virology detailed the historical prevalence of Human metapneumovirus infections in the Southern Hemisphere over the past decade. The research focused on epidemiological trends and did not involve any specific vaccine development or efficacy trials.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.74,
+      "absolute_shift": 0.010000000000000009,
+      "shift_direction": "decreased",
+      "reasoning": "The new information concerns a study on the historical prevalence of hMPV infections. This study is epidemiological in nature and does not directly impact the causal paths leading to vaccine development. Specifically, it does not affect hmpv_research_funding, scientific_breakthroughs, viral_mutability, public_health_priority, or the regulatory_approval_process. Therefore, the link to vaccine_development_progress and subsequently to wikipedia_hmpv_vaccine_entry remains largely unaffected. The slight decrease in probability reflects a very minor potential indirect effect, such as this epidemiological data potentially influencing public_health_priority, but this is speculative and not strongly supported by the information provided. The core causal mechanisms remain intact.",
+      "raw_response": "{\n  \"updated_probability\": 0.74,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information concerns a study on the historical prevalence of hMPV infections. This study is epidemiological in nature and does not directly impact the causal paths leading to vaccine development. Specifically, it does not affect hmpv_research_funding, scientific_breakthroughs, viral_mutability, public_health_priority, or the regulatory_approval_process. Therefore, the link to vaccine_development_progress and subsequently to wikipedia_hmpv_vaccine_entry remains largely unaffected. The slight decrease in probability reflects a very minor potential indirect effect, such as this epidemiological data potentially influencing public_health_priority, but this is speculative and not strongly supported by the information provided. The core causal mechanisms remain intact.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "19fe79dd3c949d77e31f598f3012001f0ec798dae23ab312f28e40ad40a80046",
+    "question_text": "According to Wikipedia, will a vaccine have been developed for Human metapneumovirus infection by 2025-12-28?",
+    "source": "wikipedia",
+    "condition": "one-turn",
+    "initial_probability": 0.75,
+    "n_probes": 20,
+    "n_successful": 19,
+    "mean_absolute_shift": 0.1163157894736842,
+    "max_absolute_shift": 0.35
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 2.0121951219512195,
+    "mean_shift_high": 0.1375,
+    "mean_shift_low": 0.06833333333333334,
+    "asymmetry_index": 1.5164835164835169,
+    "mean_shift_negate": 0.1642857142857143,
+    "mean_shift_strengthen": 0.10833333333333332,
+    "fnar": 1,
+    "n_accepted": 3,
+    "n_spurious": 3,
+    "critical_path_premium": 0.0080952380952381,
+    "mean_shift_on_path": 0.12142857142857143,
+    "mean_shift_off_path": 0.11333333333333333,
+    "importance_sensitivity_correlation": 0.36818181818181817,
+    "control_sensitivity": 0.5
+  }
+}

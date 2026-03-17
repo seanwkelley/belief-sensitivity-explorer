@@ -1,0 +1,1306 @@
+{
+  "question_id": "085ad65ea78c233bd2751e83a48fca5d20c8c9d10868ebac09692725e692b19e",
+  "question_text": "Will there be more 'Protests' in Ireland for the 30 days before 2025-12-28 compared to the 30-day average of 'Protests' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Protests'\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of 'Protests' over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more 'Protests' would need to occur in the 30 days leading up to the resolution.",
+  "source": "acled",
+  "initial_probability": 0.65,
+  "nodes": [
+    {
+      "id": "housing_affordability_ireland",
+      "description": "The general state of housing affordability in Ireland.",
+      "role": "factor"
+    },
+    {
+      "id": "inflation_rate_ireland",
+      "description": "The current inflation rate in Ireland.",
+      "role": "factor"
+    },
+    {
+      "id": "government_policy_housing",
+      "description": "Government policies related to housing supply and affordability.",
+      "role": "factor"
+    },
+    {
+      "id": "public_sentiment_housing",
+      "description": "The general public's mood and feeling towards housing issues.",
+      "role": "factor"
+    },
+    {
+      "id": "economic_outlook_ireland",
+      "description": "The overall health and projected future of the Irish economy.",
+      "role": "factor"
+    },
+    {
+      "id": "protest_frequency_historical",
+      "description": "The historical trend and average frequency of protests in Ireland.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome_more_protests",
+      "description": "Whether there will be more 'Protests' in Ireland in the 30 days before 2025-12-28 compared to the 30-day average over the preceding 360 days.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "housing_affordability_ireland",
+      "to": "public_sentiment_housing",
+      "mechanism": "Deteriorating affordability often leads to public dissatisfaction and sentiment against current conditions."
+    },
+    {
+      "from": "inflation_rate_ireland",
+      "to": "housing_affordability_ireland",
+      "mechanism": "High inflation can increase construction costs and mortgage rates, worsening affordability."
+    },
+    {
+      "from": "government_policy_housing",
+      "to": "housing_affordability_ireland",
+      "mechanism": "Policies aimed at increasing supply or controlling prices directly impact affordability."
+    },
+    {
+      "from": "public_sentiment_housing",
+      "to": "outcome_more_protests",
+      "mechanism": "Negative public sentiment regarding a salient issue like housing is a primary driver for protest mobilization."
+    },
+    {
+      "from": "economic_outlook_ireland",
+      "to": "housing_affordability_ireland",
+      "mechanism": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability."
+    },
+    {
+      "from": "economic_outlook_ireland",
+      "to": "inflation_rate_ireland",
+      "mechanism": "Strong economic growth can sometimes lead to increased inflationary pressures."
+    },
+    {
+      "from": "protest_frequency_historical",
+      "to": "outcome_more_protests",
+      "mechanism": "Historical trends provide a baseline; significant deviations from this baseline are more likely if underlying drivers change."
+    },
+    {
+      "from": "housing_affordability_ireland",
+      "to": "outcome_more_protests",
+      "mechanism": "Poor housing affordability directly fuels grievances that can lead to protests."
+    },
+    {
+      "from": "inflation_rate_ireland",
+      "to": "outcome_more_protests",
+      "mechanism": "High inflation can exacerbate cost-of-living concerns, potentially leading to broader discontent and protests."
+    },
+    {
+      "from": "government_policy_housing",
+      "to": "public_sentiment_housing",
+      "mechanism": "Perceived inaction or ineffective policies on housing can worsen public sentiment."
+    },
+    {
+      "from": "government_policy_housing",
+      "to": "outcome_more_protests",
+      "mechanism": "Specific government policies or lack thereof can directly trigger protests."
+    },
+    {
+      "from": "housing_affordability_ireland",
+      "to": "government_policy_housing",
+      "mechanism": "Persistent housing affordability issues may prompt government intervention or policy changes."
+    }
+  ],
+  "reasoning": "The forecast leans towards an increase in protests due to persistent and likely worsening housing affordability in Ireland. This is driven by a combination of inflation, economic outlook, and the effectiveness of government policy. Public sentiment regarding housing is a key mediator, and negative sentiment is a strong precursor to protest. While historical trends provide a baseline, the current socio-economic factors suggest a higher likelihood of protests exceeding the recent average, especially if affordability issues remain unaddressed or are exacerbated by inflation and economic conditions over the next year.",
+  "network_analysis": {
+    "n_nodes": 7,
+    "n_edges": 12,
+    "density": 0.2857,
+    "is_dag": false,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "outcome_more_protests",
+    "node_metrics": [
+      {
+        "node_id": "housing_affordability_ireland",
+        "description": "The general state of housing affordability in Ireland.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 3,
+        "betweenness": 0.15,
+        "closeness": 0.5,
+        "pagerank": 0.1636,
+        "path_relevance": 0.1429
+      },
+      {
+        "node_id": "inflation_rate_ireland",
+        "description": "The current inflation rate in Ireland.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 2,
+        "betweenness": 0.0167,
+        "closeness": 0.1667,
+        "pagerank": 0.0927,
+        "path_relevance": 0.1429
+      },
+      {
+        "node_id": "government_policy_housing",
+        "description": "Government policies related to housing supply and affordability.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 3,
+        "betweenness": 0,
+        "closeness": 0.3,
+        "pagerank": 0.1114,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "public_sentiment_housing",
+        "description": "The general public's mood and feeling towards housing issues.",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.4444,
+        "pagerank": 0.143,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "economic_outlook_ireland",
+        "description": "The overall health and projected future of the Irish economy.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.065,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "protest_frequency_historical",
+        "description": "The historical trend and average frequency of protests in Ireland.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.065,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "outcome_more_protests",
+        "description": "Whether there will be more 'Protests' in Ireland in the 30 days before 2025-12-28 compared to the 30-day average over the preceding 360 days.",
+        "role": "outcome",
+        "in_degree": 5,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.8571,
+        "pagerank": 0.3592,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "housing_affordability_ireland",
+        "target": "public_sentiment_housing",
+        "mechanism": "Deteriorating affordability often leads to public dissatisfaction and sentiment against current conditions.",
+        "edge_betweenness": 0.0714,
+        "on_critical_path": false
+      },
+      {
+        "source": "housing_affordability_ireland",
+        "target": "outcome_more_protests",
+        "mechanism": "Poor housing affordability directly fuels grievances that can lead to protests.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "housing_affordability_ireland",
+        "target": "government_policy_housing",
+        "mechanism": "Persistent housing affordability issues may prompt government intervention or policy changes.",
+        "edge_betweenness": 0.0714,
+        "on_critical_path": false
+      },
+      {
+        "source": "inflation_rate_ireland",
+        "target": "housing_affordability_ireland",
+        "mechanism": "High inflation can increase construction costs and mortgage rates, worsening affordability.",
+        "edge_betweenness": 0.0714,
+        "on_critical_path": false
+      },
+      {
+        "source": "inflation_rate_ireland",
+        "target": "outcome_more_protests",
+        "mechanism": "High inflation can exacerbate cost-of-living concerns, potentially leading to broader discontent and protests.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "government_policy_housing",
+        "target": "housing_affordability_ireland",
+        "mechanism": "Policies aimed at increasing supply or controlling prices directly impact affordability.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": false
+      },
+      {
+        "source": "government_policy_housing",
+        "target": "public_sentiment_housing",
+        "mechanism": "Perceived inaction or ineffective policies on housing can worsen public sentiment.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": false
+      },
+      {
+        "source": "government_policy_housing",
+        "target": "outcome_more_protests",
+        "mechanism": "Specific government policies or lack thereof can directly trigger protests.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "public_sentiment_housing",
+        "target": "outcome_more_protests",
+        "mechanism": "Negative public sentiment regarding a salient issue like housing is a primary driver for protest mobilization.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "economic_outlook_ireland",
+        "target": "housing_affordability_ireland",
+        "mechanism": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability.",
+        "edge_betweenness": 0.0833,
+        "on_critical_path": true
+      },
+      {
+        "source": "economic_outlook_ireland",
+        "target": "inflation_rate_ireland",
+        "mechanism": "Strong economic growth can sometimes lead to increased inflationary pressures.",
+        "edge_betweenness": 0.0357,
+        "on_critical_path": true
+      },
+      {
+        "source": "protest_frequency_historical",
+        "target": "outcome_more_protests",
+        "mechanism": "Historical trends provide a baseline; significant deviations from this baseline are more likely if underlying drivers change.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "housing_affordability_ireland",
+        "description": "The general state of housing affordability in Ireland.",
+        "importance": 0.15,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "inflation_rate_ireland",
+        "description": "The current inflation rate in Ireland.",
+        "importance": 0.0167,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "public_sentiment_housing",
+        "description": "The general public's mood and feeling towards housing issues.",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "protest_frequency_historical",
+        "description": "The historical trend and average frequency of protests in Ireland.",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "housing_affordability_ireland",
+        "description": "The general state of housing affordability in Ireland.",
+        "importance": 0.15,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "inflation_rate_ireland",
+        "description": "The current inflation rate in Ireland.",
+        "importance": 0.0167,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "public_sentiment_housing",
+        "description": "The general public's mood and feeling towards housing issues.",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "protest_frequency_historical",
+        "description": "The historical trend and average frequency of protests in Ireland.",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+        "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability.",
+        "importance": 0.0833,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "housing_affordability_ireland->outcome_more_protests",
+        "description": "Poor housing affordability directly fuels grievances that can lead to protests.",
+        "importance": 0.0357,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "housing_affordability_ireland->public_sentiment_housing",
+        "description": "Deteriorating affordability often leads to public dissatisfaction and sentiment against current conditions.",
+        "importance": 0.0714,
+        "centrality_rank": 8,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+        "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability.",
+        "importance": 0.0833,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "housing_affordability_ireland->outcome_more_protests",
+        "description": "Poor housing affordability directly fuels grievances that can lead to protests.",
+        "importance": 0.0357,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "housing_affordability_ireland->public_sentiment_housing",
+        "description": "Deteriorating affordability often leads to public dissatisfaction and sentiment against current conditions.",
+        "importance": 0.0714,
+        "centrality_rank": 8,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+        "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability.",
+        "importance": 0.0833,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "inflation_rate_ireland->public_sentiment_housing",
+        "description": "Potential link: The current inflation rate in Ireland. -> The general public's mood and feeling towards housing issues.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "inflation_rate_ireland->protest_frequency_historical",
+        "description": "Potential link: The current inflation rate in Ireland. -> The historical trend and average frequency of protests in Ireland.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "housing_affordability_ireland",
+      "description": "The general state of housing affordability in Ireland.",
+      "importance": 0.15,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "inflation_rate_ireland",
+      "description": "The current inflation rate in Ireland.",
+      "importance": 0.0167,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "public_sentiment_housing",
+      "description": "The general public's mood and feeling towards housing issues.",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "protest_frequency_historical",
+      "description": "The historical trend and average frequency of protests in Ireland.",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "housing_affordability_ireland",
+      "description": "The general state of housing affordability in Ireland.",
+      "importance": 0.15,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "inflation_rate_ireland",
+      "description": "The current inflation rate in Ireland.",
+      "importance": 0.0167,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "public_sentiment_housing",
+      "description": "The general public's mood and feeling towards housing issues.",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "protest_frequency_historical",
+      "description": "The historical trend and average frequency of protests in Ireland.",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability.",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "housing_affordability_ireland->outcome_more_protests",
+      "description": "Poor housing affordability directly fuels grievances that can lead to protests.",
+      "importance": 0.0357,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "housing_affordability_ireland->public_sentiment_housing",
+      "description": "Deteriorating affordability often leads to public dissatisfaction and sentiment against current conditions.",
+      "importance": 0.0714,
+      "centrality_rank": 8,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability.",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "housing_affordability_ireland->outcome_more_protests",
+      "description": "Poor housing affordability directly fuels grievances that can lead to protests.",
+      "importance": 0.0357,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "housing_affordability_ireland->public_sentiment_housing",
+      "description": "Deteriorating affordability often leads to public dissatisfaction and sentiment against current conditions.",
+      "importance": 0.0714,
+      "centrality_rank": 8,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability.",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "inflation_rate_ireland->public_sentiment_housing",
+      "description": "Potential link: The current inflation rate in Ireland. -> The general public's mood and feeling towards housing issues.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "inflation_rate_ireland->protest_frequency_historical",
+      "description": "Potential link: The current inflation rate in Ireland. -> The historical trend and average frequency of protests in Ireland.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Suppose that, contrary to our assumptions, the state of housing affordability in Ireland has absolutely no bearing on public sentiment or the likelihood of protests. Imagine that the public is largely apathetic to housing costs, or that their grievances stem from entirely unrelated issues, making housing affordability a non-factor in this specific context. How would this completely disconnect between housing affordability and protest outcomes change your probability assessment?",
+      "probe_type": "node_negate_high",
+      "target_id": "housing_affordability_ireland",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.15,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The general state of housing affordability in Ireland."
+    },
+    {
+      "probe_text": "What if the inflation rate in Ireland is not a significant driver of housing affordability or public discontent leading to protests? For instance, imagine a scenario where the housing market is so fundamentally broken due to supply shortages and speculative investment that inflation becomes a secondary concern, or perhaps the public is so resigned to high prices that inflation's impact on their protest behavior is negligible.",
+      "probe_type": "node_negate_high",
+      "target_id": "inflation_rate_ireland",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0167,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The current inflation rate in Ireland."
+    },
+    {
+      "probe_text": "Imagine that recent polling data indicates a significant disconnect between reported housing affordability issues and actual public sentiment. Despite ongoing concerns about prices, a large majority of the public expresses general satisfaction with their personal housing situation and believes the government is handling the issue effectively. Could it be that while housing affordability is objectively poor, the public sentiment regarding it is not a strong enough driver for increased protests, perhaps due to other pressing national concerns or a general sense of resignation?",
+      "probe_type": "node_negate_medium",
+      "target_id": "public_sentiment_housing",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "The general public's mood and feeling towards housing issues."
+    },
+    {
+      "probe_text": "Imagine that the historical trend of protests in Ireland has been unusually high due to a specific, isolated historical event that is no longer relevant. In this scenario, relying on the historical frequency of protests might be misleading, as it doesn't reflect the current underlying drivers of public sentiment or policy effectiveness.",
+      "probe_type": "node_negate_low",
+      "target_id": "protest_frequency_historical",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The historical trend and average frequency of protests in Ireland."
+    },
+    {
+      "probe_text": "Recent reports from the Central Statistics Office of Ireland indicate a significant year-on-year increase in average rents, now exceeding 15% in major urban centers. This surge, coupled with stagnant wage growth in key sectors, has pushed housing affordability to its lowest point in over a decade, according to the Irish Housing Affordability Index. Experts widely attribute this crisis to a persistent undersupply of new housing units, a situation unlikely to be resolved by current government initiatives.",
+      "probe_type": "node_strengthen",
+      "target_id": "housing_affordability_ireland",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.15,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The general state of housing affordability in Ireland."
+    },
+    {
+      "probe_text": "Recent analysis from the Irish Central Bank highlights that the current inflation rate in Ireland is not only high but also proving to be unusually persistent, driven by global supply chain issues and strong domestic demand. Their models indicate that this persistence is directly increasing the cost of essential goods and services, significantly impacting household budgets and consumer confidence, and is projected to remain elevated for the next 12-18 months.",
+      "probe_type": "node_strengthen",
+      "target_id": "inflation_rate_ireland",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.0167,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The current inflation rate in Ireland."
+    },
+    {
+      "probe_text": "Recent polling data indicates a significant increase in public anger and frustration over housing issues in Ireland. Specifically, a new survey reveals that over 70% of respondents believe the government is not doing enough to address the housing crisis, with a substantial portion expressing willingness to participate in public demonstrations to voice their discontent.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "public_sentiment_housing",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "The general public's mood and feeling towards housing issues."
+    },
+    {
+      "probe_text": "Recent analysis of protest data across several European countries, including Ireland, has revealed a consistent underlying 'long-term trend' in the frequency of public demonstrations. This trend, independent of specific contemporary issues, suggests a baseline level of societal engagement with protest as a mechanism for expressing grievances. This historical baseline is a significant predictor of future protest activity, acting as a fundamental anchor for estimating protest occurrences.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "protest_frequency_historical",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The historical trend and average frequency of protests in Ireland."
+    },
+    {
+      "probe_text": "While a strong economy might increase housing demand, in Ireland specifically, the relationship between economic outlook and housing affordability might be weaker than assumed. This is because a significant portion of housing supply is tied to international investment and developer activity, which can be influenced more by global financial conditions and construction costs (like imported materials and labor) rather than solely domestic economic growth. Therefore, even with a robust Irish economy, if global factors restrict supply or increase building expenses, housing affordability may not worsen as expected.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability."
+    },
+    {
+      "probe_text": "While poor housing affordability is a concern, it might not directly translate into more protests if the public perceives the issue as long-standing and intractable, leading to resignation rather than mobilization. Furthermore, if government policies, even if perceived as ineffective in solving affordability, are seen as actively addressing the issue (e.g., through extensive consultation or small incremental changes), this could dampen the immediate impetus for protest, even if underlying affordability remains poor.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "housing_affordability_ireland->outcome_more_protests",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0357,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Poor housing affordability directly fuels grievances that can lead to protests."
+    },
+    {
+      "probe_text": "While deteriorating housing affordability typically fuels public dissatisfaction, it's possible that the public has become desensitized to the issue, or that other more pressing concerns (like immediate cost-of-living pressures from inflation) are overshadowing housing affordability in shaping public sentiment.  Therefore, even if housing affordability worsens, it might not translate into a significant shift in public sentiment directly related to housing, weakening the link to protest outcomes.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "housing_affordability_ireland->public_sentiment_housing",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0714,
+      "centrality_rank": 8,
+      "on_critical_path": false,
+      "description": "Deteriorating affordability often leads to public dissatisfaction and sentiment against current conditions."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant surge in foreign direct investment into Ireland, coupled with a robust domestic job market, leading to a perception of a very strong and rapidly improving economic outlook. This influx of capital and talent is placing unprecedented demand on the already constrained housing supply, directly exacerbating affordability issues. Therefore, the positive feedback loop from a strong economy to worsening housing affordability is likely even more potent than initially modeled.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant surge in the number of individuals and families unable to secure stable housing, with eviction notices rising sharply. This escalating housing crisis, characterized by record-high rental prices and a severe lack of affordable units, directly translates into heightened public frustration and a stronger propensity for organized protests. This real-world development suggests the link between poor housing affordability and protest outcomes is not just a general trend but a potent and immediate driver.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "housing_affordability_ireland->outcome_more_protests",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0357,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Poor housing affordability directly fuels grievances that can lead to protests."
+    },
+    {
+      "probe_text": "While housing affordability is a clear driver of public sentiment, consider the amplifying effect of media coverage and social media discourse. When housing becomes significantly unaffordable, it doesn't just affect individuals directly; it becomes a dominant topic, generating widespread discussion, outrage, and a sense of collective grievance that can drastically intensify negative public sentiment beyond what might be predicted by affordability metrics alone.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "housing_affordability_ireland->public_sentiment_housing",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0714,
+      "centrality_rank": 8,
+      "on_critical_path": false,
+      "description": "Deteriorating affordability often leads to public dissatisfaction and sentiment against current conditions."
+    },
+    {
+      "probe_text": "You've suggested that a strong 'economic_outlook_ireland' leads to worse 'housing_affordability_ireland' due to increased demand. However, consider that persistent and severe housing affordability crises ('housing_affordability_ireland') can actually *deteriorate* the broader 'economic_outlook_ireland'. For instance, if a large portion of household income is consumed by rent or mortgage payments, consumer spending on other goods and services plummets, and businesses face challenges attracting and retaining workers, thereby negatively impacting the overall economic outlook.",
+      "probe_type": "edge_reverse",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0833,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A strong economy can increase demand for housing, potentially driving up prices and reducing affordability."
+    },
+    {
+      "probe_text": "While your model posits that inflation affects housing affordability, which in turn impacts public sentiment, consider the direct effect of inflation on people's immediate financial well-being. High inflation, especially in essentials beyond housing, can significantly sour public mood and create general discontent, which would likely amplify negative public sentiment specifically regarding housing issues, even beyond its direct impact on affordability.",
+      "probe_type": "edge_omitted",
+      "target_id": "inflation_rate_ireland->public_sentiment_housing",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The current inflation rate in Ireland. -> The general public's mood and feeling towards housing issues."
+    },
+    {
+      "probe_text": "While you've modeled how inflation might directly impact housing affordability and thus protests, consider the broader economic impact. High inflation erodes purchasing power across many goods and services, not just housing. This widespread cost-of-living pressure can independently increase the general propensity for public unrest and thus raise the historical average frequency of protests, even if housing affordability itself hasn't yet worsened.",
+      "probe_type": "edge_spurious",
+      "target_id": "inflation_rate_ireland->protest_frequency_historical",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The current inflation rate in Ireland. -> The historical trend and average frequency of protests in Ireland."
+    },
+    {
+      "probe_text": "Recent reports suggest a significant increase in immigration to Ireland, particularly in urban centers. How might this demographic shift, independent of current affordability levels, influence public sentiment and the likelihood of housing-related protests?",
+      "probe_type": "missing_node",
+      "target_id": "immigration_levels_ireland",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that a significant portion of the Irish population, particularly renters, are facing sudden and substantial rent increases due to a new piece of legislation that was recently enacted. How would this specific legislative change, impacting rent affordability, alter your assessment of the likelihood of more protests in the 30 days before 2025-12-28?",
+      "probe_type": "missing_node",
+      "target_id": "rent_control_legislation",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "A recent report from a European cultural heritage organization highlighted the historical significance of traditional Irish music festivals, noting their consistent popularity and attendance figures over the past decade. These festivals are distinct from political demonstrations and their scheduling does not typically coincide with periods of heightened social unrest.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in the number of tourists visiting Ireland, with a particular surge in interest in historical sites and the Wild Atlantic Way. This influx is expected to boost the hospitality sector and local economies in tourist-dependent regions.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Suppose that, contrary to our assumptions, the state of housing affordability in Ireland has absolutely no bearing on public sentiment or the likelihood of protests. Imagine that the public is largely apathetic to housing costs, or that their grievances stem from entirely unrelated issues, making housing affordability a non-factor in this specific context. How would this completely disconnect between housing affordability and protest outcomes change your probability assessment?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly severs the causal links from 'housing_affordability_ireland' to both 'public_sentiment_housing' and 'outcome_more_protests'. This removes a major driver for protests in the model. Previously, poor housing affordability was seen as a key input that would negatively affect public sentiment and directly increase the likelihood of protests. By removing this connection, the model relies more heavily on other factors like general inflation, economic outlook, and historical protest trends. While other pathways still exist, the removal of housing affordability as a direct or indirect cause of protests significantly weakens the overall case for an increase in protests, leading to a decreased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly severs the causal links from 'housing_affordability_ireland' to both 'public_sentiment_housing' and 'outcome_more_protests'. This removes a major driver for protests in the model. Previously, poor housing affordability was seen as a key input that would negatively affect public sentiment and directly increase the likelihood of protests. By removing this connection, the model relies more heavily on other factors like general inflation, economic outlook, and historical protest trends. While other pathways still exist, the removal of housing affordability as a direct or indirect cause of protests significantly weakens the overall case for an increase in protests, leading to a decreased probability estimate.\"\n}",
+      "target_id": "housing_affordability_ireland",
+      "target_type": "node",
+      "target_importance": 0.15,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the inflation rate in Ireland is not a significant driver of housing affordability or public discontent leading to protests? For instance, imagine a scenario where the housing market is so fundamentally broken due to supply shortages and speculative investment that inflation becomes a secondary concern, or perhaps the public is so resigned to high prices that inflation's impact on their protest behavior is negligible.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the significance of 'inflation_rate_ireland' as a driver for 'housing_affordability_ireland' and 'outcome_more_protests'. If inflation is indeed a secondary concern or has a negligible impact on public protest behavior regarding housing, then the causal paths: 'inflation_rate_ireland' -> 'housing_affordability_ireland' and 'inflation_rate_ireland' -> 'outcome_more_protests' are weakened. This reduces the overall influence of inflation on the likelihood of protests. While 'housing_affordability_ireland' can still be impacted by other factors ('government_policy_housing', 'economic_outlook_ireland') and directly influence the outcome, the removal of inflation as a contributing factor to housing affordability and a direct driver of protest lowers the probability. The original forecast of 0.65 was moderately influenced by this path, so a decrease is warranted, but not a drastic one as other significant paths remain.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the significance of 'inflation_rate_ireland' as a driver for 'housing_affordability_ireland' and 'outcome_more_protests'. If inflation is indeed a secondary concern or has a negligible impact on public protest behavior regarding housing, then the causal paths: 'inflation_rate_ireland' -> 'housing_affordability_ireland' and 'inflation_rate_ireland' -> 'outcome_more_protests' are weakened. This reduces the overall influence of inflation on the likelihood of protests. While 'housing_affordability_ireland' can still be impacted by other factors ('government_policy_housing', 'economic_outlook_ireland') and directly influence the outcome, the removal of inflation as a contributing factor to housing affordability and a direct driver of protest lowers the probability. The original forecast of 0.65 was moderately influenced by this path, so a decrease is warranted, but not a drastic one as other significant paths remain.\"\n}",
+      "target_id": "inflation_rate_ireland",
+      "target_type": "node",
+      "target_importance": 0.0167,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Imagine that recent polling data indicates a significant disconnect between reported housing affordability issues and actual public sentiment. Despite ongoing concerns about prices, a large majority of the public expresses general satisfaction with their personal housing situation and believes the government is handling the issue effectively. Could it be that while housing affordability is objectively poor, the public sentiment regarding it is not a strong enough driver for increased protests, perhaps due to other pressing national concerns or a general sense of resignation?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'public_sentiment_housing' node significantly impacts the causal path leading to the outcome. The original model assumed that poor housing affordability would directly translate into negative public sentiment, which in turn would drive protests. The new information suggests a decoupling: despite objective affordability issues, public sentiment is not aligning with this, with a majority expressing satisfaction and confidence in government handling. This weakens the direct link from 'housing_affordability_ireland' to 'outcome_more_protests' via 'public_sentiment_housing'. While 'housing_affordability_ireland' can still directly influence 'outcome_more_protests', and 'inflation_rate_ireland' and 'economic_outlook_ireland' have indirect effects, the anticipated amplification through public sentiment is now questionable. The proposed reasoning that other national concerns or resignation might be at play further diminishes the likelihood of this specific sentiment driving protests. Therefore, the probability of increased protests is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'public_sentiment_housing' node significantly impacts the causal path leading to the outcome. The original model assumed that poor housing affordability would directly translate into negative public sentiment, which in turn would drive protests. The new information suggests a decoupling: despite objective affordability issues, public sentiment is not aligning with this, with a majority expressing satisfaction and confidence in government handling. This weakens the direct link from 'housing_affordability_ireland' to 'outcome_more_protests' via 'public_sentiment_housing'. While 'housing_affordability_ireland' can still directly influence 'outcome_more_protests', and 'inflation_rate_ireland' and 'economic_outlook_ireland' have indirect effects, the anticipated amplification through public sentiment is now questionable. The proposed reasoning that other national concerns or resignation might be at play further diminishes the likelihood of this specific sentiment driving protests. Therefore, the probability of increased protests is decreased.\"\n}",
+      "target_id": "public_sentiment_housing",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the historical trend of protests in Ireland has been unusually high due to a specific, isolated historical event that is no longer relevant. In this scenario, relying on the historical frequency of protests might be misleading, as it doesn't reflect the current underlying drivers of public sentiment or policy effectiveness.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'protest_frequency_historical' suggests that its influence on the 'outcome_more_protests' might be overestimated if the historical trend is skewed by a now-irrelevant event. The causal path 'protest_frequency_historical -> outcome_more_protests' is weakened. This node was intended to provide a baseline, but if that baseline is artificially high, then a 'normal' level of current drivers might appear as more protests than historically typical, but not necessarily more than the inflated historical average. This reduces the confidence that current drivers will push protests above this potentially misleading historical trend. However, other causal paths such as 'housing_affordability_ireland -> outcome_more_protests' and 'public_sentiment_housing -> outcome_more_protests' remain strong, indicating that negative conditions themselves are still direct drivers of protests. The update is moderate because while one causal input is less reliable, the core drivers of protest related to housing affordability and public sentiment are still considered significant.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'protest_frequency_historical' suggests that its influence on the 'outcome_more_protests' might be overestimated if the historical trend is skewed by a now-irrelevant event. The causal path 'protest_frequency_historical -> outcome_more_protests' is weakened. This node was intended to provide a baseline, but if that baseline is artificially high, then a 'normal' level of current drivers might appear as more protests than historically typical, but not necessarily more than the inflated historical average. This reduces the confidence that current drivers will push protests above this potentially misleading historical trend. However, other causal paths such as 'housing_affordability_ireland -> outcome_more_protests' and 'public_sentiment_housing -> outcome_more_protests' remain strong, indicating that negative conditions themselves are still direct drivers of protests. The update is moderate because while one causal input is less reliable, the core drivers of protest related to housing affordability and public sentiment are still considered significant.\"\n}",
+      "target_id": "protest_frequency_historical",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from the Central Statistics Office of Ireland indicate a significant year-on-year increase in average rents, now exceeding 15% in major urban centers. This surge, coupled with stagnant wage growth in key sectors, has pushed housing affordability to its lowest point in over a decade, according to the Irish Housing Affordability Index. Experts widely attribute this crisis to a persistent undersupply of new housing units, a situation unlikely to be resolved by current government initiatives.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'housing_affordability_ireland' significantly strengthens the causal link to the outcome. The new information provides concrete evidence (15%+ rent increase, lowest affordability in a decade) that housing affordability is indeed worsening considerably. This directly impacts the causal paths: housing_affordability_ireland -> public_sentiment_housing and housing_affordability_ireland -> outcome_more_protests. A worsening affordability crisis is a strong driver of public discontent and protest mobilization, making the outcome more likely. Additionally, the information suggests that current government policies are insufficient, reinforcing the link government_policy_housing -> public_sentiment_housing and government_policy_housing -> outcome_more_protests, as public frustration with inaction will likely grow. The challenge validates and amplifies the importance of the housing affordability node in the causal network, leading to a substantial increase in the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'housing_affordability_ireland' significantly strengthens the causal link to the outcome. The new information provides concrete evidence (15%+ rent increase, lowest affordability in a decade) that housing affordability is indeed worsening considerably. This directly impacts the causal paths: housing_affordability_ireland -> public_sentiment_housing and housing_affordability_ireland -> outcome_more_protests. A worsening affordability crisis is a strong driver of public discontent and protest mobilization, making the outcome more likely. Additionally, the information suggests that current government policies are insufficient, reinforcing the link government_policy_housing -> public_sentiment_housing and government_policy_housing -> outcome_more_protests, as public frustration with inaction will likely grow. The challenge validates and amplifies the importance of the housing affordability node in the causal network, leading to a substantial increase in the probability estimate.\"\n}",
+      "target_id": "housing_affordability_ireland",
+      "target_type": "node",
+      "target_importance": 0.15,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis from the Irish Central Bank highlights that the current inflation rate in Ireland is not only high but also proving to be unusually persistent, driven by global supply chain issues and strong domestic demand. Their models indicate that this persistence is directly increasing the cost of essential goods and services, significantly impacting household budgets and consumer confidence, and is projected to remain elevated for the next 12-18 months.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'inflation_rate_ireland' strengthens its causal impact on the outcome. The new information indicates that inflation is not only high but also unusually persistent and projected to remain elevated for a significant period (12-18 months). This persistence directly exacerbates the cost of essential goods and services, thereby negatively impacting household budgets and consumer confidence. This strengthens the causal path from 'inflation_rate_ireland' -> 'housing_affordability_ireland' (as persistent inflation increases construction costs and mortgage rates) and the direct path from 'inflation_rate_ireland' -> 'outcome_more_protests' (by increasing general cost-of-living concerns beyond just housing). The increased severity and duration of inflation also likely amplifies 'public_sentiment_housing', further reinforcing the link to 'outcome_more_protests'. Consequently, the probability of more protests has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'inflation_rate_ireland' strengthens its causal impact on the outcome. The new information indicates that inflation is not only high but also unusually persistent and projected to remain elevated for a significant period (12-18 months). This persistence directly exacerbates the cost of essential goods and services, thereby negatively impacting household budgets and consumer confidence. This strengthens the causal path from 'inflation_rate_ireland' -> 'housing_affordability_ireland' (as persistent inflation increases construction costs and mortgage rates) and the direct path from 'inflation_rate_ireland' -> 'outcome_more_protests' (by increasing general cost-of-living concerns beyond just housing). The increased severity and duration of inflation also likely amplifies 'public_sentiment_housing', further reinforcing the link to 'outcome_more_protests'. Consequently, the probability of more protests has increased.\"\n}",
+      "target_id": "inflation_rate_ireland",
+      "target_type": "node",
+      "target_importance": 0.0167,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent polling data indicates a significant increase in public anger and frustration over housing issues in Ireland. Specifically, a new survey reveals that over 70% of respondents believe the government is not doing enough to address the housing crisis, with a substantial portion expressing willingness to participate in public demonstrations to voice their discontent.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The new polling data directly strengthens the causal link between 'public_sentiment_housing' and the 'outcome_more_protests'. The challenge highlights a significant increase in public anger and a stated willingness to participate in demonstrations, indicating that negative public sentiment is likely to translate more effectively into actual protests. This strengthens the path: 'public_sentiment_housing' -> 'outcome_more_protests'. While the initial forecast already accounted for this link, the concrete evidence of increased public anger and willingness to protest provides a much stronger basis for this causal pathway, thus increasing the overall probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new polling data directly strengthens the causal link between 'public_sentiment_housing' and the 'outcome_more_protests'. The challenge highlights a significant increase in public anger and a stated willingness to participate in demonstrations, indicating that negative public sentiment is likely to translate more effectively into actual protests. This strengthens the path: 'public_sentiment_housing' -> 'outcome_more_protests'. While the initial forecast already accounted for this link, the concrete evidence of increased public anger and willingness to protest provides a much stronger basis for this causal pathway, thus increasing the overall probability.\"\n}",
+      "target_id": "public_sentiment_housing",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of protest data across several European countries, including Ireland, has revealed a consistent underlying 'long-term trend' in the frequency of public demonstrations. This trend, independent of specific contemporary issues, suggests a baseline level of societal engagement with protest as a mechanism for expressing grievances. This historical baseline is a significant predictor of future protest activity, acting as a fundamental anchor for estimating protest occurrences.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'protest_frequency_historical' argues for a stronger, more consistent underlying trend in protest activity, independent of specific contemporary issues. This reinforces the existing causal link from 'protest_frequency_historical' to 'outcome_more_protests'. Rather than weakening this node, the new information suggests its influence is more robust and foundational than initially modeled. The analysis implies that this historical trend acts as a significant anchor, making deviations from it more meaningful when other factors are also at play. Therefore, the importance of this baseline predictor is highlighted, leading to a slight increase in the probability estimate as we now have more confidence in its predictive power as a fundamental driver, assuming other factors remain constant or trend as expected.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'protest_frequency_historical' argues for a stronger, more consistent underlying trend in protest activity, independent of specific contemporary issues. This reinforces the existing causal link from 'protest_frequency_historical' to 'outcome_more_protests'. Rather than weakening this node, the new information suggests its influence is more robust and foundational than initially modeled. The analysis implies that this historical trend acts as a significant anchor, making deviations from it more meaningful when other factors are also at play. Therefore, the importance of this baseline predictor is highlighted, leading to a slight increase in the probability estimate as we now have more confidence in its predictive power as a fundamental driver, assuming other factors remain constant or trend as expected.\"\n}",
+      "target_id": "protest_frequency_historical",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While a strong economy might increase housing demand, in Ireland specifically, the relationship between economic outlook and housing affordability might be weaker than assumed. This is because a significant portion of housing supply is tied to international investment and developer activity, which can be influenced more by global financial conditions and construction costs (like imported materials and labor) rather than solely domestic economic growth. Therefore, even with a robust Irish economy, if global factors restrict supply or increase building expenses, housing affordability may not worsen as expected.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal link 'economic_outlook_ireland -> housing_affordability_ireland' weakens a secondary path to the outcome. The argument suggests that domestic economic growth in Ireland has a less direct impact on housing affordability than previously modeled, due to the significant influence of global factors on supply and construction costs. This means that a strong Irish economic outlook might not necessarily translate into worsening housing affordability. Consequently, the indirect path through which economic outlook influences protests (economic_outlook_ireland -> housing_affordability_ireland -> outcome_more_protests) is less robust. However, the primary drivers of protests, such as direct housing affordability issues, inflation, and government policy, remain largely unchallenged. The direct link from housing_affordability_ireland to outcome_more_protests is still considered strong. Therefore, the probability is decreased, but not substantially, as the core causal mechanisms for protests remain intact.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal link 'economic_outlook_ireland -> housing_affordability_ireland' weakens a secondary path to the outcome. The argument suggests that domestic economic growth in Ireland has a less direct impact on housing affordability than previously modeled, due to the significant influence of global factors on supply and construction costs. This means that a strong Irish economic outlook might not necessarily translate into worsening housing affordability. Consequently, the indirect path through which economic outlook influences protests (economic_outlook_ireland -> housing_affordability_ireland -> outcome_more_protests) is less robust. However, the primary drivers of protests, such as direct housing affordability issues, inflation, and government policy, remain largely unchallenged. The direct link from housing_affordability_ireland to outcome_more_protests is still considered strong. Therefore, the probability is decreased, but not substantially, as the core causal mechanisms for protests remain intact.\"\n}",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "target_type": "edge",
+      "target_importance": 0.0833,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While poor housing affordability is a concern, it might not directly translate into more protests if the public perceives the issue as long-standing and intractable, leading to resignation rather than mobilization. Furthermore, if government policies, even if perceived as ineffective in solving affordability, are seen as actively addressing the issue (e.g., through extensive consultation or small incremental changes), this could dampen the immediate impetus for protest, even if underlying affordability remains poor.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct link between 'housing_affordability_ireland' and 'outcome_more_protests'. The argument is that if the public views housing affordability as a long-standing, intractable issue, they may become resigned rather than mobilized. This suggests that a direct causal path from poor affordability to increased protests might be weaker than initially assumed. Additionally, the challenge posits that even ineffective government policies can reduce protest impetus if they are perceived as 'addressing' the issue, which weakens the link between 'government_policy_housing' and 'outcome_more_protests' as well, and indirectly the path through 'public_sentiment_housing'. While 'housing_affordability_ireland' is still likely to influence 'public_sentiment_housing', the subsequent translation of that sentiment into protest ('public_sentiment_housing' -> 'outcome_more_protests') and the direct impact of affordability ('housing_affordability_ireland' -> 'outcome_more_protests') are now considered less certain. The initial probability of 0.65 was based on a strong assumption of direct impact; this challenge introduces significant doubt into that assumption, leading to a decreased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct link between 'housing_affordability_ireland' and 'outcome_more_protests'. The argument is that if the public views housing affordability as a long-standing, intractable issue, they may become resigned rather than mobilized. This suggests that a direct causal path from poor affordability to increased protests might be weaker than initially assumed. Additionally, the challenge posits that even ineffective government policies can reduce protest impetus if they are perceived as 'addressing' the issue, which weakens the link between 'government_policy_housing' and 'outcome_more_protests' as well, and indirectly the path through 'public_sentiment_housing'. While 'housing_affordability_ireland' is still likely to influence 'public_sentiment_housing', the subsequent translation of that sentiment into protest ('public_sentiment_housing' -> 'outcome_more_protests') and the direct impact of affordability ('housing_affordability_ireland' -> 'outcome_more_protests') are now considered less certain. The initial probability of 0.65 was based on a strong assumption of direct impact; this challenge introduces significant doubt into that assumption, leading to a decreased probability.\"\n}",
+      "target_id": "housing_affordability_ireland->outcome_more_protests",
+      "target_type": "edge",
+      "target_importance": 0.0357,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While deteriorating housing affordability typically fuels public dissatisfaction, it's possible that the public has become desensitized to the issue, or that other more pressing concerns (like immediate cost-of-living pressures from inflation) are overshadowing housing affordability in shaping public sentiment.  Therefore, even if housing affordability worsens, it might not translate into a significant shift in public sentiment directly related to housing, weakening the link to protest outcomes.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the strength of the causal link between 'housing_affordability_ireland' and 'public_sentiment_housing'. This is a critical path as it directly influences 'outcome_more_protests' through 'public_sentiment_housing -> outcome_more_protests'. The argument suggests that the public might be desensitized to housing affordability issues or that other concerns like inflation are overshadowing it. If this link is indeed weakened, then even if housing affordability remains poor, it will have a diminished effect on public sentiment and subsequently on the likelihood of protests. While other paths to the outcome exist (e.g., 'housing_affordability_ireland -> outcome_more_protests'), the weakening of this indirect but significant path leads to a decreased probability. The probability is reduced, but not drastically, as the direct link from 'housing_affordability_ireland' to the outcome still exists, and other factors like inflation can also drive protests.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'housing_affordability_ireland' and 'public_sentiment_housing'. This is a critical path as it directly influences 'outcome_more_protests' through 'public_sentiment_housing -> outcome_more_protests'. The argument suggests that the public might be desensitized to housing affordability issues or that other concerns like inflation are overshadowing it. If this link is indeed weakened, then even if housing affordability remains poor, it will have a diminished effect on public sentiment and subsequently on the likelihood of protests. While other paths to the outcome exist (e.g., 'housing_affordability_ireland -> outcome_more_protests'), the weakening of this indirect but significant path leads to a decreased probability. The probability is reduced, but not drastically, as the direct link from 'housing_affordability_ireland' to the outcome still exists, and other factors like inflation can also drive protests.\"\n}",
+      "target_id": "housing_affordability_ireland->public_sentiment_housing",
+      "target_type": "edge",
+      "target_importance": 0.0714,
+      "target_centrality_rank": 8,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant surge in foreign direct investment into Ireland, coupled with a robust domestic job market, leading to a perception of a very strong and rapidly improving economic outlook. This influx of capital and talent is placing unprecedented demand on the already constrained housing supply, directly exacerbating affordability issues. Therefore, the positive feedback loop from a strong economy to worsening housing affordability is likely even more potent than initially modeled.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'economic_outlook_ireland -> housing_affordability_ireland' is actually reinforcing its importance, not weakening it. The new information suggests that the link is not just positive, but *more potent* than initially modeled due to the unprecedented demand from FDI and job market strength on a constrained housing supply. This strengthens the causal path from economic outlook to housing affordability, which in turn feeds into public sentiment and directly impacts the likelihood of protests. The path 'economic_outlook_ireland -> housing_affordability_ireland -> public_sentiment_housing -> outcome_more_protests' and 'economic_outlook_ireland -> housing_affordability_ireland -> outcome_more_protests' are thus strengthened. This increased potency of a key driver for negative housing sentiment and protest initiation justifies an increase in the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'economic_outlook_ireland -> housing_affordability_ireland' is actually reinforcing its importance, not weakening it. The new information suggests that the link is not just positive, but *more potent* than initially modeled due to the unprecedented demand from FDI and job market strength on a constrained housing supply. This strengthens the causal path from economic outlook to housing affordability, which in turn feeds into public sentiment and directly impacts the likelihood of protests. The path 'economic_outlook_ireland -> housing_affordability_ireland -> public_sentiment_housing -> outcome_more_protests' and 'economic_outlook_ireland -> housing_affordability_ireland -> outcome_more_protests' are thus strengthened. This increased potency of a key driver for negative housing sentiment and protest initiation justifies an increase in the probability estimate.\"\n}",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "target_type": "edge",
+      "target_importance": 0.0833,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant surge in the number of individuals and families unable to secure stable housing, with eviction notices rising sharply. This escalating housing crisis, characterized by record-high rental prices and a severe lack of affordable units, directly translates into heightened public frustration and a stronger propensity for organized protests. This real-world development suggests the link between poor housing affordability and protest outcomes is not just a general trend but a potent and immediate driver.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly reinforces the causal link between 'housing_affordability_ireland' and 'outcome_more_protests'. The new information highlights that the current situation is not just a general trend but a 'potent and immediate driver' of protests due to a 'significant surge' in housing insecurity and rising eviction notices. This strengthens the existing causal path: housing_affordability_ireland -> outcome_more_protests. Furthermore, it indirectly bolsters the path housing_affordability_ireland -> public_sentiment_housing -> outcome_more_protests, as the described crisis is precisely the kind of event that would generate strong negative public sentiment. The provided evidence is directly aligned with the underlying assumptions of the model and increases confidence in the strength of these links, thus leading to an increased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly reinforces the causal link between 'housing_affordability_ireland' and 'outcome_more_protests'. The new information highlights that the current situation is not just a general trend but a 'potent and immediate driver' of protests due to a 'significant surge' in housing insecurity and rising eviction notices. This strengthens the existing causal path: housing_affordability_ireland -> outcome_more_protests. Furthermore, it indirectly bolsters the path housing_affordability_ireland -> public_sentiment_housing -> outcome_more_protests, as the described crisis is precisely the kind of event that would generate strong negative public sentiment. The provided evidence is directly aligned with the underlying assumptions of the model and increases confidence in the strength of these links, thus leading to an increased probability.\"\n}",
+      "target_id": "housing_affordability_ireland->outcome_more_protests",
+      "target_type": "edge",
+      "target_importance": 0.0357,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While housing affordability is a clear driver of public sentiment, consider the amplifying effect of media coverage and social media discourse. When housing becomes significantly unaffordable, it doesn't just affect individuals directly; it becomes a dominant topic, generating widespread discussion, outrage, and a sense of collective grievance that can drastically intensify negative public sentiment beyond what might be predicted by affordability metrics alone.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge highlights that media coverage and social media discourse act as amplifiers for the effect of housing affordability on public sentiment. This doesn't invalidate the causal link 'housing_affordability_ireland -> public_sentiment_housing', but it suggests its impact is stronger than initially modeled. The causal path is now understood to be 'housing_affordability_ireland -> (amplified by media/social media) -> public_sentiment_housing -> outcome_more_protests'. This amplified path makes it more likely that negative public sentiment will translate into protests. Therefore, the probability of the outcome has increased. The core causal logic remains, but the strength of one of the key drivers is enhanced.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge highlights that media coverage and social media discourse act as amplifiers for the effect of housing affordability on public sentiment. This doesn't invalidate the causal link 'housing_affordability_ireland -> public_sentiment_housing', but it suggests its impact is stronger than initially modeled. The causal path is now understood to be 'housing_affordability_ireland -> (amplified by media/social media) -> public_sentiment_housing -> outcome_more_protests'. This amplified path makes it more likely that negative public sentiment will translate into protests. Therefore, the probability of the outcome has increased. The core causal logic remains, but the strength of one of the key drivers is enhanced.\"\n}",
+      "target_id": "housing_affordability_ireland->public_sentiment_housing",
+      "target_type": "edge",
+      "target_importance": 0.0714,
+      "target_centrality_rank": 8,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "You've suggested that a strong 'economic_outlook_ireland' leads to worse 'housing_affordability_ireland' due to increased demand. However, consider that persistent and severe housing affordability crises ('housing_affordability_ireland') can actually *deteriorate* the broader 'economic_outlook_ireland'. For instance, if a large portion of household income is consumed by rent or mortgage payments, consumer spending on other goods and services plummets, and businesses face challenges attracting and retaining workers, thereby negatively impacting the overall economic outlook.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that a poor 'housing_affordability_ireland' can negatively impact the 'economic_outlook_ireland', creating a feedback loop. This introduces a new causal path: 'housing_affordability_ireland' -> 'economic_outlook_ireland' -> 'housing_affordability_ireland'. My original model posited 'economic_outlook_ireland' -> 'housing_affordability_ireland' as a driver of worsening affordability due to increased demand. The new information weakens this direct link by suggesting that the relationship is not unidirectional and that severe housing issues can actually harm the economy, which in turn could *improve* affordability (by reducing demand, for example). This feedback loop implies that if housing affordability deteriorates significantly, it might self-correct to some extent by damaging the economic outlook. This indirect dampening effect on the primary driver ('housing_affordability_ireland' -> 'outcome_more_protests') warrants a slight decrease in the probability. The path 'housing_affordability_ireland' -> 'outcome_more_protests' is still the most direct and critical, but the feedback loop introduced by the challenge suggests that extreme affordability issues might not persist as strongly as initially modeled due to their negative economic consequences. The other causal links remain unaffected by this specific challenge.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that a poor 'housing_affordability_ireland' can negatively impact the 'economic_outlook_ireland', creating a feedback loop. This introduces a new causal path: 'housing_affordability_ireland' -> 'economic_outlook_ireland' -> 'housing_affordability_ireland'. My original model posited 'economic_outlook_ireland' -> 'housing_affordability_ireland' as a driver of worsening affordability due to increased demand. The new information weakens this direct link by suggesting that the relationship is not unidirectional and that severe housing issues can actually harm the economy, which in turn could *improve* affordability (by reducing demand, for example). This feedback loop implies that if housing affordability deteriorates significantly, it might self-correct to some extent by damaging the economic outlook. This indirect dampening effect on the primary driver ('housing_affordability_ireland' -> 'outcome_more_protests') warrants a slight decrease in the probability. The path 'housing_affordability_ireland' -> 'outcome_more_protests' is still the most direct and critical, but the feedback loop introduced by the challenge suggests that extreme affordability issues might not persist as strongly as initially modeled due to their negative economic consequences. The other causal links remain unaffected by this specific challenge.\"\n}",
+      "target_id": "economic_outlook_ireland->housing_affordability_ireland",
+      "target_type": "edge",
+      "target_importance": 0.0833,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_omitted",
+      "target_reason_id": null,
+      "probe_text": "While your model posits that inflation affects housing affordability, which in turn impacts public sentiment, consider the direct effect of inflation on people's immediate financial well-being. High inflation, especially in essentials beyond housing, can significantly sour public mood and create general discontent, which would likely amplify negative public sentiment specifically regarding housing issues, even beyond its direct impact on affordability.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge highlights a direct pathway from 'inflation_rate_ireland' to 'public_sentiment_housing' that was not explicitly modeled, beyond its indirect effect through 'housing_affordability_ireland'. The new information suggests that high inflation on essentials can independently sour public mood, thereby amplifying negative sentiment towards housing issues. This strengthens the link between inflation and public sentiment, and consequently, the link to the 'outcome_more_protests'. While the original model accounted for inflation's impact on housing affordability and then sentiment, this new perspective adds a more immediate and potentially potent driver of public discontent that directly feeds into the protest outcome. Therefore, the probability of more protests has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge highlights a direct pathway from 'inflation_rate_ireland' to 'public_sentiment_housing' that was not explicitly modeled, beyond its indirect effect through 'housing_affordability_ireland'. The new information suggests that high inflation on essentials can independently sour public mood, thereby amplifying negative sentiment towards housing issues. This strengthens the link between inflation and public sentiment, and consequently, the link to the 'outcome_more_protests'. While the original model accounted for inflation's impact on housing affordability and then sentiment, this new perspective adds a more immediate and potentially potent driver of public discontent that directly feeds into the protest outcome. Therefore, the probability of more protests has increased.\"\n}",
+      "target_id": "inflation_rate_ireland->public_sentiment_housing",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While you've modeled how inflation might directly impact housing affordability and thus protests, consider the broader economic impact. High inflation erodes purchasing power across many goods and services, not just housing. This widespread cost-of-living pressure can independently increase the general propensity for public unrest and thus raise the historical average frequency of protests, even if housing affordability itself hasn't yet worsened.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests that inflation's impact on protest frequency is broader than initially modeled. The original model focused on inflation impacting housing affordability, which then influences public sentiment and protests, or directly impacting protests via cost-of-living concerns. The new information proposes that high inflation can independently increase the propensity for public unrest, thereby raising the historical average frequency of protests. This new perspective suggests a stronger, more direct causal link between inflation and protest propensity, which could amplify the baseline for protests. \n\nSpecifically, the challenged link is 'inflation_rate_ireland->protest_frequency_historical'. The argument is that high inflation *independently* raises the *historical average* frequency of protests due to widespread cost-of-living pressures, not just through its effect on housing affordability. This implies that even if housing affordability remained constant, high inflation would still contribute to a higher baseline of protest activity. \n\nMy causal network has 'inflation_rate_ireland -> outcome_more_protests' and 'protest_frequency_historical -> outcome_more_protests'. The challenge implies that the 'inflation_rate_ireland' node has a more substantial upward influence on the baseline 'protest_frequency_historical' than previously considered. If the historical average is higher due to this independent effect of inflation, then the condition 'more Protests' becomes easier to meet, as the threshold (the 30-day average) is itself potentially higher. However, the challenge doesn't invalidate the direct link from inflation to protests via cost-of-living concerns, nor the housing affordability pathway. Instead, it strengthens the *overall* inflationary pressure on protest propensity. This suggests a modest increase in the probability, as the fundamental drivers of protests (housing, cost of living) are reinforced by this broader inflationary impact on the baseline protest environment.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests that inflation's impact on protest frequency is broader than initially modeled. The original model focused on inflation impacting housing affordability, which then influences public sentiment and protests, or directly impacting protests via cost-of-living concerns. The new information proposes that high inflation can independently increase the propensity for public unrest, thereby raising the historical average frequency of protests. This new perspective suggests a stronger, more direct causal link between inflation and protest propensity, which could amplify the baseline for protests. \\n\\nSpecifically, the challenged link is 'inflation_rate_ireland->protest_frequency_historical'. The argument is that high inflation *independently* raises the *historical average* frequency of protests due to widespread cost-of-living pressures, not just through its effect on housing affordability. This implies that even if housing affordability remained constant, high inflation would still contribute to a higher baseline of protest activity. \\n\\nMy causal network has 'inflation_rate_ireland -> outcome_more_protests' and 'protest_frequency_historical -> outcome_more_protests'. The challenge implies that the 'inflation_rate_ireland' node has a more substantial upward influence on the baseline 'protest_frequency_historical' than previously considered. If the historical average is higher due to this independent effect of inflation, then the condition 'more Protests' becomes easier to meet, as the threshold (the 30-day average) is itself potentially higher. However, the challenge doesn't invalidate the direct link from inflation to protests via cost-of-living concerns, nor the housing affordability pathway. Instead, it strengthens the *overall* inflationary pressure on protest propensity. This suggests a modest increase in the probability, as the fundamental drivers of protests (housing, cost of living) are reinforced by this broader inflationary impact on the baseline protest environment.\"\n}",
+      "target_id": "inflation_rate_ireland->protest_frequency_historical",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Recent reports suggest a significant increase in immigration to Ireland, particularly in urban centers. How might this demographic shift, independent of current affordability levels, influence public sentiment and the likelihood of housing-related protests?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge introduces a new factor: increased immigration. While not directly in the existing causal network, it can influence 'public_sentiment_housing' and potentially 'outcome_more_protests' through indirect pathways. Increased immigration, especially in urban centers, can put additional strain on the housing market, even if current affordability metrics don't fully capture this. This heightened demand, irrespective of existing affordability levels, could amplify public concern and dissatisfaction, thus strengthening the link from 'public_sentiment_housing' to 'outcome_more_protests'. It also suggests that the existing 'housing_affordability_ireland' node might not fully capture underlying pressures, indirectly impacting the 'housing_affordability_ireland' -> 'outcome_more_protests' path by making the affordability issue more acute than currently modeled. The primary impact is on 'public_sentiment_housing', making it more likely to be negative, which in turn increases the probability of protests. Therefore, the probability is increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge introduces a new factor: increased immigration. While not directly in the existing causal network, it can influence 'public_sentiment_housing' and potentially 'outcome_more_protests' through indirect pathways. Increased immigration, especially in urban centers, can put additional strain on the housing market, even if current affordability metrics don't fully capture this. This heightened demand, irrespective of existing affordability levels, could amplify public concern and dissatisfaction, thus strengthening the link from 'public_sentiment_housing' to 'outcome_more_protests'. It also suggests that the existing 'housing_affordability_ireland' node might not fully capture underlying pressures, indirectly impacting the 'housing_affordability_ireland' -> 'outcome_more_protests' path by making the affordability issue more acute than currently modeled. The primary impact is on 'public_sentiment_housing', making it more likely to be negative, which in turn increases the probability of protests. Therefore, the probability is increased.\"\n}",
+      "target_id": "immigration_levels_ireland",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a significant portion of the Irish population, particularly renters, are facing sudden and substantial rent increases due to a new piece of legislation that was recently enacted. How would this specific legislative change, impacting rent affordability, alter your assessment of the likelihood of more protests in the 30 days before 2025-12-28?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The new legislation directly and significantly impacts housing affordability, specifically for renters, by causing sudden and substantial rent increases. This strengthens the causal path from 'housing_affordability_ireland' to 'outcome_more_protests'. Furthermore, this event is likely to negatively affect 'public_sentiment_housing', reinforcing the link between public sentiment and the outcome. The legislation also implies a governmental action (or reaction) related to housing, which could bypass or directly influence 'government_policy_housing' and 'public_sentiment_housing', leading to a higher likelihood of protests. The original forecast did not account for such a specific, impactful legislative change, thus necessitating an upward revision.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new legislation directly and significantly impacts housing affordability, specifically for renters, by causing sudden and substantial rent increases. This strengthens the causal path from 'housing_affordability_ireland' to 'outcome_more_protests'. Furthermore, this event is likely to negatively affect 'public_sentiment_housing', reinforcing the link between public sentiment and the outcome. The legislation also implies a governmental action (or reaction) related to housing, which could bypass or directly influence 'government_policy_housing' and 'public_sentiment_housing', leading to a higher likelihood of protests. The original forecast did not account for such a specific, impactful legislative change, thus necessitating an upward revision.\"\n}",
+      "target_id": "rent_control_legislation",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent report from a European cultural heritage organization highlighted the historical significance of traditional Irish music festivals, noting their consistent popularity and attendance figures over the past decade. These festivals are distinct from political demonstrations and their scheduling does not typically coincide with periods of heightened social unrest.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge focuses on the historical significance and consistent popularity of traditional Irish music festivals, noting they are distinct from political demonstrations and do not coincide with social unrest. This information is peripheral to the core causal network driving the 'outcome_more_protests' node. The primary drivers in my model are housing affordability, inflation, government policy, public sentiment, and the general economic outlook. The existence or popularity of music festivals does not directly alter the causal links between these factors and the likelihood of protests related to socio-economic issues. Therefore, the impact on the probability is minimal, a slight decrease to reflect the introduction of a potentially distracting but ultimately irrelevant data point that could be mistakenly associated with 'protest' in a broader sense.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge focuses on the historical significance and consistent popularity of traditional Irish music festivals, noting they are distinct from political demonstrations and do not coincide with social unrest. This information is peripheral to the core causal network driving the 'outcome_more_protests' node. The primary drivers in my model are housing affordability, inflation, government policy, public sentiment, and the general economic outlook. The existence or popularity of music festivals does not directly alter the causal links between these factors and the likelihood of protests related to socio-economic issues. Therefore, the impact on the probability is minimal, a slight decrease to reflect the introduction of a potentially distracting but ultimately irrelevant data point that could be mistakenly associated with 'protest' in a broader sense.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in the number of tourists visiting Ireland, with a particular surge in interest in historical sites and the Wild Atlantic Way. This influx is expected to boost the hospitality sector and local economies in tourist-dependent regions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about increased tourism primarily affects the 'economic_outlook_ireland' node. While a boost to the hospitality sector and local economies is positive for those specific areas, it's unlikely to significantly alter the overall national economic outlook in a way that would strongly impact housing affordability or inflation. The causal paths from 'economic_outlook_ireland' to 'housing_affordability_ireland' and 'inflation_rate_ireland' are therefore only marginally affected. The primary drivers for protests in this model are housing affordability and public sentiment around it. The tourism surge does not directly address or worsen these core issues. Therefore, the impact on 'housing_affordability_ireland' and 'public_sentiment_housing' is minimal, leading to a small downward revision of the probability. The link 'economic_outlook_ireland -> housing_affordability_ireland' and 'economic_outlook_ireland -> inflation_rate_ireland' are only weakly affected, and these are not the most direct paths to the outcome. The core drivers of housing affordability and government policy remain the most influential factors, and these are not challenged by the new information.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about increased tourism primarily affects the 'economic_outlook_ireland' node. While a boost to the hospitality sector and local economies is positive for those specific areas, it's unlikely to significantly alter the overall national economic outlook in a way that would strongly impact housing affordability or inflation. The causal paths from 'economic_outlook_ireland' to 'housing_affordability_ireland' and 'inflation_rate_ireland' are therefore only marginally affected. The primary drivers for protests in this model are housing affordability and public sentiment around it. The tourism surge does not directly address or worsen these core issues. Therefore, the impact on 'housing_affordability_ireland' and 'public_sentiment_housing' is minimal, leading to a small downward revision of the probability. The link 'economic_outlook_ireland -> housing_affordability_ireland' and 'economic_outlook_ireland -> inflation_rate_ireland' are only weakly affected, and these are not the most direct paths to the outcome. The core drivers of housing affordability and government policy remain the most influential factors, and these are not challenged by the new information.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "085ad65ea78c233bd2751e83a48fca5d20c8c9d10868ebac09692725e692b19e",
+    "question_text": "Will there be more 'Protests' in Ireland for the 30 days before 2025-12-28 compared to the 30-day average of 'Protests' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Protests'\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of 'Protests' over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more 'Protests' would need to occur in the 30 days leading up to the resolution.",
+    "source": "acled",
+    "condition": "one-turn",
+    "initial_probability": 0.65,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.11619047619047619,
+    "max_absolute_shift": 0.30000000000000004
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0,
+  "aggregate_metrics": {
+    "ssr": 2.0000000000000004,
+    "mean_shift_high": 0.14,
+    "mean_shift_low": 0.06999999999999999,
+    "asymmetry_index": 0.9684210526315792,
+    "mean_shift_negate": 0.13142857142857142,
+    "mean_shift_strengthen": 0.13571428571428568,
+    "fnar": 0.6666666666666666,
+    "n_accepted": 2,
+    "n_spurious": 3,
+    "critical_path_premium": 0.024166666666666684,
+    "mean_shift_on_path": 0.13,
+    "mean_shift_off_path": 0.10583333333333332,
+    "importance_sensitivity_correlation": 0.38636363636363635,
+    "control_sensitivity": 0.5
+  }
+}

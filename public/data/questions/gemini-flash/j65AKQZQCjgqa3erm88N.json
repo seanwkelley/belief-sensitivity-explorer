@@ -1,0 +1,1230 @@
+{
+  "question_id": "j65AKQZQCjgqa3erm88N",
+  "question_text": "Will the 2026 FIFA World Cup champion be a first time winner?",
+  "source": "manifold",
+  "initial_probability": 0.55,
+  "nodes": [
+    {
+      "id": "number_of_strong_contenders",
+      "description": "The number of teams with a realistic chance of winning the tournament that have never won before.",
+      "role": "factor"
+    },
+    {
+      "id": "historical_precedent_new_winners",
+      "description": "The historical tendency for new nations to win the World Cup.",
+      "role": "factor"
+    },
+    {
+      "id": "strength_of_traditional_powers",
+      "description": "The current and projected strength of nations that have won the World Cup multiple times.",
+      "role": "factor"
+    },
+    {
+      "id": "emerging_football_nations",
+      "description": "The rise in competitiveness of nations that have not historically been top contenders.",
+      "role": "factor"
+    },
+    {
+      "id": "host_nation_advantage",
+      "description": "Whether any of the host nations (USA, Canada, Mexico) are strong contenders and have never won.",
+      "role": "factor"
+    },
+    {
+      "id": "champion_is_first_time_winner",
+      "description": "The 2026 FIFA World Cup champion will be a first-time winner.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "number_of_strong_contenders",
+      "to": "champion_is_first_time_winner",
+      "mechanism": "A higher number of strong first-time contenders increases the probability of a new winner."
+    },
+    {
+      "from": "historical_precedent_new_winners",
+      "to": "champion_is_first_time_winner",
+      "mechanism": "If new winners are becoming more common, this trend is likely to continue."
+    },
+    {
+      "from": "strength_of_traditional_powers",
+      "to": "champion_is_first_time_winner",
+      "mechanism": "The stronger established winners are, the less likely it is for a new nation to emerge victorious."
+    },
+    {
+      "from": "emerging_football_nations",
+      "to": "number_of_strong_contenders",
+      "mechanism": "The development of previously weaker nations increases the pool of potential first-time winners."
+    },
+    {
+      "from": "host_nation_advantage",
+      "to": "number_of_strong_contenders",
+      "mechanism": "If a host nation is a strong contender and a first-time winner, it directly increases the number of such contenders."
+    },
+    {
+      "from": "emerging_football_nations",
+      "to": "champion_is_first_time_winner",
+      "mechanism": "A general increase in the competitiveness of emerging nations can lead to a first-time winner even if they weren't initially top contenders."
+    },
+    {
+      "from": "strength_of_traditional_powers",
+      "to": "number_of_strong_contenders",
+      "mechanism": "Dominance by traditional powers can reduce the opportunities for new nations to emerge as strong contenders."
+    }
+  ],
+  "reasoning": "The 2026 World Cup has an expanded format and co-hosts, which could increase the chances for emerging nations or those with historical underdog status. However, the perennial strength of traditional footballing powers like Brazil, Germany, Argentina, and France remains a significant factor against a first-time winner. The historical trend of new winners is not consistently upward or downward, making it a moderate influence. The number of genuinely strong first-time contenders is the most direct driver, influenced by the rise of emerging nations and potential host nation advantages, offset by the continued dominance of established champions. Given these competing factors, the probability is close to even, with a slight lean towards a first-time winner due to the increased number of participating teams and potential for upsets.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 7,
+    "density": 0.2333,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "champion_is_first_time_winner",
+    "node_metrics": [
+      {
+        "node_id": "number_of_strong_contenders",
+        "description": "The number of teams with a realistic chance of winning the tournament that have never won before.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0.05,
+        "closeness": 0.6,
+        "pagerank": 0.2309,
+        "path_relevance": 0.2
+      },
+      {
+        "node_id": "historical_precedent_new_winners",
+        "description": "The historical tendency for new nations to win the World Cup.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0855,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "strength_of_traditional_powers",
+        "description": "The current and projected strength of nations that have won the World Cup multiple times.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0855,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "emerging_football_nations",
+        "description": "The rise in competitiveness of nations that have not historically been top contenders.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0855,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "host_nation_advantage",
+        "description": "Whether any of the host nations (USA, Canada, Mexico) are strong contenders and have never won.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0855,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "champion_is_first_time_winner",
+        "description": "The 2026 FIFA World Cup champion will be a first-time winner.",
+        "role": "outcome",
+        "in_degree": 4,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.8333,
+        "pagerank": 0.4271,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "number_of_strong_contenders",
+        "target": "champion_is_first_time_winner",
+        "mechanism": "A higher number of strong first-time contenders increases the probability of a new winner.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "historical_precedent_new_winners",
+        "target": "champion_is_first_time_winner",
+        "mechanism": "If new winners are becoming more common, this trend is likely to continue.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "strength_of_traditional_powers",
+        "target": "champion_is_first_time_winner",
+        "mechanism": "The stronger established winners are, the less likely it is for a new nation to emerge victorious.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "strength_of_traditional_powers",
+        "target": "number_of_strong_contenders",
+        "mechanism": "Dominance by traditional powers can reduce the opportunities for new nations to emerge as strong contenders.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "emerging_football_nations",
+        "target": "number_of_strong_contenders",
+        "mechanism": "The development of previously weaker nations increases the pool of potential first-time winners.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "emerging_football_nations",
+        "target": "champion_is_first_time_winner",
+        "mechanism": "A general increase in the competitiveness of emerging nations can lead to a first-time winner even if they weren't initially top contenders.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "host_nation_advantage",
+        "target": "number_of_strong_contenders",
+        "mechanism": "If a host nation is a strong contender and a first-time winner, it directly increases the number of such contenders.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "number_of_strong_contenders",
+        "description": "The number of teams with a realistic chance of winning the tournament that have never won before.",
+        "importance": 0.05,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "historical_precedent_new_winners",
+        "description": "The historical tendency for new nations to win the World Cup.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "strength_of_traditional_powers",
+        "description": "The current and projected strength of nations that have won the World Cup multiple times.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "host_nation_advantage",
+        "description": "Whether any of the host nations (USA, Canada, Mexico) are strong contenders and have never won.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "number_of_strong_contenders",
+        "description": "The number of teams with a realistic chance of winning the tournament that have never won before.",
+        "importance": 0.05,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "historical_precedent_new_winners",
+        "description": "The historical tendency for new nations to win the World Cup.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "strength_of_traditional_powers",
+        "description": "The current and projected strength of nations that have won the World Cup multiple times.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "host_nation_advantage",
+        "description": "Whether any of the host nations (USA, Canada, Mexico) are strong contenders and have never won.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+        "description": "A higher number of strong first-time contenders increases the probability of a new winner.",
+        "importance": 0.0667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "host_nation_advantage->number_of_strong_contenders",
+        "description": "If a host nation is a strong contender and a first-time winner, it directly increases the number of such contenders.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "strength_of_traditional_powers->number_of_strong_contenders",
+        "description": "Dominance by traditional powers can reduce the opportunities for new nations to emerge as strong contenders.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+        "description": "A higher number of strong first-time contenders increases the probability of a new winner.",
+        "importance": 0.0667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "host_nation_advantage->number_of_strong_contenders",
+        "description": "If a host nation is a strong contender and a first-time winner, it directly increases the number of such contenders.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "strength_of_traditional_powers->number_of_strong_contenders",
+        "description": "Dominance by traditional powers can reduce the opportunities for new nations to emerge as strong contenders.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+        "description": "A higher number of strong first-time contenders increases the probability of a new winner.",
+        "importance": 0.0667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "number_of_strong_contenders->historical_precedent_new_winners",
+        "description": "Potential link: The number of teams with a realistic chance of winning the tournament that have never won before. -> The historical tendency for new nations to win the World Cup.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "historical_precedent_new_winners->strength_of_traditional_powers",
+        "description": "Potential link: The historical tendency for new nations to win the World Cup. -> The current and projected strength of nations that have won the World Cup multiple times.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "number_of_strong_contenders",
+      "description": "The number of teams with a realistic chance of winning the tournament that have never won before.",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "historical_precedent_new_winners",
+      "description": "The historical tendency for new nations to win the World Cup.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "strength_of_traditional_powers",
+      "description": "The current and projected strength of nations that have won the World Cup multiple times.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "host_nation_advantage",
+      "description": "Whether any of the host nations (USA, Canada, Mexico) are strong contenders and have never won.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "number_of_strong_contenders",
+      "description": "The number of teams with a realistic chance of winning the tournament that have never won before.",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "historical_precedent_new_winners",
+      "description": "The historical tendency for new nations to win the World Cup.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "strength_of_traditional_powers",
+      "description": "The current and projected strength of nations that have won the World Cup multiple times.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "host_nation_advantage",
+      "description": "Whether any of the host nations (USA, Canada, Mexico) are strong contenders and have never won.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "description": "A higher number of strong first-time contenders increases the probability of a new winner.",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "host_nation_advantage->number_of_strong_contenders",
+      "description": "If a host nation is a strong contender and a first-time winner, it directly increases the number of such contenders.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "strength_of_traditional_powers->number_of_strong_contenders",
+      "description": "Dominance by traditional powers can reduce the opportunities for new nations to emerge as strong contenders.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "description": "A higher number of strong first-time contenders increases the probability of a new winner.",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "host_nation_advantage->number_of_strong_contenders",
+      "description": "If a host nation is a strong contender and a first-time winner, it directly increases the number of such contenders.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "strength_of_traditional_powers->number_of_strong_contenders",
+      "description": "Dominance by traditional powers can reduce the opportunities for new nations to emerge as strong contenders.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "description": "A higher number of strong first-time contenders increases the probability of a new winner.",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "number_of_strong_contenders->historical_precedent_new_winners",
+      "description": "Potential link: The number of teams with a realistic chance of winning the tournament that have never won before. -> The historical tendency for new nations to win the World Cup.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "historical_precedent_new_winners->strength_of_traditional_powers",
+      "description": "Potential link: The historical tendency for new nations to win the World Cup. -> The current and projected strength of nations that have won the World Cup multiple times.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Imagine that the concept of 'strong contenders' is actually misleading for the 2026 World Cup. What if the tournament is highly unpredictable, with no single team or small group of teams having a truly realistic chance of winning, and the outcome is more likely to be decided by upsets and luck rather than the pre-tournament strength of potential first-time winners? In this scenario, the number of teams that *appear* to be strong contenders might not actually correlate with who ultimately wins.",
+      "probe_type": "node_negate_high",
+      "target_id": "number_of_strong_contenders",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The number of teams with a realistic chance of winning the tournament that have never won before."
+    },
+    {
+      "probe_text": "Imagine that historical precedent for new winners is actually a misleading indicator. What if the recent trend of new winners has been driven by a few unique, exceptional teams in specific tournaments, rather than a broader shift in global football? This could mean that the historical data doesn't actually predict future outcomes, and the 'tendency' is more of a statistical anomaly than a reliable trend.",
+      "probe_type": "node_negate_high",
+      "target_id": "historical_precedent_new_winners",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The historical tendency for new nations to win the World Cup."
+    },
+    {
+      "probe_text": "Recent analyses suggest that the traditional powerhouses of international football are experiencing a significant decline in talent depth and consistent performance. Several key players from historically dominant nations are aging out, and their national leagues are not producing comparable replacements at the same rate as emerging nations. Given this, is the 'strength_of_traditional_powers' still a relevant or strong predictor for the 2026 World Cup outcome, or has its influence diminished considerably?",
+      "probe_type": "node_negate_medium",
+      "target_id": "strength_of_traditional_powers",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The current and projected strength of nations that have won the World Cup multiple times."
+    },
+    {
+      "probe_text": "Some analysts argue that the 'host nation advantage' is not a significant factor in modern World Cups, as the increased global competitiveness means that home advantage is largely negated by the strength of visiting teams. Furthermore, none of the host nations (USA, Canada, Mexico) have historically demonstrated the consistent top-tier performance needed to be considered a genuine contender, making their hosting status largely irrelevant to the outcome.",
+      "probe_type": "node_negate_low",
+      "target_id": "host_nation_advantage",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Whether any of the host nations (USA, Canada, Mexico) are strong contenders and have never won."
+    },
+    {
+      "probe_text": "Recent performance data indicates a significant surge in the FIFA rankings for several nations that have never won the World Cup, such as Morocco and Senegal, who have shown consistent top-10 finishes in recent major tournaments. Additionally, a prominent football analytics firm has released a projection showing an unprecedented number of teams outside the traditional elite with a statistically significant chance of reaching the semi-finals, directly increasing the pool of potential first-time champions.",
+      "probe_type": "node_strengthen",
+      "target_id": "number_of_strong_contenders",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The number of teams with a realistic chance of winning the tournament that have never won before."
+    },
+    {
+      "probe_text": "Recent analysis of World Cup history reveals a significant acceleration in the emergence of new winners over the last four tournaments. Specifically, the proportion of tournaments won by nations never crowned champions before has increased by 20% compared to the preceding four decades, suggesting a fundamental shift in global footballing parity and a strengthening trend for first-time victors.",
+      "probe_type": "node_strengthen",
+      "target_id": "historical_precedent_new_winners",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The historical tendency for new nations to win the World Cup."
+    },
+    {
+      "probe_text": "Recent performance data shows that the top 5 ranked national teams, all of whom have previously won the World Cup, are demonstrating exceptional form and depth. These traditional powerhouses have dominated recent international tournaments, with their key players also performing at peak levels in major club competitions. This suggests that their dominance is not only current but also projected to continue strongly into 2026.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "strength_of_traditional_powers",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The current and projected strength of nations that have won the World Cup multiple times."
+    },
+    {
+      "probe_text": "Recent performance data indicates that all three host nations (USA, Canada, and Mexico) have shown significant improvements in their FIFA rankings over the past year, with each team achieving unexpected victories against top-tier nations in recent friendlies. Furthermore, betting markets are increasingly highlighting Mexico and the USA as dark horses, reflecting a growing consensus that at least one of them possesses a genuine, albeit previously underestimated, chance of winning the tournament for the first time.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "host_nation_advantage",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Whether any of the host nations (USA, Canada, Mexico) are strong contenders and have never won."
+    },
+    {
+      "probe_text": "While an increase in the number of strong first-time contenders might seem to favor a new winner, consider that these strong contenders often draw from a similar pool of talent and tactical approaches. This can lead to a 'cannibalization' effect, where these strong new nations eliminate each other, opening the door for an established power to capitalize on their mutual attrition rather than a new nation ultimately winning.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A higher number of strong first-time contenders increases the probability of a new winner."
+    },
+    {
+      "probe_text": "While a strong host nation *could* be a first-time winner, in practice, the immense pressure and distraction of hosting often hinders teams from performing at their absolute peak. Historically, host nations have a mixed record, and the expectation of their strength might inflate the perceived 'number of strong contenders' when their actual performance is more likely to be hampered by the unique demands of hosting.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "host_nation_advantage->number_of_strong_contenders",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "If a host nation is a strong contender and a first-time winner, it directly increases the number of such contenders."
+    },
+    {
+      "probe_text": "While traditionally strong nations often dominate, the modern global football landscape shows increasing parity. Recent tournaments have seen traditional powers struggle to maintain their historical dominance, with many emerging nations demonstrating the quality to compete and even upset established teams. This suggests that the strength of traditional powers might not necessarily suppress the emergence of new strong contenders as much as historical trends might imply.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "strength_of_traditional_powers->number_of_strong_contenders",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Dominance by traditional powers can reduce the opportunities for new nations to emerge as strong contenders."
+    },
+    {
+      "probe_text": "Recent trends in international football, such as the increased depth and tactical sophistication shown by teams like Morocco in the 2022 World Cup, suggest that the number of genuinely competitive nations capable of challenging for the title, including first-time winners, is growing faster than previously anticipated. This suggests that even a moderate increase in the number of 'strong contenders' might disproportionately boost the likelihood of a new champion, as more diverse pathways to victory open up.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A higher number of strong first-time contenders increases the probability of a new winner."
+    },
+    {
+      "probe_text": "Recent analysis of the 2026 World Cup bids and hosting history suggests a significant, perhaps underestimated, boost for host nations. The specific advantages for the USA, Canada, and Mexico, beyond just home crowd support, include guaranteed qualification, preferential scheduling, and intensified investment in their national teams leading up to the tournament. Given that none of these host nations have previously won the World Cup, this directly and substantially increases the 'number_of_strong_contenders' that are also first-time potential winners.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "host_nation_advantage->number_of_strong_contenders",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "If a host nation is a strong contender and a first-time winner, it directly increases the number of such contenders."
+    },
+    {
+      "probe_text": "Recent analyses suggest that the established 'superpowers' of international football are not just maintaining their dominance, but are actively investing in and developing talent pipelines in ways that preemptively stifle the growth of emerging nations. This suggests that the 'strength_of_traditional_powers' might have a more profound and direct impact on limiting the 'number_of_strong_contenders' than previously accounted for, potentially by locking up resources and coaching expertise.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "strength_of_traditional_powers->number_of_strong_contenders",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Dominance by traditional powers can reduce the opportunities for new nations to emerge as strong contenders."
+    },
+    {
+      "probe_text": "Consider the relationship between the number of strong first-time contenders and the ultimate winner being a first-time winner. What if the *emergence* of a first-time winner *causes* there to be more strong contenders? For example, if a historically weaker nation starts performing exceptionally well, it might be seen as a sign that the overall landscape is shifting, inspiring other emerging nations and increasing the number of teams that *could* realistically contend for a first win.",
+      "probe_type": "edge_reverse",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A higher number of strong first-time contenders increases the probability of a new winner."
+    },
+    {
+      "probe_text": "You've indicated that the number of strong first-time contenders influences whether the champion will be a first-time winner, and that historical precedent for new winners also has a similar effect. However, consider this: if there's a growing number of strong first-time contenders, doesn't that itself suggest a developing trend or historical precedent for new nations to be competitive and potentially win? This increased number of strong contenders might be evidence of a broader shift, making historical precedent for new winners more likely to continue.",
+      "probe_type": "edge_spurious",
+      "target_id": "number_of_strong_contenders->historical_precedent_new_winners",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The number of teams with a realistic chance of winning the tournament that have never won before. -> The historical tendency for new nations to win the World Cup."
+    },
+    {
+      "probe_text": "While you've identified 'historical_precedent_new_winners' and 'strength_of_traditional_powers' as separate influences on the outcome, consider this: If there's a historical trend of new nations emerging as champions, wouldn't that success itself inspire and perhaps even directly boost the development and strength of these previously less dominant nations? Conversely, a long period without new winners might allow traditional powers to consolidate their dominance and resources, further strengthening them.",
+      "probe_type": "edge_spurious",
+      "target_id": "historical_precedent_new_winners->strength_of_traditional_powers",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The historical tendency for new nations to win the World Cup. -> The current and projected strength of nations that have won the World Cup multiple times."
+    },
+    {
+      "probe_text": "Imagine that FIFA introduces a significant rule change for the 2026 World Cup, such as expanding the number of participating teams from 32 to 48, or altering the knockout stage format. How might such a structural change in the tournament itself, independent of team strength or historical trends, affect the likelihood of a first-time winner?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Recent geopolitical events have led to significant travel restrictions and visa complexities for certain nationalities. How might these logistical challenges, impacting the ability of specific teams to reach and compete effectively in the tournament, alter your assessment of the likelihood of a first-time winner?",
+      "probe_type": "missing_node",
+      "target_id": "logistical_challenges_affecting_team_participation",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Recent FIFA rankings show a significant increase in the number of teams from the Asian Football Confederation qualifying for the tournament. Several of these teams have invested heavily in youth development programs over the past decade.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Recent analysis of team travel schedules indicates that the 2026 World Cup will feature significantly longer travel distances between host cities compared to previous tournaments. This increased logistical complexity is expected to place a greater strain on all participating teams, regardless of their historical success or current form.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the concept of 'strong contenders' is actually misleading for the 2026 World Cup. What if the tournament is highly unpredictable, with no single team or small group of teams having a truly realistic chance of winning, and the outcome is more likely to be decided by upsets and luck rather than the pre-tournament strength of potential first-time winners? In this scenario, the number of teams that *appear* to be strong contenders might not actually correlate with who ultimately wins.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'number_of_strong_contenders' node is significant. If the tournament is highly unpredictable and outcomes are driven by upsets rather than pre-tournament strength, then the direct causal path from 'number_of_strong_contenders' to 'champion_is_first_time_winner' is weakened. This implies that even if there were many teams that *looked* like potential first-time winners, their actual chances might be diminished if the overall field is unpredictable. Furthermore, the indirect path through 'emerging_football_nations' and 'host_nation_advantage' also becomes less reliable, as their impact on creating 'strong contenders' is undermined by the proposed unpredictability. This reduces the likelihood of a first-time winner, hence the decrease in probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'number_of_strong_contenders' node is significant. If the tournament is highly unpredictable and outcomes are driven by upsets rather than pre-tournament strength, then the direct causal path from 'number_of_strong_contenders' to 'champion_is_first_time_winner' is weakened. This implies that even if there were many teams that *looked* like potential first-time winners, their actual chances might be diminished if the overall field is unpredictable. Furthermore, the indirect path through 'emerging_football_nations' and 'host_nation_advantage' also becomes less reliable, as their impact on creating 'strong contenders' is undermined by the proposed unpredictability. This reduces the likelihood of a first-time winner, hence the decrease in probability.\"\n}",
+      "target_id": "number_of_strong_contenders",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that historical precedent for new winners is actually a misleading indicator. What if the recent trend of new winners has been driven by a few unique, exceptional teams in specific tournaments, rather than a broader shift in global football? This could mean that the historical data doesn't actually predict future outcomes, and the 'tendency' is more of a statistical anomaly than a reliable trend.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.48,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'historical_precedent_new_winners' directly weakens a causal path to the outcome 'champion_is_first_time_winner'. If the recent trend of new winners is indeed a statistical anomaly rather than a reliable indicator of a broader shift in global football, then this causal link becomes less influential. This reduces the support for the idea that a new winner is likely based on historical tendencies. While other factors like 'number_of_strong_contenders' and 'emerging_football_nations' still play a role, the diminished predictive power of historical precedent suggests a decrease in the probability of a first-time winner. The initial estimate of 0.55 was slightly above even, implying a belief in the trend. Removing or significantly weakening this trend makes a first-time winner less probable, hence the decrease.",
+      "raw_response": "{\n  \"updated_probability\": 0.48,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'historical_precedent_new_winners' directly weakens a causal path to the outcome 'champion_is_first_time_winner'. If the recent trend of new winners is indeed a statistical anomaly rather than a reliable indicator of a broader shift in global football, then this causal link becomes less influential. This reduces the support for the idea that a new winner is likely based on historical tendencies. While other factors like 'number_of_strong_contenders' and 'emerging_football_nations' still play a role, the diminished predictive power of historical precedent suggests a decrease in the probability of a first-time winner. The initial estimate of 0.55 was slightly above even, implying a belief in the trend. Removing or significantly weakening this trend makes a first-time winner less probable, hence the decrease.\"\n}",
+      "target_id": "historical_precedent_new_winners",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses suggest that the traditional powerhouses of international football are experiencing a significant decline in talent depth and consistent performance. Several key players from historically dominant nations are aging out, and their national leagues are not producing comparable replacements at the same rate as emerging nations. Given this, is the 'strength_of_traditional_powers' still a relevant or strong predictor for the 2026 World Cup outcome, or has its influence diminished considerably?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'strength_of_traditional_powers' node is significant. This node directly influences the 'champion_is_first_time_winner' node negatively, meaning a weaker traditional power base increases the likelihood of a new winner. Furthermore, it influences 'number_of_strong_contenders' negatively, suggesting that a decline in traditional powers opens up more space for emerging nations to become strong contenders. Both of these effects, if true, would push the probability of a first-time winner higher. The reasoning provided suggests a considerable decline, not just a minor dip, making the impact substantial. Therefore, the probability of a first-time winner has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'strength_of_traditional_powers' node is significant. This node directly influences the 'champion_is_first_time_winner' node negatively, meaning a weaker traditional power base increases the likelihood of a new winner. Furthermore, it influences 'number_of_strong_contenders' negatively, suggesting that a decline in traditional powers opens up more space for emerging nations to become strong contenders. Both of these effects, if true, would push the probability of a first-time winner higher. The reasoning provided suggests a considerable decline, not just a minor dip, making the impact substantial. Therefore, the probability of a first-time winner has increased.\"\n}",
+      "target_id": "strength_of_traditional_powers",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Some analysts argue that the 'host nation advantage' is not a significant factor in modern World Cups, as the increased global competitiveness means that home advantage is largely negated by the strength of visiting teams. Furthermore, none of the host nations (USA, Canada, Mexico) have historically demonstrated the consistent top-tier performance needed to be considered a genuine contender, making their hosting status largely irrelevant to the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.53,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'host_nation_advantage' node suggests that its impact is less significant than previously considered. Specifically, the argument that home advantage is negated in modern, globally competitive tournaments and that the host nations themselves are not strong contenders weakens the causal link from 'host_nation_advantage' to 'number_of_strong_contenders'. If the host nations are not strong contenders, they cannot directly increase the number of strong first-time contenders. This reduces the potential for a first-time winner originating from the host nations. While this node contributes to 'number_of_strong_contenders', the overall impact on the final outcome ('champion_is_first_time_winner') is somewhat mitigated by other causal paths, such as 'number_of_strong_contenders' itself (which can be influenced by other factors) and 'emerging_football_nations'. Therefore, the probability decreases slightly, reflecting a reduced pathway for a first-time winner.",
+      "raw_response": "{\n  \"updated_probability\": 0.53,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'host_nation_advantage' node suggests that its impact is less significant than previously considered. Specifically, the argument that home advantage is negated in modern, globally competitive tournaments and that the host nations themselves are not strong contenders weakens the causal link from 'host_nation_advantage' to 'number_of_strong_contenders'. If the host nations are not strong contenders, they cannot directly increase the number of strong first-time contenders. This reduces the potential for a first-time winner originating from the host nations. While this node contributes to 'number_of_strong_contenders', the overall impact on the final outcome ('champion_is_first_time_winner') is somewhat mitigated by other causal paths, such as 'number_of_strong_contenders' itself (which can be influenced by other factors) and 'emerging_football_nations'. Therefore, the probability decreases slightly, reflecting a reduced pathway for a first-time winner.\"\n}",
+      "target_id": "host_nation_advantage",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent performance data indicates a significant surge in the FIFA rankings for several nations that have never won the World Cup, such as Morocco and Senegal, who have shown consistent top-10 finishes in recent major tournaments. Additionally, a prominent football analytics firm has released a projection showing an unprecedented number of teams outside the traditional elite with a statistically significant chance of reaching the semi-finals, directly increasing the pool of potential first-time champions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal link between 'number_of_strong_contenders' and the outcome 'champion_is_first_time_winner'. The data showing a surge in FIFA rankings for nations like Morocco and Senegal, along with analytics projections of an unprecedented number of teams outside the traditional elite with a significant chance of reaching the semi-finals, strongly suggests an increase in the number of potential first-time winners. This increased pool of strong contenders makes it more probable that one of them will ultimately win, thus increasing the overall probability of a first-time winner. The causal path 'emerging_football_nations -> number_of_strong_contenders' is also indirectly strengthened, as these performances indicate a rise in competitiveness of emerging nations, which in turn fuels the number of strong contenders.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal link between 'number_of_strong_contenders' and the outcome 'champion_is_first_time_winner'. The data showing a surge in FIFA rankings for nations like Morocco and Senegal, along with analytics projections of an unprecedented number of teams outside the traditional elite with a significant chance of reaching the semi-finals, strongly suggests an increase in the number of potential first-time winners. This increased pool of strong contenders makes it more probable that one of them will ultimately win, thus increasing the overall probability of a first-time winner. The causal path 'emerging_football_nations -> number_of_strong_contenders' is also indirectly strengthened, as these performances indicate a rise in competitiveness of emerging nations, which in turn fuels the number of strong contenders.\"\n}",
+      "target_id": "number_of_strong_contenders",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of World Cup history reveals a significant acceleration in the emergence of new winners over the last four tournaments. Specifically, the proportion of tournaments won by nations never crowned champions before has increased by 20% compared to the preceding four decades, suggesting a fundamental shift in global footballing parity and a strengthening trend for first-time victors.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'historical_precedent_new_winners' is significant. The new analysis directly supports a strengthening trend for first-time victors, increasing the weight of this causal path leading to 'champion_is_first_time_winner'. The edge 'historical_precedent_new_winners -> champion_is_first_time_winner' is now more strongly supported. This suggests that the historical tendency for new winners is not just present but accelerating, making it more likely that this trend will continue in 2026. While other factors remain, this piece of information directly bolsters the likelihood of a first-time winner, hence the upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'historical_precedent_new_winners' is significant. The new analysis directly supports a strengthening trend for first-time victors, increasing the weight of this causal path leading to 'champion_is_first_time_winner'. The edge 'historical_precedent_new_winners -> champion_is_first_time_winner' is now more strongly supported. This suggests that the historical tendency for new winners is not just present but accelerating, making it more likely that this trend will continue in 2026. While other factors remain, this piece of information directly bolsters the likelihood of a first-time winner, hence the upward revision of the probability.\"\n}",
+      "target_id": "historical_precedent_new_winners",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent performance data shows that the top 5 ranked national teams, all of whom have previously won the World Cup, are demonstrating exceptional form and depth. These traditional powerhouses have dominated recent international tournaments, with their key players also performing at peak levels in major club competitions. This suggests that their dominance is not only current but also projected to continue strongly into 2026.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The new information directly challenges the 'strength_of_traditional_powers' node. The prompt states that the top 5 ranked teams, all of whom are previous World Cup winners, are in exceptional form and projected to continue their dominance. This strengthens the causal path: strength_of_traditional_powers -> champion_is_first_time_winner. A stronger traditional power base makes it less likely for a first-time winner to emerge. Furthermore, the strength of traditional powers also influences the 'number_of_strong_contenders' node, as dominance by these teams can reduce the opportunities for new nations to establish themselves as strong contenders (strength_of_traditional_powers -> number_of_strong_contenders). Therefore, the increased strength and projected dominance of traditional powers negatively impacts the probability of a first-time winner, leading to a decreased estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information directly challenges the 'strength_of_traditional_powers' node. The prompt states that the top 5 ranked teams, all of whom are previous World Cup winners, are in exceptional form and projected to continue their dominance. This strengthens the causal path: strength_of_traditional_powers -> champion_is_first_time_winner. A stronger traditional power base makes it less likely for a first-time winner to emerge. Furthermore, the strength of traditional powers also influences the 'number_of_strong_contenders' node, as dominance by these teams can reduce the opportunities for new nations to establish themselves as strong contenders (strength_of_traditional_powers -> number_of_strong_contenders). Therefore, the increased strength and projected dominance of traditional powers negatively impacts the probability of a first-time winner, leading to a decreased estimate.\"\n}",
+      "target_id": "strength_of_traditional_powers",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent performance data indicates that all three host nations (USA, Canada, and Mexico) have shown significant improvements in their FIFA rankings over the past year, with each team achieving unexpected victories against top-tier nations in recent friendlies. Furthermore, betting markets are increasingly highlighting Mexico and the USA as dark horses, reflecting a growing consensus that at least one of them possesses a genuine, albeit previously underestimated, chance of winning the tournament for the first time.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'host_nation_advantage' actually strengthens my previous reasoning. The new information suggests that the host nations (USA, Canada, Mexico) are not only improving but are now considered to have a 'genuine, albeit previously underestimated, chance of winning the tournament for the first time'. This directly impacts the 'host_nation_advantage' node, increasing its value.  This, in turn, positively influences 'number_of_strong_contenders' because at least Mexico and the USA would now qualify as strong contenders who have never won before. The causal path 'host_nation_advantage -> number_of_strong_contenders' is therefore strengthened, leading to an increase in 'number_of_strong_contenders'.  Consequently, the primary causal path 'number_of_strong_contenders -> champion_is_first_time_winner' is also strengthened, increasing the overall probability of a first-time winner. The information about betting markets further supports this shift by indicating a growing consensus on these teams' potential.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'host_nation_advantage' actually strengthens my previous reasoning. The new information suggests that the host nations (USA, Canada, Mexico) are not only improving but are now considered to have a 'genuine, albeit previously underestimated, chance of winning the tournament for the first time'. This directly impacts the 'host_nation_advantage' node, increasing its value.  This, in turn, positively influences 'number_of_strong_contenders' because at least Mexico and the USA would now qualify as strong contenders who have never won before. The causal path 'host_nation_advantage -> number_of_strong_contenders' is therefore strengthened, leading to an increase in 'number_of_strong_contenders'.  Consequently, the primary causal path 'number_of_strong_contenders -> champion_is_first_time_winner' is also strengthened, increasing the overall probability of a first-time winner. The information about betting markets further supports this shift by indicating a growing consensus on these teams' potential.\"\n}",
+      "target_id": "host_nation_advantage",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While an increase in the number of strong first-time contenders might seem to favor a new winner, consider that these strong contenders often draw from a similar pool of talent and tactical approaches. This can lead to a 'cannibalization' effect, where these strong new nations eliminate each other, opening the door for an established power to capitalize on their mutual attrition rather than a new nation ultimately winning.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.48,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge targets the causal link between 'number_of_strong_contenders' and 'champion_is_first_time_winner'. The argument suggests a 'cannibalization' effect where multiple strong first-time contenders might eliminate each other, inadvertently benefiting established powers. This weakens the direct positive influence of having many strong new contenders on the outcome. While the overall number of strong contenders is still a factor, this new information introduces a counteracting force that makes it less likely for one of them to ultimately triumph. Therefore, the impact of 'number_of_strong_contenders' on the outcome is diminished, leading to a decrease in the probability of a first-time winner.",
+      "raw_response": "{\n  \"updated_probability\": 0.48,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge targets the causal link between 'number_of_strong_contenders' and 'champion_is_first_time_winner'. The argument suggests a 'cannibalization' effect where multiple strong first-time contenders might eliminate each other, inadvertently benefiting established powers. This weakens the direct positive influence of having many strong new contenders on the outcome. While the overall number of strong contenders is still a factor, this new information introduces a counteracting force that makes it less likely for one of them to ultimately triumph. Therefore, the impact of 'number_of_strong_contenders' on the outcome is diminished, leading to a decrease in the probability of a first-time winner.\"\n}",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While a strong host nation *could* be a first-time winner, in practice, the immense pressure and distraction of hosting often hinders teams from performing at their absolute peak. Historically, host nations have a mixed record, and the expectation of their strength might inflate the perceived 'number of strong contenders' when their actual performance is more likely to be hampered by the unique demands of hosting.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.52,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal link 'host_nation_advantage -> number_of_strong_contenders' suggests that the pressure of hosting might negate the potential advantage, thus reducing the likelihood of a host nation being a strong contender. This directly weakens the path where a strong, first-time winning host nation could inflate the 'number_of_strong_contenders'. While the host nations (USA, Canada, Mexico) are not historically dominant teams, the argument that hosting pressure can be a hindrance is plausible and slightly reduces the probability of a first-time winner emerging through this specific pathway. The overall impact on the outcome 'champion_is_first_time_winner' is therefore a slight decrease in probability, as one of the potential drivers for an increase in strong contenders is now considered less potent.",
+      "raw_response": "{\n  \"updated_probability\": 0.52,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal link 'host_nation_advantage -> number_of_strong_contenders' suggests that the pressure of hosting might negate the potential advantage, thus reducing the likelihood of a host nation being a strong contender. This directly weakens the path where a strong, first-time winning host nation could inflate the 'number_of_strong_contenders'. While the host nations (USA, Canada, Mexico) are not historically dominant teams, the argument that hosting pressure can be a hindrance is plausible and slightly reduces the probability of a first-time winner emerging through this specific pathway. The overall impact on the outcome 'champion_is_first_time_winner' is therefore a slight decrease in probability, as one of the potential drivers for an increase in strong contenders is now considered less potent.\"\n}",
+      "target_id": "host_nation_advantage->number_of_strong_contenders",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While traditionally strong nations often dominate, the modern global football landscape shows increasing parity. Recent tournaments have seen traditional powers struggle to maintain their historical dominance, with many emerging nations demonstrating the quality to compete and even upset established teams. This suggests that the strength of traditional powers might not necessarily suppress the emergence of new strong contenders as much as historical trends might imply.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge questions the strength of the causal link between 'strength_of_traditional_powers' and 'number_of_strong_contenders'. The argument is that increasing parity in modern football means traditional powers might not suppress emerging contenders as effectively as previously assumed. This weakens the negative influence of strong traditional powers on the pool of potential first-time winners. Therefore, the 'number_of_strong_contenders' might be higher than initially modeled, which in turn increases the probability of the 'champion_is_first_time_winner'. The causal path affected is 'strength_of_traditional_powers' -> 'number_of_strong_contenders' -> 'champion_is_first_time_winner'. While not a complete breakdown of the link, it suggests a less potent suppression effect, leading to a modest increase in the probability of a first-time winner.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'strength_of_traditional_powers' and 'number_of_strong_contenders'. The argument is that increasing parity in modern football means traditional powers might not suppress emerging contenders as effectively as previously assumed. This weakens the negative influence of strong traditional powers on the pool of potential first-time winners. Therefore, the 'number_of_strong_contenders' might be higher than initially modeled, which in turn increases the probability of the 'champion_is_first_time_winner'. The causal path affected is 'strength_of_traditional_powers' -> 'number_of_strong_contenders' -> 'champion_is_first_time_winner'. While not a complete breakdown of the link, it suggests a less potent suppression effect, leading to a modest increase in the probability of a first-time winner.\"\n}",
+      "target_id": "strength_of_traditional_powers->number_of_strong_contenders",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent trends in international football, such as the increased depth and tactical sophistication shown by teams like Morocco in the 2022 World Cup, suggest that the number of genuinely competitive nations capable of challenging for the title, including first-time winners, is growing faster than previously anticipated. This suggests that even a moderate increase in the number of 'strong contenders' might disproportionately boost the likelihood of a new champion, as more diverse pathways to victory open up.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'number_of_strong_contenders -> champion_is_first_time_winner' suggests that this link is stronger than initially modeled. The new information posits that an increase in 'number_of_strong_contenders' has a disproportionately positive effect on the probability of a first-time winner due to growing depth and tactical sophistication across more nations. This means that the pathway from 'number_of_strong_contenders' to the outcome 'champion_is_first_time_winner' is reinforced, increasing the overall probability. While the link itself is not broken, its potency is highlighted, leading to an upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'number_of_strong_contenders -> champion_is_first_time_winner' suggests that this link is stronger than initially modeled. The new information posits that an increase in 'number_of_strong_contenders' has a disproportionately positive effect on the probability of a first-time winner due to growing depth and tactical sophistication across more nations. This means that the pathway from 'number_of_strong_contenders' to the outcome 'champion_is_first_time_winner' is reinforced, increasing the overall probability. While the link itself is not broken, its potency is highlighted, leading to an upward revision of the probability.\"\n}",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of the 2026 World Cup bids and hosting history suggests a significant, perhaps underestimated, boost for host nations. The specific advantages for the USA, Canada, and Mexico, beyond just home crowd support, include guaranteed qualification, preferential scheduling, and intensified investment in their national teams leading up to the tournament. Given that none of these host nations have previously won the World Cup, this directly and substantially increases the 'number_of_strong_contenders' that are also first-time potential winners.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge highlights a significant underestimation of the 'host_nation_advantage' and its direct impact on 'number_of_strong_contenders'. The provided information suggests that the USA, Canada, and Mexico, all first-time potential winners, will receive substantial boosts beyond typical home advantage. This strengthens the causal path 'host_nation_advantage -> number_of_strong_contenders'. Since none of the hosts have won before, this directly increases the pool of strong contenders who are also first-time winners. This, in turn, positively influences the outcome node 'champion_is_first_time_winner' via the 'number_of_strong_contenders -> champion_is_first_time_winner' path. The initial estimate of 0.55 already accounted for some host nation advantage, but the emphasis on 'intensified investment' and 'preferential scheduling' suggests this advantage is more pronounced than previously modeled, justifying an increase in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge highlights a significant underestimation of the 'host_nation_advantage' and its direct impact on 'number_of_strong_contenders'. The provided information suggests that the USA, Canada, and Mexico, all first-time potential winners, will receive substantial boosts beyond typical home advantage. This strengthens the causal path 'host_nation_advantage -> number_of_strong_contenders'. Since none of the hosts have won before, this directly increases the pool of strong contenders who are also first-time winners. This, in turn, positively influences the outcome node 'champion_is_first_time_winner' via the 'number_of_strong_contenders -> champion_is_first_time_winner' path. The initial estimate of 0.55 already accounted for some host nation advantage, but the emphasis on 'intensified investment' and 'preferential scheduling' suggests this advantage is more pronounced than previously modeled, justifying an increase in the probability.\"\n}",
+      "target_id": "host_nation_advantage->number_of_strong_contenders",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses suggest that the established 'superpowers' of international football are not just maintaining their dominance, but are actively investing in and developing talent pipelines in ways that preemptively stifle the growth of emerging nations. This suggests that the 'strength_of_traditional_powers' might have a more profound and direct impact on limiting the 'number_of_strong_contenders' than previously accounted for, potentially by locking up resources and coaching expertise.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal link 'strength_of_traditional_powers -> number_of_strong_contenders' suggests that traditional powers are not only strong but are actively preventing emerging nations from becoming strong contenders. This strengthens the negative influence of 'strength_of_traditional_powers' on 'number_of_strong_contenders'. If there are fewer strong first-time contenders ('number_of_strong_contenders'), the direct causal path to the outcome 'champion_is_first_time_winner' is weakened. This implies a lower probability of a first-time winner. The initial estimate of 0.55 was slightly above 0.50, suggesting a lean towards a first-time winner. This new information reinforces the power of established nations, making a first-time win less likely, thus decreasing the probability. The impact is moderate as the core mechanism of traditional powers influencing the landscape remains, but its effect on limiting new contenders is amplified.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal link 'strength_of_traditional_powers -> number_of_strong_contenders' suggests that traditional powers are not only strong but are actively preventing emerging nations from becoming strong contenders. This strengthens the negative influence of 'strength_of_traditional_powers' on 'number_of_strong_contenders'. If there are fewer strong first-time contenders ('number_of_strong_contenders'), the direct causal path to the outcome 'champion_is_first_time_winner' is weakened. This implies a lower probability of a first-time winner. The initial estimate of 0.55 was slightly above 0.50, suggesting a lean towards a first-time winner. This new information reinforces the power of established nations, making a first-time win less likely, thus decreasing the probability. The impact is moderate as the core mechanism of traditional powers influencing the landscape remains, but its effect on limiting new contenders is amplified.\"\n}",
+      "target_id": "strength_of_traditional_powers->number_of_strong_contenders",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "Consider the relationship between the number of strong first-time contenders and the ultimate winner being a first-time winner. What if the *emergence* of a first-time winner *causes* there to be more strong contenders? For example, if a historically weaker nation starts performing exceptionally well, it might be seen as a sign that the overall landscape is shifting, inspiring other emerging nations and increasing the number of teams that *could* realistically contend for a first win.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.029999999999999916,
+      "shift_direction": "increased",
+      "reasoning": "The challenge proposes a reversal of the causal link between 'number_of_strong_contenders' and 'champion_is_first_time_winner', suggesting that the *emergence* of a strong first-time contender might *cause* an increase in other strong contenders. This is a significant conceptual shift. My original model assumed that a higher number of strong first-time contenders directly increases the probability of a first-time winner. The challenge suggests a feedback loop where early success breeds more potential contenders. However, the core causal path from 'number_of_strong_contenders' to the outcome is still intact; the proposed change is more about the *drivers* of 'number_of_strong_contenders' and potentially a reinforcing dynamic. The original link ('number_of_strong_contenders -> champion_is_first_time_winner') remains a primary driver. The proposed idea, while interesting, doesn't fundamentally break this link but rather suggests a more complex system. If anything, this feedback loop implies that once a strong first-time contender emerges, the conditions might become even more favorable for a first-time winner, thus slightly increasing the probability. The direct causal path from 'number_of_strong_contenders' to 'champion_is_first_time_winner' is still considered strong, and the proposed feedback loop, while not directly modelled in my initial structure, could be interpreted as reinforcing this path. Therefore, I am slightly increasing the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge proposes a reversal of the causal link between 'number_of_strong_contenders' and 'champion_is_first_time_winner', suggesting that the *emergence* of a strong first-time contender might *cause* an increase in other strong contenders. This is a significant conceptual shift. My original model assumed that a higher number of strong first-time contenders directly increases the probability of a first-time winner. The challenge suggests a feedback loop where early success breeds more potential contenders. However, the core causal path from 'number_of_strong_contenders' to the outcome is still intact; the proposed change is more about the *drivers* of 'number_of_strong_contenders' and potentially a reinforcing dynamic. The original link ('number_of_strong_contenders -> champion_is_first_time_winner') remains a primary driver. The proposed idea, while interesting, doesn't fundamentally break this link but rather suggests a more complex system. If anything, this feedback loop implies that once a strong first-time contender emerges, the conditions might become even more favorable for a first-time winner, thus slightly increasing the probability. The direct causal path from 'number_of_strong_contenders' to 'champion_is_first_time_winner' is still considered strong, and the proposed feedback loop, while not directly modelled in my initial structure, could be interpreted as reinforcing this path. Therefore, I am slightly increasing the probability.\"\n}",
+      "target_id": "number_of_strong_contenders->champion_is_first_time_winner",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "You've indicated that the number of strong first-time contenders influences whether the champion will be a first-time winner, and that historical precedent for new winners also has a similar effect. However, consider this: if there's a growing number of strong first-time contenders, doesn't that itself suggest a developing trend or historical precedent for new nations to be competitive and potentially win? This increased number of strong contenders might be evidence of a broader shift, making historical precedent for new winners more likely to continue.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a stronger interdependence between 'number_of_strong_contenders' and 'historical_precedent_new_winners'. The argument is that a growing number of strong first-time contenders is *evidence* of a trend towards new winners, rather than an independent factor. This re-frames the relationship, implying that the existence of many strong contenders amplifies the signal from historical precedent, making a first-time winner more likely. The causal path 'number_of_strong_contenders -> champion_is_first_time_winner' is not fundamentally changed in its direction, but its connection to 'historical_precedent_new_winners' is strengthened. This implies that if we observe many strong contenders, it reinforces the likelihood that historical precedent for new winners is indeed a growing trend, thus increasing the probability of a first-time winner. The estimate is increased slightly to reflect this stronger reinforcing loop.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a stronger interdependence between 'number_of_strong_contenders' and 'historical_precedent_new_winners'. The argument is that a growing number of strong first-time contenders is *evidence* of a trend towards new winners, rather than an independent factor. This re-frames the relationship, implying that the existence of many strong contenders amplifies the signal from historical precedent, making a first-time winner more likely. The causal path 'number_of_strong_contenders -> champion_is_first_time_winner' is not fundamentally changed in its direction, but its connection to 'historical_precedent_new_winners' is strengthened. This implies that if we observe many strong contenders, it reinforces the likelihood that historical precedent for new winners is indeed a growing trend, thus increasing the probability of a first-time winner. The estimate is increased slightly to reflect this stronger reinforcing loop.\"\n}",
+      "target_id": "number_of_strong_contenders->historical_precedent_new_winners",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While you've identified 'historical_precedent_new_winners' and 'strength_of_traditional_powers' as separate influences on the outcome, consider this: If there's a historical trend of new nations emerging as champions, wouldn't that success itself inspire and perhaps even directly boost the development and strength of these previously less dominant nations? Conversely, a long period without new winners might allow traditional powers to consolidate their dominance and resources, further strengthening them.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a stronger, bidirectional relationship between the historical precedent of new winners and the strength of traditional powers, and importantly, how this impacts emerging nations. Specifically, successful new winners (historical precedent) directly contribute to the rise of emerging football nations, thus increasing the 'number_of_strong_contenders'. This strengthens the causal path: 'historical_precedent_new_winners' -> 'emerging_football_nations' -> 'number_of_strong_contenders' -> 'champion_is_first_time_winner'. Conversely, a lack of new winners allows traditional powers to consolidate strength, which negatively impacts 'number_of_strong_contenders'. This makes the 'historical_precedent_new_winners' node a more potent driver for the outcome. The original model treated these as more independent influences on the outcome. By strengthening the indirect path through emerging nations, the overall probability of a first-time winner increases, as the conditions favoring new winners also appear to foster their own development and success.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a stronger, bidirectional relationship between the historical precedent of new winners and the strength of traditional powers, and importantly, how this impacts emerging nations. Specifically, successful new winners (historical precedent) directly contribute to the rise of emerging football nations, thus increasing the 'number_of_strong_contenders'. This strengthens the causal path: 'historical_precedent_new_winners' -> 'emerging_football_nations' -> 'number_of_strong_contenders' -> 'champion_is_first_time_winner'. Conversely, a lack of new winners allows traditional powers to consolidate strength, which negatively impacts 'number_of_strong_contenders'. This makes the 'historical_precedent_new_winners' node a more potent driver for the outcome. The original model treated these as more independent influences on the outcome. By strengthening the indirect path through emerging nations, the overall probability of a first-time winner increases, as the conditions favoring new winners also appear to foster their own development and success.\"\n}",
+      "target_id": "historical_precedent_new_winners->strength_of_traditional_powers",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that FIFA introduces a significant rule change for the 2026 World Cup, such as expanding the number of participating teams from 32 to 48, or altering the knockout stage format. How might such a structural change in the tournament itself, independent of team strength or historical trends, affect the likelihood of a first-time winner?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The structural challenge regarding a rule change, specifically an expansion of participating teams to 48, significantly affects the causal path through 'emerging_football_nations' and 'number_of_strong_contenders'. An expanded tournament format generally increases the number of games and introduces more variability. This can create more opportunities for less established teams to perform well, potentially upsetting stronger traditional powers. More matches also increase the chances that a 'dark horse' or emerging nation could advance further than usual, thereby increasing the 'number_of_strong_contenders' that have never won before. This increased number of strong first-time contenders directly boosts the probability of 'champion_is_first_time_winner'. While the core strengths of traditional powers remain, the expanded format dilutes their dominance and provides a larger platform for new contenders to emerge and potentially win. The 'host_nation_advantage' could also be indirectly amplified if one of the hosts benefits disproportionately from the expanded format and increased home support, further boosting the number of strong first-time contenders.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The structural challenge regarding a rule change, specifically an expansion of participating teams to 48, significantly affects the causal path through 'emerging_football_nations' and 'number_of_strong_contenders'. An expanded tournament format generally increases the number of games and introduces more variability. This can create more opportunities for less established teams to perform well, potentially upsetting stronger traditional powers. More matches also increase the chances that a 'dark horse' or emerging nation could advance further than usual, thereby increasing the 'number_of_strong_contenders' that have never won before. This increased number of strong first-time contenders directly boosts the probability of 'champion_is_first_time_winner'. While the core strengths of traditional powers remain, the expanded format dilutes their dominance and provides a larger platform for new contenders to emerge and potentially win. The 'host_nation_advantage' could also be indirectly amplified if one of the hosts benefits disproportionately from the expanded format and increased home support, further boosting the number of strong first-time contenders.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Recent geopolitical events have led to significant travel restrictions and visa complexities for certain nationalities. How might these logistical challenges, impacting the ability of specific teams to reach and compete effectively in the tournament, alter your assessment of the likelihood of a first-time winner?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The geopolitical events and resulting travel/visa complexities primarily impact the 'number_of_strong_contenders' node. If certain nationalities face significant hurdles, it directly reduces the pool of teams that can realistically compete and potentially win. This is because teams from affected nations might be unable to travel, or their preparation and player availability could be severely compromised, thus diminishing their strength. This weakens the causal path from 'number_of_strong_contenders' to 'champion_is_first_time_winner'. While 'emerging_football_nations' and 'host_nation_advantage' could still contribute to a first-time winner, the overall reduction in the number of strong contenders, including potential first-time winners, makes a new champion less likely. The 'strength_of_traditional_powers' might indirectly become more dominant if key challengers are hampered, further decreasing the probability of a first-time winner. Therefore, the probability of a first-time winner is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The geopolitical events and resulting travel/visa complexities primarily impact the 'number_of_strong_contenders' node. If certain nationalities face significant hurdles, it directly reduces the pool of teams that can realistically compete and potentially win. This is because teams from affected nations might be unable to travel, or their preparation and player availability could be severely compromised, thus diminishing their strength. This weakens the causal path from 'number_of_strong_contenders' to 'champion_is_first_time_winner'. While 'emerging_football_nations' and 'host_nation_advantage' could still contribute to a first-time winner, the overall reduction in the number of strong contenders, including potential first-time winners, makes a new champion less likely. The 'strength_of_traditional_powers' might indirectly become more dominant if key challengers are hampered, further decreasing the probability of a first-time winner. Therefore, the probability of a first-time winner is decreased.\"\n}",
+      "target_id": "logistical_challenges_affecting_team_participation",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent FIFA rankings show a significant increase in the number of teams from the Asian Football Confederation qualifying for the tournament. Several of these teams have invested heavily in youth development programs over the past decade.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.62,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The new information about the increased number of qualifying teams from the Asian Football Confederation and their investment in youth development directly impacts the 'emerging_football_nations' node. This strengthens the causal path: emerging_football_nations -> number_of_strong_contenders. A larger pool of competitive emerging nations, particularly those with a history of less success (implying they are more likely to be first-time winners), increases the 'number_of_strong_contenders' that are first-time winners. This, in turn, positively influences the outcome node 'champion_is_first_time_winner'. Additionally, the improved competitiveness of these nations could also directly contribute to the outcome via the 'emerging_football_nations -> champion_is_first_time_winner' path, as a generally more competitive landscape for non-traditional powers increases the chance of one of them breaking through. The 'strength_of_traditional_powers' node might be indirectly affected if these emerging nations start to challenge established powers, but the primary impact is on the number and potential of new contenders.",
+      "raw_response": "{\n  \"updated_probability\": 0.62,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information about the increased number of qualifying teams from the Asian Football Confederation and their investment in youth development directly impacts the 'emerging_football_nations' node. This strengthens the causal path: emerging_football_nations -> number_of_strong_contenders. A larger pool of competitive emerging nations, particularly those with a history of less success (implying they are more likely to be first-time winners), increases the 'number_of_strong_contenders' that are first-time winners. This, in turn, positively influences the outcome node 'champion_is_first_time_winner'. Additionally, the improved competitiveness of these nations could also directly contribute to the outcome via the 'emerging_football_nations -> champion_is_first_time_winner' path, as a generally more competitive landscape for non-traditional powers increases the chance of one of them breaking through. The 'strength_of_traditional_powers' node might be indirectly affected if these emerging nations start to challenge established powers, but the primary impact is on the number and potential of new contenders.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of team travel schedules indicates that the 2026 World Cup will feature significantly longer travel distances between host cities compared to previous tournaments. This increased logistical complexity is expected to place a greater strain on all participating teams, regardless of their historical success or current form.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge highlights increased travel distances, impacting all teams. This primarily affects the 'strength_of_traditional_powers' node, as established teams with deep squads and extensive experience might be better equipped to manage the logistical strain and recover from longer travel. This increased resilience of traditional powers makes them more likely to maintain their dominance, thereby reducing the likelihood of a first-time winner. The causal path affected is 'strength_of_traditional_powers' -> 'champion_is_first_time_winner'. While emerging nations and number of strong contenders are also impacted indirectly, the direct effect on the resilience of established powers is the most significant factor leading to a decreased probability for a first-time winner.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge highlights increased travel distances, impacting all teams. This primarily affects the 'strength_of_traditional_powers' node, as established teams with deep squads and extensive experience might be better equipped to manage the logistical strain and recover from longer travel. This increased resilience of traditional powers makes them more likely to maintain their dominance, thereby reducing the likelihood of a first-time winner. The causal path affected is 'strength_of_traditional_powers' -> 'champion_is_first_time_winner'. While emerging nations and number of strong contenders are also impacted indirectly, the direct effect on the resilience of established powers is the most significant factor leading to a decreased probability for a first-time winner.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "j65AKQZQCjgqa3erm88N",
+    "question_text": "Will the 2026 FIFA World Cup champion be a first time winner?",
+    "source": "manifold",
+    "condition": "one-turn",
+    "initial_probability": 0.55,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.06999999999999999,
+    "max_absolute_shift": 0.10000000000000003
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0.16279796621636902,
+  "aggregate_metrics": {
+    "ssr": 1.411764705882353,
+    "mean_shift_high": 0.08,
+    "mean_shift_low": 0.056666666666666664,
+    "asymmetry_index": 0.7096774193548391,
+    "mean_shift_negate": 0.06285714285714288,
+    "mean_shift_strengthen": 0.08857142857142855,
+    "fnar": 1,
+    "n_accepted": 4,
+    "n_spurious": 4,
+    "critical_path_premium": 0.002142857142857141,
+    "mean_shift_on_path": 0.07142857142857142,
+    "mean_shift_off_path": 0.06928571428571428,
+    "importance_sensitivity_correlation": 0.20833333333333337,
+    "control_sensitivity": 1
+  }
+}

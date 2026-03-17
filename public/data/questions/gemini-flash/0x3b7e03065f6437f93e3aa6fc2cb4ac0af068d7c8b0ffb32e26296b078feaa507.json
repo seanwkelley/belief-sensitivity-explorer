@@ -1,0 +1,1195 @@
+{
+  "question_id": "0x3b7e03065f6437f93e3aa6fc2cb4ac0af068d7c8b0ffb32e26296b078feaa507",
+  "question_text": "US strikes Nigeria by December 31?",
+  "source": "polymarket",
+  "initial_probability": 0.05,
+  "nodes": [
+    {
+      "id": "nigeria_internal_stability",
+      "description": "The level of internal stability and governance within Nigeria",
+      "role": "factor"
+    },
+    {
+      "id": "us_foreign_policy_priorities",
+      "description": "The current US administration's foreign policy objectives and focus areas",
+      "role": "factor"
+    },
+    {
+      "id": "geopolitical_tensions_africa",
+      "description": "The overall level of geopolitical instability and conflict in the African region",
+      "role": "factor"
+    },
+    {
+      "id": "specific_security_threat_to_us_interests",
+      "description": "The existence of a concrete security threat emanating from Nigeria that directly impacts US interests",
+      "role": "factor"
+    },
+    {
+      "id": "us_diplomatic_engagement_nigeria",
+      "description": "The extent and nature of diplomatic interactions and cooperation between the US and Nigeria",
+      "role": "factor"
+    },
+    {
+      "id": "us_strikes_nigeria",
+      "description": "The forecasted event: US strikes Nigeria by December 31",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "nigeria_internal_stability",
+      "to": "specific_security_threat_to_us_interests",
+      "mechanism": "Internal instability can foster groups that pose security threats"
+    },
+    {
+      "from": "nigeria_internal_stability",
+      "to": "geopolitical_tensions_africa",
+      "mechanism": "Instability in a major nation can destabilize the wider region"
+    },
+    {
+      "from": "us_foreign_policy_priorities",
+      "to": "specific_security_threat_to_us_interests",
+      "mechanism": "Foreign policy may dictate a proactive stance against perceived threats"
+    },
+    {
+      "from": "us_foreign_policy_priorities",
+      "to": "us_diplomatic_engagement_nigeria",
+      "mechanism": "Foreign policy shapes the level and type of diplomatic engagement"
+    },
+    {
+      "from": "geopolitical_tensions_africa",
+      "to": "us_foreign_policy_priorities",
+      "mechanism": "Regional instability can elevate Africa as a foreign policy priority"
+    },
+    {
+      "from": "specific_security_threat_to_us_interests",
+      "to": "us_strikes_nigeria",
+      "mechanism": "A direct threat is a primary justification for military action"
+    },
+    {
+      "from": "us_diplomatic_engagement_nigeria",
+      "to": "us_strikes_nigeria",
+      "mechanism": "Strong diplomatic ties and cooperation make military strikes less likely"
+    },
+    {
+      "from": "us_foreign_policy_priorities",
+      "to": "us_strikes_nigeria",
+      "mechanism": "An aggressive foreign policy posture could increase the likelihood of strikes, even without a direct threat"
+    }
+  ],
+  "reasoning": "The probability of US strikes against Nigeria by December 31st is assessed as low. While internal instability in Nigeria could theoretically lead to security threats impacting US interests, and geopolitical tensions in Africa might draw US attention, there is no current indication of a direct, imminent threat to US interests that would necessitate military action. Furthermore, robust diplomatic engagement between the US and Nigeria, coupled with a US foreign policy that generally prioritizes diplomacy over unilateral military intervention in such contexts, significantly reduces the likelihood of strikes. The current geopolitical climate does not suggest a heightened US propensity for such actions against Nigeria.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 8,
+    "density": 0.2667,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "us_strikes_nigeria",
+    "node_metrics": [
+      {
+        "node_id": "nigeria_internal_stability",
+        "description": "The level of internal stability and governance within Nigeria",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0765,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "us_foreign_policy_priorities",
+        "description": "The current US administration's foreign policy objectives and focus areas",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 3,
+        "betweenness": 0.2,
+        "closeness": 0.2667,
+        "pagerank": 0.1692,
+        "path_relevance": 0.2
+      },
+      {
+        "node_id": "geopolitical_tensions_africa",
+        "description": "The overall level of geopolitical instability and conflict in the African region",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.1,
+        "closeness": 0.2,
+        "pagerank": 0.1091,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "specific_security_threat_to_us_interests",
+        "description": "The existence of a concrete security threat emanating from Nigeria that directly impacts US interests",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 1,
+        "betweenness": 0.05,
+        "closeness": 0.45,
+        "pagerank": 0.157,
+        "path_relevance": 0.2
+      },
+      {
+        "node_id": "us_diplomatic_engagement_nigeria",
+        "description": "The extent and nature of diplomatic interactions and cooperation between the US and Nigeria",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.3,
+        "pagerank": 0.1245,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "us_strikes_nigeria",
+        "description": "The forecasted event: US strikes Nigeria by December 31",
+        "role": "outcome",
+        "in_degree": 3,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.7143,
+        "pagerank": 0.3637,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "nigeria_internal_stability",
+        "target": "specific_security_threat_to_us_interests",
+        "mechanism": "Internal instability can foster groups that pose security threats",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "nigeria_internal_stability",
+        "target": "geopolitical_tensions_africa",
+        "mechanism": "Instability in a major nation can destabilize the wider region",
+        "edge_betweenness": 0.1,
+        "on_critical_path": false
+      },
+      {
+        "source": "us_foreign_policy_priorities",
+        "target": "specific_security_threat_to_us_interests",
+        "mechanism": "Foreign policy may dictate a proactive stance against perceived threats",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": false
+      },
+      {
+        "source": "us_foreign_policy_priorities",
+        "target": "us_diplomatic_engagement_nigeria",
+        "mechanism": "Foreign policy shapes the level and type of diplomatic engagement",
+        "edge_betweenness": 0.1,
+        "on_critical_path": false
+      },
+      {
+        "source": "us_foreign_policy_priorities",
+        "target": "us_strikes_nigeria",
+        "mechanism": "An aggressive foreign policy posture could increase the likelihood of strikes, even without a direct threat",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "geopolitical_tensions_africa",
+        "target": "us_foreign_policy_priorities",
+        "mechanism": "Regional instability can elevate Africa as a foreign policy priority",
+        "edge_betweenness": 0.2,
+        "on_critical_path": true
+      },
+      {
+        "source": "specific_security_threat_to_us_interests",
+        "target": "us_strikes_nigeria",
+        "mechanism": "A direct threat is a primary justification for military action",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "us_diplomatic_engagement_nigeria",
+        "target": "us_strikes_nigeria",
+        "mechanism": "Strong diplomatic ties and cooperation make military strikes less likely",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "us_foreign_policy_priorities",
+        "description": "The current US administration's foreign policy objectives and focus areas",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "geopolitical_tensions_africa",
+        "description": "The overall level of geopolitical instability and conflict in the African region",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "specific_security_threat_to_us_interests",
+        "description": "The existence of a concrete security threat emanating from Nigeria that directly impacts US interests",
+        "importance": 0.05,
+        "centrality_rank": 3,
+        "on_critical_path": true,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "us_diplomatic_engagement_nigeria",
+        "description": "The extent and nature of diplomatic interactions and cooperation between the US and Nigeria",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "us_foreign_policy_priorities",
+        "description": "The current US administration's foreign policy objectives and focus areas",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "geopolitical_tensions_africa",
+        "description": "The overall level of geopolitical instability and conflict in the African region",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "specific_security_threat_to_us_interests",
+        "description": "The existence of a concrete security threat emanating from Nigeria that directly impacts US interests",
+        "importance": 0.05,
+        "centrality_rank": 3,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "us_diplomatic_engagement_nigeria",
+        "description": "The extent and nature of diplomatic interactions and cooperation between the US and Nigeria",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+        "description": "Regional instability can elevate Africa as a foreign policy priority",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "nigeria_internal_stability->specific_security_threat_to_us_interests",
+        "description": "Internal instability can foster groups that pose security threats",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "nigeria_internal_stability->geopolitical_tensions_africa",
+        "description": "Instability in a major nation can destabilize the wider region",
+        "importance": 0.1,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+        "description": "Regional instability can elevate Africa as a foreign policy priority",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "nigeria_internal_stability->specific_security_threat_to_us_interests",
+        "description": "Internal instability can foster groups that pose security threats",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "nigeria_internal_stability->geopolitical_tensions_africa",
+        "description": "Instability in a major nation can destabilize the wider region",
+        "importance": 0.1,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+        "description": "Regional instability can elevate Africa as a foreign policy priority",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "us_diplomatic_engagement_nigeria->specific_security_threat_to_us_interests",
+        "description": "Potential link: The extent and nature of diplomatic interactions and cooperation between the US and Nigeria -> The existence of a concrete security threat emanating from Nigeria that directly impacts US interests",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "us_foreign_policy_priorities",
+      "description": "The current US administration's foreign policy objectives and focus areas",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "geopolitical_tensions_africa",
+      "description": "The overall level of geopolitical instability and conflict in the African region",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "specific_security_threat_to_us_interests",
+      "description": "The existence of a concrete security threat emanating from Nigeria that directly impacts US interests",
+      "importance": 0.05,
+      "centrality_rank": 3,
+      "on_critical_path": true,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "us_diplomatic_engagement_nigeria",
+      "description": "The extent and nature of diplomatic interactions and cooperation between the US and Nigeria",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "us_foreign_policy_priorities",
+      "description": "The current US administration's foreign policy objectives and focus areas",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "geopolitical_tensions_africa",
+      "description": "The overall level of geopolitical instability and conflict in the African region",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "specific_security_threat_to_us_interests",
+      "description": "The existence of a concrete security threat emanating from Nigeria that directly impacts US interests",
+      "importance": 0.05,
+      "centrality_rank": 3,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "us_diplomatic_engagement_nigeria",
+      "description": "The extent and nature of diplomatic interactions and cooperation between the US and Nigeria",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "description": "Regional instability can elevate Africa as a foreign policy priority",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "nigeria_internal_stability->specific_security_threat_to_us_interests",
+      "description": "Internal instability can foster groups that pose security threats",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "nigeria_internal_stability->geopolitical_tensions_africa",
+      "description": "Instability in a major nation can destabilize the wider region",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "description": "Regional instability can elevate Africa as a foreign policy priority",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "nigeria_internal_stability->specific_security_threat_to_us_interests",
+      "description": "Internal instability can foster groups that pose security threats",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "nigeria_internal_stability->geopolitical_tensions_africa",
+      "description": "Instability in a major nation can destabilize the wider region",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "description": "Regional instability can elevate Africa as a foreign policy priority",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "us_diplomatic_engagement_nigeria->specific_security_threat_to_us_interests",
+      "description": "Potential link: The extent and nature of diplomatic interactions and cooperation between the US and Nigeria -> The existence of a concrete security threat emanating from Nigeria that directly impacts US interests",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if the current US administration's foreign policy priorities are completely mischaracterized or irrelevant to the decision-making process regarding Nigeria? Imagine a scenario where a powerful, independent faction within the Pentagon or State Department, driven by purely operational or intelligence-driven mandates, bypasses or overrides the stated foreign policy objectives. In this case, the administration's broader goals would have minimal bearing on whether US strikes Nigeria.",
+      "probe_type": "node_negate_high",
+      "target_id": "us_foreign_policy_priorities",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The current US administration's foreign policy objectives and focus areas"
+    },
+    {
+      "probe_text": "Imagine that the current geopolitical landscape in Africa is actually quite stable and that regional conflicts are isolated incidents with no broader contagion effects. Furthermore, assume that US foreign policy priorities are not significantly influenced by the general state of African geopolitics, focusing instead on other global regions or specific bilateral relationships. Would this revised understanding of African geopolitical stability alter your assessment of the likelihood of US strikes in Nigeria?",
+      "probe_type": "node_negate_high",
+      "target_id": "geopolitical_tensions_africa",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The overall level of geopolitical instability and conflict in the African region"
+    },
+    {
+      "probe_text": "Recent intelligence assessments and public statements from US defense officials indicate a significant de-escalation of extremist group activity within Nigeria. Furthermore, analyses of US national security interests suggest that current threats to US soil or personnel are not directly linked to Nigerian internal affairs, making the 'specific_security_threat_to_us_interests' node less relevant than previously thought.",
+      "probe_type": "node_negate_medium",
+      "target_id": "specific_security_threat_to_us_interests",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 3,
+      "on_critical_path": true,
+      "description": "The existence of a concrete security threat emanating from Nigeria that directly impacts US interests"
+    },
+    {
+      "probe_text": "Recent reports suggest a significant breakdown in US-Nigeria diplomatic relations, with key officials from both sides engaging in unusually harsh public criticism. This level of severe diplomatic friction could render the 'extent and nature of diplomatic interactions' irrelevant, as the relationship has moved beyond standard engagement to outright hostility.",
+      "probe_type": "node_negate_low",
+      "target_id": "us_diplomatic_engagement_nigeria",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The extent and nature of diplomatic interactions and cooperation between the US and Nigeria"
+    },
+    {
+      "probe_text": "A recent declassified intelligence report, corroborated by statements from senior White House officials, indicates that the current US administration has explicitly prioritized countering perceived 'rogue state' behavior and projecting American power in Africa as a central pillar of its foreign policy agenda for the next year. This strategic shift is reportedly driven by a desire to reassert global leadership and deter potential adversaries, making assertive actions in regions deemed critical, like Nigeria, a distinct possibility.",
+      "probe_type": "node_strengthen",
+      "target_id": "us_foreign_policy_priorities",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The current US administration's foreign policy objectives and focus areas"
+    },
+    {
+      "probe_text": "Recent intelligence reports indicate a significant escalation of cross-border militant activity originating from regions bordering Nigeria, directly contributing to a heightened level of geopolitical tension across West Africa. This trend has led several international security analysts to publicly declare that the African continent is now at its most volatile in decades, potentially elevating the region's importance in US foreign policy considerations.",
+      "probe_type": "node_strengthen",
+      "target_id": "geopolitical_tensions_africa",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The overall level of geopolitical instability and conflict in the African region"
+    },
+    {
+      "probe_text": "Recent intelligence reports indicate that a Nigerian-based militant group, with alleged ties to international terrorist networks, has acquired advanced weaponry capable of striking critical maritime infrastructure in the Gulf of Guinea, a key shipping route for US interests. This group has publicly denounced US presence in the region and demonstrated a capacity for sophisticated attacks.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "specific_security_threat_to_us_interests",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.05,
+      "centrality_rank": 3,
+      "on_critical_path": true,
+      "description": "The existence of a concrete security threat emanating from Nigeria that directly impacts US interests"
+    },
+    {
+      "probe_text": "Recent news reports indicate a significant increase in joint US-Nigeria military exercises focused on counter-terrorism and maritime security. Furthermore, the US has announced a new multi-year aid package specifically aimed at bolstering Nigeria's internal security capabilities and improving intelligence sharing.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "us_diplomatic_engagement_nigeria",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The extent and nature of diplomatic interactions and cooperation between the US and Nigeria"
+    },
+    {
+      "probe_text": "While regional instability in Africa might typically elevate its importance, the current US foreign policy priorities are heavily focused on other, more pressing global issues such as great power competition and domestic economic concerns. Evidence for this can be seen in recent budget allocations and public statements by administration officials, which consistently de-emphasize Africa as a primary strategic theater, suggesting that even significant regional tensions there may not translate into a higher foreign policy priority for the US.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Regional instability can elevate Africa as a foreign policy priority"
+    },
+    {
+      "probe_text": "While internal instability in Nigeria might seem to breed security threats, recent intelligence suggests that the primary groups operating in volatile regions are focused on internal political grievances and are not actively seeking to project power or develop capabilities that would directly threaten US interests. Furthermore, Nigerian internal stability efforts, though challenged, have successfully contained the spillover of these groups into areas that could pose an international threat.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "nigeria_internal_stability->specific_security_threat_to_us_interests",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Internal instability can foster groups that pose security threats"
+    },
+    {
+      "probe_text": "While Nigeria's internal stability can influence regional dynamics, it's also possible that external factors or the specific nature of the instability might prevent it from significantly increasing broader geopolitical tensions in Africa. For instance, if the instability is largely contained within Nigeria's borders or if other regional powers are actively working to maintain stability, the destabilizing effect on the wider region might be minimal.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "nigeria_internal_stability->geopolitical_tensions_africa",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Instability in a major nation can destabilize the wider region"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in coordinated terrorist activities across the Sahel region, directly impacting neighboring countries and raising concerns about wider destabilization. This escalating regional instability has prompted an urgent review of US foreign policy, with officials now prioritizing a more robust engagement in Africa to counter these growing threats. This development strongly reinforces the idea that heightened geopolitical tensions in Africa are a key driver for elevating the continent's importance in US foreign policy.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Regional instability can elevate Africa as a foreign policy priority"
+    },
+    {
+      "probe_text": "Recent intelligence reports indicate that the instability in Nigeria has led to the proliferation of several heavily armed extremist groups, some with explicit anti-US rhetoric and demonstrated capabilities for sophisticated attacks. These groups are not only destabilizing the region but are also actively seeking to disrupt international trade routes crucial to US economic interests, directly creating a specific security threat to the US.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "nigeria_internal_stability->specific_security_threat_to_us_interests",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Internal instability can foster groups that pose security threats"
+    },
+    {
+      "probe_text": "Recent reports indicate that the internal instability in Nigeria is not just contained within its borders, but is actively fueling cross-border insurgencies and refugee crises in neighboring countries like Niger and Cameroon. This spillover effect is creating significant regional security challenges and drawing in international actors, suggesting that the destabilizing influence of Nigeria's internal situation on the broader African geopolitical landscape is more pronounced and immediate than initially considered.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "nigeria_internal_stability->geopolitical_tensions_africa",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Instability in a major nation can destabilize the wider region"
+    },
+    {
+      "probe_text": "While it's plausible that increased geopolitical tensions in Africa could make it a higher US foreign policy priority, consider the reverse: US foreign policy priorities might be the primary driver of how Africa is perceived and thus how tensions there are addressed. For instance, if a US administration decides to 'pivot' to Africa as a key foreign policy priority, this focus could lead to increased US engagement and scrutiny, which in turn might highlight or even exacerbate existing geopolitical tensions, making them more prominent on the US agenda.",
+      "probe_type": "edge_reverse",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Regional instability can elevate Africa as a foreign policy priority"
+    },
+    {
+      "probe_text": "Recent intelligence suggests that the current level of US-Nigeria diplomatic engagement is significantly hindering the effective sharing of information and intelligence regarding emerging security threats. This lack of robust cooperation means that potential threats to US interests emanating from Nigeria might not be identified or understood as clearly as they otherwise would be, potentially allowing them to fester and grow into concrete dangers.",
+      "probe_type": "edge_missing",
+      "target_id": "us_diplomatic_engagement_nigeria->specific_security_threat_to_us_interests",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The extent and nature of diplomatic interactions and cooperation between the US and Nigeria -> The existence of a concrete security threat emanating from Nigeria that directly impacts US interests"
+    },
+    {
+      "probe_text": "Imagine that a major, previously unknown oil discovery is announced in Nigeria in early November. This discovery leads to a significant increase in the value of Nigeria's natural resources and attracts considerable international attention, potentially including from actors with interests contrary to the US. How does this development, and the ensuing international scramble for influence over these resources, affect the probability of US strikes on Nigeria by year-end?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that a significant discovery of rare earth minerals, vital for US technological advancement, is confirmed within Nigeria. How would this new information, and the potential for resource competition or securing access, influence your assessment of the likelihood of US strikes in Nigeria by December 31st?",
+      "probe_type": "missing_node",
+      "target_id": "resource_competition_or_access",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Reports indicate that Nigeria has recently secured significant new international loans for infrastructure development, particularly in its energy sector. These loans are from a consortium of Asian banks and are aimed at modernizing oil and gas facilities.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in the number of Nigerian citizens seeking to emigrate to the United States for economic opportunities. This trend has led to increased discussions within US think tanks about the long-term economic relationship between the two countries.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the current US administration's foreign policy priorities are completely mischaracterized or irrelevant to the decision-making process regarding Nigeria? Imagine a scenario where a powerful, independent faction within the Pentagon or State Department, driven by purely operational or intelligence-driven mandates, bypasses or overrides the stated foreign policy objectives. In this case, the administration's broader goals would have minimal bearing on whether US strikes Nigeria.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.03,
+      "absolute_shift": 0.020000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct influence of 'us_foreign_policy_priorities' on the outcome. My original model included paths from 'us_foreign_policy_priorities' to 'specific_security_threat_to_us_interests' and 'us_strikes_nigeria' directly, and indirectly through 'geopolitical_tensions_africa' and 'us_diplomatic_engagement_nigeria'. If these priorities are indeed irrelevant or overridden, these causal paths are weakened or broken. However, the path from 'specific_security_threat_to_us_interests' to 'us_strikes_nigeria' remains a strong potential driver. The challenge does not invalidate the possibility of a security threat arising from Nigeria's internal stability ('nigeria_internal_stability' -> 'specific_security_threat_to_us_interests'), which could still lead to a strike. Therefore, the probability decreases, but not drastically, as other causal pathways still exist.",
+      "raw_response": "{\n  \"updated_probability\": 0.03,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct influence of 'us_foreign_policy_priorities' on the outcome. My original model included paths from 'us_foreign_policy_priorities' to 'specific_security_threat_to_us_interests' and 'us_strikes_nigeria' directly, and indirectly through 'geopolitical_tensions_africa' and 'us_diplomatic_engagement_nigeria'. If these priorities are indeed irrelevant or overridden, these causal paths are weakened or broken. However, the path from 'specific_security_threat_to_us_interests' to 'us_strikes_nigeria' remains a strong potential driver. The challenge does not invalidate the possibility of a security threat arising from Nigeria's internal stability ('nigeria_internal_stability' -> 'specific_security_threat_to_us_interests'), which could still lead to a strike. Therefore, the probability decreases, but not drastically, as other causal pathways still exist.\"\n}",
+      "target_id": "us_foreign_policy_priorities",
+      "target_type": "node",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the current geopolitical landscape in Africa is actually quite stable and that regional conflicts are isolated incidents with no broader contagion effects. Furthermore, assume that US foreign policy priorities are not significantly influenced by the general state of African geopolitics, focusing instead on other global regions or specific bilateral relationships. Would this revised understanding of African geopolitical stability alter your assessment of the likelihood of US strikes in Nigeria?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.03,
+      "absolute_shift": 0.020000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that 'geopolitical_tensions_africa' is low and has minimal influence on 'us_foreign_policy_priorities'. This weakens a significant indirect path to the outcome: 'geopolitical_tensions_africa' -> 'us_foreign_policy_priorities' -> 'us_strikes_nigeria' and 'geopolitical_tensions_africa' -> 'us_foreign_policy_priorities' -> 'specific_security_threat_to_us_interests' -> 'us_strikes_nigeria'. If African geopolitics is not a priority, it is less likely to drive US foreign policy decisions related to Nigeria, including the potential for strikes or the prioritization of threats from Nigeria. The direct link from 'specific_security_threat_to_us_interests' to 'us_strikes_nigeria' remains, as does the link from 'us_foreign_policy_priorities' to 'us_strikes_nigeria' if other foreign policy considerations are present, but the influence of African regional stability is diminished. The initial probability was already low (0.05), and this update further reduces it as a potential driver for US action is weakened, though not entirely eliminated.",
+      "raw_response": "{\n  \"updated_probability\": 0.03,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that 'geopolitical_tensions_africa' is low and has minimal influence on 'us_foreign_policy_priorities'. This weakens a significant indirect path to the outcome: 'geopolitical_tensions_africa' -> 'us_foreign_policy_priorities' -> 'us_strikes_nigeria' and 'geopolitical_tensions_africa' -> 'us_foreign_policy_priorities' -> 'specific_security_threat_to_us_interests' -> 'us_strikes_nigeria'. If African geopolitics is not a priority, it is less likely to drive US foreign policy decisions related to Nigeria, including the potential for strikes or the prioritization of threats from Nigeria. The direct link from 'specific_security_threat_to_us_interests' to 'us_strikes_nigeria' remains, as does the link from 'us_foreign_policy_priorities' to 'us_strikes_nigeria' if other foreign policy considerations are present, but the influence of African regional stability is diminished. The initial probability was already low (0.05), and this update further reduces it as a potential driver for US action is weakened, though not entirely eliminated.\"\n}",
+      "target_id": "geopolitical_tensions_africa",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent intelligence assessments and public statements from US defense officials indicate a significant de-escalation of extremist group activity within Nigeria. Furthermore, analyses of US national security interests suggest that current threats to US soil or personnel are not directly linked to Nigerian internal affairs, making the 'specific_security_threat_to_us_interests' node less relevant than previously thought.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.02,
+      "absolute_shift": 0.030000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly undermines the 'specific_security_threat_to_us_interests' node. This node is a primary driver for the 'us_strikes_nigeria' outcome via the causal path: 'specific_security_threat_to_us_interests' -> 'us_strikes_nigeria'. The new information suggests that the premise of a direct security threat from Nigeria to US interests is significantly weaker, reducing the likelihood of a US strike. While other paths exist (e.g., related to 'us_foreign_policy_priorities' or 'geopolitical_tensions_africa'), the weakening of this key direct causal link necessitates a substantial decrease in the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.02,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly undermines the 'specific_security_threat_to_us_interests' node. This node is a primary driver for the 'us_strikes_nigeria' outcome via the causal path: 'specific_security_threat_to_us_interests' -> 'us_strikes_nigeria'. The new information suggests that the premise of a direct security threat from Nigeria to US interests is significantly weaker, reducing the likelihood of a US strike. While other paths exist (e.g., related to 'us_foreign_policy_priorities' or 'geopolitical_tensions_africa'), the weakening of this key direct causal link necessitates a substantial decrease in the probability estimate.\"\n}",
+      "target_id": "specific_security_threat_to_us_interests",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports suggest a significant breakdown in US-Nigeria diplomatic relations, with key officials from both sides engaging in unusually harsh public criticism. This level of severe diplomatic friction could render the 'extent and nature of diplomatic interactions' irrelevant, as the relationship has moved beyond standard engagement to outright hostility.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.09999999999999999,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'us_diplomatic_engagement_nigeria' significantly impacts the causal path it influences. Previously, strong diplomatic engagement was seen as a deterrent to US strikes ('us_diplomatic_engagement_nigeria -> us_strikes_nigeria'). The new information suggests that this diplomatic channel is not just weak, but actively hostile, which fundamentally alters its role. Instead of acting as a buffer, severe diplomatic friction could, in some scenarios, precede or accompany heightened tensions that might lead to military action, or at least remove a significant constraint against it. While 'us_diplomatic_engagement_nigeria' was previously a negative influence on strikes, its severe degradation means its deterrent effect is gone, and potentially a mild positive influence towards conflict. This strengthens the likelihood of the outcome, hence the increased probability. The path 'us_foreign_policy_priorities -> us_strikes_nigeria' remains a potential driver, and the potential for 'specific_security_threat_to_us_interests' to emerge from 'nigeria_internal_stability' or 'geopolitical_tensions_africa' also contributes. The increased probability reflects the removal of a strong mitigating factor and the potential for the diplomatic situation itself to become a contributing factor to heightened tensions.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'us_diplomatic_engagement_nigeria' significantly impacts the causal path it influences. Previously, strong diplomatic engagement was seen as a deterrent to US strikes ('us_diplomatic_engagement_nigeria -> us_strikes_nigeria'). The new information suggests that this diplomatic channel is not just weak, but actively hostile, which fundamentally alters its role. Instead of acting as a buffer, severe diplomatic friction could, in some scenarios, precede or accompany heightened tensions that might lead to military action, or at least remove a significant constraint against it. While 'us_diplomatic_engagement_nigeria' was previously a negative influence on strikes, its severe degradation means its deterrent effect is gone, and potentially a mild positive influence towards conflict. This strengthens the likelihood of the outcome, hence the increased probability. The path 'us_foreign_policy_priorities -> us_strikes_nigeria' remains a potential driver, and the potential for 'specific_security_threat_to_us_interests' to emerge from 'nigeria_internal_stability' or 'geopolitical_tensions_africa' also contributes. The increased probability reflects the removal of a strong mitigating factor and the potential for the diplomatic situation itself to become a contributing factor to heightened tensions.\"\n}",
+      "target_id": "us_diplomatic_engagement_nigeria",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent declassified intelligence report, corroborated by statements from senior White House officials, indicates that the current US administration has explicitly prioritized countering perceived 'rogue state' behavior and projecting American power in Africa as a central pillar of its foreign policy agenda for the next year. This strategic shift is reportedly driven by a desire to reassert global leadership and deter potential adversaries, making assertive actions in regions deemed critical, like Nigeria, a distinct possibility.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.25,
+      "absolute_shift": 0.2,
+      "shift_direction": "increased",
+      "reasoning": "The new information significantly strengthens the causal path from 'us_foreign_policy_priorities' to 'us_strikes_nigeria'. The report indicates a deliberate and explicit prioritization of countering 'rogue state' behavior and projecting power in Africa, directly aligning with an assertive foreign policy. This elevates the likelihood of the US taking assertive actions, including strikes, even in the absence of a specific, immediate security threat emanating from Nigeria. The causal link 'us_foreign_policy_priorities -> us_strikes_nigeria' is now modeled as having a higher weight. While not a certainty, this strategic shift makes the outcome more probable than initially forecasted, moving from a low base of 0.05 to 0.25.",
+      "raw_response": "{\n  \"updated_probability\": 0.25,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information significantly strengthens the causal path from 'us_foreign_policy_priorities' to 'us_strikes_nigeria'. The report indicates a deliberate and explicit prioritization of countering 'rogue state' behavior and projecting power in Africa, directly aligning with an assertive foreign policy. This elevates the likelihood of the US taking assertive actions, including strikes, even in the absence of a specific, immediate security threat emanating from Nigeria. The causal link 'us_foreign_policy_priorities -> us_strikes_nigeria' is now modeled as having a higher weight. While not a certainty, this strategic shift makes the outcome more probable than initially forecasted, moving from a low base of 0.05 to 0.25.\"\n}",
+      "target_id": "us_foreign_policy_priorities",
+      "target_type": "node",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent intelligence reports indicate a significant escalation of cross-border militant activity originating from regions bordering Nigeria, directly contributing to a heightened level of geopolitical tension across West Africa. This trend has led several international security analysts to publicly declare that the African continent is now at its most volatile in decades, potentially elevating the region's importance in US foreign policy considerations.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.09999999999999999,
+      "shift_direction": "increased",
+      "reasoning": "The new information significantly strengthens the causal path from 'geopolitical_tensions_africa' to 'us_foreign_policy_priorities'. The escalation of cross-border militant activity and the declaration of heightened volatility in West Africa directly increase the likelihood that this region will become a higher priority for the current US administration. This, in turn, could increase the likelihood of US military action ('us_strikes_nigeria') if the administration adopts a more interventionist foreign policy posture, even in the absence of a directly identified threat from within Nigeria itself. While 'geopolitical_tensions_africa' does not directly cause 'us_strikes_nigeria', its increased influence on 'us_foreign_policy_priorities' amplifies a path that can lead to strikes. The initial probability was low (0.05), and this update reflects a moderate increase in the potential for US action due to heightened regional instability becoming a more prominent factor in US foreign policy.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information significantly strengthens the causal path from 'geopolitical_tensions_africa' to 'us_foreign_policy_priorities'. The escalation of cross-border militant activity and the declaration of heightened volatility in West Africa directly increase the likelihood that this region will become a higher priority for the current US administration. This, in turn, could increase the likelihood of US military action ('us_strikes_nigeria') if the administration adopts a more interventionist foreign policy posture, even in the absence of a directly identified threat from within Nigeria itself. While 'geopolitical_tensions_africa' does not directly cause 'us_strikes_nigeria', its increased influence on 'us_foreign_policy_priorities' amplifies a path that can lead to strikes. The initial probability was low (0.05), and this update reflects a moderate increase in the potential for US action due to heightened regional instability becoming a more prominent factor in US foreign policy.\"\n}",
+      "target_id": "geopolitical_tensions_africa",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent intelligence reports indicate that a Nigerian-based militant group, with alleged ties to international terrorist networks, has acquired advanced weaponry capable of striking critical maritime infrastructure in the Gulf of Guinea, a key shipping route for US interests. This group has publicly denounced US presence in the region and demonstrated a capacity for sophisticated attacks.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.6,
+      "shift_direction": "increased",
+      "reasoning": "The new intelligence directly and significantly strengthens the causal path from 'specific_security_threat_to_us_interests' to 'us_strikes_nigeria'. Previously, this threat was an assumed possibility stemming from internal instability. Now, there is concrete evidence of a Nigerian-based group with advanced weaponry, demonstrated attack capacity, and explicit anti-US rhetoric, posing a direct threat to critical maritime infrastructure in the Gulf of Guinea, which is explicitly stated as a key shipping route for US interests. This elevates the likelihood of the US perceiving a direct security threat, a primary justification for military action. The updated information also indirectly affects the 'us_foreign_policy_priorities' node, as such a concrete threat would likely make addressing it a higher priority, further increasing the probability of strikes.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new intelligence directly and significantly strengthens the causal path from 'specific_security_threat_to_us_interests' to 'us_strikes_nigeria'. Previously, this threat was an assumed possibility stemming from internal instability. Now, there is concrete evidence of a Nigerian-based group with advanced weaponry, demonstrated attack capacity, and explicit anti-US rhetoric, posing a direct threat to critical maritime infrastructure in the Gulf of Guinea, which is explicitly stated as a key shipping route for US interests. This elevates the likelihood of the US perceiving a direct security threat, a primary justification for military action. The updated information also indirectly affects the 'us_foreign_policy_priorities' node, as such a concrete threat would likely make addressing it a higher priority, further increasing the probability of strikes.\"\n}",
+      "target_id": "specific_security_threat_to_us_interests",
+      "target_type": "node",
+      "target_importance": 0.05,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent news reports indicate a significant increase in joint US-Nigeria military exercises focused on counter-terrorism and maritime security. Furthermore, the US has announced a new multi-year aid package specifically aimed at bolstering Nigeria's internal security capabilities and improving intelligence sharing.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.02,
+      "absolute_shift": 0.030000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The new information significantly strengthens the causal link between 'us_diplomatic_engagement_nigeria' and 'us_strikes_nigeria'. Increased joint military exercises and a substantial aid package directly indicate a deepening of diplomatic and security cooperation. This makes the path 'us_diplomatic_engagement_nigeria -> us_strikes_nigeria' much stronger, implying that military strikes are less likely. This is a critical causal path as strong diplomatic ties and cooperation are presented as a direct deterrent to military action. The initial probability of 0.05 was already low, reflecting a low baseline expectation of strikes. This new information further reduces that probability, as the evidence points towards de-escalation and partnership rather than conflict.",
+      "raw_response": "{\n  \"updated_probability\": 0.02,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information significantly strengthens the causal link between 'us_diplomatic_engagement_nigeria' and 'us_strikes_nigeria'. Increased joint military exercises and a substantial aid package directly indicate a deepening of diplomatic and security cooperation. This makes the path 'us_diplomatic_engagement_nigeria -> us_strikes_nigeria' much stronger, implying that military strikes are less likely. This is a critical causal path as strong diplomatic ties and cooperation are presented as a direct deterrent to military action. The initial probability of 0.05 was already low, reflecting a low baseline expectation of strikes. This new information further reduces that probability, as the evidence points towards de-escalation and partnership rather than conflict.\"\n}",
+      "target_id": "us_diplomatic_engagement_nigeria",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While regional instability in Africa might typically elevate its importance, the current US foreign policy priorities are heavily focused on other, more pressing global issues such as great power competition and domestic economic concerns. Evidence for this can be seen in recent budget allocations and public statements by administration officials, which consistently de-emphasize Africa as a primary strategic theater, suggesting that even significant regional tensions there may not translate into a higher foreign policy priority for the US.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.03,
+      "absolute_shift": 0.020000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'geopolitical_tensions_africa -> us_foreign_policy_priorities' link suggests that regional instability in Africa is less likely to elevate its importance in US foreign policy. This weakens a potential indirect path to 'us_strikes_nigeria' via 'us_foreign_policy_priorities'. Specifically, if 'geopolitical_tensions_africa' does not significantly impact 'us_foreign_policy_priorities', then the influence of 'us_foreign_policy_priorities' on 'specific_security_threat_to_us_interests' and directly on 'us_strikes_nigeria' becomes less likely to be driven by African-specific concerns. This makes the overall pathway to strikes less probable, as it relies more heavily on the existence of a 'specific_security_threat_to_us_interests' and less on a broader foreign policy imperative to engage with or act in Africa due to regional instability. The initial probability was already low, reflecting a weak causal chain, and this update further diminishes the likelihood by weakening a key upstream node's influence.",
+      "raw_response": "{\n  \"updated_probability\": 0.03,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'geopolitical_tensions_africa -> us_foreign_policy_priorities' link suggests that regional instability in Africa is less likely to elevate its importance in US foreign policy. This weakens a potential indirect path to 'us_strikes_nigeria' via 'us_foreign_policy_priorities'. Specifically, if 'geopolitical_tensions_africa' does not significantly impact 'us_foreign_policy_priorities', then the influence of 'us_foreign_policy_priorities' on 'specific_security_threat_to_us_interests' and directly on 'us_strikes_nigeria' becomes less likely to be driven by African-specific concerns. This makes the overall pathway to strikes less probable, as it relies more heavily on the existence of a 'specific_security_threat_to_us_interests' and less on a broader foreign policy imperative to engage with or act in Africa due to regional instability. The initial probability was already low, reflecting a weak causal chain, and this update further diminishes the likelihood by weakening a key upstream node's influence.\"\n}",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "target_type": "edge",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While internal instability in Nigeria might seem to breed security threats, recent intelligence suggests that the primary groups operating in volatile regions are focused on internal political grievances and are not actively seeking to project power or develop capabilities that would directly threaten US interests. Furthermore, Nigerian internal stability efforts, though challenged, have successfully contained the spillover of these groups into areas that could pose an international threat.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.02,
+      "absolute_shift": 0.030000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly weakens the causal link between 'nigeria_internal_stability' and 'specific_security_threat_to_us_interests'. The new information suggests that internal instability in Nigeria is not translating into threats directly targeting US interests. This reduces the likelihood of the 'specific_security_threat_to_us_interests' node being activated, which is a primary driver for the 'us_strikes_nigeria' outcome. While other paths exist (e.g., 'us_foreign_policy_priorities' directly influencing strikes), the weakening of this significant indirect path makes a strike less probable.",
+      "raw_response": "{\n  \"updated_probability\": 0.02,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly weakens the causal link between 'nigeria_internal_stability' and 'specific_security_threat_to_us_interests'. The new information suggests that internal instability in Nigeria is not translating into threats directly targeting US interests. This reduces the likelihood of the 'specific_security_threat_to_us_interests' node being activated, which is a primary driver for the 'us_strikes_nigeria' outcome. While other paths exist (e.g., 'us_foreign_policy_priorities' directly influencing strikes), the weakening of this significant indirect path makes a strike less probable.\"\n}",
+      "target_id": "nigeria_internal_stability->specific_security_threat_to_us_interests",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While Nigeria's internal stability can influence regional dynamics, it's also possible that external factors or the specific nature of the instability might prevent it from significantly increasing broader geopolitical tensions in Africa. For instance, if the instability is largely contained within Nigeria's borders or if other regional powers are actively working to maintain stability, the destabilizing effect on the wider region might be minimal.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.04,
+      "absolute_shift": 0.010000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the strength of the causal link between 'nigeria_internal_stability' and 'geopolitical_tensions_africa'. If internal Nigerian instability does not significantly increase broader geopolitical tensions in Africa, then the indirect path to 'us_strikes_nigeria' via 'geopolitical_tensions_africa -> us_foreign_policy_priorities' is weakened. This path suggests that regional instability could elevate Africa as a US foreign policy priority, potentially increasing the likelihood of strikes. By diminishing this indirect pathway, the overall probability of US strikes on Nigeria is slightly reduced. However, this is a secondary causal path, as 'specific_security_threat_to_us_interests' remains a more direct driver for strikes, and the challenge does not directly impact the links from Nigeria's internal stability to security threats or the direct links from US foreign policy priorities to strikes. Therefore, the update is minor.",
+      "raw_response": "{\n  \"updated_probability\": 0.04,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'nigeria_internal_stability' and 'geopolitical_tensions_africa'. If internal Nigerian instability does not significantly increase broader geopolitical tensions in Africa, then the indirect path to 'us_strikes_nigeria' via 'geopolitical_tensions_africa -> us_foreign_policy_priorities' is weakened. This path suggests that regional instability could elevate Africa as a US foreign policy priority, potentially increasing the likelihood of strikes. By diminishing this indirect pathway, the overall probability of US strikes on Nigeria is slightly reduced. However, this is a secondary causal path, as 'specific_security_threat_to_us_interests' remains a more direct driver for strikes, and the challenge does not directly impact the links from Nigeria's internal stability to security threats or the direct links from US foreign policy priorities to strikes. Therefore, the update is minor.\"\n}",
+      "target_id": "nigeria_internal_stability->geopolitical_tensions_africa",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in coordinated terrorist activities across the Sahel region, directly impacting neighboring countries and raising concerns about wider destabilization. This escalating regional instability has prompted an urgent review of US foreign policy, with officials now prioritizing a more robust engagement in Africa to counter these growing threats. This development strongly reinforces the idea that heightened geopolitical tensions in Africa are a key driver for elevating the continent's importance in US foreign policy.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.09999999999999999,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal link between 'geopolitical_tensions_africa' and 'us_foreign_policy_priorities'. The report explicitly states that escalating regional instability has prompted an urgent review and prioritization of Africa by US foreign policy. This reinforces the pathway where increased geopolitical tensions in Africa elevate its importance in US foreign policy, which in turn can influence the likelihood of 'us_strikes_nigeria'. While this doesn't directly change the probability of the outcome, it strengthens a key upstream factor that could indirectly lead to a higher probability by making US intervention in the region more conceivable. The initial probability was low (0.05), and this update increases it to 0.15, reflecting a more pronounced focus on Africa within US foreign policy due to regional instability, making any form of US action, including strikes, slightly more plausible, though still unlikely.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal link between 'geopolitical_tensions_africa' and 'us_foreign_policy_priorities'. The report explicitly states that escalating regional instability has prompted an urgent review and prioritization of Africa by US foreign policy. This reinforces the pathway where increased geopolitical tensions in Africa elevate its importance in US foreign policy, which in turn can influence the likelihood of 'us_strikes_nigeria'. While this doesn't directly change the probability of the outcome, it strengthens a key upstream factor that could indirectly lead to a higher probability by making US intervention in the region more conceivable. The initial probability was low (0.05), and this update increases it to 0.15, reflecting a more pronounced focus on Africa within US foreign policy due to regional instability, making any form of US action, including strikes, slightly more plausible, though still unlikely.\"\n}",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "target_type": "edge",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent intelligence reports indicate that the instability in Nigeria has led to the proliferation of several heavily armed extremist groups, some with explicit anti-US rhetoric and demonstrated capabilities for sophisticated attacks. These groups are not only destabilizing the region but are also actively seeking to disrupt international trade routes crucial to US economic interests, directly creating a specific security threat to the US.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.6,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal path from 'nigeria_internal_stability' to 'specific_security_threat_to_us_interests'. Previously, the link was conceptual; now, intelligence reports confirm that instability has led to the proliferation of extremist groups with anti-US rhetoric and capabilities. Crucially, these groups are actively threatening US economic interests through disruption of international trade routes. This directly elevates the likelihood of the 'specific_security_threat_to_us_interests' node becoming active. Since 'specific_security_threat_to_us_interests' is a primary driver of 'us_strikes_nigeria', this significantly increases the probability of the outcome. The reasoning also implies that 'geopolitical_tensions_africa' is also increased, which indirectly strengthens the overall likelihood by potentially making Africa a higher US foreign policy priority, though the direct link to 'specific_security_threat_to_us_interests' is the most impactful change.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal path from 'nigeria_internal_stability' to 'specific_security_threat_to_us_interests'. Previously, the link was conceptual; now, intelligence reports confirm that instability has led to the proliferation of extremist groups with anti-US rhetoric and capabilities. Crucially, these groups are actively threatening US economic interests through disruption of international trade routes. This directly elevates the likelihood of the 'specific_security_threat_to_us_interests' node becoming active. Since 'specific_security_threat_to_us_interests' is a primary driver of 'us_strikes_nigeria', this significantly increases the probability of the outcome. The reasoning also implies that 'geopolitical_tensions_africa' is also increased, which indirectly strengthens the overall likelihood by potentially making Africa a higher US foreign policy priority, though the direct link to 'specific_security_threat_to_us_interests' is the most impactful change.\"\n}",
+      "target_id": "nigeria_internal_stability->specific_security_threat_to_us_interests",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that the internal instability in Nigeria is not just contained within its borders, but is actively fueling cross-border insurgencies and refugee crises in neighboring countries like Niger and Cameroon. This spillover effect is creating significant regional security challenges and drawing in international actors, suggesting that the destabilizing influence of Nigeria's internal situation on the broader African geopolitical landscape is more pronounced and immediate than initially considered.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.09999999999999999,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'nigeria_internal_stability -> geopolitical_tensions_africa' link strengthens the causal pathway. The new information suggests that Nigeria's internal instability has a more direct and potent spillover effect on regional geopolitical tensions than previously modeled. This heightened regional instability, in turn, can elevate Africa as a foreign policy priority for the US ('geopolitical_tensions_africa -> us_foreign_policy_priorities'). An increased focus on Africa as a foreign policy priority could lead to a greater likelihood of US intervention, including potential strikes, if perceived threats to US interests emerge or if the US adopts a more interventionist stance in the region. Therefore, the path from internal Nigerian instability to the outcome of US strikes is indirectly reinforced and made more plausible.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'nigeria_internal_stability -> geopolitical_tensions_africa' link strengthens the causal pathway. The new information suggests that Nigeria's internal instability has a more direct and potent spillover effect on regional geopolitical tensions than previously modeled. This heightened regional instability, in turn, can elevate Africa as a foreign policy priority for the US ('geopolitical_tensions_africa -> us_foreign_policy_priorities'). An increased focus on Africa as a foreign policy priority could lead to a greater likelihood of US intervention, including potential strikes, if perceived threats to US interests emerge or if the US adopts a more interventionist stance in the region. Therefore, the path from internal Nigerian instability to the outcome of US strikes is indirectly reinforced and made more plausible.\"\n}",
+      "target_id": "nigeria_internal_stability->geopolitical_tensions_africa",
+      "target_type": "edge",
+      "target_importance": 0.1,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "While it's plausible that increased geopolitical tensions in Africa could make it a higher US foreign policy priority, consider the reverse: US foreign policy priorities might be the primary driver of how Africa is perceived and thus how tensions there are addressed. For instance, if a US administration decides to 'pivot' to Africa as a key foreign policy priority, this focus could lead to increased US engagement and scrutiny, which in turn might highlight or even exacerbate existing geopolitical tensions, making them more prominent on the US agenda.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.04,
+      "absolute_shift": 0.010000000000000002,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the directionality of the causal link between 'geopolitical_tensions_africa' and 'us_foreign_policy_priorities'. The original model assumed that regional instability would elevate Africa's importance in US foreign policy. The challenger suggests the opposite: US foreign policy priorities could drive increased attention to Africa, thereby making existing tensions more visible or even amplified. While this reframing is valid, it doesn't fundamentally break the causal path to the outcome ('us_strikes_nigeria'). It primarily affects how 'us_foreign_policy_priorities' might be influenced, rather than directly impacting the links that lead to strikes. The core drivers for strikes remain 'specific_security_threat_to_us_interests' and 'us_diplomatic_engagement_nigeria', which are themselves influenced by 'nigeria_internal_stability' and 'us_foreign_policy_priorities'. The challenge suggests a more complex interplay where US policy might shape the perception of African tensions, but it doesn't negate the possibility of those tensions or internal Nigerian issues leading to a security threat or impacting diplomatic engagement. Therefore, the impact on the final probability is minimal, with a slight decrease due to the nuanced understanding that US policy might not be purely reactive to African tensions, but also proactive in shaping its own priorities and engagement.",
+      "raw_response": "{\n  \"updated_probability\": 0.04,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the directionality of the causal link between 'geopolitical_tensions_africa' and 'us_foreign_policy_priorities'. The original model assumed that regional instability would elevate Africa's importance in US foreign policy. The challenger suggests the opposite: US foreign policy priorities could drive increased attention to Africa, thereby making existing tensions more visible or even amplified. While this reframing is valid, it doesn't fundamentally break the causal path to the outcome ('us_strikes_nigeria'). It primarily affects how 'us_foreign_policy_priorities' might be influenced, rather than directly impacting the links that lead to strikes. The core drivers for strikes remain 'specific_security_threat_to_us_interests' and 'us_diplomatic_engagement_nigeria', which are themselves influenced by 'nigeria_internal_stability' and 'us_foreign_policy_priorities'. The challenge suggests a more complex interplay where US policy might shape the perception of African tensions, but it doesn't negate the possibility of those tensions or internal Nigerian issues leading to a security threat or impacting diplomatic engagement. Therefore, the impact on the final probability is minimal, with a slight decrease due to the nuanced understanding that US policy might not be purely reactive to African tensions, but also proactive in shaping its own priorities and engagement.\"\n}",
+      "target_id": "geopolitical_tensions_africa->us_foreign_policy_priorities",
+      "target_type": "edge",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "Recent intelligence suggests that the current level of US-Nigeria diplomatic engagement is significantly hindering the effective sharing of information and intelligence regarding emerging security threats. This lack of robust cooperation means that potential threats to US interests emanating from Nigeria might not be identified or understood as clearly as they otherwise would be, potentially allowing them to fester and grow into concrete dangers.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.15,
+      "absolute_shift": 0.09999999999999999,
+      "shift_direction": "increased",
+      "reasoning": "The challenge highlights a critical indirect effect on the causal path leading to 'us_strikes_nigeria'. Specifically, the new information suggests that 'us_diplomatic_engagement_nigeria' is not only a direct inhibitor of strikes (as per the original model) but also a facilitator of threat identification. The challenge states that *low* diplomatic engagement is hindering information sharing, which in turn means 'specific_security_threat_to_us_interests' might be underestimated. A stronger than previously assumed 'specific_security_threat_to_us_interests' would directly increase the probability of 'us_strikes_nigeria'. While the direct link from 'us_diplomatic_engagement_nigeria' to 'us_strikes_nigeria' would still suggest a decrease in strikes if engagement were high, the information provided suggests that current engagement is *low* and *ineffective*, thus weakening that inhibitory link and strengthening the indirect path through threat perception. This makes the overall probability of strikes increase.",
+      "raw_response": "{\n  \"updated_probability\": 0.15,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge highlights a critical indirect effect on the causal path leading to 'us_strikes_nigeria'. Specifically, the new information suggests that 'us_diplomatic_engagement_nigeria' is not only a direct inhibitor of strikes (as per the original model) but also a facilitator of threat identification. The challenge states that *low* diplomatic engagement is hindering information sharing, which in turn means 'specific_security_threat_to_us_interests' might be underestimated. A stronger than previously assumed 'specific_security_threat_to_us_interests' would directly increase the probability of 'us_strikes_nigeria'. While the direct link from 'us_diplomatic_engagement_nigeria' to 'us_strikes_nigeria' would still suggest a decrease in strikes if engagement were high, the information provided suggests that current engagement is *low* and *ineffective*, thus weakening that inhibitory link and strengthening the indirect path through threat perception. This makes the overall probability of strikes increase.\"\n}",
+      "target_id": "us_diplomatic_engagement_nigeria->specific_security_threat_to_us_interests",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a major, previously unknown oil discovery is announced in Nigeria in early November. This discovery leads to a significant increase in the value of Nigeria's natural resources and attracts considerable international attention, potentially including from actors with interests contrary to the US. How does this development, and the ensuing international scramble for influence over these resources, affect the probability of US strikes on Nigeria by year-end?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.2,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information about a major oil discovery in Nigeria significantly alters the causal landscape. Primarily, it impacts the 'specific_security_threat_to_us_interests' node. The increased international attention and potential for rival actors to gain influence could be perceived by the US as a nascent security threat, even if not directly military in nature. This indirect threat could elevate the importance of Nigeria in 'us_foreign_policy_priorities'. Furthermore, the scramble for influence might also increase 'geopolitical_tensions_africa', which in turn could elevate Africa as a foreign policy priority for the US. An elevated foreign policy priority, coupled with a perceived indirect security threat, strengthens the causal path 'us_foreign_policy_priorities -> us_strikes_nigeria' and potentially 'specific_security_threat_to_us_interests -> us_strikes_nigeria'. While strong diplomatic engagement is still a mitigating factor, the increased strategic importance and potential for proxy competition introduced by the oil discovery make military strikes a more plausible, albeit still not highly probable, outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.20,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information about a major oil discovery in Nigeria significantly alters the causal landscape. Primarily, it impacts the 'specific_security_threat_to_us_interests' node. The increased international attention and potential for rival actors to gain influence could be perceived by the US as a nascent security threat, even if not directly military in nature. This indirect threat could elevate the importance of Nigeria in 'us_foreign_policy_priorities'. Furthermore, the scramble for influence might also increase 'geopolitical_tensions_africa', which in turn could elevate Africa as a foreign policy priority for the US. An elevated foreign policy priority, coupled with a perceived indirect security threat, strengthens the causal path 'us_foreign_policy_priorities -> us_strikes_nigeria' and potentially 'specific_security_threat_to_us_interests -> us_strikes_nigeria'. While strong diplomatic engagement is still a mitigating factor, the increased strategic importance and potential for proxy competition introduced by the oil discovery make military strikes a more plausible, albeit still not highly probable, outcome.\"\n}",
+      "target_id": "missing_node_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that a significant discovery of rare earth minerals, vital for US technological advancement, is confirmed within Nigeria. How would this new information, and the potential for resource competition or securing access, influence your assessment of the likelihood of US strikes in Nigeria by December 31st?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.3,
+      "shift_direction": "increased",
+      "reasoning": "The discovery of rare earth minerals significantly alters the causal landscape. The primary new pathway is through 'us_foreign_policy_priorities'. Securing access to vital resources like rare earth minerals can become a high priority for the US, potentially overriding other considerations. This increased priority could directly influence the 'us_foreign_policy_priorities' node. From there, it can influence 'specific_security_threat_to_us_interests' if the US perceives instability or potential interference from other actors as a threat to its access. More directly, a heightened focus on resource acquisition could increase the 'us_foreign_policy_priorities' influence on 'us_strikes_nigeria', potentially leading to a more interventionist stance to secure or guarantee access, even if a direct security threat from Nigeria itself is not immediately apparent. The existing path 'us_foreign_policy_priorities -> us_strikes_nigeria' becomes a more potent driver for an increased probability. Additionally, the discovery could indirectly increase 'geopolitical_tensions_africa' as other nations vie for access or influence, which in turn could further elevate Africa as a US foreign policy priority. While 'us_diplomatic_engagement_nigeria' might also increase to negotiate access, the potential for resource competition and the strategic importance of these minerals makes military action a more plausible, albeit still not primary, consideration under certain scenarios of access denial or strategic threat.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The discovery of rare earth minerals significantly alters the causal landscape. The primary new pathway is through 'us_foreign_policy_priorities'. Securing access to vital resources like rare earth minerals can become a high priority for the US, potentially overriding other considerations. This increased priority could directly influence the 'us_foreign_policy_priorities' node. From there, it can influence 'specific_security_threat_to_us_interests' if the US perceives instability or potential interference from other actors as a threat to its access. More directly, a heightened focus on resource acquisition could increase the 'us_foreign_policy_priorities' influence on 'us_strikes_nigeria', potentially leading to a more interventionist stance to secure or guarantee access, even if a direct security threat from Nigeria itself is not immediately apparent. The existing path 'us_foreign_policy_priorities -> us_strikes_nigeria' becomes a more potent driver for an increased probability. Additionally, the discovery could indirectly increase 'geopolitical_tensions_africa' as other nations vie for access or influence, which in turn could further elevate Africa as a US foreign policy priority. While 'us_diplomatic_engagement_nigeria' might also increase to negotiate access, the potential for resource competition and the strategic importance of these minerals makes military action a more plausible, albeit still not primary, consideration under certain scenarios of access denial or strategic threat.\"\n}",
+      "target_id": "resource_competition_or_access",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Reports indicate that Nigeria has recently secured significant new international loans for infrastructure development, particularly in its energy sector. These loans are from a consortium of Asian banks and are aimed at modernizing oil and gas facilities.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.03,
+      "absolute_shift": 0.020000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about international loans for Nigeria's energy sector primarily impacts the 'nigeria_internal_stability' node. Increased investment and development in a key sector like energy can be interpreted as a sign of improving economic prospects and potentially greater governmental capacity to manage internal affairs. This reduces the likelihood of 'nigeria_internal_stability' deteriorating, which in turn weakens the causal path leading to 'specific_security_threat_to_us_interests'. A less likely security threat makes US strikes less probable. While the loans are not directly tied to US policy or diplomatic engagement, the indirect effect through internal stability is the primary mechanism affected. The overall impact is a decrease in the probability of US strikes.",
+      "raw_response": "{\n  \"updated_probability\": 0.03,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about international loans for Nigeria's energy sector primarily impacts the 'nigeria_internal_stability' node. Increased investment and development in a key sector like energy can be interpreted as a sign of improving economic prospects and potentially greater governmental capacity to manage internal affairs. This reduces the likelihood of 'nigeria_internal_stability' deteriorating, which in turn weakens the causal path leading to 'specific_security_threat_to_us_interests'. A less likely security threat makes US strikes less probable. While the loans are not directly tied to US policy or diplomatic engagement, the indirect effect through internal stability is the primary mechanism affected. The overall impact is a decrease in the probability of US strikes.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in the number of Nigerian citizens seeking to emigrate to the United States for economic opportunities. This trend has led to increased discussions within US think tanks about the long-term economic relationship between the two countries.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.08,
+      "absolute_shift": 0.03,
+      "shift_direction": "increased",
+      "reasoning": "The new information suggests an increased emphasis on Nigeria within US foreign policy discussions due to economic migration trends. This could indirectly influence 'us_foreign_policy_priorities'. While the information does not directly indicate a 'specific_security_threat_to_us_interests', a heightened focus on Nigeria's economic situation and its impact on US interests might lead to a more interventionist stance if perceived economic instability is linked to broader security concerns, however tenuous. The link 'us_foreign_policy_priorities -> us_strikes_nigeria' is thus slightly strengthened. However, the core drivers for US strikes (direct security threats, geopolitical instability) are not significantly altered by this information, hence the modest increase in probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.08,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information suggests an increased emphasis on Nigeria within US foreign policy discussions due to economic migration trends. This could indirectly influence 'us_foreign_policy_priorities'. While the information does not directly indicate a 'specific_security_threat_to_us_interests', a heightened focus on Nigeria's economic situation and its impact on US interests might lead to a more interventionist stance if perceived economic instability is linked to broader security concerns, however tenuous. The link 'us_foreign_policy_priorities -> us_strikes_nigeria' is thus slightly strengthened. However, the core drivers for US strikes (direct security threats, geopolitical instability) are not significantly altered by this information, hence the modest increase in probability.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "0x3b7e03065f6437f93e3aa6fc2cb4ac0af068d7c8b0ffb32e26296b078feaa507",
+    "question_text": "US strikes Nigeria by December 31?",
+    "source": "polymarket",
+    "condition": "one-turn",
+    "initial_probability": 0.05,
+    "n_probes": 20,
+    "n_successful": 20,
+    "mean_absolute_shift": 0.1285,
+    "max_absolute_shift": 0.6
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0.0325,
+  "aggregate_metrics": {
+    "ssr": 2.818965517241379,
+    "mean_shift_high": 0.13625,
+    "mean_shift_low": 0.04833333333333334,
+    "asymmetry_index": 0.1329479768786127,
+    "mean_shift_negate": 0.032857142857142856,
+    "mean_shift_strengthen": 0.24714285714285714,
+    "fnar": 1,
+    "n_accepted": 2,
+    "n_spurious": 2,
+    "critical_path_premium": 0.09161616161616164,
+    "mean_shift_on_path": 0.1788888888888889,
+    "mean_shift_off_path": 0.08727272727272727,
+    "importance_sensitivity_correlation": -0.14010989010989006,
+    "control_sensitivity": 0
+  }
+}

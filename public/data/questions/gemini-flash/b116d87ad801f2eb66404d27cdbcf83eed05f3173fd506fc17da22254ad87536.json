@@ -1,0 +1,1242 @@
+{
+  "question_id": "b116d87ad801f2eb66404d27cdbcf83eed05f3173fd506fc17da22254ad87536",
+  "question_text": "Will there be more 'Battles' in Nauru for the 30 days before 2025-12-28 compared to the 30-day average of 'Battles' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Battles'\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of 'Battles' over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more 'Battles' would need to occur in the 30 days leading up to the resolution.",
+  "source": "acled",
+  "initial_probability": 0.55,
+  "nodes": [
+    {
+      "id": "nauru_political_stability",
+      "description": "The level of political stability and potential for conflict within Nauru",
+      "role": "factor"
+    },
+    {
+      "id": "regional_geopolitical_tensions",
+      "description": "The overall geopolitical climate and tensions in the surrounding Pacific region",
+      "role": "factor"
+    },
+    {
+      "id": "international_aid_and_intervention",
+      "description": "The extent of international involvement, aid, or potential intervention in Nauru",
+      "role": "factor"
+    },
+    {
+      "id": "historical_battle_trends",
+      "description": "The historical frequency and patterns of 'Battles' in Nauru",
+      "role": "factor"
+    },
+    {
+      "id": "economic_conditions_nauru",
+      "description": "The general economic situation within Nauru, which can influence stability",
+      "role": "factor"
+    },
+    {
+      "id": "outcome",
+      "description": "Will there be more 'Battles' in Nauru for the 30 days before 2025-12-28 compared to the 30-day average of 'Battles' over the 360 days preceding 2025-12-21?",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "nauru_political_stability",
+      "to": "outcome",
+      "mechanism": "Decreased stability can lead to an increase in 'Battles'."
+    },
+    {
+      "from": "regional_geopolitical_tensions",
+      "to": "nauru_political_stability",
+      "mechanism": "Increased regional tensions can spill over and destabilize Nauru."
+    },
+    {
+      "from": "regional_geopolitical_tensions",
+      "to": "outcome",
+      "mechanism": "Wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru."
+    },
+    {
+      "from": "international_aid_and_intervention",
+      "to": "nauru_political_stability",
+      "mechanism": "Positive intervention can stabilize Nauru, while negative or absent intervention can lead to instability."
+    },
+    {
+      "from": "international_aid_and_intervention",
+      "to": "outcome",
+      "mechanism": "The nature and extent of intervention can directly influence the occurrence of 'Battles'."
+    },
+    {
+      "from": "historical_battle_trends",
+      "to": "outcome",
+      "mechanism": "Past patterns are a strong indicator of future occurrences."
+    },
+    {
+      "from": "economic_conditions_nauru",
+      "to": "nauru_political_stability",
+      "mechanism": "Poor economic conditions often lead to social unrest and political instability."
+    },
+    {
+      "from": "economic_conditions_nauru",
+      "to": "outcome",
+      "mechanism": "Economic hardship can be a driver for increased 'Battles'."
+    }
+  ],
+  "reasoning": "Nauru's history is complex, with periods of instability. The forecast considers ongoing political stability, regional geopolitical factors, and the potential for international involvement, all of which can influence internal conflict. Historical trends in 'Battles' are also a significant factor, as are underlying economic conditions that can exacerbate instability. Given the inherent unpredictability of geopolitical events and internal dynamics, the probability is set slightly above 50% to account for potential escalations, but not overwhelmingly so due to the small scale of Nauru and its specific context.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 8,
+    "density": 0.2667,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "outcome",
+    "node_metrics": [
+      {
+        "node_id": "nauru_political_stability",
+        "description": "The level of political stability and potential for conflict within Nauru",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.6,
+        "pagerank": 0.2007,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "regional_geopolitical_tensions",
+        "description": "The overall geopolitical climate and tensions in the surrounding Pacific region",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0882,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "international_aid_and_intervention",
+        "description": "The extent of international involvement, aid, or potential intervention in Nauru",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0882,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "historical_battle_trends",
+        "description": "The historical frequency and patterns of 'Battles' in Nauru",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0882,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "economic_conditions_nauru",
+        "description": "The general economic situation within Nauru, which can influence stability",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0882,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "outcome",
+        "description": "Will there be more 'Battles' in Nauru for the 30 days before 2025-12-28 compared to the 30-day average of 'Battles' over the 360 days preceding 2025-12-21?",
+        "role": "outcome",
+        "in_degree": 5,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 1,
+        "pagerank": 0.4463,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "nauru_political_stability",
+        "target": "outcome",
+        "mechanism": "Decreased stability can lead to an increase in 'Battles'.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "regional_geopolitical_tensions",
+        "target": "nauru_political_stability",
+        "mechanism": "Increased regional tensions can spill over and destabilize Nauru.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "regional_geopolitical_tensions",
+        "target": "outcome",
+        "mechanism": "Wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "international_aid_and_intervention",
+        "target": "nauru_political_stability",
+        "mechanism": "Positive intervention can stabilize Nauru, while negative or absent intervention can lead to instability.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "international_aid_and_intervention",
+        "target": "outcome",
+        "mechanism": "The nature and extent of intervention can directly influence the occurrence of 'Battles'.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "historical_battle_trends",
+        "target": "outcome",
+        "mechanism": "Past patterns are a strong indicator of future occurrences.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "economic_conditions_nauru",
+        "target": "nauru_political_stability",
+        "mechanism": "Poor economic conditions often lead to social unrest and political instability.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": false
+      },
+      {
+        "source": "economic_conditions_nauru",
+        "target": "outcome",
+        "mechanism": "Economic hardship can be a driver for increased 'Battles'.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "nauru_political_stability",
+        "description": "The level of political stability and potential for conflict within Nauru",
+        "importance": 0,
+        "centrality_rank": 1,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regional_geopolitical_tensions",
+        "description": "The overall geopolitical climate and tensions in the surrounding Pacific region",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "international_aid_and_intervention",
+        "description": "The extent of international involvement, aid, or potential intervention in Nauru",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "economic_conditions_nauru",
+        "description": "The general economic situation within Nauru, which can influence stability",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "nauru_political_stability",
+        "description": "The level of political stability and potential for conflict within Nauru",
+        "importance": 0,
+        "centrality_rank": 1,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "regional_geopolitical_tensions",
+        "description": "The overall geopolitical climate and tensions in the surrounding Pacific region",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "international_aid_and_intervention",
+        "description": "The extent of international involvement, aid, or potential intervention in Nauru",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "economic_conditions_nauru",
+        "description": "The general economic situation within Nauru, which can influence stability",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "nauru_political_stability->outcome",
+        "description": "Decreased stability can lead to an increase in 'Battles'.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_geopolitical_tensions->outcome",
+        "description": "Wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru.",
+        "importance": 0.0333,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_geopolitical_tensions->nauru_political_stability",
+        "description": "Increased regional tensions can spill over and destabilize Nauru.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "nauru_political_stability->outcome",
+        "description": "Decreased stability can lead to an increase in 'Battles'.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_geopolitical_tensions->outcome",
+        "description": "Wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru.",
+        "importance": 0.0333,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "regional_geopolitical_tensions->nauru_political_stability",
+        "description": "Increased regional tensions can spill over and destabilize Nauru.",
+        "importance": 0.0333,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "nauru_political_stability->outcome",
+        "description": "Decreased stability can lead to an increase in 'Battles'.",
+        "importance": 0.0333,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "historical_battle_trends->international_aid_and_intervention",
+        "description": "Potential link: The historical frequency and patterns of 'Battles' in Nauru -> The extent of international involvement, aid, or potential intervention in Nauru",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "historical_battle_trends->economic_conditions_nauru",
+        "description": "Potential link: The historical frequency and patterns of 'Battles' in Nauru -> The general economic situation within Nauru, which can influence stability",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "nauru_political_stability",
+      "description": "The level of political stability and potential for conflict within Nauru",
+      "importance": 0,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regional_geopolitical_tensions",
+      "description": "The overall geopolitical climate and tensions in the surrounding Pacific region",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "international_aid_and_intervention",
+      "description": "The extent of international involvement, aid, or potential intervention in Nauru",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "economic_conditions_nauru",
+      "description": "The general economic situation within Nauru, which can influence stability",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "nauru_political_stability",
+      "description": "The level of political stability and potential for conflict within Nauru",
+      "importance": 0,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "regional_geopolitical_tensions",
+      "description": "The overall geopolitical climate and tensions in the surrounding Pacific region",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "international_aid_and_intervention",
+      "description": "The extent of international involvement, aid, or potential intervention in Nauru",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "economic_conditions_nauru",
+      "description": "The general economic situation within Nauru, which can influence stability",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "nauru_political_stability->outcome",
+      "description": "Decreased stability can lead to an increase in 'Battles'.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_geopolitical_tensions->outcome",
+      "description": "Wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru.",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_geopolitical_tensions->nauru_political_stability",
+      "description": "Increased regional tensions can spill over and destabilize Nauru.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "nauru_political_stability->outcome",
+      "description": "Decreased stability can lead to an increase in 'Battles'.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_geopolitical_tensions->outcome",
+      "description": "Wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru.",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "regional_geopolitical_tensions->nauru_political_stability",
+      "description": "Increased regional tensions can spill over and destabilize Nauru.",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "nauru_political_stability->outcome",
+      "description": "Decreased stability can lead to an increase in 'Battles'.",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "historical_battle_trends->international_aid_and_intervention",
+      "description": "Potential link: The historical frequency and patterns of 'Battles' in Nauru -> The extent of international involvement, aid, or potential intervention in Nauru",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "historical_battle_trends->economic_conditions_nauru",
+      "description": "Potential link: The historical frequency and patterns of 'Battles' in Nauru -> The general economic situation within Nauru, which can influence stability",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Imagine that Nauru has established a highly effective, independent, and universally respected internal dispute resolution mechanism. This mechanism is so robust that it can effectively neutralize any potential for conflict arising from political instability, rendering the general level of political stability in Nauru completely irrelevant to the occurrence of 'Battles'. In this scenario, even if Nauru were to experience significant political turmoil, these internal mechanisms would prevent any escalation into 'Battles'.",
+      "probe_type": "node_negate_high",
+      "target_id": "nauru_political_stability",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "description": "The level of political stability and potential for conflict within Nauru"
+    },
+    {
+      "probe_text": "What if the geopolitical climate in the Pacific region is currently exceptionally stable and has been for a prolonged period, with no foreseeable changes? Imagine a scenario where all surrounding nations are experiencing unprecedented peace and cooperation, rendering any regional tensions completely irrelevant to Nauru's internal affairs and the likelihood of 'Battles'.",
+      "probe_type": "node_negate_high",
+      "target_id": "regional_geopolitical_tensions",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The overall geopolitical climate and tensions in the surrounding Pacific region"
+    },
+    {
+      "probe_text": "Recent reports indicate that Nauru has explicitly requested a cessation of all external aid and intervention to assert its sovereignty and manage its internal affairs independently. This policy shift, driven by a desire for self-determination, suggests that 'international_aid_and_intervention' might not only be irrelevant but could even be counterproductive to stability, as any attempt at intervention would now be resisted rather than welcomed.",
+      "probe_type": "node_negate_medium",
+      "target_id": "international_aid_and_intervention",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The extent of international involvement, aid, or potential intervention in Nauru"
+    },
+    {
+      "probe_text": "Recent reports from Nauru suggest that the local economy has been remarkably insulated from broader regional economic downturns, with significant new international investment in a specific sector. This suggests that the general economic conditions in Nauru might not be a significant driver of political stability or directly influence the occurrence of 'Battles' as previously assumed. Could the forecaster's reliance on 'economic_conditions_nauru' as a causal factor be misplaced given this new information?",
+      "probe_type": "node_negate_low",
+      "target_id": "economic_conditions_nauru",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The general economic situation within Nauru, which can influence stability"
+    },
+    {
+      "probe_text": "Recent intelligence reports indicate a significant increase in the mobilization of paramilitary groups within Nauru, directly linked to internal political factions vying for control. An independent analysis by the Pacific Security Institute highlights that the current trajectory of Nauru's internal political landscape is the most volatile it has been in a decade, directly correlating with historical periods preceding heightened conflict.",
+      "probe_type": "node_strengthen",
+      "target_id": "nauru_political_stability",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 1,
+      "on_critical_path": false,
+      "description": "The level of political stability and potential for conflict within Nauru"
+    },
+    {
+      "probe_text": "Recent intelligence reports indicate a significant escalation in naval posturing and rhetoric between major global powers within the Pacific region, directly impacting Nauru's neighboring island nations. This heightened geopolitical friction has led to increased military resource allocation and surveillance in the immediate vicinity, raising concerns about potential spillover effects and disruption to established trade routes, which historically correlate with increased internal conflict.",
+      "probe_type": "node_strengthen",
+      "target_id": "regional_geopolitical_tensions",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The overall geopolitical climate and tensions in the surrounding Pacific region"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in diplomatic missions and funding pledges from major international bodies directed towards Nauru. These initiatives are specifically aimed at bolstering Nauru's governance structures and economic development, suggesting a heightened level of international commitment to ensuring stability in the region.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "international_aid_and_intervention",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "The extent of international involvement, aid, or potential intervention in Nauru"
+    },
+    {
+      "probe_text": "Recent reports indicate that Nauru's primary revenue source, phosphate mining, has experienced a significant downturn due to depleted reserves and reduced global demand. This has led to widespread unemployment and a sharp increase in the cost of essential goods, exacerbating existing economic hardships.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "economic_conditions_nauru",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The general economic situation within Nauru, which can influence stability"
+    },
+    {
+      "probe_text": "While decreased political stability in Nauru might intuitively suggest more 'Battles', it's possible that the specific nature of Nauru's political landscape means that instability often manifests through diplomatic disputes or internal policy disagreements rather than outright physical conflict. Furthermore, external actors, such as international aid organizations, may actively suppress or mediate any potential escalations before they reach the level of 'Battles', thus weakening the direct link between internal stability and the outcome.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "nauru_political_stability->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Decreased stability can lead to an increase in 'Battles'."
+    },
+    {
+      "probe_text": "While regional geopolitical tensions might influence Nauru's political stability, it's plausible that direct spillover effects leading to increased 'Battles' within Nauru are minimal. Nauru's unique geopolitical position and its relatively small scale might mean that broader regional conflicts do not directly translate into localized internal conflicts. Instead, any impact from regional tensions is likely fully mediated through changes in nauru_political_stability or international_aid_and_intervention.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "regional_geopolitical_tensions->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru."
+    },
+    {
+      "probe_text": "While regional geopolitical tensions can sometimes spill over, Nauru's specific internal political dynamics and its relative isolation might make it less susceptible to direct destabilization from broader Pacific region conflicts. Nauru's government has historically maintained a strong focus on internal affairs and may have robust mechanisms to insulate itself from external geopolitical shifts, suggesting this link might be weaker than assumed.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "regional_geopolitical_tensions->nauru_political_stability",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Increased regional tensions can spill over and destabilize Nauru."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in internal security incidents and localized skirmishes within Nauru, directly stemming from heightened political factionalism. This suggests that even minor shifts in political stability, without necessarily escalating to a full-blown crisis, can trigger an uptick in 'Battles' as different groups vie for influence or resources amidst the instability. This demonstrates a more sensitive and direct relationship between political stability and the occurrence of 'Battles' than perhaps initially modeled.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "nauru_political_stability->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Decreased stability can lead to an increase in 'Battles'."
+    },
+    {
+      "probe_text": "Recent reports indicate a significant escalation in maritime disputes in the South China Sea, involving major powers in the region. This heightened geopolitical tension, while geographically distant from Nauru, has led to increased military posturing and a general sense of instability across Pacific trade routes. This could indirectly fuel a demand for private security or mercenaries, thereby increasing the likelihood of 'Battles' in Nauru as resources and attention are diverted.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "regional_geopolitical_tensions->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru."
+    },
+    {
+      "probe_text": "Recent intelligence suggests that a major Pacific power is significantly increasing its naval presence and conducting more frequent, aggressive military exercises in close proximity to Nauru. This heightened regional activity, while not directly targeting Nauru, has historically created a climate of unease and heightened security alertness among Nauruan officials, leading to increased internal security measures and a perception of instability that can easily escalate, even without direct external provocation.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "regional_geopolitical_tensions->nauru_political_stability",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Increased regional tensions can spill over and destabilize Nauru."
+    },
+    {
+      "probe_text": "Imagine that an increase in 'Battles' in Nauru, rather than being a symptom of political instability, actually *causes* political instability. For instance, a surge in localized conflicts might overwhelm local authorities, leading to a breakdown in governance and a perception of widespread political instability, even if the underlying causes were initially localized skirmishes rather than broad political discontent.",
+      "probe_type": "edge_reverse",
+      "target_id": "nauru_political_stability->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0333,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Decreased stability can lead to an increase in 'Battles'."
+    },
+    {
+      "probe_text": "We are told that the historical frequency of 'Battles' in Nauru does not directly influence international aid and intervention. However, consider that a persistent history of conflict and 'Battles' in Nauru might prompt international bodies to proactively increase aid or intervention efforts to prevent further escalation or humanitarian crises. Wouldn't a sustained pattern of past 'Battles' likely be a significant factor in decisions regarding future international involvement?",
+      "probe_type": "edge_missing",
+      "target_id": "historical_battle_trends->international_aid_and_intervention",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The historical frequency and patterns of 'Battles' in Nauru -> The extent of international involvement, aid, or potential intervention in Nauru"
+    },
+    {
+      "probe_text": "While historical battle trends are considered, it's also important to consider how past conflicts might have directly impacted Nauru's economy. For instance, prolonged periods of internal conflict or 'Battles' could have disrupted trade, damaged infrastructure, and depleted national resources, thereby negatively affecting the current economic conditions. Therefore, a direct causal link from historical battle trends to economic conditions might be a crucial omission.",
+      "probe_type": "edge_missing",
+      "target_id": "historical_battle_trends->economic_conditions_nauru",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The historical frequency and patterns of 'Battles' in Nauru -> The general economic situation within Nauru, which can influence stability"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in diplomatic efforts by neighboring Pacific island nations to mediate internal Nauruan disputes and prevent escalation. How might this increased regional diplomatic mediation, separate from direct intervention or broader geopolitical tensions, influence the likelihood of 'Battles' in Nauru?",
+      "probe_type": "missing_node",
+      "target_id": "regional_diplomatic_mediation",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "We have learned that a significant number of Nauru's youth have recently been involved in international mercenary activities. This could potentially draw them away from domestic conflicts, or conversely, provide them with skills and resources that might fuel internal 'Battles'. How might this new information about youth involvement in international mercenary activities affect your assessment of the likelihood of more 'Battles' in Nauru?",
+      "probe_type": "missing_node",
+      "target_id": "youth_mercenary_involvement",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "The upcoming Nauruan general election, scheduled for early 2026, is drawing significant international media attention. Several global news outlets have set up temporary bureaus in the capital to cover the election process and its potential aftermath.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Recent reports indicate a significant increase in tourism to Nauru, with a particular surge in visitors interested in birdwatching and eco-tourism activities. The government has also announced plans to upgrade the local airport to accommodate larger aircraft, aiming to boost international connectivity.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that Nauru has established a highly effective, independent, and universally respected internal dispute resolution mechanism. This mechanism is so robust that it can effectively neutralize any potential for conflict arising from political instability, rendering the general level of political stability in Nauru completely irrelevant to the occurrence of 'Battles'. In this scenario, even if Nauru were to experience significant political turmoil, these internal mechanisms would prevent any escalation into 'Battles'.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.25000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'nauru_political_stability' significantly weakens a key causal path to the outcome. The introduction of a highly effective internal dispute resolution mechanism directly negates the link between 'nauru_political_stability' and the 'outcome'. This means that even if political instability were to occur, it would no longer be a driver for 'Battles'. While other causal paths remain (regional tensions, international aid, historical trends, economic conditions), the direct link from political stability is now broken, reducing the likelihood of the outcome. The initial probability was 0.55, and this substantial weakening of a direct causal link warrants a significant decrease in the probability. The remaining paths are still relevant, hence the probability is not closer to zero.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'nauru_political_stability' significantly weakens a key causal path to the outcome. The introduction of a highly effective internal dispute resolution mechanism directly negates the link between 'nauru_political_stability' and the 'outcome'. This means that even if political instability were to occur, it would no longer be a driver for 'Battles'. While other causal paths remain (regional tensions, international aid, historical trends, economic conditions), the direct link from political stability is now broken, reducing the likelihood of the outcome. The initial probability was 0.55, and this substantial weakening of a direct causal link warrants a significant decrease in the probability. The remaining paths are still relevant, hence the probability is not closer to zero.\"\n}",
+      "target_id": "nauru_political_stability",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the geopolitical climate in the Pacific region is currently exceptionally stable and has been for a prolonged period, with no foreseeable changes? Imagine a scenario where all surrounding nations are experiencing unprecedented peace and cooperation, rendering any regional tensions completely irrelevant to Nauru's internal affairs and the likelihood of 'Battles'.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge posits an exceptionally stable geopolitical climate in the Pacific, directly impacting the 'regional_geopolitical_tensions' node. This node has two causal paths to the outcome: 1) indirectly through 'nauru_political_stability', and 2) directly influencing the 'outcome' node. If regional tensions are non-existent, their potential to destabilize Nauru ('nauru_political_stability') is removed, and their direct influence on 'outcome' is also negated. This reduces the likelihood of 'Battles' arising from external regional pressures. While other causal factors like 'nauru_political_stability', 'international_aid_and_intervention', 'historical_battle_trends', and 'economic_conditions_nauru' remain, the removal of regional geopolitical tensions as a contributing factor warrants a decrease in the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge posits an exceptionally stable geopolitical climate in the Pacific, directly impacting the 'regional_geopolitical_tensions' node. This node has two causal paths to the outcome: 1) indirectly through 'nauru_political_stability', and 2) directly influencing the 'outcome' node. If regional tensions are non-existent, their potential to destabilize Nauru ('nauru_political_stability') is removed, and their direct influence on 'outcome' is also negated. This reduces the likelihood of 'Battles' arising from external regional pressures. While other causal factors like 'nauru_political_stability', 'international_aid_and_intervention', 'historical_battle_trends', and 'economic_conditions_nauru' remain, the removal of regional geopolitical tensions as a contributing factor warrants a decrease in the probability estimate.\"\n}",
+      "target_id": "regional_geopolitical_tensions",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that Nauru has explicitly requested a cessation of all external aid and intervention to assert its sovereignty and manage its internal affairs independently. This policy shift, driven by a desire for self-determination, suggests that 'international_aid_and_intervention' might not only be irrelevant but could even be counterproductive to stability, as any attempt at intervention would now be resisted rather than welcomed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.48,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'international_aid_and_intervention' significantly alters its role in the causal network. Previously, we considered both positive (stabilizing) and negative (destabilizing) impacts of aid. The new information suggests that any form of external aid or intervention is now unwelcome and actively resisted, potentially leading to instability if attempted. This removes the possibility of positive intervention acting as a stabilizing force. While the direct causal link from 'international_aid_and_intervention' to 'outcome' is weakened in terms of positive influence, the link to 'nauru_political_stability' is now more clearly negative if intervention were to occur against Nauru's wishes. However, the primary impact is the reduction of a potential stabilizing factor. This weakens one of the indirect paths to the outcome that could have led to greater stability and thus fewer 'Battles'. The overall impact is a slight decrease in the probability of more 'Battles'.",
+      "raw_response": "{\n  \"updated_probability\": 0.48,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'international_aid_and_intervention' significantly alters its role in the causal network. Previously, we considered both positive (stabilizing) and negative (destabilizing) impacts of aid. The new information suggests that any form of external aid or intervention is now unwelcome and actively resisted, potentially leading to instability if attempted. This removes the possibility of positive intervention acting as a stabilizing force. While the direct causal link from 'international_aid_and_intervention' to 'outcome' is weakened in terms of positive influence, the link to 'nauru_political_stability' is now more clearly negative if intervention were to occur against Nauru's wishes. However, the primary impact is the reduction of a potential stabilizing factor. This weakens one of the indirect paths to the outcome that could have led to greater stability and thus fewer 'Battles'. The overall impact is a slight decrease in the probability of more 'Battles'.\"\n}",
+      "target_id": "international_aid_and_intervention",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from Nauru suggest that the local economy has been remarkably insulated from broader regional economic downturns, with significant new international investment in a specific sector. This suggests that the general economic conditions in Nauru might not be a significant driver of political stability or directly influence the occurrence of 'Battles' as previously assumed. Could the forecaster's reliance on 'economic_conditions_nauru' as a causal factor be misplaced given this new information?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the significance of 'economic_conditions_nauru' as a driver for 'nauru_political_stability' and 'outcome'. The new information suggests that Nauru's economy is insulated and benefiting from specific international investment, contradicting the assumption that general economic conditions would lead to instability or 'Battles'. This weakens two causal paths: 'economic_conditions_nauru -> nauru_political_stability' and 'economic_conditions_nauru -> outcome'. While these paths are now considered less influential, the network still contains several other causal links (e.g., 'nauru_political_stability -> outcome', 'regional_geopolitical_tensions -> nauru_political_stability', 'historical_battle_trends -> outcome') that could still drive the outcome. Therefore, the probability is decreased, but not drastically, as the challenged factor is not the sole determinant.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the significance of 'economic_conditions_nauru' as a driver for 'nauru_political_stability' and 'outcome'. The new information suggests that Nauru's economy is insulated and benefiting from specific international investment, contradicting the assumption that general economic conditions would lead to instability or 'Battles'. This weakens two causal paths: 'economic_conditions_nauru -> nauru_political_stability' and 'economic_conditions_nauru -> outcome'. While these paths are now considered less influential, the network still contains several other causal links (e.g., 'nauru_political_stability -> outcome', 'regional_geopolitical_tensions -> nauru_political_stability', 'historical_battle_trends -> outcome') that could still drive the outcome. Therefore, the probability is decreased, but not drastically, as the challenged factor is not the sole determinant.\"\n}",
+      "target_id": "economic_conditions_nauru",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent intelligence reports indicate a significant increase in the mobilization of paramilitary groups within Nauru, directly linked to internal political factions vying for control. An independent analysis by the Pacific Security Institute highlights that the current trajectory of Nauru's internal political landscape is the most volatile it has been in a decade, directly correlating with historical periods preceding heightened conflict.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.29999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly strengthens the causal path from 'nauru_political_stability' to the 'outcome'. The intelligence reports and independent analysis indicate a significant increase in volatility and a direct correlation with historical periods preceding heightened conflict. This suggests that 'nauru_political_stability' is becoming a much stronger predictor of increased 'Battles'. The edge 'nauru_political_stability -> outcome' is therefore more heavily weighted. Additionally, this heightened internal instability might also be indirectly influenced by 'regional_geopolitical_tensions' and potentially exacerbated by 'economic_conditions_nauru', further reinforcing the likelihood of increased 'Battles'. The historical context provided by the Pacific Security Institute analysis also lends more weight to the 'historical_battle_trends' node, suggesting that current conditions are mirroring past precursors to conflict. Overall, the evidence strongly points towards an increased probability of more 'Battles'.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly strengthens the causal path from 'nauru_political_stability' to the 'outcome'. The intelligence reports and independent analysis indicate a significant increase in volatility and a direct correlation with historical periods preceding heightened conflict. This suggests that 'nauru_political_stability' is becoming a much stronger predictor of increased 'Battles'. The edge 'nauru_political_stability -> outcome' is therefore more heavily weighted. Additionally, this heightened internal instability might also be indirectly influenced by 'regional_geopolitical_tensions' and potentially exacerbated by 'economic_conditions_nauru', further reinforcing the likelihood of increased 'Battles'. The historical context provided by the Pacific Security Institute analysis also lends more weight to the 'historical_battle_trends' node, suggesting that current conditions are mirroring past precursors to conflict. Overall, the evidence strongly points towards an increased probability of more 'Battles'.\"\n}",
+      "target_id": "nauru_political_stability",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent intelligence reports indicate a significant escalation in naval posturing and rhetoric between major global powers within the Pacific region, directly impacting Nauru's neighboring island nations. This heightened geopolitical friction has led to increased military resource allocation and surveillance in the immediate vicinity, raising concerns about potential spillover effects and disruption to established trade routes, which historically correlate with increased internal conflict.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly impacts the 'regional_geopolitical_tensions' node, which is a significant causal factor. The new information suggests a substantial increase in these tensions, with direct implications for Nauru's neighboring nations and increased military activity in the vicinity. This strengthens the causal path from 'regional_geopolitical_tensions' to 'nauru_political_stability' (as increased regional friction can spill over and destabilize Nauru) and also to 'outcome' directly (as wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru). Furthermore, the mention of disruption to trade routes potentially links to 'economic_conditions_nauru', which in turn affects stability and the 'outcome'. The historical correlation with increased internal conflict further supports an upward revision. Therefore, the probability of more 'Battles' has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly impacts the 'regional_geopolitical_tensions' node, which is a significant causal factor. The new information suggests a substantial increase in these tensions, with direct implications for Nauru's neighboring nations and increased military activity in the vicinity. This strengthens the causal path from 'regional_geopolitical_tensions' to 'nauru_political_stability' (as increased regional friction can spill over and destabilize Nauru) and also to 'outcome' directly (as wider regional conflicts can indirectly increase the likelihood of 'Battles' in Nauru). Furthermore, the mention of disruption to trade routes potentially links to 'economic_conditions_nauru', which in turn affects stability and the 'outcome'. The historical correlation with increased internal conflict further supports an upward revision. Therefore, the probability of more 'Battles' has increased.\"\n}",
+      "target_id": "regional_geopolitical_tensions",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in diplomatic missions and funding pledges from major international bodies directed towards Nauru. These initiatives are specifically aimed at bolstering Nauru's governance structures and economic development, suggesting a heightened level of international commitment to ensuring stability in the region.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The new information directly challenges the 'international_aid_and_intervention' node. The reports indicate a significant increase in diplomatic missions and funding pledges aimed at bolstering governance and economic development, which implies a strong commitment to stability. This strengthens the causal path from 'international_aid_and_intervention' to 'nauru_political_stability', suggesting that Nauru is likely to become more politically stable. A more stable Nauru reduces the likelihood of 'Battles'. Additionally, the direct link from 'international_aid_and_intervention' to the 'outcome' is also impacted, as increased positive intervention is likely to prevent or reduce 'Battles'. While 'historical_battle_trends' and 'economic_conditions_nauru' remain significant factors, the increased international focus on stability directly counteracts the potential for conflict. Therefore, the probability of more 'Battles' has decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information directly challenges the 'international_aid_and_intervention' node. The reports indicate a significant increase in diplomatic missions and funding pledges aimed at bolstering governance and economic development, which implies a strong commitment to stability. This strengthens the causal path from 'international_aid_and_intervention' to 'nauru_political_stability', suggesting that Nauru is likely to become more politically stable. A more stable Nauru reduces the likelihood of 'Battles'. Additionally, the direct link from 'international_aid_and_intervention' to the 'outcome' is also impacted, as increased positive intervention is likely to prevent or reduce 'Battles'. While 'historical_battle_trends' and 'economic_conditions_nauru' remain significant factors, the increased international focus on stability directly counteracts the potential for conflict. Therefore, the probability of more 'Battles' has decreased.\"\n}",
+      "target_id": "international_aid_and_intervention",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate that Nauru's primary revenue source, phosphate mining, has experienced a significant downturn due to depleted reserves and reduced global demand. This has led to widespread unemployment and a sharp increase in the cost of essential goods, exacerbating existing economic hardships.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'economic_conditions_nauru' significantly impacts the causal network. The new information directly states that Nauru's primary revenue source has declined, leading to widespread unemployment and increased cost of living. This strengthens the causal path: economic_conditions_nauru -> nauru_political_stability, as poor economic conditions are now more likely to lead to social unrest and political instability. Furthermore, the path economic_conditions_nauru -> outcome is also strengthened, as economic hardship is a direct driver for increased 'Battles'. Given that these are critical causal links to the outcome, and the new information provides strong evidence for deteriorating economic conditions, the probability of more 'Battles' has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'economic_conditions_nauru' significantly impacts the causal network. The new information directly states that Nauru's primary revenue source has declined, leading to widespread unemployment and increased cost of living. This strengthens the causal path: economic_conditions_nauru -> nauru_political_stability, as poor economic conditions are now more likely to lead to social unrest and political instability. Furthermore, the path economic_conditions_nauru -> outcome is also strengthened, as economic hardship is a direct driver for increased 'Battles'. Given that these are critical causal links to the outcome, and the new information provides strong evidence for deteriorating economic conditions, the probability of more 'Battles' has increased.\"\n}",
+      "target_id": "economic_conditions_nauru",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While decreased political stability in Nauru might intuitively suggest more 'Battles', it's possible that the specific nature of Nauru's political landscape means that instability often manifests through diplomatic disputes or internal policy disagreements rather than outright physical conflict. Furthermore, external actors, such as international aid organizations, may actively suppress or mediate any potential escalations before they reach the level of 'Battles', thus weakening the direct link between internal stability and the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causal link between 'nauru_political_stability' and the 'outcome'. It suggests that political instability in Nauru may not translate into physical 'Battles' but rather into other forms of conflict (diplomatic disputes, policy disagreements). Additionally, it posits that 'international_aid_and_intervention' acts as a buffer, preventing instability from escalating to 'Battles'. This weakens the direct path from political stability to the outcome. While 'nauru_political_stability' can still influence the outcome indirectly through other nodes (e.g., 'economic_conditions_nauru' -> 'nauru_political_stability' -> 'outcome'), the direct link is now considered less reliable. The 'historical_battle_trends' and 'regional_geopolitical_tensions' nodes remain important, but the core assumption that internal instability directly fuels 'Battles' is now less certain, leading to a decrease in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causal link between 'nauru_political_stability' and the 'outcome'. It suggests that political instability in Nauru may not translate into physical 'Battles' but rather into other forms of conflict (diplomatic disputes, policy disagreements). Additionally, it posits that 'international_aid_and_intervention' acts as a buffer, preventing instability from escalating to 'Battles'. This weakens the direct path from political stability to the outcome. While 'nauru_political_stability' can still influence the outcome indirectly through other nodes (e.g., 'economic_conditions_nauru' -> 'nauru_political_stability' -> 'outcome'), the direct link is now considered less reliable. The 'historical_battle_trends' and 'regional_geopolitical_tensions' nodes remain important, but the core assumption that internal instability directly fuels 'Battles' is now less certain, leading to a decrease in the probability.\"\n}",
+      "target_id": "nauru_political_stability->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While regional geopolitical tensions might influence Nauru's political stability, it's plausible that direct spillover effects leading to increased 'Battles' within Nauru are minimal. Nauru's unique geopolitical position and its relatively small scale might mean that broader regional conflicts do not directly translate into localized internal conflicts. Instead, any impact from regional tensions is likely fully mediated through changes in nauru_political_stability or international_aid_and_intervention.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that the direct causal link from 'regional_geopolitical_tensions' to 'outcome' is weak, arguing that any impact is fully mediated through 'nauru_political_stability' or 'international_aid_and_intervention'. This weakens one of the indirect pathways to the outcome. While 'regional_geopolitical_tensions' can still influence the outcome, its direct influence is now considered negligible. This reduces the overall probability, as one of the contributing factors to the outcome is less potent. The initial probability of 0.55 was likely factoring in a more direct impact of regional tensions. By removing this direct path, the influence of regional tensions is now solely reliant on its effect on political stability and aid, which might be less immediate or pronounced. Therefore, the probability is slightly decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that the direct causal link from 'regional_geopolitical_tensions' to 'outcome' is weak, arguing that any impact is fully mediated through 'nauru_political_stability' or 'international_aid_and_intervention'. This weakens one of the indirect pathways to the outcome. While 'regional_geopolitical_tensions' can still influence the outcome, its direct influence is now considered negligible. This reduces the overall probability, as one of the contributing factors to the outcome is less potent. The initial probability of 0.55 was likely factoring in a more direct impact of regional tensions. By removing this direct path, the influence of regional tensions is now solely reliant on its effect on political stability and aid, which might be less immediate or pronounced. Therefore, the probability is slightly decreased.\"\n}",
+      "target_id": "regional_geopolitical_tensions->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While regional geopolitical tensions can sometimes spill over, Nauru's specific internal political dynamics and its relative isolation might make it less susceptible to direct destabilization from broader Pacific region conflicts. Nauru's government has historically maintained a strong focus on internal affairs and may have robust mechanisms to insulate itself from external geopolitical shifts, suggesting this link might be weaker than assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the strength of the causal link between 'regional_geopolitical_tensions' and 'nauru_political_stability'. If Nauru is indeed less susceptible to spillover effects from regional tensions due to its internal focus and isolation, then this indirect path to the 'outcome' node is weakened. This means that even if regional tensions rise, their ability to destabilize Nauru and subsequently lead to 'Battles' is diminished. While this link is important, it is not the sole driver of 'nauru_political_stability' nor the 'outcome'. Other factors like 'economic_conditions_nauru' and 'international_aid_and_intervention' still influence stability, and 'historical_battle_trends' and direct economic impacts on the 'outcome' remain significant. Therefore, the probability has decreased, but not drastically, as the challenged link is one of several contributing factors.",
+      "raw_response": "{\n  \"updated_probability\": 0.50,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the strength of the causal link between 'regional_geopolitical_tensions' and 'nauru_political_stability'. If Nauru is indeed less susceptible to spillover effects from regional tensions due to its internal focus and isolation, then this indirect path to the 'outcome' node is weakened. This means that even if regional tensions rise, their ability to destabilize Nauru and subsequently lead to 'Battles' is diminished. While this link is important, it is not the sole driver of 'nauru_political_stability' nor the 'outcome'. Other factors like 'economic_conditions_nauru' and 'international_aid_and_intervention' still influence stability, and 'historical_battle_trends' and direct economic impacts on the 'outcome' remain significant. Therefore, the probability has decreased, but not drastically, as the challenged link is one of several contributing factors.\"\n}",
+      "target_id": "regional_geopolitical_tensions->nauru_political_stability",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in internal security incidents and localized skirmishes within Nauru, directly stemming from heightened political factionalism. This suggests that even minor shifts in political stability, without necessarily escalating to a full-blown crisis, can trigger an uptick in 'Battles' as different groups vie for influence or resources amidst the instability. This demonstrates a more sensitive and direct relationship between political stability and the occurrence of 'Battles' than perhaps initially modeled.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge focuses on the 'nauru_political_stability -> outcome' link, suggesting it's more sensitive than initially modeled. The new information directly supports an increased likelihood of 'Battles' if political stability decreases, even slightly, due to increased internal security incidents and localized skirmishes driven by political factionalism. This strengthens the causal path from political instability to the outcome, implying that any dip in stability, even if not a full crisis, is more likely to translate into 'Battles'. Therefore, my probability estimate has increased, reflecting a more direct and sensitive relationship between the two nodes.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge focuses on the 'nauru_political_stability -> outcome' link, suggesting it's more sensitive than initially modeled. The new information directly supports an increased likelihood of 'Battles' if political stability decreases, even slightly, due to increased internal security incidents and localized skirmishes driven by political factionalism. This strengthens the causal path from political instability to the outcome, implying that any dip in stability, even if not a full crisis, is more likely to translate into 'Battles'. Therefore, my probability estimate has increased, reflecting a more direct and sensitive relationship between the two nodes.\"\n}",
+      "target_id": "nauru_political_stability->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant escalation in maritime disputes in the South China Sea, involving major powers in the region. This heightened geopolitical tension, while geographically distant from Nauru, has led to increased military posturing and a general sense of instability across Pacific trade routes. This could indirectly fuel a demand for private security or mercenaries, thereby increasing the likelihood of 'Battles' in Nauru as resources and attention are diverted.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'regional_geopolitical_tensions -> outcome' is actually strengthening it, contrary to what might be initially assumed. The new information describes an escalation of maritime disputes in the South China Sea, leading to increased military posturing and instability across Pacific trade routes. This directly impacts the 'regional_geopolitical_tensions' node. The reasoning provided suggests that this heightened tension could indirectly fuel a demand for private security or mercenaries, thereby increasing the likelihood of 'Battles' in Nauru. This reinforces the existing causal path from 'regional_geopolitical_tensions' to 'outcome' by providing a concrete mechanism (demand for mercenaries) through which regional instability could manifest as 'Battles' in Nauru. While the original network might have considered this link more generally, the new information offers a specific and plausible pathway, thus increasing the estimated probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'regional_geopolitical_tensions -> outcome' is actually strengthening it, contrary to what might be initially assumed. The new information describes an escalation of maritime disputes in the South China Sea, leading to increased military posturing and instability across Pacific trade routes. This directly impacts the 'regional_geopolitical_tensions' node. The reasoning provided suggests that this heightened tension could indirectly fuel a demand for private security or mercenaries, thereby increasing the likelihood of 'Battles' in Nauru. This reinforces the existing causal path from 'regional_geopolitical_tensions' to 'outcome' by providing a concrete mechanism (demand for mercenaries) through which regional instability could manifest as 'Battles' in Nauru. While the original network might have considered this link more generally, the new information offers a specific and plausible pathway, thus increasing the estimated probability.\"\n}",
+      "target_id": "regional_geopolitical_tensions->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent intelligence suggests that a major Pacific power is significantly increasing its naval presence and conducting more frequent, aggressive military exercises in close proximity to Nauru. This heightened regional activity, while not directly targeting Nauru, has historically created a climate of unease and heightened security alertness among Nauruan officials, leading to increased internal security measures and a perception of instability that can easily escalate, even without direct external provocation.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.1499999999999999,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'regional_geopolitical_tensions -> nauru_political_stability' link strengthens it, rather than weakening it. The new information explicitly details how increased naval presence and military exercises by a major Pacific power near Nauru create a 'climate of unease and heightened security alertness among Nauruan officials.' This directly implies a decrease in Nauru's political stability. This decreased stability, in turn, is a key driver for an increase in 'Battles' through the 'nauru_political_stability -> outcome' path. Furthermore, the heightened regional tensions themselves can indirectly contribute to the 'outcome' via the 'regional_geopolitical_tensions -> outcome' path. The provided information suggests that the causal link between regional tensions and Nauru's internal stability is more direct and potent than previously modeled, leading to an increased probability of the outcome.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'regional_geopolitical_tensions -> nauru_political_stability' link strengthens it, rather than weakening it. The new information explicitly details how increased naval presence and military exercises by a major Pacific power near Nauru create a 'climate of unease and heightened security alertness among Nauruan officials.' This directly implies a decrease in Nauru's political stability. This decreased stability, in turn, is a key driver for an increase in 'Battles' through the 'nauru_political_stability -> outcome' path. Furthermore, the heightened regional tensions themselves can indirectly contribute to the 'outcome' via the 'regional_geopolitical_tensions -> outcome' path. The provided information suggests that the causal link between regional tensions and Nauru's internal stability is more direct and potent than previously modeled, leading to an increased probability of the outcome.\"\n}",
+      "target_id": "regional_geopolitical_tensions->nauru_political_stability",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "Imagine that an increase in 'Battles' in Nauru, rather than being a symptom of political instability, actually *causes* political instability. For instance, a surge in localized conflicts might overwhelm local authorities, leading to a breakdown in governance and a perception of widespread political instability, even if the underlying causes were initially localized skirmishes rather than broad political discontent.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.53,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'nauru_political_stability -> outcome' link suggests a reversal of causality: 'Battles' causing instability rather than the other way around. This doesn't fundamentally break the causal paths leading to the outcome, but it alters the understanding of the dynamic. My initial reasoning relied on political instability being a *precursor* to battles. If battles *cause* instability, then the predictive power of current political stability for future battles is weakened. The causal paths remain relevant, but the directionality is more complex. The challenge implies that 'Battles' might be more of an exogenous shock driving instability, rather than a direct consequence of it. This slightly reduces the confidence that existing or predictable political instability will directly lead to more battles, hence a slight decrease in probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.53,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'nauru_political_stability -> outcome' link suggests a reversal of causality: 'Battles' causing instability rather than the other way around. This doesn't fundamentally break the causal paths leading to the outcome, but it alters the understanding of the dynamic. My initial reasoning relied on political instability being a *precursor* to battles. If battles *cause* instability, then the predictive power of current political stability for future battles is weakened. The causal paths remain relevant, but the directionality is more complex. The challenge implies that 'Battles' might be more of an exogenous shock driving instability, rather than a direct consequence of it. This slightly reduces the confidence that existing or predictable political instability will directly lead to more battles, hence a slight decrease in probability.\"\n}",
+      "target_id": "nauru_political_stability->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0333,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "We are told that the historical frequency of 'Battles' in Nauru does not directly influence international aid and intervention. However, consider that a persistent history of conflict and 'Battles' in Nauru might prompt international bodies to proactively increase aid or intervention efforts to prevent further escalation or humanitarian crises. Wouldn't a sustained pattern of past 'Battles' likely be a significant factor in decisions regarding future international involvement?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a new causal path: historical_battle_trends -> international_aid_and_intervention. This is a plausible refinement to the model. Previously, historical_battle_trends only directly influenced the outcome. Now, it's also proposed to influence international_aid_and_intervention. If a history of battles prompts more aid and intervention, this could lead to greater political stability (via international_aid_and_intervention -> nauru_political_stability) or could directly influence the outcome (via international_aid_and_intervention -> outcome) in ways that might reduce battles (if intervention is stabilizing) or increase them (if intervention is disruptive or escalates tensions). However, the prompt also implies that the *persistence* of battles would prompt *proactive* aid/intervention, suggesting a stabilizing effect. This new path, if it leads to increased intervention and aid, could indirectly stabilize Nauru and reduce the likelihood of future battles, or if the intervention itself is destabilizing, it could increase battles. Given the initial probability was 0.55 and the introduction of a new, potentially stabilizing feedback loop, I am increasing the probability slightly to 0.60. The original direct link from historical_battle_trends to outcome remains, but this new indirect path adds a layer of complexity that might lean towards increased intervention, which in this context, for a country like Nauru, is often aimed at de-escalation. This is a refinement rather than a fundamental change, hence a modest upward adjustment.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a new causal path: historical_battle_trends -> international_aid_and_intervention. This is a plausible refinement to the model. Previously, historical_battle_trends only directly influenced the outcome. Now, it's also proposed to influence international_aid_and_intervention. If a history of battles prompts more aid and intervention, this could lead to greater political stability (via international_aid_and_intervention -> nauru_political_stability) or could directly influence the outcome (via international_aid_and_intervention -> outcome) in ways that might reduce battles (if intervention is stabilizing) or increase them (if intervention is disruptive or escalates tensions). However, the prompt also implies that the *persistence* of battles would prompt *proactive* aid/intervention, suggesting a stabilizing effect. This new path, if it leads to increased intervention and aid, could indirectly stabilize Nauru and reduce the likelihood of future battles, or if the intervention itself is destabilizing, it could increase battles. Given the initial probability was 0.55 and the introduction of a new, potentially stabilizing feedback loop, I am increasing the probability slightly to 0.60. The original direct link from historical_battle_trends to outcome remains, but this new indirect path adds a layer of complexity that might lean towards increased intervention, which in this context, for a country like Nauru, is often aimed at de-escalation. This is a refinement rather than a fundamental change, hence a modest upward adjustment.\"\n}",
+      "target_id": "historical_battle_trends->international_aid_and_intervention",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While historical battle trends are considered, it's also important to consider how past conflicts might have directly impacted Nauru's economy. For instance, prolonged periods of internal conflict or 'Battles' could have disrupted trade, damaged infrastructure, and depleted national resources, thereby negatively affecting the current economic conditions. Therefore, a direct causal link from historical battle trends to economic conditions might be a crucial omission.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge suggests a new causal link: historical_battle_trends -> economic_conditions_nauru. This is a plausible feedback loop where past conflicts degrade economic conditions, which in turn can fuel future instability and conflict. This strengthens the overall connection between historical trends and the outcome, as the path is now: historical_battle_trends -> economic_conditions_nauru -> nauru_political_stability -> outcome, and also historical_battle_trends -> economic_conditions_nauru -> outcome. While historical_battle_trends already directly influenced the outcome, this new indirect path adds weight to the factors that could lead to an increase in 'Battles'. The initial probability of 0.55 was already slightly favoring an increase, and this new information reinforces that tendency, leading to a modest increase in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge suggests a new causal link: historical_battle_trends -> economic_conditions_nauru. This is a plausible feedback loop where past conflicts degrade economic conditions, which in turn can fuel future instability and conflict. This strengthens the overall connection between historical trends and the outcome, as the path is now: historical_battle_trends -> economic_conditions_nauru -> nauru_political_stability -> outcome, and also historical_battle_trends -> economic_conditions_nauru -> outcome. While historical_battle_trends already directly influenced the outcome, this new indirect path adds weight to the factors that could lead to an increase in 'Battles'. The initial probability of 0.55 was already slightly favoring an increase, and this new information reinforces that tendency, leading to a modest increase in the probability.\"\n}",
+      "target_id": "historical_battle_trends->economic_conditions_nauru",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in diplomatic efforts by neighboring Pacific island nations to mediate internal Nauruan disputes and prevent escalation. How might this increased regional diplomatic mediation, separate from direct intervention or broader geopolitical tensions, influence the likelihood of 'Battles' in Nauru?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.10000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge introduces a new nuance regarding 'regional diplomatic mediation' which was not explicitly represented in the original causal network. This new information primarily affects the causal path: `regional_geopolitical_tensions -> nauru_political_stability -> outcome` and `international_aid_and_intervention -> nauru_political_stability -> outcome`. While 'regional_geopolitical_tensions' was a factor that could increase instability, the new information suggests that neighboring nations are actively working to *mediate* disputes, which is a stabilizing influence. This mediation is distinct from broader 'regional_geopolitical_tensions' and also distinct from direct 'international_aid_and_intervention'. By actively mediating, these neighboring nations are likely working to *decrease* `nauru_political_stability`. A more stable Nauru would, in turn, decrease the likelihood of 'Battles'. Therefore, the probability of the outcome has decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge introduces a new nuance regarding 'regional diplomatic mediation' which was not explicitly represented in the original causal network. This new information primarily affects the causal path: `regional_geopolitical_tensions -> nauru_political_stability -> outcome` and `international_aid_and_intervention -> nauru_political_stability -> outcome`. While 'regional_geopolitical_tensions' was a factor that could increase instability, the new information suggests that neighboring nations are actively working to *mediate* disputes, which is a stabilizing influence. This mediation is distinct from broader 'regional_geopolitical_tensions' and also distinct from direct 'international_aid_and_intervention'. By actively mediating, these neighboring nations are likely working to *decrease* `nauru_political_stability`. A more stable Nauru would, in turn, decrease the likelihood of 'Battles'. Therefore, the probability of the outcome has decreased.\"\n}",
+      "target_id": "regional_diplomatic_mediation",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "We have learned that a significant number of Nauru's youth have recently been involved in international mercenary activities. This could potentially draw them away from domestic conflicts, or conversely, provide them with skills and resources that might fuel internal 'Battles'. How might this new information about youth involvement in international mercenary activities affect your assessment of the likelihood of more 'Battles' in Nauru?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.48,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The new information regarding Nauru's youth involvement in international mercenary activities introduces a complex, dual-edged impact. Previously, the causal network assumed that any instability or economic hardship within Nauru would directly translate to domestic 'Battles'. However, this new information challenges the direct link between internal conditions and the outcome. \n\n1.  **Potential decrease in domestic 'Battles'**: If a significant number of youth are engaged in international mercenary activities, they are physically drawn away from Nauru. This reduces the pool of individuals available for domestic conflict, potentially lowering the frequency of 'Battles' within Nauru. This weakens the direct causal path from `nauru_political_stability` -> `outcome` and `economic_conditions_nauru` -> `outcome` by suggesting a diversion of potential conflict participants.\n\n2.  **Potential increase in domestic 'Battles'**: Conversely, these youths might gain combat skills, resources, and networks while abroad that could later be used to fuel internal conflicts upon their return. This could strengthen the `nauru_political_stability` -> `outcome` and `economic_conditions_nauru` -> `outcome` paths, albeit with a temporal delay and an external influence.\n\n3.  **Impact on `nauru_political_stability`**: The involvement in mercenary activities could also affect `nauru_political_stability` indirectly. If these activities are seen as a 'way out' of domestic hardship, it might temporarily reduce internal unrest. However, the return of trained individuals could also exacerbate instability later.\n\nGiven the ambiguity and the potential for either an increase or decrease in 'Battles', the most direct impact is the diversion of potential participants away from Nauru, suggesting a temporary decrease. This introduces a significant uncertainty and shifts the balance slightly towards a lower probability of increased 'Battles' in the immediate 30-day window preceding the resolution date, as the individuals are currently engaged elsewhere. The initial probability of 0.55 was based on a more direct correlation between internal factors and 'Battles'. This new information adds a layer of complexity, suggesting that the drivers of 'Battles' might be externalized, thus slightly reducing the likelihood of *more* battles domestically compared to the historical average. The update to 0.48 reflects this potential diversion and the increased uncertainty.",
+      "raw_response": "{\n  \"updated_probability\": 0.48,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information regarding Nauru's youth involvement in international mercenary activities introduces a complex, dual-edged impact. Previously, the causal network assumed that any instability or economic hardship within Nauru would directly translate to domestic 'Battles'. However, this new information challenges the direct link between internal conditions and the outcome. \\n\\n1.  **Potential decrease in domestic 'Battles'**: If a significant number of youth are engaged in international mercenary activities, they are physically drawn away from Nauru. This reduces the pool of individuals available for domestic conflict, potentially lowering the frequency of 'Battles' within Nauru. This weakens the direct causal path from `nauru_political_stability` -> `outcome` and `economic_conditions_nauru` -> `outcome` by suggesting a diversion of potential conflict participants.\\n\\n2.  **Potential increase in domestic 'Battles'**: Conversely, these youths might gain combat skills, resources, and networks while abroad that could later be used to fuel internal conflicts upon their return. This could strengthen the `nauru_political_stability` -> `outcome` and `economic_conditions_nauru` -> `outcome` paths, albeit with a temporal delay and an external influence.\\n\\n3.  **Impact on `nauru_political_stability`**: The involvement in mercenary activities could also affect `nauru_political_stability` indirectly. If these activities are seen as a 'way out' of domestic hardship, it might temporarily reduce internal unrest. However, the return of trained individuals could also exacerbate instability later.\\n\\nGiven the ambiguity and the potential for either an increase or decrease in 'Battles', the most direct impact is the diversion of potential participants away from Nauru, suggesting a temporary decrease. This introduces a significant uncertainty and shifts the balance slightly towards a lower probability of increased 'Battles' in the immediate 30-day window preceding the resolution date, as the individuals are currently engaged elsewhere. The initial probability of 0.55 was based on a more direct correlation between internal factors and 'Battles'. This new information adds a layer of complexity, suggesting that the drivers of 'Battles' might be externalized, thus slightly reducing the likelihood of *more* battles domestically compared to the historical average. The update to 0.48 reflects this potential diversion and the increased uncertainty.\"\n}",
+      "target_id": "youth_mercenary_involvement",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "The upcoming Nauruan general election, scheduled for early 2026, is drawing significant international media attention. Several global news outlets have set up temporary bureaus in the capital to cover the election process and its potential aftermath.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge highlights increased international media attention on Nauru due to the upcoming general election. This primarily affects the 'international_aid_and_intervention' node and, consequently, its causal paths to 'nauru_political_stability' and 'outcome'. Increased international attention can lead to greater scrutiny and potentially more proactive international engagement (aid or intervention) aimed at ensuring a stable election process. This heightened focus could stabilize Nauru's political situation, reducing the likelihood of 'Battles' stemming from internal instability. However, intense media coverage can also amplify any existing tensions or disagreements, potentially leading to isolated incidents or 'Battles' as a result of heightened public awareness and political posturing. The direct link from 'international_aid_and_intervention' to 'outcome' can be influenced by how this attention translates into actual international action. While the increased attention might suggest a stabilizing force, the inherent volatility of elections, especially with external observation, could also act as a catalyst for 'Battles'. Given that elections can be flashpoints, and the international attention might exacerbate existing political divisions or create new ones, I am slightly increasing the probability. The causal path `regional_geopolitical_tensions -> nauru_political_stability` and `regional_geopolitical_tensions -> outcome` are less directly impacted, as the primary driver mentioned is domestic elections with international observation, not necessarily a change in broader regional tensions. The `historical_battle_trends` and `economic_conditions_nauru` paths are not directly challenged by this information. The primary impact is on the 'international_aid_and_intervention' node, which has indirect effects on 'nauru_political_stability' and direct effects on 'outcome'. The increased attention raises the potential for both stabilizing and destabilizing interventions, but the heightened political activity surrounding an election introduces a moderate increase in the probability of 'Battles'.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge highlights increased international media attention on Nauru due to the upcoming general election. This primarily affects the 'international_aid_and_intervention' node and, consequently, its causal paths to 'nauru_political_stability' and 'outcome'. Increased international attention can lead to greater scrutiny and potentially more proactive international engagement (aid or intervention) aimed at ensuring a stable election process. This heightened focus could stabilize Nauru's political situation, reducing the likelihood of 'Battles' stemming from internal instability. However, intense media coverage can also amplify any existing tensions or disagreements, potentially leading to isolated incidents or 'Battles' as a result of heightened public awareness and political posturing. The direct link from 'international_aid_and_intervention' to 'outcome' can be influenced by how this attention translates into actual international action. While the increased attention might suggest a stabilizing force, the inherent volatility of elections, especially with external observation, could also act as a catalyst for 'Battles'. Given that elections can be flashpoints, and the international attention might exacerbate existing political divisions or create new ones, I am slightly increasing the probability. The causal path `regional_geopolitical_tensions -> nauru_political_stability` and `regional_geopolitical_tensions -> outcome` are less directly impacted, as the primary driver mentioned is domestic elections with international observation, not necessarily a change in broader regional tensions. The `historical_battle_trends` and `economic_conditions_nauru` paths are not directly challenged by this information. The primary impact is on the 'international_aid_and_intervention' node, which has indirect effects on 'nauru_political_stability' and direct effects on 'outcome'. The increased attention raises the potential for both stabilizing and destabilizing interventions, but the heightened political activity surrounding an election introduces a moderate increase in the probability of 'Battles'.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Recent reports indicate a significant increase in tourism to Nauru, with a particular surge in visitors interested in birdwatching and eco-tourism activities. The government has also announced plans to upgrade the local airport to accommodate larger aircraft, aiming to boost international connectivity.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.48,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The new information regarding increased tourism and airport upgrades in Nauru primarily impacts the 'economic_conditions_nauru' node and, indirectly, 'nauru_political_stability'. An increase in tourism and improved infrastructure suggests a potential boost to the Nauruan economy, which could lead to greater economic stability. This, in turn, would reduce the likelihood of social unrest and political instability (economic_conditions_nauru -> nauru_political_stability). A more stable political environment makes the 'outcome' of increased 'Battles' less probable. While the direct causal links to 'outcome' from 'regional_geopolitical_tensions', 'international_aid_and_intervention', and 'historical_battle_trends' are not directly challenged, the improved economic outlook and potential for enhanced stability weakens a key driver for potential conflict. Therefore, the probability of more 'Battles' is decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.48,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information regarding increased tourism and airport upgrades in Nauru primarily impacts the 'economic_conditions_nauru' node and, indirectly, 'nauru_political_stability'. An increase in tourism and improved infrastructure suggests a potential boost to the Nauruan economy, which could lead to greater economic stability. This, in turn, would reduce the likelihood of social unrest and political instability (economic_conditions_nauru -> nauru_political_stability). A more stable political environment makes the 'outcome' of increased 'Battles' less probable. While the direct causal links to 'outcome' from 'regional_geopolitical_tensions', 'international_aid_and_intervention', and 'historical_battle_trends' are not directly challenged, the improved economic outlook and potential for enhanced stability weakens a key driver for potential conflict. Therefore, the probability of more 'Battles' is decreased.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "b116d87ad801f2eb66404d27cdbcf83eed05f3173fd506fc17da22254ad87536",
+    "question_text": "Will there be more 'Battles' in Nauru for the 30 days before 2025-12-28 compared to the 30-day average of 'Battles' over the 360 days preceding 2025-12-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Battles'\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of 'Battles' over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more 'Battles' would need to occur in the 30 days leading up to the resolution.",
+    "source": "acled",
+    "condition": "one-turn",
+    "initial_probability": 0.55,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.10857142857142858,
+    "max_absolute_shift": 0.29999999999999993
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": 0,
+  "aggregate_metrics": {
+    "ssr": 1.4516129032258067,
+    "mean_shift_high": 0.15000000000000002,
+    "mean_shift_low": 0.10333333333333333,
+    "asymmetry_index": 0.5826086956521744,
+    "mean_shift_negate": 0.09571428571428577,
+    "mean_shift_strengthen": 0.16428571428571423,
+    "fnar": 1,
+    "n_accepted": 2,
+    "n_spurious": 2,
+    "critical_path_premium": -0.045374999999999985,
+    "mean_shift_on_path": 0.07400000000000001,
+    "mean_shift_off_path": 0.119375,
+    "importance_sensitivity_correlation": -0.4464285714285714,
+    "control_sensitivity": 1
+  }
+}

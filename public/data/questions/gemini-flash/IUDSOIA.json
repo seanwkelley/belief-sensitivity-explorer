@@ -1,0 +1,1124 @@
+{
+  "question_id": "IUDSOIA",
+  "question_text": "Will the daily Sterling Overnight Index Average, the interest rate applied to bank transactions in the British Sterling Market during off hours, have increased by 2025-12-28 as compared to its value on 2025-12-21?",
+  "source": "fred",
+  "initial_probability": 0.65,
+  "nodes": [
+    {
+      "id": "bank_of_england_policy_rate",
+      "description": "The Bank of England's base interest rate, a primary driver of SONIA.",
+      "role": "factor"
+    },
+    {
+      "id": "inflation_expectations",
+      "description": "Market expectations about future inflation levels, influencing monetary policy.",
+      "role": "factor"
+    },
+    {
+      "id": "economic_growth_outlook",
+      "description": "The projected growth rate of the UK economy, influencing monetary policy decisions.",
+      "role": "factor"
+    },
+    {
+      "id": "global_interest_rates",
+      "description": "Interest rate levels in major global economies, affecting international capital flows and UK policy.",
+      "role": "factor"
+    },
+    {
+      "id": "market_liquidity",
+      "description": "The ease with which assets can be bought or sold in the financial markets, impacting overnight rates.",
+      "role": "factor"
+    },
+    {
+      "id": "sonia_rate_2025_12_28",
+      "description": "The Sterling Overnight Index Average on 2025-12-28.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "bank_of_england_policy_rate",
+      "to": "sonia_rate_2025_12_28",
+      "mechanism": "A higher policy rate generally leads to a higher SONIA rate."
+    },
+    {
+      "from": "inflation_expectations",
+      "to": "bank_of_england_policy_rate",
+      "mechanism": "Rising inflation expectations prompt the Bank of England to increase the policy rate to control inflation."
+    },
+    {
+      "from": "economic_growth_outlook",
+      "to": "bank_of_england_policy_rate",
+      "mechanism": "Strong economic growth may lead the Bank of England to raise interest rates to prevent overheating, while weak growth may lead to cuts."
+    },
+    {
+      "from": "global_interest_rates",
+      "to": "bank_of_england_policy_rate",
+      "mechanism": "If global rates rise significantly, the Bank of England might increase its policy rate to maintain competitiveness and manage capital flows."
+    },
+    {
+      "from": "market_liquidity",
+      "to": "sonia_rate_2025_12_28",
+      "mechanism": "Tight market liquidity can push overnight rates like SONIA higher, even if the policy rate remains stable."
+    },
+    {
+      "from": "inflation_expectations",
+      "to": "market_liquidity",
+      "mechanism": "High inflation expectations can sometimes lead to increased market volatility and reduced liquidity."
+    }
+  ],
+  "reasoning": "The Sterling Overnight Index Average (SONIA) is highly correlated with the Bank of England's policy rate. By late 2025, it is plausible that the Bank of England will have maintained or increased its policy rate due to persistent inflation expectations and a potentially mixed economic growth outlook. Global interest rate trends could also influence the BoE's decision. While market liquidity can cause short-term fluctuations, the overall trend will likely be dictated by monetary policy. Therefore, there is a moderate to high probability that SONIA will be higher in late December 2025 compared to a week prior, reflecting a likely tightening or sustained high-rate environment.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 6,
+    "density": 0.2,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 6,
+    "outcome_node": "sonia_rate_2025_12_28",
+    "node_metrics": [
+      {
+        "node_id": "bank_of_england_policy_rate",
+        "description": "The Bank of England's base interest rate, a primary driver of SONIA.",
+        "role": "factor",
+        "in_degree": 3,
+        "out_degree": 1,
+        "betweenness": 0.125,
+        "closeness": 0.6,
+        "pagerank": 0.2517,
+        "path_relevance": 0.5
+      },
+      {
+        "node_id": "inflation_expectations",
+        "description": "Market expectations about future inflation levels, influencing monetary policy.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "economic_growth_outlook",
+        "description": "The projected growth rate of the UK economy, influencing monetary policy decisions.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "global_interest_rates",
+        "description": "Interest rate levels in major global economies, affecting international capital flows and UK policy.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0805,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "market_liquidity",
+        "description": "The ease with which assets can be bought or sold in the financial markets, impacting overnight rates.",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.025,
+        "closeness": 0.2,
+        "pagerank": 0.1148,
+        "path_relevance": 0.1667
+      },
+      {
+        "node_id": "sonia_rate_2025_12_28",
+        "description": "The Sterling Overnight Index Average on 2025-12-28.",
+        "role": "outcome",
+        "in_degree": 2,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.625,
+        "pagerank": 0.392,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "bank_of_england_policy_rate",
+        "target": "sonia_rate_2025_12_28",
+        "mechanism": "A higher policy rate generally leads to a higher SONIA rate.",
+        "edge_betweenness": 0.1167,
+        "on_critical_path": true
+      },
+      {
+        "source": "inflation_expectations",
+        "target": "bank_of_england_policy_rate",
+        "mechanism": "Rising inflation expectations prompt the Bank of England to increase the policy rate to control inflation.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "inflation_expectations",
+        "target": "market_liquidity",
+        "mechanism": "High inflation expectations can sometimes lead to increased market volatility and reduced liquidity.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      },
+      {
+        "source": "economic_growth_outlook",
+        "target": "bank_of_england_policy_rate",
+        "mechanism": "Strong economic growth may lead the Bank of England to raise interest rates to prevent overheating, while weak growth may lead to cuts.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "global_interest_rates",
+        "target": "bank_of_england_policy_rate",
+        "mechanism": "If global rates rise significantly, the Bank of England might increase its policy rate to maintain competitiveness and manage capital flows.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "market_liquidity",
+        "target": "sonia_rate_2025_12_28",
+        "mechanism": "Tight market liquidity can push overnight rates like SONIA higher, even if the policy rate remains stable.",
+        "edge_betweenness": 0.05,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "bank_of_england_policy_rate",
+        "description": "The Bank of England's base interest rate, a primary driver of SONIA.",
+        "importance": 0.125,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "market_liquidity",
+        "description": "The ease with which assets can be bought or sold in the financial markets, impacting overnight rates.",
+        "importance": 0.025,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "inflation_expectations",
+        "description": "Market expectations about future inflation levels, influencing monetary policy.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "global_interest_rates",
+        "description": "Interest rate levels in major global economies, affecting international capital flows and UK policy.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "bank_of_england_policy_rate",
+        "description": "The Bank of England's base interest rate, a primary driver of SONIA.",
+        "importance": 0.125,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "market_liquidity",
+        "description": "The ease with which assets can be bought or sold in the financial markets, impacting overnight rates.",
+        "importance": 0.025,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "inflation_expectations",
+        "description": "Market expectations about future inflation levels, influencing monetary policy.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "global_interest_rates",
+        "description": "Interest rate levels in major global economies, affecting international capital flows and UK policy.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+        "description": "A higher policy rate generally leads to a higher SONIA rate.",
+        "importance": 0.1167,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "economic_growth_outlook->bank_of_england_policy_rate",
+        "description": "Strong economic growth may lead the Bank of England to raise interest rates to prevent overheating, while weak growth may lead to cuts.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "market_liquidity->sonia_rate_2025_12_28",
+        "description": "Tight market liquidity can push overnight rates like SONIA higher, even if the policy rate remains stable.",
+        "importance": 0.05,
+        "centrality_rank": 6,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+        "description": "A higher policy rate generally leads to a higher SONIA rate.",
+        "importance": 0.1167,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "economic_growth_outlook->bank_of_england_policy_rate",
+        "description": "Strong economic growth may lead the Bank of England to raise interest rates to prevent overheating, while weak growth may lead to cuts.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+        "description": "A higher policy rate generally leads to a higher SONIA rate.",
+        "importance": 0.1167,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "market_liquidity->bank_of_england_policy_rate",
+        "description": "Potential link: The ease with which assets can be bought or sold in the financial markets, impacting overnight rates. -> The Bank of England's base interest rate, a primary driver of SONIA.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "bank_of_england_policy_rate",
+      "description": "The Bank of England's base interest rate, a primary driver of SONIA.",
+      "importance": 0.125,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "market_liquidity",
+      "description": "The ease with which assets can be bought or sold in the financial markets, impacting overnight rates.",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "inflation_expectations",
+      "description": "Market expectations about future inflation levels, influencing monetary policy.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "global_interest_rates",
+      "description": "Interest rate levels in major global economies, affecting international capital flows and UK policy.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "bank_of_england_policy_rate",
+      "description": "The Bank of England's base interest rate, a primary driver of SONIA.",
+      "importance": 0.125,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "market_liquidity",
+      "description": "The ease with which assets can be bought or sold in the financial markets, impacting overnight rates.",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "inflation_expectations",
+      "description": "Market expectations about future inflation levels, influencing monetary policy.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "global_interest_rates",
+      "description": "Interest rate levels in major global economies, affecting international capital flows and UK policy.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "description": "A higher policy rate generally leads to a higher SONIA rate.",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "economic_growth_outlook->bank_of_england_policy_rate",
+      "description": "Strong economic growth may lead the Bank of England to raise interest rates to prevent overheating, while weak growth may lead to cuts.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "market_liquidity->sonia_rate_2025_12_28",
+      "description": "Tight market liquidity can push overnight rates like SONIA higher, even if the policy rate remains stable.",
+      "importance": 0.05,
+      "centrality_rank": 6,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "description": "A higher policy rate generally leads to a higher SONIA rate.",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "economic_growth_outlook->bank_of_england_policy_rate",
+      "description": "Strong economic growth may lead the Bank of England to raise interest rates to prevent overheating, while weak growth may lead to cuts.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "description": "A higher policy rate generally leads to a higher SONIA rate.",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "market_liquidity->bank_of_england_policy_rate",
+      "description": "Potential link: The ease with which assets can be bought or sold in the financial markets, impacting overnight rates. -> The Bank of England's base interest rate, a primary driver of SONIA.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if the Bank of England's policy rate becomes irrelevant for SONIA by 2025-12-28? Imagine a scenario where the central bank has decided to peg its policy rate at a fixed, low level for an extended period due to a severe, prolonged recession, but market-driven factors like extreme scarcity of collateral or a sudden flight to safety in the overnight market cause SONIA to spike independently of the policy rate.",
+      "probe_type": "node_negate_high",
+      "target_id": "bank_of_england_policy_rate",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.125,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The Bank of England's base interest rate, a primary driver of SONIA."
+    },
+    {
+      "probe_text": "What if market liquidity has absolutely no impact on SONIA by 2025-12-28, regardless of its state? Imagine a scenario where the Bank of England implements a new, highly effective liquidity management framework that fully insulates SONIA from day-to-day market fluctuations, ensuring it perfectly tracks the policy rate even under severe liquidity stress.",
+      "probe_type": "node_negate_high",
+      "target_id": "market_liquidity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The ease with which assets can be bought or sold in the financial markets, impacting overnight rates."
+    },
+    {
+      "probe_text": "Recent analysis from the Office for Budget Responsibility suggests that while inflation expectations have been volatile, they have become largely de-anchored from actual monetary policy decisions. This implies that the Bank of England may no longer be significantly reacting to inflation expectations when setting the policy rate, making this factor less influential than previously assumed.",
+      "probe_type": "node_negate_medium",
+      "target_id": "inflation_expectations",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "Market expectations about future inflation levels, influencing monetary policy."
+    },
+    {
+      "probe_text": "Recent analysis suggests that in the specific context of late 2025, the influence of global interest rates on the Bank of England's policy rate and consequently SONIA will be significantly diminished. This is due to anticipated unique domestic economic conditions in the UK that will likely dominate policy decisions, making international rate movements largely irrelevant for SONIA by that date.",
+      "probe_type": "node_negate_low",
+      "target_id": "global_interest_rates",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Interest rate levels in major global economies, affecting international capital flows and UK policy."
+    },
+    {
+      "probe_text": "A recent, unannounced emergency meeting of the G7 central bankers concluded with a joint statement emphasizing the critical need for coordinated interest rate hikes to combat persistent global inflationary pressures. This coordinated action is widely interpreted by market analysts as a strong signal that the Bank of England will be forced to significantly increase its policy rate in the coming months, irrespective of other domestic economic indicators, to align with international monetary tightening and prevent substantial capital outflows.",
+      "probe_type": "node_strengthen",
+      "target_id": "bank_of_england_policy_rate",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.125,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "The Bank of England's base interest rate, a primary driver of SONIA."
+    },
+    {
+      "probe_text": "Recent analysis from the Bank for International Settlements (BIS) highlights a structural shift in interbank lending markets, indicating a persistent reduction in overall market liquidity.  This shift is attributed to increased regulatory burdens and a deleveraging trend among major financial institutions, suggesting that periods of strained liquidity are likely to become more frequent and pronounced in the coming years.",
+      "probe_type": "node_strengthen",
+      "target_id": "market_liquidity",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.025,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "The ease with which assets can be bought or sold in the financial markets, impacting overnight rates."
+    },
+    {
+      "probe_text": "Recent surveys of consumer and business sentiment have shown a significant upward revision in inflation expectations for the next 18-24 months. This is driven by persistent supply chain disruptions and a surprising resilience in consumer demand, leading many economists to predict that inflation will remain stubbornly above the Bank of England's target for longer than previously anticipated.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "inflation_expectations",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "Market expectations about future inflation levels, influencing monetary policy."
+    },
+    {
+      "probe_text": "Recent reports from the US Federal Reserve and the European Central Bank indicate a coordinated effort to raise benchmark interest rates significantly over the next 18 months to combat persistent inflation across major economies. This synchronized global tightening cycle is expected to exert considerable upward pressure on international capital flows and necessitate a corresponding adjustment in the Bank of England's policy stance to remain competitive.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "global_interest_rates",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "Interest rate levels in major global economies, affecting international capital flows and UK policy."
+    },
+    {
+      "probe_text": "While the Bank of England's policy rate typically influences SONIA, consider a scenario where the central bank implements a significant 'corridor system' for its monetary policy. In such a system, the Bank of England might actively manage the policy rate to keep it *below* the target, but simultaneously offer a standing facility rate *above* the policy rate. If market participants predominantly transact at this standing facility rate due to its attractiveness, SONIA could remain anchored to the standing facility rate, effectively decoupling it from the stated policy rate.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A higher policy rate generally leads to a higher SONIA rate."
+    },
+    {
+      "probe_text": "While historically strong economic growth might have prompted rate hikes, recent Bank of England communications suggest a pivot towards prioritizing inflation control above all else, even at the expense of short-term growth. Furthermore, the current global economic climate is characterized by significant supply-side shocks rather than demand-driven overheating, making the traditional link between growth and rate hikes less reliable.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "economic_growth_outlook->bank_of_england_policy_rate",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Strong economic growth may lead the Bank of England to raise interest rates to prevent overheating, while weak growth may lead to cuts."
+    },
+    {
+      "probe_text": "While it's generally true that tight market liquidity can increase SONIA, consider a scenario where the Bank of England actively intervenes to *ensure* sufficient liquidity in the overnight market, even during periods of stress. If the Bank of England's stated commitment and demonstrated actions are to aggressively provide liquidity to prevent significant spikes in SONIA, how would that alter your assessment, irrespective of other factors?",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "market_liquidity->sonia_rate_2025_12_28",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.05,
+      "centrality_rank": 6,
+      "on_critical_path": true,
+      "description": "Tight market liquidity can push overnight rates like SONIA higher, even if the policy rate remains stable."
+    },
+    {
+      "probe_text": "Recent analysis of the Bank of England's recent monetary policy decisions shows an even tighter correlation between changes in the bank_of_england_policy_rate and the resulting SONIA rate. Specifically, during periods of rapid rate hikes, the SONIA rate has consistently moved in lockstep, often exceeding the policy rate change by a small margin due to market anticipation and transmission mechanisms. This suggests the direct pass-through from the policy rate to SONIA is exceptionally robust, perhaps even more so than previously modeled.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A higher policy rate generally leads to a higher SONIA rate."
+    },
+    {
+      "probe_text": "Recent analysis from the Office for Budget Responsibility highlights a significant upward revision to the UK's long-term productivity growth potential, driven by advancements in AI and automation. This revised outlook suggests that the economy can sustain higher growth rates without immediately triggering inflationary pressures. Consequently, the Bank of England might be more inclined to maintain a higher policy rate for longer to harness this growth, even if current inflation figures show some moderation, thereby strengthening the link between a positive economic growth outlook and a higher bank_of_england_policy_rate.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "economic_growth_outlook->bank_of_england_policy_rate",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Strong economic growth may lead the Bank of England to raise interest rates to prevent overheating, while weak growth may lead to cuts."
+    },
+    {
+      "probe_text": "Recent market analysis suggests that the Bank of England's policy rate is not a primary driver of SONIA, but rather a lagging indicator. Some economists argue that the rapid movements and general level of SONIA, reflecting real-time interbank lending conditions and market liquidity, actually signal to the Bank of England what the appropriate policy rate should be. Therefore, could it be that high SONIA rates are actually *causing* the Bank of England to adjust its policy rate upwards, rather than the other way around?",
+      "probe_type": "edge_reverse",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1167,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "A higher policy rate generally leads to a higher SONIA rate."
+    },
+    {
+      "probe_text": "While your model shows market liquidity directly affecting SONIA, it omits a crucial feedback loop: severe disruptions in market liquidity can signal broader financial instability. Such instability might force the Bank of England to adjust its policy rate, not just to influence SONIA indirectly, but as a direct response to the liquidity crisis itself.",
+      "probe_type": "edge_missing",
+      "target_id": "market_liquidity->bank_of_england_policy_rate",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The ease with which assets can be bought or sold in the financial markets, impacting overnight rates. -> The Bank of England's base interest rate, a primary driver of SONIA."
+    },
+    {
+      "probe_text": "Suppose the Bank of England announces a new, experimental quantitative tightening program starting in late 2025, designed to rapidly reduce the money supply in the banking system. How might this direct intervention in market liquidity, independent of the policy rate, affect your forecast for the SONIA rate on 2025-12-28?",
+      "probe_type": "missing_node",
+      "target_id": "quantitative_tightening_program",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Imagine that the UK government announces a significant, unexpected fiscal stimulus package in mid-2025, aimed at boosting consumer spending and investment. This stimulus is expected to lead to higher government borrowing and potentially increase aggregate demand, which could, in turn, influence the Bank of England's monetary policy decisions and the overall SONIA rate.",
+      "probe_type": "missing_node",
+      "target_id": "fiscal_stimulus",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "A recent report highlighted that the average duration of fixed-rate mortgages in the UK has been trending upwards. This is attributed to borrowers seeking longer-term certainty in their borrowing costs amidst fluctuating economic conditions.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "The UK government has announced a new initiative to promote sustainable tourism in coastal regions. This plan involves significant investment in eco-friendly infrastructure and marketing campaigns to attract environmentally conscious travelers.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if the Bank of England's policy rate becomes irrelevant for SONIA by 2025-12-28? Imagine a scenario where the central bank has decided to peg its policy rate at a fixed, low level for an extended period due to a severe, prolonged recession, but market-driven factors like extreme scarcity of collateral or a sudden flight to safety in the overnight market cause SONIA to spike independently of the policy rate.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.3,
+      "absolute_shift": 0.35000000000000003,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly targets the causal link between 'bank_of_england_policy_rate' and 'sonia_rate_2025_12_28', stating the policy rate becomes irrelevant. My original forecast heavily relied on the Bank of England's policy rate being a primary driver of SONIA. If the policy rate is pegged low and SONIA spikes independently due to market factors (scarcity of collateral, flight to safety), the direct path from the policy rate to SONIA is broken. While other factors like 'market_liquidity' can influence SONIA, the primary mechanism I assumed is now invalidated. The scenario describes extreme market conditions that drive SONIA up despite a low policy rate, suggesting that even if the policy rate is low, other factors could cause SONIA to increase. However, my confidence that the policy rate *itself* will lead to an increase is severely diminished. The 'market_liquidity' node remains a potential driver for an increase, but the explicit decoupling of the policy rate weakens the overall probability of SONIA increasing *due to the policy rate's influence*, which was a key component of my initial reasoning. The probability is decreased because the most direct and predictable driver of SONIA has been rendered ineffective in the described scenario.",
+      "raw_response": "{\n  \"updated_probability\": 0.30,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly targets the causal link between 'bank_of_england_policy_rate' and 'sonia_rate_2025_12_28', stating the policy rate becomes irrelevant. My original forecast heavily relied on the Bank of England's policy rate being a primary driver of SONIA. If the policy rate is pegged low and SONIA spikes independently due to market factors (scarcity of collateral, flight to safety), the direct path from the policy rate to SONIA is broken. While other factors like 'market_liquidity' can influence SONIA, the primary mechanism I assumed is now invalidated. The scenario describes extreme market conditions that drive SONIA up despite a low policy rate, suggesting that even if the policy rate is low, other factors could cause SONIA to increase. However, my confidence that the policy rate *itself* will lead to an increase is severely diminished. The 'market_liquidity' node remains a potential driver for an increase, but the explicit decoupling of the policy rate weakens the overall probability of SONIA increasing *due to the policy rate's influence*, which was a key component of my initial reasoning. The probability is decreased because the most direct and predictable driver of SONIA has been rendered ineffective in the described scenario.\"\n}",
+      "target_id": "bank_of_england_policy_rate",
+      "target_type": "node",
+      "target_importance": 0.125,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if market liquidity has absolutely no impact on SONIA by 2025-12-28, regardless of its state? Imagine a scenario where the Bank of England implements a new, highly effective liquidity management framework that fully insulates SONIA from day-to-day market fluctuations, ensuring it perfectly tracks the policy rate even under severe liquidity stress.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly removes the causal link between 'market_liquidity' and 'sonia_rate_2025_12_28'. Previously, 'market_liquidity' was a potential factor that could cause SONIA to deviate from the Bank of England's policy rate. By eliminating this influence, SONIA is now expected to more closely track the 'bank_of_england_policy_rate'. The causal path 'market_liquidity -> sonia_rate_2025_12_28' is now nullified. Additionally, the indirect path 'inflation_expectations -> market_liquidity -> sonia_rate_2025_12_28' is also broken. This reduces the overall uncertainty and slightly lowers the probability because one of the mechanisms that could have led to an increase in SONIA (tight liquidity) is removed. However, the primary drivers of SONIA (Bank of England policy rate, influenced by inflation expectations, economic growth, and global rates) remain intact, so the update is not drastic.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly removes the causal link between 'market_liquidity' and 'sonia_rate_2025_12_28'. Previously, 'market_liquidity' was a potential factor that could cause SONIA to deviate from the Bank of England's policy rate. By eliminating this influence, SONIA is now expected to more closely track the 'bank_of_england_policy_rate'. The causal path 'market_liquidity -> sonia_rate_2025_12_28' is now nullified. Additionally, the indirect path 'inflation_expectations -> market_liquidity -> sonia_rate_2025_12_28' is also broken. This reduces the overall uncertainty and slightly lowers the probability because one of the mechanisms that could have led to an increase in SONIA (tight liquidity) is removed. However, the primary drivers of SONIA (Bank of England policy rate, influenced by inflation expectations, economic growth, and global rates) remain intact, so the update is not drastic.\"\n}",
+      "target_id": "market_liquidity",
+      "target_type": "node",
+      "target_importance": 0.025,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis from the Office for Budget Responsibility suggests that while inflation expectations have been volatile, they have become largely de-anchored from actual monetary policy decisions. This implies that the Bank of England may no longer be significantly reacting to inflation expectations when setting the policy rate, making this factor less influential than previously assumed.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'inflation_expectations' node suggests that its influence on the 'bank_of_england_policy_rate' is significantly diminished. This weakens a key causal path to the SONIA rate. Previously, rising inflation expectations were a strong driver for an increase in the policy rate, which in turn would push SONIA higher. If the Bank of England is no longer reacting to inflation expectations, this upward pressure on rates is reduced. While other factors like economic growth and global interest rates still influence the policy rate, and market liquidity can directly affect SONIA, the reduced impact of inflation expectations makes a significant increase in SONIA by December 2025 less likely than initially assessed. The path 'inflation_expectations -> bank_of_england_policy_rate -> sonia_rate_2025_12_28' is now less potent. The indirect path 'inflation_expectations -> market_liquidity -> sonia_rate_2025_12_28' is also weakened, though the prompt doesn't explicitly state the de-anchoring affects liquidity directly, it implies a general decoupling from policy.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'inflation_expectations' node suggests that its influence on the 'bank_of_england_policy_rate' is significantly diminished. This weakens a key causal path to the SONIA rate. Previously, rising inflation expectations were a strong driver for an increase in the policy rate, which in turn would push SONIA higher. If the Bank of England is no longer reacting to inflation expectations, this upward pressure on rates is reduced. While other factors like economic growth and global interest rates still influence the policy rate, and market liquidity can directly affect SONIA, the reduced impact of inflation expectations makes a significant increase in SONIA by December 2025 less likely than initially assessed. The path 'inflation_expectations -> bank_of_england_policy_rate -> sonia_rate_2025_12_28' is now less potent. The indirect path 'inflation_expectations -> market_liquidity -> sonia_rate_2025_12_28' is also weakened, though the prompt doesn't explicitly state the de-anchoring affects liquidity directly, it implies a general decoupling from policy.\"\n}",
+      "target_id": "inflation_expectations",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis suggests that in the specific context of late 2025, the influence of global interest rates on the Bank of England's policy rate and consequently SONIA will be significantly diminished. This is due to anticipated unique domestic economic conditions in the UK that will likely dominate policy decisions, making international rate movements largely irrelevant for SONIA by that date.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly targets the causal link between 'global_interest_rates' and 'bank_of_england_policy_rate'. If this influence is indeed significantly diminished, then one of the factors that could push the Bank of England to raise rates (and consequently SONIA) is weakened. While other factors like 'inflation_expectations' and 'economic_growth_outlook' still influence the policy rate, and 'market_liquidity' directly impacts SONIA, the reduced importance of global rates moderately decreases the probability of SONIA increasing. The impact is not drastic because the other causal paths remain intact, but it represents a noticeable reduction in a potential upward pressure on SONIA.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly targets the causal link between 'global_interest_rates' and 'bank_of_england_policy_rate'. If this influence is indeed significantly diminished, then one of the factors that could push the Bank of England to raise rates (and consequently SONIA) is weakened. While other factors like 'inflation_expectations' and 'economic_growth_outlook' still influence the policy rate, and 'market_liquidity' directly impacts SONIA, the reduced importance of global rates moderately decreases the probability of SONIA increasing. The impact is not drastic because the other causal paths remain intact, but it represents a noticeable reduction in a potential upward pressure on SONIA.\"\n}",
+      "target_id": "global_interest_rates",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "A recent, unannounced emergency meeting of the G7 central bankers concluded with a joint statement emphasizing the critical need for coordinated interest rate hikes to combat persistent global inflationary pressures. This coordinated action is widely interpreted by market analysts as a strong signal that the Bank of England will be forced to significantly increase its policy rate in the coming months, irrespective of other domestic economic indicators, to align with international monetary tightening and prevent substantial capital outflows.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The challenge directly strengthens the causal link between global interest rates and the Bank of England's policy rate, and consequently, the SONIA rate. The G7 meeting and the joint statement strongly signal that global inflationary pressures will force the Bank of England to increase its policy rate significantly, overriding other domestic considerations like economic growth or potentially even inflation expectations if they were to suggest a different path. This makes the 'bank_of_england_policy_rate -> sonia_rate_2025_12_28' path more certain to lead to an increase. The original reasoning already accounted for 'global_interest_rates -> bank_of_england_policy_rate', but this new information makes that link much more robust and less dependent on other factors. Therefore, the probability of SONIA increasing by the specified date has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge directly strengthens the causal link between global interest rates and the Bank of England's policy rate, and consequently, the SONIA rate. The G7 meeting and the joint statement strongly signal that global inflationary pressures will force the Bank of England to increase its policy rate significantly, overriding other domestic considerations like economic growth or potentially even inflation expectations if they were to suggest a different path. This makes the 'bank_of_england_policy_rate -> sonia_rate_2025_12_28' path more certain to lead to an increase. The original reasoning already accounted for 'global_interest_rates -> bank_of_england_policy_rate', but this new information makes that link much more robust and less dependent on other factors. Therefore, the probability of SONIA increasing by the specified date has increased.\"\n}",
+      "target_id": "bank_of_england_policy_rate",
+      "target_type": "node",
+      "target_importance": 0.125,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis from the Bank for International Settlements (BIS) highlights a structural shift in interbank lending markets, indicating a persistent reduction in overall market liquidity.  This shift is attributed to increased regulatory burdens and a deleveraging trend among major financial institutions, suggesting that periods of strained liquidity are likely to become more frequent and pronounced in the coming years.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.72,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'market_liquidity' is significant. The BIS analysis suggests a persistent reduction in market liquidity, implying that this factor will exert upward pressure on SONIA more frequently and intensely than previously modeled. The causal path 'market_liquidity -> sonia_rate_2025_12_28' is strengthened. This implies that even if other factors (like the Bank of England policy rate) remain stable, lower market liquidity will tend to push SONIA higher. The previous forecast likely did not fully account for this structural shift. Therefore, the probability of SONIA increasing by 2025-12-28 is increased, reflecting the heightened likelihood of liquidity-driven rate hikes.",
+      "raw_response": "{\n  \"updated_probability\": 0.72,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'market_liquidity' is significant. The BIS analysis suggests a persistent reduction in market liquidity, implying that this factor will exert upward pressure on SONIA more frequently and intensely than previously modeled. The causal path 'market_liquidity -> sonia_rate_2025_12_28' is strengthened. This implies that even if other factors (like the Bank of England policy rate) remain stable, lower market liquidity will tend to push SONIA higher. The previous forecast likely did not fully account for this structural shift. Therefore, the probability of SONIA increasing by 2025-12-28 is increased, reflecting the heightened likelihood of liquidity-driven rate hikes.\"\n}",
+      "target_id": "market_liquidity",
+      "target_type": "node",
+      "target_importance": 0.025,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent surveys of consumer and business sentiment have shown a significant upward revision in inflation expectations for the next 18-24 months. This is driven by persistent supply chain disruptions and a surprising resilience in consumer demand, leading many economists to predict that inflation will remain stubbornly above the Bank of England's target for longer than previously anticipated.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information significantly strengthens the causal path from 'inflation_expectations' to the 'sonia_rate_2025_12_28'. The upward revision in inflation expectations directly influences the 'bank_of_england_policy_rate' node, as the Bank of England is likely to raise its policy rate to combat persistent inflation. This increase in the policy rate, in turn, has a direct positive impact on the 'sonia_rate_2025_12_28' outcome. Furthermore, the information also suggests a potential tightening of 'market_liquidity' due to increased volatility stemming from persistent inflation, which would also contribute to a higher SONIA rate. Therefore, the probability of SONIA increasing by 2025-12-28 has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information significantly strengthens the causal path from 'inflation_expectations' to the 'sonia_rate_2025_12_28'. The upward revision in inflation expectations directly influences the 'bank_of_england_policy_rate' node, as the Bank of England is likely to raise its policy rate to combat persistent inflation. This increase in the policy rate, in turn, has a direct positive impact on the 'sonia_rate_2025_12_28' outcome. Furthermore, the information also suggests a potential tightening of 'market_liquidity' due to increased volatility stemming from persistent inflation, which would also contribute to a higher SONIA rate. Therefore, the probability of SONIA increasing by 2025-12-28 has increased.\"\n}",
+      "target_id": "inflation_expectations",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent reports from the US Federal Reserve and the European Central Bank indicate a coordinated effort to raise benchmark interest rates significantly over the next 18 months to combat persistent inflation across major economies. This synchronized global tightening cycle is expected to exert considerable upward pressure on international capital flows and necessitate a corresponding adjustment in the Bank of England's policy stance to remain competitive.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge strengthens the causal link between 'global_interest_rates' and 'bank_of_england_policy_rate'. The new information explicitly states a coordinated global rate hike, implying a higher likelihood that the Bank of England will also raise its policy rate to remain competitive and manage capital flows. This strengthens the primary causal path: global_interest_rates -> bank_of_england_policy_rate -> sonia_rate_2025_12_28. Given this, the probability of SONIA increasing by the specified date has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge strengthens the causal link between 'global_interest_rates' and 'bank_of_england_policy_rate'. The new information explicitly states a coordinated global rate hike, implying a higher likelihood that the Bank of England will also raise its policy rate to remain competitive and manage capital flows. This strengthens the primary causal path: global_interest_rates -> bank_of_england_policy_rate -> sonia_rate_2025_12_28. Given this, the probability of SONIA increasing by the specified date has increased.\"\n}",
+      "target_id": "global_interest_rates",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While the Bank of England's policy rate typically influences SONIA, consider a scenario where the central bank implements a significant 'corridor system' for its monetary policy. In such a system, the Bank of England might actively manage the policy rate to keep it *below* the target, but simultaneously offer a standing facility rate *above* the policy rate. If market participants predominantly transact at this standing facility rate due to its attractiveness, SONIA could remain anchored to the standing facility rate, effectively decoupling it from the stated policy rate.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly questions the strength and directness of the causal link between 'bank_of_england_policy_rate' and 'sonia_rate_2025_12_28'. The introduction of a 'corridor system' with a standing facility rate above the policy rate could indeed cause SONIA to track the standing facility rate rather than the policy rate. This weakens the primary driver in my original model. While other factors like 'market_liquidity' still influence SONIA, the direct and typically strong influence of the policy rate is now less certain. This necessitates a significant downward revision of the probability, as a key causal path to the outcome is less reliable.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly questions the strength and directness of the causal link between 'bank_of_england_policy_rate' and 'sonia_rate_2025_12_28'. The introduction of a 'corridor system' with a standing facility rate above the policy rate could indeed cause SONIA to track the standing facility rate rather than the policy rate. This weakens the primary driver in my original model. While other factors like 'market_liquidity' still influence SONIA, the direct and typically strong influence of the policy rate is now less certain. This necessitates a significant downward revision of the probability, as a key causal path to the outcome is less reliable.\"\n}",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "target_type": "edge",
+      "target_importance": 0.1167,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While historically strong economic growth might have prompted rate hikes, recent Bank of England communications suggest a pivot towards prioritizing inflation control above all else, even at the expense of short-term growth. Furthermore, the current global economic climate is characterized by significant supply-side shocks rather than demand-driven overheating, making the traditional link between growth and rate hikes less reliable.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.58,
+      "absolute_shift": 0.07000000000000006,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge targets the causal link between 'economic_growth_outlook' and 'bank_of_england_policy_rate'. The new information suggests that the Bank of England is de-emphasizing growth as a driver for policy rate decisions, prioritizing inflation control instead. This weakens the path where strong economic growth would directly lead to a higher policy rate, and consequently a higher SONIA rate. While the link is not entirely broken (as growth can still indirectly influence policy through inflation expectations or by being a factor in broader economic assessments), its direct impact is diminished. The reasoning also highlights that current economic conditions are driven by supply shocks, not demand overheating, further reducing the likelihood of growth directly triggering rate hikes. This weakens a key driver towards a higher SONIA rate, leading to a decrease in the overall probability. The other causal paths, particularly those related to inflation expectations and global interest rates, remain intact and continue to support a probability above 0.5, but the reduced influence of economic growth moderates the initial estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.58,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge targets the causal link between 'economic_growth_outlook' and 'bank_of_england_policy_rate'. The new information suggests that the Bank of England is de-emphasizing growth as a driver for policy rate decisions, prioritizing inflation control instead. This weakens the path where strong economic growth would directly lead to a higher policy rate, and consequently a higher SONIA rate. While the link is not entirely broken (as growth can still indirectly influence policy through inflation expectations or by being a factor in broader economic assessments), its direct impact is diminished. The reasoning also highlights that current economic conditions are driven by supply shocks, not demand overheating, further reducing the likelihood of growth directly triggering rate hikes. This weakens a key driver towards a higher SONIA rate, leading to a decrease in the overall probability. The other causal paths, particularly those related to inflation expectations and global interest rates, remain intact and continue to support a probability above 0.5, but the reduced influence of economic growth moderates the initial estimate.\"\n}",
+      "target_id": "economic_growth_outlook->bank_of_england_policy_rate",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While it's generally true that tight market liquidity can increase SONIA, consider a scenario where the Bank of England actively intervenes to *ensure* sufficient liquidity in the overnight market, even during periods of stress. If the Bank of England's stated commitment and demonstrated actions are to aggressively provide liquidity to prevent significant spikes in SONIA, how would that alter your assessment, irrespective of other factors?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'market_liquidity -> sonia_rate_2025_12_28' link suggests a mitigating factor. My initial reasoning relied on the possibility of tight liquidity pushing SONIA up. However, the new information posits that the Bank of England will actively counteract liquidity shortages to stabilize SONIA. This weakens the direct causal path where market liquidity independently drives SONIA higher. If the Bank of England is committed and effective in providing liquidity, the impact of 'market_liquidity' on 'sonia_rate_2025_12_28' is significantly diminished, making it less likely that SONIA will increase solely due to liquidity conditions. This reduces the probability that SONIA will be higher, as one of the potential upward pressures has been neutralized. The other causal paths remain intact, but the influence of this specific path is now less certain and likely less impactful.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'market_liquidity -> sonia_rate_2025_12_28' link suggests a mitigating factor. My initial reasoning relied on the possibility of tight liquidity pushing SONIA up. However, the new information posits that the Bank of England will actively counteract liquidity shortages to stabilize SONIA. This weakens the direct causal path where market liquidity independently drives SONIA higher. If the Bank of England is committed and effective in providing liquidity, the impact of 'market_liquidity' on 'sonia_rate_2025_12_28' is significantly diminished, making it less likely that SONIA will increase solely due to liquidity conditions. This reduces the probability that SONIA will be higher, as one of the potential upward pressures has been neutralized. The other causal paths remain intact, but the influence of this specific path is now less certain and likely less impactful.\"\n}",
+      "target_id": "market_liquidity->sonia_rate_2025_12_28",
+      "target_type": "edge",
+      "target_importance": 0.05,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of the Bank of England's recent monetary policy decisions shows an even tighter correlation between changes in the bank_of_england_policy_rate and the resulting SONIA rate. Specifically, during periods of rapid rate hikes, the SONIA rate has consistently moved in lockstep, often exceeding the policy rate change by a small margin due to market anticipation and transmission mechanisms. This suggests the direct pass-through from the policy rate to SONIA is exceptionally robust, perhaps even more so than previously modeled.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge strengthens, rather than weakens, the causal link between `bank_of_england_policy_rate` and `sonia_rate_2025_12_28`. The new information indicates an even more robust and direct pass-through mechanism, suggesting that any increase in the Bank of England's policy rate will translate more predictably and potentially to a greater extent into a higher SONIA rate. This reinforces the primary causal path leading to the outcome and increases the probability that SONIA will be higher by the specified date, assuming the policy rate itself is expected to rise due to factors like inflation expectations or economic growth.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge strengthens, rather than weakens, the causal link between `bank_of_england_policy_rate` and `sonia_rate_2025_12_28`. The new information indicates an even more robust and direct pass-through mechanism, suggesting that any increase in the Bank of England's policy rate will translate more predictably and potentially to a greater extent into a higher SONIA rate. This reinforces the primary causal path leading to the outcome and increases the probability that SONIA will be higher by the specified date, assuming the policy rate itself is expected to rise due to factors like inflation expectations or economic growth.\"\n}",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "target_type": "edge",
+      "target_importance": 0.1167,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis from the Office for Budget Responsibility highlights a significant upward revision to the UK's long-term productivity growth potential, driven by advancements in AI and automation. This revised outlook suggests that the economy can sustain higher growth rates without immediately triggering inflationary pressures. Consequently, the Bank of England might be more inclined to maintain a higher policy rate for longer to harness this growth, even if current inflation figures show some moderation, thereby strengthening the link between a positive economic growth outlook and a higher bank_of_england_policy_rate.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.72,
+      "absolute_shift": 0.06999999999999995,
+      "shift_direction": "increased",
+      "reasoning": "The challenge strengthens the causal link between 'economic_growth_outlook' and 'bank_of_england_policy_rate'. Previously, strong growth might have been a precursor to rate hikes due to overheating concerns. The new information suggests that improved productivity growth allows the economy to absorb higher growth without immediate inflationary pressure. This means that a positive 'economic_growth_outlook' is now seen as a stronger reason for the Bank of England to *maintain* or potentially *increase* the 'bank_of_england_policy_rate' to leverage this growth potential, rather than solely as a trigger for rate hikes due to inflation fears. This strengthens the overall positive influence of economic growth on the policy rate, and subsequently on the SONIA rate. The causal path 'economic_growth_outlook' -> 'bank_of_england_policy_rate' -> 'sonia_rate_2025_12_28' is therefore reinforced, leading to an increased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.72,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge strengthens the causal link between 'economic_growth_outlook' and 'bank_of_england_policy_rate'. Previously, strong growth might have been a precursor to rate hikes due to overheating concerns. The new information suggests that improved productivity growth allows the economy to absorb higher growth without immediate inflationary pressure. This means that a positive 'economic_growth_outlook' is now seen as a stronger reason for the Bank of England to *maintain* or potentially *increase* the 'bank_of_england_policy_rate' to leverage this growth potential, rather than solely as a trigger for rate hikes due to inflation fears. This strengthens the overall positive influence of economic growth on the policy rate, and subsequently on the SONIA rate. The causal path 'economic_growth_outlook' -> 'bank_of_england_policy_rate' -> 'sonia_rate_2025_12_28' is therefore reinforced, leading to an increased probability estimate.\"\n}",
+      "target_id": "economic_growth_outlook->bank_of_england_policy_rate",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "Recent market analysis suggests that the Bank of England's policy rate is not a primary driver of SONIA, but rather a lagging indicator. Some economists argue that the rapid movements and general level of SONIA, reflecting real-time interbank lending conditions and market liquidity, actually signal to the Bank of England what the appropriate policy rate should be. Therefore, could it be that high SONIA rates are actually *causing* the Bank of England to adjust its policy rate upwards, rather than the other way around?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.45,
+      "absolute_shift": 0.2,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly questions the primary causal link in my model: 'bank_of_england_policy_rate -> sonia_rate_2025_12_28'. If SONIA is not primarily driven by the policy rate, but rather the policy rate is a lagging response to SONIA and market liquidity, then the influence of 'bank_of_england_policy_rate', 'inflation_expectations', 'economic_growth_outlook', and 'global_interest_rates' on SONIA is significantly weakened. The causal path now appears to be more strongly influenced by 'market_liquidity' and its own drivers, with the Bank of England's policy rate acting as a follower rather than a leader. This reversal of causality fundamentally alters the expected relationship, leading to a substantial decrease in the probability of SONIA increasing due to policy rate changes. The link 'market_liquidity -> sonia_rate_2025_12_28' becomes more critical, and the influence of 'inflation_expectations -> market_liquidity' is also more important.",
+      "raw_response": "{\n  \"updated_probability\": 0.45,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly questions the primary causal link in my model: 'bank_of_england_policy_rate -> sonia_rate_2025_12_28'. If SONIA is not primarily driven by the policy rate, but rather the policy rate is a lagging response to SONIA and market liquidity, then the influence of 'bank_of_england_policy_rate', 'inflation_expectations', 'economic_growth_outlook', and 'global_interest_rates' on SONIA is significantly weakened. The causal path now appears to be more strongly influenced by 'market_liquidity' and its own drivers, with the Bank of England's policy rate acting as a follower rather than a leader. This reversal of causality fundamentally alters the expected relationship, leading to a substantial decrease in the probability of SONIA increasing due to policy rate changes. The link 'market_liquidity -> sonia_rate_2025_12_28' becomes more critical, and the influence of 'inflation_expectations -> market_liquidity' is also more important.\"\n}",
+      "target_id": "bank_of_england_policy_rate->sonia_rate_2025_12_28",
+      "target_type": "edge",
+      "target_importance": 0.1167,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While your model shows market liquidity directly affecting SONIA, it omits a crucial feedback loop: severe disruptions in market liquidity can signal broader financial instability. Such instability might force the Bank of England to adjust its policy rate, not just to influence SONIA indirectly, but as a direct response to the liquidity crisis itself.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.68,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The challenge introduces a new causal path: market_liquidity -> bank_of_england_policy_rate -> sonia_rate_2025_12_28. Previously, market liquidity only influenced SONIA directly (market_liquidity -> sonia_rate_2025_12_28). The new path suggests that severe liquidity disruptions could trigger a policy rate change by the Bank of England. If such disruptions occur and lead to a policy rate hike, it would reinforce the upward pressure on SONIA. This new mechanism adds an additional pathway for SONIA to increase, especially if the Bank of England prioritizes stability over other economic considerations in the face of a liquidity crisis. While the original direct link from liquidity to SONIA remains, this indirect but potentially powerful route via policy adjustments strengthens the likelihood of an increase in SONIA. Therefore, the probability has been slightly increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.68,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge introduces a new causal path: market_liquidity -> bank_of_england_policy_rate -> sonia_rate_2025_12_28. Previously, market liquidity only influenced SONIA directly (market_liquidity -> sonia_rate_2025_12_28). The new path suggests that severe liquidity disruptions could trigger a policy rate change by the Bank of England. If such disruptions occur and lead to a policy rate hike, it would reinforce the upward pressure on SONIA. This new mechanism adds an additional pathway for SONIA to increase, especially if the Bank of England prioritizes stability over other economic considerations in the face of a liquidity crisis. While the original direct link from liquidity to SONIA remains, this indirect but potentially powerful route via policy adjustments strengthens the likelihood of an increase in SONIA. Therefore, the probability has been slightly increased.\"\n}",
+      "target_id": "market_liquidity->bank_of_england_policy_rate",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Suppose the Bank of England announces a new, experimental quantitative tightening program starting in late 2025, designed to rapidly reduce the money supply in the banking system. How might this direct intervention in market liquidity, independent of the policy rate, affect your forecast for the SONIA rate on 2025-12-28?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly challenges the independence of the 'market_liquidity' node from other policy actions. The quantitative tightening program is explicitly designed to reduce the money supply, which is a direct intervention impacting market liquidity. This intervention is independent of the 'bank_of_england_policy_rate', 'inflation_expectations', and 'economic_growth_outlook' nodes. The causal path 'market_liquidity -> sonia_rate_2025_12_28' is now expected to exert a stronger upward pressure on SONIA. The program's goal of rapidly reducing money supply implies a significant tightening of liquidity, which, according to the model, directly pushes overnight rates like SONIA higher. This strengthens the likelihood of SONIA increasing compared to the baseline scenario, hence the increased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly challenges the independence of the 'market_liquidity' node from other policy actions. The quantitative tightening program is explicitly designed to reduce the money supply, which is a direct intervention impacting market liquidity. This intervention is independent of the 'bank_of_england_policy_rate', 'inflation_expectations', and 'economic_growth_outlook' nodes. The causal path 'market_liquidity -> sonia_rate_2025_12_28' is now expected to exert a stronger upward pressure on SONIA. The program's goal of rapidly reducing money supply implies a significant tightening of liquidity, which, according to the model, directly pushes overnight rates like SONIA higher. This strengthens the likelihood of SONIA increasing compared to the baseline scenario, hence the increased probability.\"\n}",
+      "target_id": "quantitative_tightening_program",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the UK government announces a significant, unexpected fiscal stimulus package in mid-2025, aimed at boosting consumer spending and investment. This stimulus is expected to lead to higher government borrowing and potentially increase aggregate demand, which could, in turn, influence the Bank of England's monetary policy decisions and the overall SONIA rate.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The fiscal stimulus package directly impacts the economic growth outlook, a key driver of Bank of England policy. A significant stimulus is likely to boost aggregate demand and potentially lead to inflationary pressures. This would likely prompt the Bank of England to consider raising its policy rate to manage inflation and prevent economic overheating, which in turn would push SONIA higher. The stimulus also indirectly affects inflation expectations, as markets anticipate potential price increases. While the stimulus's impact on market liquidity is less certain, the primary causal path through economic growth and inflation expectations to the Bank of England's policy rate, and consequently to SONIA, is strengthened. Therefore, the probability of SONIA increasing by 2025-12-28 has increased.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The fiscal stimulus package directly impacts the economic growth outlook, a key driver of Bank of England policy. A significant stimulus is likely to boost aggregate demand and potentially lead to inflationary pressures. This would likely prompt the Bank of England to consider raising its policy rate to manage inflation and prevent economic overheating, which in turn would push SONIA higher. The stimulus also indirectly affects inflation expectations, as markets anticipate potential price increases. While the stimulus's impact on market liquidity is less certain, the primary causal path through economic growth and inflation expectations to the Bank of England's policy rate, and consequently to SONIA, is strengthened. Therefore, the probability of SONIA increasing by 2025-12-28 has increased.\"\n}",
+      "target_id": "fiscal_stimulus",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent report highlighted that the average duration of fixed-rate mortgages in the UK has been trending upwards. This is attributed to borrowers seeking longer-term certainty in their borrowing costs amidst fluctuating economic conditions.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about the increasing average duration of fixed-rate mortgages in the UK is a subtle but potentially relevant factor. This trend suggests a desire for longer-term borrowing certainty, which could imply that households and businesses are anticipating a period of sustained or potentially rising interest rates, or at least a desire to lock in current rates before they potentially increase further. This could indirectly influence inflation expectations and economic growth outlook, as it reflects a certain market sentiment about future rate movements. However, its direct impact on the Bank of England's policy rate or market liquidity is likely to be secondary compared to the primary drivers already in the model. Therefore, the causal paths are not fundamentally broken, but the overall economic sentiment might lean slightly more towards potential rate increases, which could marginally decrease the probability of SONIA rising by a significant margin by 2025-12-28, as the market might already be pricing in some of this expectation. The update is small because the direct link to SONIA is weak.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about the increasing average duration of fixed-rate mortgages in the UK is a subtle but potentially relevant factor. This trend suggests a desire for longer-term borrowing certainty, which could imply that households and businesses are anticipating a period of sustained or potentially rising interest rates, or at least a desire to lock in current rates before they potentially increase further. This could indirectly influence inflation expectations and economic growth outlook, as it reflects a certain market sentiment about future rate movements. However, its direct impact on the Bank of England's policy rate or market liquidity is likely to be secondary compared to the primary drivers already in the model. Therefore, the causal paths are not fundamentally broken, but the overall economic sentiment might lean slightly more towards potential rate increases, which could marginally decrease the probability of SONIA rising by a significant margin by 2025-12-28, as the market might already be pricing in some of this expectation. The update is small because the direct link to SONIA is weak.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "The UK government has announced a new initiative to promote sustainable tourism in coastal regions. This plan involves significant investment in eco-friendly infrastructure and marketing campaigns to attract environmentally conscious travelers.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.64,
+      "absolute_shift": 0.010000000000000009,
+      "shift_direction": "decreased",
+      "reasoning": "The new initiative to promote sustainable tourism is unlikely to have a significant direct or indirect impact on the SONIA rate by 2025-12-28. While it might slightly boost economic growth in specific coastal regions, its overall impact on the national economic growth outlook is expected to be marginal and unlikely to influence Bank of England policy rate decisions significantly within this timeframe. Similarly, it has no direct bearing on inflation expectations or global interest rates. The link to market liquidity is also tenuous. Therefore, the causal paths leading to the SONIA rate are largely unaffected, and the probability estimate is only slightly decreased to reflect a very minor potential indirect effect on economic growth.",
+      "raw_response": "{\n  \"updated_probability\": 0.64,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new initiative to promote sustainable tourism is unlikely to have a significant direct or indirect impact on the SONIA rate by 2025-12-28. While it might slightly boost economic growth in specific coastal regions, its overall impact on the national economic growth outlook is expected to be marginal and unlikely to influence Bank of England policy rate decisions significantly within this timeframe. Similarly, it has no direct bearing on inflation expectations or global interest rates. The link to market liquidity is also tenuous. Therefore, the causal paths leading to the SONIA rate are largely unaffected, and the probability estimate is only slightly decreased to reflect a very minor potential indirect effect on economic growth.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "IUDSOIA",
+    "question_text": "Will the daily Sterling Overnight Index Average, the interest rate applied to bank transactions in the British Sterling Market during off hours, have increased by 2025-12-28 as compared to its value on 2025-12-21?",
+    "source": "fred",
+    "condition": "one-turn",
+    "initial_probability": 0.65,
+    "n_probes": 19,
+    "n_successful": 19,
+    "mean_absolute_shift": 0.10368421052631578,
+    "max_absolute_shift": 0.35000000000000003
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 2.3660714285714284,
+    "mean_shift_high": 0.1325,
+    "mean_shift_low": 0.05600000000000001,
+    "asymmetry_index": 1.3365617433414045,
+    "mean_shift_negate": 0.13142857142857142,
+    "mean_shift_strengthen": 0.09833333333333331,
+    "fnar": 1,
+    "n_accepted": 2,
+    "n_spurious": 2,
+    "critical_path_premium": 0.06822222222222224,
+    "mean_shift_on_path": 0.136,
+    "mean_shift_off_path": 0.06777777777777777,
+    "importance_sensitivity_correlation": 0.8606060606060606,
+    "control_sensitivity": 0
+  }
+}

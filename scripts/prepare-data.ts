@@ -82,6 +82,7 @@ const MODELS: Record<string, { dir: string; label: string }> = {
   "llama-70b": { dir: "70b_one_turn", label: "Llama 3.3 70B" },
   "deepseek-v3": { dir: "deepseek_one_turn", label: "DeepSeek V3" },
   "qwen-235b": { dir: "qwen_one_turn", label: "Qwen3 235B" },
+  "gemini-flash": { dir: "gemini_flash_lite_one_turn", label: "Gemini 2.5 Flash Lite" },
 };
 
 // ------------------------------------------------------------------

@@ -1,0 +1,1230 @@
+{
+  "question_id": "274e2a09f7060b8ea234c1d6a91ec3e43b523a2911042a8696ac2b42fc531ca8",
+  "question_text": "According to Wikipedia, will Aleksandra Goryachkina have a FIDE ranking on 2025-12-28 as high or higher than their ranking on 2025-12-21?",
+  "source": "wikipedia",
+  "initial_probability": 0.75,
+  "nodes": [
+    {
+      "id": "goryachkina_performance_trend",
+      "description": "Aleksandra Goryachkina's recent chess performance trend (wins, losses, draws, strength of opponents).",
+      "role": "factor"
+    },
+    {
+      "id": "tournament_schedule",
+      "description": "The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates.",
+      "role": "factor"
+    },
+    {
+      "id": "rating_fluctuations",
+      "description": "General volatility and fluctuations in the FIDE rating system itself.",
+      "role": "factor"
+    },
+    {
+      "id": "player_development",
+      "description": "Aleksandra Goryachkina's ongoing chess development and improvement (or potential stagnation/decline).",
+      "role": "factor"
+    },
+    {
+      "id": "wikipedia_data_accuracy",
+      "description": "The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia.",
+      "role": "factor"
+    },
+    {
+      "id": "outcome",
+      "description": "Aleksandra Goryachkina will have a FIDE ranking on 2025-12-28 as high or higher than their ranking on 2025-12-21.",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "goryachkina_performance_trend",
+      "to": "outcome",
+      "mechanism": "Consistent strong performance directly leads to a higher or maintained rating."
+    },
+    {
+      "from": "tournament_schedule",
+      "to": "goryachkina_performance_trend",
+      "mechanism": "More difficult tournaments might lead to more volatile performance, while fewer tournaments might limit opportunities for rating gains."
+    },
+    {
+      "from": "player_development",
+      "to": "goryachkina_performance_trend",
+      "mechanism": "Continued improvement in chess skills will likely lead to better performance results."
+    },
+    {
+      "from": "rating_fluctuations",
+      "to": "outcome",
+      "mechanism": "General rating system inflation or deflation can affect rankings independently of individual performance."
+    },
+    {
+      "from": "goryachkina_performance_trend",
+      "to": "player_development",
+      "mechanism": "Sustained good performance can indicate successful development, and vice-versa."
+    },
+    {
+      "from": "wikipedia_data_accuracy",
+      "to": "outcome",
+      "mechanism": "If Wikipedia data is inaccurate or delayed, the perceived ranking might differ from the actual FIDE ranking, influencing the outcome's truthfulness."
+    },
+    {
+      "from": "tournament_schedule",
+      "to": "outcome",
+      "mechanism": "Participation in tournaments directly impacts rating changes."
+    }
+  ],
+  "reasoning": "Aleksandra Goryachkina is a top-tier chess player, and her ranking is generally stable and high. While performance trends and tournament schedules are key drivers of rating changes, her consistent skill level suggests a high probability of maintaining or improving her ranking. The FIDE rating system itself can have minor fluctuations. The accuracy of Wikipedia data is a secondary concern, assuming it reflects the official FIDE data reasonably well. Given her past performance and likely continued participation in strong tournaments, it's more probable than not that her ranking will be the same or higher.",
+  "network_analysis": {
+    "n_nodes": 6,
+    "n_edges": 7,
+    "density": 0.2333,
+    "is_dag": false,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 5,
+    "outcome_node": "outcome",
+    "node_metrics": [
+      {
+        "node_id": "goryachkina_performance_trend",
+        "description": "Aleksandra Goryachkina's recent chess performance trend (wins, losses, draws, strength of opponents).",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 2,
+        "betweenness": 0.1,
+        "closeness": 0.4,
+        "pagerank": 0.2597,
+        "path_relevance": 0.2
+      },
+      {
+        "node_id": "tournament_schedule",
+        "description": "The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 2,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0729,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "rating_fluctuations",
+        "description": "General volatility and fluctuations in the FIDE rating system itself.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0729,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "player_development",
+        "description": "Aleksandra Goryachkina's ongoing chess development and improvement (or potential stagnation/decline).",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.2667,
+        "pagerank": 0.1833,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "wikipedia_data_accuracy",
+        "description": "The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia.",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.0729,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "outcome",
+        "description": "Aleksandra Goryachkina will have a FIDE ranking on 2025-12-28 as high or higher than their ranking on 2025-12-21.",
+        "role": "outcome",
+        "in_degree": 4,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.8333,
+        "pagerank": 0.3382,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "goryachkina_performance_trend",
+        "target": "outcome",
+        "mechanism": "Consistent strong performance directly leads to a higher or maintained rating.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "goryachkina_performance_trend",
+        "target": "player_development",
+        "mechanism": "Sustained good performance can indicate successful development, and vice-versa.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": false
+      },
+      {
+        "source": "tournament_schedule",
+        "target": "goryachkina_performance_trend",
+        "mechanism": "More difficult tournaments might lead to more volatile performance, while fewer tournaments might limit opportunities for rating gains.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": false
+      },
+      {
+        "source": "tournament_schedule",
+        "target": "outcome",
+        "mechanism": "Participation in tournaments directly impacts rating changes.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "rating_fluctuations",
+        "target": "outcome",
+        "mechanism": "General rating system inflation or deflation can affect rankings independently of individual performance.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      },
+      {
+        "source": "player_development",
+        "target": "goryachkina_performance_trend",
+        "mechanism": "Continued improvement in chess skills will likely lead to better performance results.",
+        "edge_betweenness": 0.0667,
+        "on_critical_path": true
+      },
+      {
+        "source": "wikipedia_data_accuracy",
+        "target": "outcome",
+        "mechanism": "If Wikipedia data is inaccurate or delayed, the perceived ranking might differ from the actual FIDE ranking, influencing the outcome's truthfulness.",
+        "edge_betweenness": 0.0333,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "goryachkina_performance_trend",
+        "description": "Aleksandra Goryachkina's recent chess performance trend (wins, losses, draws, strength of opponents).",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "tournament_schedule",
+        "description": "The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "rating_fluctuations",
+        "description": "General volatility and fluctuations in the FIDE rating system itself.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "wikipedia_data_accuracy",
+        "description": "The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "goryachkina_performance_trend",
+        "description": "Aleksandra Goryachkina's recent chess performance trend (wins, losses, draws, strength of opponents).",
+        "importance": 0.1,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "tournament_schedule",
+        "description": "The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates.",
+        "importance": 0,
+        "centrality_rank": 2,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "rating_fluctuations",
+        "description": "General volatility and fluctuations in the FIDE rating system itself.",
+        "importance": 0,
+        "centrality_rank": 3,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "wikipedia_data_accuracy",
+        "description": "The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia.",
+        "importance": 0,
+        "centrality_rank": 5,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "goryachkina_performance_trend->outcome",
+        "description": "Consistent strong performance directly leads to a higher or maintained rating.",
+        "importance": 0.0667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "player_development->goryachkina_performance_trend",
+        "description": "Continued improvement in chess skills will likely lead to better performance results.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "goryachkina_performance_trend->player_development",
+        "description": "Sustained good performance can indicate successful development, and vice-versa.",
+        "importance": 0.0667,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "goryachkina_performance_trend->outcome",
+        "description": "Consistent strong performance directly leads to a higher or maintained rating.",
+        "importance": 0.0667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "player_development->goryachkina_performance_trend",
+        "description": "Continued improvement in chess skills will likely lead to better performance results.",
+        "importance": 0.0667,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "goryachkina_performance_trend->player_development",
+        "description": "Sustained good performance can indicate successful development, and vice-versa.",
+        "importance": 0.0667,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "goryachkina_performance_trend->outcome",
+        "description": "Consistent strong performance directly leads to a higher or maintained rating.",
+        "importance": 0.0667,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "tournament_schedule->wikipedia_data_accuracy",
+        "description": "Potential link: The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates. -> The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "tournament_schedule->rating_fluctuations",
+        "description": "Potential link: The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates. -> General volatility and fluctuations in the FIDE rating system itself.",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "goryachkina_performance_trend",
+      "description": "Aleksandra Goryachkina's recent chess performance trend (wins, losses, draws, strength of opponents).",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "tournament_schedule",
+      "description": "The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "rating_fluctuations",
+      "description": "General volatility and fluctuations in the FIDE rating system itself.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "wikipedia_data_accuracy",
+      "description": "The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "goryachkina_performance_trend",
+      "description": "Aleksandra Goryachkina's recent chess performance trend (wins, losses, draws, strength of opponents).",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "tournament_schedule",
+      "description": "The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates.",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "rating_fluctuations",
+      "description": "General volatility and fluctuations in the FIDE rating system itself.",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "wikipedia_data_accuracy",
+      "description": "The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia.",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "description": "Consistent strong performance directly leads to a higher or maintained rating.",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "player_development->goryachkina_performance_trend",
+      "description": "Continued improvement in chess skills will likely lead to better performance results.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "goryachkina_performance_trend->player_development",
+      "description": "Sustained good performance can indicate successful development, and vice-versa.",
+      "importance": 0.0667,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "description": "Consistent strong performance directly leads to a higher or maintained rating.",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "player_development->goryachkina_performance_trend",
+      "description": "Continued improvement in chess skills will likely lead to better performance results.",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "goryachkina_performance_trend->player_development",
+      "description": "Sustained good performance can indicate successful development, and vice-versa.",
+      "importance": 0.0667,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "description": "Consistent strong performance directly leads to a higher or maintained rating.",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "tournament_schedule->wikipedia_data_accuracy",
+      "description": "Potential link: The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates. -> The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "tournament_schedule->rating_fluctuations",
+      "description": "Potential link: The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates. -> General volatility and fluctuations in the FIDE rating system itself.",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "What if Aleksandra Goryachkina's recent performance trend is irrelevant to her FIDE ranking on these specific dates? Imagine she has taken a significant break from competitive chess, focusing entirely on coaching or other non-playing activities for the entire period between 2025-12-21 and 2025-12-28. In this scenario, her historical performance trend would have no bearing on her ranking, as she simply wouldn't be actively competing to change it.",
+      "probe_type": "node_negate_high",
+      "target_id": "goryachkina_performance_trend",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Aleksandra Goryachkina's recent chess performance trend (wins, losses, draws, strength of opponents)."
+    },
+    {
+      "probe_text": "What if Aleksandra Goryachkina takes a complete break from competitive chess between December 21st and December 28th, 2025, not participating in any tournaments? In this scenario, her FIDE ranking would remain unchanged regardless of the number or difficulty of tournaments she *would* have played in, making the 'tournament_schedule' factor entirely irrelevant to the outcome.",
+      "probe_type": "node_negate_high",
+      "target_id": "tournament_schedule",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates."
+    },
+    {
+      "probe_text": "Recent FIDE policy changes have aimed to stabilize the rating system, significantly reducing historical volatility. Given that these changes were implemented at the start of 2025, the inherent fluctuations in the rating system itself are unlikely to be a significant factor in Aleksandra Goryachkina's ranking change between December 21st and December 28th, 2025. Therefore, the 'rating_fluctuations' node may not be a relevant causal factor in this specific prediction.",
+      "probe_type": "node_negate_medium",
+      "target_id": "rating_fluctuations",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "General volatility and fluctuations in the FIDE rating system itself."
+    },
+    {
+      "probe_text": "While Wikipedia is generally a good source for information, it's important to consider that the FIDE ranking data displayed on Wikipedia might not be updated in real-time. It's possible that there's a significant lag between official FIDE updates and when Wikipedia reflects those changes. Therefore, the accuracy and timeliness of Wikipedia's data may not be a direct or reliable indicator of Aleksandra Goryachkina's actual FIDE ranking on any given date.",
+      "probe_type": "node_negate_low",
+      "target_id": "wikipedia_data_accuracy",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia."
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina has recently dominated the FIDE Grand Prix, securing first place in all three legs with an average performance rating exceeding 2750. This unprecedented streak of victories against top-tier opponents strongly indicates a significant upward trend in her current playing strength and form, directly impacting her FIDE rating.",
+      "probe_type": "node_strengthen",
+      "target_id": "goryachkina_performance_trend",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Aleksandra Goryachkina's recent chess performance trend (wins, losses, draws, strength of opponents)."
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina has announced an ambitious tournament schedule for the latter half of 2025, including participation in the highly competitive Candidates Tournament followed by the Grand Swiss. Experts are highlighting that the sheer intensity and demanding nature of these back-to-back elite events will place immense pressure on her rating, making tournament performance the absolutely dominant factor in her FIDE ranking by year's end.",
+      "probe_type": "node_strengthen",
+      "target_id": "tournament_schedule",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 2,
+      "on_critical_path": false,
+      "description": "The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates."
+    },
+    {
+      "probe_text": "Recent analyses of chess rating systems have highlighted an increasing trend in rating volatility across the top 100 players. This is attributed to a new algorithm implemented by FIDE in early 2024, designed to more rapidly adjust ratings based on recent results, leading to larger swings than historically observed. This suggests that 'rating_fluctuations' might play a more significant role in determining short-term ranking changes than previously modeled.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "rating_fluctuations",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 3,
+      "on_critical_path": false,
+      "description": "General volatility and fluctuations in the FIDE rating system itself."
+    },
+    {
+      "probe_text": "A recent analysis of chess news sites found that Wikipedia's chess player data is often updated with a lag of several weeks, especially for less prominent players. Furthermore, there have been documented instances where automated bots updating Wikipedia incorrectly parsed FIDE data, leading to temporary inaccuracies in player rankings.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "wikipedia_data_accuracy",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 5,
+      "on_critical_path": false,
+      "description": "The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia."
+    },
+    {
+      "probe_text": "While strong performance often correlates with rating increases, it's possible that Goryachkina's recent strong performances were against significantly lower-rated opponents, artificially inflating her perceived trend. Furthermore, a recent rule change in FIDE regarding rating calculations, implemented just before this period, could decouple strong results from direct rating gains for a transitional phase.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Consistent strong performance directly leads to a higher or maintained rating."
+    },
+    {
+      "probe_text": "While player development typically influences performance, Aleksandra Goryachkina might be at a stage where her development has plateaued, or she is focusing on theoretical study rather than practical application. This could mean that despite potential underlying improvements in her understanding of chess, her on-board performance trend might not show a corresponding increase or could even temporarily dip due to experimenting with new strategies learned during development.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "player_development->goryachkina_performance_trend",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Continued improvement in chess skills will likely lead to better performance results."
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina might be experiencing a temporary surge in performance due to favorable matchups or a lucky streak, rather than indicating genuine, long-term player development. Conversely, a period of slightly weaker performance could be due to fatigue or facing exceptionally strong opponents, without necessarily signifying a halt in her overall development as a player.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "goryachkina_performance_trend->player_development",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Sustained good performance can indicate successful development, and vice-versa."
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina recently participated in the highly competitive FIDE Women's Grand Prix 2024-2025, where she secured first place in two of the four legs. This consistent dominance against top-tier opposition, a clear indicator of her current performance trend, strongly suggests that her rating will not only be maintained but likely increase further due to the significant rating points gained from these victories, reinforcing the direct link between strong performance and rating outcome.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Consistent strong performance directly leads to a higher or maintained rating."
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina has recently been dedicating significant time to specialized training with a renowned chess coach, focusing on opening theory and endgame technique. This intensive, targeted development is highly likely to translate into demonstrably improved performance in her upcoming matches, reinforcing the direct link between her player development and her on-board results.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "player_development->goryachkina_performance_trend",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Continued improvement in chess skills will likely lead to better performance results."
+    },
+    {
+      "probe_text": "Recent analysis of elite chess players suggests that sustained periods of high-level performance, even against strong opposition, are not merely a reflection of current form but are increasingly indicative of significant, long-term skill acquisition and strategic adaptation. This implies that Goryachkina's consistent results might be a stronger signal of her ongoing development than typically acknowledged, suggesting this link is more robust than a simple correlation.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "goryachkina_performance_trend->player_development",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "Sustained good performance can indicate successful development, and vice-versa."
+    },
+    {
+      "probe_text": "It's possible that the forecaster's belief about strong performance leading to a higher ranking is backwards. Consider that a player aiming for a specific high ranking might adjust their tournament participation and preparation (thus affecting their 'performance trend') in order to meet that target. For instance, if Goryachkina has a specific ranking goal, she might strategically choose easier tournaments or reduce her overall play to avoid risking her current rating, thereby making the *desired outcome* (a high ranking) the driver of her observed performance trend.",
+      "probe_type": "edge_reverse",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0667,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Consistent strong performance directly leads to a higher or maintained rating."
+    },
+    {
+      "probe_text": "While Wikipedia is generally updated with FIDE data, consider the impact of Goryachkina's tournament schedule. If she participates in a very high number of difficult tournaments in a short period, the FIDE rating system might have a processing lag for these updates. This lag could mean that Wikipedia's information, which relies on this data, might not reflect her most current FIDE ranking immediately after a flurry of activity, making the information less timely and potentially less accurate for the specified dates.",
+      "probe_type": "edge_spurious",
+      "target_id": "tournament_schedule->wikipedia_data_accuracy",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates. -> The accuracy and timeliness of Aleksandra Goryachkina's FIDE ranking information as presented on Wikipedia."
+    },
+    {
+      "probe_text": "While you've modeled tournament schedule and rating fluctuations separately, consider how a very demanding tournament schedule, with many high-stakes games against top players, might indirectly influence the *overall volatility* of the FIDE rating system itself. For instance, a period of intense competition could lead to more unpredictable results across many players, potentially increasing the statistical 'noise' or fluctuation in the rating pool, which then affects everyone's rating, including Goryachkina's.",
+      "probe_type": "edge_spurious",
+      "target_id": "tournament_schedule->rating_fluctuations",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The number and difficulty of tournaments Aleksandra Goryachkina participates in between the two dates. -> General volatility and fluctuations in the FIDE rating system itself."
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina is scheduled to participate in a special exhibition match against a significantly lower-rated player in early December 2025. This match, while not a standard tournament, has a unique scoring system that could disproportionately affect her FIDE rating due to its unusual format. How might this specific event influence your assessment of her FIDE ranking trend between December 21st and December 28th, 2025?",
+      "probe_type": "missing_node",
+      "target_id": "exhibition_match_impact",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina's participation in the 2025 FIDE World Cup, a highly prestigious and demanding event, could significantly impact her performance trend and rating. How might her performance in such a high-stakes tournament, regardless of its difficulty relative to her usual schedule, alter the expected trajectory of her FIDE ranking between the two dates?",
+      "probe_type": "missing_node",
+      "target_id": "missing_node_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina's favorite chess opening is the King's Indian Defense. She has been practicing this opening extensively in her training sessions over the past year.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "Aleksandra Goryachkina is known to be a fan of a particular chess opening, the Sicilian Defense. She has been observed to play this opening in a significant portion of her recent games. This preference is a well-documented aspect of her playing style.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if Aleksandra Goryachkina's recent performance trend is irrelevant to her FIDE ranking on these specific dates? Imagine she has taken a significant break from competitive chess, focusing entirely on coaching or other non-playing activities for the entire period between 2025-12-21 and 2025-12-28. In this scenario, her historical performance trend would have no bearing on her ranking, as she simply wouldn't be actively competing to change it.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.4,
+      "absolute_shift": 0.35,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly attacks the 'goryachkina_performance_trend' node, which is a primary driver of the 'outcome'. If Goryachkina takes a complete break from competitive chess, her performance trend becomes irrelevant as there are no new games to influence her rating. This significantly weakens the causal path 'goryachkina_performance_trend -> outcome'. While other factors like 'rating_fluctuations' and the potentially static nature of her current ranking still exist, the direct mechanism for rating change is removed. The impact of 'tournament_schedule' is also nullified if no tournaments are played. Therefore, the probability of her ranking remaining the same or increasing due to performance is greatly reduced, making a decrease more likely due to the inherent volatility of ratings or a slight decay if not actively maintained. The initial probability was based on the assumption of continued play and performance, which is now explicitly challenged.",
+      "raw_response": "{\n  \"updated_probability\": 0.40,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly attacks the 'goryachkina_performance_trend' node, which is a primary driver of the 'outcome'. If Goryachkina takes a complete break from competitive chess, her performance trend becomes irrelevant as there are no new games to influence her rating. This significantly weakens the causal path 'goryachkina_performance_trend -> outcome'. While other factors like 'rating_fluctuations' and the potentially static nature of her current ranking still exist, the direct mechanism for rating change is removed. The impact of 'tournament_schedule' is also nullified if no tournaments are played. Therefore, the probability of her ranking remaining the same or increasing due to performance is greatly reduced, making a decrease more likely due to the inherent volatility of ratings or a slight decay if not actively maintained. The initial probability was based on the assumption of continued play and performance, which is now explicitly challenged.\"\n}",
+      "target_id": "goryachkina_performance_trend",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "What if Aleksandra Goryachkina takes a complete break from competitive chess between December 21st and December 28th, 2025, not participating in any tournaments? In this scenario, her FIDE ranking would remain unchanged regardless of the number or difficulty of tournaments she *would* have played in, making the 'tournament_schedule' factor entirely irrelevant to the outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.5,
+      "absolute_shift": 0.25,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge states that Aleksandra Goryachkina will take a complete break from competitive chess between the two dates. This directly impacts the 'tournament_schedule' node. The causal link 'tournament_schedule -> outcome' is now broken, as no tournaments means no direct rating change from participation. Furthermore, the link 'tournament_schedule -> goryachkina_performance_trend' is also severed, as performance is contingent on playing. While 'goryachkina_performance_trend' and 'player_development' could still influence the outcome through their direct link to 'outcome' (assuming her existing trend and development would lead to a stable rating), and 'rating_fluctuations' could still cause a change, the primary mechanism for rating change (tournament participation) is removed. This significantly reduces the probability that her ranking will change, but does not eliminate it entirely due to other potential factors. The initial probability of 0.75 was based on the assumption of continued participation and performance, so removing this key driver necessitates a downward revision.",
+      "raw_response": "{\n  \"updated_probability\": 0.5,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge states that Aleksandra Goryachkina will take a complete break from competitive chess between the two dates. This directly impacts the 'tournament_schedule' node. The causal link 'tournament_schedule -> outcome' is now broken, as no tournaments means no direct rating change from participation. Furthermore, the link 'tournament_schedule -> goryachkina_performance_trend' is also severed, as performance is contingent on playing. While 'goryachkina_performance_trend' and 'player_development' could still influence the outcome through their direct link to 'outcome' (assuming her existing trend and development would lead to a stable rating), and 'rating_fluctuations' could still cause a change, the primary mechanism for rating change (tournament participation) is removed. This significantly reduces the probability that her ranking will change, but does not eliminate it entirely due to other potential factors. The initial probability of 0.75 was based on the assumption of continued participation and performance, so removing this key driver necessitates a downward revision.\"\n}",
+      "target_id": "tournament_schedule",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent FIDE policy changes have aimed to stabilize the rating system, significantly reducing historical volatility. Given that these changes were implemented at the start of 2025, the inherent fluctuations in the rating system itself are unlikely to be a significant factor in Aleksandra Goryachkina's ranking change between December 21st and December 28th, 2025. Therefore, the 'rating_fluctuations' node may not be a relevant causal factor in this specific prediction.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.78,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'rating_fluctuations' node suggests that this factor is less influential than previously modeled, particularly due to recent FIDE policy changes aimed at stabilizing the rating system. The causal path 'rating_fluctuations -> outcome' is thus weakened. Since this path was a relatively minor contributor to the overall probability (as Goryachkina's performance trend and player development are stronger drivers), the impact on the final probability is small. The reduction in this specific source of uncertainty slightly increases the confidence in the outcome driven by other factors, hence a modest increase in probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.78,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'rating_fluctuations' node suggests that this factor is less influential than previously modeled, particularly due to recent FIDE policy changes aimed at stabilizing the rating system. The causal path 'rating_fluctuations -> outcome' is thus weakened. Since this path was a relatively minor contributor to the overall probability (as Goryachkina's performance trend and player development are stronger drivers), the impact on the final probability is small. The reduction in this specific source of uncertainty slightly increases the confidence in the outcome driven by other factors, hence a modest increase in probability.\"\n}",
+      "target_id": "rating_fluctuations",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "While Wikipedia is generally a good source for information, it's important to consider that the FIDE ranking data displayed on Wikipedia might not be updated in real-time. It's possible that there's a significant lag between official FIDE updates and when Wikipedia reflects those changes. Therefore, the accuracy and timeliness of Wikipedia's data may not be a direct or reliable indicator of Aleksandra Goryachkina's actual FIDE ranking on any given date.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'wikipedia_data_accuracy' suggests that the source of truth for the outcome (Wikipedia) may not be perfectly aligned with the actual FIDE ranking on the specified dates. The causal link 'wikipedia_data_accuracy -> outcome' is directly questioned. If Wikipedia's data has a significant lag, it could present a misleading picture of Goryachkina's ranking on 2025-12-28 relative to 2025-12-21, even if her actual FIDE rating has indeed increased or stayed the same. This makes the 'outcome' node less certain, as the condition is about what Wikipedia will *report*, which is now less reliably tied to the actual FIDE ranking. Therefore, the probability of the outcome being true as stated (based on Wikipedia) is slightly decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'wikipedia_data_accuracy' suggests that the source of truth for the outcome (Wikipedia) may not be perfectly aligned with the actual FIDE ranking on the specified dates. The causal link 'wikipedia_data_accuracy -> outcome' is directly questioned. If Wikipedia's data has a significant lag, it could present a misleading picture of Goryachkina's ranking on 2025-12-28 relative to 2025-12-21, even if her actual FIDE rating has indeed increased or stayed the same. This makes the 'outcome' node less certain, as the condition is about what Wikipedia will *report*, which is now less reliably tied to the actual FIDE ranking. Therefore, the probability of the outcome being true as stated (based on Wikipedia) is slightly decreased.\"\n}",
+      "target_id": "wikipedia_data_accuracy",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina has recently dominated the FIDE Grand Prix, securing first place in all three legs with an average performance rating exceeding 2750. This unprecedented streak of victories against top-tier opponents strongly indicates a significant upward trend in her current playing strength and form, directly impacting her FIDE rating.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.9,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly reinforces the 'goryachkina_performance_trend' node. The user's statement details a dominant performance in recent top-tier tournaments, which directly supports the causal link 'goryachkina_performance_trend -> outcome'. This dominant performance suggests a very high likelihood of continued or improved FIDE ranking. The 'tournament_schedule' node is also indirectly supported, as participation in these difficult tournaments has led to this strong performance. The 'player_development' node is also implicitly strengthened, as such consistent high-level performance is indicative of significant player development. Therefore, the probability of the outcome increases substantially.",
+      "raw_response": "{\n  \"updated_probability\": 0.90,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly reinforces the 'goryachkina_performance_trend' node. The user's statement details a dominant performance in recent top-tier tournaments, which directly supports the causal link 'goryachkina_performance_trend -> outcome'. This dominant performance suggests a very high likelihood of continued or improved FIDE ranking. The 'tournament_schedule' node is also indirectly supported, as participation in these difficult tournaments has led to this strong performance. The 'player_development' node is also implicitly strengthened, as such consistent high-level performance is indicative of significant player development. Therefore, the probability of the outcome increases substantially.\"\n}",
+      "target_id": "goryachkina_performance_trend",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina has announced an ambitious tournament schedule for the latter half of 2025, including participation in the highly competitive Candidates Tournament followed by the Grand Swiss. Experts are highlighting that the sheer intensity and demanding nature of these back-to-back elite events will place immense pressure on her rating, making tournament performance the absolutely dominant factor in her FIDE ranking by year's end.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the 'tournament_schedule' node is significant. The new information states that Goryachkina will participate in highly competitive, back-to-back elite events (Candidates Tournament and Grand Swiss). This directly impacts the 'tournament_schedule' node, which in turn influences 'goryachkina_performance_trend'. The expert commentary emphasizes that performance in these events will be the 'absolutely dominant factor'. This strengthens the causal path from 'tournament_schedule' -> 'goryachkina_performance_trend' -> 'outcome'. While the schedule is demanding, elite tournaments offer high potential for rating gains if performance is strong, and given Goryachkina's caliber, this ambitious schedule increases the likelihood of strong performance and thus a higher or maintained rating. The original estimate of 0.75 already accounted for tournament impact, but this specific information about the *intensity* and *competitiveness* of the schedule, and its emphasized dominance, warrants an increase in probability. The 'rating_fluctuations' and 'wikipedia_data_accuracy' paths remain unchanged in their impact, and 'player_development' is implicitly linked to performance in these high-stakes events.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the 'tournament_schedule' node is significant. The new information states that Goryachkina will participate in highly competitive, back-to-back elite events (Candidates Tournament and Grand Swiss). This directly impacts the 'tournament_schedule' node, which in turn influences 'goryachkina_performance_trend'. The expert commentary emphasizes that performance in these events will be the 'absolutely dominant factor'. This strengthens the causal path from 'tournament_schedule' -> 'goryachkina_performance_trend' -> 'outcome'. While the schedule is demanding, elite tournaments offer high potential for rating gains if performance is strong, and given Goryachkina's caliber, this ambitious schedule increases the likelihood of strong performance and thus a higher or maintained rating. The original estimate of 0.75 already accounted for tournament impact, but this specific information about the *intensity* and *competitiveness* of the schedule, and its emphasized dominance, warrants an increase in probability. The 'rating_fluctuations' and 'wikipedia_data_accuracy' paths remain unchanged in their impact, and 'player_development' is implicitly linked to performance in these high-stakes events.\"\n}",
+      "target_id": "tournament_schedule",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent analyses of chess rating systems have highlighted an increasing trend in rating volatility across the top 100 players. This is attributed to a new algorithm implemented by FIDE in early 2024, designed to more rapidly adjust ratings based on recent results, leading to larger swings than historically observed. This suggests that 'rating_fluctuations' might play a more significant role in determining short-term ranking changes than previously modeled.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'rating_fluctuations' is significant because the new FIDE algorithm increases the potential for larger, more unpredictable swings in ratings. This directly impacts the causal path 'rating_fluctuations -> outcome'. While Goryachkina's performance trend and development are still primary drivers, increased volatility means that even a stable performance trend could result in a ranking change outside the expected range. The information suggests that the 'rating_fluctuations' node is more influential than initially modeled, increasing the uncertainty and the likelihood of a substantial, albeit not guaranteed, shift in ranking. Therefore, the probability of her ranking being higher or equal has increased, as larger positive swings are now more possible due to this increased volatility.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'rating_fluctuations' is significant because the new FIDE algorithm increases the potential for larger, more unpredictable swings in ratings. This directly impacts the causal path 'rating_fluctuations -> outcome'. While Goryachkina's performance trend and development are still primary drivers, increased volatility means that even a stable performance trend could result in a ranking change outside the expected range. The information suggests that the 'rating_fluctuations' node is more influential than initially modeled, increasing the uncertainty and the likelihood of a substantial, albeit not guaranteed, shift in ranking. Therefore, the probability of her ranking being higher or equal has increased, as larger positive swings are now more possible due to this increased volatility.\"\n}",
+      "target_id": "rating_fluctuations",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 3,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "A recent analysis of chess news sites found that Wikipedia's chess player data is often updated with a lag of several weeks, especially for less prominent players. Furthermore, there have been documented instances where automated bots updating Wikipedia incorrectly parsed FIDE data, leading to temporary inaccuracies in player rankings.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'wikipedia_data_accuracy' is significant because the outcome is directly tied to the information presented on Wikipedia. The new information suggests that Wikipedia's FIDE ranking data for Aleksandra Goryachkina might be outdated or contain errors due to lags and parsing issues. This weakens the causal link from 'wikipedia_data_accuracy' to the 'outcome'. If Wikipedia's data is not an accurate reflection of her actual FIDE ranking on the specified dates, the premise of the question itself becomes unreliable. While Goryachkina's actual FIDE ranking might still be higher or the same, the question is about the *reported* ranking on Wikipedia. Therefore, the probability that Wikipedia will accurately reflect this state decreases, leading to a slight decrease in the overall probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'wikipedia_data_accuracy' is significant because the outcome is directly tied to the information presented on Wikipedia. The new information suggests that Wikipedia's FIDE ranking data for Aleksandra Goryachkina might be outdated or contain errors due to lags and parsing issues. This weakens the causal link from 'wikipedia_data_accuracy' to the 'outcome'. If Wikipedia's data is not an accurate reflection of her actual FIDE ranking on the specified dates, the premise of the question itself becomes unreliable. While Goryachkina's actual FIDE ranking might still be higher or the same, the question is about the *reported* ranking on Wikipedia. Therefore, the probability that Wikipedia will accurately reflect this state decreases, leading to a slight decrease in the overall probability estimate.\"\n}",
+      "target_id": "wikipedia_data_accuracy",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 5,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While strong performance often correlates with rating increases, it's possible that Goryachkina's recent strong performances were against significantly lower-rated opponents, artificially inflating her perceived trend. Furthermore, a recent rule change in FIDE regarding rating calculations, implemented just before this period, could decouple strong results from direct rating gains for a transitional phase.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct link between 'goryachkina_performance_trend' and the 'outcome'. The argument suggests that strong performance might not translate to rating gains due to two factors: 1) The strength of opponents in recent strong performances may have been underestimated, meaning the performance trend is not as indicative of future rating changes as initially assumed. 2) A new FIDE rule change could introduce a decoupling effect between results and rating changes for a period. Both points weaken the causal path 'goryachkina_performance_trend -> outcome'. While performance is still a factor, its direct impact on the outcome is now less certain. The 'player_development -> goryachkina_performance_trend' link is also indirectly affected as the interpretation of 'performance trend' becomes less straightforward. The 'wikipedia_data_accuracy' remains a potential factor, but the core mechanism linking performance to rating is now under greater scrutiny, leading to a decreased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct link between 'goryachkina_performance_trend' and the 'outcome'. The argument suggests that strong performance might not translate to rating gains due to two factors: 1) The strength of opponents in recent strong performances may have been underestimated, meaning the performance trend is not as indicative of future rating changes as initially assumed. 2) A new FIDE rule change could introduce a decoupling effect between results and rating changes for a period. Both points weaken the causal path 'goryachkina_performance_trend -> outcome'. While performance is still a factor, its direct impact on the outcome is now less certain. The 'player_development -> goryachkina_performance_trend' link is also indirectly affected as the interpretation of 'performance trend' becomes less straightforward. The 'wikipedia_data_accuracy' remains a potential factor, but the core mechanism linking performance to rating is now under greater scrutiny, leading to a decreased probability.\"\n}",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "While player development typically influences performance, Aleksandra Goryachkina might be at a stage where her development has plateaued, or she is focusing on theoretical study rather than practical application. This could mean that despite potential underlying improvements in her understanding of chess, her on-board performance trend might not show a corresponding increase or could even temporarily dip due to experimenting with new strategies learned during development.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge targets the causal link between 'player_development' and 'goryachkina_performance_trend'. The original model assumed that player development would positively influence performance. The new information suggests that development might not translate directly into improved on-board performance in the short term, and could even lead to temporary dips due to experimentation. This weakens the path 'player_development -> goryachkina_performance_trend -> outcome'. While not completely breaking the link (as 'goryachkina_performance_trend' can still be influenced by other factors like tournament schedule and inherent skill), it introduces a significant uncertainty about whether her development will lead to a higher or equal ranking in the specified short timeframe. Therefore, the probability of the outcome has decreased.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge targets the causal link between 'player_development' and 'goryachkina_performance_trend'. The original model assumed that player development would positively influence performance. The new information suggests that development might not translate directly into improved on-board performance in the short term, and could even lead to temporary dips due to experimentation. This weakens the path 'player_development -> goryachkina_performance_trend -> outcome'. While not completely breaking the link (as 'goryachkina_performance_trend' can still be influenced by other factors like tournament schedule and inherent skill), it introduces a significant uncertainty about whether her development will lead to a higher or equal ranking in the specified short timeframe. Therefore, the probability of the outcome has decreased.\"\n}",
+      "target_id": "player_development->goryachkina_performance_trend",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina might be experiencing a temporary surge in performance due to favorable matchups or a lucky streak, rather than indicating genuine, long-term player development. Conversely, a period of slightly weaker performance could be due to fatigue or facing exceptionally strong opponents, without necessarily signifying a halt in her overall development as a player.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct link between 'goryachkina_performance_trend' and 'player_development'. It suggests that performance might not always be a pure indicator of development, introducing noise. If performance is temporarily boosted by luck or dips due to fatigue/tough opponents, the interpretation of the trend for predicting future development becomes less reliable. This weakens the causal path 'player_development -> goryachkina_performance_trend -> outcome'. Since 'goryachkina_performance_trend' is a primary driver of the outcome, and its connection to underlying development is now less certain, the probability of the outcome is slightly decreased. However, the direct link from performance trend to outcome remains, so the update is not drastic.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct link between 'goryachkina_performance_trend' and 'player_development'. It suggests that performance might not always be a pure indicator of development, introducing noise. If performance is temporarily boosted by luck or dips due to fatigue/tough opponents, the interpretation of the trend for predicting future development becomes less reliable. This weakens the causal path 'player_development -> goryachkina_performance_trend -> outcome'. Since 'goryachkina_performance_trend' is a primary driver of the outcome, and its connection to underlying development is now less certain, the probability of the outcome is slightly decreased. However, the direct link from performance trend to outcome remains, so the update is not drastic.\"\n}",
+      "target_id": "goryachkina_performance_trend->player_development",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina recently participated in the highly competitive FIDE Women's Grand Prix 2024-2025, where she secured first place in two of the four legs. This consistent dominance against top-tier opposition, a clear indicator of her current performance trend, strongly suggests that her rating will not only be maintained but likely increase further due to the significant rating points gained from these victories, reinforcing the direct link between strong performance and rating outcome.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.9,
+      "absolute_shift": 0.15000000000000002,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly reinforces the causal link between 'goryachkina_performance_trend' and the 'outcome'. The challenge highlights Aleksandra Goryachkina's recent dominant performance in a highly competitive tournament series, including two first-place finishes. This is a direct and powerful indicator of her current strong performance trend. This evidence directly supports the causal path where strong performance leads to a maintained or higher FIDE ranking. The information suggests that her performance trend is not just stable, but actively improving and accumulating rating points, making it highly probable that her ranking on 2025-12-28 will be as high or higher than on 2025-12-21. The existing causal network already accounted for this link, but the provided evidence significantly strengthens the confidence in this specific path, leading to an increased probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.90,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly reinforces the causal link between 'goryachkina_performance_trend' and the 'outcome'. The challenge highlights Aleksandra Goryachkina's recent dominant performance in a highly competitive tournament series, including two first-place finishes. This is a direct and powerful indicator of her current strong performance trend. This evidence directly supports the causal path where strong performance leads to a maintained or higher FIDE ranking. The information suggests that her performance trend is not just stable, but actively improving and accumulating rating points, making it highly probable that her ranking on 2025-12-28 will be as high or higher than on 2025-12-21. The existing causal network already accounted for this link, but the provided evidence significantly strengthens the confidence in this specific path, leading to an increased probability estimate.\"\n}",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina has recently been dedicating significant time to specialized training with a renowned chess coach, focusing on opening theory and endgame technique. This intensive, targeted development is highly likely to translate into demonstrably improved performance in her upcoming matches, reinforcing the direct link between her player development and her on-board results.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge reinforces the causal link between 'player_development' and 'goryachkina_performance_trend'. The new information explicitly states that Goryachkina's specialized training is highly likely to translate into demonstrably improved performance. This strengthens the positive influence of her development on her performance trend, which in turn directly impacts the 'outcome'. The original network already accounted for this link, but the new information provides strong evidence for its potency, thus increasing the probability that her performance will lead to a maintained or higher ranking. The path 'player_development' -> 'goryachkina_performance_trend' -> 'outcome' is therefore strengthened.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge reinforces the causal link between 'player_development' and 'goryachkina_performance_trend'. The new information explicitly states that Goryachkina's specialized training is highly likely to translate into demonstrably improved performance. This strengthens the positive influence of her development on her performance trend, which in turn directly impacts the 'outcome'. The original network already accounted for this link, but the new information provides strong evidence for its potency, thus increasing the probability that her performance will lead to a maintained or higher ranking. The path 'player_development' -> 'goryachkina_performance_trend' -> 'outcome' is therefore strengthened.\"\n}",
+      "target_id": "player_development->goryachkina_performance_trend",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of elite chess players suggests that sustained periods of high-level performance, even against strong opposition, are not merely a reflection of current form but are increasingly indicative of significant, long-term skill acquisition and strategic adaptation. This implies that Goryachkina's consistent results might be a stronger signal of her ongoing development than typically acknowledged, suggesting this link is more robust than a simple correlation.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "increased",
+      "reasoning": "The challenge strengthens the causal link between 'goryachkina_performance_trend' and 'player_development'. The new information suggests that sustained high performance is not just a fleeting indicator of form, but a more robust signal of long-term skill acquisition. This makes the 'player_development' node a more reliable predictor of future performance. Consequently, the path 'goryachkina_performance_trend' -> 'player_development' -> 'goryachkina_performance_trend' (feedback loop) and 'player_development' -> 'goryachkina_performance_trend' -> 'outcome' becomes more influential. If Goryachkina is consistently performing well, it's now a stronger indication that her underlying skill set is improving, which in turn makes it more likely she will maintain or increase her ranking. This strengthens the overall positive causal chain leading to the 'outcome', hence the increased probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge strengthens the causal link between 'goryachkina_performance_trend' and 'player_development'. The new information suggests that sustained high performance is not just a fleeting indicator of form, but a more robust signal of long-term skill acquisition. This makes the 'player_development' node a more reliable predictor of future performance. Consequently, the path 'goryachkina_performance_trend' -> 'player_development' -> 'goryachkina_performance_trend' (feedback loop) and 'player_development' -> 'goryachkina_performance_trend' -> 'outcome' becomes more influential. If Goryachkina is consistently performing well, it's now a stronger indication that her underlying skill set is improving, which in turn makes it more likely she will maintain or increase her ranking. This strengthens the overall positive causal chain leading to the 'outcome', hence the increased probability.\"\n}",
+      "target_id": "goryachkina_performance_trend->player_development",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "It's possible that the forecaster's belief about strong performance leading to a higher ranking is backwards. Consider that a player aiming for a specific high ranking might adjust their tournament participation and preparation (thus affecting their 'performance trend') in order to meet that target. For instance, if Goryachkina has a specific ranking goal, she might strategically choose easier tournaments or reduce her overall play to avoid risking her current rating, thereby making the *desired outcome* (a high ranking) the driver of her observed performance trend.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests a potential reversal of causality between 'goryachkina_performance_trend' and the 'outcome'. My original model assumed that performance trend directly *causes* the outcome (higher or maintained ranking). The challenge posits that the *desired outcome* (a high ranking) might influence strategic decisions that shape the performance trend. While this introduces a feedback loop, it doesn't fundamentally break the link between performance and rating. A player aiming for a high ranking would still need to perform well, even if strategically managed. They might choose easier tournaments, but success in those would still lead to rating gains or stability. Therefore, the core causal path remains, but the nuance of strategic goal-setting influencing performance introduces some uncertainty, leading to a slight decrease in the probability. The 'goryachkina_performance_trend -> outcome' and 'tournament_schedule -> outcome' paths are indirectly affected by this re-interpretation of causality, as the *reasons* for a certain performance trend might shift, but the *effect* of performance on rating is still assumed to hold.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests a potential reversal of causality between 'goryachkina_performance_trend' and the 'outcome'. My original model assumed that performance trend directly *causes* the outcome (higher or maintained ranking). The challenge posits that the *desired outcome* (a high ranking) might influence strategic decisions that shape the performance trend. While this introduces a feedback loop, it doesn't fundamentally break the link between performance and rating. A player aiming for a high ranking would still need to perform well, even if strategically managed. They might choose easier tournaments, but success in those would still lead to rating gains or stability. Therefore, the core causal path remains, but the nuance of strategic goal-setting influencing performance introduces some uncertainty, leading to a slight decrease in the probability. The 'goryachkina_performance_trend -> outcome' and 'tournament_schedule -> outcome' paths are indirectly affected by this re-interpretation of causality, as the *reasons* for a certain performance trend might shift, but the *effect* of performance on rating is still assumed to hold.\"\n}",
+      "target_id": "goryachkina_performance_trend->outcome",
+      "target_type": "edge",
+      "target_importance": 0.0667,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While Wikipedia is generally updated with FIDE data, consider the impact of Goryachkina's tournament schedule. If she participates in a very high number of difficult tournaments in a short period, the FIDE rating system might have a processing lag for these updates. This lag could mean that Wikipedia's information, which relies on this data, might not reflect her most current FIDE ranking immediately after a flurry of activity, making the information less timely and potentially less accurate for the specified dates.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the direct causal link between 'tournament_schedule' and 'wikipedia_data_accuracy'. The argument is that a high volume of difficult tournaments could lead to FIDE processing lags, which in turn would make Wikipedia's data less timely and potentially inaccurate for the specified dates. This weakens the assumption that Wikipedia's data will accurately reflect Goryachkina's ranking on those specific dates, especially if she plays many games immediately before. This affects the 'tournament_schedule -> wikipedia_data_accuracy -> outcome' path. While the core drivers of her rating (performance trend, player development) remain, the reliability of the Wikipedia data as a proxy for the outcome is reduced. This leads to a slight decrease in the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the direct causal link between 'tournament_schedule' and 'wikipedia_data_accuracy'. The argument is that a high volume of difficult tournaments could lead to FIDE processing lags, which in turn would make Wikipedia's data less timely and potentially inaccurate for the specified dates. This weakens the assumption that Wikipedia's data will accurately reflect Goryachkina's ranking on those specific dates, especially if she plays many games immediately before. This affects the 'tournament_schedule -> wikipedia_data_accuracy -> outcome' path. While the core drivers of her rating (performance trend, player development) remain, the reliability of the Wikipedia data as a proxy for the outcome is reduced. This leads to a slight decrease in the probability estimate.\"\n}",
+      "target_id": "tournament_schedule->wikipedia_data_accuracy",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_spurious",
+      "target_reason_id": null,
+      "probe_text": "While you've modeled tournament schedule and rating fluctuations separately, consider how a very demanding tournament schedule, with many high-stakes games against top players, might indirectly influence the *overall volatility* of the FIDE rating system itself. For instance, a period of intense competition could lead to more unpredictable results across many players, potentially increasing the statistical 'noise' or fluctuation in the rating pool, which then affects everyone's rating, including Goryachkina's.",
+      "probe_generated": true,
+      "success": false,
+      "updated_probability": null,
+      "absolute_shift": null,
+      "shift_direction": null,
+      "reasoning": "",
+      "raw_response": "{\n  \"updated_probability\": 0.78,\n  \"shift_direction",
+      "target_id": "tournament_schedule->rating_fluctuations",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina is scheduled to participate in a special exhibition match against a significantly lower-rated player in early December 2025. This match, while not a standard tournament, has a unique scoring system that could disproportionately affect her FIDE rating due to its unusual format. How might this specific event influence your assessment of her FIDE ranking trend between December 21st and December 28th, 2025?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.65,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The exhibition match introduces a new factor that could negatively impact Goryachkina's FIDE rating. This event directly challenges the 'goryachkina_performance_trend' node. While exhibition matches might not always significantly affect FIDE ratings, the description specifies a 'unique scoring system that could disproportionately affect her FIDE rating.' This suggests a potential for an unexpected rating decrease. The causal path 'goryachkina_performance_trend -> outcome' is therefore weakened, as a potentially anomalous event could lead to a dip in performance trend that doesn't reflect her usual competitive form. The 'tournament_schedule' node is also indirectly affected, as this exhibition match is an event that alters her schedule, even if not a standard tournament. Given the potential for a disproportionate negative impact, my confidence in her maintaining or increasing her ranking slightly decreases, leading to a reduction in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.65,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The exhibition match introduces a new factor that could negatively impact Goryachkina's FIDE rating. This event directly challenges the 'goryachkina_performance_trend' node. While exhibition matches might not always significantly affect FIDE ratings, the description specifies a 'unique scoring system that could disproportionately affect her FIDE rating.' This suggests a potential for an unexpected rating decrease. The causal path 'goryachkina_performance_trend -> outcome' is therefore weakened, as a potentially anomalous event could lead to a dip in performance trend that doesn't reflect her usual competitive form. The 'tournament_schedule' node is also indirectly affected, as this exhibition match is an event that alters her schedule, even if not a standard tournament. Given the potential for a disproportionate negative impact, my confidence in her maintaining or increasing her ranking slightly decreases, leading to a reduction in the probability.\"\n}",
+      "target_id": "exhibition_match_impact",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina's participation in the 2025 FIDE World Cup, a highly prestigious and demanding event, could significantly impact her performance trend and rating. How might her performance in such a high-stakes tournament, regardless of its difficulty relative to her usual schedule, alter the expected trajectory of her FIDE ranking between the two dates?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.78,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The challenge highlights the potential impact of a specific, high-stakes tournament (2025 FIDE World Cup) on Aleksandra Goryachkina's performance trend. This directly affects the causal path from 'tournament_schedule' to 'goryachkina_performance_trend' and subsequently to the 'outcome'. While my original model considered 'tournament_schedule' generally, this new information emphasizes that a single, significant event can disproportionately influence performance. The World Cup is known for its demanding nature and high stakes, which could lead to either a significant boost in rating due to strong performance or a dip if she underperforms against top competition. Given Goryachkina's high skill level, performing well in such an event is plausible and could lead to rating gains. Therefore, I am slightly increasing the probability that her ranking will be as high or higher, acknowledging the potential for a significant positive impact from this specific tournament.",
+      "raw_response": "{\n  \"updated_probability\": 0.78,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge highlights the potential impact of a specific, high-stakes tournament (2025 FIDE World Cup) on Aleksandra Goryachkina's performance trend. This directly affects the causal path from 'tournament_schedule' to 'goryachkina_performance_trend' and subsequently to the 'outcome'. While my original model considered 'tournament_schedule' generally, this new information emphasizes that a single, significant event can disproportionately influence performance. The World Cup is known for its demanding nature and high stakes, which could lead to either a significant boost in rating due to strong performance or a dip if she underperforms against top competition. Given Goryachkina's high skill level, performing well in such an event is plausible and could lead to rating gains. Therefore, I am slightly increasing the probability that her ranking will be as high or higher, acknowledging the potential for a significant positive impact from this specific tournament.\"\n}",
+      "target_id": "missing_node_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina's favorite chess opening is the King's Indian Defense. She has been practicing this opening extensively in her training sessions over the past year.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.8,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "increased",
+      "reasoning": "The new information about Aleksandra Goryachkina's extensive practice of the King's Indian Defense strengthens the 'player_development' node. Practicing a specific opening extensively suggests a focused effort on improving a particular aspect of her game, which is likely to lead to better, more consistent performance, especially if she is facing opponents where this opening is effective. This improved performance trend directly impacts the 'outcome' node positively. The causal path 'player_development -> goryachkina_performance_trend -> outcome' is thus reinforced. While the exact impact on her overall performance trend is hard to quantify without knowing the effectiveness of this specific opening against her typical opponents, the focused training suggests a positive development, leading to a slight increase in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.80,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information about Aleksandra Goryachkina's extensive practice of the King's Indian Defense strengthens the 'player_development' node. Practicing a specific opening extensively suggests a focused effort on improving a particular aspect of her game, which is likely to lead to better, more consistent performance, especially if she is facing opponents where this opening is effective. This improved performance trend directly impacts the 'outcome' node positively. The causal path 'player_development -> goryachkina_performance_trend -> outcome' is thus reinforced. While the exact impact on her overall performance trend is hard to quantify without knowing the effectiveness of this specific opening against her typical opponents, the focused training suggests a positive development, leading to a slight increase in the probability.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "Aleksandra Goryachkina is known to be a fan of a particular chess opening, the Sicilian Defense. She has been observed to play this opening in a significant portion of her recent games. This preference is a well-documented aspect of her playing style.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.78,
+      "absolute_shift": 0.030000000000000027,
+      "shift_direction": "increased",
+      "reasoning": "The information about Aleksandra Goryachkina's consistent use of the Sicilian Defense primarily affects the 'goryachkina_performance_trend' node. While a consistent opening preference can sometimes indicate a stable and predictable playstyle, it doesn't inherently suggest a negative performance trend. In fact, mastery of a specific opening can lead to strong results if opponents are unprepared or if Goryachkina's understanding of that opening is superior. This information doesn't fundamentally challenge the causal links to the outcome. It might slightly reinforce the idea of a stable performance trend, which is already factored into the initial probability. Therefore, the probability is increased slightly, reflecting a minor potential positive impact on her performance trend due to specialized knowledge.",
+      "raw_response": "{\n  \"updated_probability\": 0.78,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The information about Aleksandra Goryachkina's consistent use of the Sicilian Defense primarily affects the 'goryachkina_performance_trend' node. While a consistent opening preference can sometimes indicate a stable and predictable playstyle, it doesn't inherently suggest a negative performance trend. In fact, mastery of a specific opening can lead to strong results if opponents are unprepared or if Goryachkina's understanding of that opening is superior. This information doesn't fundamentally challenge the causal links to the outcome. It might slightly reinforce the idea of a stable performance trend, which is already factored into the initial probability. Therefore, the probability is increased slightly, reflecting a minor potential positive impact on her performance trend due to specialized knowledge.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "274e2a09f7060b8ea234c1d6a91ec3e43b523a2911042a8696ac2b42fc531ca8",
+    "question_text": "According to Wikipedia, will Aleksandra Goryachkina have a FIDE ranking on 2025-12-28 as high or higher than their ranking on 2025-12-21?",
+    "source": "wikipedia",
+    "condition": "one-turn",
+    "initial_probability": 0.75,
+    "n_probes": 21,
+    "n_successful": 20,
+    "mean_absolute_shift": 0.09450000000000001,
+    "max_absolute_shift": 0.35
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 3.3482142857142825,
+    "mean_shift_high": 0.15625,
+    "mean_shift_low": 0.04666666666666671,
+    "asymmetry_index": 1.2571428571428571,
+    "mean_shift_negate": 0.12571428571428572,
+    "mean_shift_strengthen": 0.1,
+    "fnar": 0.6666666666666666,
+    "n_accepted": 2,
+    "n_spurious": 3,
+    "critical_path_premium": 0.06340659340659341,
+    "mean_shift_on_path": 0.13571428571428573,
+    "mean_shift_off_path": 0.07230769230769232,
+    "importance_sensitivity_correlation": 0.41666666666666663,
+    "control_sensitivity": 0.5
+  }
+}

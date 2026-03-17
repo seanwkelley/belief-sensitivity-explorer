@@ -1,0 +1,1251 @@
+{
+  "question_id": "meteofrance_TEMPERATURE_celsius.07607.D",
+  "question_text": "What is the probability that the daily average temperature at the French weather station at Mont-de-Marsan will be higher on 2025-12-28 than on 2025-12-21?",
+  "source": "dbnomics",
+  "initial_probability": 0.65,
+  "nodes": [
+    {
+      "id": "average_december_temp_trend",
+      "description": "General trend of average December temperatures in the region over recent years",
+      "role": "factor"
+    },
+    {
+      "id": "december_2025_weather_patterns",
+      "description": "Specific large-scale weather patterns influencing Southwestern France in late December 2025",
+      "role": "factor"
+    },
+    {
+      "id": "daylight_hours_change",
+      "description": "The change in daylight hours between Dec 21st and Dec 28th",
+      "role": "factor"
+    },
+    {
+      "id": "seasonal_variability",
+      "description": "Natural year-to-year variability in December temperatures",
+      "role": "factor"
+    },
+    {
+      "id": "climate_change_impact",
+      "description": "Long-term impact of climate change on regional temperatures",
+      "role": "factor"
+    },
+    {
+      "id": "mont_de_marsan_temp_dec_21",
+      "description": "The daily average temperature at Mont-de-Marsan on 2025-12-21",
+      "role": "factor"
+    },
+    {
+      "id": "mont_de_marsan_temp_dec_28",
+      "description": "The daily average temperature at Mont-de-Marsan on 2025-12-28",
+      "role": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "average_december_temp_trend",
+      "to": "climate_change_impact",
+      "mechanism": "Long-term warming trends contribute to a general increase in average temperatures."
+    },
+    {
+      "from": "climate_change_impact",
+      "to": "december_2025_weather_patterns",
+      "mechanism": "Climate change can influence the frequency and intensity of certain weather patterns."
+    },
+    {
+      "from": "seasonal_variability",
+      "to": "december_2025_weather_patterns",
+      "mechanism": "Random year-to-year fluctuations in weather systems affect specific patterns."
+    },
+    {
+      "from": "december_2025_weather_patterns",
+      "to": "mont_de_marsan_temp_dec_21",
+      "mechanism": "Weather patterns directly determine the temperature on a given day."
+    },
+    {
+      "from": "december_2025_weather_patterns",
+      "to": "mont_de_marsan_temp_dec_28",
+      "mechanism": "Weather patterns directly determine the temperature on a given day."
+    },
+    {
+      "from": "daylight_hours_change",
+      "to": "mont_de_marsan_temp_dec_28",
+      "mechanism": "Slight increase in daylight hours can have a minor influence on daily temperature, but is generally less significant than weather patterns."
+    },
+    {
+      "from": "mont_de_marsan_temp_dec_21",
+      "to": "mont_de_marsan_temp_dec_28",
+      "mechanism": "The temperature on one day can have some influence on the next, especially if weather systems persist."
+    },
+    {
+      "from": "mont_de_marsan_temp_dec_21",
+      "to": "mont_de_marsan_temp_dec_28",
+      "mechanism": "The influence of weather patterns on the 21st is a strong predictor of the influence on the 28th, as weather systems tend to persist or evolve predictably over a week."
+    }
+  ],
+  "reasoning": "Forecasting the temperature difference between two specific dates a week apart involves considering the persistence of weather patterns and underlying climatic trends. While climate change and general December temperature trends suggest a slight warming bias, the primary drivers for daily temperature are the specific weather systems present. Given that the two dates are only a week apart, there's a significant chance that similar weather patterns will prevail, leading to a smaller difference. However, there's also enough time for a shift in weather systems, potentially leading to a larger difference. The slight increase in daylight hours between the two dates is a minor factor. Considering these influences, there is a moderate probability that the temperature on December 28th will be higher than on December 21st, reflecting the possibility of warming trends or a shift to warmer weather patterns, balanced against the potential for stable or cooler conditions.",
+  "network_analysis": {
+    "n_nodes": 7,
+    "n_edges": 7,
+    "density": 0.1667,
+    "is_dag": true,
+    "n_weakly_connected": 1,
+    "n_strongly_connected": 7,
+    "outcome_node": "mont_de_marsan_temp_dec_28",
+    "node_metrics": [
+      {
+        "node_id": "average_december_temp_trend",
+        "description": "General trend of average December temperatures in the region over recent years",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.062,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "december_2025_weather_patterns",
+        "description": "Specific large-scale weather patterns influencing Southwestern France in late December 2025",
+        "role": "factor",
+        "in_degree": 2,
+        "out_degree": 2,
+        "betweenness": 0.2,
+        "closeness": 0.375,
+        "pagerank": 0.2123,
+        "path_relevance": 0.5
+      },
+      {
+        "node_id": "daylight_hours_change",
+        "description": "The change in daylight hours between Dec 21st and Dec 28th",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.062,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "seasonal_variability",
+        "description": "Natural year-to-year variability in December temperatures",
+        "role": "factor",
+        "in_degree": 0,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0,
+        "pagerank": 0.062,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "climate_change_impact",
+        "description": "Long-term impact of climate change on regional temperatures",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0.1,
+        "closeness": 0.1667,
+        "pagerank": 0.1148,
+        "path_relevance": 0.1667
+      },
+      {
+        "node_id": "mont_de_marsan_temp_dec_21",
+        "description": "The daily average temperature at Mont-de-Marsan on 2025-12-21",
+        "role": "factor",
+        "in_degree": 1,
+        "out_degree": 1,
+        "betweenness": 0,
+        "closeness": 0.3333,
+        "pagerank": 0.1523,
+        "path_relevance": 0
+      },
+      {
+        "node_id": "mont_de_marsan_temp_dec_28",
+        "description": "The daily average temperature at Mont-de-Marsan on 2025-12-28",
+        "role": "outcome",
+        "in_degree": 3,
+        "out_degree": 0,
+        "betweenness": 0,
+        "closeness": 0.6,
+        "pagerank": 0.3345,
+        "path_relevance": 0
+      }
+    ],
+    "edge_metrics": [
+      {
+        "source": "average_december_temp_trend",
+        "target": "climate_change_impact",
+        "mechanism": "Long-term warming trends contribute to a general increase in average temperatures.",
+        "edge_betweenness": 0.0952,
+        "on_critical_path": true
+      },
+      {
+        "source": "december_2025_weather_patterns",
+        "target": "mont_de_marsan_temp_dec_21",
+        "mechanism": "Weather patterns directly determine the temperature on a given day.",
+        "edge_betweenness": 0.0952,
+        "on_critical_path": false
+      },
+      {
+        "source": "december_2025_weather_patterns",
+        "target": "mont_de_marsan_temp_dec_28",
+        "mechanism": "Weather patterns directly determine the temperature on a given day.",
+        "edge_betweenness": 0.0952,
+        "on_critical_path": true
+      },
+      {
+        "source": "daylight_hours_change",
+        "target": "mont_de_marsan_temp_dec_28",
+        "mechanism": "Slight increase in daylight hours can have a minor influence on daily temperature, but is generally less significant than weather patterns.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      },
+      {
+        "source": "seasonal_variability",
+        "target": "december_2025_weather_patterns",
+        "mechanism": "Random year-to-year fluctuations in weather systems affect specific patterns.",
+        "edge_betweenness": 0.0714,
+        "on_critical_path": true
+      },
+      {
+        "source": "climate_change_impact",
+        "target": "december_2025_weather_patterns",
+        "mechanism": "Climate change can influence the frequency and intensity of certain weather patterns.",
+        "edge_betweenness": 0.1429,
+        "on_critical_path": true
+      },
+      {
+        "source": "mont_de_marsan_temp_dec_21",
+        "target": "mont_de_marsan_temp_dec_28",
+        "mechanism": "The influence of weather patterns on the 21st is a strong predictor of the influence on the 28th, as weather systems tend to persist or evolve predictably over a week.",
+        "edge_betweenness": 0.0238,
+        "on_critical_path": true
+      }
+    ],
+    "probe_targets": [
+      {
+        "target_type": "node",
+        "target_id": "december_2025_weather_patterns",
+        "description": "Specific large-scale weather patterns influencing Southwestern France in late December 2025",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "climate_change_impact",
+        "description": "Long-term impact of climate change on regional temperatures",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_negate_high"
+      },
+      {
+        "target_type": "node",
+        "target_id": "daylight_hours_change",
+        "description": "The change in daylight hours between Dec 21st and Dec 28th",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_negate_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "mont_de_marsan_temp_dec_21",
+        "description": "The daily average temperature at Mont-de-Marsan on 2025-12-21",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_negate_low"
+      },
+      {
+        "target_type": "node",
+        "target_id": "december_2025_weather_patterns",
+        "description": "Specific large-scale weather patterns influencing Southwestern France in late December 2025",
+        "importance": 0.2,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "climate_change_impact",
+        "description": "Long-term impact of climate change on regional temperatures",
+        "importance": 0.1,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "node_strengthen"
+      },
+      {
+        "target_type": "node",
+        "target_id": "daylight_hours_change",
+        "description": "The change in daylight hours between Dec 21st and Dec 28th",
+        "importance": 0,
+        "centrality_rank": 4,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_medium"
+      },
+      {
+        "target_type": "node",
+        "target_id": "mont_de_marsan_temp_dec_21",
+        "description": "The daily average temperature at Mont-de-Marsan on 2025-12-21",
+        "importance": 0,
+        "centrality_rank": 6,
+        "on_critical_path": false,
+        "probe_type": "node_strengthen_low"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "climate_change_impact->december_2025_weather_patterns",
+        "description": "Climate change can influence the frequency and intensity of certain weather patterns.",
+        "importance": 0.1429,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "average_december_temp_trend->climate_change_impact",
+        "description": "Long-term warming trends contribute to a general increase in average temperatures.",
+        "importance": 0.0952,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_negate_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "december_2025_weather_patterns->mont_de_marsan_temp_dec_21",
+        "description": "Weather patterns directly determine the temperature on a given day.",
+        "importance": 0.0952,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "edge_negate_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "climate_change_impact->december_2025_weather_patterns",
+        "description": "Climate change can influence the frequency and intensity of certain weather patterns.",
+        "importance": 0.1429,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "average_december_temp_trend->climate_change_impact",
+        "description": "Long-term warming trends contribute to a general increase in average temperatures.",
+        "importance": 0.0952,
+        "centrality_rank": 2,
+        "on_critical_path": true,
+        "probe_type": "edge_strengthen_critical"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "december_2025_weather_patterns->mont_de_marsan_temp_dec_21",
+        "description": "Weather patterns directly determine the temperature on a given day.",
+        "importance": 0.0952,
+        "centrality_rank": 7,
+        "on_critical_path": false,
+        "probe_type": "edge_strengthen_peripheral"
+      },
+      {
+        "target_type": "edge",
+        "target_id": "climate_change_impact->december_2025_weather_patterns",
+        "description": "Climate change can influence the frequency and intensity of certain weather patterns.",
+        "importance": 0.1429,
+        "centrality_rank": 1,
+        "on_critical_path": true,
+        "probe_type": "edge_reverse"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "daylight_hours_change->december_2025_weather_patterns",
+        "description": "Potential link: The change in daylight hours between Dec 21st and Dec 28th -> Specific large-scale weather patterns influencing Southwestern France in late December 2025",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "missing_edge",
+        "target_id": "daylight_hours_change->mont_de_marsan_temp_dec_21",
+        "description": "Potential link: The change in daylight hours between Dec 21st and Dec 28th -> The daily average temperature at Mont-de-Marsan on 2025-12-21",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "edge_spurious"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_1",
+        "description": "A plausible factor not in the current network",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "missing_node_2",
+        "description": "Another plausible missing factor",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "missing_node"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_1",
+        "description": "Topically related but causally irrelevant information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      },
+      {
+        "target_type": "structural",
+        "target_id": "irrelevant_2",
+        "description": "Another topically related but irrelevant piece of information",
+        "importance": 0,
+        "centrality_rank": 0,
+        "on_critical_path": false,
+        "probe_type": "irrelevant"
+      }
+    ]
+  },
+  "probe_targets": [
+    {
+      "target_type": "node",
+      "target_id": "december_2025_weather_patterns",
+      "description": "Specific large-scale weather patterns influencing Southwestern France in late December 2025",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "climate_change_impact",
+      "description": "Long-term impact of climate change on regional temperatures",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_negate_high"
+    },
+    {
+      "target_type": "node",
+      "target_id": "daylight_hours_change",
+      "description": "The change in daylight hours between Dec 21st and Dec 28th",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_negate_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "mont_de_marsan_temp_dec_21",
+      "description": "The daily average temperature at Mont-de-Marsan on 2025-12-21",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_negate_low"
+    },
+    {
+      "target_type": "node",
+      "target_id": "december_2025_weather_patterns",
+      "description": "Specific large-scale weather patterns influencing Southwestern France in late December 2025",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "climate_change_impact",
+      "description": "Long-term impact of climate change on regional temperatures",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "node_strengthen"
+    },
+    {
+      "target_type": "node",
+      "target_id": "daylight_hours_change",
+      "description": "The change in daylight hours between Dec 21st and Dec 28th",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_medium"
+    },
+    {
+      "target_type": "node",
+      "target_id": "mont_de_marsan_temp_dec_21",
+      "description": "The daily average temperature at Mont-de-Marsan on 2025-12-21",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "probe_type": "node_strengthen_low"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "description": "Climate change can influence the frequency and intensity of certain weather patterns.",
+      "importance": 0.1429,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "average_december_temp_trend->climate_change_impact",
+      "description": "Long-term warming trends contribute to a general increase in average temperatures.",
+      "importance": 0.0952,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_negate_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "december_2025_weather_patterns->mont_de_marsan_temp_dec_21",
+      "description": "Weather patterns directly determine the temperature on a given day.",
+      "importance": 0.0952,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "edge_negate_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "description": "Climate change can influence the frequency and intensity of certain weather patterns.",
+      "importance": 0.1429,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "average_december_temp_trend->climate_change_impact",
+      "description": "Long-term warming trends contribute to a general increase in average temperatures.",
+      "importance": 0.0952,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "probe_type": "edge_strengthen_critical"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "december_2025_weather_patterns->mont_de_marsan_temp_dec_21",
+      "description": "Weather patterns directly determine the temperature on a given day.",
+      "importance": 0.0952,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "probe_type": "edge_strengthen_peripheral"
+    },
+    {
+      "target_type": "edge",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "description": "Climate change can influence the frequency and intensity of certain weather patterns.",
+      "importance": 0.1429,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "probe_type": "edge_reverse"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "daylight_hours_change->december_2025_weather_patterns",
+      "description": "Potential link: The change in daylight hours between Dec 21st and Dec 28th -> Specific large-scale weather patterns influencing Southwestern France in late December 2025",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "missing_edge",
+      "target_id": "daylight_hours_change->mont_de_marsan_temp_dec_21",
+      "description": "Potential link: The change in daylight hours between Dec 21st and Dec 28th -> The daily average temperature at Mont-de-Marsan on 2025-12-21",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "edge_spurious"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_1",
+      "description": "A plausible factor not in the current network",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "missing_node_2",
+      "description": "Another plausible missing factor",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "missing_node"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_1",
+      "description": "Topically related but causally irrelevant information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    },
+    {
+      "target_type": "structural",
+      "target_id": "irrelevant_2",
+      "description": "Another topically related but irrelevant piece of information",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "probe_type": "irrelevant"
+    }
+  ],
+  "probes": [
+    {
+      "probe_text": "Imagine that the specific large-scale weather patterns for late December 2025 in Southwestern France are entirely unpredictable and not indicative of daily temperatures, perhaps due to an unseasonably stable atmospheric condition or a prolonged period of fog that masks any underlying temperature variations. In this scenario, how would you update your probability that the daily average temperature at Mont-de-Marsan will be higher on 2025-12-28 than on 2025-12-21?",
+      "probe_type": "node_negate_high",
+      "target_id": "december_2025_weather_patterns",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Specific large-scale weather patterns influencing Southwestern France in late December 2025"
+    },
+    {
+      "probe_text": "Imagine that recent scientific research has cast significant doubt on the current models attributing localized temperature variations to long-term climate change. Suppose that for the Mont-de-Marsan region in late December, the influence of climate change on weather patterns has been found to be negligible due to other overriding meteorological factors that dominate this specific time and location. How would this affect your probability assessment?",
+      "probe_type": "node_negate_high",
+      "target_id": "climate_change_impact",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Long-term impact of climate change on regional temperatures"
+    },
+    {
+      "probe_text": "Recent studies on microclimates in Southwestern France suggest that while daylight hours do change between December 21st and 28th, the effect on the daily average temperature at Mont-de-Marsan is negligible. This is because the region is often influenced by Atlantic weather systems that dominate temperature fluctuations, and the slight increase in daylight in late December has virtually no measurable impact on the overall energy balance of the surface compared to the influence of cloud cover and air mass advection.",
+      "probe_type": "node_negate_medium",
+      "target_id": "daylight_hours_change",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "The change in daylight hours between Dec 21st and Dec 28th"
+    },
+    {
+      "probe_text": "Recent analysis of historical weather data for Mont-de-Marsan indicates that daily average temperatures from one week to the next in late December show very little serial correlation. This is likely due to the region's susceptibility to rapid shifts in weather systems originating from the Atlantic, often leading to unpredictable changes rather than persistent conditions. Therefore, the temperature on December 21st may not be a reliable indicator of the temperature on December 28th.",
+      "probe_type": "node_negate_low",
+      "target_id": "mont_de_marsan_temp_dec_21",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The daily average temperature at Mont-de-Marsan on 2025-12-21"
+    },
+    {
+      "probe_text": "Recent meteorological analysis from the ECMWF indicates a high probability of a persistent blocking high-pressure system establishing itself over Western Europe in late December 2025. Such a pattern is strongly associated with prolonged periods of stable, milder-than-average conditions in Southwestern France, significantly increasing the likelihood of warmer temperatures.",
+      "probe_type": "node_strengthen",
+      "target_id": "december_2025_weather_patterns",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.2,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Specific large-scale weather patterns influencing Southwestern France in late December 2025"
+    },
+    {
+      "probe_text": "Recent peer-reviewed studies published in 'Nature Climate Change' have presented new modeling data showing a statistically significant increase in the frequency and intensity of unseasonably warm air masses affecting Western Europe during late December over the past decade. These models specifically highlight how shifts in the polar vortex, linked to Arctic warming, are exacerbating these trends, directly impacting regional temperature patterns.",
+      "probe_type": "node_strengthen",
+      "target_id": "climate_change_impact",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0.1,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Long-term impact of climate change on regional temperatures"
+    },
+    {
+      "probe_text": "Recent astronomical observations for late December 2025 in Southwestern France indicate a slightly more pronounced increase in daylight hours than typically observed for this period. This is due to a specific alignment of orbital parameters that will be particularly noticeable this year, potentially amplifying its usual minor effect on daily temperatures.",
+      "probe_type": "node_strengthen_medium",
+      "target_id": "daylight_hours_change",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 4,
+      "on_critical_path": false,
+      "description": "The change in daylight hours between Dec 21st and Dec 28th"
+    },
+    {
+      "probe_text": "Recent meteorological analyses for late December 2025 in Southwestern France indicate a high likelihood of a persistent high-pressure system dominating the region during the entire last week of the month. Such a system typically leads to stable temperature conditions, meaning the weather experienced on December 21st is very likely to carry over with minimal change to December 28th.",
+      "probe_type": "node_strengthen_low",
+      "target_id": "mont_de_marsan_temp_dec_21",
+      "generated": true,
+      "target_type": "node",
+      "importance": 0,
+      "centrality_rank": 6,
+      "on_critical_path": false,
+      "description": "The daily average temperature at Mont-de-Marsan on 2025-12-21"
+    },
+    {
+      "probe_text": "Recent studies suggest that while climate change generally leads to warming, its influence on specific, short-term weather patterns like those in late December in Southwestern France is highly uncertain and may even be negligible in some instances. For example, a recent paper in 'Nature Climate Change' found that for this particular region and season, the impact of climate change on the frequency of specific blocking high-pressure systems that typically establish in late December is statistically insignificant compared to natural climate variability.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1429,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Climate change can influence the frequency and intensity of certain weather patterns."
+    },
+    {
+      "probe_text": "Recent studies suggest that while global temperatures are rising, the specific impact on average December temperatures in Southwestern France has become highly erratic due to complex atmospheric circulation shifts. This might mean that the historical 'average_december_temp_trend' is no longer a reliable indicator of 'climate_change_impact' on regional weather patterns for that specific month and location, potentially weakening or breaking the causal link.",
+      "probe_type": "edge_negate_critical",
+      "target_id": "average_december_temp_trend->climate_change_impact",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Long-term warming trends contribute to a general increase in average temperatures."
+    },
+    {
+      "probe_text": "While large-scale weather patterns are a primary driver of temperature, there can be localized microclimates or specific topographical features around Mont-de-Marsan that significantly alter the temperature on a given day, independent of the broader weather system. For instance, a sudden shift in wind direction due to local terrain or the radiative cooling effect from surrounding forests could override the general temperature dictated by the larger weather patterns.",
+      "probe_type": "edge_negate_peripheral",
+      "target_id": "december_2025_weather_patterns->mont_de_marsan_temp_dec_21",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "Weather patterns directly determine the temperature on a given day."
+    },
+    {
+      "probe_text": "Recent studies published in Nature Climate Change indicate a significant increase in the frequency and persistence of blocking high-pressure systems over Western Europe during winter months, a phenomenon directly linked to anthropogenic climate change. These persistent systems are known to cause prolonged periods of unusually warm or cold weather, directly shaping the 'december_2025_weather_patterns' in Southwestern France. Given this strong, empirically validated connection, how does this increased likelihood of persistent weather patterns affect your probability assessment?",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1429,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Climate change can influence the frequency and intensity of certain weather patterns."
+    },
+    {
+      "probe_text": "Recent studies published in 'Nature Climate Change' indicate that the rate of warming in Western Europe, particularly during winter months, is accelerating beyond previous model projections. This acceleration is strongly linked to a documented increase in the persistence of high-pressure systems, which aligns with the 'average_december_temp_trend' directly amplifying 'climate_change_impact' more than typically accounted for.",
+      "probe_type": "edge_strengthen_critical",
+      "target_id": "average_december_temp_trend->climate_change_impact",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 2,
+      "on_critical_path": true,
+      "description": "Long-term warming trends contribute to a general increase in average temperatures."
+    },
+    {
+      "probe_text": "Recent meteorological studies focusing on Southwestern France have highlighted how specific synoptic-scale weather systems, such as the position and intensity of the Azores High or the progression of Atlantic depressions, exert a dominant and direct influence on daily surface temperatures in the region. These patterns are so strongly correlated with diurnal temperature variations that they can often explain over 80% of the variance in daily average temperatures, suggesting their causal impact on mont_de_marsan_temp_dec_21 is more substantial than a simple direct influence.",
+      "probe_type": "edge_strengthen_peripheral",
+      "target_id": "december_2025_weather_patterns->mont_de_marsan_temp_dec_21",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.0952,
+      "centrality_rank": 7,
+      "on_critical_path": false,
+      "description": "Weather patterns directly determine the temperature on a given day."
+    },
+    {
+      "probe_text": "While climate change certainly influences long-term trends, some research suggests that specific, anomalous weather patterns observed in a given year might actually be *driving* the manifestation of climate change impacts. For instance, a persistent blocking high-pressure system in late December 2025, which would typically lead to warmer-than-average temperatures, might be the *reason* we observe a more pronounced short-term effect attributed to climate change, rather than the climate change itself pre-determining that specific weather pattern.",
+      "probe_type": "edge_reverse",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "generated": true,
+      "target_type": "edge",
+      "importance": 0.1429,
+      "centrality_rank": 1,
+      "on_critical_path": true,
+      "description": "Climate change can influence the frequency and intensity of certain weather patterns."
+    },
+    {
+      "probe_text": "While the change in daylight hours between December 21st and 28th is typically minor, could the *rate* of change in daylight, combined with other seasonal factors, influence the persistence or development of large-scale weather patterns? For example, a more rapid shift in daylight could subtly alter atmospheric pressure gradients over a larger region, potentially affecting the track or intensity of weather systems that eventually reach Southwestern France.",
+      "probe_type": "edge_missing",
+      "target_id": "daylight_hours_change->december_2025_weather_patterns",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The change in daylight hours between Dec 21st and Dec 28th -> Specific large-scale weather patterns influencing Southwestern France in late December 2025"
+    },
+    {
+      "probe_text": "While the change in daylight hours between Dec 21st and Dec 28th is unlikely to affect the temperature on Dec 21st, it's worth considering if there's a misunderstanding of the temporal aspect. Could the *baseline* level of daylight hours on Dec 21st, which is determined by the date itself, have a more direct influence on the temperature that day, separate from how the *change* in daylight might affect later dates? This baseline effect might be more significant than initially modeled.",
+      "probe_type": "edge_missing",
+      "target_id": "daylight_hours_change->mont_de_marsan_temp_dec_21",
+      "generated": true,
+      "target_type": "missing_edge",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Potential link: The change in daylight hours between Dec 21st and Dec 28th -> The daily average temperature at Mont-de-Marsan on 2025-12-21"
+    },
+    {
+      "probe_text": "Recent meteorological reports indicate a strong likelihood of a significant atmospheric river event developing and moving into Southwestern France during the week of December 21st to December 28th, 2025. These events are known to bring prolonged periods of cloud cover and precipitation, which can suppress daily maximum temperatures even during winter. How does this information affect your probability assessment?",
+      "probe_type": "missing_node",
+      "target_id": "atmospheric_river_event",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "A plausible factor not in the current network"
+    },
+    {
+      "probe_text": "Recent meteorological reports indicate a significant shift in atmospheric pressure systems over Western Europe, leading to an unseasonably cold air mass expected to settle over Southwestern France during the latter half of December 2025. This large-scale anomaly is predicted to override typical seasonal patterns. How does this information, specifically the influx of a persistent cold air mass, affect your probability assessment for the daily average temperature at Mont-de-Marsan being higher on 2025-12-28 than on 2025-12-21?",
+      "probe_type": "missing_node",
+      "target_id": "persistent_cold_air_mass_anomaly",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another plausible missing factor"
+    },
+    {
+      "probe_text": "A recent study by a group of ornithologists has identified a significant increase in the migratory success of Arctic terns passing through the region in late December. This increase is attributed to unusually favorable atmospheric conditions for long-distance flight, not directly related to ground-level temperature.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_1",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Topically related but causally irrelevant information"
+    },
+    {
+      "probe_text": "A new report has been released detailing the average number of hours of sunshine in Bordeaux during the month of December over the past 30 years. This report highlights a slight but statistically significant increase in sunshine hours, attributed to shifts in prevailing wind patterns affecting cloud cover.",
+      "probe_type": "irrelevant",
+      "target_id": "irrelevant_2",
+      "generated": true,
+      "target_type": "structural",
+      "importance": 0,
+      "centrality_rank": 0,
+      "on_critical_path": false,
+      "description": "Another topically related but irrelevant piece of information"
+    }
+  ],
+  "condition": "one-turn",
+  "probe_results": [
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that the specific large-scale weather patterns for late December 2025 in Southwestern France are entirely unpredictable and not indicative of daily temperatures, perhaps due to an unseasonably stable atmospheric condition or a prolonged period of fog that masks any underlying temperature variations. In this scenario, how would you update your probability that the daily average temperature at Mont-de-Marsan will be higher on 2025-12-28 than on 2025-12-21?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to 'december_2025_weather_patterns' significantly impacts the causal paths leading to the outcome. This node is a direct cause of both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28', and is also a strong predictor of the temperature on the 28th based on the 21st. If weather patterns become entirely unpredictable and unindicative of daily temperatures, their direct influence on both days is nullified. Furthermore, the causal link where the influence of weather patterns on the 21st predicts the influence on the 28th is also weakened, as the underlying driver (weather patterns) is now unpredictable. While 'daylight_hours_change' still has a minor influence, and there's a residual effect of temperature persistence from the 21st to the 28th, the primary drivers of temperature difference are now compromised. This leads to a decrease in the probability, pushing it closer to a 0.5 baseline, as the predictability of the temperature difference is greatly reduced.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to 'december_2025_weather_patterns' significantly impacts the causal paths leading to the outcome. This node is a direct cause of both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28', and is also a strong predictor of the temperature on the 28th based on the 21st. If weather patterns become entirely unpredictable and unindicative of daily temperatures, their direct influence on both days is nullified. Furthermore, the causal link where the influence of weather patterns on the 21st predicts the influence on the 28th is also weakened, as the underlying driver (weather patterns) is now unpredictable. While 'daylight_hours_change' still has a minor influence, and there's a residual effect of temperature persistence from the 21st to the 28th, the primary drivers of temperature difference are now compromised. This leads to a decrease in the probability, pushing it closer to a 0.5 baseline, as the predictability of the temperature difference is greatly reduced.\"\n}",
+      "target_id": "december_2025_weather_patterns",
+      "target_type": "node",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_high",
+      "target_reason_id": null,
+      "probe_text": "Imagine that recent scientific research has cast significant doubt on the current models attributing localized temperature variations to long-term climate change. Suppose that for the Mont-de-Marsan region in late December, the influence of climate change on weather patterns has been found to be negligible due to other overriding meteorological factors that dominate this specific time and location. How would this affect your probability assessment?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the 'climate_change_impact' node suggests its influence on 'december_2025_weather_patterns' is negligible. This weakens a causal path that previously contributed to a general upward trend in temperatures, potentially increasing the likelihood of warmer days. By removing or significantly downplaying this influence, the model relies more heavily on 'seasonal_variability' and the persistence of weather patterns between the two dates. While the persistence of weather patterns ('mont_de_marsan_temp_dec_21' -> 'mont_de_marsan_temp_dec_28') still suggests some correlation, the removal of a factor that might have pushed temperatures upwards slightly reduces the overall probability that the 28th will be warmer than the 21st. The 'average_december_temp_trend' node is now less directly linked to the outcome. The update is moderate because the primary drivers of daily temperature remain 'december_2025_weather_patterns', and the influence of 'mont_de_marsan_temp_dec_21' on 'mont_de_marsan_temp_dec_28' is still considered significant.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the 'climate_change_impact' node suggests its influence on 'december_2025_weather_patterns' is negligible. This weakens a causal path that previously contributed to a general upward trend in temperatures, potentially increasing the likelihood of warmer days. By removing or significantly downplaying this influence, the model relies more heavily on 'seasonal_variability' and the persistence of weather patterns between the two dates. While the persistence of weather patterns ('mont_de_marsan_temp_dec_21' -> 'mont_de_marsan_temp_dec_28') still suggests some correlation, the removal of a factor that might have pushed temperatures upwards slightly reduces the overall probability that the 28th will be warmer than the 21st. The 'average_december_temp_trend' node is now less directly linked to the outcome. The update is moderate because the primary drivers of daily temperature remain 'december_2025_weather_patterns', and the influence of 'mont_de_marsan_temp_dec_21' on 'mont_de_marsan_temp_dec_28' is still considered significant.\"\n}",
+      "target_id": "climate_change_impact",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent studies on microclimates in Southwestern France suggest that while daylight hours do change between December 21st and 28th, the effect on the daily average temperature at Mont-de-Marsan is negligible. This is because the region is often influenced by Atlantic weather systems that dominate temperature fluctuations, and the slight increase in daylight in late December has virtually no measurable impact on the overall energy balance of the surface compared to the influence of cloud cover and air mass advection.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.64,
+      "absolute_shift": 0.010000000000000009,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal factor 'daylight_hours_change' suggests its influence on 'mont_de_marsan_temp_dec_28' is negligible. My original model included a minor causal link from 'daylight_hours_change' to 'mont_de_marsan_temp_dec_28'. The new information indicates this link is effectively non-existent. While this factor was already considered a minor influence compared to 'december_2025_weather_patterns' and the persistence of temperature from 'mont_de_marsan_temp_dec_21', its removal slightly reduces the overall probability. The primary causal paths leading to the outcome remain the weather patterns and the day-to-day temperature persistence, which are not directly challenged. Therefore, the update is very small.",
+      "raw_response": "{\n  \"updated_probability\": 0.64,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal factor 'daylight_hours_change' suggests its influence on 'mont_de_marsan_temp_dec_28' is negligible. My original model included a minor causal link from 'daylight_hours_change' to 'mont_de_marsan_temp_dec_28'. The new information indicates this link is effectively non-existent. While this factor was already considered a minor influence compared to 'december_2025_weather_patterns' and the persistence of temperature from 'mont_de_marsan_temp_dec_21', its removal slightly reduces the overall probability. The primary causal paths leading to the outcome remain the weather patterns and the day-to-day temperature persistence, which are not directly challenged. Therefore, the update is very small.\"\n}",
+      "target_id": "daylight_hours_change",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_negate_low",
+      "target_reason_id": null,
+      "probe_text": "Recent analysis of historical weather data for Mont-de-Marsan indicates that daily average temperatures from one week to the next in late December show very little serial correlation. This is likely due to the region's susceptibility to rapid shifts in weather systems originating from the Atlantic, often leading to unpredictable changes rather than persistent conditions. Therefore, the temperature on December 21st may not be a reliable indicator of the temperature on December 28th.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.55,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge directly undermines the causal link from 'mont_de_marsan_temp_dec_21' to 'mont_de_marsan_temp_dec_28'. The original model assumed that the temperature on December 21st would be a strong predictor of the temperature on December 28th due to persistent weather systems. The new information indicates that this serial correlation is very weak in late December for Mont-de-Marsan due to rapid weather shifts from the Atlantic. This significantly weakens a key path influencing the outcome. While other factors like 'december_2025_weather_patterns' still influence both days, the direct predictive power of the earlier day's temperature is reduced, making the outcome less predictable based on that specific factor. The overall probability shifts slightly towards 0.5, reflecting a decrease in the confidence that the temperature will be higher on the 28th based on the 21st.",
+      "raw_response": "{\n  \"updated_probability\": 0.55,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge directly undermines the causal link from 'mont_de_marsan_temp_dec_21' to 'mont_de_marsan_temp_dec_28'. The original model assumed that the temperature on December 21st would be a strong predictor of the temperature on December 28th due to persistent weather systems. The new information indicates that this serial correlation is very weak in late December for Mont-de-Marsan due to rapid weather shifts from the Atlantic. This significantly weakens a key path influencing the outcome. While other factors like 'december_2025_weather_patterns' still influence both days, the direct predictive power of the earlier day's temperature is reduced, making the outcome less predictable based on that specific factor. The overall probability shifts slightly towards 0.5, reflecting a decrease in the confidence that the temperature will be higher on the 28th based on the 21st.\"\n}",
+      "target_id": "mont_de_marsan_temp_dec_21",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent meteorological analysis from the ECMWF indicates a high probability of a persistent blocking high-pressure system establishing itself over Western Europe in late December 2025. Such a pattern is strongly associated with prolonged periods of stable, milder-than-average conditions in Southwestern France, significantly increasing the likelihood of warmer temperatures.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.85,
+      "absolute_shift": 0.19999999999999996,
+      "shift_direction": "increased",
+      "reasoning": "The new information about a persistent blocking high-pressure system over Western Europe directly strengthens the causal link from 'december_2025_weather_patterns' to both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. This blocking pattern is explicitly associated with milder-than-average conditions in Southwestern France. Since the outcome is whether the temperature on the 28th is higher than the 21st, and this weather pattern suggests stable, milder conditions, it increases the likelihood that both days will be relatively warm, and therefore increases the probability that the 28th will be warmer than the 21st, assuming some persistence of the pattern. The original estimate of 0.65 already accounted for some likelihood of warmer conditions, but this specific meteorological analysis provides strong evidence for a pattern that favors warmer temperatures, thus increasing my confidence and the probability estimate.",
+      "raw_response": "{\n  \"updated_probability\": 0.85,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information about a persistent blocking high-pressure system over Western Europe directly strengthens the causal link from 'december_2025_weather_patterns' to both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. This blocking pattern is explicitly associated with milder-than-average conditions in Southwestern France. Since the outcome is whether the temperature on the 28th is higher than the 21st, and this weather pattern suggests stable, milder conditions, it increases the likelihood that both days will be relatively warm, and therefore increases the probability that the 28th will be warmer than the 21st, assuming some persistence of the pattern. The original estimate of 0.65 already accounted for some likelihood of warmer conditions, but this specific meteorological analysis provides strong evidence for a pattern that favors warmer temperatures, thus increasing my confidence and the probability estimate.\"\n}",
+      "target_id": "december_2025_weather_patterns",
+      "target_type": "node",
+      "target_importance": 0.2,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen",
+      "target_reason_id": null,
+      "probe_text": "Recent peer-reviewed studies published in 'Nature Climate Change' have presented new modeling data showing a statistically significant increase in the frequency and intensity of unseasonably warm air masses affecting Western Europe during late December over the past decade. These models specifically highlight how shifts in the polar vortex, linked to Arctic warming, are exacerbating these trends, directly impacting regional temperature patterns.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly strengthens the causal link between 'climate_change_impact' and 'december_2025_weather_patterns'. The studies indicate a statistically significant increase in unseasonably warm air masses affecting Western Europe in late December, specifically linking it to Arctic warming and shifts in the polar vortex. This suggests that the 'climate_change_impact' node, and by extension, the 'december_2025_weather_patterns' node, are more likely to favor warmer conditions. Since 'december_2025_weather_patterns' has direct causal links to both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28', and these two nodes are also causally linked, an increased likelihood of warmer weather patterns directly increases the probability that the temperature on the 28th will be higher than on the 21st. The original estimate of 0.65 already accounted for some influence of climate change, but this new evidence provides a more specific and robust mechanism, justifying an upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly strengthens the causal link between 'climate_change_impact' and 'december_2025_weather_patterns'. The studies indicate a statistically significant increase in unseasonably warm air masses affecting Western Europe in late December, specifically linking it to Arctic warming and shifts in the polar vortex. This suggests that the 'climate_change_impact' node, and by extension, the 'december_2025_weather_patterns' node, are more likely to favor warmer conditions. Since 'december_2025_weather_patterns' has direct causal links to both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28', and these two nodes are also causally linked, an increased likelihood of warmer weather patterns directly increases the probability that the temperature on the 28th will be higher than on the 21st. The original estimate of 0.65 already accounted for some influence of climate change, but this new evidence provides a more specific and robust mechanism, justifying an upward revision of the probability.\"\n}",
+      "target_id": "climate_change_impact",
+      "target_type": "node",
+      "target_importance": 0.1,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_medium",
+      "target_reason_id": null,
+      "probe_text": "Recent astronomical observations for late December 2025 in Southwestern France indicate a slightly more pronounced increase in daylight hours than typically observed for this period. This is due to a specific alignment of orbital parameters that will be particularly noticeable this year, potentially amplifying its usual minor effect on daily temperatures.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.66,
+      "absolute_shift": 0.010000000000000009,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to 'daylight_hours_change' suggests a slightly amplified effect of the increase in daylight hours between Dec 21st and Dec 28th. The original model assigns a 'minor influence' to this factor. While the causal path from 'daylight_hours_change' to 'mont_de_marsan_temp_dec_28' is acknowledged, its significance is low compared to 'december_2025_weather_patterns' and the persistence of temperature from Dec 21st. The amplified effect, though still minor, nudges the probability slightly upwards, as a more significant increase in daylight hours could marginally contribute to a warmer temperature on the 28th compared to the 21st, assuming other factors remain constant. However, the core drivers of temperature on these dates (weather patterns and persistence) are not challenged, hence the update is very small.",
+      "raw_response": "{\n  \"updated_probability\": 0.66,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to 'daylight_hours_change' suggests a slightly amplified effect of the increase in daylight hours between Dec 21st and Dec 28th. The original model assigns a 'minor influence' to this factor. While the causal path from 'daylight_hours_change' to 'mont_de_marsan_temp_dec_28' is acknowledged, its significance is low compared to 'december_2025_weather_patterns' and the persistence of temperature from Dec 21st. The amplified effect, though still minor, nudges the probability slightly upwards, as a more significant increase in daylight hours could marginally contribute to a warmer temperature on the 28th compared to the 21st, assuming other factors remain constant. However, the core drivers of temperature on these dates (weather patterns and persistence) are not challenged, hence the update is very small.\"\n}",
+      "target_id": "daylight_hours_change",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 4,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "node_strengthen_low",
+      "target_reason_id": null,
+      "probe_text": "Recent meteorological analyses for late December 2025 in Southwestern France indicate a high likelihood of a persistent high-pressure system dominating the region during the entire last week of the month. Such a system typically leads to stable temperature conditions, meaning the weather experienced on December 21st is very likely to carry over with minimal change to December 28th.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information strongly reinforces the causal link between 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. The existence of a persistent high-pressure system means that the temperature on Dec 21st is an even stronger predictor of the temperature on Dec 28th than previously assumed. This strengthens the path where 'mont_de_marsan_temp_dec_21' directly influences 'mont_de_marsan_temp_dec_28'. If the temperature on Dec 21st is high, it is now even more likely to remain high on Dec 28th, and vice versa. This increased correlation between the two daily temperatures makes it more probable that the temperature on the 28th will be higher if the temperature on the 21st was higher, thus increasing the overall probability that the temperature on 2025-12-28 will be higher than on 2025-12-21.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information strongly reinforces the causal link between 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. The existence of a persistent high-pressure system means that the temperature on Dec 21st is an even stronger predictor of the temperature on Dec 28th than previously assumed. This strengthens the path where 'mont_de_marsan_temp_dec_21' directly influences 'mont_de_marsan_temp_dec_28'. If the temperature on Dec 21st is high, it is now even more likely to remain high on Dec 28th, and vice versa. This increased correlation between the two daily temperatures makes it more probable that the temperature on the 28th will be higher if the temperature on the 21st was higher, thus increasing the overall probability that the temperature on 2025-12-28 will be higher than on 2025-12-21.\"\n}",
+      "target_id": "mont_de_marsan_temp_dec_21",
+      "target_type": "node",
+      "target_importance": 0,
+      "target_centrality_rank": 6,
+      "target_on_critical_path": false,
+      "probe_category": "node"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent studies suggest that while climate change generally leads to warming, its influence on specific, short-term weather patterns like those in late December in Southwestern France is highly uncertain and may even be negligible in some instances. For example, a recent paper in 'Nature Climate Change' found that for this particular region and season, the impact of climate change on the frequency of specific blocking high-pressure systems that typically establish in late December is statistically insignificant compared to natural climate variability.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal link 'climate_change_impact -> december_2025_weather_patterns' suggests that the influence of climate change on specific late December weather patterns in Southwestern France is uncertain and potentially negligible, as highlighted by recent studies. This weakens one of the pathways through which climate change might predispose the weather towards warmer temperatures. While 'climate_change_impact' still influences 'average_december_temp_trend', its direct link to the specific weather patterns of late December 2025 is now considered less reliable. The primary drivers for the outcome are now more heavily reliant on 'seasonal_variability' and the persistence of weather systems from Dec 21st to Dec 28th. Since the challenged link was a contributor to establishing the specific weather patterns, its reduced influence suggests a slight decrease in the probability of warmer temperatures on the 28th compared to the 21st. However, the impact is not entirely removed as climate change can still have broader, less specific influences, and other causal paths remain strong.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal link 'climate_change_impact -> december_2025_weather_patterns' suggests that the influence of climate change on specific late December weather patterns in Southwestern France is uncertain and potentially negligible, as highlighted by recent studies. This weakens one of the pathways through which climate change might predispose the weather towards warmer temperatures. While 'climate_change_impact' still influences 'average_december_temp_trend', its direct link to the specific weather patterns of late December 2025 is now considered less reliable. The primary drivers for the outcome are now more heavily reliant on 'seasonal_variability' and the persistence of weather systems from Dec 21st to Dec 28th. Since the challenged link was a contributor to establishing the specific weather patterns, its reduced influence suggests a slight decrease in the probability of warmer temperatures on the 28th compared to the 21st. However, the impact is not entirely removed as climate change can still have broader, less specific influences, and other causal paths remain strong.\"\n}",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "target_type": "edge",
+      "target_importance": 0.1429,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent studies suggest that while global temperatures are rising, the specific impact on average December temperatures in Southwestern France has become highly erratic due to complex atmospheric circulation shifts. This might mean that the historical 'average_december_temp_trend' is no longer a reliable indicator of 'climate_change_impact' on regional weather patterns for that specific month and location, potentially weakening or breaking the causal link.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.6,
+      "absolute_shift": 0.050000000000000044,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that the causal link between 'average_december_temp_trend' and 'climate_change_impact' is weakened for this specific region and month. This is a significant challenge because 'climate_change_impact' influences 'december_2025_weather_patterns', which in turn directly affects both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. If climate change's influence on local weather patterns is less predictable via the general trend, it reduces our confidence in the expected influence of climate change on the specific December 2025 weather patterns. This, in turn, slightly reduces the probability that the temperature on the 28th will be higher than the 21st, as the underlying trend and its projected impacts become less certain. However, other factors like 'seasonal_variability' and the persistence of weather systems ('mont_de_marsan_temp_dec_21' influencing 'mont_de_marsan_temp_dec_28') still contribute to the prediction, preventing a drastic drop in probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.60,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that the causal link between 'average_december_temp_trend' and 'climate_change_impact' is weakened for this specific region and month. This is a significant challenge because 'climate_change_impact' influences 'december_2025_weather_patterns', which in turn directly affects both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. If climate change's influence on local weather patterns is less predictable via the general trend, it reduces our confidence in the expected influence of climate change on the specific December 2025 weather patterns. This, in turn, slightly reduces the probability that the temperature on the 28th will be higher than the 21st, as the underlying trend and its projected impacts become less certain. However, other factors like 'seasonal_variability' and the persistence of weather systems ('mont_de_marsan_temp_dec_21' influencing 'mont_de_marsan_temp_dec_28') still contribute to the prediction, preventing a drastic drop in probability.\"\n}",
+      "target_id": "average_december_temp_trend->climate_change_impact",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_negate_peripheral",
+      "target_reason_id": null,
+      "probe_text": "While large-scale weather patterns are a primary driver of temperature, there can be localized microclimates or specific topographical features around Mont-de-Marsan that significantly alter the temperature on a given day, independent of the broader weather system. For instance, a sudden shift in wind direction due to local terrain or the radiative cooling effect from surrounding forests could override the general temperature dictated by the larger weather patterns.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge to the causal link 'december_2025_weather_patterns->mont_de_marsan_temp_dec_21' suggests that localized factors can override broader weather patterns. This weakens the direct influence of the large-scale 'december_2025_weather_patterns' node on the specific daily temperatures. While the link to 'mont_de_marsan_temp_dec_28' is also directly affected, the causal path from 'mont_de_marsan_temp_dec_21' to 'mont_de_marsan_temp_dec_28' (representing persistence of weather systems) is also slightly diminished, as the temperature on the 21st might be less representative of the broader weather system if local factors played a larger role. However, 'december_2025_weather_patterns' still influences the 28th directly, and the overall impact of climate change and seasonal variability remains. The challenge introduces more noise and reduces the certainty that the temperature on the 21st is a strong predictor of the temperature on the 28th, leading to a slight decrease in the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge to the causal link 'december_2025_weather_patterns->mont_de_marsan_temp_dec_21' suggests that localized factors can override broader weather patterns. This weakens the direct influence of the large-scale 'december_2025_weather_patterns' node on the specific daily temperatures. While the link to 'mont_de_marsan_temp_dec_28' is also directly affected, the causal path from 'mont_de_marsan_temp_dec_21' to 'mont_de_marsan_temp_dec_28' (representing persistence of weather systems) is also slightly diminished, as the temperature on the 21st might be less representative of the broader weather system if local factors played a larger role. However, 'december_2025_weather_patterns' still influences the 28th directly, and the overall impact of climate change and seasonal variability remains. The challenge introduces more noise and reduces the certainty that the temperature on the 21st is a strong predictor of the temperature on the 28th, leading to a slight decrease in the probability.\"\n}",
+      "target_id": "december_2025_weather_patterns->mont_de_marsan_temp_dec_21",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent studies published in Nature Climate Change indicate a significant increase in the frequency and persistence of blocking high-pressure systems over Western Europe during winter months, a phenomenon directly linked to anthropogenic climate change. These persistent systems are known to cause prolonged periods of unusually warm or cold weather, directly shaping the 'december_2025_weather_patterns' in Southwestern France. Given this strong, empirically validated connection, how does this increased likelihood of persistent weather patterns affect your probability assessment?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'climate_change_impact -> december_2025_weather_patterns' is significant and provides strong empirical support for a more direct and impactful influence of climate change on specific weather patterns. Previously, this link was considered to have a general influence. The new information highlights that climate change is increasing the frequency and persistence of blocking high-pressure systems, which directly shape the weather patterns in Southwestern France. This strengthens the causal path from 'climate_change_impact' to 'december_2025_weather_patterns'. Consequently, the influence of these weather patterns on both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28' is likely to be more pronounced and potentially lead to more extreme or persistent temperature anomalies. Given that the question is about comparing temperatures between two specific dates within the same month, and persistent weather patterns can lead to similar conditions on both dates (or a sustained trend), this strengthens the expectation that temperatures might be similar. However, persistent *warm* or *cold* spells are both possible outcomes of blocking highs. The prompt specifically mentions 'unusually warm or cold weather', which implies a higher chance of deviation from the norm. If a blocking high leads to persistently warm weather, the temperature on the 28th would likely be higher than the 21st if the warm spell is building or sustained. If it leads to persistently cold weather, the opposite would be true. The increased *persistence* of patterns, regardless of their nature, implies a higher likelihood that the pattern on the 21st will be similar to the pattern on the 28th. This similarity increases the probability that the temperature on the 28th will be *higher* than the 21st, assuming the underlying trend or specific pattern leans towards warmer conditions, or if the comparison is made during a sustained warming trend exacerbated by climate change. The initial estimate of 0.65 was already leaning towards higher temperature on the 28th. This new information reinforces the idea that weather patterns are strongly influenced by climate change and are likely to be persistent, making the temperature on the 28th more likely to be similar to (and potentially higher than, assuming a general warming context or a specific warm pattern) the temperature on the 21st. The probability is increased to 0.75.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'climate_change_impact -> december_2025_weather_patterns' is significant and provides strong empirical support for a more direct and impactful influence of climate change on specific weather patterns. Previously, this link was considered to have a general influence. The new information highlights that climate change is increasing the frequency and persistence of blocking high-pressure systems, which directly shape the weather patterns in Southwestern France. This strengthens the causal path from 'climate_change_impact' to 'december_2025_weather_patterns'. Consequently, the influence of these weather patterns on both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28' is likely to be more pronounced and potentially lead to more extreme or persistent temperature anomalies. Given that the question is about comparing temperatures between two specific dates within the same month, and persistent weather patterns can lead to similar conditions on both dates (or a sustained trend), this strengthens the expectation that temperatures might be similar. However, persistent *warm* or *cold* spells are both possible outcomes of blocking highs. The prompt specifically mentions 'unusually warm or cold weather', which implies a higher chance of deviation from the norm. If a blocking high leads to persistently warm weather, the temperature on the 28th would likely be higher than the 21st if the warm spell is building or sustained. If it leads to persistently cold weather, the opposite would be true. The increased *persistence* of patterns, regardless of their nature, implies a higher likelihood that the pattern on the 21st will be similar to the pattern on the 28th. This similarity increases the probability that the temperature on the 28th will be *higher* than the 21st, assuming the underlying trend or specific pattern leans towards warmer conditions, or if the comparison is made during a sustained warming trend exacerbated by climate change. The initial estimate of 0.65 was already leaning towards higher temperature on the 28th. This new information reinforces the idea that weather patterns are strongly influenced by climate change and are likely to be persistent, making the temperature on the 28th more likely to be similar to (and potentially higher than, assuming a general warming context or a specific warm pattern) the temperature on the 21st. The probability is increased to 0.75.\"\n}",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "target_type": "edge",
+      "target_importance": 0.1429,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_critical",
+      "target_reason_id": null,
+      "probe_text": "Recent studies published in 'Nature Climate Change' indicate that the rate of warming in Western Europe, particularly during winter months, is accelerating beyond previous model projections. This acceleration is strongly linked to a documented increase in the persistence of high-pressure systems, which aligns with the 'average_december_temp_trend' directly amplifying 'climate_change_impact' more than typically accounted for.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.75,
+      "absolute_shift": 0.09999999999999998,
+      "shift_direction": "increased",
+      "reasoning": "The new information directly challenges and strengthens the causal link between 'average_december_temp_trend' and 'climate_change_impact'. The studies indicate an acceleration of warming in Western Europe, specifically during winter, which is more pronounced than previously modeled. This means that the long-term warming trend is likely to have a stronger influence on regional temperatures. This amplified 'climate_change_impact' in turn is likely to have a greater effect on 'december_2025_weather_patterns', potentially leading to warmer conditions. Consequently, the probability of higher temperatures at Mont-de-Marsan on 2025-12-28 compared to 2025-12-21 is increased. The causal path affected is primarily: average_december_temp_trend -> climate_change_impact -> december_2025_weather_patterns -> mont_de_marsan_temp_dec_28. The strengthening of this path, particularly the initial link, warrants a significant upward revision of the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.75,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new information directly challenges and strengthens the causal link between 'average_december_temp_trend' and 'climate_change_impact'. The studies indicate an acceleration of warming in Western Europe, specifically during winter, which is more pronounced than previously modeled. This means that the long-term warming trend is likely to have a stronger influence on regional temperatures. This amplified 'climate_change_impact' in turn is likely to have a greater effect on 'december_2025_weather_patterns', potentially leading to warmer conditions. Consequently, the probability of higher temperatures at Mont-de-Marsan on 2025-12-28 compared to 2025-12-21 is increased. The causal path affected is primarily: average_december_temp_trend -> climate_change_impact -> december_2025_weather_patterns -> mont_de_marsan_temp_dec_28. The strengthening of this path, particularly the initial link, warrants a significant upward revision of the probability.\"\n}",
+      "target_id": "average_december_temp_trend->climate_change_impact",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 2,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_strengthen_peripheral",
+      "target_reason_id": null,
+      "probe_text": "Recent meteorological studies focusing on Southwestern France have highlighted how specific synoptic-scale weather systems, such as the position and intensity of the Azores High or the progression of Atlantic depressions, exert a dominant and direct influence on daily surface temperatures in the region. These patterns are so strongly correlated with diurnal temperature variations that they can often explain over 80% of the variance in daily average temperatures, suggesting their causal impact on mont_de_marsan_temp_dec_21 is more substantial than a simple direct influence.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.7,
+      "absolute_shift": 0.04999999999999993,
+      "shift_direction": "increased",
+      "reasoning": "The challenge to the causal link 'december_2025_weather_patterns->mont_de_marsan_temp_dec_21' is actually reinforcing the importance of this link, rather than weakening it. The studies cited emphasize that synoptic-scale weather systems (represented by 'december_2025_weather_patterns') have a *dominant and direct influence* on daily surface temperatures, explaining over 80% of the variance. This strengthens the causal path from 'december_2025_weather_patterns' to both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. The original reasoning already acknowledged this link as strong, but the new information quantifies its significance, suggesting that deviations from typical patterns are the primary drivers of temperature variation. Therefore, the probability that the temperature on the 28th is higher than the 21st, largely dependent on these persistent or evolving weather patterns, should be slightly increased, reflecting a higher confidence in the predictive power of these patterns over the week.",
+      "raw_response": "{\n  \"updated_probability\": 0.70,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The challenge to the causal link 'december_2025_weather_patterns->mont_de_marsan_temp_dec_21' is actually reinforcing the importance of this link, rather than weakening it. The studies cited emphasize that synoptic-scale weather systems (represented by 'december_2025_weather_patterns') have a *dominant and direct influence* on daily surface temperatures, explaining over 80% of the variance. This strengthens the causal path from 'december_2025_weather_patterns' to both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. The original reasoning already acknowledged this link as strong, but the new information quantifies its significance, suggesting that deviations from typical patterns are the primary drivers of temperature variation. Therefore, the probability that the temperature on the 28th is higher than the 21st, largely dependent on these persistent or evolving weather patterns, should be slightly increased, reflecting a higher confidence in the predictive power of these patterns over the week.\"\n}",
+      "target_id": "december_2025_weather_patterns->mont_de_marsan_temp_dec_21",
+      "target_type": "edge",
+      "target_importance": 0.0952,
+      "target_centrality_rank": 7,
+      "target_on_critical_path": false,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_reverse",
+      "target_reason_id": null,
+      "probe_text": "While climate change certainly influences long-term trends, some research suggests that specific, anomalous weather patterns observed in a given year might actually be *driving* the manifestation of climate change impacts. For instance, a persistent blocking high-pressure system in late December 2025, which would typically lead to warmer-than-average temperatures, might be the *reason* we observe a more pronounced short-term effect attributed to climate change, rather than the climate change itself pre-determining that specific weather pattern.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests that the causal link from 'climate_change_impact' to 'december_2025_weather_patterns' might be overstated or even reversed in its directionality. The original model assumed climate change influences the specific weather patterns. The new information proposes that certain weather patterns might *manifest* or *amplify* the observed effects of climate change, rather than being directly determined by it. This weakens the indirect causal path: 'climate_change_impact' -> 'december_2025_weather_patterns' -> 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. While climate change still influences the 'average_december_temp_trend', its direct predictive power on the specific weather patterns for late December 2025 is now considered less certain. The impact of 'seasonal_variability' on 'december_2025_weather_patterns' remains, and the direct links from 'december_2025_weather_patterns' to the outcome nodes are still strong. However, by slightly diminishing the influence of climate change on the specific weather patterns, the overall probability that temperatures will be higher on the 28th compared to the 21st is marginally decreased, as a key driver for potentially warmer conditions (climate change influencing weather patterns) is now seen as less direct.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests that the causal link from 'climate_change_impact' to 'december_2025_weather_patterns' might be overstated or even reversed in its directionality. The original model assumed climate change influences the specific weather patterns. The new information proposes that certain weather patterns might *manifest* or *amplify* the observed effects of climate change, rather than being directly determined by it. This weakens the indirect causal path: 'climate_change_impact' -> 'december_2025_weather_patterns' -> 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. While climate change still influences the 'average_december_temp_trend', its direct predictive power on the specific weather patterns for late December 2025 is now considered less certain. The impact of 'seasonal_variability' on 'december_2025_weather_patterns' remains, and the direct links from 'december_2025_weather_patterns' to the outcome nodes are still strong. However, by slightly diminishing the influence of climate change on the specific weather patterns, the overall probability that temperatures will be higher on the 28th compared to the 21st is marginally decreased, as a key driver for potentially warmer conditions (climate change influencing weather patterns) is now seen as less direct.\"\n}",
+      "target_id": "climate_change_impact->december_2025_weather_patterns",
+      "target_type": "edge",
+      "target_importance": 0.1429,
+      "target_centrality_rank": 1,
+      "target_on_critical_path": true,
+      "probe_category": "edge"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While the change in daylight hours between December 21st and 28th is typically minor, could the *rate* of change in daylight, combined with other seasonal factors, influence the persistence or development of large-scale weather patterns? For example, a more rapid shift in daylight could subtly alter atmospheric pressure gradients over a larger region, potentially affecting the track or intensity of weather systems that eventually reach Southwestern France.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge suggests a potential indirect influence of 'daylight_hours_change' on 'december_2025_weather_patterns' by altering atmospheric pressure gradients. Previously, 'daylight_hours_change' was considered to have only a minor, direct impact on 'mont_de_marsan_temp_dec_28'. This new hypothesis introduces a more complex, albeit still subtle, causal path: 'daylight_hours_change' -> (implied atmospheric pressure gradients) -> 'december_2025_weather_patterns' -> 'mont_de_marsan_temp_dec_28'. While this adds a new layer of potential influence, the proposed mechanism is described as subtle and its impact on large-scale weather patterns is speculative. The primary drivers of temperature remain 'december_2025_weather_patterns' and the persistence of conditions from 'mont_de_marsan_temp_dec_21'. The proposed link is indirect and its strength is not well-defined, suggesting it's unlikely to fundamentally alter the strong influence of established weather patterns. Therefore, the probability is slightly decreased to account for this new, uncertain, indirect influence that could marginally reduce the temperature on the 28th relative to the 21st, but the overall effect is considered small.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge suggests a potential indirect influence of 'daylight_hours_change' on 'december_2025_weather_patterns' by altering atmospheric pressure gradients. Previously, 'daylight_hours_change' was considered to have only a minor, direct impact on 'mont_de_marsan_temp_dec_28'. This new hypothesis introduces a more complex, albeit still subtle, causal path: 'daylight_hours_change' -> (implied atmospheric pressure gradients) -> 'december_2025_weather_patterns' -> 'mont_de_marsan_temp_dec_28'. While this adds a new layer of potential influence, the proposed mechanism is described as subtle and its impact on large-scale weather patterns is speculative. The primary drivers of temperature remain 'december_2025_weather_patterns' and the persistence of conditions from 'mont_de_marsan_temp_dec_21'. The proposed link is indirect and its strength is not well-defined, suggesting it's unlikely to fundamentally alter the strong influence of established weather patterns. Therefore, the probability is slightly decreased to account for this new, uncertain, indirect influence that could marginally reduce the temperature on the 28th relative to the 21st, but the overall effect is considered small.\"\n}",
+      "target_id": "daylight_hours_change->december_2025_weather_patterns",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "edge_missing",
+      "target_reason_id": null,
+      "probe_text": "While the change in daylight hours between Dec 21st and Dec 28th is unlikely to affect the temperature on Dec 21st, it's worth considering if there's a misunderstanding of the temporal aspect. Could the *baseline* level of daylight hours on Dec 21st, which is determined by the date itself, have a more direct influence on the temperature that day, separate from how the *change* in daylight might affect later dates? This baseline effect might be more significant than initially modeled.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.63,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "decreased",
+      "reasoning": "The challenge questions the role of daylight hours. My original model had 'daylight_hours_change' influencing 'mont_de_marsan_temp_dec_28'. The challenge suggests that the *baseline* daylight hours on Dec 21st might have a more direct influence on the temperature on that day, separate from the *change*. This doesn't fundamentally alter the causal paths leading to the outcome (mont_de_marsan_temp_dec_28). The primary drivers remain 'december_2025_weather_patterns' and the persistence of temperature from 'mont_de_marsan_temp_dec_21'. The influence of daylight hours, whether baseline or change, is considered a minor factor compared to weather patterns. Therefore, the impact on the probability is small. I've slightly decreased the probability to reflect a minor adjustment in the perceived influence of daylight, acknowledging that its direct baseline effect might have been overlooked, though its overall impact is still considered secondary to weather systems.",
+      "raw_response": "{\n  \"updated_probability\": 0.63,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The challenge questions the role of daylight hours. My original model had 'daylight_hours_change' influencing 'mont_de_marsan_temp_dec_28'. The challenge suggests that the *baseline* daylight hours on Dec 21st might have a more direct influence on the temperature on that day, separate from the *change*. This doesn't fundamentally alter the causal paths leading to the outcome (mont_de_marsan_temp_dec_28). The primary drivers remain 'december_2025_weather_patterns' and the persistence of temperature from 'mont_de_marsan_temp_dec_21'. The influence of daylight hours, whether baseline or change, is considered a minor factor compared to weather patterns. Therefore, the impact on the probability is small. I've slightly decreased the probability to reflect a minor adjustment in the perceived influence of daylight, acknowledging that its direct baseline effect might have been overlooked, though its overall impact is still considered secondary to weather systems.\"\n}",
+      "target_id": "daylight_hours_change->mont_de_marsan_temp_dec_21",
+      "target_type": "missing_edge",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Recent meteorological reports indicate a strong likelihood of a significant atmospheric river event developing and moving into Southwestern France during the week of December 21st to December 28th, 2025. These events are known to bring prolonged periods of cloud cover and precipitation, which can suppress daily maximum temperatures even during winter. How does this information affect your probability assessment?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about a strong likelihood of an atmospheric river event significantly impacts the causal paths leading to the outcome. Specifically, the node 'december_2025_weather_patterns' is now strongly influenced by this developing event. Atmospheric rivers are known to bring cloud cover and precipitation, which suppress temperatures. This means that the direct causal links from 'december_2025_weather_patterns' to both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28' are now more likely to lead to cooler temperatures. Furthermore, the causal link 'mont_de_marsan_temp_dec_21 -> mont_de_marsan_temp_dec_28' relies on the persistence of weather systems. If the atmospheric river brings consistently cooler conditions, this persistence would reinforce cooler temperatures rather than potentially leading to warmer ones. The expectation of cooler temperatures due to this persistent weather phenomenon decreases the probability that the temperature on Dec 28th will be higher than on Dec 21st.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about a strong likelihood of an atmospheric river event significantly impacts the causal paths leading to the outcome. Specifically, the node 'december_2025_weather_patterns' is now strongly influenced by this developing event. Atmospheric rivers are known to bring cloud cover and precipitation, which suppress temperatures. This means that the direct causal links from 'december_2025_weather_patterns' to both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28' are now more likely to lead to cooler temperatures. Furthermore, the causal link 'mont_de_marsan_temp_dec_21 -> mont_de_marsan_temp_dec_28' relies on the persistence of weather systems. If the atmospheric river brings consistently cooler conditions, this persistence would reinforce cooler temperatures rather than potentially leading to warmer ones. The expectation of cooler temperatures due to this persistent weather phenomenon decreases the probability that the temperature on Dec 28th will be higher than on Dec 21st.\"\n}",
+      "target_id": "atmospheric_river_event",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "missing_node",
+      "target_reason_id": null,
+      "probe_text": "Recent meteorological reports indicate a significant shift in atmospheric pressure systems over Western Europe, leading to an unseasonably cold air mass expected to settle over Southwestern France during the latter half of December 2025. This large-scale anomaly is predicted to override typical seasonal patterns. How does this information, specifically the influx of a persistent cold air mass, affect your probability assessment for the daily average temperature at Mont-de-Marsan being higher on 2025-12-28 than on 2025-12-21?",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.35,
+      "absolute_shift": 0.30000000000000004,
+      "shift_direction": "decreased",
+      "reasoning": "The new information directly challenges the 'december_2025_weather_patterns' node, which is a primary driver for both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. The reports indicate an unseasonably cold air mass is expected to override typical seasonal patterns, suggesting a strong, persistent cooling influence. This contradicts the prior assumption that weather patterns might lead to warmer temperatures on the 28th compared to the 21st, or at least allow for variability that could result in a higher temperature. The causal paths 'december_2025_weather_patterns -> mont_de_marsan_temp_dec_21' and 'december_2025_weather_patterns -> mont_de_marsan_temp_dec_28' are now strongly biased towards colder conditions. Furthermore, the information suggests this cold air mass is persistent, which strengthens the causal link 'mont_de_marsan_temp_dec_21 -> mont_de_marsan_temp_dec_28' in the direction of temperature continuity (i.e., if it's cold on the 21st, it's likely to remain cold on the 28th). The overall effect is a significant decrease in the probability that the temperature will be higher on the 28th compared to the 21st, as the dominant factor is now a persistent cold spell.",
+      "raw_response": "{\n  \"updated_probability\": 0.35,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information directly challenges the 'december_2025_weather_patterns' node, which is a primary driver for both 'mont_de_marsan_temp_dec_21' and 'mont_de_marsan_temp_dec_28'. The reports indicate an unseasonably cold air mass is expected to override typical seasonal patterns, suggesting a strong, persistent cooling influence. This contradicts the prior assumption that weather patterns might lead to warmer temperatures on the 28th compared to the 21st, or at least allow for variability that could result in a higher temperature. The causal paths 'december_2025_weather_patterns -> mont_de_marsan_temp_dec_21' and 'december_2025_weather_patterns -> mont_de_marsan_temp_dec_28' are now strongly biased towards colder conditions. Furthermore, the information suggests this cold air mass is persistent, which strengthens the causal link 'mont_de_marsan_temp_dec_21 -> mont_de_marsan_temp_dec_28' in the direction of temperature continuity (i.e., if it's cold on the 21st, it's likely to remain cold on the 28th). The overall effect is a significant decrease in the probability that the temperature will be higher on the 28th compared to the 21st, as the dominant factor is now a persistent cold spell.\"\n}",
+      "target_id": "persistent_cold_air_mass_anomaly",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "structural"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A recent study by a group of ornithologists has identified a significant increase in the migratory success of Arctic terns passing through the region in late December. This increase is attributed to unusually favorable atmospheric conditions for long-distance flight, not directly related to ground-level temperature.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.64,
+      "absolute_shift": 0.010000000000000009,
+      "shift_direction": "decreased",
+      "reasoning": "The new information about Arctic tern migratory success is attributed to atmospheric conditions favorable for flight, explicitly stated as 'not directly related to ground-level temperature.' This suggests that the underlying causal factors for this phenomenon are distinct from the factors influencing ground-level temperatures in Mont-de-Marsan. Therefore, this new information does not directly challenge or alter any of the causal paths in the existing model that lead to the outcome (mont_de_marsan_temp_dec_28). The model's core drivers like 'december_2025_weather_patterns' and the persistence of weather systems between the two dates remain unaffected. The initial probability of 0.65 was based on the assumption of a slight tendency for warmer temperatures due to the confluence of factors like climate change and potential persistent weather patterns. While the new information is interesting, it doesn't provide evidence to significantly alter the probability of warmer temperatures on the 28th compared to the 21st. A very slight decrease in probability is made to reflect the lack of any *positive* supporting evidence from this new, unrelated observation, implying that the prior assumptions about factors independently driving temperature remain the primary drivers.",
+      "raw_response": "{\n  \"updated_probability\": 0.64,\n  \"shift_direction\": \"decreased\",\n  \"reasoning\": \"The new information about Arctic tern migratory success is attributed to atmospheric conditions favorable for flight, explicitly stated as 'not directly related to ground-level temperature.' This suggests that the underlying causal factors for this phenomenon are distinct from the factors influencing ground-level temperatures in Mont-de-Marsan. Therefore, this new information does not directly challenge or alter any of the causal paths in the existing model that lead to the outcome (mont_de_marsan_temp_dec_28). The model's core drivers like 'december_2025_weather_patterns' and the persistence of weather systems between the two dates remain unaffected. The initial probability of 0.65 was based on the assumption of a slight tendency for warmer temperatures due to the confluence of factors like climate change and potential persistent weather patterns. While the new information is interesting, it doesn't provide evidence to significantly alter the probability of warmer temperatures on the 28th compared to the 21st. A very slight decrease in probability is made to reflect the lack of any *positive* supporting evidence from this new, unrelated observation, implying that the prior assumptions about factors independently driving temperature remain the primary drivers.\"\n}",
+      "target_id": "irrelevant_1",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    },
+    {
+      "probe_type": "irrelevant",
+      "target_reason_id": null,
+      "probe_text": "A new report has been released detailing the average number of hours of sunshine in Bordeaux during the month of December over the past 30 years. This report highlights a slight but statistically significant increase in sunshine hours, attributed to shifts in prevailing wind patterns affecting cloud cover.",
+      "probe_generated": true,
+      "success": true,
+      "updated_probability": 0.67,
+      "absolute_shift": 0.020000000000000018,
+      "shift_direction": "increased",
+      "reasoning": "The new report on increased sunshine hours in Bordeaux, attributed to shifts in prevailing wind patterns affecting cloud cover, suggests a potential alteration in the 'december_2025_weather_patterns' node. Increased sunshine hours generally correlate with higher temperatures, especially in winter. This new information strengthens the likelihood of weather patterns that favor warmer temperatures on both days, thereby increasing the probability that the temperature on the 28th will be higher than the 21st. The causal path affected is 'december_2025_weather_patterns' -> 'mont_de_marsan_temp_dec_21' and 'december_2025_weather_patterns' -> 'mont_de_marsan_temp_dec_28'. While the effect is described as 'slight', it introduces a factor that indirectly supports warmer conditions, thus slightly increasing the probability.",
+      "raw_response": "{\n  \"updated_probability\": 0.67,\n  \"shift_direction\": \"increased\",\n  \"reasoning\": \"The new report on increased sunshine hours in Bordeaux, attributed to shifts in prevailing wind patterns affecting cloud cover, suggests a potential alteration in the 'december_2025_weather_patterns' node. Increased sunshine hours generally correlate with higher temperatures, especially in winter. This new information strengthens the likelihood of weather patterns that favor warmer temperatures on both days, thereby increasing the probability that the temperature on the 28th will be higher than the 21st. The causal path affected is 'december_2025_weather_patterns' -> 'mont_de_marsan_temp_dec_21' and 'december_2025_weather_patterns' -> 'mont_de_marsan_temp_dec_28'. While the effect is described as 'slight', it introduces a factor that indirectly supports warmer conditions, thus slightly increasing the probability.\"\n}",
+      "target_id": "irrelevant_2",
+      "target_type": "structural",
+      "target_importance": 0,
+      "target_centrality_rank": 0,
+      "target_on_critical_path": false,
+      "probe_category": "control"
+    }
+  ],
+  "summary": {
+    "question_id": "meteofrance_TEMPERATURE_celsius.07607.D",
+    "question_text": "What is the probability that the daily average temperature at the French weather station at Mont-de-Marsan will be higher on 2025-12-28 than on 2025-12-21?",
+    "source": "dbnomics",
+    "condition": "one-turn",
+    "initial_probability": 0.65,
+    "n_probes": 21,
+    "n_successful": 21,
+    "mean_absolute_shift": 0.08238095238095237,
+    "max_absolute_shift": 0.30000000000000004
+  },
+  "model": "gemini-flash",
+  "model_label": "Gemini 2.5 Flash Lite",
+  "market_probability": null,
+  "aggregate_metrics": {
+    "ssr": 1.8750000000000004,
+    "mean_shift_high": 0.09375,
+    "mean_shift_low": 0.04999999999999999,
+    "asymmetry_index": 0.5757575757575761,
+    "mean_shift_negate": 0.054285714285714305,
+    "mean_shift_strengthen": 0.09428571428571426,
+    "fnar": 1,
+    "n_accepted": 2,
+    "n_spurious": 2,
+    "critical_path_premium": 0.00555555555555555,
+    "mean_shift_on_path": 0.08555555555555555,
+    "mean_shift_off_path": 0.08,
+    "importance_sensitivity_correlation": 0.5045454545454545,
+    "control_sensitivity": 0
+  }
+}
