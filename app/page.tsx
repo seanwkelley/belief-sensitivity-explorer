@@ -54,7 +54,7 @@ export default function Home() {
             href="/live"
             className="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-card)] px-5 py-2.5 text-sm font-medium hover:bg-[var(--color-secondary)] transition-colors"
           >
-            Ask Your Own
+            Ask Your Own Question
           </Link>
         </div>
       </div>

@@ -35,7 +35,7 @@ export function NavBar() {
         <div className="flex items-center gap-6">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/explore">ForecastBench Examples</NavLink>
-          <NavLink href="/live">Ask Your Own</NavLink>
+          <NavLink href="/live">Ask Your Own Question</NavLink>
           <NavLink href="/about">About</NavLink>
           <ApiKeySettings />
         </div>
