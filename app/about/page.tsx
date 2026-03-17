@@ -27,11 +27,11 @@ export default function AboutPage() {
         <p>
           Pre-computed results cover 100 binary forecasting questions from{" "}
           <strong className="text-[var(--color-foreground)]">ForecastBench</strong>,
-          evaluated across four models (Llama 3.1 8B, Llama 3.3 70B, DeepSeek
-          V3, and Qwen3 235B). You can also run the full pipeline on any custom
-          question in real time via the{" "}
+          evaluated across five models (Llama 3.1 8B, Llama 3.3 70B, DeepSeek
+          V3, Qwen3 235B, and Gemini 2.5 Flash Lite). You can also run the full
+          pipeline on any custom question in real time via the{" "}
           <Link href="/live" className="text-[var(--color-primary)] hover:underline">
-            Custom Question
+            Ask Your Own Question
           </Link>{" "}
           page.
         </p>
